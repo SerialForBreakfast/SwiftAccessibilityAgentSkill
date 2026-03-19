@@ -46,7 +46,19 @@ Implementation target:
 - Compound rows/cards with secondary actions
 - Mixed-framework host containers
 
-## Principle 6: Guidelines Must Be Testable
+## Principle 6: Rich Dynamic State Needs an Inspection Contract
+
+Rule: when runtime state is richer than what should be spoken to users, expose a narrow inspection contract for debug/test workflows.
+
+Required characteristics:
+- Capture only task-relevant state that affects audit or regression diagnosis.
+- Keep ownership explicit at the component or interop boundary.
+- Do not require inspection-only metadata for user task completion.
+
+Typical examples:
+- Media stream kind, seekability, buffering state, playback rate, selected caption/audio options, PiP/external playback, ad state.
+
+## Principle 7: Guidelines Must Be Testable
 
 Rule: no guideline is complete without verification steps.
 
@@ -62,4 +74,5 @@ A component or screen change is accessibility-ready only when:
 - Semantic contract is documented.
 - Interop ownership is documented when frameworks are mixed.
 - Dense surfaces document landmark/grouping/action strategy when applicable.
+- Supplemental inspection contract is documented when dynamic state materially exceeds spoken output.
 - Verification evidence is attached to the change.

@@ -82,6 +82,8 @@ All notable changes to this documentation project are tracked here.
 
 ### Changed
 
+- Rewrote the README install flow for new users to cover prerequisites, Homebrew/Node.js setup, project-directory installation, verification, and troubleshooting.
+- Expanded Inspector, triage, and media-guideline guidance so AV reviews capture stream-level state when relevant (live/VOD mode, seekability, buffering, playback rate, selected media options, PiP/external playback, ad state) and use a narrow supplemental inspection contract when spoken output is intentionally smaller.
 - Expanded top-level track coverage in `README.md` to include tvOS and macOS backlogs.
 - Expanded `SKILL.md` to include tvOS/macOS canonical inputs and explicit platform-target selection rules.
 - Extended `docs/core/sources/registry.md` with Tier-1 tvOS/macOS sources (`Accessibility for UIKit`, tvOS focus interactions, `NSAccessibility`, WWDC25 macOS accessibility) and Tier-2 automation reference (`AccessibilitySnapshot`).
