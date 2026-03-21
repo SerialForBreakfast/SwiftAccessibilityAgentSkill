@@ -42,6 +42,7 @@ promptfoo eval -c evals/promptfoo/promptfooconfig.yaml
 - repository-guided answers include `ROUTING:`
 - routing names the expected repo doc
 - repository-guided answers include `Sources:`, `Freshness:`, and `Assumptions:`
+- `Assumptions: none` is reserved for directly supported, sufficiently specific answers
 
 ## C2 Injection Note
 
@@ -71,3 +72,8 @@ Also verify negative cases:
 - `ROUTING:` should not appear when the answer does not rely on repository guidance
 - `Sources:`, `Freshness:`, and `Assumptions:` should not appear for non-repository answers
 - common Apple UI terms alone (`UILabel`, `UIButton`, `NSWindow`, `SwiftUI`) should not trigger this skill unless the user is actually asking about accessibility
+
+Also verify inference cases:
+
+- when the answer narrows ambiguous context, `Assumptions:` should name that narrowing
+- when the answer uses general platform/API behavior beyond routed repo docs, `Assumptions:` should disclose that

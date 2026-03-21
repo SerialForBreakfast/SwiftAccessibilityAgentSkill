@@ -287,6 +287,9 @@ Freshness: HIGH — current repository guidance supports this answer
 Assumptions: none
 ```
 
+Use `Assumptions: none` only when the routed repository docs directly support the answer and the user's context is already specific enough.
+If the answer requires an inference, state that inference briefly instead of using `none`.
+
 ## Evaluation
 
 Promptfoo scaffolding lives in:

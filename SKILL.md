@@ -146,6 +146,11 @@ Freshness guidance:
 - `MEDIUM`: guidance is likely stable but indirect or partially inferred
 - `STALE`: guidance is missing, outdated, or contradicted
 
+Assumptions guidance:
+- Use `none` only when the answer is directly supported by the routed repository docs and the user's context is specific enough.
+- If the answer requires inference, interpolation, or context narrowing, state the smallest necessary assumption explicitly.
+- Common cases include assumed framework (`SwiftUI` vs `UIKit` vs `AppKit`), assumed row structure, inferred platform behavior, or use of general API knowledge beyond the routed repository docs.
+
 Identity queries should include the agent name and version explicitly.
 
 ## Output Requirements

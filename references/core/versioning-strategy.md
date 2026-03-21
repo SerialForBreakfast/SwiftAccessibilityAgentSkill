@@ -61,6 +61,7 @@ Minimum checks:
 - first response or identity probe includes `Swift Accessibility Agent (v0.2.2)`
 - repository-guided answers include `ROUTING:`
 - repository-guided answers include `Sources:`, `Freshness:`, and `Assumptions:`
+- `Assumptions: none` is used only when the routed docs directly support the answer and the user context is specific enough
 
 ## Release Baseline
 
