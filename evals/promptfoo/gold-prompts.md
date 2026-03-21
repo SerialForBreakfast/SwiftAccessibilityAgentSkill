@@ -1,6 +1,6 @@
 # Gold Prompt Catalog
 
-Current baseline: `0.2.1`
+Current baseline: `0.2.2`
 
 ## Purpose
 
@@ -29,9 +29,12 @@ They intentionally avoid overfitting to the repository's internal naming.
 | GP-008 | Regression workflow | This started breaking only on a newer OS build and feels framework-related. What repo guidance should I follow before I call it an Apple bug? | `core:known-os-issues-workflow.md`, `testing:regression-triage-playbook.md` |
 | GP-009 | UIKit custom actions | I have a table row with swipe actions and extra commands. When should I keep real buttons visible versus using accessibility actions? | `uikit:u-007-accessibility-custom-actions.md`, `core:decision-matrix.md` |
 | GP-010 | SwiftUI forms | My form has toggles, sliders, and nested rows. What are the common semantic mistakes to watch for? | `swiftui:g-014-lists-forms-complex-rows.md` |
+| GP-011 | UIKit UILabel trigger | Tell me about UILabel accessibility. | `uikit:u-001-labels-meaningful-names.md`, `uikit:u-004-traits-roles.md` |
+| GP-012 | macOS NSWindow trigger | Why does VoiceOver lose its place after I close a sheet in an NSWindow? | `macos:m-007-modal-window-focus-containment.md` |
+| GP-013 | UITableView cell trigger | How should I handle accessibility in a UITableView cell that has text, a detail label, and a switch? | `uikit:u-014-table-collection-form-semantics.md`, `uikit:u-005-grouping-containment.md` |
 
 ## Notes
 
-- `GP-001` is the identity probe.
-- `GP-002` through `GP-010` should produce a `ROUTING:` line plus trust footer.
+- `GP-001` is the first-turn identity probe.
+- `GP-002` through `GP-013` should produce a `ROUTING:` line plus trust footer.
 - Multi-domain prompts are intentional where real developer questions naturally span more than one doc.

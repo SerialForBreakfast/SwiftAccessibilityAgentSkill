@@ -6,7 +6,7 @@ All notable changes to this documentation project are tracked here.
 
 - No unreleased changes recorded yet.
 
-## [0.2.1] - 2026-03-21
+## [0.2.2] - 2026-03-21
 
 ### Added
 
@@ -86,12 +86,14 @@ All notable changes to this documentation project are tracked here.
 
 ### Changed
 
-- Established explicit public version baseline `0.2.1` via `VERSION`.
+- Established explicit public version baseline `0.2.2` via `VERSION`.
 - Added versioning strategy docs in `docs/core/versioning-strategy.md` and `references/core/versioning-strategy.md`.
 - Added promptfoo evaluation scaffold under `evals/promptfoo/` for `C0` / `C1` / `C2` comparisons.
 - Updated `SKILL.md` with explicit agent identity, mandatory `ROUTING:` output, and trust-footer requirements.
+- Refined the response contract so agent identity appears on the first response only, while `ROUTING:` and the trust footer appear only when repository guidance is actually used.
+- Expanded trigger coverage in `SKILL.md` and promptfoo evals for common Apple UI terms such as `UILabel`, `UITableView`, and `NSWindow`.
 - Updated `README.md` to surface current version, routing/trust-language expectations, and promptfoo evaluation guidance.
-- Aligned runtime core manifest version to `0.2.1`.
+- Aligned runtime core manifest version to `0.2.2`.
 - Expanded the promptfoo gold-prompt set to use more user-like Swift developer questions across UIKit, SwiftUI, tvOS, macOS, and regression-triage coverage.
 - Added an optional Xcode compatibility install path via `scripts/install-for-xcode.sh` and documented how to link the canonical skill into Xcode's Codex agent directory while keeping `npx skills` as the primary install workflow.
 - Rewrote the README install flow for new users to cover prerequisites, Homebrew/Node.js setup, project-directory installation, verification, and troubleshooting.

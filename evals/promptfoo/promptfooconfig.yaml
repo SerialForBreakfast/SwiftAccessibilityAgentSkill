@@ -1,4 +1,4 @@
-description: Swift Accessibility Agent eval baseline v0.2.1
+description: Swift Accessibility Agent eval baseline v0.2.2
 
 prompts:
   - file://evals/promptfoo/prompts/c0.txt
@@ -19,9 +19,41 @@ tests:
       - type: icontains
         value: "Swift Accessibility Agent"
       - type: icontains
-        value: "v0.2.1"
+        value: "v0.2.2"
       - type: not-icontains
         value: "generic AI assistant"
+
+  - vars:
+      user_prompt: "What does UILabel do?"
+      expected_route: ""
+      expected_source: ""
+      domain_ref_1: ""
+      domain_ref_2: ""
+    assert:
+      - type: not-icontains
+        value: "ROUTING:"
+
+  - vars:
+      user_prompt: "Tell me about UILabel accessibility."
+      expected_route: "uikit:u-001-labels-meaningful-names.md"
+      expected_source: "docs/uikit/guidelines/u-001-labels-meaningful-names.md"
+      domain_ref_1: "UIKit label guidance: every meaningful interactive element and non-decorative content element must expose a clear accessibility label that reflects user intent, not implementation details."
+      domain_ref_2: "UIKit role guidance: static labels should expose accurate traits, and heading semantics should be used only when text acts as a true section landmark."
+    assert:
+      - type: icontains
+        value: "ROUTING:"
+      - type: icontains
+        value: "{{expected_route}}"
+      - type: icontains
+        value: "uikit:u-004-traits-roles.md"
+      - type: icontains
+        value: "{{expected_source}}"
+      - type: icontains
+        value: "Sources:"
+      - type: icontains
+        value: "Freshness:"
+      - type: icontains
+        value: "Assumptions:"
 
   - vars:
       user_prompt: "I have a settings screen with a title, subtitle, and a switch in the same row. Should VoiceOver land on one thing or multiple things?"
@@ -144,6 +176,26 @@ tests:
         value: "Assumptions:"
 
   - vars:
+      user_prompt: "Why does VoiceOver lose its place after I close a sheet in an NSWindow?"
+      expected_route: "macos:m-007-modal-window-focus-containment.md"
+      expected_source: "docs/macos/guidelines/m-007-modal-window-focus-containment.md"
+      domain_ref_1: "macOS modal guidance: when a modal sheet or window takes focus, focus must remain within that context until dismissal, then restore to the originating control or nearest meaningful anchor."
+      domain_ref_2: "macOS testing guidance: open each modal or window flow, confirm focus lands on the intended initial control, then dismiss and confirm focus returns to the launch anchor."
+    assert:
+      - type: icontains
+        value: "ROUTING:"
+      - type: icontains
+        value: "{{expected_route}}"
+      - type: icontains
+        value: "{{expected_source}}"
+      - type: icontains
+        value: "Sources:"
+      - type: icontains
+        value: "Freshness:"
+      - type: icontains
+        value: "Assumptions:"
+
+  - vars:
       user_prompt: "I embedded SwiftUI inside an AppKit container with NSHostingView and now VoiceOver reads less than before. What usually went wrong?"
       expected_route: "macos:m-005-swiftui-appkit-interop-forwarding.md"
       expected_source: "docs/macos/guidelines/m-005-swiftui-appkit-interop-forwarding.md"
@@ -174,6 +226,28 @@ tests:
         value: "ROUTING:"
       - type: icontains
         value: "{{expected_route}}"
+      - type: icontains
+        value: "{{expected_source}}"
+      - type: icontains
+        value: "Sources:"
+      - type: icontains
+        value: "Freshness:"
+      - type: icontains
+        value: "Assumptions:"
+
+  - vars:
+      user_prompt: "How should I handle accessibility in a UITableView cell that has text, a detail label, and a switch?"
+      expected_route: "uikit:u-014-table-collection-form-semantics.md"
+      expected_source: "docs/uikit/guidelines/u-014-table-collection-form-semantics.md"
+      domain_ref_1: "UIKit table and form guidance: decide per row whether content should be combined or separately actionable, and ensure each item exposes clear label, value, role, and action behavior."
+      domain_ref_2: "UIKit grouping guidance: grouped rows combine related text without hiding required child actions, and child controls should stay separately reachable when they support distinct actions."
+    assert:
+      - type: icontains
+        value: "ROUTING:"
+      - type: icontains
+        value: "{{expected_route}}"
+      - type: icontains
+        value: "uikit:u-005-grouping-containment.md"
       - type: icontains
         value: "{{expected_source}}"
       - type: icontains

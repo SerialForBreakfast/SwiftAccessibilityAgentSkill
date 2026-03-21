@@ -1,7 +1,7 @@
 # Versioning Strategy
 
 Last updated: 2026-03-21
-Current version: 0.2.1
+Current version: 0.2.2
 
 ## Purpose
 
@@ -9,9 +9,9 @@ Keep the skill contract, repository guidance, and evaluation results aligned und
 
 ## Current Policy
 
-- Skill version: `0.2.1`
-- Reference-set version: `0.2.1`
-- Evaluation baseline version: `0.2.1`
+- Skill version: `0.2.2`
+- Reference-set version: `0.2.2`
+- Evaluation baseline version: `0.2.2`
 
 For now, these versions move together.
 
@@ -58,11 +58,10 @@ The eval layer must assert the active version string directly.
 
 Minimum checks:
 
-- agent self-identifies as `Swift Accessibility Agent`
-- response includes `v0.2.1` for identity probes
-- substantive repository answers include `ROUTING:`
-- trust footer includes `Sources:`, `Freshness:`, and `Assumptions:`
+- first response or identity probe includes `Swift Accessibility Agent (v0.2.2)`
+- repository-guided answers include `ROUTING:`
+- repository-guided answers include `Sources:`, `Freshness:`, and `Assumptions:`
 
 ## Release Baseline
 
-`0.2.1` is the first explicit public version baseline for this repository.
+`0.2.2` is the current public version baseline for this repository.

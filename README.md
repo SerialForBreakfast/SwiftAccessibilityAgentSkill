@@ -2,7 +2,7 @@
 
 Source-driven accessibility guidance for SwiftUI, UIKit, tvOS, macOS, and visionOS, designed for both human developers and AI coding agents.
 
-Current version: `0.2.1`
+Current version: `0.2.2`
 
 ## What This Is
 
@@ -261,11 +261,21 @@ If Xcode does not pick up the compatibility install:
 
 For substantive repository-domain answers, the agent should emit:
 
-- a `ROUTING:` line naming the repo docs it used
-- the answer itself
-- a trust footer with `Sources:`, `Freshness:`, and `Assumptions:`
+- on the first response in a chat, one identity line:
+  - `Swift Accessibility Agent (v0.2.2)`
+- whenever the answer actually uses repository guidance:
+  - a `ROUTING:` line naming the repo docs it used
+  - the answer itself
+  - a trust footer with `Sources:`, `Freshness:`, and `Assumptions:`
 
-Example:
+If the answer does not use repository guidance, no `ROUTING:` line is required.
+First response example:
+
+```text
+Swift Accessibility Agent (v0.2.2)
+```
+
+Repository-guided answer example:
 
 ```text
 ROUTING: [uikit:u-005-grouping-containment.md, core:known-os-issues-workflow.md]
@@ -291,10 +301,10 @@ The evaluation model compares:
 
 Primary checks:
 
-- identity includes `Swift Accessibility Agent (v0.2.1)`
-- substantive answers include `ROUTING:`
+- first-turn identity includes `Swift Accessibility Agent (v0.2.2)`
+- repository-guided answers include `ROUTING:`
 - routing names the expected repository file
-- footer includes `Sources:`, `Freshness:`, and `Assumptions:`
+- repository-guided answers include `Sources:`, `Freshness:`, and `Assumptions:`
 
 ## Validation Checklist
 

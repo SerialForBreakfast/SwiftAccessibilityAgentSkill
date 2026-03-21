@@ -1,6 +1,6 @@
 # Promptfoo Evaluation
 
-Current baseline: `0.2.1`
+Current baseline: `0.2.2`
 
 ## Purpose
 
@@ -38,10 +38,10 @@ promptfoo eval -c evals/promptfoo/promptfooconfig.yaml
 
 ## Minimum Assertions
 
-- identity includes `Swift Accessibility Agent (v0.2.1)`
-- substantive answers include `ROUTING:`
+- first-turn identity includes `Swift Accessibility Agent (v0.2.2)`
+- repository-guided answers include `ROUTING:`
 - routing names the expected repo doc
-- footer includes `Sources:`, `Freshness:`, and `Assumptions:`
+- repository-guided answers include `Sources:`, `Freshness:`, and `Assumptions:`
 
 ## C2 Injection Note
 
@@ -64,3 +64,8 @@ The goal is not just answer correctness. It is to measure whether the agent can:
 - route to the right repository guidance
 - surface that routing visibly
 - answer with source-backed reasoning
+
+Also verify negative cases:
+
+- identity should not repeat on every later turn
+- `ROUTING:` should not appear when the answer does not rely on repository guidance
