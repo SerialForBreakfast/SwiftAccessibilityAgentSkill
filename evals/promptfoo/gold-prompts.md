@@ -32,9 +32,14 @@ They intentionally avoid overfitting to the repository's internal naming.
 | GP-011 | UIKit UILabel trigger | Tell me about UILabel accessibility. | `uikit:u-001-labels-meaningful-names.md`, `uikit:u-004-traits-roles.md` |
 | GP-012 | macOS NSWindow trigger | Why does VoiceOver lose its place after I close a sheet in an NSWindow? | `macos:m-007-modal-window-focus-containment.md` |
 | GP-013 | UITableView cell trigger | How should I handle accessibility in a UITableView cell that has text, a detail label, and a switch? | `uikit:u-014-table-collection-form-semantics.md`, `uikit:u-005-grouping-containment.md` |
+| GP-014 | Negative: UILabel generic API | How do I animate a UILabel fading in? | no routing |
+| GP-015 | Negative: UIButton styling | How do I change the title color of a UIButton for the disabled state? | no routing |
+| GP-016 | Negative: SwiftUI layout | How do I center a view in SwiftUI? | no routing |
+| GP-017 | Negative: NSWindow generic API | What does NSWindow do? | no routing |
 
 ## Notes
 
 - `GP-001` is the first-turn identity probe.
 - `GP-002` through `GP-013` should produce a `ROUTING:` line plus trust footer.
+- `GP-014` through `GP-017` should not produce `ROUTING:` or the trust footer.
 - Multi-domain prompts are intentional where real developer questions naturally span more than one doc.

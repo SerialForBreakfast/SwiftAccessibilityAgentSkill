@@ -69,3 +69,5 @@ Also verify negative cases:
 
 - identity should not repeat on every later turn
 - `ROUTING:` should not appear when the answer does not rely on repository guidance
+- `Sources:`, `Freshness:`, and `Assumptions:` should not appear for non-repository answers
+- common Apple UI terms alone (`UILabel`, `UIButton`, `NSWindow`, `SwiftUI`) should not trigger this skill unless the user is actually asking about accessibility

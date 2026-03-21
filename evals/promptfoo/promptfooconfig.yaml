@@ -32,6 +32,76 @@ tests:
     assert:
       - type: not-icontains
         value: "ROUTING:"
+      - type: not-icontains
+        value: "Sources:"
+      - type: not-icontains
+        value: "Freshness:"
+      - type: not-icontains
+        value: "Assumptions:"
+
+  - vars:
+      user_prompt: "How do I animate a UILabel fading in?"
+      expected_route: ""
+      expected_source: ""
+      domain_ref_1: ""
+      domain_ref_2: ""
+    assert:
+      - type: not-icontains
+        value: "ROUTING:"
+      - type: not-icontains
+        value: "Sources:"
+      - type: not-icontains
+        value: "Freshness:"
+      - type: not-icontains
+        value: "Assumptions:"
+
+  - vars:
+      user_prompt: "How do I change the title color of a UIButton for the disabled state?"
+      expected_route: ""
+      expected_source: ""
+      domain_ref_1: ""
+      domain_ref_2: ""
+    assert:
+      - type: not-icontains
+        value: "ROUTING:"
+      - type: not-icontains
+        value: "Sources:"
+      - type: not-icontains
+        value: "Freshness:"
+      - type: not-icontains
+        value: "Assumptions:"
+
+  - vars:
+      user_prompt: "How do I center a view in SwiftUI?"
+      expected_route: ""
+      expected_source: ""
+      domain_ref_1: ""
+      domain_ref_2: ""
+    assert:
+      - type: not-icontains
+        value: "ROUTING:"
+      - type: not-icontains
+        value: "Sources:"
+      - type: not-icontains
+        value: "Freshness:"
+      - type: not-icontains
+        value: "Assumptions:"
+
+  - vars:
+      user_prompt: "What does NSWindow do?"
+      expected_route: ""
+      expected_source: ""
+      domain_ref_1: ""
+      domain_ref_2: ""
+    assert:
+      - type: not-icontains
+        value: "ROUTING:"
+      - type: not-icontains
+        value: "Sources:"
+      - type: not-icontains
+        value: "Freshness:"
+      - type: not-icontains
+        value: "Assumptions:"
 
   - vars:
       user_prompt: "Tell me about UILabel accessibility."

@@ -92,6 +92,7 @@ All notable changes to this documentation project are tracked here.
 - Updated `SKILL.md` with explicit agent identity, mandatory `ROUTING:` output, and trust-footer requirements.
 - Refined the response contract so agent identity appears on the first response only, while `ROUTING:` and the trust footer appear only when repository guidance is actually used.
 - Expanded trigger coverage in `SKILL.md` and promptfoo evals for common Apple UI terms such as `UILabel`, `UITableView`, and `NSWindow`.
+- Added negative eval protections so generic Apple UI questions without accessibility scope do not emit `ROUTING:` or the trust footer.
 - Updated `README.md` to surface current version, routing/trust-language expectations, and promptfoo evaluation guidance.
 - Aligned runtime core manifest version to `0.2.2`.
 - Expanded the promptfoo gold-prompt set to use more user-like Swift developer questions across UIKit, SwiftUI, tvOS, macOS, and regression-triage coverage.

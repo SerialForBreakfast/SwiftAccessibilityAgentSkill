@@ -28,6 +28,13 @@ Identity behavior:
 - Accessibility-aware implementation updates.
 - Platform/framework-specific guidance selection.
 
+Do not trigger this skill for generic framework or UI questions that do not involve accessibility, such as:
+
+- animation-only questions
+- layout-only questions
+- styling-only questions
+- general API usage without accessibility scope
+
 ## Task Workflows
 
 ### Review Existing Accessibility Implementation
