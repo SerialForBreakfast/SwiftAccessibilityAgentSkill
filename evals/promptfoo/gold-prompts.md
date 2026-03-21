@@ -1,0 +1,37 @@
+# Gold Prompt Catalog
+
+Current baseline: `0.2.1`
+
+## Purpose
+
+These prompts are written to resemble real Swift developer questions on Apple platforms.
+They intentionally avoid overfitting to the repository's internal naming.
+
+## Authoring Principles
+
+- Use natural developer phrasing.
+- Allow common Apple API terms where developers would naturally use them.
+- Do not pre-load the prompt with our internal rule wording.
+- Prefer problem statements, implementation questions, and bug symptoms.
+- Cover both framework-specific and cross-cutting guidance.
+
+## Coverage Matrix
+
+| ID | Coverage | User-like prompt | Expected routing |
+|---|---|---|---|
+| GP-001 | Identity | Who are you and what can you help me with in an Apple UI project? | identity only |
+| GP-002 | UIKit grouping | I have a settings screen with a title, subtitle, and a switch in the same row. Should VoiceOver land on one thing or multiple things? | `uikit:u-005-grouping-containment.md`, `core:decision-matrix.md` |
+| GP-003 | SwiftUI rotor structure | My SwiftUI dashboard has a lot of cards and section titles. How do I make it faster for VoiceOver users without forcing them to use special tricks? | `swiftui:g-009-rotors-when-and-why.md` |
+| GP-004 | SwiftUI media | My player has live or on-demand state, captions, and buffering. What should be spoken, and what should stay out of the spoken output? | `swiftui:g-015-media-captions-audio-descriptions.md`, `testing:inspector-audit-checklist.md` |
+| GP-005 | tvOS focus | On tvOS, focus sometimes jumps to the wrong button after a modal closes. What should I check first? | `tvos:t-001-focus-order-directional-navigation.md`, `tvos:t-002-initial-focus-modal-restoration.md` |
+| GP-006 | macOS keyboard | In a macOS window, some controls are skipped when tabbing. Is this an accessibility bug or just keyboard setup? | `macos:m-002-keyboard-focus-order.md` |
+| GP-007 | macOS interop | I embedded SwiftUI inside an AppKit container with NSHostingView and now VoiceOver reads less than before. What usually went wrong? | `macos:m-005-swiftui-appkit-interop-forwarding.md` |
+| GP-008 | Regression workflow | This started breaking only on a newer OS build and feels framework-related. What repo guidance should I follow before I call it an Apple bug? | `core:known-os-issues-workflow.md`, `testing:regression-triage-playbook.md` |
+| GP-009 | UIKit custom actions | I have a table row with swipe actions and extra commands. When should I keep real buttons visible versus using accessibility actions? | `uikit:u-007-accessibility-custom-actions.md`, `core:decision-matrix.md` |
+| GP-010 | SwiftUI forms | My form has toggles, sliders, and nested rows. What are the common semantic mistakes to watch for? | `swiftui:g-014-lists-forms-complex-rows.md` |
+
+## Notes
+
+- `GP-001` is the identity probe.
+- `GP-002` through `GP-010` should produce a `ROUTING:` line plus trust footer.
+- Multi-domain prompts are intentional where real developer questions naturally span more than one doc.

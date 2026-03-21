@@ -2,6 +2,8 @@
 
 Source-driven accessibility guidance for SwiftUI, UIKit, tvOS, macOS, and visionOS, designed for both human developers and AI coding agents.
 
+Current version: `0.2.1`
+
 ## What This Is
 
 SwiftAccessibilityAgent is a documentation-first accessibility knowledge base for Apple-platform UI development.
@@ -11,6 +13,7 @@ It provides:
 - Implementation guidance for SwiftUI/UIKit/AppKit and interop boundaries
 - Testing and regression-triage workflows
 - Agent-ready manifests and runtime loading rules
+- Explicit routing and trust-language suitable for evaluation
 
 ## Who This Is For
 
@@ -132,6 +135,68 @@ Expected global installed path:
 ~/.codex/skills/swift-accessibility-agent/SKILL.md
 ```
 
+## Use With Xcode
+
+`npx skills add ...` remains the first-class install path for this repository.
+
+If you also want to use the same skill content with Xcode's Codex agent, install an Xcode compatibility link from this repository root:
+
+```bash
+./scripts/install-for-xcode.sh
+```
+
+What this does:
+- creates Xcode's Codex customization directory if needed
+- creates a symlink from Xcode's Codex directory to this repository
+- keeps `SKILL.md`, `agents/openai.yaml`, and `references/` as the single source of truth
+
+Expected Xcode compatibility path:
+
+```text
+~/Library/Developer/Xcode/CodingAssistant/codex/swift-accessibility-agent
+```
+
+Verify the link:
+
+```bash
+ls -la ~/Library/Developer/Xcode/CodingAssistant/codex/swift-accessibility-agent
+```
+
+If Xcode is already open, quit and reopen it after running the script.
+
+### Manual Xcode Install
+
+If you do not want to run the helper script, you can create the Xcode compatibility link manually.
+
+From this repository root:
+
+```bash
+mkdir -p ~/Library/Developer/Xcode/CodingAssistant/codex
+ln -sfn "$(pwd)" ~/Library/Developer/Xcode/CodingAssistant/codex/swift-accessibility-agent
+```
+
+Then verify:
+
+```bash
+ls -la ~/Library/Developer/Xcode/CodingAssistant/codex/swift-accessibility-agent
+```
+
+Expected entry files:
+
+```text
+~/Library/Developer/Xcode/CodingAssistant/codex/swift-accessibility-agent/SKILL.md
+~/Library/Developer/Xcode/CodingAssistant/codex/swift-accessibility-agent/agents/openai.yaml
+```
+
+If Xcode is already open, quit and reopen it after creating the link.
+
+### Recommended Xcode Workflow
+
+1. Keep the main install path as `npx skills add ...` for Codex/skills-based workflows.
+2. From this repository root, either run `./scripts/install-for-xcode.sh` or create the link manually.
+3. Restart Xcode.
+4. Open your project in Xcode and use the Codex agent there.
+
 ### Troubleshooting
 
 If `node` or `npx` is not found:
@@ -148,6 +213,11 @@ If the install command works but the skill does not appear in your session:
 
 If you accidentally installed globally but wanted project-local behavior:
 - Go back to your project directory and run the project-local install command there.
+
+If Xcode does not pick up the compatibility install:
+- Confirm `~/Library/Developer/Xcode/CodingAssistant/codex/swift-accessibility-agent/SKILL.md` exists.
+- Quit and reopen Xcode.
+- Re-run `./scripts/install-for-xcode.sh` from this repository root.
 
 ## Quick Start
 
@@ -168,8 +238,10 @@ If you accidentally installed globally but wanted project-local behavior:
 ## Core Documents
 
 - Agent operating contract: `SKILL.md`
+- Version baseline: `VERSION`
 - UI metadata: `agents/openai.yaml`
 - Runtime manifests: `references/manifests/`
+- Versioning strategy: `references/core/versioning-strategy.md`
 - Source registry: `references/core/sources/registry.md`
 - Architecture principles: `references/core/architecture/architecture-principles.md`
 - Decision matrix: `references/core/decision-matrix.md`
@@ -186,6 +258,43 @@ If you accidentally installed globally but wanted project-local behavior:
 2. Choose task workflow first (review, improve, implement).
 3. Resolve runtime selection through `references/manifests/` (`platform`, `framework`, `task_type`) only as needed.
 4. Load only resolved docs and required verification artifacts.
+
+For substantive repository-domain answers, the agent should emit:
+
+- a `ROUTING:` line naming the repo docs it used
+- the answer itself
+- a trust footer with `Sources:`, `Freshness:`, and `Assumptions:`
+
+Example:
+
+```text
+ROUTING: [uikit:u-005-grouping-containment.md, core:known-os-issues-workflow.md]
+
+<answer>
+
+Sources: docs/uikit/guidelines/u-005-grouping-containment.md; docs/core/known-os-issues-workflow.md
+Freshness: HIGH — current repository guidance supports this answer
+Assumptions: none
+```
+
+## Evaluation
+
+Promptfoo scaffolding lives in:
+
+- `evals/promptfoo/`
+
+The evaluation model compares:
+
+- `C0`: bare model baseline
+- `C1`: agent identity + routing protocol
+- `C2`: agent + injected reference docs
+
+Primary checks:
+
+- identity includes `Swift Accessibility Agent (v0.2.1)`
+- substantive answers include `ROUTING:`
+- routing names the expected repository file
+- footer includes `Sources:`, `Freshness:`, and `Assumptions:`
 
 ## Validation Checklist
 
