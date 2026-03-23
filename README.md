@@ -135,6 +135,49 @@ Expected global installed path:
 ~/.codex/skills/swift-accessibility-agent/SKILL.md
 ```
 
+## Upgrade
+
+There are two common upgrade paths.
+
+### Upgrade With `npx skills add`
+
+If you installed the skill through the normal skills workflow, go to the project where you installed it and run the install command again:
+
+```bash
+cd /path/to/your/project
+npx skills add https://github.com/SerialForBreakfast/SwiftAccessibilityAgent --skill swift-accessibility-agent --agent codex --yes
+```
+
+Then verify:
+
+```bash
+npx skills list
+find .agents/skills -maxdepth 2 -name SKILL.md 2>/dev/null | grep swift-accessibility-agent
+```
+
+This is the safest default upgrade path for most users.
+
+### Upgrade a Local Clone With `git pull origin main`
+
+If you keep a local clone of this repository and use it directly, update the repo first:
+
+```bash
+cd /path/to/SwiftAccessibilityAgent
+git pull origin main
+```
+
+After pulling:
+
+- if you use the skills install workflow, re-run `npx skills add ...` from the target project
+- if you use Xcode compatibility linking, re-run `./scripts/install-for-xcode.sh` or recreate the manual symlink
+
+### Manual Upgrade Checklist
+
+1. Update the repo or re-run the install command.
+2. Confirm the version in `SKILL.md` or `VERSION`.
+3. Restart the active Codex or Xcode session if it was already open.
+4. Re-test one known prompt, such as `Tell me about UILabel accessibility.`
+
 ## Use With Xcode
 
 `npx skills add ...` remains the first-class install path for this repository.
