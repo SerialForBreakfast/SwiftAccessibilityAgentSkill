@@ -6,6 +6,7 @@ All notable changes to this documentation project are tracked here.
 
 ### Added
 
+- `docs/core/wwdc-2026-accessibility-watchlist.md` and mirrored `references/core/wwdc-2026-accessibility-watchlist.md` to track newly previewed Apple accessibility features, agent support implications, and promptfoo coverage candidates.
 - `docs/tvos/README.md`
 - `docs/tvos/guidelines/topic-backlog.md`
 - `docs/macos/README.md`

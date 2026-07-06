@@ -290,6 +290,7 @@ If Xcode does not pick up the compatibility install:
 - Decision matrix: `references/core/decision-matrix.md`
 - Pattern review rubric: `references/core/pattern-review-rubric.md`
 - External landscape references: `references/core/external-landscape.md`
+- WWDC 2026 accessibility watchlist: `references/core/wwdc-2026-accessibility-watchlist.md`
 - Semantics cookbook: `references/core/cookbook/semantics-cookbook.md`
 - Known issues catalog: `references/core/known-os-issues.md`
 - Version matrix: `references/core/version-matrix.md`
