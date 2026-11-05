@@ -393,6 +393,9 @@ Notes
 
 Evaluation-backed update (0.2.3 candidate; release remains 0.2.2)
 [x] Freeze baseline contents/hashes; build offline-tested C0-C3 harness and 60 scenario families.
+[x] Correct portable baseline packaging: preserve original manifest, exclude seven Finder metadata entries, retain all 210 source hashes; exclude .DS_Store from inventory/fingerprints/staging. 21 offline checks pass.
+[x] Complete initial BigDog local infrastructure smoke: 16 candidate + 16 baseline jobs; transport 32/32 completed. Quality remains ungraded; 5/16 candidate and 7/16 baseline outputs truncated at 1024 tokens; accessibility C3 lookup 0/4. Review before larger runs.
+[x] Add and run reproducible llama.cpp development lane: 32/32 cases complete, 26 offline tests pass; truncation 3/16 at 1024 vs 1/16 at 2048 output tokens; automatic accessibility lookup 0/12 across original/explicit C3 prompts. Sanitized evidence in evals/evidence/llamacpp-development-v1.json; quality and heldout gates remain open.
 [x] Record reviewed WWDC transcripts and pending source audit items without deleting research.
 [ ] Supply BigDog model/endpoint metadata and approve comparator spend.
 [ ] Install pinned promptfoo, review dependency lock, smoke-test CLI adapter and both providers.

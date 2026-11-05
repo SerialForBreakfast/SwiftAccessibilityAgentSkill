@@ -23,3 +23,18 @@ import {checkSources} from './source-check.mjs';
 test('source audit dispositions, citation IDs and document mirrors resolve',()=>assert.ok(checkSources().auditedSources>=63));
 test('reading guidance separates symbol availability from new behavior',()=>{const guide=fs.readFileSync(repo+'/references/core/reading-content.md','utf8');assert.match(guide,/available from iOS 14/);assert.match(guide,/behavior boundary is distinct/);assert.ok(!guide.includes('do not use the iOS 27 SwiftUI modifier unguarded'));});
 test('source refresh preserves historical evidence and explicit access limits',()=>{const audit=checkSources();assert.ok(audit.dispositions['historical-reference']>0);assert.ok(audit.dispositions['access-limited']>0);});
+
+import os from 'node:os';import path from 'node:path';
+import {fingerprint,files} from './lib.mjs';
+test('Finder metadata cannot affect skill hashes or reference inventory',()=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'skill-fingerprint-'));
+ try {
+  fs.mkdirSync(path.join(root,'references/core'),{recursive:true});
+  fs.writeFileSync(path.join(root,'SKILL.md'),'Skill');fs.writeFileSync(path.join(root,'VERSION'),'fixture');
+  const ref=path.join(root,'references/core/topic.md');fs.writeFileSync(ref,'Original');
+  const before=fingerprint(root);
+  for(const name of ['references/.DS_Store','references/core/.DS_Store'])fs.writeFileSync(path.join(root,name),'Finder metadata');
+  assert.equal(fingerprint(root),before);assert.equal(files(path.join(root,'references')).length,1);
+  fs.writeFileSync(ref,'Changed');assert.notEqual(fingerprint(root),before);
+ } finally {fs.rmSync(root,{recursive:true,force:true});}
+});

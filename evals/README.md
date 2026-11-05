@@ -17,8 +17,10 @@ node evals/runner/run.mjs
 ```
 
 The last command prints the smoke workload without connecting to any model.
-`evals/baselines/0.2.2/manifest.json` hashes 217 captured files. Never regenerate it
-in place. Use a new snapshot directory for future baselines.
+`evals/baselines/0.2.2/manifest.json` verifies 210 source files after the documented
+Finder-metadata packaging correction below; the original 217-entry manifest is
+retained unchanged. Do not regenerate source hashes in place. Use a new snapshot
+directory for future baselines.
 
 ## Providers and First Run
 
@@ -161,3 +163,54 @@ disposition, including historical/discovery and access-limited resources. See th
 [claim ledger](../docs/core/source-refresh-2026-11.md). The current candidate corrects
 the earlier linked-group availability assumption. Do not overwrite earlier snapshots;
 compare their hashes against this refreshed candidate.
+
+## Portable snapshots
+
+Finder `.DS_Store` metadata is ignored by Git and excluded from skill fingerprints, reference inventories and staged snapshots. The 0.2.2 manifest originally listed seven absent Finder files; the original manifest is retained as `baselines/0.2.2/manifest.original-with-os-metadata.json`. The corrected manifest explicitly records their exclusion and the original manifest hash. All 210 source-file hashes remain unchanged. This is a packaging correction, not a new skill baseline.
+
+## Local llama.cpp development lane
+
+`node evals/runner/llamacpp-development.mjs` prints the frozen 32-case plan without
+model calls. Run its offline checks with
+`node --test evals/runner/test.mjs evals/runner/llamacpp-test.mjs`.
+
+The lane uses candidate development families D01, D02, D03 and D31, each at its
+first listed OS context. It crosses 1,024/2,048 output tokens with C0, C2, original
+C3 and an explicit-lookup C3 instruction. The latter requests exact inventory paths
+and actual reads before repository-backed advice, without supplying gold paths or
+answers. Tool choice remains automatic. This is prompt development, not heldout
+evidence or a release-quality comparison.
+
+Use a separately admitted local llama.cpp process with the pinned model, Jinja tool
+parsing, thinking disabled, temperature 0 and seed 42. Configure the existing
+`BIGDOG_*` environment contract with a loopback HTTP `/v1` URL, no API key, and the
+actual context size. Set `EVAL_ALLOW_NETWORK=1` and a new private `EVAL_OUTPUT`, then
+run `node evals/runner/llamacpp-development.mjs --execute`. The BigDog qualification
+used 16,384 context tokens; production serving settings were not changed.
+
+Admission and process shutdown belong to the deployment owner; this runner does
+not start servers or acquire GPU capacity itself. Every generation is preceded by
+llama.cpp template/tokenizer context-fit checks and a persisted request identity.
+The lane permits at most 160 generation requests, with one concurrent request and
+120-second request deadlines. No retries, fallback or resume occur. A failed run
+keeps its completed records and request/response files; reconcile them before a
+new experiment. Raw outputs remain private. Reports retain finish reasons and
+usage; truncation, missing lookups and nonempty answers do not establish quality.
+
+### Recorded development findings
+
+[Initial smoke](evidence/bigdog-smoke-v1.json): 16 candidate and 16 baseline jobs
+completed. Candidate outputs hit the 1,024-token cap in 5/16 cases, baseline in
+7/16; automatic accessibility reference lookup occurred in 0/4 C3 cases.
+
+[llama.cpp development v1](evidence/llamacpp-development-v1.json): all 32 jobs
+completed. Truncation fell from 3/16 cases at 1,024 output tokens to 1/16 at 2,048.
+Neither original nor explicit C3 instructions produced a reference read in the
+12 accessibility cells combined. The four unrelated C3 controls also made no reads,
+which is appropriate for those controls. C2 supplied references deterministically;
+its recorded reads are harness injection, not agentic retrieval.
+
+These small development samples establish an operational evaluation path. They do
+not qualify answer correctness, skill improvement, cross-platform performance or
+release noninferiority. Next gates are independent source-backed answer grading and
+a separately frozen retrieval experiment; do not tune against heldout cases.

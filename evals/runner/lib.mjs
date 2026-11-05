@@ -4,7 +4,7 @@ import crypto from 'node:crypto';
 export const repo = path.resolve(import.meta.dirname, '../..');
 export const hash = value => crypto.createHash('sha256').update(value).digest('hex');
 export function files(root) {
-  return fs.readdirSync(root, {withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name)).flatMap(e => {
+  return fs.readdirSync(root, {withFileTypes:true}).filter(e=>e.name!=='.DS_Store').sort((a,b)=>a.name.localeCompare(b.name)).flatMap(e => {
     const p=path.join(root,e.name); return e.isDirectory()?files(p):e.isFile()?[p]:[];
   });
 }
