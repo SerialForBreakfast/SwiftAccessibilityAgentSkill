@@ -6,6 +6,8 @@
 
 The saved answers do not establish a dependable Swift/accessibility adviser. Recurring failures include invented APIs, failing to answer the actual question, and advice that contradicts supplied references. Longer answers and explicit lookup instructions did not reliably fix these problems.
 
+**Presentation correction:** The original v2 chart labels used short topic names and case IDs. This owner-approved correction shows the exact user questions and aggregation membership. All grades, chart values, prompts and outputs are unchanged; [original v2](https://github.com/SerialForBreakfast/SwiftAccessibilityAgentSkill/blob/19ab7ecf640061dcca272a1145cbd3197d29b316/evals/reports/v2/README.md) remains available.
+
 ## What changed from v1
 
 | v1 | v2 |
@@ -38,6 +40,16 @@ C1 was not run in development. C2 does not test autonomous retrieval. Baseline/c
 
 Smoke: 1,024-token output cap; 8,192 context. Each cell averages four outputs: D01 and D31 × OS 26 and 27. Paired delta = candidate minus baseline mean.
 
+**Exact user prompts included in this chart** (line breaks preserved):
+
+| Case | User prompt |
+| --- | --- |
+| D01 · OS 26 | Tell me about UILabel accessibility.<br>Deployment context: uikit OS version 26. Clarify platform if needed. |
+| D01 · OS 27 | Tell me about UILabel accessibility.<br>Deployment context: uikit OS version 27. Clarify platform if needed. |
+| D31 · both OS-labelled cells | How do I center a SwiftUI view? |
+
+D31 was repeated under both OS run labels, but its user prompt contains no OS line. Each bar averages all four cells; it is not the score for one question. The original “uikit OS version” wording is retained exactly, including its framework/OS ambiguity.
+
 | Arm | Baseline quality | Candidate quality | Delta | Critical baseline | Critical candidate |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | C0 | 9.38 | 9.38 | +0.00 | 4/4 | 4/4 |
@@ -60,6 +72,17 @@ C3 candidate  21.9 | ###########
 ## Output budget and prompt comparison
 
 Development: candidate skill, OS 26, 16,384 context. Each cell averages four families (D01/D02/D03/D31). Different corpus/context from smoke: do not interpret cross-run means as causal improvements.
+
+**Exact user prompts included in this chart** (line breaks preserved):
+
+| Case | User prompt |
+| --- | --- |
+| D01 | Tell me about UILabel accessibility.<br>Deployment context: uikit OS version 26. Clarify platform if needed. |
+| D02 | My settings row has text, a switch, and a help button. How should VoiceOver move through it?<br>Deployment context: uikit OS version 26. Clarify platform if needed. |
+| D03 | Can people delete a message without finding the swipe gesture?<br>Deployment context: uikit OS version 26. Clarify platform if needed. |
+| D31 | How do I center a SwiftUI view? |
+
+Each bar averages these four questions, with equal weight. D31 has no appended OS context. These are the user messages; full system instructions and tool schemas remain linked in each case review.
 
 | Arm | 1,024 quality | 2,048 quality | Delta | Critical at 1,024 | Critical at 2,048 |
 | --- | ---: | ---: | ---: | ---: | ---: |
@@ -86,10 +109,10 @@ Each review links the exact original prompt/tool schema and full answer in v1. E
 
 | Question | Development | Smoke OS 26 | Smoke OS 27 |
 | --- | --- | --- | --- |
-| D01 · UILabel accessibility | [8 graded answers](cases/development-v1-D01.md) | [8 graded answers](cases/smoke-v1-D01-26.md) | [8 graded answers](cases/smoke-v1-D01-27.md) |
-| D02 · Settings row navigation | [8 graded answers](cases/development-v1-D02.md) | Not run | Not run |
-| D03 · Discoverable message deletion | [8 graded answers](cases/development-v1-D03.md) | Not run | Not run |
-| D31 · SwiftUI centering | [8 graded answers](cases/development-v1-D31.md) | [8 graded answers](cases/smoke-v1-D31-26.md) | [8 graded answers](cases/smoke-v1-D31-27.md) |
+| D01 · Tell me about UILabel accessibility. | [8 graded answers](cases/development-v1-D01.md) | [8 graded answers](cases/smoke-v1-D01-26.md) | [8 graded answers](cases/smoke-v1-D01-27.md) |
+| D02 · My settings row has text, a switch, and a help button. How should VoiceOver move through it? | [8 graded answers](cases/development-v1-D02.md) | Not run | Not run |
+| D03 · Can people delete a message without finding the swipe gesture? | [8 graded answers](cases/development-v1-D03.md) | Not run | Not run |
+| D31 · How do I center a SwiftUI view? | [8 graded answers](cases/development-v1-D31.md) | [8 graded answers](cases/smoke-v1-D31-26.md) | [8 graded answers](cases/smoke-v1-D31-27.md) |
 
 ## Findings and recommendation
 
