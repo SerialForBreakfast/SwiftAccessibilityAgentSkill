@@ -214,3 +214,8 @@ These small development samples establish an operational evaluation path. They d
 not qualify answer correctness, skill improvement, cross-platform performance or
 release noninferiority. Next gates are independent source-backed answer grading and
 a separately frozen retrieval experiment; do not tune against heldout cases.
+
+## Alternative host assessment
+
+See [Max Mini workload recommendations](MAXMINI-ASSESSMENT.md) for the provisional
+host/model comparison and verification plan. No Max Mini benchmark is claimed.
