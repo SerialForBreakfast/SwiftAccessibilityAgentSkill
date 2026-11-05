@@ -218,4 +218,5 @@ a separately frozen retrieval experiment; do not tune against heldout cases.
 ## Alternative host assessment
 
 See [Max Mini workload recommendations](MAXMINI-ASSESSMENT.md) for the provisional
-host/model comparison and verification plan. No Max Mini benchmark is claimed.
+host/model comparison, received M4/24 GB peer inventory and remaining verification
+plan. No Max Mini benchmark or performance superiority is claimed.
