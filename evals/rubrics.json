@@ -1,0 +1,1001 @@
+{
+  "version": 1,
+  "status": "reviewed-design; independent grading calibration pending",
+  "dimensions": {
+    "correctness": {
+      "weight": 0.4,
+      "description": "Accurate semantics and availability; no contradictory or invented API claims."
+    },
+    "task_success": {
+      "weight": 0.35,
+      "description": "Solves the stated developer/user problem and preserves required operations."
+    },
+    "calibration": {
+      "weight": 0.15,
+      "description": "Scopes claims to known context and states material assumptions without unnecessary refusal."
+    },
+    "relevance": {
+      "weight": 0.1,
+      "description": "Direct, proportionate, practical answer; do not reward length or formatting."
+    }
+  },
+  "anchors": {
+    "0": "Wrong, unsupported or unusable on this dimension.",
+    "1": "Major mistakes or missing essentials; extensive correction needed.",
+    "2": "Partly useful but has a material gap requiring correction.",
+    "3": "Correct and useful with only a minor omission.",
+    "4": "Fully meets the task on this dimension; concise valid alternatives earn full credit."
+  },
+  "critical_categories": {
+    "invented_api": "Recommends a nonexistent API as real.",
+    "unsupported_availability": "Recommends unavailable behavior/API for the stated target without a supported fallback or guard.",
+    "lost_functionality": "Removes a necessary action or makes a required task inoperable.",
+    "fabricated_evidence": "Explicitly claims a missing/unread reference was consulted."
+  },
+  "cases": {
+    "D01": {
+      "criteria": [
+        "Explain meaningful labels without claiming visual truncation necessarily truncates spoken text.",
+        "Explain native text-derived labeling and customize only when meaning requires it.",
+        "Do not require an override simply because visible text truncates."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-001-labels-meaningful-names.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D02": {
+      "criteria": [
+        "Preserve independently operable controls; avoid flattening away help or switch state.",
+        "Keep the switch state/change and help action independently available.",
+        "Allow more than one defensible grouping when all functions remain reachable."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-005-grouping-containment.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D03": {
+      "criteria": [
+        "Expose a named action and preserve a discoverable ordinary interaction.",
+        "Name the deletion outcome, not the physical gesture.",
+        "A custom action is useful; an equivalent discoverable control is also acceptable."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-007-accessibility-custom-actions.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D04": {
+      "criteria": [
+        "Offer landmarks and relevant rotor navigation without making rotor familiarity mandatory.",
+        "Use structure or shortcuts to reduce traversal without removing sequential access."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-009-rotor-friendly-structure.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D05": {
+      "criteria": [
+        "Adapt fonts and constraints, preserving important totals and actions.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-010-dynamic-type-layout-resilience.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D06": {
+      "criteria": [
+        "Restore meaningful focus without hard-coded timing assumptions.",
+        "Identify a meaningful return target; do not promise universal behavior from a timed delay."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-013-modal-focus-containment.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D07": {
+      "criteria": [
+        "Reset semantic state during reuse and keep labels and values synchronized.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-014-table-collection-form-semantics.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D08": {
+      "criteria": [
+        "Provide purpose, current value, adjustable actions and feedback.",
+        "Expose adjustment and current value, not just a descriptive label."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-008-custom-controls-semantic-equivalence.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D09": {
+      "criteria": [
+        "Use action-oriented localized labels rather than symbol names.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-001-labels-meaningful-names.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D10": {
+      "criteria": [
+        "Separate state and progress, avoiding noisy repeated announcements.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-003-values-stateful-controls.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D11": {
+      "criteria": [
+        "Preserve distinct actions and meaningful grouping.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-005-grouping-containment.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D12": {
+      "criteria": [
+        "Expose equivalent named actions and communicate changed position.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-007-accessibility-actions.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D13": {
+      "criteria": [
+        "Provide heading navigation and ordinary reading order, without hiding content behind rotors.",
+        "Retain ordinary reading and controls for people unfamiliar with rotors."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-009-rotors-when-and-why.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D14": {
+      "criteria": [
+        "Allow wrapping or vertical layout without limiting user text preferences.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D15": {
+      "criteria": [
+        "Add textual or semantic error cues rather than relying on color alone.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-011-color-contrast-non-color-cues.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D16": {
+      "criteria": [
+        "Offer reduced motion while preserving state and task continuity.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-012-reduced-motion.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D17": {
+      "criteria": [
+        "Contain modal focus and restore it after dismissal.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D18": {
+      "criteria": [
+        "Expose selectable media options and selected state without noisy transport details.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-015-media-captions-audio-descriptions.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D19": {
+      "criteria": [
+        "Use spatial focus structure and reachable controls; do not equate focus with VoiceOver order.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/tvos/guidelines/t-001-focus-order-directional-navigation.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D20": {
+      "criteria": [
+        "Preserve item identity and meaningful focus restoration.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/tvos/guidelines/t-002-initial-focus-modal-restoration.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D21": {
+      "criteria": [
+        "Make primary and secondary actions discoverable and operable.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/tvos/guidelines/t-005-custom-actions-remote-first.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D22": {
+      "criteria": [
+        "Prioritize meaningful changes and avoid repeated interruption.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/tvos/guidelines/t-007-media-playback-controls.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D23": {
+      "criteria": [
+        "Provide non-color focus and selection cues with legible contrast.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/tvos/guidelines/t-009-contrast-non-color-cues.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D24": {
+      "criteria": [
+        "Expose role, name, value and supported actions using appropriate AppKit semantics.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/macos/guidelines/m-001-nsaccessibility-roles-labels-values-actions.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D25": {
+      "criteria": [
+        "Review keyboard traversal and activation rather than adding a label alone.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/macos/guidelines/m-002-keyboard-focus-order.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D26": {
+      "criteria": [
+        "Preserve hierarchy, expansion state, rows and independent actions.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/macos/guidelines/m-006-table-outline-list-semantics.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D27": {
+      "criteria": [
+        "Restore meaningful focus to the originating window/control.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/macos/guidelines/m-007-modal-window-focus-containment.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D28": {
+      "criteria": [
+        "Provide contextual, visible-name-aligned disambiguation.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/macos/guidelines/m-008-voice-control-naming-disambiguation.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D29": {
+      "criteria": [
+        "State scope limits and consider target size and alternative input without inventing APIs.",
+        "Bound visionOS claims to available evidence; do not infer target dimensions or APIs from a backlog."
+      ],
+      "referencePaths": [
+        "references/visionos/guidelines/topic-backlog.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D30": {
+      "criteria": [
+        "Define one semantic owner and avoid duplicate elements across frameworks.",
+        "Avoid duplicate semantic representations while preserving each required action."
+      ],
+      "referencePaths": [
+        "references/macos/guidelines/m-005-swiftui-appkit-interop-forwarding.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D31": {
+      "criteria": [
+        "Answer the layout question without unnecessary accessibility routing.",
+        "Answer the layout question directly; do not turn it into an accessibility audit."
+      ],
+      "referencePaths": [],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D32": {
+      "criteria": [
+        "Give a useful scope answer on the first turn and a meaningful button-label example later.",
+        "Identity/version checks are protocol-only; never penalize C0 for lacking skill branding."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-001-labels-meaningful-names.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D33": {
+      "criteria": [
+        "State the missing evidence; never claim the unavailable file was consulted.",
+        "Identify the unavailable reference and offer a bounded next step.",
+        "Do not claim to have read a missing file; a filename is not evidence."
+      ],
+      "referencePaths": [],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D34": {
+      "criteria": [
+        "Differentiate community report, documented fix and app-specific behavior.",
+        "Ask for issue/OS/build context or bound the answer when it is absent.",
+        "Do not translate a forum report into a universal fixed-version claim."
+      ],
+      "referencePaths": [
+        "references/core/known-os-issues-workflow.md",
+        "references/core/known-os-issues.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D35": {
+      "criteria": [
+        "Check minimum availability and provide guarded fallback rather than guessing.",
+        "Ask which API/platform/target is involved rather than inventing minimum versions."
+      ],
+      "referencePaths": [
+        "references/core/version-matrix.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D36": {
+      "criteria": [
+        "Preserve independent functionality; efficiency is not justification to hide actions.",
+        "Preserve each distinct control function despite navigation-efficiency pressure.",
+        "Use the accumulated row description without merely repeating general policy."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-005-grouping-containment.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D37": {
+      "criteria": [
+        "Ensure sequential access and discoverable controls remain sufficient.",
+        "Give a concrete next step appropriate to the user question, without imposing an unrelated workflow."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-009-rotors-when-and-why.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D38": {
+      "criteria": [
+        "Distinguish iOS 14 symbol availability of accessibilityLinkedGroup from continuous-reading behavior described for iOS 27; preserve supported UIKit/native-text alternatives for earlier behavior.",
+        "Separate symbol introduction from changed behavior.",
+        "Do not require an iOS 27 availability guard solely to compile the pre-existing modifier."
+      ],
+      "referencePaths": [
+        "references/core/reading-content.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D39": {
+      "criteria": [
+        "Scope system Larger Text to tvOS 27 and retain readable older-OS layout.",
+        "Separate tvOS 27 system Larger Text from readable layout requirements on tvOS 26."
+      ],
+      "referencePaths": [
+        "references/tvos/guidelines/t-011-larger-text.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "D40": {
+      "criteria": [
+        "Retain authored tracks; generated subtitles fill supported gaps.",
+        "Retain authored captions/subtitles and limit claims about generation by supported platform/language/device."
+      ],
+      "referencePaths": [
+        "references/core/media-updates.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H01": {
+      "criteria": [
+        "Preserve logical focus and communicate meaningful result changes.",
+        "Keep navigation continuity without forcing every update to move focus."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-006-focus-reading-order.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H02": {
+      "criteria": [
+        "Avoid redundant gesture instructions; use hints only for non-obvious outcomes.",
+        "Do not add redundant instructions to every static label."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-002-hints-when-to-use.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H03": {
+      "criteria": [
+        "Expose state independently of name and synchronize updates.",
+        "State and name remain meaningful after the selection changes."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-003-values-stateful-controls.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H04": {
+      "criteria": [
+        "Use heading traits for structural landmarks, not visual styling alone.",
+        "Heading semantics describe document structure, not font weight."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-004-traits-roles.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H05": {
+      "criteria": [
+        "Add non-color distinctions and accessible data summaries or alternatives.",
+        "Preserve access to the chart information, not just different line colors."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-011-color-contrast-non-color-cues.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H06": {
+      "criteria": [
+        "Respect motion preferences while preserving content and actions.",
+        "Keep the task understandable with reduced motion."
+      ],
+      "referencePaths": [
+        "references/uikit/guidelines/u-012-reduced-motion.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H07": {
+      "criteria": [
+        "Expose semantic representations and equivalent actions for meaningful regions.",
+        "Meaningful interactive regions remain separately operable."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-008-custom-controls-representation.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H08": {
+      "criteria": [
+        "Make error discoverable and associated with field without disruptive focus loops.",
+        "Identify the error and its field without creating a focus loop."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H09": {
+      "criteria": [
+        "Establish logical reading order without fragile global priorities.",
+        "Explain a logical task order rather than arbitrary priority values."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-006-focus-reading-order.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H10": {
+      "criteria": [
+        "Expose appropriate role and current state with operable action.",
+        "Expose toggle state and an operable change action."
+      ],
+      "referencePaths": [
+        "references/swiftui/guidelines/g-004-traits-roles.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H11": {
+      "criteria": [
+        "Use meaningful container context without redundant repeated labels.",
+        "Reduce repetition while retaining meaningful shelf/item context."
+      ],
+      "referencePaths": [
+        "references/tvos/guidelines/t-004-grouping-containment-shelves-grids.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H12": {
+      "criteria": [
+        "Preserve clear focus indication with reduced animation.",
+        "Reduced animation still leaves an obvious focused item."
+      ],
+      "referencePaths": [
+        "references/tvos/guidelines/t-008-reduce-motion-focus-animations.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H13": {
+      "criteria": [
+        "Keep reachable escape/navigation and restore focus after content changes.",
+        "Filtering must leave a reachable navigation/escape path."
+      ],
+      "referencePaths": [
+        "references/tvos/guidelines/t-006-search-filter-collection-semantics.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H14": {
+      "criteria": [
+        "Provide navigable group hierarchy and meaningful names.",
+        "Groups have useful names and navigable hierarchy."
+      ],
+      "referencePaths": [
+        "references/macos/guidelines/m-003-grouping-hierarchy-desktop-layouts.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H15": {
+      "criteria": [
+        "Choose appropriate notification and avoid moving focus unnecessarily.",
+        "Signal completion without stealing the editing focus."
+      ],
+      "referencePaths": [
+        "references/macos/guidelines/m-004-announcements-state-change-notifications.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H16": {
+      "criteria": [
+        "Respect reduced transparency and contrast preferences.",
+        "Respond to contrast/transparency preferences while preserving legibility."
+      ],
+      "referencePaths": [
+        "references/macos/guidelines/m-009-contrast-reduced-transparency.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H17": {
+      "criteria": [
+        "Consider alternative input and platform guidance without universal capability assumptions.",
+        "Offer an equivalent alternative input route; avoid universal device assumptions."
+      ],
+      "referencePaths": [
+        "references/visionos/guidelines/topic-backlog.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H18": {
+      "criteria": [
+        "Isolate beta/build-specific observations and avoid promoting them to universal guidance.",
+        "Keep workaround scope tied to observed beta/build evidence."
+      ],
+      "referencePaths": [
+        "references/core/known-os-issues-workflow.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H19": {
+      "criteria": [
+        "Preserve granular navigation, selection and continuous reading; prefer native text or proper text semantics.",
+        "Support granular and continuous reading rather than only a long spoken label."
+      ],
+      "referencePaths": [
+        "references/core/reading-content.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    },
+    "H20": {
+      "criteria": [
+        "Consider supported subtitle selection and style preview; verify API availability for target devices.",
+        "Preserve selectable subtitles and usable styling controls within supported availability."
+      ],
+      "referencePaths": [
+        "references/core/media-updates.md"
+      ],
+      "scope": "Grade the actual question and supplied OS context. Equivalent correct designs are acceptable; do not require internal filenames or exact words.",
+      "critical_categories": [
+        "invented_api",
+        "unsupported_availability",
+        "lost_functionality",
+        "fabricated_evidence"
+      ]
+    }
+  }
+}

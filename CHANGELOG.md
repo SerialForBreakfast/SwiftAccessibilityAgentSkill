@@ -4,6 +4,20 @@ All notable changes to this documentation project are tracked here.
 
 ## [Unreleased]
 
+### Portable worker evaluation requirements
+
+- Reviewed pinned upstream BigDog smoke/development summaries and MaxMini peer assessment without merging over local rubric changes. Preserved failures as ungraded historical observations.
+- Added L1-L4 task complexity, four independent context/output budgets, an offline full-corpus campaign planner and worker receipt/coverage checks for BigDog or MaxMini.
+- Added independent MaxMini provider settings; preserved finish reasons/truncation and excluded .DS_Store from live content hashes without changing baseline snapshots.
+- Documented worker token-preflight, failure accounting, TDD/OS-maintenance comparisons and follow-up context-stress work. No local inference, live dispatch or remote execution performed.
+
+### Gold-prompt and rubric review
+
+- Added anchored, weighted grading for all 60 scenarios, critical-error evidence requirements, a frozen grading reference bundle and independent calibration protocol.
+- Preserved held-out questions; repaired development conversations and separated framework/OS context.
+- Paired judges receive actual user context and identical reference evidence; imports reject ungradable or unanchored grades.
+- Fingerprint rubric/evidence with run inputs; no model results or calibration success is claimed.
+
 ### Evaluation-backed 0.2.3 candidate
 
 - Captured pre-update v0.2.2 working-tree baseline with file hashes; released version unchanged.

@@ -400,3 +400,17 @@ Evaluation-backed update (0.2.3 candidate; release remains 0.2.2)
 [ ] Calibrate judges, run paired development baseline/candidate evaluations, review platform regressions.
 [ ] Freeze candidate and run heldout; publish results before any version bump.
 [ ] Verify native-host discovery separately; optional ViewLens fixture lane.
+
+Gold prompt/rubric readiness
+[x] Review 60 rubrics; define weighted anchors, critical errors and fair C0-C3 grading.
+[x] Preserve held-out questions and freeze shared grading evidence; fix deployment context.
+[ ] Calibrate independent graders on real development outputs before gold promotion.
+
+Portable worker campaign
+[x] Read published BigDog/MaxMini reports at pinned remote commit; preserve ungraded failures.
+[x] Classify all 60 families by task complexity and define independent context/output profiles.
+[x] Add portable offline campaign/coverage requirements, MaxMini settings and truncation telemetry.
+[ ] BigDog: adapt full-corpus executor with exact token preflight, bounded scheduling, durable receipts and uncertainty reconciliation.
+[ ] MaxMini: independently qualify selected model/backend and a finite trial; preserve host-specific identity.
+[ ] Worker owners: return planned-cell receipts including known failures; source-grade outputs under frozen rubrics.
+[ ] Add separately versioned token-occupancy/context-stress cases after tokenizer contract is qualified.

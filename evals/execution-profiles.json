@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "workers": {
+    "bigdog": {
+      "qualification": "Preliminary local inference reports available; new suite/rubric execution pending."
+    },
+    "maxmini": {
+      "qualification": "Peer inventory received; model/backend, available memory and execution not yet qualified."
+    }
+  },
+  "profiles": {
+    "tiny": {
+      "contextTokens": 4096,
+      "outputTokens": 512
+    },
+    "compact": {
+      "contextTokens": 8192,
+      "outputTokens": 1024
+    },
+    "standard": {
+      "contextTokens": 16384,
+      "outputTokens": 2048
+    },
+    "frontier": {
+      "contextTokens": 65536,
+      "outputTokens": 4096
+    }
+  },
+  "conditions": [
+    "C0",
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "repetitions": 3,
+  "policy": "Budgets are experimental requested limits, not claims that a worker/model supports them. Unsupported cells remain explicit results. Model selection is independent of profile."
+}

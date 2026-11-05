@@ -1,0 +1,130 @@
+{
+  "experiment": "llamacpp-development-v1",
+  "status": {
+    "state": "completed",
+    "completed": 32,
+    "calls": 32
+  },
+  "skill_hash": "3a1a2d58af19a94eec940000d9edcca7928bb5139aa3d52b1ef6e917c0271bbd",
+  "suite_hash": "22c8930d9c812dbcea40b86cce7e09aad55ac0b451c6483cd30fbf118755b0d5",
+  "runner_sha256": "03512a7207c8a465aeb2e92f134b786bf4e7e4bf2ddc57335ee2ec3bf2244c98",
+  "library_sha256": "6d435640b9c544ddf37a15382870238a0cfd82087bef759c9dfb9c0586d9f1a9",
+  "model": "Qwen3.5-2B-Q4_K_M.gguf",
+  "model_revision": "aaf42c8b7c3cab2bf3d69c355048d4a0ee9973d48f16c731c0520ee914699223",
+  "serving": "llama.cpp b11457; executable SHA256 2e6d35a999718cc71a288b257a1a59aed66bbe8b5c9afaf2f81325f4691a5c92",
+  "context_tokens": 16384,
+  "sampling": {
+    "temperature": 0,
+    "seed": 42,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "reasoning": "off",
+  "quality_graded": false,
+  "heldout_run": false,
+  "provider_calls": 0,
+  "counts": [
+    {
+      "output_limit": 1024,
+      "arm": "C0",
+      "cases": 4,
+      "truncated": 2,
+      "accessibility_cases": 3,
+      "accessibility_cases_with_reference_contents": 0,
+      "generation_calls": 4,
+      "median_seconds": 5.17,
+      "input_tokens": 225,
+      "output_tokens": 3067
+    },
+    {
+      "output_limit": 1024,
+      "arm": "C2",
+      "cases": 4,
+      "truncated": 0,
+      "accessibility_cases": 3,
+      "accessibility_cases_with_reference_contents": 3,
+      "generation_calls": 4,
+      "median_seconds": 5.01,
+      "input_tokens": 9525,
+      "output_tokens": 3250
+    },
+    {
+      "output_limit": 1024,
+      "arm": "C3-original",
+      "cases": 4,
+      "truncated": 1,
+      "accessibility_cases": 3,
+      "accessibility_cases_with_reference_contents": 0,
+      "generation_calls": 4,
+      "median_seconds": 4.4,
+      "input_tokens": 14913,
+      "output_tokens": 2607
+    },
+    {
+      "output_limit": 1024,
+      "arm": "C3-explicit",
+      "cases": 4,
+      "truncated": 0,
+      "accessibility_cases": 3,
+      "accessibility_cases_with_reference_contents": 0,
+      "generation_calls": 4,
+      "median_seconds": 3.46,
+      "input_tokens": 15213,
+      "output_tokens": 1855
+    },
+    {
+      "output_limit": 2048,
+      "arm": "C0",
+      "cases": 4,
+      "truncated": 0,
+      "accessibility_cases": 3,
+      "accessibility_cases_with_reference_contents": 0,
+      "generation_calls": 4,
+      "median_seconds": 5.41,
+      "input_tokens": 225,
+      "output_tokens": 3454
+    },
+    {
+      "output_limit": 2048,
+      "arm": "C2",
+      "cases": 4,
+      "truncated": 0,
+      "accessibility_cases": 3,
+      "accessibility_cases_with_reference_contents": 3,
+      "generation_calls": 4,
+      "median_seconds": 5.12,
+      "input_tokens": 9525,
+      "output_tokens": 3250
+    },
+    {
+      "output_limit": 2048,
+      "arm": "C3-original",
+      "cases": 4,
+      "truncated": 1,
+      "accessibility_cases": 3,
+      "accessibility_cases_with_reference_contents": 0,
+      "generation_calls": 4,
+      "median_seconds": 4.41,
+      "input_tokens": 14913,
+      "output_tokens": 3631
+    },
+    {
+      "output_limit": 2048,
+      "arm": "C3-explicit",
+      "cases": 4,
+      "truncated": 0,
+      "accessibility_cases": 3,
+      "accessibility_cases_with_reference_contents": 0,
+      "generation_calls": 4,
+      "median_seconds": 3.45,
+      "input_tokens": 15213,
+      "output_tokens": 1855
+    }
+  ],
+  "limitations": [
+    "Four development families at one OS context, one sample per cell; not a quality or noninferiority result.",
+    "C2 reference contents are injected by the harness, not retrieved by the model.",
+    "Missing C3 reads and truncated outputs are retained; neither nonempty responses nor transport completion proves answer quality."
+  ]
+}

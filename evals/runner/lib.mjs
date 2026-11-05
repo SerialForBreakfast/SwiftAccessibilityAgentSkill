@@ -4,7 +4,7 @@ import crypto from 'node:crypto';
 export const repo = path.resolve(import.meta.dirname, '../..');
 export const hash = value => crypto.createHash('sha256').update(value).digest('hex');
 export function files(root) {
-  return fs.readdirSync(root, {withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name)).flatMap(e => {
+  return fs.readdirSync(root, {withFileTypes:true}).filter(e=>e.name!=='.DS_Store').sort((a,b)=>a.name.localeCompare(b.name)).flatMap(e => {
     const p=path.join(root,e.name); return e.isDirectory()?files(p):e.isFile()?[p]:[];
   });
 }
@@ -48,7 +48,7 @@ export async function chat(c, messages, tools, fetcher=fetch) {
 const tool={type:'function',function:{name:'read_reference',description:'Read a listed skill reference by relative path.',parameters:{type:'object',properties:{path:{type:'string'}},required:['path'],additionalProperties:false}}};
 export async function evaluate({root,condition,scenario,config,fetcher}) {
   if(!['C0','C1','C2','C3'].includes(condition)) throw Error('Unknown condition');
-  const trace=[], usage=[], outputs=[]; let calls=0;
+  const trace=[], usage=[], outputs=[], finishReasons=[]; let calls=0;
   const load=name=>{const r=readReference(root,name); trace.push({path:r.path,bytes:r.bytes,sha256:r.sha256}); return r;};
   let system='You are a helpful Swift assistant. Answer accurately and state meaningful uncertainty.';
   if(condition!=='C0') system=fs.readFileSync(path.join(root,'SKILL.md'),'utf8');
@@ -63,6 +63,7 @@ export async function evaluate({root,condition,scenario,config,fetcher}) {
     messages.push({role:'user',content:question}); let finished=false;
     for(let step=0;step<9;step++) {
       const data=await chat(config,messages,condition==='C3'?[tool]:undefined,fetcher); calls++; usage.push(data.usage??null);
+      finishReasons.push(data.choices[0].finish_reason??null);
       const m=data.choices[0].message; messages.push(m);
       if(!m.tool_calls?.length) {outputs.push(m.content||''); finished=true; break;}
       if(condition!=='C3') throw Error('Unexpected tool call');
@@ -75,5 +76,5 @@ export async function evaluate({root,condition,scenario,config,fetcher}) {
     if(!finished) throw Error('Tool round budget exceeded');
   }
   const sum=k=>usage.every(u=>Number.isFinite(u?.[k]))?usage.reduce((n,u)=>n+u[k],0):null;
-  return {output:outputs.at(-1),turns:outputs,metadata:{condition,scenario:scenario.id,family:scenario.id,platform:scenario.platform,lane:scenario.lane,os:scenario.os,skillHash:fingerprint(root),provider:config.metadata,trace,loadedBytes:trace.reduce((n,r)=>n+r.bytes,0),calls,latencyMs:performance.now()-started,inputTokens:sum('prompt_tokens'),outputTokens:sum('completion_tokens'),reasoningTokens:usage.every(u=>Number.isFinite(u?.completion_tokens_details?.reasoning_tokens))?usage.reduce((n,u)=>n+u.completion_tokens_details.reasoning_tokens,0):null,cost:null}};
+  return {output:outputs.at(-1),turns:outputs,metadata:{fingerprintPolicy:'skill-v2-no-os-metadata',finishReasons,truncated:finishReasons.includes('length'),userTurns:scenario.turns,condition,scenario:scenario.id,family:scenario.id,platform:scenario.platform,lane:scenario.lane,os:scenario.os,skillHash:fingerprint(root),provider:config.metadata,trace,loadedBytes:trace.reduce((n,r)=>n+r.bytes,0),calls,latencyMs:performance.now()-started,inputTokens:sum('prompt_tokens'),outputTokens:sum('completion_tokens'),reasoningTokens:usage.every(u=>Number.isFinite(u?.completion_tokens_details?.reasoning_tokens))?usage.reduce((n,u)=>n+u.completion_tokens_details.reasoning_tokens,0):null,cost:null}};
 }

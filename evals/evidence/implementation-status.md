@@ -17,7 +17,7 @@ Date: 2026-11-04. Release: 0.2.2. Proposed candidate: 0.2.3-candidate.1.
 
 ## Verification
 
-20 offline Node tests pass, including baseline integrity, C0/C1/C2 isolation, C3 read
+35 offline Node tests pass, including baseline integrity, C0/C1/C2 isolation, C3 read
 tracking and denied reads, bounded tool loops, multi-turn history, provider failures,
 protocol metrics, configuration loading and statistical-report fixtures.
 Package/reference integrity check passes. Smoke, development and heldout dry-runs
@@ -43,3 +43,21 @@ audit entries have scoped dispositions and fingerprints. Corrected linked-group
 symbol/behavior availability, historical issue ranges, source mappings and resolved
 tool defects. Source/citation/mirror checks now run offline. Earlier snapshots remain
 unchanged; independent grading and model evaluation are still pending.
+
+## Rubric Review
+
+All 60 scenarios have anchored case criteria and share 52 frozen grading references.
+Held-out question text is unchanged. Repaired development conversations, actual
+deployment context, independent calibration rules and within-root score contrasts
+are documented in ../GRADING.md. 35 offline tests and a synthetic blinded export/
+import smoke pass; neither is independent judge calibration or a model result.
+
+## Portable Worker Readiness
+
+Pinned upstream BigDog summaries and MaxMini peer assessment were read without a
+merge. Their failed retrieval/truncation observations remain ungraded historical
+evidence. All 60 families have independent complexity and context-budget dimensions;
+offline campaign/receipt tooling supports either worker. 35 unit tests pass.
+Full-corpus worker execution, exact tokenizer preflight, durable remote receipts and
+context-occupancy stress adapters require worker-owner implementation/qualification.
+No inference, server startup, live dispatch or remote execution occurred here.

@@ -1,4 +1,5 @@
 import {checkSources} from './source-check.mjs';
+import {checkRubrics} from './rubric-check.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {repo,verifyBaseline,readReference,fingerprint} from './lib.mjs';
@@ -14,4 +15,4 @@ for(const name of ['core.json','routes.json','task-presets.json','platform-prese
  const visit=v=>{if(typeof v==='string'&&v.startsWith('references/')&&!fs.existsSync(path.join(repo,v)))throw Error('Broken manifest path: '+v);if(v&&typeof v==='object')Object.values(v).forEach(visit);};visit(JSON.parse(a));
 }
 for(const p of ['core/reading-content.md','core/media-updates.md','core/source-refresh-2026-11.md','tvos/guidelines/t-011-larger-text.md']) if(fs.readFileSync(path.join(repo,'docs',p),'utf8')!==fs.readFileSync(path.join(repo,'references',p),'utf8'))throw Error('Documentation mirror drift: '+p);
-console.log(JSON.stringify({sourceAudit:checkSources(),baselineFilesVerified:verifyBaseline(),scenarios:60,development:40,heldout:20,candidateHash:fingerprint(repo),version:fs.readFileSync(path.join(repo,'VERSION'),'utf8').trim()},null,2));
+console.log(JSON.stringify({grading:checkRubrics(),sourceAudit:checkSources(),baselineFilesVerified:verifyBaseline(),scenarios:60,development:40,heldout:20,candidateHash:fingerprint(repo),version:fs.readFileSync(path.join(repo,'VERSION'),'utf8').trim()},null,2));
