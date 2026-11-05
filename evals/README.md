@@ -220,3 +220,74 @@ a separately frozen retrieval experiment; do not tune against heldout cases.
 See [Max Mini workload recommendations](MAXMINI-ASSESSMENT.md) for the provisional
 host/model comparison, received M4/24 GB peer inventory and remaining verification
 plan. No Max Mini benchmark or performance superiority is claimed.
+
+## Maximum-mini Ollama development comparison
+
+The local adapter reuses the frozen 32-case BigDog development plan. Run its
+software checks with:
+
+```sh
+node --test evals/runner/ollama-test.mjs evals/runner/maxmini-summary-test.mjs
+node evals/runner/ollama-development.mjs
+```
+
+The dry run makes no model calls. Execution needs an already admitted loopback
+Ollama server, the pinned local model, and a new private output directory:
+
+```sh
+EVAL_ALLOW_NETWORK=1 EVAL_OUTPUT="$PWD/evals/results/new-local-run" \
+  node evals/runner/ollama-development.mjs --execute
+```
+
+This adapter pins the existing `qwen3.5:latest` model layer by its recorded SHA-256.
+The execution owner verifies the blob and serving metadata before running it.
+The adapter uses native Ollama chat requests. It keeps thinking off, context at
+16,384 tokens, temperature at 0, and seed at 42. It sets neutral repetition and
+presence penalties explicitly. Each request permits 120 s. The full run permits
+160 generation requests, one at a time. Failed requests stop the run without retry.
+
+The plan contains four development families, eight cells per family. It does not
+use held-out cases. C2 loads reference text through the harness. Only successful
+C3 tool reads establish model-directed retrieval. Request and response files retain
+failed and truncated evidence. A forced tool-call preflight checks transport only.
+
+Ollama and BigDog's llama.cpp use different model weights, rendering, and serving
+code. This is a model-and-stack comparison, not an isolated hardware comparison.
+The adapter checks reported prompt counts after each response. It has no qualified
+pre-generation tokenizer check. Review server logs for input truncation or context
+shifting before interpreting the run. Keep original server and model metadata.
+
+Generate descriptive counts with:
+
+```sh
+node evals/runner/maxmini-summary.mjs evals/results/new-local-run
+```
+
+These counts do not grade answer correctness. Independent source-backed grading
+and maintainer review remain necessary. Do not use the release comparison script
+for this four-family, one-sample host trial. It requires a different repeated,
+paired design. No skill release or accepted accuracy metric changes automatically.
+
+### Next local question batch
+
+`ollama-next-questions.mjs` freezes 8 new development families: D04, D05, D06,
+D09, D11, D19, D24 and D30. Each uses C0, C2 and explicit C3 at 2,048 output
+tokens. This produces 24 cells. The batch correctly names the operating system
+and framework in deployment context. It does not reuse the earlier malformed
+framework-as-OS wording. Keep this batch separate from the original comparison.
+
+```sh
+node --test evals/runner/ollama-next-test.mjs
+node evals/runner/ollama-next-questions.mjs
+```
+
+Execution uses `--execute`, `EVAL_ALLOW_NETWORK=1`, and a new `EVAL_OUTPUT`.
+The owner first verifies the installed model hash and unchanged serving contract.
+The batch permits 120 generation requests, one at a time, with 120 s per request.
+A cumulative guard stops new requests after 90 min. Failed attempts are preserved.
+No automatic retry or hidden fallback occurs. Hold-out cases remain excluded.
+
+The questions cover UIKit, SwiftUI, tvOS and AppKit. This is broader development
+coverage, not platform runtime qualification. Record ambiguous questions for
+adjudication. Do not mark a bare answer wrong only because the rubric assumes
+an intent that the original question does not establish.
