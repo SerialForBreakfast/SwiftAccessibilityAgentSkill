@@ -1,9 +1,11 @@
+import {validateCatalog} from './os26.mjs';
 import {checkSources} from './source-check.mjs';
 import {checkRubrics} from './rubric-check.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {repo,verifyBaseline,readReference,fingerprint} from './lib.mjs';
 const scenarios=JSON.parse(fs.readFileSync(path.join(repo,'evals/scenarios.json')));
+validateCatalog(JSON.parse(fs.readFileSync(path.join(repo,'evals/os26/prompts.json'))),JSON.parse(fs.readFileSync(path.join(repo,'evals/os26/acceptance.json'))));
 if(scenarios.length!==60||scenarios.filter(s=>s.split==='development').length!==40||new Set(scenarios.map(s=>s.id)).size!==60)throw Error('Invalid scenario split');
 for(const s of scenarios) {
  if(!s.rubric||!s.turns.length)throw Error('Missing rubric or prompt');

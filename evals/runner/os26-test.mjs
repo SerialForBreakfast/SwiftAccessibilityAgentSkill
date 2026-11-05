@@ -1,0 +1,21 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import os from 'node:os';import path from 'node:path';
+import {digest,validateCatalog,modelInput,assess,plan} from './os26.mjs';
+const prompts=JSON.parse(fs.readFileSync(new URL('../os26/prompts.json',import.meta.url)));
+const acceptance=JSON.parse(fs.readFileSync(new URL('../os26/acceptance.json',import.meta.url)));
+const pins={promptHash:'a'.repeat(64),acceptanceHash:'b'.repeat(64)};
+function fixture(t){const root=fs.mkdtempSync(path.join(os.tmpdir(),'os26-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));fs.writeFileSync(path.join(root,'synthetic.txt'),'synthetic test evidence, not an SDK result');const artifact={path:'synthetic.txt',sha256:digest(fs.readFileSync(path.join(root,'synthetic.txt')))};return {root,evidence:{schema:1,...pins,cases:acceptance.cases.map(c=>({id:c.id,fixtureAuthor:'author',independentReviewer:'reviewer',sdkBuild:'synthetic',runtimeBuild:'synthetic',fixtureHash:'c'.repeat(64),checks:c.gates.map(g=>({id:g.id,observed:g.expected,variantHash:digest(g.id),artifacts:[artifact]}))}))}};}
+test('catalog validates and no missing evidence is accepted',()=>{validateCatalog(prompts,acceptance);const r=assess(prompts,acceptance,null,pins,'.');assert.equal(r.goldReady,0);assert.throws(()=>plan(prompts,r),/not gold-ready/);});
+test('model input contains only user prompt, not oracle',()=>{const input=modelInput(prompts,prompts.cases[0].id);assert.deepEqual(Object.keys(input),['role','content']);assert(!JSON.stringify(input).includes('mutation-1'));assert.throws(()=>modelInput(prompts,'missing'));});
+test('complete synthetic receipts permit an offline plan, not execution',t=>{const {root,evidence}=fixture(t);const r=assess(prompts,acceptance,evidence,pins,root);assert.equal(r.goldReady,6);assert.equal(plan(prompts,r).providerExecution,false);});
+test('changed prompt pin blocks all receipts',t=>{const {root,evidence}=fixture(t);evidence.promptHash='d'.repeat(64);assert.equal(assess(prompts,acceptance,evidence,pins,root).goldReady,0);});
+test('mutation must fail; passing broken fixture blocks promotion',t=>{const {root,evidence}=fixture(t);evidence.cases[0].checks.find(g=>g.id==='mutation-1').observed='pass';assert.equal(assess(prompts,acceptance,evidence,pins,root).goldReady,5);});
+test('manual not_run and not_assessable never pass',t=>{const {root,evidence}=fixture(t);evidence.cases[0].checks.at(-1).observed='not_run';evidence.cases[1].checks.at(-1).observed='not_assessable';assert.equal(assess(prompts,acceptance,evidence,pins,root).goldReady,4);});
+test('changed artifacts block promotion',t=>{const {root,evidence}=fixture(t);fs.writeFileSync(path.join(root,'synthetic.txt'),'changed');assert.equal(assess(prompts,acceptance,evidence,pins,root).goldReady,0);});
+test('self review and missing runtime identity block',t=>{const {root,evidence}=fixture(t);evidence.cases[0].independentReviewer='author';delete evidence.cases[1].runtimeBuild;assert.equal(assess(prompts,acceptance,evidence,pins,root).goldReady,4);});
+test('duplicate evidence fails closed',t=>{const {root,evidence}=fixture(t);evidence.cases.push(evidence.cases[0]);assert.throws(()=>assess(prompts,acceptance,evidence,pins,root),/Duplicate/);});
+test('artifact paths cannot escape evidence root',t=>{const {root,evidence}=fixture(t);evidence.cases[0].checks[0].artifacts=[{path:'../outside',sha256:'a'.repeat(64)}];assert.equal(assess(prompts,acceptance,evidence,pins,root).goldReady,5);});
+test('invalid oracle polarity rejected',()=>{const a=structuredClone(acceptance);a.cases[0].gates.find(g=>g.id==='mutation-1').expected='pass';assert.throws(()=>validateCatalog(prompts,a),/polarity/);});
+
+test('same mutation patch twice does not qualify',t=>{const {root,evidence}=fixture(t);const checks=evidence.cases[0].checks;checks.find(g=>g.id==='mutation-2').variantHash=checks.find(g=>g.id==='mutation-1').variantHash;assert.equal(assess(prompts,acceptance,evidence,pins,root).goldReady,5);});
+
+test('readable gold catalog contains exact model inputs',()=>{const text=fs.readFileSync(new URL('../../GoldPrompts.md',import.meta.url),'utf8');for(const c of prompts.cases)assert(text.includes(c.prompt),c.id);});

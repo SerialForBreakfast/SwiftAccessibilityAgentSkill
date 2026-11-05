@@ -1,5 +1,11 @@
 # Evidence-Backed Evaluation
 
+[Methodology decisions](METHODOLOGY-DECISIONS-2026-11-05.md) · [OS26 promotion protocol and offline gate](os26/README.md). Six revised cases are registered; native/oracle evidence is pending.
+
+**OS 26 first:** [Gold prompts at a glance](../GoldPrompts.md) · [Optimization work packages](NEXT-SKILL-VERSION.md#os-26-first-optimization-proposal). OS 27 integration follows an accepted OS 26 baseline.
+
+**Current diagnostic:** Gemini 3.8 Flash low / skill 0.2.2 · W/T/L **1/4/1** (6 pairs) · guided tokens **1.89×** · suspected API error **1** · compile/device **not run**. Single-reviewer pilot, not a qualified baseline.
+
 New: [Gemini developer-code pilot summary](evidence/pilots/bigdog/developer-code-20261105/README.md)
 and [evidence-led next skill version](NEXT-SKILL-VERSION.md). Twelve completed
 subscription invocations; preliminary findings, not a release baseline.
