@@ -9,7 +9,10 @@ offline planning and validation; model execution is assigned to qualified worker
 Deployment coordination: [BigDog handoff and requested setup details](BIGDOG-HANDOFF.md).
 
 Candidate: **0.2.3-candidate.1**. Released identity: **0.2.2**.
-No model-quality baseline has been measured yet. The immutable snapshot captures the
+The [v2 retrospective review](reports/v2/README.md) grades 64 existing answers from
+one small Qwen deployment; independent calibration and release baselines remain pending.
+For the next bounded worker runs, use [pilot requests](PILOT-REQUESTS.md).
+The immutable snapshot captures the
 pre-update working tree, including existing uncommitted content, not a clean Git tag.
 
 ## Start Offline

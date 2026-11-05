@@ -205,6 +205,10 @@ hashes/arms; do not secretly trim the canonical skill so a tiny model appears to
 
 ## Next Dispatch
 
+Current scope: [bounded worker pilots](PILOT-REQUESTS.md), with an offline manifest
+from `runner/pilot.mjs`. Delivery is Git or owner copy/paste only; do not contact the
+coordinator. The full campaign below remains a later proposal, not pilot authorization.
+
 Send the plan and reviewed source bundle to either worker using the established,
 approved project channel. This document does not invent a coordinator API or authorize
 installation, server startup, model downloads, paid calls or a large batch.

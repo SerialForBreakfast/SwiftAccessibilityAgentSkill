@@ -1,5 +1,9 @@
 # Worker Request: Portable Skill Baselines
 
+For the current bounded execution request, use [Pilot requests](PILOT-REQUESTS.md).
+This older full-campaign proposal remains background; it is not the next run.
+Delivery is through Git or owner copy/paste, not the coordinator.
+
 Recipients: BigDog and MaxMini owners. Execution location: approved remote worker,
 not the developer's Mac. This packet requests a scoped execution proposal first;
 it does not authorize an unbounded campaign or infrastructure changes.
