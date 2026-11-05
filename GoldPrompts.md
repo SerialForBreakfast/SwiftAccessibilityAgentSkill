@@ -1,25 +1,10 @@
-# Gold prompts — OS 26 first
+# Gold prompts - OS26 code-contract baseline
 
-**Draft revision2 · 6 registered development cases · 0 validated gold fixtures · no new inference.**
+Revision `os26-code-contract-3`. Six development cases; zero validated gold fixtures.
 
-**Current historical pilot:** Gemini3.8Flash-low / skill0.2.2 · W/T/L **1/4/1** (6 pairs) · C2 tokens **1.89×** · suspected API errors **1** · compile/device **not run**. Single-reviewer static results, not scores for the revised prompts below.
+Owner decision: compile checks and unit tests, with independent source review. No mandatory manual verification or UI tests. VoiceOver traversal/speech, remote or keyboard navigation and rendered layout are not measured outcomes. The prior catalog is preserved under `evals/os26/archive/os26-draft-2/`. User questions are unchanged; only the measured acceptance scope changed.
 
-[How drafts become runnable](evals/os26/README.md) · [Methodology decisions and corrections](evals/METHODOLOGY-DECISIONS-2026-11-05.md) · [Historical pilot](evals/evidence/pilots/bigdog/developer-code-20261105/README.md)
-
-## Prompts at a glance
-
-| ID | Actual request (code below) | Cohort | Status |
-|---|---|---|---|
-| [GP26-01](#gp26-01) | VoiceOver only stops on “Downloads” in this settings row. People cannot change the setting or open Help. The existing callbacks are already wired. Can you fix it? | representative | Oracle evidence pending |
-| [GP26-02](#gp26-02) | After scrolling and refreshing orders, a cell sometimes announces the previous customer or status. Here is its configuration code; the model has customer/status strings and an isPriority flag, and titleLabel is already laid out. What should change? | representative | Oracle evidence pending |
-| [GP26-03](#gp26-03) | Customers using larger text cannot read the complete checkout total. The container fills the safe-area width, and formattedTotal can be a long localized currency value. The Pay button already works and its appearance should stay the same. Can you fix this layout? | representative | Oracle evidence pending |
-| [GP26-04](#gp26-04) | Our message row can only delete by swiping. Add an on-screen way to delete that works with VoiceOver and with Full Keyboard Access plus a hardware keyboard. Keep swipe deletion working. onDelete must delete the chosen message once after explicit activation; do not add a confirmation or undo policy. Message has a stable id and subject. | regression | Oracle evidence pending |
-| [GP26-05](#gp26-05) | Testers cannot reliably reach and select all the movie tiles with the remote. VoiceOver users also need to identify the movie they are opening. Movie is Identifiable with title and posterName; open(movie) opens its detail screen. Please fix the interaction. | representative | Oracle evidence pending |
-| [GP26-06](#gp26-06) | Please review the accessibility of this notification settings view and make any changes that are needed. The binding is connected to the existing preference store. | Correct-code control | Oracle evidence pending |
-
-The authoritative model inputs are in [prompts.json](evals/os26/prompts.json); evaluator assertions are separate in [acceptance.json](evals/os26/acceptance.json). Never send this entire catalog to a model. These revised synthetic cases are not fresh heldout data. GP26-04 is a known regression. No previous output can be regraded as an answer to these changed prompts.
-
-Promotion requires a compiled fixture, independently reviewed sources/criteria, a known-good patch, two rejected error mutations, and evidence for each required interaction. Native tests are pending. The offline gate verifies evidence completeness/hashes; it does not execute tests or prove supplied reports true.
+[Promotion protocol](evals/os26/README.md). Do not send evaluator gates, candidate fixes or mutation sources to the model. Historical outputs are not new baseline results.
 
 ## GP26-01
 
@@ -38,19 +23,19 @@ row.accessibilityLabel = titleLabel.text
 row.accessibilityElementsHidden = true
 ```
 
-### Evaluator only — not sent to model
+### Evaluator only
 
-| Gate | Method | Expected result | Assertion |
-|---|---|---|---|
+| Gate | Method | Expected | Assertion |
+| --- | --- | --- | --- |
 | source-review | review | pass | Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer. |
-| compile-host | compile | pass | Complete fixture host builds with pinned Apple SDK/build and deployment target. |
-| known-good | oracle | pass | Reviewed known-good patch passes required atomic checks in the fixture host. |
-| mutation-1 | oracle | fail | The oracle rejects this single-error mutation: Hide interactive descendants |
-| mutation-2 | oracle | fail | The oracle rejects this single-error mutation: Drop Help callback |
-| switch-state | manual | pass | VoiceOver reaches Downloads switch, announces its current state, and activation changes only that setting. |
-| help-action | manual | pass | VoiceOver reaches Help separately and activation invokes its existing callback once without toggling Downloads. |
+| compile-host | compile | pass | Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required. |
+| known-good | unit oracle | pass | Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied. |
+| mutation-1 | unit oracle | fail | The oracle rejects this single-error mutation: Hide interactive descendants Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| mutation-2 | unit oracle | fail | The oracle rejects this single-error mutation: Drop Help callback Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| switch-state | unit | pass | Unit test public row/child accessibility configuration and directly dispatch switch value-change events; assert current switch state and only the setting callback changes. This does not assert VoiceOver traversal. |
+| help-action | unit | pass | Directly dispatch Help activation and assert one Help callback with no switch-state or setting-callback change. |
 
-Status: all evidence pending. A rejected mutation is an expected fail, not a failing good implementation.
+Status: evidence pending. Code-contract acceptance is not complete interaction validation.
 
 ## GP26-02
 
@@ -74,18 +59,18 @@ final class OrderCell: UITableViewCell {
 }
 ```
 
-### Evaluator only — not sent to model
+### Evaluator only
 
-| Gate | Method | Expected result | Assertion |
-|---|---|---|---|
+| Gate | Method | Expected | Assertion |
+| --- | --- | --- | --- |
 | source-review | review | pass | Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer. |
-| compile-host | compile | pass | Complete fixture host builds with pinned Apple SDK/build and deployment target. |
-| known-good | oracle | pass | Reviewed known-good patch passes required atomic checks in the fixture host. |
-| mutation-1 | oracle | fail | The oracle rejects this single-error mutation: Skip normal-order label reset |
-| mutation-2 | oracle | fail | The oracle rejects this single-error mutation: Leave status from previous order |
+| compile-host | compile | pass | Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required. |
+| known-good | unit oracle | pass | Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied. |
+| mutation-1 | unit oracle | fail | The oracle rejects this single-error mutation: Skip normal-order label reset Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| mutation-2 | unit oracle | fail | The oracle rejects this single-error mutation: Leave status from previous order Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
 | reconfiguration | unit | pass | Configure priority Alice/shipped, then nonpriority Bob/processing on the SAME instance without prepareForReuse: label names Bob without stale priority and value reports processing; reverse ordering also works. |
 
-Status: all evidence pending. A rejected mutation is an expected fail, not a failing good implementation.
+Status: evidence pending. Code-contract acceptance is not complete interaction validation.
 
 ## GP26-03
 
@@ -106,19 +91,19 @@ summary.distribution = .fillEqually
 summary.heightAnchor.constraint(equalToConstant: 44).isActive = true
 ```
 
-### Evaluator only — not sent to model
+### Evaluator only
 
-| Gate | Method | Expected result | Assertion |
-|---|---|---|---|
+| Gate | Method | Expected | Assertion |
+| --- | --- | --- | --- |
 | source-review | review | pass | Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer. |
-| compile-host | compile | pass | Complete fixture host builds with pinned Apple SDK/build and deployment target. |
-| known-good | oracle | pass | Reviewed known-good patch passes required atomic checks in the fixture host. |
-| mutation-1 | oracle | fail | The oracle rejects this single-error mutation: Keep fixed container height |
-| mutation-2 | oracle | fail | The oracle rejects this single-error mutation: Disable live text scaling |
-| live-resize | manual | pass | At 320pt and 375pt safe-area widths, change from default to largest accessibility text size while screen stays open: full long currency amount remains readable and Pay visible/operable without overlap. |
-| payment-action | unit | pass | Existing payment handler is preserved and invoked exactly once per explicit activation; unrelated button appearance is preserved. |
+| compile-host | compile | pass | Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required. |
+| known-good | unit oracle | pass | Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied. |
+| mutation-1 | unit oracle | fail | The oracle rejects this single-error mutation: Keep fixed container height Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| mutation-2 | unit oracle | fail | The oracle rejects this single-error mutation: Disable live text scaling Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| live-resize | unit | pass | Assert text-scaling configuration and layout-policy prerequisites for long localized totals, including multiline text and absence of a fixed enclosing height. This does not assert rendered layout or readability. |
+| payment-action | unit | pass | Directly dispatch payment activation and assert one existing callback; compare exposed button configuration before/after rather than visual appearance. |
 
-Status: all evidence pending. A rejected mutation is an expected fail, not a failing good implementation.
+Status: evidence pending. Code-contract acceptance is not complete interaction validation.
 
 ## GP26-04
 
@@ -143,20 +128,20 @@ struct MessageRow: View {
 }
 ```
 
-### Evaluator only — not sent to model
+### Evaluator only
 
-| Gate | Method | Expected result | Assertion |
-|---|---|---|---|
+| Gate | Method | Expected | Assertion |
+| --- | --- | --- | --- |
 | source-review | review | pass | Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer. |
-| compile-host | compile | pass | Complete fixture host builds with pinned Apple SDK/build and deployment target. |
-| known-good | oracle | pass | Reviewed known-good patch passes required atomic checks in the fixture host. |
-| mutation-1 | oracle | fail | The oracle rejects this single-error mutation: Delete on focus |
-| mutation-2 | oracle | fail | The oracle rejects this single-error mutation: Remove ordinary keyboard affordance |
-| explicit-delete | unit | pass | Each supported explicit activation deletes the selected ID once; focus/navigation causes zero deletions; original swipe still dispatches one deletion. |
-| voiceover-delete | manual | pass | VoiceOver user can discover and activate deletion and still read the subject. |
-| keyboard-delete | manual | pass | With Full Keyboard Access enabled, hardware-keyboard focus can reach the visible deletion affordance and activate it; navigation alone never deletes. |
+| compile-host | compile | pass | Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required. |
+| known-good | unit oracle | pass | Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied. |
+| mutation-1 | unit oracle | fail | The oracle rejects this single-error mutation: Delete on focus Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| mutation-2 | unit oracle | fail | The oracle rejects this single-error mutation: Remove ordinary keyboard affordance Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| explicit-delete | unit | pass | Directly exercise production explicit-delete and swipe-handler paths for two message IDs; each invocation dispatches the chosen ID exactly once. Construction and nonactivation state transitions dispatch nothing. This does not prove input delivery. |
+| voiceover-delete | review | pass | Review supplied source against Apple native-control documentation: visible named deletion control and subject content remain present. Do not claim observed VoiceOver interaction. |
+| keyboard-delete | review | pass | Review native-control and handler wiring for keyboard-compatible activation without deletion on focus. Actual Full Keyboard Access navigation is outside this endpoint. |
 
-Status: all evidence pending. A rejected mutation is an expected fail, not a failing good implementation.
+Status: evidence pending. Code-contract acceptance is not complete interaction validation.
 
 ## GP26-05
 
@@ -181,19 +166,19 @@ ScrollView(.horizontal) {
 }
 ```
 
-### Evaluator only — not sent to model
+### Evaluator only
 
-| Gate | Method | Expected result | Assertion |
-|---|---|---|---|
+| Gate | Method | Expected | Assertion |
+| --- | --- | --- | --- |
 | source-review | review | pass | Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer. |
-| compile-host | compile | pass | Complete fixture host builds with pinned Apple SDK/build and deployment target. |
-| known-good | oracle | pass | Reviewed known-good patch passes required atomic checks in the fixture host. |
-| mutation-1 | oracle | fail | The oracle rejects this single-error mutation: Remove activation handler |
-| mutation-2 | oracle | fail | The oracle rejects this single-error mutation: Reset focus on every update |
-| remote-activation | manual | pass | On the tvOS26 fixture shelf, navigate to first/middle/last tiles and activate each using Select: correct movie callback once, no forced reset or trap. |
-| voiceover-name | manual | pass | VoiceOver identifies each movie by meaningful title; separately record remote focus results rather than treating VoiceOver order as remote navigation proof. |
+| compile-host | compile | pass | Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required. |
+| known-good | unit oracle | pass | Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied. |
+| mutation-1 | unit oracle | fail | The oracle rejects this single-error mutation: Remove activation handler Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| mutation-2 | unit oracle | fail | The oracle rejects this single-error mutation: Reset focus on every update Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| remote-activation | unit | pass | Directly invoke the production activation path for first/middle/last movie IDs and assert one correct callback per invocation. No remote focus or Select delivery claim follows. |
+| voiceover-name | review | pass | Review source for meaningful movie titles and native control semantics against documented contracts; no spoken output assertion. |
 
-Status: all evidence pending. A rejected mutation is an expected fail, not a failing good implementation.
+Status: evidence pending. Code-contract acceptance is not complete interaction validation.
 
 ## GP26-06
 
@@ -214,35 +199,16 @@ struct NotificationSettings: View {
 }
 ```
 
-### Evaluator only — not sent to model
+### Evaluator only
 
-| Gate | Method | Expected result | Assertion |
-|---|---|---|---|
+| Gate | Method | Expected | Assertion |
+| --- | --- | --- | --- |
 | source-review | review | pass | Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer. |
-| compile-host | compile | pass | Complete fixture host builds with pinned Apple SDK/build and deployment target. |
-| known-good | oracle | pass | Reviewed known-good patch passes required atomic checks in the fixture host. |
-| mutation-1 | oracle | fail | The oracle rejects this single-error mutation: Break bound state update |
-| mutation-2 | oracle | fail | The oracle rejects this single-error mutation: Hide the toggle from accessibility |
-| native-toggle | manual | pass | VoiceOver exposes Notifications purpose/current state, explicit activation updates binding once, and no required behavior is lost. |
+| compile-host | compile | pass | Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required. |
+| known-good | unit oracle | pass | Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied. |
+| mutation-1 | unit oracle | fail | The oracle rejects this single-error mutation: Break bound state update Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| mutation-2 | unit oracle | fail | The oracle rejects this single-error mutation: Hide the toggle from accessibility Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| native-toggle | unit | pass | Exercise the production binding/state path in both directions and assert backing state changes correctly. Source review separately checks native Toggle wiring; unit state checks do not prove VoiceOver activation. |
 | scope-control | review | pass | No demonstrated defect is fabricated; valid equivalent implementations are allowed but unnecessary semantic overrides count as review burden, not automatic critical errors. |
 
-Status: all evidence pending. A rejected mutation is an expected fail, not a failing good implementation.
-
-## Coverage before baseline freeze
-
-Retain representative tasks and correct-code controls. Add independently reviewed interop ownership, asynchronous updates/errors, modal focus and adjustable-control families before treating this as broad coverage. Headroom-screened failures form a separately reported stratum; do not remove every baseline success. OS27-specific tests follow OS26 adoption.
-
-## Simple performance line
-
-`Model / skill / corpus | W/T/L x/y/z of N | accepted fixes x/N or unknown | critical confirmed/suspected x/y | tokens vs baseline x.xx× | compile x/N; device x/N or not_run`
-
-W/T/L uses paired frozen criteria and reports reviewer status. Accepted fixes require all applicable checks; unknown/unrun cannot be passes. Token ratio uses the same completed paired subset and client-reported input+output; report excluded failures/missing telemetry separately. Correction time is unknown unless measured. Suspected defects are not compiler-confirmed failures. These six-case judgments are not a population accuracy estimate.
-
-## Offline readiness
-
-```sh
-node evals/runner/os26.mjs status
-node evals/runner/os26.mjs plan /path/to/private-evidence.json
-```
-
-The second command refuses a runnable plan until required evidence is present. Even a successful plan grants no model execution. Further subscription runs require a separately approved bounded batch.
+Status: evidence pending. Code-contract acceptance is not complete interaction validation.

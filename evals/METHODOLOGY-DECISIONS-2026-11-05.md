@@ -81,3 +81,15 @@ and dependable OS26 behavior before OS27 integration. Do not reposition the skil
 solely as a post-cutoff-facts lookup before testing task-completeness and correctness
 benefits. Next: obtain actual fixture/oracle evidence from the planned Apple lane,
 independently review it, freeze the catalog, then request a bounded baseline batch.
+
+## Subsequent owner decision: unit-only code-contract endpoint
+
+The owner explicitly approved compile/unit evidence and source review without
+mandatory manual verification or UI tests. This supersedes the manual-interaction
+promotion requirements above, not their historical record. `os26-code-contract-3`
+preserves all six user questions and archives draft-2 inputs, while narrowing the
+measured endpoint. It does not assert VoiceOver traversal, keyboard/remote navigation
+or rendered layout. Unit receipts cannot be replaced by manual/source-only results.
+Unexercisable legacy mutations remain pending until versioned unit-observable
+variants are implemented. Independent source review and actual compile/unit evidence
+still gate promotion; no native pass or new baseline is claimed by this change.

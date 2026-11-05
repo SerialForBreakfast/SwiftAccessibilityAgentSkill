@@ -16,13 +16,14 @@ been generated or qualified on BigDog; Swift on Linux cannot compile UIKit/Swift
 2. Add a local `Poster` image asset to the tvOS target (any synthetic placeholder;
    record its hash). The screen shows eight independently identified movie tiles.
    Do not substitute a missing-image rendering when reviewing visual behavior.
-3. Run package XCTest on an iOS26 simulator using Xcode's package scheme. Run the
-   app targets separately. Native execution and Apple tooling are peer-owned gates.
+3. Run package XCTest on an approved iOS26 runtime using Xcode's package scheme.
+   Build required test hosts; do not add or run UI-test targets. Native execution
+   and Apple tooling are peer-owned gates.
 4. Test the unmodified candidate first. Then, in a disposable copy, replace exactly
    one same-named `Sources/OS26Fixtures/` file with the corresponding `Mutations/`
-   file. Rebuild and run the SAME relevant tests/manual checks. Restore before the
+   file. Rebuild and run the SAME relevant unit tests. Restore before the
    next variant. No mutation is applied to this checkout by the offline runner.
-5. Capture source hashes, exact commands, exit statuses and interaction evidence
+5. Capture source hashes, exact commands, exit statuses and unit evidence
    privately. Never convert this manifest's expected outcomes into observed results.
 
 `manifest.json` binds each source and mutation. Mutations are outside SwiftPM source
@@ -31,7 +32,11 @@ fix regions. The host callbacks log effects rather than deleting rows, navigatin
 charging or persisting preferences; this deliberately keeps IDs observable for
 repeated activation. It is a test instrument, not production behavior.
 
-## Required interactions (in addition to automated checks)
+## Historical interaction checklist (not promotion gates)
+
+The following draft-2 checklist is retained for provenance only. The owner has
+excluded mandatory manual verification and UI tests. These interaction outcomes
+are outside the code-contract baseline and are not asserted by unit-test passes.
 
 | Case | Exercise | Expected observation / mutation detection |
 |---|---|---|
@@ -42,9 +47,11 @@ repeated activation. It is a test instrument, not production behavior.
 | 05 | tvOS: remote first/middle/last tiles, Select, repeated state updates; separately VoiceOver | Reach all tiles, correct one open event, stable focus and correct movie name. No-activation fails callback; reset-focus-on-update fails focus stability. |
 | 06 | Native Toggle with VoiceOver and ordinary interaction, both directions | Label/state correct, backing binding changes. Broken-binding fails persistence; hidden-toggle fails VoiceOver traversal. No fix needed in candidate. |
 
-SwiftUI callback/input tests and XCUITest targets remain to be implemented on the
-Apple host. Do not count the three UIKit tests as coverage for cases 04–06. The two
-mutations per case sample defects, not all acceptance conditions. Focus-triggered deletion and focus-reset traps require actual input and state-update checks; source inspection is not a mutation kill.
+SwiftUI callback/state unit tests remain to be implemented on an approved Apple
+host. No XCUITest targets are planned. Do not count the three UIKit tests as coverage for cases 04–06. The two
+mutations per case sample defects, not all acceptance conditions. Focus/input traps
+that cannot be exercised by unit tests need separately versioned unit-observable
+variants or remain blocked. Source inspection is not a mutation kill.
 Package compilation does not satisfy `compile-host`; both platform app targets must
 build. No receipt is emitted until source review and independent oracle review are
 complete. Use `../acceptance.json` as the authority, allowing alternative valid fixes.

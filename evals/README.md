@@ -1,5 +1,12 @@
 # Evidence-Backed Evaluation
 
+Current readiness review: [gold-prompt audit](GOLD-AUDIT-2026-11-05.md).
+The newer OS26-first methodology takes priority over the older broad Gemini spike;
+its promotion gates now use compile/unit evidence and source review only. Native
+evidence and calibration remain pending before baseline execution.
+[Coordinator enrollment](COORDINATOR-ONBOARDING.md) is now requested for messaging
+only. The public client packet is reviewed; host-bound enrollment remains pending.
+
 [Methodology decisions](METHODOLOGY-DECISIONS-2026-11-05.md) · [OS26 promotion protocol and offline gate](os26/README.md). Six revised cases are registered; native/oracle evidence is pending.
 
 **OS 26 first:** [Gold prompts at a glance](../GoldPrompts.md) · [Optimization work packages](NEXT-SKILL-VERSION.md#os-26-first-optimization-proposal). OS 27 integration follows an accepted OS 26 baseline.

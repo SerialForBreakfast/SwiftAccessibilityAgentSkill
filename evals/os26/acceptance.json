@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": "os26-draft-2",
+  "revision": "os26-code-contract-3",
   "cases": [
     {
       "id": "GP26-01",
@@ -20,37 +20,40 @@
           "id": "compile-host",
           "kind": "compile",
           "expected": "pass",
-          "assertion": "Complete fixture host builds with pinned Apple SDK/build and deployment target."
+          "assertion": "Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required."
         },
         {
           "id": "known-good",
           "kind": "oracle",
           "expected": "pass",
-          "assertion": "Reviewed known-good patch passes required atomic checks in the fixture host."
+          "assertion": "Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "mutation-1",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Hide interactive descendants"
+          "assertion": "The oracle rejects this single-error mutation: Hide interactive descendants Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "mutation-2",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Drop Help callback"
+          "assertion": "The oracle rejects this single-error mutation: Drop Help callback Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "switch-state",
-          "kind": "manual",
+          "kind": "unit",
           "expected": "pass",
-          "assertion": "VoiceOver reaches Downloads switch, announces its current state, and activation changes only that setting."
+          "assertion": "Unit test public row/child accessibility configuration and directly dispatch switch value-change events; assert current switch state and only the setting callback changes. This does not assert VoiceOver traversal."
         },
         {
           "id": "help-action",
-          "kind": "manual",
+          "kind": "unit",
           "expected": "pass",
-          "assertion": "VoiceOver reaches Help separately and activation invokes its existing callback once without toggling Downloads."
+          "assertion": "Directly dispatch Help activation and assert one Help callback with no switch-state or setting-callback change."
         }
       ]
     },
@@ -72,25 +75,28 @@
           "id": "compile-host",
           "kind": "compile",
           "expected": "pass",
-          "assertion": "Complete fixture host builds with pinned Apple SDK/build and deployment target."
+          "assertion": "Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required."
         },
         {
           "id": "known-good",
           "kind": "oracle",
           "expected": "pass",
-          "assertion": "Reviewed known-good patch passes required atomic checks in the fixture host."
+          "assertion": "Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "mutation-1",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Skip normal-order label reset"
+          "assertion": "The oracle rejects this single-error mutation: Skip normal-order label reset Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "mutation-2",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Leave status from previous order"
+          "assertion": "The oracle rejects this single-error mutation: Leave status from previous order Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "reconfiguration",
@@ -118,37 +124,40 @@
           "id": "compile-host",
           "kind": "compile",
           "expected": "pass",
-          "assertion": "Complete fixture host builds with pinned Apple SDK/build and deployment target."
+          "assertion": "Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required."
         },
         {
           "id": "known-good",
           "kind": "oracle",
           "expected": "pass",
-          "assertion": "Reviewed known-good patch passes required atomic checks in the fixture host."
+          "assertion": "Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "mutation-1",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Keep fixed container height"
+          "assertion": "The oracle rejects this single-error mutation: Keep fixed container height Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "mutation-2",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Disable live text scaling"
+          "assertion": "The oracle rejects this single-error mutation: Disable live text scaling Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "live-resize",
-          "kind": "manual",
+          "kind": "unit",
           "expected": "pass",
-          "assertion": "At 320pt and 375pt safe-area widths, change from default to largest accessibility text size while screen stays open: full long currency amount remains readable and Pay visible/operable without overlap."
+          "assertion": "Assert text-scaling configuration and layout-policy prerequisites for long localized totals, including multiline text and absence of a fixed enclosing height. This does not assert rendered layout or readability."
         },
         {
           "id": "payment-action",
           "kind": "unit",
           "expected": "pass",
-          "assertion": "Existing payment handler is preserved and invoked exactly once per explicit activation; unrelated button appearance is preserved."
+          "assertion": "Directly dispatch payment activation and assert one existing callback; compare exposed button configuration before/after rather than visual appearance."
         }
       ]
     },
@@ -170,43 +179,46 @@
           "id": "compile-host",
           "kind": "compile",
           "expected": "pass",
-          "assertion": "Complete fixture host builds with pinned Apple SDK/build and deployment target."
+          "assertion": "Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required."
         },
         {
           "id": "known-good",
           "kind": "oracle",
           "expected": "pass",
-          "assertion": "Reviewed known-good patch passes required atomic checks in the fixture host."
+          "assertion": "Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "mutation-1",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Delete on focus"
+          "assertion": "The oracle rejects this single-error mutation: Delete on focus Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "mutation-2",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Remove ordinary keyboard affordance"
+          "assertion": "The oracle rejects this single-error mutation: Remove ordinary keyboard affordance Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "explicit-delete",
           "kind": "unit",
           "expected": "pass",
-          "assertion": "Each supported explicit activation deletes the selected ID once; focus/navigation causes zero deletions; original swipe still dispatches one deletion."
+          "assertion": "Directly exercise production explicit-delete and swipe-handler paths for two message IDs; each invocation dispatches the chosen ID exactly once. Construction and nonactivation state transitions dispatch nothing. This does not prove input delivery."
         },
         {
           "id": "voiceover-delete",
-          "kind": "manual",
+          "kind": "review",
           "expected": "pass",
-          "assertion": "VoiceOver user can discover and activate deletion and still read the subject."
+          "assertion": "Review supplied source against Apple native-control documentation: visible named deletion control and subject content remain present. Do not claim observed VoiceOver interaction."
         },
         {
           "id": "keyboard-delete",
-          "kind": "manual",
+          "kind": "review",
           "expected": "pass",
-          "assertion": "With Full Keyboard Access enabled, hardware-keyboard focus can reach the visible deletion affordance and activate it; navigation alone never deletes."
+          "assertion": "Review native-control and handler wiring for keyboard-compatible activation without deletion on focus. Actual Full Keyboard Access navigation is outside this endpoint."
         }
       ]
     },
@@ -228,37 +240,40 @@
           "id": "compile-host",
           "kind": "compile",
           "expected": "pass",
-          "assertion": "Complete fixture host builds with pinned Apple SDK/build and deployment target."
+          "assertion": "Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required."
         },
         {
           "id": "known-good",
           "kind": "oracle",
           "expected": "pass",
-          "assertion": "Reviewed known-good patch passes required atomic checks in the fixture host."
+          "assertion": "Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "mutation-1",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Remove activation handler"
+          "assertion": "The oracle rejects this single-error mutation: Remove activation handler Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "mutation-2",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Reset focus on every update"
+          "assertion": "The oracle rejects this single-error mutation: Reset focus on every update Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "remote-activation",
-          "kind": "manual",
+          "kind": "unit",
           "expected": "pass",
-          "assertion": "On the tvOS26 fixture shelf, navigate to first/middle/last tiles and activate each using Select: correct movie callback once, no forced reset or trap."
+          "assertion": "Directly invoke the production activation path for first/middle/last movie IDs and assert one correct callback per invocation. No remote focus or Select delivery claim follows."
         },
         {
           "id": "voiceover-name",
-          "kind": "manual",
+          "kind": "review",
           "expected": "pass",
-          "assertion": "VoiceOver identifies each movie by meaningful title; separately record remote focus results rather than treating VoiceOver order as remote navigation proof."
+          "assertion": "Review source for meaningful movie titles and native control semantics against documented contracts; no spoken output assertion."
         }
       ]
     },
@@ -280,31 +295,34 @@
           "id": "compile-host",
           "kind": "compile",
           "expected": "pass",
-          "assertion": "Complete fixture host builds with pinned Apple SDK/build and deployment target."
+          "assertion": "Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required."
         },
         {
           "id": "known-good",
           "kind": "oracle",
           "expected": "pass",
-          "assertion": "Reviewed known-good patch passes required atomic checks in the fixture host."
+          "assertion": "Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "mutation-1",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Break bound state update"
+          "assertion": "The oracle rejects this single-error mutation: Break bound state update Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "mutation-2",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Hide the toggle from accessibility"
+          "assertion": "The oracle rejects this single-error mutation: Hide the toggle from accessibility Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "evidenceMethod": "unit"
         },
         {
           "id": "native-toggle",
-          "kind": "manual",
+          "kind": "unit",
           "expected": "pass",
-          "assertion": "VoiceOver exposes Notifications purpose/current state, explicit activation updates binding once, and no required behavior is lost."
+          "assertion": "Exercise the production binding/state path in both directions and assert backing state changes correctly. Source review separately checks native Toggle wiring; unit state checks do not prove VoiceOver activation."
         },
         {
           "id": "scope-control",
@@ -314,5 +332,12 @@
         }
       ]
     }
+  ],
+  "validationScope": "compile-unit-source-review",
+  "unassessedOutcomes": [
+    "VoiceOver speech and traversal",
+    "Full Keyboard Access navigation",
+    "tvOS remote focus navigation",
+    "Rendered layout and visual appearance"
   ]
 }

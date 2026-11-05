@@ -8,13 +8,20 @@ final class UIKitTests: XCTestCase {
         let row = SettingsRow(onChange: { changes.append($0) }, onHelp: { helpCount += 1 })
         XCTAssertFalse(row.isAccessibilityElement)
         XCTAssertFalse(row.accessibilityElementsHidden)
+        XCTAssertEqual(row.downloadSwitch.accessibilityLabel, "Downloads")
+        XCTAssertFalse(row.downloadSwitch.accessibilityElementsHidden)
+        XCTAssertFalse(row.helpButton.accessibilityElementsHidden)
         XCTAssertTrue(row.helpButton.isEnabled)
+        XCTAssertTrue(changes.isEmpty)
+        XCTAssertEqual(helpCount, 0)
         row.downloadSwitch.isOn = true
         row.downloadSwitch.sendActions(for: .valueChanged)
         row.downloadSwitch.isOn = false
         row.downloadSwitch.sendActions(for: .valueChanged)
+        XCTAssertEqual(helpCount, 0)
         row.helpButton.sendActions(for: .touchUpInside)
         XCTAssertEqual(changes, [true, false]); XCTAssertEqual(helpCount, 1)
+        XCTAssertFalse(row.downloadSwitch.isOn)
     }
     @MainActor func testReconfigurationWithoutPrepareForReuse() {
         let cell = OrderCell(style: .default, reuseIdentifier: "order")

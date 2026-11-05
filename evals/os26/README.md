@@ -2,7 +2,17 @@
 
 **6 revised development prompts; 0 validated gold fixtures; provider execution disabled.**
 
+Current revision: `os26-code-contract-3`. Owner-approved endpoint: compile/unit
+evidence plus independent source review. No mandatory manual verification or UI
+tests. Prior draft-2 inputs and policy are retained in `archive/os26-draft-2/`.
+Question text is unchanged; acceptance hashes and the measured endpoint changed.
+Full VoiceOver, keyboard/remote interaction and rendered-layout outcomes are
+unassessed, not implied by code-contract promotion.
+
 [Readable prompts](../../GoldPrompts.md) · [Methodology decisions](../METHODOLOGY-DECISIONS-2026-11-05.md)
+
+Current execution dependencies and coordination receipt:
+[baseline closeout checklist](BASELINE-CLOSEOUT.md).
 
 ## From draft to real evaluation
 
@@ -17,9 +27,10 @@
 3. **Oracle validation:** build the host; run a reviewed known-good patch and two
    distinct single-error mutations. The good patch must pass and the mutations
    must be rejected. Attach hashed patch identities and check outputs.
-4. **Interaction validation:** run the specified unit/manual checks. Automated
-   accessibility audits cannot establish complete VoiceOver, Full Keyboard Access
-   or tvOS remote behavior. Keep unavailable checks `not_run`/`not_assessable`.
+4. **Code-contract validation:** run the specified unit checks and source review.
+   Review native-control wiring separately from direct handler/state assertions.
+   Do not substitute a manual check or source inspection for a unit mutation kill.
+   Keep unavailable unit checks `not_run`/`not_assessable`; they block promotion.
 5. **Freeze:** pin this catalog, acceptance criteria, fixtures and references.
    Import reviewed receipts. An offline runnable plan is available only when all
    required gates for all cases have evidence. Partial work remains useful but
@@ -29,7 +40,8 @@
    select a model or activate the legacy/API runner. Use the qualified subscription
    adapter after the plan is accepted. Agent-native triggering is a separate lane.
 
-Sillycon owns the planned documentation/unit/yearly-version tests per the owner.
+Sillycon owns documentation/unit/yearly-version design; native execution scheduling
+requires a separately approved Apple worker and resource allowance.
 The actual Apple host, SDK26 availability, simulator coverage and delivery receipts
 remain to be confirmed. This document does not assign work or claim peer completion.
 
@@ -54,7 +66,8 @@ exact JSON file bytes), plus a `cases` array. Each case has `id`, `fixtureAuthor
 `independentReviewer` (different from author), `sdkBuild`, `runtimeBuild`,
 `fixtureHash` and `checks`.
 
-Each check names an acceptance gate `id`, an `observed` value of `pass`, `fail`,
+Each check names an acceptance gate `id`, a `method` of `review`, `compile` or `unit`
+(oracle gates require `unit`), an `observed` value of `pass`, `fail`,
 `not_run` or `not_assessable`, and `artifacts: [{path, sha256}]`. Paths are relative
 to the receipt directory, confined there including after resolving symlinks. The
 known-good and two mutation checks also need three distinct `variantHash` values.
@@ -62,8 +75,27 @@ Mutation observations are expected to be `fail`: the broken patch must be reject
 Every required gate needs matching evidence; duplicate IDs, changed inputs, missing
 artifacts or self-only review cannot promote a case.
 
+The existing SwiftUI mutations include input/focus-oriented defects. They remain
+unvalidated and may require a versioned replacement with unit-observable defects.
+Do not count a source-inspection finding as an executed mutation failure. Record
+old/new fixture hashes and preserve old variants before making that change.
+
 This validates record completeness and integrity, not the truth of external claims.
 An owner/reviewer must inspect the test reports. A fabricated receipt is not evidence.
+
+### Unit execution evidence
+
+Every `unit` check (including each oracle check) also supplies `execution`:
+`buildOutcome: "pass"`, `testSuiteHash`, nonempty unique `executedTestIds`,
+`failedTestIds`, and `outcome` (`passed` or `assertion_failed`). A passing check
+has no failed tests. An expected mutation failure supplies nonempty unique
+`expectedFailureTestIds` matching exactly the observed failed tests. Predeclare
+these expected IDs in the reviewed mutation specification before running; review
+the logs against that specification rather than accepting self-reported claims.
+All three oracle variants must use the same suite hash and executed test selection.
+Build errors, crashes, timeouts, skipped/zero-test runs and unrelated assertion
+failures cannot qualify as mutation kills. Receipts missing this evidence remain
+blocked; existing successful synthetic tests are not native validation.
 
 ## Measurement and scope
 

@@ -1,0 +1,318 @@
+{
+  "schema": 1,
+  "revision": "os26-draft-2",
+  "cases": [
+    {
+      "id": "GP26-01",
+      "sourceCandidates": [
+        "https://developer.apple.com/documentation/uikit/accessibility-for-uikit"
+      ],
+      "sourceReviewStatus": "pending",
+      "alternatives": "Accept any implementation meeting the stated behavior; no exact code, guideline-name or redundant-title-stop preference required.",
+      "gates": [
+        {
+          "id": "source-review",
+          "kind": "review",
+          "expected": "pass",
+          "assertion": "Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer."
+        },
+        {
+          "id": "compile-host",
+          "kind": "compile",
+          "expected": "pass",
+          "assertion": "Complete fixture host builds with pinned Apple SDK/build and deployment target."
+        },
+        {
+          "id": "known-good",
+          "kind": "oracle",
+          "expected": "pass",
+          "assertion": "Reviewed known-good patch passes required atomic checks in the fixture host."
+        },
+        {
+          "id": "mutation-1",
+          "kind": "oracle",
+          "expected": "fail",
+          "assertion": "The oracle rejects this single-error mutation: Hide interactive descendants"
+        },
+        {
+          "id": "mutation-2",
+          "kind": "oracle",
+          "expected": "fail",
+          "assertion": "The oracle rejects this single-error mutation: Drop Help callback"
+        },
+        {
+          "id": "switch-state",
+          "kind": "manual",
+          "expected": "pass",
+          "assertion": "VoiceOver reaches Downloads switch, announces its current state, and activation changes only that setting."
+        },
+        {
+          "id": "help-action",
+          "kind": "manual",
+          "expected": "pass",
+          "assertion": "VoiceOver reaches Help separately and activation invokes its existing callback once without toggling Downloads."
+        }
+      ]
+    },
+    {
+      "id": "GP26-02",
+      "sourceCandidates": [
+        "https://developer.apple.com/documentation/uikit/uitableviewcell/prepareforreuse()"
+      ],
+      "sourceReviewStatus": "pending",
+      "alternatives": "Accept any implementation meeting the stated behavior; no exact code, guideline-name or redundant-title-stop preference required.",
+      "gates": [
+        {
+          "id": "source-review",
+          "kind": "review",
+          "expected": "pass",
+          "assertion": "Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer."
+        },
+        {
+          "id": "compile-host",
+          "kind": "compile",
+          "expected": "pass",
+          "assertion": "Complete fixture host builds with pinned Apple SDK/build and deployment target."
+        },
+        {
+          "id": "known-good",
+          "kind": "oracle",
+          "expected": "pass",
+          "assertion": "Reviewed known-good patch passes required atomic checks in the fixture host."
+        },
+        {
+          "id": "mutation-1",
+          "kind": "oracle",
+          "expected": "fail",
+          "assertion": "The oracle rejects this single-error mutation: Skip normal-order label reset"
+        },
+        {
+          "id": "mutation-2",
+          "kind": "oracle",
+          "expected": "fail",
+          "assertion": "The oracle rejects this single-error mutation: Leave status from previous order"
+        },
+        {
+          "id": "reconfiguration",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Configure priority Alice/shipped, then nonpriority Bob/processing on the SAME instance without prepareForReuse: label names Bob without stale priority and value reports processing; reverse ordering also works."
+        }
+      ]
+    },
+    {
+      "id": "GP26-03",
+      "sourceCandidates": [
+        "https://developer.apple.com/videos/play/wwdc2024/10074/"
+      ],
+      "sourceReviewStatus": "pending",
+      "alternatives": "Accept any implementation meeting the stated behavior; no exact code, guideline-name or redundant-title-stop preference required.",
+      "gates": [
+        {
+          "id": "source-review",
+          "kind": "review",
+          "expected": "pass",
+          "assertion": "Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer."
+        },
+        {
+          "id": "compile-host",
+          "kind": "compile",
+          "expected": "pass",
+          "assertion": "Complete fixture host builds with pinned Apple SDK/build and deployment target."
+        },
+        {
+          "id": "known-good",
+          "kind": "oracle",
+          "expected": "pass",
+          "assertion": "Reviewed known-good patch passes required atomic checks in the fixture host."
+        },
+        {
+          "id": "mutation-1",
+          "kind": "oracle",
+          "expected": "fail",
+          "assertion": "The oracle rejects this single-error mutation: Keep fixed container height"
+        },
+        {
+          "id": "mutation-2",
+          "kind": "oracle",
+          "expected": "fail",
+          "assertion": "The oracle rejects this single-error mutation: Disable live text scaling"
+        },
+        {
+          "id": "live-resize",
+          "kind": "manual",
+          "expected": "pass",
+          "assertion": "At 320pt and 375pt safe-area widths, change from default to largest accessibility text size while screen stays open: full long currency amount remains readable and Pay visible/operable without overlap."
+        },
+        {
+          "id": "payment-action",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Existing payment handler is preserved and invoked exactly once per explicit activation; unrelated button appearance is preserved."
+        }
+      ]
+    },
+    {
+      "id": "GP26-04",
+      "sourceCandidates": [
+        "https://developer.apple.com/documentation/swiftui/accessible-controls"
+      ],
+      "sourceReviewStatus": "pending",
+      "alternatives": "Accept any implementation meeting the stated behavior; no exact code, guideline-name or redundant-title-stop preference required.",
+      "gates": [
+        {
+          "id": "source-review",
+          "kind": "review",
+          "expected": "pass",
+          "assertion": "Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer."
+        },
+        {
+          "id": "compile-host",
+          "kind": "compile",
+          "expected": "pass",
+          "assertion": "Complete fixture host builds with pinned Apple SDK/build and deployment target."
+        },
+        {
+          "id": "known-good",
+          "kind": "oracle",
+          "expected": "pass",
+          "assertion": "Reviewed known-good patch passes required atomic checks in the fixture host."
+        },
+        {
+          "id": "mutation-1",
+          "kind": "oracle",
+          "expected": "fail",
+          "assertion": "The oracle rejects this single-error mutation: Delete on focus"
+        },
+        {
+          "id": "mutation-2",
+          "kind": "oracle",
+          "expected": "fail",
+          "assertion": "The oracle rejects this single-error mutation: Remove ordinary keyboard affordance"
+        },
+        {
+          "id": "explicit-delete",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Each supported explicit activation deletes the selected ID once; focus/navigation causes zero deletions; original swipe still dispatches one deletion."
+        },
+        {
+          "id": "voiceover-delete",
+          "kind": "manual",
+          "expected": "pass",
+          "assertion": "VoiceOver user can discover and activate deletion and still read the subject."
+        },
+        {
+          "id": "keyboard-delete",
+          "kind": "manual",
+          "expected": "pass",
+          "assertion": "With Full Keyboard Access enabled, hardware-keyboard focus can reach the visible deletion affordance and activate it; navigation alone never deletes."
+        }
+      ]
+    },
+    {
+      "id": "GP26-05",
+      "sourceCandidates": [
+        "https://developer.apple.com/documentation/swiftui/button"
+      ],
+      "sourceReviewStatus": "pending",
+      "alternatives": "Accept any implementation meeting the stated behavior; no exact code, guideline-name or redundant-title-stop preference required.",
+      "gates": [
+        {
+          "id": "source-review",
+          "kind": "review",
+          "expected": "pass",
+          "assertion": "Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer."
+        },
+        {
+          "id": "compile-host",
+          "kind": "compile",
+          "expected": "pass",
+          "assertion": "Complete fixture host builds with pinned Apple SDK/build and deployment target."
+        },
+        {
+          "id": "known-good",
+          "kind": "oracle",
+          "expected": "pass",
+          "assertion": "Reviewed known-good patch passes required atomic checks in the fixture host."
+        },
+        {
+          "id": "mutation-1",
+          "kind": "oracle",
+          "expected": "fail",
+          "assertion": "The oracle rejects this single-error mutation: Remove activation handler"
+        },
+        {
+          "id": "mutation-2",
+          "kind": "oracle",
+          "expected": "fail",
+          "assertion": "The oracle rejects this single-error mutation: Reset focus on every update"
+        },
+        {
+          "id": "remote-activation",
+          "kind": "manual",
+          "expected": "pass",
+          "assertion": "On the tvOS26 fixture shelf, navigate to first/middle/last tiles and activate each using Select: correct movie callback once, no forced reset or trap."
+        },
+        {
+          "id": "voiceover-name",
+          "kind": "manual",
+          "expected": "pass",
+          "assertion": "VoiceOver identifies each movie by meaningful title; separately record remote focus results rather than treating VoiceOver order as remote navigation proof."
+        }
+      ]
+    },
+    {
+      "id": "GP26-06",
+      "sourceCandidates": [
+        "https://developer.apple.com/documentation/swiftui/accessibility-fundamentals"
+      ],
+      "sourceReviewStatus": "pending",
+      "alternatives": "Accept any implementation meeting the stated behavior; no exact code, guideline-name or redundant-title-stop preference required.",
+      "gates": [
+        {
+          "id": "source-review",
+          "kind": "review",
+          "expected": "pass",
+          "assertion": "Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer."
+        },
+        {
+          "id": "compile-host",
+          "kind": "compile",
+          "expected": "pass",
+          "assertion": "Complete fixture host builds with pinned Apple SDK/build and deployment target."
+        },
+        {
+          "id": "known-good",
+          "kind": "oracle",
+          "expected": "pass",
+          "assertion": "Reviewed known-good patch passes required atomic checks in the fixture host."
+        },
+        {
+          "id": "mutation-1",
+          "kind": "oracle",
+          "expected": "fail",
+          "assertion": "The oracle rejects this single-error mutation: Break bound state update"
+        },
+        {
+          "id": "mutation-2",
+          "kind": "oracle",
+          "expected": "fail",
+          "assertion": "The oracle rejects this single-error mutation: Hide the toggle from accessibility"
+        },
+        {
+          "id": "native-toggle",
+          "kind": "manual",
+          "expected": "pass",
+          "assertion": "VoiceOver exposes Notifications purpose/current state, explicit activation updates binding once, and no required behavior is lost."
+        },
+        {
+          "id": "scope-control",
+          "kind": "review",
+          "expected": "pass",
+          "assertion": "No demonstrated defect is fabricated; valid equivalent implementations are allowed but unnecessary semantic overrides count as review burden, not automatic critical errors."
+        }
+      ]
+    }
+  ]
+}
