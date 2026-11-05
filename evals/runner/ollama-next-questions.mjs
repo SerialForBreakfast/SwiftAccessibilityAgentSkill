@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {repo, evaluate, fingerprint, hash, verifyBaseline, readReference} from './lib.mjs';
+import {executionSafety} from './ollama-safety.mjs';
 import {transport} from './ollama-development.mjs';
 import {LOOKUP_INSTRUCTION} from './llamacpp-development.mjs';
 import {protocol} from './protocol.mjs';
@@ -30,10 +31,12 @@ async function main() {
     const r = readReference(repo, name); return {path: r.path, bytes: r.bytes, sha256: r.sha256};
   });
   const metadata = {alias: 'maxmini', model: 'qwen3.5:latest', revision: 'dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c', serving: 'Ollama 0.40.11 Metal', quantization: 'Q4_K_M', contextLimit: 16384, reasoning: 'off', sampling: {temperature: 0, seed: 42, top_p: 1, top_k: 0, presence_penalty: 0, repeat_penalty: 1}, concurrency: 1, maxTokens: 2048};
-  const sourcePins = ['lib.mjs', 'protocol.mjs', 'ollama-development.mjs', 'llamacpp-development.mjs', 'ollama-next-questions.mjs'].map(name => ({path: `evals/runner/${name}`, sha256: hash(fs.readFileSync(path.join(repo, 'evals/runner', name)))}));
+  const sourcePins = ['lib.mjs', 'protocol.mjs', 'ollama-development.mjs', 'ollama-safety.mjs', 'llamacpp-development.mjs', 'ollama-next-questions.mjs'].map(name => ({path: `evals/runner/${name}`, sha256: hash(fs.readFileSync(path.join(repo, 'evals/runner', name)))}));
   const manifest = {experiment: 'maxmini-ollama-questions-v2', skillHash: pin, suiteHash: hash(fs.readFileSync(path.join(repo, 'evals/scenarios.json'))), sourcePins, references: refs, provider: metadata, jobs, maxGenerationRequests: 120, requestDeadlineSeconds: 120, cumulativeLimitSeconds: 5400, lookupInstruction: LOOKUP_INSTRUCTION, heldout: false, qualityGraded: false, limitations: ['New families and corrected platform wording; do not pool with development-v1.', 'No C3-original arm or 1024-token arm in this batch.', 'C2 is harness injection. Only successful C3 reads count as model retrieval.', 'Reported tokens and server logs are checked after generation; no qualified pre-generation tokenizer.', 'Execution and protocol measurements are not answer-quality grades.']};
   if (!process.argv.includes('--execute')) { console.log(JSON.stringify(manifest, null, 2)); return; }
   if (process.env.EVAL_ALLOW_NETWORK !== '1' || !process.env.EVAL_OUTPUT) throw Error('Explicit execution and a new output directory required');
+  const safety = executionSafety(90);
+  Object.assign(manifest, {safety, deadlineEpochMs: safety.deadlineEpochMs, experiment: 'maxmini-ollama-questions-safeguards-v3'});
   const out = process.env.EVAL_OUTPUT;
   fs.mkdirSync(out, {mode: 0o700});
   fs.writeFileSync(path.join(out, 'manifest.json'), JSON.stringify(manifest, null, 2));
@@ -45,7 +48,7 @@ async function main() {
       for (const p of sourcePins) if (hash(fs.readFileSync(path.join(repo, p.path))) !== p.sha256) throw Error('Runner changed');
       active = `${j.scenario.id}-${j.scenario.os[0]}-2048-${j.arm}`;
       const exchanges = [], config = {url: 'http://127.0.0.1:11434/v1', model: metadata.model, maxTokens: 2048, extra: {temperature: 0, seed: 42}, metadata};
-      const send = transport({out, arm: j.arm, caseId: active, counter, exchanges});
+      const send = transport({out, arm: j.arm, caseId: active, counter, exchanges, ...safety});
       const bounded = async (...args) => {
         if (counter.calls >= 120 || performance.now() > deadline) throw Error('Campaign budget exhausted');
         return send(...args);

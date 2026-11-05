@@ -1,5 +1,10 @@
 # Evidence-Backed Evaluation
 
+Primary target: capable frontier Swift coding agents. Small local models are a
+diagnostic lane, not the skill's optimization target. See [target strategy](TARGET-EVALUATION.md).
+Current worker action: [commit sanitized existing evidence](RESULTS-HANDOFF.md)
+through Git before scheduling more local inference.
+
 For complexity/context profiles and remote execution on BigDog or MaxMini, use the
 [portable campaign requirements](PORTABLE-EXECUTION.md). Planning commands perform
 offline work only. Model execution belongs to qualified, separately authorized workers.
@@ -259,6 +264,7 @@ Ollama server, the pinned local model, and a new private output directory:
 
 ```sh
 EVAL_ALLOW_NETWORK=1 EVAL_OUTPUT="$PWD/evals/results/new-local-run" \
+  EVAL_DIAGNOSTIC_ONLY=1 OLLAMA_MANIFEST_DIGEST="<owner-verified-manifest-sha256>" \
   node evals/runner/ollama-development.mjs --execute
 ```
 
@@ -276,9 +282,25 @@ failed and truncated evidence. A forced tool-call preflight checks transport onl
 
 Ollama and BigDog's llama.cpp use different model weights, rendering, and serving
 code. This is a model-and-stack comparison, not an isolated hardware comparison.
+The hardened adapter verifies the tag's manifest digest before and after generation
+using Ollama's [model listing API](https://docs.ollama.com/api/tags). This digest is
+distinct from the historical weights-layer hash. The worker must establish their
+relationship and reserve the deployment against concurrent tag/model changes;
+before/after checks cannot prove that no transient swap occurred. Historical runtime
+metadata remains declared metadata, not independently verified by these checks.
+
+New runs record an absolute deadline (45 minutes for this comparison), cap each
+request by remaining time, retain rejected responses and unknown-outcome records,
+and fail on absent token telemetry. Continuation requires the original recorded
+deadline; legacy manifests without one are refused rather than using file mtime.
+New hardened experiments receive separate identifiers. Preserve old records and
+source revisions; never retroactively claim these safeguards for old runs.
+
 The adapter checks reported prompt counts after each response. It has no qualified
 pre-generation tokenizer check. Review server logs for input truncation or context
 shifting before interpreting the run. Keep original server and model metadata.
+Execution therefore requires `EVAL_DIAGNOSTIC_ONLY=1`; these adapters still do not
+qualify the portable pilot's exact pre-generation token-fit requirement.
 
 Generate descriptive counts with:
 
@@ -305,6 +327,7 @@ node evals/runner/ollama-next-questions.mjs
 ```
 
 Execution uses `--execute`, `EVAL_ALLOW_NETWORK=1`, and a new `EVAL_OUTPUT`.
+It also requires `EVAL_DIAGNOSTIC_ONLY=1` and `OLLAMA_MANIFEST_DIGEST` as above.
 The owner first verifies the installed model hash and unchanged serving contract.
 The batch permits 120 generation requests, one at a time, with 120 s per request.
 A cumulative guard stops new requests after 90 min. Failed attempts are preserved.
