@@ -1,9 +1,18 @@
 # Evidence-Backed Evaluation
 
+For complexity/context profiles and remote execution on BigDog or MaxMini, use the
+[portable campaign requirements](PORTABLE-EXECUTION.md). Planning commands perform
+offline work only. Model execution belongs to qualified, separately authorized workers.
+
+**[Open the evaluation dashboard →](reports/README.md)** — charts, prompts, expected-answer criteria and response comparisons. New test/report iterations require explicit owner approval.
+
 Deployment coordination: [BigDog handoff and requested setup details](BIGDOG-HANDOFF.md).
 
 Candidate: **0.2.3-candidate.1**. Released identity: **0.2.2**.
-No model-quality baseline has been measured yet. The immutable snapshot captures the
+The [v2 retrospective review](reports/v2/README.md) grades 64 existing answers from
+one small Qwen deployment; independent calibration and release baselines remain pending.
+For the next bounded worker runs, use [pilot requests](PILOT-REQUESTS.md).
+The immutable snapshot captures the
 pre-update working tree, including existing uncommitted content, not a clean Git tag.
 
 ## Start Offline
@@ -96,6 +105,8 @@ C0 is excluded from skill protocol requirements.
 
 ## Blinded Quality Grading
 
+Use the [grading policy](GRADING.md) and `rubrics.json` as the answer-quality contract.
+
 Normalize each run's records.jsonl into a JSON array and combine baseline/candidate
 records. Each row already contains provider, condition, family, OS and repeat keys.
 
@@ -106,8 +117,8 @@ node evals/runner/report.mjs scores.json
 ```
 
 `packets.json` randomizes A/B order and omits release/model labels. Keep the private
-mapping away from judges. Before grading, add the source-backed evidence excerpts
-from the reviewed ledger/references to packets; paths alone do not establish truth.
+mapping away from judges. Packets include the same frozen reference contents for both
+answers from `evidence/grading-evidence.json`. Resolve evidence gaps by adjudication.
 Use a judge independent of the evaluated model; do not use Qwen as its own sole judge.
 A maintainer checks a stratified calibration sample of at least 12 pairs (all platforms,
 C0-C3 and availability/critical-error cases). Record disagreement and revise the rubric
@@ -117,8 +128,8 @@ Grades have this shape:
 
 ```json
 [{"id":"packet UUID","judge":"exact judge revision or maintainer identifier",
-  "A":{"quality":0.8,"criticalErrors":0,"reason":"Source-backed explanation"},
-  "B":{"quality":0.9,"criticalErrors":0,"reason":"Source-backed explanation"}}]
+  "A":{"status":"graded","dimensions":{"correctness":4,"task_success":3,"calibration":4,"relevance":4},"criticalErrors":[],"reason":"Source-backed explanation"},
+  "B":{"status":"graded","dimensions":{"correctness":4,"task_success":4,"calibration":4,"relevance":4},"criticalErrors":[],"reason":"Source-backed explanation"}}]
 ```
 
 Score correctness, completeness, practical task success and evidence honesty. Use the
@@ -163,6 +174,10 @@ disposition, including historical/discovery and access-limited resources. See th
 [claim ledger](../docs/core/source-refresh-2026-11.md). The current candidate corrects
 the earlier linked-group availability assumption. Do not overwrite earlier snapshots;
 compare their hashes against this refreshed candidate.
+
+Rubric review preserves all 20 held-out questions. Development-only repairs remove
+leading multi-turn instructions and supply missing context. Run manifests now hash
+the rubric and grading evidence too. Old unanchored grades require regrading.
 
 ## Portable snapshots
 
@@ -219,9 +234,17 @@ a separately frozen retrieval experiment; do not tune against heldout cases.
 
 See [Max Mini workload recommendations](MAXMINI-ASSESSMENT.md) for the provisional
 host/model comparison, received M4/24 GB peer inventory and remaining verification
-plan. No Max Mini benchmark or performance superiority is claimed.
+plan. That assessment predates the local development batches below.
+Those batches do not establish model-quality or performance superiority.
 
 ## Maximum-mini Ollama development comparison
+
+The completed local batches use source committed in `14f1f99`. Their raw records
+remain in ignored local storage. The merged scenarios and shared runner differ
+from those frozen inputs. Keep their original manifests and results unchanged.
+Use the original source revision for exact historical continuation. A new run
+needs a new output directory and must record the current source and input hashes.
+These local diagnostics do not qualify the new portable worker pilot.
 
 The local adapter reuses the frozen 32-case BigDog development plan. Run its
 software checks with:

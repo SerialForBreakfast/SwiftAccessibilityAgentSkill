@@ -1,3 +1,4 @@
+import {contextScenario} from './grading.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {repo,evaluate,settings,verifyBaseline,fingerprint} from './lib.mjs';
@@ -13,7 +14,7 @@ export default class SkillProvider {
     const root=process.env.EVAL_SKILL_ROOT?path.resolve(process.env.EVAL_SKILL_ROOT):repo;
     verifyBaseline();
     if(scenario.split==='heldout' && process.env.EVAL_FROZEN_HASH!==fingerprint(root)) throw Error('Held-out run requires matching EVAL_FROZEN_HASH');
-    const selected={...scenario,os:[context.vars.os],turns:scenario.turns.map((t,i)=>i===0&&scenario.references.length?t+'\nDeployment context: '+scenario.platform+' OS version '+context.vars.os+'. Clarify platform if needed.':t)};
+    const selected=contextScenario(scenario,context.vars.os);
     const result=await evaluate({root,condition:this.config.condition,scenario:selected,config:settings(this.config.alias)});
     result.metadata.protocol=protocol(result,fs.readFileSync(path.join(root,'VERSION'),'utf8').trim());
     return result;

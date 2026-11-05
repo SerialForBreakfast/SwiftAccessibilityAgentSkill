@@ -19,7 +19,7 @@ export function compare(rows) {
     if(d<0)regressions.push({key,delta:d});
     for(const before of g.baseline) {
       const after=g.candidate.find(r=>r.repeat===before.repeat);
-      if(before.suiteHash!==after.suiteHash || before.gateHash!==after.gateHash) throw Error('Suite or gates changed between paired runs');
+      if(before.suiteHash!==after.suiteHash || before.gateHash!==after.gateHash || before.rubricHash!==after.rubricHash || before.gradingEvidenceHash!==after.gradingEvidenceHash) throw Error('Suite or gates changed between paired runs');
       if(JSON.stringify(before.metadata?.provider)!==JSON.stringify(after.metadata?.provider)) throw Error('Provider settings changed between paired runs');
       newCritical+=Math.max(0,after.criticalErrors-before.criticalErrors);
       if(before.focused&&after.focused&&Number.isFinite(before.inputTokens)&&Number.isFinite(after.inputTokens)) {

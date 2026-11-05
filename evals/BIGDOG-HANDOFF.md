@@ -1,5 +1,9 @@
 # BigDog Handoff: Swift Accessibility Skill Evaluation
 
+Follow-up: [portable full-corpus requirements](PORTABLE-EXECUTION.md) incorporate the
+published BigDog smoke/development reports and MaxMini assessment. Keep those known
+failures; use the new suite/rubric hashes rather than pooling incompatible runs.
+
 Audience: BigDog deployment owner and evaluation engineer.
 Status: deployment discovery and smoke-test request; full runs require approval.
 
