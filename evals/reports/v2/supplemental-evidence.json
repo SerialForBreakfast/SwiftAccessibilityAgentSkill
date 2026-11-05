@@ -1,0 +1,39 @@
+{
+  "purpose": "Retrospective evidence-gap adjudication, applied equally to all original answers; does not alter the frozen upstream rubric/evidence.",
+  "reviewed_date": "2026-11-05",
+  "method": "Apple documentation retrieved through web search; direct JavaScript pages sometimes unavailable. Reviewer paraphrases only; no claim of SDK compilation.",
+  "sources": {
+    "A-LABEL": {
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilityelement/accessibilitylabel",
+      "finding": "Standard UIKit labels derive from control/view titles. An explicit accessibilityLabel is for naming that needs customization; native UILabel text is not inherently inaccessible."
+    },
+    "A-UILABEL": {
+      "url": "https://developer.apple.com/documentation/uikit/uilabel",
+      "finding": "UILabel is a UIKit text-displaying view. Its documented accessibility defaults include static text; it is not a UIControl with the invented tree/role interface described in these answers."
+    },
+    "A-TRAITS": {
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitytraits?changes=_1",
+      "finding": "UIKit uses UIAccessibilityTraits constants such as staticText, button, image and selected. The proposed active/icon/UITraitLabel/UITraitScrollable names are not these built-in constants."
+    },
+    "A-UIKIT": {
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibility",
+      "finding": "UIKit accessibility uses UIAccessibility properties/protocols and standard controls, not the proposed AccessibilityUI framework or UIAccessibilityManager/AccessibilityTreeModel implementation. Nonexistence findings are reviewer static API assessments, not compiler diagnostics."
+    },
+    "A-FRAME": {
+      "url": "https://developer.apple.com/documentation/swiftui/view/frame(width:height:alignment:)",
+      "finding": "A frame can size a container and align its content; default alignment is center. Alignment may have no visible effect if frame and content sizes match."
+    },
+    "A-LAYOUT": {
+      "url": "https://developer.apple.com/documentation/swiftui/layout-adjustments?changes=la",
+      "finding": "SwiftUI exposes frame, offset and alignment mechanisms. The reviewed answers provide no custom extensions defining their center(), centered(), centering(), CenteredView or CenteredStack proposals. Treating these as built-in solutions is a reviewer-identified API error; no Swift compiler was run."
+    },
+    "A-ALIGNMENT": {
+      "url": "https://developer.apple.com/documentation/swiftui/alignment",
+      "finding": "Alignment combines horizontal and vertical guides and configures containers such as ZStack. Alignment.center is appropriate to both axes; topCenter is not the proposed built-in vertical-centering API."
+    },
+    "A-ACTION": {
+      "url": "https://developer.apple.com/documentation/accessibility/delivering-an-exceptional-accessibility-experience",
+      "finding": "Apple demonstrates named UIAccessibilityCustomAction objects to make actions available through VoiceOver. A physical swipe is not itself that named accessibility action."
+    }
+  }
+}
