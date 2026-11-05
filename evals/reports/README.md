@@ -1,13 +1,14 @@
 # Evaluation dashboards
 
-**Current: [v1 — Qwen local evaluation results](v1/README.md)**
+**Current: [v2 — graded existing Qwen answers](v2/README.md)**
 
 Readable in GitHub without a server, HTML downloads or JavaScript. Charts use text bars with matching numeric tables. Start with the scorecard, then open a case
 to compare exact questions, expected-answer criteria and model responses.
 
 | Version | Contents | State | Next version |
 | --- | --- | --- | --- |
-| [v1](v1/README.md) | Existing 32-case smoke + 32-case development comparison | Frozen report; independent quality grading pending | Not approved |
+| [v1](v1/README.md) | Original 32-case smoke + 32-case development outputs | Frozen unchanged; original ungraded snapshot | v2 approved |
+| [v2](v2/README.md) | Retrospective new-rubric grading of the same 64 answers | Single reviewer; not independently calibrated | v3 not approved |
 
 ## Version rules
 

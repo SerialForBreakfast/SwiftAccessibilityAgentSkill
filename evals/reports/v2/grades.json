@@ -1,0 +1,2669 @@
+[
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D01-26-C0",
+    "family": "D01",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C0",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "129d8f87d8268a2700ea817c63c73e7c871499a27cb364917947d77d415d5c1a",
+    "original_prompt_sha256": "cb2a45b991efe4c09dac7ff4afad6aa864f7574ed9b9aa4b7a638383f0b013f7",
+    "review": {
+      "group": "G01",
+      "family": "D01",
+      "response_sha256": "129d8f87d8268a2700ea817c63c73e7c871499a27cb364917947d77d415d5c1a",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.1375,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "let accessibilityManager = UIAccessibilityManager()",
+          "evidence": "A-UIKIT",
+          "explanation": "Invents an accessibility manager/query API and role types instead of explaining native text-derived labeling. Some discussion of labels/testing is relevant, but the implementation is unusable. It replaces the supplied version with iOS 16 and asserts automatic contrast correction."
+        }
+      ],
+      "reason": "Invents an accessibility manager/query API and role types instead of explaining native text-derived labeling. Some discussion of labels/testing is relevant, but the implementation is unusable. It replaces the supplied version with iOS 16 and asserts automatic contrast correction.",
+      "evidence_ids": [
+        "F-D01",
+        "A-UIKIT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D01-26-C1",
+    "family": "D01",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C1",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "bc5a8fee6169868ba4c2c60275c5d59adbe6127187e5321812086bafbd3a5b88",
+    "original_prompt_sha256": "0ef2dcc1e278646046e3094e411246d1a3942c5cd74fd8de1c6334e2b8a7cfe9",
+    "review": {
+      "group": "G12",
+      "family": "D01",
+      "response_sha256": "bc5a8fee6169868ba4c2c60275c5d59adbe6127187e5321812086bafbd3a5b88",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.2375,
+      "criticalErrors": [],
+      "reason": "Acknowledges text can be spoken, but treats that correct default as a defect, conflates roles/properties and provides misleading activation/testing directions. Unnecessary overrides and unsupported version certainty prevent a useful answer.",
+      "evidence_ids": [
+        "F-D01",
+        "A-LABEL"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D01-26-C2",
+    "family": "D01",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C2",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "2b259e310122259e9de81d6d0c0258f7a1e6af4e1b257a9bacda1eaaf05fa5f9",
+    "original_prompt_sha256": "717a76a05dcfe728be8b5a6f4fcd9d5980151ebfbaa24f445350de76b468243d",
+    "review": {
+      "group": "G05",
+      "family": "D01",
+      "response_sha256": "2b259e310122259e9de81d6d0c0258f7a1e6af4e1b257a9bacda1eaaf05fa5f9",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 2,
+        "calibration": 1,
+        "relevance": 2
+      },
+      "quality": 0.3625,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "label.accessibilityTraits = [.active, .button]",
+          "evidence": "A-TRAITS",
+          "explanation": "Useful naming, decorative-content and semantic-control advice earns partial task credit. The example uses invalid active/icon traits and turns text labeling into button implementation without explaining native defaults. Generic future-OS caution coexists with unjustified high freshness."
+        }
+      ],
+      "reason": "Useful naming, decorative-content and semantic-control advice earns partial task credit. The example uses invalid active/icon traits and turns text labeling into button implementation without explaining native defaults. Generic future-OS caution coexists with unjustified high freshness.",
+      "evidence_ids": [
+        "F-D01",
+        "A-TRAITS"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 1,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D01-26-C3",
+    "family": "D01",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "cb6d8d663d4fdd049faa19c198266209c905cc8f6ac436085321d29ff2b0c027",
+    "original_prompt_sha256": "903d54d036521c4fc5588bdfa7bd06440394840f5159326831c6dd7983c69b81",
+    "review": {
+      "group": "G13",
+      "family": "D01",
+      "response_sha256": "cb6d8d663d4fdd049faa19c198266209c905cc8f6ac436085321d29ff2b0c027",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.2375,
+      "criticalErrors": [],
+      "reason": "Confuses accessible name with accessibilityValue and requires explicit value configuration. Claims the guideline requires both label and value, which it does not. Some relevant testing is present but the central rule is wrong.",
+      "evidence_ids": [
+        "F-D01",
+        "A-LABEL"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D01-27-C0",
+    "family": "D01",
+    "os": "27",
+    "release": "candidate",
+    "arm": "C0",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "360ae0857ba957022048f2e8d1c7d3a4813d40084bd61874615b9b99f38fac36",
+    "original_prompt_sha256": "e24efee8f906cebe3e4954a38d28a2f5f1f5456828bbb1b85f0204076f71568c",
+    "review": {
+      "group": "G06",
+      "family": "D01",
+      "response_sha256": "360ae0857ba957022048f2e8d1c7d3a4813d40084bd61874615b9b99f38fac36",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.1375,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "let accessibilityTree = AccessibilityTreeModel()",
+          "evidence": "A-UIKIT",
+          "explanation": "The accessibility-tree protocol and trait/action API are invented; hints are incorrectly treated as missing-label fallbacks and identifiers as activation mechanisms. A few genuine property names do not make the example usable."
+        }
+      ],
+      "reason": "The accessibility-tree protocol and trait/action API are invented; hints are incorrectly treated as missing-label fallbacks and identifiers as activation mechanisms. A few genuine property names do not make the example usable.",
+      "evidence_ids": [
+        "F-D01",
+        "A-UIKIT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D01-27-C1",
+    "family": "D01",
+    "os": "27",
+    "release": "candidate",
+    "arm": "C1",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "7feca4f12dcc44d97bc14b6cc85bbb03f9bc98de57308eafa7ef42d90ecd6727",
+    "original_prompt_sha256": "17742655648f257418245ac0e2ef5cc4b6238ec2e516ba20fdcca9f9a85c822f",
+    "review": {
+      "group": "G08",
+      "family": "D01",
+      "response_sha256": "7feca4f12dcc44d97bc14b6cc85bbb03f9bc98de57308eafa7ef42d90ecd6727",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.2375,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "`UITraitContentEditable`, `UITraitScrollable`",
+          "evidence": "A-TRAITS",
+          "explanation": "Recognizes text as a semantic source but denies the normal accessibilityLabel interface, mixes text resizing with content changes, and recommends nonexistent editable/scrollable trait constants."
+        }
+      ],
+      "reason": "Recognizes text as a semantic source but denies the normal accessibilityLabel interface, mixes text resizing with content changes, and recommends nonexistent editable/scrollable trait constants.",
+      "evidence_ids": [
+        "F-D01",
+        "A-TRAITS"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D01-27-C2",
+    "family": "D01",
+    "os": "27",
+    "release": "candidate",
+    "arm": "C2",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "834ac73795f398cd4a65fd64b5e8a0a2b6167f4ee758289263eebca02e234d56",
+    "original_prompt_sha256": "c54dfb98c7100346f4df41be83d9a1576035dbe1624cdee3d6b8039cf88ec477",
+    "review": {
+      "group": "G09",
+      "family": "D01",
+      "response_sha256": "834ac73795f398cd4a65fd64b5e8a0a2b6167f4ee758289263eebca02e234d56",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 2,
+        "task_success": 2,
+        "calibration": 1,
+        "relevance": 3
+      },
+      "quality": 0.4875,
+      "criticalErrors": [],
+      "reason": "Provides meaningful naming, decorative-content handling and useful VoiceOver checks. However, mandates explicit labels for every UILabel, duplicates label text into value, and gives muddled hosting advice. Misses the core native-default/conditional-customization criterion.",
+      "evidence_ids": [
+        "F-D01",
+        "A-LABEL"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 1,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D01-27-C3",
+    "family": "D01",
+    "os": "27",
+    "release": "candidate",
+    "arm": "C3",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "54dbce8aaed59c07fea1517b7d3bc092d7b0a14049fa83faa246597d35dce7d0",
+    "original_prompt_sha256": "6535cf26df860011233a404f709dc7fbf23576a17d29b4abc9aa9ce89da02b0e",
+    "review": {
+      "group": "G07",
+      "family": "D01",
+      "response_sha256": "54dbce8aaed59c07fea1517b7d3bc092d7b0a14049fa83faa246597d35dce7d0",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 1
+      },
+      "quality": 0.2125,
+      "criticalErrors": [],
+      "reason": "Repeats meaningful-text checks but conflates label/value/hint and never explains native labeling or when to customize. Repetitious unrelated checks and version substitution obscure the answer. Source claims are assessed separately from actual read evidence.",
+      "evidence_ids": [
+        "F-D01"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D31-26-C0",
+    "family": "D31",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C0",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "df5983e26edd6a711e639a630b39e94648f0c3c38fb32a6df9cf04f03dbcf822",
+    "original_prompt_sha256": "84d2e213681979d28838a2a3d9b3a687f586724ebd97cc8ee0948179fd76ed77",
+    "review": {
+      "group": "G33",
+      "family": "D31",
+      "response_sha256": "df5983e26edd6a711e639a630b39e94648f0c3c38fb32a6df9cf04f03dbcf822",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".center()",
+          "evidence": "A-LAYOUT; A-FRAME",
+          "explanation": "All principal solutions rely on undefined center/centered/offsetBy modifiers presented as built-ins, with no extension. The confident modern-recommended claim is unsupported; no usable centering solution."
+        }
+      ],
+      "reason": "All principal solutions rely on undefined center/centered/offsetBy modifiers presented as built-ins, with no extension. The confident modern-recommended claim is unsupported; no usable centering solution.",
+      "evidence_ids": [
+        "A-LAYOUT",
+        "A-FRAME"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D31-26-C1",
+    "family": "D31",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C1",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "b627ec11de4fe3f13a6adba91c2f7cf1d345488cb56769d156065f8c020b64f0",
+    "original_prompt_sha256": "2a3568bef7d7808fb3ac7fc607470ba99096f99e30f29df1c9b4ebc43456c6a9",
+    "review": {
+      "group": "G30",
+      "family": "D31",
+      "response_sha256": "b627ec11de4fe3f13a6adba91c2f7cf1d345488cb56769d156065f8c020b64f0",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 2,
+        "task_success": 0,
+        "calibration": 2,
+        "relevance": 0
+      },
+      "quality": 0.275,
+      "criticalErrors": [],
+      "reason": "Correctly recognizes that layout is not an accessibility audit and mentions frame/alignment, but never gives the requested centering solution. Instead repeats irrelevant routing/checklist material until truncation.",
+      "evidence_ids": [
+        "A-FRAME",
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D31-26-C2",
+    "family": "D31",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C2",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "cea71e394b299440a2eea43eb4240e5940d5076708b01ee6086d3bd697b71d9a",
+    "original_prompt_sha256": "625736bb7a2fdbdeb0f134671d917b14b8d01ee0ef772bcb0b2a1e6fb1c8e801",
+    "review": {
+      "group": "G31",
+      "family": "D31",
+      "response_sha256": "cea71e394b299440a2eea43eb4240e5940d5076708b01ee6086d3bd697b71d9a",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 1
+      },
+      "quality": 0.2125,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".centered()",
+          "evidence": "A-FRAME; A-LAYOUT",
+          "explanation": "Recognizes the topic but buries it under an irrelevant accessibility workflow. Recommends nonexistent centered() and attempts to instantiate the View protocol; a mention of a fixed frame provides only limited useful content."
+        }
+      ],
+      "reason": "Recognizes the topic but buries it under an irrelevant accessibility workflow. Recommends nonexistent centered() and attempts to instantiate the View protocol; a mention of a fixed frame provides only limited useful content.",
+      "evidence_ids": [
+        "A-FRAME",
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D31-26-C3",
+    "family": "D31",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "398ab8d11b4f8b6d73c775c4996ad692d5e602831a713925afcca77660bb9d4d",
+    "original_prompt_sha256": "ebeea36a5848033517a652aca84af6273124002107d1cbf3f0cefe6910f2740e",
+    "review": {
+      "group": "G27",
+      "family": "D31",
+      "response_sha256": "398ab8d11b4f8b6d73c775c4996ad692d5e602831a713925afcca77660bb9d4d",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 1
+      },
+      "quality": 0.2125,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "CenteredView {",
+          "evidence": "A-FRAME; A-LAYOUT",
+          "explanation": "Same primary invented CenteredView/centering APIs as G26; one valid fixed-frame example earns limited credit. The truncated container catalogue does not supply a reliable concise answer."
+        }
+      ],
+      "reason": "Same primary invented CenteredView/centering APIs as G26; one valid fixed-frame example earns limited credit. The truncated container catalogue does not supply a reliable concise answer.",
+      "evidence_ids": [
+        "A-FRAME",
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D31-27-C0",
+    "family": "D31",
+    "os": "27",
+    "release": "candidate",
+    "arm": "C0",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "df5983e26edd6a711e639a630b39e94648f0c3c38fb32a6df9cf04f03dbcf822",
+    "original_prompt_sha256": "84d2e213681979d28838a2a3d9b3a687f586724ebd97cc8ee0948179fd76ed77",
+    "review": {
+      "group": "G33",
+      "family": "D31",
+      "response_sha256": "df5983e26edd6a711e639a630b39e94648f0c3c38fb32a6df9cf04f03dbcf822",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".center()",
+          "evidence": "A-LAYOUT; A-FRAME",
+          "explanation": "All principal solutions rely on undefined center/centered/offsetBy modifiers presented as built-ins, with no extension. The confident modern-recommended claim is unsupported; no usable centering solution."
+        }
+      ],
+      "reason": "All principal solutions rely on undefined center/centered/offsetBy modifiers presented as built-ins, with no extension. The confident modern-recommended claim is unsupported; no usable centering solution.",
+      "evidence_ids": [
+        "A-LAYOUT",
+        "A-FRAME"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D31-27-C1",
+    "family": "D31",
+    "os": "27",
+    "release": "candidate",
+    "arm": "C1",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "b627ec11de4fe3f13a6adba91c2f7cf1d345488cb56769d156065f8c020b64f0",
+    "original_prompt_sha256": "2a3568bef7d7808fb3ac7fc607470ba99096f99e30f29df1c9b4ebc43456c6a9",
+    "review": {
+      "group": "G30",
+      "family": "D31",
+      "response_sha256": "b627ec11de4fe3f13a6adba91c2f7cf1d345488cb56769d156065f8c020b64f0",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 2,
+        "task_success": 0,
+        "calibration": 2,
+        "relevance": 0
+      },
+      "quality": 0.275,
+      "criticalErrors": [],
+      "reason": "Correctly recognizes that layout is not an accessibility audit and mentions frame/alignment, but never gives the requested centering solution. Instead repeats irrelevant routing/checklist material until truncation.",
+      "evidence_ids": [
+        "A-FRAME",
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D31-27-C2",
+    "family": "D31",
+    "os": "27",
+    "release": "candidate",
+    "arm": "C2",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "cea71e394b299440a2eea43eb4240e5940d5076708b01ee6086d3bd697b71d9a",
+    "original_prompt_sha256": "625736bb7a2fdbdeb0f134671d917b14b8d01ee0ef772bcb0b2a1e6fb1c8e801",
+    "review": {
+      "group": "G31",
+      "family": "D31",
+      "response_sha256": "cea71e394b299440a2eea43eb4240e5940d5076708b01ee6086d3bd697b71d9a",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 1
+      },
+      "quality": 0.2125,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".centered()",
+          "evidence": "A-FRAME; A-LAYOUT",
+          "explanation": "Recognizes the topic but buries it under an irrelevant accessibility workflow. Recommends nonexistent centered() and attempts to instantiate the View protocol; a mention of a fixed frame provides only limited useful content."
+        }
+      ],
+      "reason": "Recognizes the topic but buries it under an irrelevant accessibility workflow. Recommends nonexistent centered() and attempts to instantiate the View protocol; a mention of a fixed frame provides only limited useful content.",
+      "evidence_ids": [
+        "A-FRAME",
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "candidate-D31-27-C3",
+    "family": "D31",
+    "os": "27",
+    "release": "candidate",
+    "arm": "C3",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "398ab8d11b4f8b6d73c775c4996ad692d5e602831a713925afcca77660bb9d4d",
+    "original_prompt_sha256": "ebeea36a5848033517a652aca84af6273124002107d1cbf3f0cefe6910f2740e",
+    "review": {
+      "group": "G27",
+      "family": "D31",
+      "response_sha256": "398ab8d11b4f8b6d73c775c4996ad692d5e602831a713925afcca77660bb9d4d",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 1
+      },
+      "quality": 0.2125,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "CenteredView {",
+          "evidence": "A-FRAME; A-LAYOUT",
+          "explanation": "Same primary invented CenteredView/centering APIs as G26; one valid fixed-frame example earns limited credit. The truncated container catalogue does not supply a reliable concise answer."
+        }
+      ],
+      "reason": "Same primary invented CenteredView/centering APIs as G26; one valid fixed-frame example earns limited credit. The truncated container catalogue does not supply a reliable concise answer.",
+      "evidence_ids": [
+        "A-FRAME",
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D01-26-C0",
+    "family": "D01",
+    "os": "26",
+    "release": "baseline",
+    "arm": "C0",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "129d8f87d8268a2700ea817c63c73e7c871499a27cb364917947d77d415d5c1a",
+    "original_prompt_sha256": "cb2a45b991efe4c09dac7ff4afad6aa864f7574ed9b9aa4b7a638383f0b013f7",
+    "review": {
+      "group": "G01",
+      "family": "D01",
+      "response_sha256": "129d8f87d8268a2700ea817c63c73e7c871499a27cb364917947d77d415d5c1a",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.1375,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "let accessibilityManager = UIAccessibilityManager()",
+          "evidence": "A-UIKIT",
+          "explanation": "Invents an accessibility manager/query API and role types instead of explaining native text-derived labeling. Some discussion of labels/testing is relevant, but the implementation is unusable. It replaces the supplied version with iOS 16 and asserts automatic contrast correction."
+        }
+      ],
+      "reason": "Invents an accessibility manager/query API and role types instead of explaining native text-derived labeling. Some discussion of labels/testing is relevant, but the implementation is unusable. It replaces the supplied version with iOS 16 and asserts automatic contrast correction.",
+      "evidence_ids": [
+        "F-D01",
+        "A-UIKIT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D01-26-C1",
+    "family": "D01",
+    "os": "26",
+    "release": "baseline",
+    "arm": "C1",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "b081b2388abd8a4c36cc9d0c4b995b627fd6bcce9dadf4e495aaf1d9f8eaf72b",
+    "original_prompt_sha256": "84900557eaaf578329f91e82cafc6b89c3a7e342365a777213fb0ee07d6bafe8",
+    "review": {
+      "group": "G11",
+      "family": "D01",
+      "response_sha256": "b081b2388abd8a4c36cc9d0c4b995b627fd6bcce9dadf4e495aaf1d9f8eaf72b",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.1375,
+      "criticalErrors": [],
+      "reason": "Incorrectly says UILabel is inaccessible by default and confuses label/value with traits and role assignment. Testing directions do not establish a meaningful accessible name and native text-derived behavior is absent.",
+      "evidence_ids": [
+        "F-D01",
+        "A-UILABEL",
+        "A-LABEL"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D01-26-C2",
+    "family": "D01",
+    "os": "26",
+    "release": "baseline",
+    "arm": "C2",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "ceefb5cc56541100245ae32bd10eda66602f29e25750474ad8dd969c17da5855",
+    "original_prompt_sha256": "cf0aca43717faaf51496bb39ef75aa3f58ca5bfe866604279f67da34ebeec0c7",
+    "review": {
+      "group": "G14",
+      "family": "D01",
+      "response_sha256": "ceefb5cc56541100245ae32bd10eda66602f29e25750474ad8dd969c17da5855",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.2375,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "`UITraitContentEditable`",
+          "evidence": "A-TRAITS",
+          "explanation": "Explicitly warns against using native label text, contrary to the rubric, and recommends invented editable/scrollable/hidden traits. Genuine semantic-control advice does not rescue the implementation. Truncation retained."
+        }
+      ],
+      "reason": "Explicitly warns against using native label text, contrary to the rubric, and recommends invented editable/scrollable/hidden traits. Genuine semantic-control advice does not rescue the implementation. Truncation retained.",
+      "evidence_ids": [
+        "F-D01",
+        "A-TRAITS"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 1,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D01-26-C3",
+    "family": "D01",
+    "os": "26",
+    "release": "baseline",
+    "arm": "C3",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "fdcab4de41a2b6f0e11aa0d385f85afb3c1d663d872165fce82378ac8d9be14b",
+    "original_prompt_sha256": "b4dae95bdfbc512855c33b31bde7d1f41891d73f2679c1dac18b0e896d00cd28",
+    "review": {
+      "group": "G16",
+      "family": "D01",
+      "response_sha256": "fdcab4de41a2b6f0e11aa0d385f85afb3c1d663d872165fce82378ac8d9be14b",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 1
+      },
+      "quality": 0.025,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".accessibilityTraits(.accessibilityLabel)",
+          "evidence": "A-TRAITS; A-UILABEL",
+          "explanation": "Conflates UIKit and SwiftUI, labels and containers; assigns properties/modifiers that do not match UILabel and returns UILabel instances directly in SwiftUI code. Does not provide a usable answer and ends truncated."
+        }
+      ],
+      "reason": "Conflates UIKit and SwiftUI, labels and containers; assigns properties/modifiers that do not match UILabel and returns UILabel instances directly in SwiftUI code. Does not provide a usable answer and ends truncated.",
+      "evidence_ids": [
+        "F-D01",
+        "A-TRAITS",
+        "A-UILABEL"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D01-27-C0",
+    "family": "D01",
+    "os": "27",
+    "release": "baseline",
+    "arm": "C0",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "360ae0857ba957022048f2e8d1c7d3a4813d40084bd61874615b9b99f38fac36",
+    "original_prompt_sha256": "e24efee8f906cebe3e4954a38d28a2f5f1f5456828bbb1b85f0204076f71568c",
+    "review": {
+      "group": "G06",
+      "family": "D01",
+      "response_sha256": "360ae0857ba957022048f2e8d1c7d3a4813d40084bd61874615b9b99f38fac36",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.1375,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "let accessibilityTree = AccessibilityTreeModel()",
+          "evidence": "A-UIKIT",
+          "explanation": "The accessibility-tree protocol and trait/action API are invented; hints are incorrectly treated as missing-label fallbacks and identifiers as activation mechanisms. A few genuine property names do not make the example usable."
+        }
+      ],
+      "reason": "The accessibility-tree protocol and trait/action API are invented; hints are incorrectly treated as missing-label fallbacks and identifiers as activation mechanisms. A few genuine property names do not make the example usable.",
+      "evidence_ids": [
+        "F-D01",
+        "A-UIKIT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D01-27-C1",
+    "family": "D01",
+    "os": "27",
+    "release": "baseline",
+    "arm": "C1",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "173640aa7d0acbdabca0f1efadf361d85e2524f9c5ed1889b937924a77d77bfa",
+    "original_prompt_sha256": "f22bd95b2fdefcebbf13f29b226e77373b40e919dd2cc663cabc830df5a6839c",
+    "review": {
+      "group": "G02",
+      "family": "D01",
+      "response_sha256": "173640aa7d0acbdabca0f1efadf361d85e2524f9c5ed1889b937924a77d77bfa",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 1,
+        "calibration": 1,
+        "relevance": 2
+      },
+      "quality": 0.175,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "`dynamicType = 2`",
+          "evidence": "A-UILABEL",
+          "explanation": "Some useful emphasis on meaningful text is overwhelmed by nonexistent Dynamic Type/grouping APIs, the wrong UILabel superclass, and advice to move labels out of scroll views. Future-version caveat does not qualify the invented implementation. Ends truncated."
+        }
+      ],
+      "reason": "Some useful emphasis on meaningful text is overwhelmed by nonexistent Dynamic Type/grouping APIs, the wrong UILabel superclass, and advice to move labels out of scroll views. Future-version caveat does not qualify the invented implementation. Ends truncated.",
+      "evidence_ids": [
+        "F-D01",
+        "A-UILABEL"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D01-27-C2",
+    "family": "D01",
+    "os": "27",
+    "release": "baseline",
+    "arm": "C2",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "ab7fba8a6dcee6b9793079bc0186114852dd2df500930db1c9388870cd65ab8c",
+    "original_prompt_sha256": "078e7a104ce8288f85468623023be5b1af9d0ad9532c358047e5bf048fb340eb",
+    "review": {
+      "group": "G10",
+      "family": "D01",
+      "response_sha256": "ab7fba8a6dcee6b9793079bc0186114852dd2df500930db1c9388870cd65ab8c",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.2375,
+      "criticalErrors": [],
+      "reason": "Contradicts itself about nil labels, mandates redundant explicit labels/values, and adds unsupported property/hosting guidance. Some genuine label and hint information survives, but substantial correction is needed. Truncated ending is retained.",
+      "evidence_ids": [
+        "F-D01",
+        "A-LABEL"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 1,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D01-27-C3",
+    "family": "D01",
+    "os": "27",
+    "release": "baseline",
+    "arm": "C3",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "25f1937a635ae6b55fefaef2ee91335f4e556d857c06c960bc733be6e43d8c3b",
+    "original_prompt_sha256": "02f4554027f1b4d7ab87de81dfdfd779d2583b46e9a2d3e1e25bd942e5469529",
+    "review": {
+      "group": "G04",
+      "family": "D01",
+      "response_sha256": "25f1937a635ae6b55fefaef2ee91335f4e556d857c06c960bc733be6e43d8c3b",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.2375,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "Use `UITraitLabel` for standard text labels.",
+          "evidence": "A-TRAITS",
+          "explanation": "Meaningful visible text is relevant, but the recommended trait constants are not the UIKit API. Requires keyboard interaction from a text label and omits the normal text-derived label behavior and conditional customization."
+        }
+      ],
+      "reason": "Meaningful visible text is relevant, but the recommended trait constants are not the UIKit API. Requires keyboard interaction from a text label and omits the normal text-derived label behavior and conditional customization.",
+      "evidence_ids": [
+        "F-D01",
+        "A-TRAITS"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D31-26-C0",
+    "family": "D31",
+    "os": "26",
+    "release": "baseline",
+    "arm": "C0",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "df5983e26edd6a711e639a630b39e94648f0c3c38fb32a6df9cf04f03dbcf822",
+    "original_prompt_sha256": "84d2e213681979d28838a2a3d9b3a687f586724ebd97cc8ee0948179fd76ed77",
+    "review": {
+      "group": "G33",
+      "family": "D31",
+      "response_sha256": "df5983e26edd6a711e639a630b39e94648f0c3c38fb32a6df9cf04f03dbcf822",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".center()",
+          "evidence": "A-LAYOUT; A-FRAME",
+          "explanation": "All principal solutions rely on undefined center/centered/offsetBy modifiers presented as built-ins, with no extension. The confident modern-recommended claim is unsupported; no usable centering solution."
+        }
+      ],
+      "reason": "All principal solutions rely on undefined center/centered/offsetBy modifiers presented as built-ins, with no extension. The confident modern-recommended claim is unsupported; no usable centering solution.",
+      "evidence_ids": [
+        "A-LAYOUT",
+        "A-FRAME"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D31-26-C1",
+    "family": "D31",
+    "os": "26",
+    "release": "baseline",
+    "arm": "C1",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "d4b5aee33ea588c35b7e37e203af3467a17c78e4f57e1948a780a31400726190",
+    "original_prompt_sha256": "b3be7b447dd3bf107aebea9e19ac61987b5e8b210640440019d149cfd26b2599",
+    "review": {
+      "group": "G32",
+      "family": "D31",
+      "response_sha256": "d4b5aee33ea588c35b7e37e203af3467a17c78e4f57e1948a780a31400726190",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 2,
+        "task_success": 2,
+        "calibration": 1,
+        "relevance": 1
+      },
+      "quality": 0.4375,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "`Alignment.topCenter`",
+          "evidence": "A-ALIGNMENT; A-FRAME",
+          "explanation": "ZStack with center alignment is a valid starting point. However, recommends nonexistent Alignment.topCenter as vertical centering, gives only an empty container and invents accessibility benefits. Material correction and container-sizing explanation are needed."
+        }
+      ],
+      "reason": "ZStack with center alignment is a valid starting point. However, recommends nonexistent Alignment.topCenter as vertical centering, gives only an empty container and invents accessibility benefits. Material correction and container-sizing explanation are needed.",
+      "evidence_ids": [
+        "A-ALIGNMENT",
+        "A-FRAME"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D31-26-C2",
+    "family": "D31",
+    "os": "26",
+    "release": "baseline",
+    "arm": "C2",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "ea606c6e1b7be7a1fda6839a1b51c3a8e6088ac39ce418b70845022204c135b7",
+    "original_prompt_sha256": "a64916a51030cad9b189805843a61a32438f5be66f0c7d59636e1d75fc239ff1",
+    "review": {
+      "group": "G34",
+      "family": "D31",
+      "response_sha256": "ea606c6e1b7be7a1fda6839a1b51c3a8e6088ac39ce418b70845022204c135b7",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 1
+      },
+      "quality": 0.2125,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".centered()",
+          "evidence": "A-FRAME; A-LAYOUT",
+          "explanation": "Includes potentially useful ZStack/Spacer fragments but all concrete main implementations rely on undefined centered(). Invents layout-based accessibility guarantees and a nonworking test. Truncation retained."
+        }
+      ],
+      "reason": "Includes potentially useful ZStack/Spacer fragments but all concrete main implementations rely on undefined centered(). Invents layout-based accessibility guarantees and a nonworking test. Truncation retained.",
+      "evidence_ids": [
+        "A-FRAME",
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D31-26-C3",
+    "family": "D31",
+    "os": "26",
+    "release": "baseline",
+    "arm": "C3",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "9c14aa38b8e406c985989388336472312b79c29309d4d0319b959bef13d31026",
+    "original_prompt_sha256": "7eb3594d0f4f5c10c6153f7125aeeb9c9eca2027ef8d575f41aa3da7633ecee8",
+    "review": {
+      "group": "G28",
+      "family": "D31",
+      "response_sha256": "9c14aa38b8e406c985989388336472312b79c29309d4d0319b959bef13d31026",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "CenteredView {",
+          "evidence": "A-LAYOUT",
+          "explanation": "Entire proposed solution depends on undefined CenteredView/CenteredStack presented as standard SwiftUI. Confuses orientation with Dynamic Type and supplies no functioning centering alternative."
+        }
+      ],
+      "reason": "Entire proposed solution depends on undefined CenteredView/CenteredStack presented as standard SwiftUI. Confuses orientation with Dynamic Type and supplies no functioning centering alternative.",
+      "evidence_ids": [
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D31-27-C0",
+    "family": "D31",
+    "os": "27",
+    "release": "baseline",
+    "arm": "C0",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "df5983e26edd6a711e639a630b39e94648f0c3c38fb32a6df9cf04f03dbcf822",
+    "original_prompt_sha256": "84d2e213681979d28838a2a3d9b3a687f586724ebd97cc8ee0948179fd76ed77",
+    "review": {
+      "group": "G33",
+      "family": "D31",
+      "response_sha256": "df5983e26edd6a711e639a630b39e94648f0c3c38fb32a6df9cf04f03dbcf822",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".center()",
+          "evidence": "A-LAYOUT; A-FRAME",
+          "explanation": "All principal solutions rely on undefined center/centered/offsetBy modifiers presented as built-ins, with no extension. The confident modern-recommended claim is unsupported; no usable centering solution."
+        }
+      ],
+      "reason": "All principal solutions rely on undefined center/centered/offsetBy modifiers presented as built-ins, with no extension. The confident modern-recommended claim is unsupported; no usable centering solution.",
+      "evidence_ids": [
+        "A-LAYOUT",
+        "A-FRAME"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D31-27-C1",
+    "family": "D31",
+    "os": "27",
+    "release": "baseline",
+    "arm": "C1",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "d4b5aee33ea588c35b7e37e203af3467a17c78e4f57e1948a780a31400726190",
+    "original_prompt_sha256": "b3be7b447dd3bf107aebea9e19ac61987b5e8b210640440019d149cfd26b2599",
+    "review": {
+      "group": "G32",
+      "family": "D31",
+      "response_sha256": "d4b5aee33ea588c35b7e37e203af3467a17c78e4f57e1948a780a31400726190",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 2,
+        "task_success": 2,
+        "calibration": 1,
+        "relevance": 1
+      },
+      "quality": 0.4375,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "`Alignment.topCenter`",
+          "evidence": "A-ALIGNMENT; A-FRAME",
+          "explanation": "ZStack with center alignment is a valid starting point. However, recommends nonexistent Alignment.topCenter as vertical centering, gives only an empty container and invents accessibility benefits. Material correction and container-sizing explanation are needed."
+        }
+      ],
+      "reason": "ZStack with center alignment is a valid starting point. However, recommends nonexistent Alignment.topCenter as vertical centering, gives only an empty container and invents accessibility benefits. Material correction and container-sizing explanation are needed.",
+      "evidence_ids": [
+        "A-ALIGNMENT",
+        "A-FRAME"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D31-27-C2",
+    "family": "D31",
+    "os": "27",
+    "release": "baseline",
+    "arm": "C2",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "ea606c6e1b7be7a1fda6839a1b51c3a8e6088ac39ce418b70845022204c135b7",
+    "original_prompt_sha256": "a64916a51030cad9b189805843a61a32438f5be66f0c7d59636e1d75fc239ff1",
+    "review": {
+      "group": "G34",
+      "family": "D31",
+      "response_sha256": "ea606c6e1b7be7a1fda6839a1b51c3a8e6088ac39ce418b70845022204c135b7",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 1
+      },
+      "quality": 0.2125,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".centered()",
+          "evidence": "A-FRAME; A-LAYOUT",
+          "explanation": "Includes potentially useful ZStack/Spacer fragments but all concrete main implementations rely on undefined centered(). Invents layout-based accessibility guarantees and a nonworking test. Truncation retained."
+        }
+      ],
+      "reason": "Includes potentially useful ZStack/Spacer fragments but all concrete main implementations rely on undefined centered(). Invents layout-based accessibility guarantees and a nonworking test. Truncation retained.",
+      "evidence_ids": [
+        "A-FRAME",
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "smoke-v1",
+    "case": "baseline-D31-27-C3",
+    "family": "D31",
+    "os": "27",
+    "release": "baseline",
+    "arm": "C3",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "9c14aa38b8e406c985989388336472312b79c29309d4d0319b959bef13d31026",
+    "original_prompt_sha256": "7eb3594d0f4f5c10c6153f7125aeeb9c9eca2027ef8d575f41aa3da7633ecee8",
+    "review": {
+      "group": "G28",
+      "family": "D31",
+      "response_sha256": "9c14aa38b8e406c985989388336472312b79c29309d4d0319b959bef13d31026",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "CenteredView {",
+          "evidence": "A-LAYOUT",
+          "explanation": "Entire proposed solution depends on undefined CenteredView/CenteredStack presented as standard SwiftUI. Confuses orientation with Dynamic Type and supplies no functioning centering alternative."
+        }
+      ],
+      "reason": "Entire proposed solution depends on undefined CenteredView/CenteredStack presented as standard SwiftUI. Confuses orientation with Dynamic Type and supplies no functioning centering alternative.",
+      "evidence_ids": [
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D01-26-1024-C0",
+    "family": "D01",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C0",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "129d8f87d8268a2700ea817c63c73e7c871499a27cb364917947d77d415d5c1a",
+    "original_prompt_sha256": "cb2a45b991efe4c09dac7ff4afad6aa864f7574ed9b9aa4b7a638383f0b013f7",
+    "review": {
+      "group": "G01",
+      "family": "D01",
+      "response_sha256": "129d8f87d8268a2700ea817c63c73e7c871499a27cb364917947d77d415d5c1a",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.1375,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "let accessibilityManager = UIAccessibilityManager()",
+          "evidence": "A-UIKIT",
+          "explanation": "Invents an accessibility manager/query API and role types instead of explaining native text-derived labeling. Some discussion of labels/testing is relevant, but the implementation is unusable. It replaces the supplied version with iOS 16 and asserts automatic contrast correction."
+        }
+      ],
+      "reason": "Invents an accessibility manager/query API and role types instead of explaining native text-derived labeling. Some discussion of labels/testing is relevant, but the implementation is unusable. It replaces the supplied version with iOS 16 and asserts automatic contrast correction.",
+      "evidence_ids": [
+        "F-D01",
+        "A-UIKIT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D01-26-1024-C2",
+    "family": "D01",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C2",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "2b259e310122259e9de81d6d0c0258f7a1e6af4e1b257a9bacda1eaaf05fa5f9",
+    "original_prompt_sha256": "717a76a05dcfe728be8b5a6f4fcd9d5980151ebfbaa24f445350de76b468243d",
+    "review": {
+      "group": "G05",
+      "family": "D01",
+      "response_sha256": "2b259e310122259e9de81d6d0c0258f7a1e6af4e1b257a9bacda1eaaf05fa5f9",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 2,
+        "calibration": 1,
+        "relevance": 2
+      },
+      "quality": 0.3625,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "label.accessibilityTraits = [.active, .button]",
+          "evidence": "A-TRAITS",
+          "explanation": "Useful naming, decorative-content and semantic-control advice earns partial task credit. The example uses invalid active/icon traits and turns text labeling into button implementation without explaining native defaults. Generic future-OS caution coexists with unjustified high freshness."
+        }
+      ],
+      "reason": "Useful naming, decorative-content and semantic-control advice earns partial task credit. The example uses invalid active/icon traits and turns text labeling into button implementation without explaining native defaults. Generic future-OS caution coexists with unjustified high freshness.",
+      "evidence_ids": [
+        "F-D01",
+        "A-TRAITS"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 1,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D01-26-1024-C3-original",
+    "family": "D01",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-original",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "cb6d8d663d4fdd049faa19c198266209c905cc8f6ac436085321d29ff2b0c027",
+    "original_prompt_sha256": "903d54d036521c4fc5588bdfa7bd06440394840f5159326831c6dd7983c69b81",
+    "review": {
+      "group": "G13",
+      "family": "D01",
+      "response_sha256": "cb6d8d663d4fdd049faa19c198266209c905cc8f6ac436085321d29ff2b0c027",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.2375,
+      "criticalErrors": [],
+      "reason": "Confuses accessible name with accessibilityValue and requires explicit value configuration. Claims the guideline requires both label and value, which it does not. Some relevant testing is present but the central rule is wrong.",
+      "evidence_ids": [
+        "F-D01",
+        "A-LABEL"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D01-26-1024-C3-explicit",
+    "family": "D01",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-explicit",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "ebc6c554bc82dad2e0572092a5b1356f576d96f4437e2a037fe1156feb0dc6bf",
+    "original_prompt_sha256": "23b63fe9b6c0df0e0503d0f17898fca263f8f622d04e687ccdcb51d7bf8f8422",
+    "review": {
+      "group": "G15",
+      "family": "D01",
+      "response_sha256": "ebc6c554bc82dad2e0572092a5b1356f576d96f4437e2a037fe1156feb0dc6bf",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 2,
+        "task_success": 1,
+        "calibration": 1,
+        "relevance": 3
+      },
+      "quality": 0.4,
+      "criticalErrors": [],
+      "reason": "Gives relevant meaningful-text and verification advice but omits text-derived defaults and conditional customization. Role terminology is confused, hint guidance is vague and duplicated high-freshness/source assertions overstate support. No implementable core explanation.",
+      "evidence_ids": [
+        "F-D01",
+        "A-LABEL"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D01-26-2048-C0",
+    "family": "D01",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C0",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "1fbeeb014e2733f4da070bdd836f840c0e3150a991a05a4623001a5d0cbb9ebb",
+    "original_prompt_sha256": "cb2a45b991efe4c09dac7ff4afad6aa864f7574ed9b9aa4b7a638383f0b013f7",
+    "review": {
+      "group": "G03",
+      "family": "D01",
+      "response_sha256": "1fbeeb014e2733f4da070bdd836f840c0e3150a991a05a4623001a5d0cbb9ebb",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.1375,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "let accessibilityManager = UIAccessibilityManager()",
+          "evidence": "A-UIKIT",
+          "explanation": "Longer output completes the same invented manager/query-based implementation as G01 and adds unsupported deprecation claims. More tokens do not repair the missing native-label explanation or version substitution."
+        }
+      ],
+      "reason": "Longer output completes the same invented manager/query-based implementation as G01 and adds unsupported deprecation claims. More tokens do not repair the missing native-label explanation or version substitution.",
+      "evidence_ids": [
+        "F-D01",
+        "A-UIKIT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D01-26-2048-C2",
+    "family": "D01",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C2",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "2b259e310122259e9de81d6d0c0258f7a1e6af4e1b257a9bacda1eaaf05fa5f9",
+    "original_prompt_sha256": "717a76a05dcfe728be8b5a6f4fcd9d5980151ebfbaa24f445350de76b468243d",
+    "review": {
+      "group": "G05",
+      "family": "D01",
+      "response_sha256": "2b259e310122259e9de81d6d0c0258f7a1e6af4e1b257a9bacda1eaaf05fa5f9",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 2,
+        "calibration": 1,
+        "relevance": 2
+      },
+      "quality": 0.3625,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "label.accessibilityTraits = [.active, .button]",
+          "evidence": "A-TRAITS",
+          "explanation": "Useful naming, decorative-content and semantic-control advice earns partial task credit. The example uses invalid active/icon traits and turns text labeling into button implementation without explaining native defaults. Generic future-OS caution coexists with unjustified high freshness."
+        }
+      ],
+      "reason": "Useful naming, decorative-content and semantic-control advice earns partial task credit. The example uses invalid active/icon traits and turns text labeling into button implementation without explaining native defaults. Generic future-OS caution coexists with unjustified high freshness.",
+      "evidence_ids": [
+        "F-D01",
+        "A-TRAITS"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 1,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D01-26-2048-C3-original",
+    "family": "D01",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-original",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "cb6d8d663d4fdd049faa19c198266209c905cc8f6ac436085321d29ff2b0c027",
+    "original_prompt_sha256": "903d54d036521c4fc5588bdfa7bd06440394840f5159326831c6dd7983c69b81",
+    "review": {
+      "group": "G13",
+      "family": "D01",
+      "response_sha256": "cb6d8d663d4fdd049faa19c198266209c905cc8f6ac436085321d29ff2b0c027",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.2375,
+      "criticalErrors": [],
+      "reason": "Confuses accessible name with accessibilityValue and requires explicit value configuration. Claims the guideline requires both label and value, which it does not. Some relevant testing is present but the central rule is wrong.",
+      "evidence_ids": [
+        "F-D01",
+        "A-LABEL"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D01-26-2048-C3-explicit",
+    "family": "D01",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-explicit",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "ebc6c554bc82dad2e0572092a5b1356f576d96f4437e2a037fe1156feb0dc6bf",
+    "original_prompt_sha256": "23b63fe9b6c0df0e0503d0f17898fca263f8f622d04e687ccdcb51d7bf8f8422",
+    "review": {
+      "group": "G15",
+      "family": "D01",
+      "response_sha256": "ebc6c554bc82dad2e0572092a5b1356f576d96f4437e2a037fe1156feb0dc6bf",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 2,
+        "task_success": 1,
+        "calibration": 1,
+        "relevance": 3
+      },
+      "quality": 0.4,
+      "criticalErrors": [],
+      "reason": "Gives relevant meaningful-text and verification advice but omits text-derived defaults and conditional customization. Role terminology is confused, hint guidance is vague and duplicated high-freshness/source assertions overstate support. No implementable core explanation.",
+      "evidence_ids": [
+        "F-D01",
+        "A-LABEL"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D02-26-1024-C0",
+    "family": "D02",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C0",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "ee9df4b2378d5d2ffd0d6f7281b060c56a0b8c8d7f9e10257c959e60b200c2da",
+    "original_prompt_sha256": "11dccc9238ad07180fc9b5341bacf10c6c985a05d1dc121fb954e621a223e329",
+    "review": {
+      "group": "G21",
+      "family": "D02",
+      "response_sha256": "ee9df4b2378d5d2ffd0d6f7281b060c56a0b8c8d7f9e10257c959e60b200c2da",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.1375,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "import AccessibilityUI",
+          "evidence": "A-UIKIT; F-D02",
+          "explanation": "The truncated version of G19 retains the same invented framework/properties and incorrect Home-button navigation. Mentioning a plausible three-element order earns limited task credit, not a usable implementation."
+        }
+      ],
+      "reason": "The truncated version of G19 retains the same invented framework/properties and incorrect Home-button navigation. Mentioning a plausible three-element order earns limited task credit, not a usable implementation.",
+      "evidence_ids": [
+        "F-D02",
+        "A-UIKIT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D02-26-1024-C2",
+    "family": "D02",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C2",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "5759e44dbf0107aa3c500db7f7cdd15119df6541735765e9a4077fd244325f8e",
+    "original_prompt_sha256": "5da88008367715841ea8c60f7f82829dbc8668ba82e8854ece8c10bd663fc94e",
+    "review": {
+      "group": "G20",
+      "family": "D02",
+      "response_sha256": "5759e44dbf0107aa3c500db7f7cdd15119df6541735765e9a4077fd244325f8e",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.15000000000000002,
+      "criticalErrors": [
+        {
+          "category": "lost_functionality",
+          "excerpt": "Verify that the Switch and Button are not separate focus targets.",
+          "evidence": "F-D02",
+          "explanation": "Starts with a plausible traversal, then explicitly requires the switch and help button not be separate focus targets and treats them as one action. No alternative distinct actions are supplied. This defeats the central operability criterion despite the injected reference saying to preserve it."
+        }
+      ],
+      "reason": "Starts with a plausible traversal, then explicitly requires the switch and help button not be separate focus targets and treats them as one action. No alternative distinct actions are supplied. This defeats the central operability criterion despite the injected reference saying to preserve it.",
+      "evidence_ids": [
+        "F-D02"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 1,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D02-26-1024-C3-original",
+    "family": "D02",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-original",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "360c26808a5bade49957c12225edc8aca156359ab5cb5cc2b3aee182a86519a8",
+    "original_prompt_sha256": "a741a7800be6f6be1dbe7f557b1d184574b3797f3ecf6ec7ecf35d6f6f1ae1dc",
+    "review": {
+      "group": "G17",
+      "family": "D02",
+      "response_sha256": "360c26808a5bade49957c12225edc8aca156359ab5cb5cc2b3aee182a86519a8",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 1,
+        "relevance": 1
+      },
+      "quality": 0.0625,
+      "criticalErrors": [],
+      "reason": "Asks for a framework already supplied and gives incorrect hierarchy/version explanations. Clarification could be reasonable for ambiguous context, but it never preserves or explains the switch and help actions; substantial unsupported claims accompany the request.",
+      "evidence_ids": [
+        "F-D02"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D02-26-1024-C3-explicit",
+    "family": "D02",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-explicit",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "4fa304787743c23fb07efb5dbb37a2f7bcad4643d6518752964d165efdef5286",
+    "original_prompt_sha256": "fb3f9e8c8c895afe7620e8f8fe116e6356f1cd4f6b05fbe608dfbe4a1b2f9df9",
+    "review": {
+      "group": "G18",
+      "family": "D02",
+      "response_sha256": "4fa304787743c23fb07efb5dbb37a2f7bcad4643d6518752964d165efdef5286",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 0,
+        "calibration": 1,
+        "relevance": 1
+      },
+      "quality": 0.1625,
+      "criticalErrors": [],
+      "reason": "Asks clarifying questions instead of answering how the two actions remain accessible. Invents Settings-app/list-sheet behavior not supplied by the user. Some recognition that structure matters, but no solution to the stated row.",
+      "evidence_ids": [
+        "F-D02"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D02-26-2048-C0",
+    "family": "D02",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C0",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "54acb4854ea022b42384e78b4a809d4347efe98ae0b0de12a6c46726094346c1",
+    "original_prompt_sha256": "11dccc9238ad07180fc9b5341bacf10c6c985a05d1dc121fb954e621a223e329",
+    "review": {
+      "group": "G19",
+      "family": "D02",
+      "response_sha256": "54acb4854ea022b42384e78b4a809d4347efe98ae0b0de12a6c46726094346c1",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.1375,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "import AccessibilityUI",
+          "evidence": "A-UIKIT; F-D02",
+          "explanation": "Names a plausible label/switch/help sequence but builds it from a nonexistent AccessibilityUI framework and properties. Home-button navigation and fabricated API examples make the proposed solution unusable."
+        }
+      ],
+      "reason": "Names a plausible label/switch/help sequence but builds it from a nonexistent AccessibilityUI framework and properties. Home-button navigation and fabricated API examples make the proposed solution unusable.",
+      "evidence_ids": [
+        "F-D02",
+        "A-UIKIT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D02-26-2048-C2",
+    "family": "D02",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C2",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "5759e44dbf0107aa3c500db7f7cdd15119df6541735765e9a4077fd244325f8e",
+    "original_prompt_sha256": "5da88008367715841ea8c60f7f82829dbc8668ba82e8854ece8c10bd663fc94e",
+    "review": {
+      "group": "G20",
+      "family": "D02",
+      "response_sha256": "5759e44dbf0107aa3c500db7f7cdd15119df6541735765e9a4077fd244325f8e",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.15000000000000002,
+      "criticalErrors": [
+        {
+          "category": "lost_functionality",
+          "excerpt": "Verify that the Switch and Button are not separate focus targets.",
+          "evidence": "F-D02",
+          "explanation": "Starts with a plausible traversal, then explicitly requires the switch and help button not be separate focus targets and treats them as one action. No alternative distinct actions are supplied. This defeats the central operability criterion despite the injected reference saying to preserve it."
+        }
+      ],
+      "reason": "Starts with a plausible traversal, then explicitly requires the switch and help button not be separate focus targets and treats them as one action. No alternative distinct actions are supplied. This defeats the central operability criterion despite the injected reference saying to preserve it.",
+      "evidence_ids": [
+        "F-D02"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 1,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D02-26-2048-C3-original",
+    "family": "D02",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-original",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "360c26808a5bade49957c12225edc8aca156359ab5cb5cc2b3aee182a86519a8",
+    "original_prompt_sha256": "a741a7800be6f6be1dbe7f557b1d184574b3797f3ecf6ec7ecf35d6f6f1ae1dc",
+    "review": {
+      "group": "G17",
+      "family": "D02",
+      "response_sha256": "360c26808a5bade49957c12225edc8aca156359ab5cb5cc2b3aee182a86519a8",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 1,
+        "relevance": 1
+      },
+      "quality": 0.0625,
+      "criticalErrors": [],
+      "reason": "Asks for a framework already supplied and gives incorrect hierarchy/version explanations. Clarification could be reasonable for ambiguous context, but it never preserves or explains the switch and help actions; substantial unsupported claims accompany the request.",
+      "evidence_ids": [
+        "F-D02"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D02-26-2048-C3-explicit",
+    "family": "D02",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-explicit",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "4fa304787743c23fb07efb5dbb37a2f7bcad4643d6518752964d165efdef5286",
+    "original_prompt_sha256": "fb3f9e8c8c895afe7620e8f8fe116e6356f1cd4f6b05fbe608dfbe4a1b2f9df9",
+    "review": {
+      "group": "G18",
+      "family": "D02",
+      "response_sha256": "4fa304787743c23fb07efb5dbb37a2f7bcad4643d6518752964d165efdef5286",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 0,
+        "calibration": 1,
+        "relevance": 1
+      },
+      "quality": 0.1625,
+      "criticalErrors": [],
+      "reason": "Asks clarifying questions instead of answering how the two actions remain accessible. Invents Settings-app/list-sheet behavior not supplied by the user. Some recognition that structure matters, but no solution to the stated row.",
+      "evidence_ids": [
+        "F-D02"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D03-26-1024-C0",
+    "family": "D03",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C0",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "a0e518a92580e3ba6479759b9659968be3c760ffc2f75c9d32b491e0b5fc79b3",
+    "original_prompt_sha256": "d3da751b475af4f8056c5e8e50da8d6a919cadec816af23351dc1f2381b0129d",
+    "review": {
+      "group": "G23",
+      "family": "D03",
+      "response_sha256": "a0e518a92580e3ba6479759b9659968be3c760ffc2f75c9d32b491e0b5fc79b3",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [],
+      "reason": "Says yes but invents tap-to-delete and automatic inactivity deletion in an unspecified application. Provides neither a named accessibility action nor a concrete discoverable control design.",
+      "evidence_ids": [
+        "F-D03",
+        "A-ACTION"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D03-26-1024-C2",
+    "family": "D03",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C2",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "e6cb09d755307db169159660291b1b76697dbec9f614f11273acd84e68de6343",
+    "original_prompt_sha256": "1950529a315f722afd98e7347125ec2945fb1550e8a67e6e63b7e6270f1ff04c",
+    "review": {
+      "group": "G25",
+      "family": "D03",
+      "response_sha256": "e6cb09d755307db169159660291b1b76697dbec9f614f11273acd84e68de6343",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "lost_functionality",
+          "excerpt": "the \"custom action\" is the swipe gesture itself",
+          "evidence": "F-D03; A-ACTION",
+          "explanation": "Contradicts the supplied custom-action reference: calls the physical swipe itself the custom action and tells VoiceOver/Switch users to rely on it. Invents deployment notes and app behavior. No usable deletion alternative."
+        }
+      ],
+      "reason": "Contradicts the supplied custom-action reference: calls the physical swipe itself the custom action and tells VoiceOver/Switch users to rely on it. Invents deployment notes and app behavior. No usable deletion alternative.",
+      "evidence_ids": [
+        "F-D03",
+        "A-ACTION"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 1,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D03-26-1024-C3-original",
+    "family": "D03",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-original",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "cc7d84f5ba0ffb12494ca97fb832582aab5a590b5a6acd55e1722146a73bfe6d",
+    "original_prompt_sha256": "3daa2a75ddc05d1b68bdbbddde21e7943322bb822b36233469dbce92ad7b6bf5",
+    "review": {
+      "group": "G24",
+      "family": "D03",
+      "response_sha256": "cc7d84f5ba0ffb12494ca97fb832582aab5a590b5a6acd55e1722146a73bfe6d",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "lost_functionality",
+          "excerpt": "Since the swipe gesture is the only way to delete the message, the `delete` action is considered accessible.",
+          "evidence": "F-D03",
+          "explanation": "Invents a Message view implementation and explicitly calls swipe-only deletion accessible. It withholds the required independently discoverable deletion mechanism and misrepresents custom-action guidance."
+        }
+      ],
+      "reason": "Invents a Message view implementation and explicitly calls swipe-only deletion accessible. It withholds the required independently discoverable deletion mechanism and misrepresents custom-action guidance.",
+      "evidence_ids": [
+        "F-D03"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D03-26-1024-C3-explicit",
+    "family": "D03",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-explicit",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "1c3a0275f5f526ce0d1c5f81685f7648713b2c434ad75f62c634acc771d1c5b0",
+    "original_prompt_sha256": "8a5b93e69493eaeebf1ada0f0703895375f2a745ca119cab21ecc743c85fda3d",
+    "review": {
+      "group": "G22",
+      "family": "D03",
+      "response_sha256": "1c3a0275f5f526ce0d1c5f81685f7648713b2c434ad75f62c634acc771d1c5b0",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [],
+      "reason": "Denies a discoverable alternative based on an invented system-wide swipe-only rule. The brief suggestion to keep a delete button or gesture visible never explains a working accessible action/control. Answers the topic directly but incorrectly.",
+      "evidence_ids": [
+        "F-D03",
+        "A-ACTION"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D03-26-2048-C0",
+    "family": "D03",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C0",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "a0e518a92580e3ba6479759b9659968be3c760ffc2f75c9d32b491e0b5fc79b3",
+    "original_prompt_sha256": "d3da751b475af4f8056c5e8e50da8d6a919cadec816af23351dc1f2381b0129d",
+    "review": {
+      "group": "G23",
+      "family": "D03",
+      "response_sha256": "a0e518a92580e3ba6479759b9659968be3c760ffc2f75c9d32b491e0b5fc79b3",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [],
+      "reason": "Says yes but invents tap-to-delete and automatic inactivity deletion in an unspecified application. Provides neither a named accessibility action nor a concrete discoverable control design.",
+      "evidence_ids": [
+        "F-D03",
+        "A-ACTION"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D03-26-2048-C2",
+    "family": "D03",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C2",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "e6cb09d755307db169159660291b1b76697dbec9f614f11273acd84e68de6343",
+    "original_prompt_sha256": "1950529a315f722afd98e7347125ec2945fb1550e8a67e6e63b7e6270f1ff04c",
+    "review": {
+      "group": "G25",
+      "family": "D03",
+      "response_sha256": "e6cb09d755307db169159660291b1b76697dbec9f614f11273acd84e68de6343",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "lost_functionality",
+          "excerpt": "the \"custom action\" is the swipe gesture itself",
+          "evidence": "F-D03; A-ACTION",
+          "explanation": "Contradicts the supplied custom-action reference: calls the physical swipe itself the custom action and tells VoiceOver/Switch users to rely on it. Invents deployment notes and app behavior. No usable deletion alternative."
+        }
+      ],
+      "reason": "Contradicts the supplied custom-action reference: calls the physical swipe itself the custom action and tells VoiceOver/Switch users to rely on it. Invents deployment notes and app behavior. No usable deletion alternative.",
+      "evidence_ids": [
+        "F-D03",
+        "A-ACTION"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 1,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D03-26-2048-C3-original",
+    "family": "D03",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-original",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "cc7d84f5ba0ffb12494ca97fb832582aab5a590b5a6acd55e1722146a73bfe6d",
+    "original_prompt_sha256": "3daa2a75ddc05d1b68bdbbddde21e7943322bb822b36233469dbce92ad7b6bf5",
+    "review": {
+      "group": "G24",
+      "family": "D03",
+      "response_sha256": "cc7d84f5ba0ffb12494ca97fb832582aab5a590b5a6acd55e1722146a73bfe6d",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "lost_functionality",
+          "excerpt": "Since the swipe gesture is the only way to delete the message, the `delete` action is considered accessible.",
+          "evidence": "F-D03",
+          "explanation": "Invents a Message view implementation and explicitly calls swipe-only deletion accessible. It withholds the required independently discoverable deletion mechanism and misrepresents custom-action guidance."
+        }
+      ],
+      "reason": "Invents a Message view implementation and explicitly calls swipe-only deletion accessible. It withholds the required independently discoverable deletion mechanism and misrepresents custom-action guidance.",
+      "evidence_ids": [
+        "F-D03"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D03-26-2048-C3-explicit",
+    "family": "D03",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-explicit",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "1c3a0275f5f526ce0d1c5f81685f7648713b2c434ad75f62c634acc771d1c5b0",
+    "original_prompt_sha256": "8a5b93e69493eaeebf1ada0f0703895375f2a745ca119cab21ecc743c85fda3d",
+    "review": {
+      "group": "G22",
+      "family": "D03",
+      "response_sha256": "1c3a0275f5f526ce0d1c5f81685f7648713b2c434ad75f62c634acc771d1c5b0",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [],
+      "reason": "Denies a discoverable alternative based on an invented system-wide swipe-only rule. The brief suggestion to keep a delete button or gesture visible never explains a working accessible action/control. Answers the topic directly but incorrectly.",
+      "evidence_ids": [
+        "F-D03",
+        "A-ACTION"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D31-26-1024-C0",
+    "family": "D31",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C0",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "df5983e26edd6a711e639a630b39e94648f0c3c38fb32a6df9cf04f03dbcf822",
+    "original_prompt_sha256": "84d2e213681979d28838a2a3d9b3a687f586724ebd97cc8ee0948179fd76ed77",
+    "review": {
+      "group": "G33",
+      "family": "D31",
+      "response_sha256": "df5983e26edd6a711e639a630b39e94648f0c3c38fb32a6df9cf04f03dbcf822",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".center()",
+          "evidence": "A-LAYOUT; A-FRAME",
+          "explanation": "All principal solutions rely on undefined center/centered/offsetBy modifiers presented as built-ins, with no extension. The confident modern-recommended claim is unsupported; no usable centering solution."
+        }
+      ],
+      "reason": "All principal solutions rely on undefined center/centered/offsetBy modifiers presented as built-ins, with no extension. The confident modern-recommended claim is unsupported; no usable centering solution.",
+      "evidence_ids": [
+        "A-LAYOUT",
+        "A-FRAME"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D31-26-1024-C2",
+    "family": "D31",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C2",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "cea71e394b299440a2eea43eb4240e5940d5076708b01ee6086d3bd697b71d9a",
+    "original_prompt_sha256": "625736bb7a2fdbdeb0f134671d917b14b8d01ee0ef772bcb0b2a1e6fb1c8e801",
+    "review": {
+      "group": "G31",
+      "family": "D31",
+      "response_sha256": "cea71e394b299440a2eea43eb4240e5940d5076708b01ee6086d3bd697b71d9a",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 1
+      },
+      "quality": 0.2125,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".centered()",
+          "evidence": "A-FRAME; A-LAYOUT",
+          "explanation": "Recognizes the topic but buries it under an irrelevant accessibility workflow. Recommends nonexistent centered() and attempts to instantiate the View protocol; a mention of a fixed frame provides only limited useful content."
+        }
+      ],
+      "reason": "Recognizes the topic but buries it under an irrelevant accessibility workflow. Recommends nonexistent centered() and attempts to instantiate the View protocol; a mention of a fixed frame provides only limited useful content.",
+      "evidence_ids": [
+        "A-FRAME",
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D31-26-1024-C3-original",
+    "family": "D31",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-original",
+    "output_limit": 1024,
+    "finish_reason": "length",
+    "response_sha256": "398ab8d11b4f8b6d73c775c4996ad692d5e602831a713925afcca77660bb9d4d",
+    "original_prompt_sha256": "ebeea36a5848033517a652aca84af6273124002107d1cbf3f0cefe6910f2740e",
+    "review": {
+      "group": "G27",
+      "family": "D31",
+      "response_sha256": "398ab8d11b4f8b6d73c775c4996ad692d5e602831a713925afcca77660bb9d4d",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 1
+      },
+      "quality": 0.2125,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "CenteredView {",
+          "evidence": "A-FRAME; A-LAYOUT",
+          "explanation": "Same primary invented CenteredView/centering APIs as G26; one valid fixed-frame example earns limited credit. The truncated container catalogue does not supply a reliable concise answer."
+        }
+      ],
+      "reason": "Same primary invented CenteredView/centering APIs as G26; one valid fixed-frame example earns limited credit. The truncated container catalogue does not supply a reliable concise answer.",
+      "evidence_ids": [
+        "A-FRAME",
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D31-26-1024-C3-explicit",
+    "family": "D31",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-explicit",
+    "output_limit": 1024,
+    "finish_reason": "stop",
+    "response_sha256": "b0449ca8d3a40ab586f2c1e93490628551c01cab9b46836c4c50f62c4b76bfa9",
+    "original_prompt_sha256": "54205a37c6178100480792108f3e857d52e22b7ec6cdc98ca660c64a10742c65",
+    "review": {
+      "group": "G29",
+      "family": "D31",
+      "response_sha256": "b0449ca8d3a40ab586f2c1e93490628551c01cab9b46836c4c50f62c4b76bfa9",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".center()",
+          "evidence": "A-LAYOUT; A-FRAME",
+          "explanation": "Recommends nonexistent built-in center() APIs and invented layout-guide mechanisms without providing an extension. Both principal code examples are unusable for the stated task."
+        }
+      ],
+      "reason": "Recommends nonexistent built-in center() APIs and invented layout-guide mechanisms without providing an extension. Both principal code examples are unusable for the stated task.",
+      "evidence_ids": [
+        "A-LAYOUT",
+        "A-FRAME"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D31-26-2048-C0",
+    "family": "D31",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C0",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "df5983e26edd6a711e639a630b39e94648f0c3c38fb32a6df9cf04f03dbcf822",
+    "original_prompt_sha256": "84d2e213681979d28838a2a3d9b3a687f586724ebd97cc8ee0948179fd76ed77",
+    "review": {
+      "group": "G33",
+      "family": "D31",
+      "response_sha256": "df5983e26edd6a711e639a630b39e94648f0c3c38fb32a6df9cf04f03dbcf822",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".center()",
+          "evidence": "A-LAYOUT; A-FRAME",
+          "explanation": "All principal solutions rely on undefined center/centered/offsetBy modifiers presented as built-ins, with no extension. The confident modern-recommended claim is unsupported; no usable centering solution."
+        }
+      ],
+      "reason": "All principal solutions rely on undefined center/centered/offsetBy modifiers presented as built-ins, with no extension. The confident modern-recommended claim is unsupported; no usable centering solution.",
+      "evidence_ids": [
+        "A-LAYOUT",
+        "A-FRAME"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "unavailable",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D31-26-2048-C2",
+    "family": "D31",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C2",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "cea71e394b299440a2eea43eb4240e5940d5076708b01ee6086d3bd697b71d9a",
+    "original_prompt_sha256": "625736bb7a2fdbdeb0f134671d917b14b8d01ee0ef772bcb0b2a1e6fb1c8e801",
+    "review": {
+      "group": "G31",
+      "family": "D31",
+      "response_sha256": "cea71e394b299440a2eea43eb4240e5940d5076708b01ee6086d3bd697b71d9a",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 1
+      },
+      "quality": 0.2125,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".centered()",
+          "evidence": "A-FRAME; A-LAYOUT",
+          "explanation": "Recognizes the topic but buries it under an irrelevant accessibility workflow. Recommends nonexistent centered() and attempts to instantiate the View protocol; a mention of a fixed frame provides only limited useful content."
+        }
+      ],
+      "reason": "Recognizes the topic but buries it under an irrelevant accessibility workflow. Recommends nonexistent centered() and attempts to instantiate the View protocol; a mention of a fixed frame provides only limited useful content.",
+      "evidence_ids": [
+        "A-FRAME",
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "injected",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D31-26-2048-C3-original",
+    "family": "D31",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-original",
+    "output_limit": 2048,
+    "finish_reason": "length",
+    "response_sha256": "2965cb9005d8268104e96fd79508e9ee11cc7fa4385e24b9ecf3a86c6de2406e",
+    "original_prompt_sha256": "ebeea36a5848033517a652aca84af6273124002107d1cbf3f0cefe6910f2740e",
+    "review": {
+      "group": "G26",
+      "family": "D31",
+      "response_sha256": "2965cb9005d8268104e96fd79508e9ee11cc7fa4385e24b9ecf3a86c6de2406e",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 1,
+        "task_success": 1,
+        "calibration": 0,
+        "relevance": 1
+      },
+      "quality": 0.2125,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": "CenteredView {",
+          "evidence": "A-FRAME; A-LAYOUT",
+          "explanation": "One fixed-frame example could center content locally, but the primary solution invents CenteredView and centering modifiers, then repeats them across many containers. Truncation and irrelevant repetition compound an already unusable main recommendation."
+        }
+      ],
+      "reason": "One fixed-frame example could center content locally, but the primary solution invents CenteredView and centering modifiers, then repeats them across many containers. Truncation and irrelevant repetition compound an already unusable main recommendation.",
+      "evidence_ids": [
+        "A-FRAME",
+        "A-LAYOUT"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  },
+  {
+    "run": "development-v1",
+    "case": "D31-26-2048-C3-explicit",
+    "family": "D31",
+    "os": "26",
+    "release": "candidate",
+    "arm": "C3-explicit",
+    "output_limit": 2048,
+    "finish_reason": "stop",
+    "response_sha256": "b0449ca8d3a40ab586f2c1e93490628551c01cab9b46836c4c50f62c4b76bfa9",
+    "original_prompt_sha256": "54205a37c6178100480792108f3e857d52e22b7ec6cdc98ca660c64a10742c65",
+    "review": {
+      "group": "G29",
+      "family": "D31",
+      "response_sha256": "b0449ca8d3a40ab586f2c1e93490628551c01cab9b46836c4c50f62c4b76bfa9",
+      "status": "graded",
+      "dimensions": {
+        "correctness": 0,
+        "task_success": 0,
+        "calibration": 0,
+        "relevance": 2
+      },
+      "quality": 0.05,
+      "criticalErrors": [
+        {
+          "category": "invented_api",
+          "excerpt": ".center()",
+          "evidence": "A-LAYOUT; A-FRAME",
+          "explanation": "Recommends nonexistent built-in center() APIs and invented layout-guide mechanisms without providing an extension. Both principal code examples are unusable for the stated task."
+        }
+      ],
+      "reason": "Recommends nonexistent built-in center() APIs and invented layout-guide mechanisms without providing an extension. Both principal code examples are unusable for the stated task.",
+      "evidence_ids": [
+        "A-LAYOUT",
+        "A-FRAME"
+      ]
+    },
+    "protocol_review": {
+      "reference_mode": "model-read",
+      "returned_reference_count": 0,
+      "explicit_false_consultation_error_count": 0,
+      "note": "Source-list/ROUTING text alone is insufficient to establish an explicit false read claim. Missing lookup and source attribution remain separate from answer-quality grading."
+    }
+  }
+]
