@@ -1,5 +1,7 @@
 # Evidence-Backed Evaluation
 
+**[Open the evaluation dashboard →](reports/README.md)** — charts, prompts, expected-answer criteria and response comparisons. New test/report iterations require explicit owner approval.
+
 Deployment coordination: [BigDog handoff and requested setup details](BIGDOG-HANDOFF.md).
 
 Candidate: **0.2.3-candidate.1**. Released identity: **0.2.2**.
