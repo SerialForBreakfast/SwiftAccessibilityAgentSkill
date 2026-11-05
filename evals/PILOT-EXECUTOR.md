@@ -63,3 +63,13 @@ Inspect original operation identities before proposing any subsequent experiment
 
 Qualification and complete accounting do not establish answer quality. New pilot
 artifacts and summaries belong in a new directory, not historical v1/v2 reports.
+
+## First pilot evidence retention correction
+
+The first live pilot used commit `b831905`. Its seven context-rejected bodies were
+not saved directly, although their token counts and body hashes were persisted.
+They were recovered offline from frozen questions and original model replies, each
+matching the original body hash; provenance is explicit in the run bundle. No model
+request was replayed. The executor now fsyncs each full input **before** token preflight,
+so even tokenizer failures and rejected inputs retain their original bodies directly.
+This change does not rewrite the first run or authorize another run.

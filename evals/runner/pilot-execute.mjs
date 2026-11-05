@@ -23,7 +23,7 @@ export function validateConfig(c) {
 }
 export class Session {
  constructor({config,out,deadline,fetcher=fetch,now=Date.now,maxRequests=200}) {
-  this.config=config;this.base=localBase(config);this.out=out;this.deadline=deadline;this.fetcher=fetcher;this.now=now;this.maxRequests=maxRequests;this.calls=0;this.jobId=null;
+  this.config=config;this.base=localBase(config);this.out=out;this.deadline=deadline;this.fetcher=fetcher;this.now=now;this.maxRequests=maxRequests;this.calls=0;this.jobId=null;this.preflights=0;
   if(!Number.isFinite(deadline)||!Number.isInteger(maxRequests)||maxRequests<0||maxRequests>200)throw Error('Invalid bounds');
  }
  remaining() {const n=this.deadline-this.now();if(n<=0)throw new Stop('cancelled','Entire execution deadline exhausted',true);return n;}
@@ -57,6 +57,8 @@ export class Session {
  }
  async generate(body) {
   this.remaining();if(this.calls>=this.maxRequests)throw new Stop('cancelled','Generation request cap exhausted',true);
+  const preflightId=String(++this.preflights).padStart(3,'0');
+  save(path.join(this.out,`input-${preflightId}.json`),{jobId:this.jobId,body,bodyHash:hash(JSON.stringify(body)),createdAt:this.now()});
   const rendered=await this.post('/apply-template',{messages:body.messages,tools:body.tools||[],add_generation_prompt:true,chat_template_kwargs:body.chat_template_kwargs,...(body.tool_choice?{tool_choice:body.tool_choice}:{})});
   if(typeof rendered.prompt!=='string')throw new Stop('tokenizer_unavailable','Template missing',true);
   const result=await this.post('/tokenize',{content:rendered.prompt,add_special:true,parse_special:true});
