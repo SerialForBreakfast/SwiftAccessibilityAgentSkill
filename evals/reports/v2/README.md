@@ -1,12 +1,33 @@
-# v2 · What the saved Qwen answers actually get right
+# v2 · Did the skill help Qwen?
 
-[Case reviews](#inspect-each-question) · [Smoke comparison](#baseline-versus-candidate) · [Development comparison](#output-budget-and-prompt-comparison) · [Evidence](EVIDENCE.md) · [Frozen v1](../v1/README.md)
+**Some scores improved. These answers still need substantial correction before use.**
 
-**64 saved answers graded; 34 distinct response texts; four question families; zero new model calls.** This is a retrospective, single-reviewer assessment using the new rubric, not independently calibrated quality measurement. v1 remains unchanged.
+Same questions, same model and settings: no skill versus skill **with reference text supplied**. Scores are rubric points out of 100, not accuracy. Single-reviewer assessment; not independently calibrated.
 
-The saved answers do not establish a dependable Swift/accessibility adviser. Recurring failures include invented APIs, failing to answer the actual question, and advice that contradicts supplied references. Longer answers and explicit lookup instructions did not reliably fix these problems.
+| Actual question → full answers | Expected behavior | No skill | Skill + references | Did it help? |
+| --- | --- | --- | --- | --- |
+| [Tell me about UILabel accessibility.](cases/development-v1-D01.md) | Use native text labels; customize only when needed. | **13.8** · Invented accessibility API | **36.2** · Invalid traits; misses native defaults | **Higher score; still incorrect** |
+| [My settings row has text, a switch, and a help button. How should VoiceOver move through it?](cases/development-v1-D02.md) | Keep switch and help actions independently usable. | **13.8** · Invented API and navigation | **15.0** · Combines independent actions | **Little score change; still unusable** |
+| [Can people delete a message without finding the swipe gesture?](cases/development-v1-D03.md) | Offer a named delete action or discoverable control. | **5.0** · Invents deletion behavior | **5.0** · Calls the swipe a custom action | **No improvement; still incorrect** |
+| [How do I center a SwiftUI view?](cases/development-v1-D31.md) | Give a valid frame or container alignment solution. | **5.0** · Invented .center() API | **21.2** · Invented .centered() API | **Higher score; still invalid code** |
 
-**Presentation correction:** The original v2 chart labels used short topic names and case IDs. This owner-approved correction shows the exact user questions and aggregation membership. All grades, chart values, prompts and outputs are unchanged; [original v2](https://github.com/SerialForBreakfast/SwiftAccessibilityAgentSkill/blob/19ab7ecf640061dcca272a1145cbd3197d29b316/evals/reports/v2/README.md) remains available.
+**Scope:** Development run, candidate skill, 1,024-token cap (C0 versus C2); all four questions shown, no best-answer selection. The 2,048-token versions received the same scores. “Skill + references” measures the combined effect of instructions and supplied text, not skill-only improvement or autonomous retrieval. Verdicts summarize existing review findings; they are not a new pass/fail threshold.
+
+<details>
+<summary>Exact deployment wording appended to these questions</summary>
+
+The first three questions included this second line, preserved verbatim:
+
+```text
+Deployment context: uikit OS version 26. Clarify platform if needed.
+```
+
+The SwiftUI-centering question had no OS line. The framework/OS ambiguity is an original test limitation.
+
+</details>
+
+<details>
+<summary>All variants, aggregate charts, grading method and evidence</summary>
 
 ## What changed from v1
 
@@ -103,17 +124,6 @@ C3-explicit 1024  16.6 | ########
 C3-explicit 2048  16.6 | ########
 ```
 
-## Inspect each question
-
-Each review links the exact original prompt/tool schema and full answer in v1. Expand the original answer to compare wording against its rationale.
-
-| Question | Development | Smoke OS 26 | Smoke OS 27 |
-| --- | --- | --- | --- |
-| D01 · Tell me about UILabel accessibility. | [8 graded answers](cases/development-v1-D01.md) | [8 graded answers](cases/smoke-v1-D01-26.md) | [8 graded answers](cases/smoke-v1-D01-27.md) |
-| D02 · My settings row has text, a switch, and a help button. How should VoiceOver move through it? | [8 graded answers](cases/development-v1-D02.md) | Not run | Not run |
-| D03 · Can people delete a message without finding the swipe gesture? | [8 graded answers](cases/development-v1-D03.md) | Not run | Not run |
-| D31 · How do I center a SwiftUI view? | [8 graded answers](cases/development-v1-D31.md) | [8 graded answers](cases/smoke-v1-D31-26.md) | [8 graded answers](cases/smoke-v1-D31-27.md) |
-
 ## Findings and recommendation
 
 - **D01, labels:** some useful naming advice, but repeated confusion about native defaults and invented accessibility APIs. A fluent answer is not dependable implementation guidance.
@@ -132,3 +142,12 @@ More output tokens reduced development truncation from 3/16 to 1/16, but did not
 The reviewer knew arm identities and had seen the outputs. Duplicate-text scores were reused after context review. Critical flags record one primary failure per answer, not all possible errors. Apple source review is static; no Swift compilation or simulator/device testing was performed. D31 has no upstream frozen reference, so the explicitly retrospective supplement is essential to interpreting its scores. No independent judge, disagreement analysis, calibrated release threshold or generalization claim is available.
 
 The old generation records are not rewritten with new rubric hashes. New grading provenance is separate. **v3 and further model tests require owner approval.**
+
+</details>
+
+<details>
+<summary>Presentation history and integrity</summary>
+
+This owner-approved presentation correction replaces the answer-count index with a per-question comparison and moves aggregate charts into details. Scores, grades, prompts, outputs and v1 are unchanged. [Prior v2 presentation](https://github.com/SerialForBreakfast/SwiftAccessibilityAgentSkill/blob/e43ccd75b954dccb173d8559e498b09d1be2a422/evals/reports/v2/README.md) · [Original v2](https://github.com/SerialForBreakfast/SwiftAccessibilityAgentSkill/blob/19ab7ecf640061dcca272a1145cbd3197d29b316/evals/reports/v2/README.md) · [Frozen v1](../v1/README.md) · [Integrity manifest](manifest.json).
+
+</details>
