@@ -30,6 +30,14 @@ Assistive technologies depend on semantic structure rather than visuals. Equival
 - In UIKit-backed custom views, set `isAccessibilityElement`, `accessibilityLabel`, `accessibilityValue`, and traits explicitly.
 - In representables, verify semantic fields update when SwiftUI bindings change.
 
+## Interaction Refinement (Source Review: 2026-11-04)
+
+Expose purpose, current value, equivalent actions, and meaningful feedback. For continuous controls, provide adjustable increment/decrement behavior before adding precision gestures. Direct touch and passthrough gestures are additional interaction options, not substitutes for discoverable actions. Keep ordinary navigation usable for people who do not use rotor shortcuts.
+
+In SwiftUI, `accessibilityAdjustableAction` is available from iOS/tvOS 13 and macOS 10.15; `accessibilityDirectTouch` from iOS/tvOS 17 and macOS 14. Both are available on visionOS 1. Check the exact platform target before generating code. Keep value-change announcements useful rather than speaking every intermediate update.
+
+Sources: [APPLE-WWDC26-CONTROLS], [APPLE-ADJUSTABLE-ACTION], [APPLE-DIRECT-TOUCH].
+
 ## How To Test
 
 ### Accessibility Inspector
@@ -53,7 +61,7 @@ Assistive technologies depend on semantic structure rather than visuals. Equival
 
 ## Citations
 
-- [APPLE-SWIFTUI-ACCESSIBILITY] https://developer.apple.com/documentation/swiftui/accessibility
+- [APPLE-SWIFTUI-ACCESSIBILITY] https://developer.apple.com/documentation/swiftui/view-accessibility
 - [APPLE-CREATING-ACCESSIBLE-VIEWS] https://developer.apple.com/documentation/accessibility/enhancing-the-accessibility-of-your-swiftui-app
 - [APPLE-WWDC23-SWIFTUI-UIKIT] https://developer.apple.com/videos/play/wwdc2023/10036/
 

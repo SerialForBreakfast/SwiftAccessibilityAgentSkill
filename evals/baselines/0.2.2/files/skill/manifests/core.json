@@ -1,0 +1,28 @@
+{
+  "version": "0.2.2",
+  "last_updated": "2026-09-01",
+  "always_load": [
+    "references/manifests/security-policy.json"
+  ],
+  "load_order": [
+    "always_load",
+    "route_resolution",
+    "route.backlog",
+    "selected_topic_guidelines",
+    "platform_presets.required",
+    "task_presets.required",
+    "deep_support_on_demand"
+  ],
+  "token_policy": {
+    "max_initial_files": 3,
+    "max_initial_guidelines": 2,
+    "max_backlogs": 1,
+    "max_core_docs_without_reason": 0,
+    "max_testing_docs_without_test_request": 0,
+    "load_examples_on_demand": true,
+    "load_source_registry_on_demand": true,
+    "load_testing_docs_on_demand": true,
+    "load_evaluation_docs_on_demand": true,
+    "skip_changelog_during_runtime": true
+  }
+}

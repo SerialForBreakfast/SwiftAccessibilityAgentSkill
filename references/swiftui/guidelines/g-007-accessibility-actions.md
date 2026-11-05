@@ -54,7 +54,7 @@ Custom actions provide a predictable command surface for VoiceOver and switch-ba
 ## Citations
 
 - [APPLE-VIEW-ACCESSIBILITY] https://developer.apple.com/documentation/swiftui/view-accessibility
-- [APPLE-SWIFTUI-ACCESSIBILITY] https://developer.apple.com/documentation/swiftui/accessibility
+- [APPLE-SWIFTUI-ACCESSIBILITY] https://developer.apple.com/documentation/swiftui/view-accessibility
 - [APPLE-WWDC24-SWIFTUI] https://developer.apple.com/videos/play/wwdc2024/10073/
 
 ## Quote Snippets (Optional)

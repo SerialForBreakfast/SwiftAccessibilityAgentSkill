@@ -73,3 +73,7 @@ Media accessibility requires both perceivable alternatives and operable controls
 - Last Verified: 2026-03-07
 - Platforms: iOS, iPadOS
 - Confidence: Medium
+
+## OS 27 Media Update (Source Review: 2026-11-04)
+
+For generated subtitles and style selection, load [the scoped media update](../../core/media-updates.md). Preserve authored tracks, expose selection and selected state, and check device/language support. System generation supplements content coverage; it does not remove the need for accessible player controls.

@@ -17,8 +17,18 @@ Purpose: let agents resolve a minimal doc set before loading long-form guidance.
 ## Resolution Steps
 
 1. Pick `platform`, `framework`, and `task_type`.
-2. Load `core.json` first.
+2. Load manifests only if route selection needs them; focused topics can route directly.
 3. Resolve route in `routes.json`.
-4. Add platform extras from `platform-presets.json`.
-5. Add task extras from `task-presets.json`.
-6. Load only listed files until blocked.
+4. Select platform extras only when the task needs them.
+5. Select task extras only when the task needs them.
+6. Stop when evidence is sufficient; initial budget is three reference reads, excluding SKILL.md.
+
+## Context Budget
+
+Default to the smallest useful set:
+
+- `SKILL.md`
+- one backlog or index
+- one or two topic guidelines
+
+Do not load source registry, technology map, taxonomy, architecture, testing, evaluation, ViewLens, WWDC watchlists, or changelog unless the current task specifically requires them.

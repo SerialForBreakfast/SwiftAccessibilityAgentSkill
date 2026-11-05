@@ -1,3 +1,5 @@
+> Historical scaffold. For new measurements use [the evidence-backed runner](../README.md), which reads actual skill files and separates quality from protocol scoring.
+
 # Promptfoo Evaluation
 
 Current baseline: `0.2.2`
@@ -29,6 +31,8 @@ Expected interpretation:
 - `prompts/c1.txt`
 - `prompts/c2.txt`
 - `gold-prompts.md`
+- `viewlens-gold-prompts.md` for optional runtime-evidence scenarios
+- `context-budget-gold-prompts.md` for routing and context-bloat scenarios
 
 ## Suggested Run
 
@@ -48,6 +52,32 @@ promptfoo eval -c evals/promptfoo/promptfooconfig.yaml
 
 The scaffold injects short repo-derived excerpts inline for `C2`.
 If you expand coverage, keep those excerpts short, stable, and directly tied to the expected route.
+
+## Optional ViewLens Layer
+
+ViewLens is useful for runtime-backed accessibility evaluation, but it should not be required for the baseline promptfoo run.
+
+Use ViewLens-aware prompts to test whether the agent:
+
+- knows when source guidance is not enough
+- asks for specific evidence such as semantic outline, navigation graph, Dynamic Type matrix, or before/after review
+- distinguishes measured, derived, inferred, and unavailable evidence
+- avoids claiming screenshot-only audits prove semantic accessibility
+- treats ViewLens as optional evidence, not as a mandatory skill dependency
+
+Add fixture-backed `C3` tests only after stable ViewLens JSON excerpts are committed under `evals/fixtures/viewlens/`.
+
+## Context-Budget Layer
+
+Context-budget prompts verify that the agent answers from the smallest useful set of docs.
+
+Use them to catch:
+
+- unnecessary source-registry or architecture citations for focused questions
+- testing docs loaded when no verification was requested
+- watchlist docs loaded for stable, accepted guidance
+- evaluation docs loaded for ordinary implementation questions
+- broad platform bundles used where one topic guideline is enough
 
 ## Gold Prompt Authoring Rules
 

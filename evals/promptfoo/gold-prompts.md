@@ -36,10 +36,14 @@ They intentionally avoid overfitting to the repository's internal naming.
 | GP-015 | Negative: UIButton styling | How do I change the title color of a UIButton for the disabled state? | no routing |
 | GP-016 | Negative: SwiftUI layout | How do I center a view in SwiftUI? | no routing |
 | GP-017 | Negative: NSWindow generic API | What does NSWindow do? | no routing |
+| GP-018 | Runtime evidence boundary | The screenshot looks correct, but I am not sure the buttons have useful accessibility names. Can the agent verify that from the screenshot alone? | `uikit:u-001-labels-meaningful-names.md`, `core:viewlens-evaluation-integration.md` |
+| GP-019 | Runtime focus evidence | My modal closes and keyboard focus disappears. What would a runtime-backed evaluation look like? | `uikit:u-013-modal-focus-containment.md` or `macos:m-007-modal-window-focus-containment.md`, `core:viewlens-evaluation-integration.md` |
+| GP-020 | Fix verification | After the agent changes a SwiftUI view, how do we know it fixed accessibility and did not create a new focus problem? | `testing:xcuitest-hooks.md`, `core:viewlens-evaluation-integration.md` |
 
 ## Notes
 
 - `GP-001` is the first-turn identity probe.
 - `GP-002` through `GP-013` should produce a `ROUTING:` line plus trust footer.
 - `GP-014` through `GP-017` should not produce `ROUTING:` or the trust footer.
+- `GP-018` through `GP-020` should ask for or reason about runtime evidence without claiming verification unless a ViewLens artifact is supplied.
 - Multi-domain prompts are intentional where real developer questions naturally span more than one doc.

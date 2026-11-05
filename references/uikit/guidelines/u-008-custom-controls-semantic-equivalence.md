@@ -29,6 +29,14 @@ Assistive technologies depend on semantics, not visuals. Semantic equivalence pr
 - Ensure representable boundaries preserve custom control semantics.
 - Validate parent container behavior does not mask child custom-control traits.
 
+## Interaction Refinement (Source Review: 2026-11-04)
+
+Expose purpose, current value, equivalent actions, and meaningful feedback. For continuous controls, provide adjustable increment/decrement behavior before adding precision gestures. Direct touch and passthrough gestures are additional interaction options, not substitutes for discoverable actions. Keep ordinary navigation usable for people who do not use rotor shortcuts.
+
+In SwiftUI, `accessibilityAdjustableAction` is available from iOS/tvOS 13 and macOS 10.15; `accessibilityDirectTouch` from iOS/tvOS 17 and macOS 14. Both are available on visionOS 1. Check the exact platform target before generating code. Keep value-change announcements useful rather than speaking every intermediate update.
+
+Sources: [APPLE-WWDC26-CONTROLS], [APPLE-ADJUSTABLE-ACTION], [APPLE-DIRECT-TOUCH].
+
 ## How To Test
 
 ### Accessibility Inspector

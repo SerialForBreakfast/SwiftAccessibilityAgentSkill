@@ -79,3 +79,7 @@ Media is a primary tvOS use case. Accessibility failures in playback controls bl
 - Last Verified: 2026-03-07
 - Platforms: tvOS
 - Confidence: Medium
+
+## OS 27 Media Update (Source Review: 2026-11-04)
+
+For generated subtitles and style selection, load [the scoped media update](../../core/media-updates.md). Preserve authored tracks, expose selection and selected state, and check device/language support. System generation supplements content coverage; it does not remove the need for accessible player controls.

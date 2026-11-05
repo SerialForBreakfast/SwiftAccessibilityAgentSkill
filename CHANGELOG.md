@@ -4,8 +4,23 @@ All notable changes to this documentation project are tracked here.
 
 ## [Unreleased]
 
+### Evaluation-backed 0.2.3 candidate
+
+- Captured pre-update v0.2.2 working-tree baseline with file hashes; released version unchanged.
+- Added provider-neutral C0-C3 evaluation, BigDog/comparator configuration, 40 development and 20 held-out families, traced reads, blinded grading and paired statistical reporting.
+- Added reviewed tvOS Larger Text, reading-content, and subtitle guidance with a claim-level source audit ledger.
+- Made testing/reference loading conditional and clarified evidence honesty and freshness.
+- Completed the 63-entry scoped source audit, repaired SwiftUI/AppKit source mappings, corrected linked-group symbol versus behavior availability, narrowed historical issue ranges and updated resolved Xcode issue status.
+- Added source/citation/mirror checks and a BigDog deployment handoff; 20 offline tests pass.
+- Model quality, native-host discovery, dependency installation and grading calibration remain pending; no effectiveness claim is made.
+
 ### Added
 
+- `docs/core/apple-beta-release-readiness-2026.md` and mirrored `references/core/apple-beta-release-readiness-2026.md` to track Apple beta/release-note signals affecting tvOS Larger Text, generated subtitles, custom controls, reading apps, TextKit, Xcode agent support, and evaluation planning.
+- `docs/core/adr/ADR-002-context-budget-and-routing.md` and mirrored `references/core/adr/ADR-002-context-budget-and-routing.md` to define route-first progressive loading and prevent context bloat.
+- `evals/promptfoo/context-budget-gold-prompts.md` to make context-bloat and over-routing behavior measurable in future promptfoo coverage.
+- `docs/core/adr/ADR-001-robust-evaluation-methodology.md` and mirrored `references/core/adr/ADR-001-robust-evaluation-methodology.md` to define layered release-gated evaluation across package integrity, promptfoo, source governance, optional ViewLens runtime evidence, and human/user validation.
+- `docs/core/viewlens-evaluation-integration.md`, mirrored `references/core/viewlens-evaluation-integration.md`, and `evals/promptfoo/viewlens-gold-prompts.md` to define optional ViewLens runtime-evidence evaluation for accessibility hierarchy, focus graphs, Dynamic Type reflow, and before/after fix verification.
 - `docs/core/wwdc-2026-accessibility-watchlist.md` and mirrored `references/core/wwdc-2026-accessibility-watchlist.md` to track newly previewed Apple accessibility features, agent support implications, and promptfoo coverage candidates.
 - `docs/tvos/README.md`
 - `docs/tvos/guidelines/topic-backlog.md`
@@ -83,6 +98,7 @@ All notable changes to this documentation project are tracked here.
 
 ### Changed
 
+- Reduced runtime manifest default loading by keeping long core, testing, source-registry, evaluation, ViewLens, and watchlist documents on-demand instead of always loaded.
 - Expanded top-level track coverage in `README.md` to include tvOS and macOS backlogs.
 - Expanded `SKILL.md` to include tvOS/macOS canonical inputs and explicit platform-target selection rules.
 - Extended `docs/core/sources/registry.md` with Tier-1 tvOS/macOS sources (`Accessibility for UIKit`, tvOS focus interactions, `NSAccessibility`, WWDC25 macOS accessibility) and Tier-2 automation reference (`AccessibilitySnapshot`).

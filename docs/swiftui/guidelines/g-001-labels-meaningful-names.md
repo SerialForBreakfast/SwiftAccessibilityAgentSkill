@@ -55,7 +55,7 @@ Voice-driven and focus-driven navigation depend on labels as the primary semanti
 
 ## Citations
 
-- [APPLE-SWIFTUI-ACCESSIBILITY] https://developer.apple.com/documentation/swiftui/accessibility
+- [APPLE-SWIFTUI-ACCESSIBILITY] https://developer.apple.com/documentation/swiftui/view-accessibility
 - [APPLE-HIG-ACCESSIBILITY] https://developer.apple.com/design/human-interface-guidelines/accessibility
 - [APPLE-AX-HUB] https://developer.apple.com/documentation/accessibility
 

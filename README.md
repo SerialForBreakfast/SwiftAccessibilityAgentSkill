@@ -180,6 +180,8 @@ After pulling:
 
 ## Use With Xcode
 
+Apple documents agent plugins and invokable skills in Xcode 27. The compatibility link below is the repository's existing setup; a symlink alone does not establish discovery in every Xcode/agent version. Confirm the skill is actually selected before relying on it. Keep `npx skills` as the primary installation route. See the [reviewed host-capability notes](docs/core/apple-beta-release-readiness-2026.md).
+
 `npx skills add ...` remains the first-class install path for this repository.
 
 If you also want to use the same skill content with Xcode's Codex agent, install an Xcode compatibility link from this repository root:
@@ -287,10 +289,14 @@ If Xcode does not pick up the compatibility install:
 - Versioning strategy: `references/core/versioning-strategy.md`
 - Source registry: `references/core/sources/registry.md`
 - Architecture principles: `references/core/architecture/architecture-principles.md`
+- Evaluation methodology ADR: `references/core/adr/ADR-001-robust-evaluation-methodology.md`
+- Context budget ADR: `references/core/adr/ADR-002-context-budget-and-routing.md`
 - Decision matrix: `references/core/decision-matrix.md`
 - Pattern review rubric: `references/core/pattern-review-rubric.md`
+- ViewLens evaluation integration: `references/core/viewlens-evaluation-integration.md`
 - External landscape references: `references/core/external-landscape.md`
 - WWDC 2026 accessibility watchlist: `references/core/wwdc-2026-accessibility-watchlist.md`
+- Apple beta/release readiness notes: `references/core/apple-beta-release-readiness-2026.md`
 - Semantics cookbook: `references/core/cookbook/semantics-cookbook.md`
 - Known issues catalog: `references/core/known-os-issues.md`
 - Version matrix: `references/core/version-matrix.md`
@@ -302,6 +308,12 @@ If Xcode does not pick up the compatibility install:
 2. Choose task workflow first (review, improve, implement).
 3. Resolve runtime selection through `references/manifests/` (`platform`, `framework`, `task_type`) only as needed.
 4. Load only resolved docs and required verification artifacts.
+
+Default context budget:
+
+- one backlog or index
+- one or two topic guidelines
+- no testing, source registry, architecture, evaluation, ViewLens, or watchlist docs unless the task specifically requires them
 
 For substantive repository-domain answers, the agent should emit:
 
@@ -353,6 +365,8 @@ Primary checks:
 - routing names the expected repository file
 - repository-guided answers include `Sources:`, `Freshness:`, and `Assumptions:`
 
+Optional runtime-backed evaluation can use ViewLens as an evidence provider. Keep ViewLens optional: promptfoo validates the agent's language/routing contract, while ViewLens can provide accessibility hierarchy, focus graph, Dynamic Type reflow, visual-semantic correlation, and before/after fix evidence for target apps.
+
 ## Validation Checklist
 
 - `SKILL.md` exists at installed skill root.
@@ -371,3 +385,9 @@ Primary checks:
 ## License
 
 MIT. See `LICENSE`.
+
+## Evaluating Skill Updates
+
+See [the evaluation guide](evals/README.md) for frozen v0.2.2 baselines, BigDog/Qwen and comparator setup, 60 scenario families, measured reference loading, and release gates. Start offline with `node --test evals/runner/test.mjs` and `node evals/runner/check.mjs`. Model calls are opt-in; no evaluation dependencies are needed to install the skill.
+
+The proposed 0.2.3 update is a candidate, not a released or measured improvement. Read the [source-refresh ledger](docs/core/source-refresh-2026-11.md) for reviewed claims and remaining research.

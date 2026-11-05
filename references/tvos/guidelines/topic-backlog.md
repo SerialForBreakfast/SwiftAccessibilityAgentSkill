@@ -22,3 +22,5 @@ Last updated: 2026-03-07
 | T-008 | Reduce Motion handling for focus animations | P1 | Drafted | Drafted | Initial draft created (2026-03-07); Tier-1 citations added | Tier-1 | docs/tvos/guidelines/t-008-reduce-motion-focus-animations.md |
 | T-009 | Color contrast and non-color cues in 10-foot UI | P0 | Drafted | Drafted | Initial draft created (2026-03-07); Tier-1 citations added | Tier-1 | docs/tvos/guidelines/t-009-contrast-non-color-cues.md |
 | T-010 | XCUITest focus assertions and regression hooks | P2 | Drafted | Drafted | Initial draft created (2026-03-07); Tier-1/Tier-2 citations added | Tier-1 + Tier-2 | docs/tvos/guidelines/t-010-xcuitest-focus-regression-hooks.md |
+
+| T-011 | Larger Text and layout adaptation on tvOS 27 | P0 | Drafted | Tier-Validated | WWDC26/221 reviewed 2026-11-04 | Tier-1 | references/tvos/guidelines/t-011-larger-text.md |

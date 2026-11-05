@@ -1,6 +1,6 @@
 # Known OS Accessibility Bugs and Regressions Catalog
 
-Last updated: 2026-03-07
+Last updated: 2026-11-04
 Scope: iOS, iPadOS, tvOS, macOS, visionOS (SwiftUI/UIKit/AppKit + accessibility tooling)
 
 ## Purpose
@@ -39,20 +39,21 @@ Track real-world framework and OS accessibility regressions with actionable engi
 - Symptom class: performance/hang
 - Version status:
   - introduced_in: iOS 26 (forum report timeframe)
-  - affected_range: iOS 26.0+ (reported), earlier versions unknown
+  - affected_range: reported on iOS 26, including 26.2; later thread reports differ on 26.5 and an iOS 27 beta
   - fixed_in: unknown
-  - status: open
-  - evidence_confidence: high
+  - status: needs_revalidation
+  - evidence_confidence: medium
 - Symptom: app may freeze when Accessibility Inspector or VoiceOver is enabled and nested lazy containers are present.
 - Detection signals:
   - normal interaction works with accessibility off
   - hangs appear only during accessibility tree traversal/inspection
 - Mitigation/workaround:
-  - replace inner `LazyVStack` with `VStack` on affected views
+  - first isolate state mutation triggered during lazy view allocation; DTS identifies that race in the submitted reproduction
+  - consider replacing the inner `LazyVStack` with `VStack` as a scoped workaround, accounting for performance tradeoffs
   - simplify deeply nested lazy stacks on accessibility-critical screens
   - profile accessibility-enabled runs before release
 - Source context:
-  - Apple forum thread includes Apple staff engagement and Feedback ID (`FB21851974`)
+  - Reviewed 2026-11-04: DTS reproduced the original report and discusses a state-mutation race (`FB21851974`). Later replies report changed reproduction on 26.5/27 beta. Those observations do not establish a universal fixed release.
 - Sources:
   - [APPLE-FORUMS-THREAD-814208]
   - [APPLE-AX-INSPECTOR]
@@ -73,7 +74,7 @@ Track real-world framework and OS accessibility regressions with actionable engi
   - duplicate/verbose speech output for image elements
   - occurs on images containing embedded text even when label is set
 - Mitigation/workaround:
-  - verify whether VoiceOver Recognition (Text Recognition/Image Descriptions) is enabled
+  - identify whether VoiceOver Recognition is adding Text Recognition/Image Descriptions; preserve the user-selected recognition capability rather than treating it as app-controlled redundant speech
   - for critical UI text, prefer real text views over text baked into images
   - regression-test image-heavy surfaces with VoiceOver settings matrix
 - Source context:
@@ -90,7 +91,7 @@ Track real-world framework and OS accessibility regressions with actionable engi
 - Symptom class: wrong semantics/traits
 - Version status:
   - introduced_in: unknown
-  - affected_range: at least iOS 17-era based on report date
+  - affected_range: unspecified; reports dated April 2024 and June 2025 do not establish an OS range
   - fixed_in: unknown
   - status: needs_revalidation
   - evidence_confidence: medium
@@ -100,7 +101,7 @@ Track real-world framework and OS accessibility regressions with actionable engi
   - mixed/duplicated role language in announcements
 - Mitigation/workaround:
   - verify role expectations on each target OS version
-  - use alternate control + explicit semantics when behavior is ambiguous for core flows
+  - preserve native Link behavior unless the actual interaction requires another control; combined announced traits alone do not establish a platform bug
   - add focused semantic checks in review/testing scripts
 - Sources:
   - [APPLE-FORUMS-THREAD-750508]
@@ -112,8 +113,8 @@ Track real-world framework and OS accessibility regressions with actionable engi
 - Framework: SwiftUI
 - Symptom class: missing or degraded state announcements
 - Version status:
-  - introduced_in: iOS 16.0 (reported regression from iOS 15.7 behavior)
-  - affected_range: iOS 16.0 (reported), current status unknown
+  - introduced_in: iOS 16 (reported regression from iOS 15 behavior)
+  - affected_range: iOS 16 (reported), minor versions and current status unspecified
   - fixed_in: unknown
   - status: needs_revalidation
   - evidence_confidence: medium
@@ -129,12 +130,12 @@ Track real-world framework and OS accessibility regressions with actionable engi
 
 ### AX-BUG-005: VoiceOver focus can become trapped in UIKit container compositions
 
-- Platform/OS range: iOS/tvOS
+- Platform/OS range: iOS historical report; tvOS applicability requires separate evidence
 - Framework: UIKit / hosted view-controller containers
 - Symptom class: focus trap/order regression
 - Version status:
-  - introduced_in: unknown (legacy report, still relevant pattern)
-  - affected_range: version-unspecified container-composition risk
+  - introduced_in: unknown (2018 report with 2020 follow-up)
+  - affected_range: iOS version unspecified; retain as an architectural risk pattern, not a current OS defect
   - fixed_in: unknown
   - status: needs_revalidation
   - evidence_confidence: medium
@@ -218,6 +219,10 @@ Track real-world framework and OS accessibility regressions with actionable engi
   - include web-content a11y checks in regression passes for hybrid apps
 - Sources:
   - [APPLE-SAFARI18-RELEASE-NOTES]
+
+## Source Review (2026-11-04)
+
+The five forum threads were reviewed as reports, not treated as release-note guarantees. AX-BUG-006 through AX-BUG-008 describe recurring risk classes rather than individual confirmed defects on every listed OS. Current release channels are tracked in [release readiness](apple-beta-release-readiness-2026.md); the iOS 18/macOS 15/Safari 18 sources remain historical references.
 
 ## VisionOS Tracking Note
 
