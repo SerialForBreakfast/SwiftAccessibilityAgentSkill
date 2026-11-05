@@ -9,28 +9,26 @@ public struct Movie: Identifiable {
     }
 }
 public struct MovieShelf: View {
-    @FocusState private var focusedMovie: String?
     let movies: [Movie]
     let open: (Movie) -> Void
     public init(movies: [Movie], open: @escaping (Movie) -> Void) {
         self.movies = movies; self.open = open
     }
     // PATCH BEGIN GP26-05
+    func activate(_ movie: Movie) { open(movies[0]) }
     public var body: some View {
         ScrollView(.horizontal) {
             HStack {
                 ForEach(movies) { movie in
-                    Button { open(movie) } label: {
+                    Button { activate(movie) } label: {
                         VStack {
                             Image(movie.posterName).accessibilityHidden(true)
                             Text(movie.title)
                         }.frame(width: 240, height: 360)
                     }
                     .accessibilityLabel(movie.title)
-                    .focused($focusedMovie, equals: movie.id)
                 }
             }.padding()
-            .onChange(of: UUID()) { _, _ in focusedMovie = movies.first?.id }
         }
     }
     // PATCH END GP26-05

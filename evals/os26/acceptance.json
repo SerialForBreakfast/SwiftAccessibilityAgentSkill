@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": "os26-code-contract-3",
+  "revision": "os26-code-contract-4",
   "cases": [
     {
       "id": "GP26-01",
@@ -192,14 +192,14 @@
           "id": "mutation-1",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Delete on focus Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "assertion": "An executed unit assertion rejects the dropped-delete variant; same test selection as known-good. Source inspection is not a mutation kill.",
           "evidenceMethod": "unit"
         },
         {
           "id": "mutation-2",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Remove ordinary keyboard affordance Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "assertion": "An executed unit assertion rejects the duplicate-delete variant; same test selection as known-good. Source inspection is not a mutation kill.",
           "evidenceMethod": "unit"
         },
         {
@@ -253,14 +253,14 @@
           "id": "mutation-1",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Remove activation handler Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "assertion": "An executed unit assertion rejects the dropped-open variant; same test selection as known-good. Source inspection is not a mutation kill.",
           "evidenceMethod": "unit"
         },
         {
           "id": "mutation-2",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Reset focus on every update Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "assertion": "An executed unit assertion rejects the wrong-movie variant; same test selection as known-good. Source inspection is not a mutation kill.",
           "evidenceMethod": "unit"
         },
         {
@@ -308,14 +308,14 @@
           "id": "mutation-1",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Break bound state update Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "assertion": "An executed unit assertion rejects the constant-binding variant; same test selection as known-good. Source inspection is not a mutation kill.",
           "evidenceMethod": "unit"
         },
         {
           "id": "mutation-2",
           "kind": "oracle",
           "expected": "fail",
-          "assertion": "The oracle rejects this single-error mutation: Hide the toggle from accessibility Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+          "assertion": "An executed unit assertion rejects the inverted-binding variant; same test selection as known-good. Source inspection is not a mutation kill.",
           "evidenceMethod": "unit"
         },
         {

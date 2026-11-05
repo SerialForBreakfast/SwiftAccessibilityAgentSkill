@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": "os26-fixtures-prep-1",
+  "revision": "os26-fixtures-unit-2",
   "status": "unvalidated",
   "cases": [
     {
@@ -28,7 +28,9 @@
           "expected": "fail",
           "observed": "not_run"
         }
-      ]
+      ],
+      "testId": "UIKitTests/testSettingsCallbacksAndExposedControls",
+      "platform": "iOS"
     },
     {
       "id": "GP26-02",
@@ -55,7 +57,9 @@
           "expected": "fail",
           "observed": "not_run"
         }
-      ]
+      ],
+      "testId": "UIKitTests/testReconfigurationWithoutPrepareForReuse",
+      "platform": "iOS"
     },
     {
       "id": "GP26-03",
@@ -82,88 +86,96 @@
           "expected": "fail",
           "observed": "not_run"
         }
-      ]
+      ],
+      "testId": "UIKitTests/testCheckoutCallbackAndResizePrerequisites",
+      "platform": "iOS"
     },
     {
       "id": "GP26-04",
       "candidate": {
         "path": "Sources/OS26Fixtures/MessageRow.swift",
-        "sha256": "9b1157381e70afa85d67975026b9f783853668e22de01d86cd2a3912c2b02488",
+        "sha256": "4f9bdadc4d2347385b5245bce6bee2dac025e1f51e868ca376fbed3b63ba6c61",
         "expected": "pass",
         "observed": "not_run"
       },
       "mutations": [
         {
           "id": "mutation-1",
-          "defect": "delete-on-focus",
+          "defect": "dropped-delete",
           "path": "Mutations/GP26-04/mutation-1/MessageRow.swift",
-          "sha256": "0701438ab57ad7ef83c4be5b77764636501fe1ddc60a61d5fc5690af043628a6",
+          "sha256": "943c51b533a47349a9217c399536389c48253f66f63346d165b5fb1dc65f6a94",
           "expected": "fail",
           "observed": "not_run"
         },
         {
           "id": "mutation-2",
-          "defect": "hide-button",
+          "defect": "duplicate-delete",
           "path": "Mutations/GP26-04/mutation-2/MessageRow.swift",
-          "sha256": "0675a36ded4ffcb2d9d5d2eb744cc7b58b320e0f9565ed9a4344beef3db8cd5d",
+          "sha256": "c61fe36a13baff023c21640520d6ec7b0f1f1bdcaed798fcf6d7ae9e58bef799",
           "expected": "fail",
           "observed": "not_run"
         }
-      ]
+      ],
+      "testId": "SwiftUIContractTests/testMessageActions",
+      "platform": "iOS"
     },
     {
       "id": "GP26-05",
       "candidate": {
         "path": "Sources/OS26Fixtures/MovieShelf.swift",
-        "sha256": "5c4a51940f67c27a419b451a590728a465fa993b2edfc9352341ed9830d7c470",
+        "sha256": "05489f6bbc7b51dd40c3622d4d2f0d2df31f2dcdbb0e490071ef75ddf9a5393b",
         "expected": "pass",
         "observed": "not_run"
       },
       "mutations": [
         {
           "id": "mutation-1",
-          "defect": "no-activation",
+          "defect": "dropped-open",
           "path": "Mutations/GP26-05/mutation-1/MovieShelf.swift",
-          "sha256": "903f4889607da49ab3d1f57877a99c0c7a395c8d53a2dc608ef8e9226560aa0a",
+          "sha256": "98505334fdc28b689a2c37dfb671a15bc114d20d988af3924eb2647e7cb53f7d",
           "expected": "fail",
           "observed": "not_run"
         },
         {
           "id": "mutation-2",
-          "defect": "reset-focus-on-update",
+          "defect": "wrong-movie",
           "path": "Mutations/GP26-05/mutation-2/MovieShelf.swift",
-          "sha256": "01f87d399e23647d3d40e37a4497c124bcd8c22b44e373e74f5a696fd08c47a7",
+          "sha256": "a43e074a6ec109f790287e458d12f671f5936d4ea5511a1e6cba2eae4cc9ecd4",
           "expected": "fail",
           "observed": "not_run"
         }
-      ]
+      ],
+      "testId": "SwiftUIContractTests/testMovieActivation",
+      "platform": "tvOS"
     },
     {
       "id": "GP26-06",
       "candidate": {
         "path": "Sources/OS26Fixtures/NotificationSettings.swift",
-        "sha256": "5f35d4d82e15cf39b901d9c5375ad2b8e18bfa378683a1bdad98188a91f9f9a2",
+        "sha256": "0f3345cea8c3fe772bb098f90c16313518c2333e96bbfb3878cbc8e367b2b0da",
         "expected": "pass",
         "observed": "not_run"
       },
       "mutations": [
         {
           "id": "mutation-1",
-          "defect": "broken-binding",
+          "defect": "constant-binding",
           "path": "Mutations/GP26-06/mutation-1/NotificationSettings.swift",
-          "sha256": "33e64afd7186feb27e2a3e2c1b2267a117ae66f4c461b8edb6325e490e78b6eb",
+          "sha256": "e3349c856aace29e52c30ac6af320df99134adb38fc944060ca6e96cc757a9a9",
           "expected": "fail",
           "observed": "not_run"
         },
         {
           "id": "mutation-2",
-          "defect": "hidden-toggle",
+          "defect": "inverted-binding",
           "path": "Mutations/GP26-06/mutation-2/NotificationSettings.swift",
-          "sha256": "39f2ce4508a24330e7732c46b125209ab53e1da9db76997fc1f40502934a5597",
+          "sha256": "8a7efc4ec765b7dba90b48330ea732e3fe3effbdeca4d04a0527e343d3343834",
           "expected": "fail",
           "observed": "not_run"
         }
-      ]
+      ],
+      "testId": "SwiftUIContractTests/testNotificationBinding",
+      "platform": "iOS"
     }
   ]
 }

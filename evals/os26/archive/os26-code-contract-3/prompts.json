@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "revision": "os26-code-contract-3",
+  "status": "draft",
+  "cases": [
+    {
+      "id": "GP26-01",
+      "family": "settings-actions",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "target": "26.0",
+      "minimumDeployment": "iOS 26.0",
+      "provenance": "synthetic-revised-development",
+      "cohort": "representative",
+      "control": false,
+      "prompt": "iOS 26.0, UIKit.\n\nVoiceOver only stops on “Downloads” in this settings row. People cannot change the setting or open Help. The existing callbacks are already wired. Can you fix it?\n\n```swift\nlet row = UIStackView(arrangedSubviews: [titleLabel, downloadSwitch, helpButton])\ntitleLabel.text = \"Downloads\"\nhelpButton.setTitle(\"Help\", for: .normal)\nrow.isAccessibilityElement = true\nrow.accessibilityLabel = titleLabel.text\nrow.accessibilityElementsHidden = true\n```"
+    },
+    {
+      "id": "GP26-02",
+      "family": "cell-reconfiguration",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "target": "26.0",
+      "minimumDeployment": "iOS 26.0",
+      "provenance": "synthetic-revised-development",
+      "cohort": "representative",
+      "control": false,
+      "prompt": "iOS 26.0, UIKit.\n\nAfter scrolling and refreshing orders, a cell sometimes announces the previous customer or status. Here is its configuration code; the model has customer/status strings and an isPriority flag, and titleLabel is already laid out. What should change?\n\n```swift\nfinal class OrderCell: UITableViewCell {\n    let titleLabel = UILabel()\n    func configure(_ order: Order) {\n        titleLabel.text = order.customer\n        isAccessibilityElement = true\n        if order.isPriority {\n            accessibilityLabel = \"Priority order for \\(order.customer)\"\n            accessibilityValue = order.status\n        }\n    }\n}\n```"
+    },
+    {
+      "id": "GP26-03",
+      "family": "checkout-resize",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "target": "26.0",
+      "minimumDeployment": "iOS 26.0",
+      "provenance": "synthetic-revised-development",
+      "cohort": "representative",
+      "control": false,
+      "prompt": "iOS 26.0, UIKit.\n\nCustomers using larger text cannot read the complete checkout total. The container fills the safe-area width, and formattedTotal can be a long localized currency value. The Pay button already works and its appearance should stay the same. Can you fix this layout?\n\n```swift\ntotalLabel.text = formattedTotal\ntotalLabel.font = .systemFont(ofSize: 17)\ntotalLabel.numberOfLines = 1\npayButton.setTitle(\"Pay now\", for: .normal)\nlet summary = UIStackView(arrangedSubviews: [totalLabel, payButton])\nsummary.axis = .horizontal\nsummary.distribution = .fillEqually\nsummary.heightAnchor.constraint(equalToConstant: 44).isActive = true\n```"
+    },
+    {
+      "id": "GP26-04",
+      "family": "deletion-input-modes",
+      "platform": "iPadOS",
+      "framework": "SwiftUI",
+      "target": "26.0",
+      "minimumDeployment": "iOS 26.0",
+      "provenance": "synthetic-revised-development",
+      "cohort": "regression",
+      "control": false,
+      "prompt": "iPadOS 26.0, SwiftUI.\n\nOur message row can only delete by swiping. Add an on-screen way to delete that works with VoiceOver and with Full Keyboard Access plus a hardware keyboard. Keep swipe deletion working. onDelete must delete the chosen message once after explicit activation; do not add a confirmation or undo policy. Message has a stable id and subject.\n\n```swift\nstruct MessageRow: View {\n    let message: Message\n    let onDelete: (Message) -> Void\n    var body: some View {\n        Text(message.subject)\n            .padding()\n            .contentShape(Rectangle())\n            .gesture(DragGesture().onEnded { value in\n                if value.translation.width < -80 { onDelete(message) }\n            })\n    }\n}\n```"
+    },
+    {
+      "id": "GP26-05",
+      "family": "tv-remote-shelf",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "target": "26.0",
+      "minimumDeployment": "tvOS 26.0",
+      "provenance": "synthetic-revised-development",
+      "cohort": "representative",
+      "control": false,
+      "prompt": "tvOS 26.0, SwiftUI.\n\nTesters cannot reliably reach and select all the movie tiles with the remote. VoiceOver users also need to identify the movie they are opening. Movie is Identifiable with title and posterName; open(movie) opens its detail screen. Please fix the interaction.\n\n```swift\nScrollView(.horizontal) {\n    HStack {\n        ForEach(movies) { movie in\n            VStack {\n                Image(movie.posterName)\n                Text(movie.title)\n            }\n            .frame(width: 240, height: 360)\n            .onTapGesture { open(movie) }\n        }\n    }\n}\n```"
+    },
+    {
+      "id": "GP26-06",
+      "family": "native-toggle-control",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "target": "26.0",
+      "minimumDeployment": "iOS 26.0",
+      "provenance": "synthetic-revised-development",
+      "cohort": "representative",
+      "control": true,
+      "prompt": "iOS 26.0, SwiftUI.\n\nPlease review the accessibility of this notification settings view and make any changes that are needed. The binding is connected to the existing preference store.\n\n```swift\nstruct NotificationSettings: View {\n    @Binding var notificationsEnabled: Bool\n    var body: some View {\n        Form {\n            Toggle(\"Notifications\", isOn: $notificationsEnabled)\n        }\n    }\n}\n```"
+    }
+  ]
+}

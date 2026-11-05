@@ -1,6 +1,6 @@
 # Gold prompts - OS26 code-contract baseline
 
-Revision `os26-code-contract-3`. Six development cases; zero validated gold fixtures.
+Revision `os26-code-contract-4`. Six development cases; zero validated gold fixtures.
 
 Owner decision: compile checks and unit tests, with independent source review. No mandatory manual verification or UI tests. VoiceOver traversal/speech, remote or keyboard navigation and rendered layout are not measured outcomes. The prior catalog is preserved under `evals/os26/archive/os26-draft-2/`. User questions are unchanged; only the measured acceptance scope changed.
 
@@ -135,8 +135,8 @@ struct MessageRow: View {
 | source-review | review | pass | Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer. |
 | compile-host | compile | pass | Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required. |
 | known-good | unit oracle | pass | Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied. |
-| mutation-1 | unit oracle | fail | The oracle rejects this single-error mutation: Delete on focus Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
-| mutation-2 | unit oracle | fail | The oracle rejects this single-error mutation: Remove ordinary keyboard affordance Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| mutation-1 | unit oracle | fail | An executed unit assertion rejects the dropped-delete variant; same test selection as known-good. Source inspection is not a mutation kill. |
+| mutation-2 | unit oracle | fail | An executed unit assertion rejects the duplicate-delete variant; same test selection as known-good. Source inspection is not a mutation kill. |
 | explicit-delete | unit | pass | Directly exercise production explicit-delete and swipe-handler paths for two message IDs; each invocation dispatches the chosen ID exactly once. Construction and nonactivation state transitions dispatch nothing. This does not prove input delivery. |
 | voiceover-delete | review | pass | Review supplied source against Apple native-control documentation: visible named deletion control and subject content remain present. Do not claim observed VoiceOver interaction. |
 | keyboard-delete | review | pass | Review native-control and handler wiring for keyboard-compatible activation without deletion on focus. Actual Full Keyboard Access navigation is outside this endpoint. |
@@ -173,8 +173,8 @@ ScrollView(.horizontal) {
 | source-review | review | pass | Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer. |
 | compile-host | compile | pass | Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required. |
 | known-good | unit oracle | pass | Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied. |
-| mutation-1 | unit oracle | fail | The oracle rejects this single-error mutation: Remove activation handler Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
-| mutation-2 | unit oracle | fail | The oracle rejects this single-error mutation: Reset focus on every update Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| mutation-1 | unit oracle | fail | An executed unit assertion rejects the dropped-open variant; same test selection as known-good. Source inspection is not a mutation kill. |
+| mutation-2 | unit oracle | fail | An executed unit assertion rejects the wrong-movie variant; same test selection as known-good. Source inspection is not a mutation kill. |
 | remote-activation | unit | pass | Directly invoke the production activation path for first/middle/last movie IDs and assert one correct callback per invocation. No remote focus or Select delivery claim follows. |
 | voiceover-name | review | pass | Review source for meaningful movie titles and native control semantics against documented contracts; no spoken output assertion. |
 
@@ -206,8 +206,8 @@ struct NotificationSettings: View {
 | source-review | review | pass | Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer. |
 | compile-host | compile | pass | Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required. |
 | known-good | unit oracle | pass | Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied. |
-| mutation-1 | unit oracle | fail | The oracle rejects this single-error mutation: Break bound state update Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
-| mutation-2 | unit oracle | fail | The oracle rejects this single-error mutation: Hide the toggle from accessibility Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
+| mutation-1 | unit oracle | fail | An executed unit assertion rejects the constant-binding variant; same test selection as known-good. Source inspection is not a mutation kill. |
+| mutation-2 | unit oracle | fail | An executed unit assertion rejects the inverted-binding variant; same test selection as known-good. Source inspection is not a mutation kill. |
 | native-toggle | unit | pass | Exercise the production binding/state path in both directions and assert backing state changes correctly. Source review separately checks native Toggle wiring; unit state checks do not prove VoiceOver activation. |
 | scope-control | review | pass | No demonstrated defect is fabricated; valid equivalent implementations are allowed but unnecessary semantic overrides count as review burden, not automatic critical errors. |
 

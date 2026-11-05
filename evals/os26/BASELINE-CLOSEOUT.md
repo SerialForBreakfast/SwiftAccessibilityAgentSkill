@@ -1,5 +1,10 @@
 # OS26 gold validation closeout
 
+Owner update: fixture implementation and Apple validation are assigned locally,
+not to MaxMini. BigDog confirmed no overlapping changes and will review new local
+code. See [initial native validation](LOCAL-VALIDATION-2026-11-05.md): three UIKit
+unit tests passed on iOS26.5 using SDK27; mutation and full promotion evidence pending.
+
 Date: 2026-11-05. Scope: `os26-code-contract-3`, six development cases.
 Current status: **0/6 gold-ready**. No native execution or Gemini run authorized
 by this checklist. Unit tests and compile checks support source review; no mandatory

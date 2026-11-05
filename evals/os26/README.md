@@ -2,7 +2,7 @@
 
 **6 revised development prompts; 0 validated gold fixtures; provider execution disabled.**
 
-Current revision: `os26-code-contract-3`. Owner-approved endpoint: compile/unit
+Current revision: `os26-code-contract-4`. Owner-approved endpoint: compile/unit
 evidence plus independent source review. No mandatory manual verification or UI
 tests. Prior draft-2 inputs and policy are retained in `archive/os26-draft-2/`.
 Question text is unchanged; acceptance hashes and the measured endpoint changed.
@@ -79,6 +79,15 @@ The existing SwiftUI mutations include input/focus-oriented defects. They remain
 unvalidated and may require a versioned replacement with unit-observable defects.
 Do not count a source-inspection finding as an executed mutation failure. Record
 old/new fixture hashes and preserve old variants before making that change.
+
+Revision4 implements that change: production-path action/binding tests and
+unit-observable dropped/duplicate/wrong-ID/inverted-write mutants replace the
+SwiftUI input/focus variants. Draft3 is preserved in `archive/os26-code-contract-3/`.
+See [source/assertion review](SOURCE-REVIEW-R4.md). Independent review and native
+results are still required. `runner/os26-native.mjs` prints a plan without flags;
+its explicit execution mode requires a new output directory and installed iOS26/
+tvOS26 destination UUIDs. It runs serially with a ten-minute per-job timeout, no
+UI targets, no downloads and no inference. Output contains private local paths.
 
 This validates record completeness and integrity, not the truth of external claims.
 An owner/reviewer must inspect the test reports. A fabricated receipt is not evidence.

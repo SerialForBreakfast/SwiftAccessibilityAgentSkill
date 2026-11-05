@@ -12,17 +12,20 @@ public struct MessageRow: View {
         self.message = message; self.onDelete = onDelete
     }
     // PATCH BEGIN GP26-04
+    func deleteMessage() { onDelete(message); onDelete(message) }
+    func handleSwipe(translation: CGFloat) {
+        if translation < -80 { deleteMessage() }
+    }
     public var body: some View {
         HStack {
             Text(message.subject)
                 .padding()
                 .contentShape(Rectangle())
                 .gesture(DragGesture().onEnded { value in
-                    if value.translation.width < -80 { onDelete(message) }
+                    handleSwipe(translation: value.translation.width)
                 })
-            Button("Delete", role: .destructive) { onDelete(message) }
+            Button("Delete", role: .destructive) { deleteMessage() }
                 .accessibilityLabel("Delete \(message.subject)")
-                .hidden()
         }
     }
     // PATCH END GP26-04

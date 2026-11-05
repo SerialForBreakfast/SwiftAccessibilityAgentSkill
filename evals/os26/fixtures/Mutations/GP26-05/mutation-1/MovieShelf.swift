@@ -15,11 +15,12 @@ public struct MovieShelf: View {
         self.movies = movies; self.open = open
     }
     // PATCH BEGIN GP26-05
+    func activate(_ movie: Movie) { }
     public var body: some View {
         ScrollView(.horizontal) {
             HStack {
                 ForEach(movies) { movie in
-                    Button { } label: {
+                    Button { activate(movie) } label: {
                         VStack {
                             Image(movie.posterName).accessibilityHidden(true)
                             Text(movie.title)
