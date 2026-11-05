@@ -79,6 +79,12 @@ directly to an older digest that included OS metadata. Frozen snapshots and thei
 manifests are unchanged. Transfer their exact bytes, including any metadata explicitly
 listed in the original baseline manifest, and verify them before execution.
 
+Upstream reconciliation note: BigDog retained the original 217-entry manifest as
+`manifest.original-with-os-metadata.json` and corrected the operational manifest to
+210 source entries, excluding seven absent Finder files. Preserve both manifests;
+all source-file hashes are unchanged. Use the operational manifest for worker
+verification and the original for historical provenance, as documented in the README.
+
 The planner includes all conditions even if the model cannot use tools. This is
 intentional accounting. Do not spend generation requests when a cell cannot be
 executed safely: return `unsupported_tools` or `context_overflow` with evidence.

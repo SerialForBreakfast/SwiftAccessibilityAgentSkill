@@ -44,3 +44,18 @@ test('C2 injection is not C3 retrieval and missing cases stay in retrieval denom
 test('campaign manifest changes cannot be silently accepted',()=>{const p=planCampaign();p.budget.outputTokens++;assert.throws(()=>coverage(p,[]),/hash mismatch/);});
 test('live fingerprint ignores .DS_Store without editing original snapshots',()=>{const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'skill-fingerprint-'));try{fs.mkdirSync(tmp+'/references');fs.writeFileSync(tmp+'/SKILL.md','test');fs.writeFileSync(tmp+'/VERSION','test');const before=fingerprint(tmp);fs.writeFileSync(tmp+'/references/.DS_Store','metadata');assert.equal(fingerprint(tmp),before);}finally{fs.rmSync(tmp,{recursive:true});}});
 test('truncation is preserved even when generation returns nonempty text',async()=>{const r=await evaluate({root:repo,condition:'C0',scenario,config,fetcher:async()=>({ok:true,json:async()=>({choices:[{message:{role:'assistant',content:'Partial answer'},finish_reason:'length'}]})})});assert.equal(r.metadata.truncated,true);assert.deepEqual(r.metadata.finishReasons,['length']);});
+
+
+import {files} from './lib.mjs';
+test('Finder metadata cannot affect skill hashes or reference inventory',()=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'skill-fingerprint-'));
+ try {
+  fs.mkdirSync(path.join(root,'references/core'),{recursive:true});
+  fs.writeFileSync(path.join(root,'SKILL.md'),'Skill');fs.writeFileSync(path.join(root,'VERSION'),'fixture');
+  const ref=path.join(root,'references/core/topic.md');fs.writeFileSync(ref,'Original');
+  const before=fingerprint(root);
+  for(const name of ['references/.DS_Store','references/core/.DS_Store'])fs.writeFileSync(path.join(root,name),'Finder metadata');
+  assert.equal(fingerprint(root),before);assert.equal(files(path.join(root,'references')).length,1);
+  fs.writeFileSync(ref,'Changed');assert.notEqual(fingerprint(root),before);
+ } finally {fs.rmSync(root,{recursive:true,force:true});}
+});

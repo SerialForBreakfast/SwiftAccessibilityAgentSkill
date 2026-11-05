@@ -61,3 +61,11 @@ offline campaign/receipt tooling supports either worker. 35 unit tests pass.
 Full-corpus worker execution, exact tokenizer preflight, durable remote receipts and
 context-occupancy stress adapters require worker-owner implementation/qualification.
 No inference, server startup, live dispatch or remote execution occurred here.
+
+## Upstream Reconciliation
+
+Preserved BigDog's llama.cpp runner/tests, MaxMini assessment, preliminary evidence,
+versioned dashboard and documented baseline-packaging correction. Resolved README
+and test-file overlaps by retaining both sets of additions. The combined suite passes
+41 offline tests; the operational baseline verifies 210 source entries and preserves
+the original 217-entry manifest separately. No inference was run during reconciliation.

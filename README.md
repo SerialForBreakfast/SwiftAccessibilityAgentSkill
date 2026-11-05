@@ -1,4 +1,4 @@
-# SwiftAccessibilityAgent
+# SwiftAccessibilityAgentSkill
 
 Source-driven accessibility guidance for SwiftUI, UIKit, tvOS, macOS, and visionOS, designed for both human developers and AI coding agents.
 
