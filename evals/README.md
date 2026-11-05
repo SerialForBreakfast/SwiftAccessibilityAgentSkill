@@ -1,8 +1,13 @@
 # Evidence-Backed Evaluation
 
+Primary target: capable frontier Swift coding agents. Small local models are a
+diagnostic lane, not the skill's optimization target. See [target strategy](TARGET-EVALUATION.md).
+Current worker action: [commit sanitized existing evidence](RESULTS-HANDOFF.md)
+through Git before scheduling more local inference.
+
 For complexity/context profiles and remote execution on BigDog or MaxMini, use the
-[portable campaign requirements](PORTABLE-EXECUTION.md). This machine performs only
-offline planning and validation; model execution is assigned to qualified workers.
+[portable campaign requirements](PORTABLE-EXECUTION.md). Planning commands perform
+offline work only. Model execution belongs to qualified, separately authorized workers.
 
 **[Open the evaluation dashboard →](reports/README.md)** — charts, prompts, expected-answer criteria and response comparisons. New test/report iterations require explicit owner approval.
 
@@ -234,4 +239,101 @@ a separately frozen retrieval experiment; do not tune against heldout cases.
 
 See [Max Mini workload recommendations](MAXMINI-ASSESSMENT.md) for the provisional
 host/model comparison, received M4/24 GB peer inventory and remaining verification
-plan. No Max Mini benchmark or performance superiority is claimed.
+plan. That assessment predates the local development batches below.
+Those batches do not establish model-quality or performance superiority.
+
+## Maximum-mini Ollama development comparison
+
+The completed local batches use source committed in `14f1f99`. Their raw records
+remain in ignored local storage. The merged scenarios and shared runner differ
+from those frozen inputs. Keep their original manifests and results unchanged.
+Use the original source revision for exact historical continuation. A new run
+needs a new output directory and must record the current source and input hashes.
+These local diagnostics do not qualify the new portable worker pilot.
+
+The local adapter reuses the frozen 32-case BigDog development plan. Run its
+software checks with:
+
+```sh
+node --test evals/runner/ollama-test.mjs evals/runner/maxmini-summary-test.mjs
+node evals/runner/ollama-development.mjs
+```
+
+The dry run makes no model calls. Execution needs an already admitted loopback
+Ollama server, the pinned local model, and a new private output directory:
+
+```sh
+EVAL_ALLOW_NETWORK=1 EVAL_OUTPUT="$PWD/evals/results/new-local-run" \
+  EVAL_DIAGNOSTIC_ONLY=1 OLLAMA_MANIFEST_DIGEST="<owner-verified-manifest-sha256>" \
+  node evals/runner/ollama-development.mjs --execute
+```
+
+This adapter pins the existing `qwen3.5:latest` model layer by its recorded SHA-256.
+The execution owner verifies the blob and serving metadata before running it.
+The adapter uses native Ollama chat requests. It keeps thinking off, context at
+16,384 tokens, temperature at 0, and seed at 42. It sets neutral repetition and
+presence penalties explicitly. Each request permits 120 s. The full run permits
+160 generation requests, one at a time. Failed requests stop the run without retry.
+
+The plan contains four development families, eight cells per family. It does not
+use held-out cases. C2 loads reference text through the harness. Only successful
+C3 tool reads establish model-directed retrieval. Request and response files retain
+failed and truncated evidence. A forced tool-call preflight checks transport only.
+
+Ollama and BigDog's llama.cpp use different model weights, rendering, and serving
+code. This is a model-and-stack comparison, not an isolated hardware comparison.
+The hardened adapter verifies the tag's manifest digest before and after generation
+using Ollama's [model listing API](https://docs.ollama.com/api/tags). This digest is
+distinct from the historical weights-layer hash. The worker must establish their
+relationship and reserve the deployment against concurrent tag/model changes;
+before/after checks cannot prove that no transient swap occurred. Historical runtime
+metadata remains declared metadata, not independently verified by these checks.
+
+New runs record an absolute deadline (45 minutes for this comparison), cap each
+request by remaining time, retain rejected responses and unknown-outcome records,
+and fail on absent token telemetry. Continuation requires the original recorded
+deadline; legacy manifests without one are refused rather than using file mtime.
+New hardened experiments receive separate identifiers. Preserve old records and
+source revisions; never retroactively claim these safeguards for old runs.
+
+The adapter checks reported prompt counts after each response. It has no qualified
+pre-generation tokenizer check. Review server logs for input truncation or context
+shifting before interpreting the run. Keep original server and model metadata.
+Execution therefore requires `EVAL_DIAGNOSTIC_ONLY=1`; these adapters still do not
+qualify the portable pilot's exact pre-generation token-fit requirement.
+
+Generate descriptive counts with:
+
+```sh
+node evals/runner/maxmini-summary.mjs evals/results/new-local-run
+```
+
+These counts do not grade answer correctness. Independent source-backed grading
+and maintainer review remain necessary. Do not use the release comparison script
+for this four-family, one-sample host trial. It requires a different repeated,
+paired design. No skill release or accepted accuracy metric changes automatically.
+
+### Next local question batch
+
+`ollama-next-questions.mjs` freezes 8 new development families: D04, D05, D06,
+D09, D11, D19, D24 and D30. Each uses C0, C2 and explicit C3 at 2,048 output
+tokens. This produces 24 cells. The batch correctly names the operating system
+and framework in deployment context. It does not reuse the earlier malformed
+framework-as-OS wording. Keep this batch separate from the original comparison.
+
+```sh
+node --test evals/runner/ollama-next-test.mjs
+node evals/runner/ollama-next-questions.mjs
+```
+
+Execution uses `--execute`, `EVAL_ALLOW_NETWORK=1`, and a new `EVAL_OUTPUT`.
+It also requires `EVAL_DIAGNOSTIC_ONLY=1` and `OLLAMA_MANIFEST_DIGEST` as above.
+The owner first verifies the installed model hash and unchanged serving contract.
+The batch permits 120 generation requests, one at a time, with 120 s per request.
+A cumulative guard stops new requests after 90 min. Failed attempts are preserved.
+No automatic retry or hidden fallback occurs. Hold-out cases remain excluded.
+
+The questions cover UIKit, SwiftUI, tvOS and AppKit. This is broader development
+coverage, not platform runtime qualification. Record ambiguous questions for
+adjudication. Do not mark a bare answer wrong only because the rubric assumes
+an intent that the original question does not establish.

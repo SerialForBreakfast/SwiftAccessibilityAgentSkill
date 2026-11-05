@@ -1,5 +1,8 @@
 # Worker Request: Portable Skill Baselines
 
+Latest request: [Git-delivered result export](RESULTS-HANDOFF.md). Export existing
+evidence first; do not interpret this older campaign proposal as a new run request.
+
 For the current bounded execution request, use [Pilot requests](PILOT-REQUESTS.md).
 This older full-campaign proposal remains background; it is not the next run.
 Delivery is through Git or owner copy/paste, not the coordinator.

@@ -1,8 +1,8 @@
 # Portable Evaluation: BigDog and MaxMini
 
 Status: offline requirements/planner ready; remote worker adapter and dispatch require
-owner confirmation. No model is started or called by the campaign planner. This Mac
-remains a documentation, orchestration and offline-validation client.
+owner confirmation. The campaign planner performs offline work only. It does not
+start or call a model. Worker execution needs separate qualification and authorization.
 
 ## What Changed Upstream
 

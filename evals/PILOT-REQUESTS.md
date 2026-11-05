@@ -1,5 +1,9 @@
 # Bounded worker pilots
 
+Current priority: [return existing sanitized evidence](RESULTS-HANDOFF.md) before
+new inference. [Frontier coding agents](TARGET-EVALUATION.md) are the primary product
+target; these local pilots remain optional diagnostics after qualification.
+
 Status: ready for owner delivery through Git or copy/paste. Not dispatched or run.
 No coordinator contact. This document scopes the owner's request for bounded pilots;
 it does not authorize the full campaign, paid inference, downloads or infrastructure changes.
