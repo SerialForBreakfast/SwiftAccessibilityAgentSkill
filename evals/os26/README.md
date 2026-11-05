@@ -91,3 +91,10 @@ An owner/reviewer must inspect the test reports. A fabricated receipt is not evi
 
 Next-version implementation remains gated on this baseline. Compact instruction,
 reference, trigger and input-mode changes are proposals, not deployed skill changes.
+
+## Fixture preparation
+
+[Six candidate implementations and twelve mutations](fixtures/README.md) are now
+prepared with a dependency-free Swift package, Apple app entry point and three
+initial UIKit tests. SDK compilation, app project wiring, SwiftUI interaction tests,
+independent review and all actual oracle receipts remain pending. No case is promoted.
