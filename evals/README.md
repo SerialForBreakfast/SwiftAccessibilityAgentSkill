@@ -1,5 +1,9 @@
 # Evidence-Backed Evaluation
 
+New: [Gemini developer-code pilot summary](evidence/pilots/bigdog/developer-code-20261105/README.md)
+and [evidence-led next skill version](NEXT-SKILL-VERSION.md). Twelve completed
+subscription invocations; preliminary findings, not a release baseline.
+
 Next priority: [zero-spend subscription evaluation](SUBSCRIPTION-EVALUATION.md),
 starting with the [BigDog Gemini spike and baseline tasks](BIGDOG-GEMINI-BASELINE.md).
 This is a separate, gated frontier lane; do not launch the full portable campaign
