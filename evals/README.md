@@ -1,5 +1,10 @@
 # Evidence-Backed Evaluation
 
+Next priority: [zero-spend subscription evaluation](SUBSCRIPTION-EVALUATION.md),
+starting with the [BigDog Gemini spike and baseline tasks](BIGDOG-GEMINI-BASELINE.md).
+This is a separate, gated frontier lane; do not launch the full portable campaign
+or paid API examples below for this work.
+
 Primary target: capable frontier Swift coding agents. Small local models are a
 diagnostic lane, not the skill's optimization target. See [target strategy](TARGET-EVALUATION.md).
 Current worker action: [commit sanitized existing evidence](RESULTS-HANDOFF.md)
