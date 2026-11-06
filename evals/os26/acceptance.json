@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": "os26-code-contract-4",
+  "revision": "os26-code-contract-4-closeout-1",
   "cases": [
     {
       "id": "GP26-01",
@@ -157,7 +157,7 @@
           "id": "payment-action",
           "kind": "unit",
           "expected": "pass",
-          "assertion": "Directly dispatch payment activation and assert one existing callback; compare exposed button configuration before/after rather than visual appearance."
+          "assertion": "Directly dispatch payment activation and assert one existing callback and the Pay now title. Independent source review checks that the fixture patch leaves the existing system button configuration and callback wiring unchanged; no before/after runtime configuration or visual comparison is claimed."
         }
       ]
     },

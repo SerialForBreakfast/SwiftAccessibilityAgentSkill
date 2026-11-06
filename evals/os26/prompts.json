@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": "os26-code-contract-4",
+  "revision": "os26-code-contract-4-closeout-1",
   "status": "draft",
   "cases": [
     {
@@ -13,7 +13,7 @@
       "provenance": "synthetic-revised-development",
       "cohort": "representative",
       "control": false,
-      "prompt": "iOS 26.0, UIKit.\n\nVoiceOver only stops on “Downloads” in this settings row. People cannot change the setting or open Help. The existing callbacks are already wired. Can you fix it?\n\n```swift\nlet row = UIStackView(arrangedSubviews: [titleLabel, downloadSwitch, helpButton])\ntitleLabel.text = \"Downloads\"\nhelpButton.setTitle(\"Help\", for: .normal)\nrow.isAccessibilityElement = true\nrow.accessibilityLabel = titleLabel.text\nrow.accessibilityElementsHidden = true\n```"
+      "prompt": "iOS 26.0, UIKit.\n\nVoiceOver only stops on \u201cDownloads\u201d in this settings row. People cannot change the setting or open Help. The existing callbacks are already wired. Can you fix it?\n\n```swift\nlet row = UIStackView(arrangedSubviews: [titleLabel, downloadSwitch, helpButton])\ntitleLabel.text = \"Downloads\"\nhelpButton.setTitle(\"Help\", for: .normal)\nrow.isAccessibilityElement = true\nrow.accessibilityLabel = titleLabel.text\nrow.accessibilityElementsHidden = true\n```"
     },
     {
       "id": "GP26-02",

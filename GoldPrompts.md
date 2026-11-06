@@ -1,6 +1,8 @@
 # Gold prompts - OS26 code-contract baseline
 
-Revision `os26-code-contract-4`. Six development cases; zero validated gold fixtures.
+Revision `os26-code-contract-4-closeout-1`. **6/6 development prompts gold-ready · 42/42 gates passed · 6 reference fixes passed · 12/12 intentional defects caught.**
+
+[Validation and grading rules](evals/os26/reports/2026-11-05-gold-closeout/REVIEW.md) · [Readiness evidence](evals/os26/reports/2026-11-05-gold-closeout/readiness.json). Ready for a bounded agy C0/C2 comparison; no new model calls performed. This qualifies compile/unit/source-review checks, not VoiceOver usability or measured skill improvement.
 
 Owner decision: compile checks and unit tests, with independent source review. No mandatory manual verification or UI tests. VoiceOver traversal/speech, remote or keyboard navigation and rendered layout are not measured outcomes. The prior catalog is preserved under `evals/os26/archive/os26-draft-2/`. User questions are unchanged; only the measured acceptance scope changed.
 
@@ -101,7 +103,7 @@ summary.heightAnchor.constraint(equalToConstant: 44).isActive = true
 | mutation-1 | unit oracle | fail | The oracle rejects this single-error mutation: Keep fixed container height Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
 | mutation-2 | unit oracle | fail | The oracle rejects this single-error mutation: Disable live text scaling Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
 | live-resize | unit | pass | Assert text-scaling configuration and layout-policy prerequisites for long localized totals, including multiline text and absence of a fixed enclosing height. This does not assert rendered layout or readability. |
-| payment-action | unit | pass | Directly dispatch payment activation and assert one existing callback; compare exposed button configuration before/after rather than visual appearance. |
+| payment-action | unit | pass | Directly dispatch payment activation and assert one existing callback and the Pay now title. Independent source review checks that the fixture patch leaves the existing system button configuration and callback wiring unchanged; no before/after runtime configuration or visual comparison is claimed. |
 
 Status: evidence pending. Code-contract acceptance is not complete interaction validation.
 
