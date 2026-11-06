@@ -155,6 +155,34 @@ This definition does not require UI tests, manual device verification or a model
 to preserve a draft. It does require the relevant execution evidence before claiming
 an evaluated improvement.
 
+## Versioned comparison tranche — 2026-11-06
+
+**Current status: AGY executed and independently source-graded; Claude deferred.**
+The [report](../../../evals/reports/skill-0.3.0-dev.1-vs-0.3.0-dev.2-20261106/README.md)
+and [execution status](candidates/PREPARATION-STATUS.md) record the accepted scope.
+
+- Checkout adjudication closed through message 1426. Campaign requests 1427/1428
+  were read and acknowledged; campaign independent acceptance remains pending.
+- The owner selected semantic versions 0.3.0-dev.1 and 0.3.0-dev.2, default-on
+  identity/version and consulted-file reporting, with separate explicit opt-outs.
+- All 28 private inputs were frozen. Controller revision 2 independently calibrated
+  alternatives with reviewer exposure disclosed. Seven offline executor checks passed.
+- Owner approved the proposed comparison, then selected only the 14 AGY calls after
+  Claude reported no subscription login. No silent substitution or scope expansion.
+- AGY completed 14 calls using 65,400 tokens, with no retries, fallback or billing
+  signals. Grades: 0.3.0-dev.1 six contracts met plus one inconclusive checkout;
+  0.3.0-dev.2 seven met. No established material gaps or critical flags.
+- Total tokens rose 1.00%, median 3.29%; the efficiency screen was not met. Identity
+  and ROUTING appeared in all 14 answers; actual retrieval was not measured because
+  references were supplied. No new native answer checks were run.
+- Rounded remaining quota was five-hour 100%→99%, weekly 66%→66%. AGY's grant is
+  exhausted. Claude's 14 cells remain unattempted; no automatic later launch.
+
+This is a bounded development screen, not fresh confirmation or gold promotion.
+Wider FD-05/06/08 gates remain open. Released skill 0.2.2, historical evidence and
+frozen baselines are unchanged. Initial planning and blocked preflight observations
+are preserved in the linked reconciliation/validation records and private receipts.
+
 ## Platform companion expansion (2026-11-06)
 
 Owner authorized AppKit/macOS and UIKit/tvOS next; SwiftUI companion expansion stays

@@ -1,0 +1,1377 @@
+{
+  "schema": 1,
+  "experiment": "local-os26-released-vs-compact-b-20261106",
+  "date": "2026-11-06",
+  "sourceCommit": "a95464ccd2fbc639164bb8f373c5e1a2594e1002",
+  "catalogRevision": "os26-code-contract-4-closeout-1",
+  "executedRunnerHash": "5fedc608f3dcbc92c9feee84f0eeae6c74629378fd1a6794e2df2c94b61cb69e",
+  "publishedRunnerHash": "63d409bb726dd54e6d8b6bf9e914a1468d7883ed9686512b7776e27b5e9d13c5",
+  "controllerNote": "Archived executing source matches the recorded runner hash. A later offline-plan stdout-flush fix does not change the live generation path or payloads.",
+  "candidateBodyHash": "9561b6ffc4302b694d1ad038e67ce7a4de353be85e2988c0a849d1f2b77caaa8",
+  "criteriaHash": "e2072fd2dc4be6071cde9169509ccffc060052031f8d0ffee613e96da349f5c6",
+  "sourceReviewHash": "659e8b359320e046d9427713e7009466142b3e607ac57b17ca07d19e6e65152f",
+  "conditions": {
+    "F": "released skill + current references",
+    "BR": "compact B subject body + identical metadata/references"
+  },
+  "settings": {
+    "num_ctx": 16384,
+    "num_predict": 1024,
+    "temperature": 0,
+    "seed": 42,
+    "top_p": 1,
+    "top_k": 0
+  },
+  "limits": {
+    "calls": 36,
+    "perRequestSeconds": 180,
+    "campaignSeconds": 3600,
+    "inputBytes": 50000,
+    "concurrency": 1,
+    "retries": 0
+  },
+  "ollama": {
+    "version": "0.40.11"
+  },
+  "modelIdentities": {
+    "gemma4:12b": {
+      "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+      "parameters": "11.9B",
+      "quantization": "Q4_K_M",
+      "format": "gguf"
+    },
+    "qwen2.5-coder:14b": {
+      "digest": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+      "parameters": "14.8B",
+      "quantization": "Q4_K_M",
+      "format": "gguf"
+    },
+    "qwen3.5:latest": {
+      "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+      "parameters": "9.7B",
+      "quantization": "Q4_K_M",
+      "format": "gguf"
+    }
+  },
+  "pins": [
+    {
+      "path": "evals/os26/prompts.json",
+      "sha256": "677ee62fe529a551fc0b801a60177394426b642062fc579c1a07e8fb925ae797"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "2f4ce5ea5a6c8fa7c7cdd08eea620c606eedcc7ae389ac19a493d73078f7c3e3"
+    },
+    {
+      "path": "research/evaluation/failure-driven/compact-candidate-b/ENTRYPOINT.md",
+      "sha256": "b4e3569f68300fa8a1fed9cbb524082fd600d4c6bf2f4f40f266e5dfd1aa7fe1"
+    },
+    {
+      "path": "references/uikit/guidelines/u-005-grouping-containment.md",
+      "sha256": "1819bb94e27c62c08e34d538c2c020f373a416ed79dc23a2e805350a7734bb6e"
+    },
+    {
+      "path": "references/uikit/guidelines/u-007-accessibility-custom-actions.md",
+      "sha256": "f20e8d3ecbefb75ffa3d876d58dad2fc49af30e4523e0bbed0c6ed4c554a3c05"
+    },
+    {
+      "path": "references/uikit/guidelines/u-001-labels-meaningful-names.md",
+      "sha256": "e12d8489ee29b7d5d44461323af17743918af600d257b1aa9fe46c55578da440"
+    },
+    {
+      "path": "references/uikit/guidelines/u-003-values-stateful-controls.md",
+      "sha256": "af43c4f7d66b8426f4908dd2046065d7173bc0fe2159ccdb1dffceba63a2197d"
+    },
+    {
+      "path": "references/uikit/guidelines/u-010-dynamic-type-layout-resilience.md",
+      "sha256": "8565fd2ab005eabdec87902a0a88d25bcaf513e53905146b6f3f1881b453f2a0"
+    },
+    {
+      "path": "references/swiftui/guidelines/g-007-accessibility-actions.md",
+      "sha256": "04b1847ff5dd0750581c2cea81cd429a07c890d90d4a0f8cf5e3834739c08d9e"
+    },
+    {
+      "path": "references/swiftui/guidelines/g-008-custom-controls-representation.md",
+      "sha256": "1569f558d084f9efe61af342fefca2192725d131ea07a3d932b9d459f8baf608"
+    },
+    {
+      "path": "references/tvos/guidelines/t-004-grouping-containment-shelves-grids.md",
+      "sha256": "39d3e27f8499f36ca506a71f04a29e070a1eecd1cc244fde26c99036f217e3dc"
+    },
+    {
+      "path": "references/tvos/guidelines/t-005-custom-actions-remote-first.md",
+      "sha256": "33d98bc9172b56d5fa5fc97df68daa4bbba56b3ebb0e8c8ff459dedd3e7a9ce7"
+    },
+    {
+      "path": "references/swiftui/guidelines/g-003-values-stateful-controls.md",
+      "sha256": "ca95e1a5de1856dc676f90e2e84952707b4ae75a58a8275a761b60dc9ae64c28"
+    }
+  ],
+  "compilerEnvironment": {
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "swift": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+    "swiftLanguageVersion": 6,
+    "sdks": {
+      "iOS": {
+        "version": "27.0",
+        "build": "24A430"
+      },
+      "tvOS": {
+        "version": "27.0",
+        "build": "24J360"
+      }
+    },
+    "targets": {
+      "iOS": "arm64-apple-ios26.0-simulator",
+      "tvOS": "arm64-apple-tvos26.0-simulator"
+    },
+    "runtime": "not_run"
+  },
+  "summary": {
+    "gemma4:12b": {
+      "F": {
+        "answers": 6,
+        "inputTokens": 18888,
+        "outputTokens": 3981,
+        "totalTokens": 22869,
+        "seconds": 822.2620000000001,
+        "truncated": 0,
+        "coreMet": 3,
+        "coreGaps": 3,
+        "inconclusive": 0,
+        "typecheckPass": 6,
+        "typecheckFailed": 0,
+        "notApplicable": 0,
+        "frameworks": {
+          "UIKit": {
+            "answers": 3,
+            "met": 1,
+            "gaps": 2,
+            "inconclusive": 0
+          },
+          "SwiftUI": {
+            "answers": 3,
+            "met": 2,
+            "gaps": 1,
+            "inconclusive": 0
+          }
+        }
+      },
+      "BR": {
+        "answers": 6,
+        "inputTokens": 12648,
+        "outputTokens": 2744,
+        "totalTokens": 15392,
+        "seconds": 525.226,
+        "truncated": 0,
+        "coreMet": 3,
+        "coreGaps": 3,
+        "inconclusive": 0,
+        "typecheckPass": 3,
+        "typecheckFailed": 2,
+        "notApplicable": 1,
+        "frameworks": {
+          "UIKit": {
+            "answers": 3,
+            "met": 1,
+            "gaps": 2,
+            "inconclusive": 0
+          },
+          "SwiftUI": {
+            "answers": 3,
+            "met": 2,
+            "gaps": 1,
+            "inconclusive": 0
+          }
+        }
+      },
+      "tokenReduction": 0.3269491451309633
+    },
+    "qwen2.5-coder:14b": {
+      "F": {
+        "answers": 6,
+        "inputTokens": 17270,
+        "outputTokens": 3120,
+        "totalTokens": 20390,
+        "seconds": 597.174,
+        "truncated": 0,
+        "coreMet": 0,
+        "coreGaps": 6,
+        "inconclusive": 0,
+        "typecheckPass": 3,
+        "typecheckFailed": 3,
+        "notApplicable": 0,
+        "frameworks": {
+          "UIKit": {
+            "answers": 3,
+            "met": 0,
+            "gaps": 3,
+            "inconclusive": 0
+          },
+          "SwiftUI": {
+            "answers": 3,
+            "met": 0,
+            "gaps": 3,
+            "inconclusive": 0
+          }
+        }
+      },
+      "BR": {
+        "answers": 6,
+        "inputTokens": 11810,
+        "outputTokens": 2482,
+        "totalTokens": 14292,
+        "seconds": 491.745,
+        "truncated": 0,
+        "coreMet": 1,
+        "coreGaps": 5,
+        "inconclusive": 0,
+        "typecheckPass": 5,
+        "typecheckFailed": 1,
+        "notApplicable": 0,
+        "frameworks": {
+          "UIKit": {
+            "answers": 3,
+            "met": 0,
+            "gaps": 3,
+            "inconclusive": 0
+          },
+          "SwiftUI": {
+            "answers": 3,
+            "met": 1,
+            "gaps": 2,
+            "inconclusive": 0
+          }
+        }
+      },
+      "tokenReduction": 0.29906817067189795
+    },
+    "qwen3.5:latest": {
+      "F": {
+        "answers": 6,
+        "inputTokens": 18176,
+        "outputTokens": 5125,
+        "totalTokens": 23301,
+        "seconds": 632.338,
+        "truncated": 2,
+        "coreMet": 2,
+        "coreGaps": 3,
+        "inconclusive": 1,
+        "typecheckPass": 5,
+        "typecheckFailed": 1,
+        "notApplicable": 0,
+        "frameworks": {
+          "UIKit": {
+            "answers": 3,
+            "met": 0,
+            "gaps": 2,
+            "inconclusive": 1
+          },
+          "SwiftUI": {
+            "answers": 3,
+            "met": 2,
+            "gaps": 1,
+            "inconclusive": 0
+          }
+        }
+      },
+      "BR": {
+        "answers": 6,
+        "inputTokens": 12230,
+        "outputTokens": 2977,
+        "totalTokens": 15207,
+        "seconds": 374.811,
+        "truncated": 0,
+        "coreMet": 1,
+        "coreGaps": 5,
+        "inconclusive": 0,
+        "typecheckPass": 2,
+        "typecheckFailed": 3,
+        "notApplicable": 1,
+        "frameworks": {
+          "UIKit": {
+            "answers": 3,
+            "met": 0,
+            "gaps": 3,
+            "inconclusive": 0
+          },
+          "SwiftUI": {
+            "answers": 3,
+            "met": 1,
+            "gaps": 2,
+            "inconclusive": 0
+          }
+        }
+      },
+      "tokenReduction": 0.3473670657911677
+    }
+  },
+  "probeCounts": {
+    "answersWithCode": 34,
+    "codeProbes": 36,
+    "noCodeNotApplicable": 2
+  },
+  "probeBatches": [
+    {
+      "id": "swift-accessibility-local-b-20261106-probes-first7",
+      "runnerHash": "5baacbd2fb1ca452042f15d4d69aa3aa08ac669f27f9e8bccbff492eaed06d97",
+      "recordsHash": "a4f1730e2a1d2042503c2f5b59747f822b06f8123b43a371f31e1f3b336ed285",
+      "planHash": "29544b43d67f062e67db65db4ee4fc4d2f81db3446507f2130539d0826d6e1e1"
+    },
+    {
+      "id": "swift-accessibility-local-b-20261106-probes-gemma-rest",
+      "runnerHash": "c411191220e583b1bee867f6c2ee05a34900234ae7a3ba480fa6908bec49a779",
+      "recordsHash": "c10d00a231b90afaa7794161c7667353be43bda611f537e2c5c90290f6edca86",
+      "planHash": "628e7e856fab2f0e18f854d4bdf9874f6675ffa9c13ad6459f93664102f644d8"
+    },
+    {
+      "id": "swift-accessibility-local-b-20261106-probes-qwen-middle",
+      "runnerHash": "db60e6355d429a17cf57d2c0f39683a509a749a77e622dfdb0abc3bed155bc59",
+      "recordsHash": "9d953feacbb55541fdf979b9aa2fd570883608937c2d6414b7def07c2efac5b6",
+      "planHash": "f07356097a95968693a26d7092d7c70c874ffd85219dd79b15bfa183ab545519"
+    },
+    {
+      "id": "swift-accessibility-local-b-20261106-probes-qwen-rest",
+      "runnerHash": "db60e6355d429a17cf57d2c0f39683a509a749a77e622dfdb0abc3bed155bc59",
+      "recordsHash": "aa823f3d5d6dfd3785f26f56769fd7fb8b9a9213fbf678990050f54ee939764f",
+      "planHash": "2d1adcb6a9392d10fef84d4e87aebaf84cba166e0812a7e931639515e02b3d30"
+    },
+    {
+      "id": "swift-accessibility-local-b-20261106-probes-qwen-row",
+      "runnerHash": "c411191220e583b1bee867f6c2ee05a34900234ae7a3ba480fa6908bec49a779",
+      "recordsHash": "fab1295a2075dda6088ae0fd36a74b0d137a4d8c92f9c95902c402faed992128",
+      "planHash": "88343a64749fd864b827717db247cfcddbfd57a06af46344ab32a132a2194c5e"
+    },
+    {
+      "id": "swift-accessibility-local-b-20261106-probes-qwen35-actions",
+      "runnerHash": "db60e6355d429a17cf57d2c0f39683a509a749a77e622dfdb0abc3bed155bc59",
+      "recordsHash": "89f80ef89cfc40e02f01ff31f9f70f0e8b582766f27551455f4ec44558dc3a02",
+      "planHash": "f70bae5263ddc4389b6fb48e018c2e1f57c2da9a3004c0b0922818c7fa7d18ac"
+    },
+    {
+      "id": "swift-accessibility-local-b-20261106-probes-qwen35-first",
+      "runnerHash": "db60e6355d429a17cf57d2c0f39683a509a749a77e622dfdb0abc3bed155bc59",
+      "recordsHash": "256adb26ced4965d9674d6b73fa330bf69dc20447839dcdcde02bb8765e72541",
+      "planHash": "5ee7c0ec9bf6845fc24bb6df3adba669dc3982afc451b1b9ed67a95bae6ad27f"
+    },
+    {
+      "id": "swift-accessibility-local-b-20261106-probes-qwen35-middle",
+      "runnerHash": "db60e6355d429a17cf57d2c0f39683a509a749a77e622dfdb0abc3bed155bc59",
+      "recordsHash": "de0520f1243cb1626416dc16dbef40754a6314863c4cd93bbb8139d0cf6db05c",
+      "planHash": "045c3a9f40f793607590427fbfd79e452d64756c1da618c9fbebab49e697cc32"
+    },
+    {
+      "id": "swift-accessibility-local-b-20261106-probes-qwen35-rest",
+      "runnerHash": "db60e6355d429a17cf57d2c0f39683a509a749a77e622dfdb0abc3bed155bc59",
+      "recordsHash": "554a784ed4b2e839905e2505370795845cb6ac03a7fab2b4607ce433fb3cdad9",
+      "planHash": "d8b0f35c5fa273ef77b69aa67d52698ca8d2439a868fe226e69ec88715f4d8f7"
+    }
+  ],
+  "rows": [
+    {
+      "id": "gemma4_12b-GP26-01-F",
+      "model": "gemma4:12b",
+      "condition": "F",
+      "prompt": "GP26-01",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "d84ad27e4490c713ac61a7811e83c74b77c05d15a571f2fe80cf0c1f05a34a4c",
+      "answerHash": "60d6ccd8d7808de71d46bce76ac33cd92a80838bfbac5ccbecb0dcf46d1f63a0",
+      "finishReason": "stop",
+      "inputTokens": 3204,
+      "outputTokens": 614,
+      "seconds": 132.483,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "b4d516a1b35655ed12b852207583e5bc12094c4a78874a0434d74c3813a36666",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "gemma4_12b-GP26-01-BR",
+      "model": "gemma4:12b",
+      "condition": "BR",
+      "prompt": "GP26-01",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "c454fbee09c5a2dbcb30018dcd2b0d18b5ab7253161b8805ddaea45653ad749f",
+      "answerHash": "052d09de9c22f0dfc22ca5a342253a9c64fbb7f1c7a1e696db72d3faec939fed",
+      "finishReason": "stop",
+      "inputTokens": 2164,
+      "outputTokens": 416,
+      "seconds": 80.471,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "f521741b82be980f5e1eef2aa6c23043833960ebee5fd1e8b07e8f1dbd1e64c9",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "gemma4_12b-GP26-02-BR",
+      "model": "gemma4:12b",
+      "condition": "BR",
+      "prompt": "GP26-02",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "a107f1125c074fe99935928763b1446ca2b3b283bbe4cd210b6a9a1604872b68",
+      "answerHash": "c60ac239bc8589747fb91c090baee4b9cff30c783b2d2a350e7c6830d4bd2c56",
+      "finishReason": "stop",
+      "inputTokens": 2269,
+      "outputTokens": 506,
+      "seconds": 88.42,
+      "core": "met",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "319f6bd8451d2cfbda8c1fc11f830a094b641359ba7ddfd3bfb353979e04dd4e",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "gemma4_12b-GP26-02-F",
+      "model": "gemma4:12b",
+      "condition": "F",
+      "prompt": "GP26-02",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "9a7e8798675b3bfb48b77bc9e2685a570c3150fc7ba6192512a2183cf2146035",
+      "answerHash": "d1921c7cae8990b134d7516782265ea138fa8dd39a0153c87a0e3c33b4d4a9ef",
+      "finishReason": "stop",
+      "inputTokens": 3309,
+      "outputTokens": 781,
+      "seconds": 163.722,
+      "core": "met",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "e4590fec04754df08683a6296094ac632224d217e668557509e8361941c80504",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "gemma4_12b-GP26-03-F",
+      "model": "gemma4:12b",
+      "condition": "F",
+      "prompt": "GP26-03",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "2945fb4833bb5e9c00d4ceb6d2eeab67e041561ee525640be26d6be69bbe03a7",
+      "answerHash": "07b6bf7b2da32a3827718b6310d1def7540b38b7a3102e6acd24812383504519",
+      "finishReason": "stop",
+      "inputTokens": 2788,
+      "outputTokens": 731,
+      "seconds": 137.974,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "b654a064215385d484de2c1addbf0b686d713d1731a20b8d7c95f0760b282923",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "gemma4_12b-GP26-03-BR",
+      "model": "gemma4:12b",
+      "condition": "BR",
+      "prompt": "GP26-03",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "f62643a39742c096a1c5695ddefe3ec4dbff70d1d287b559e0faa24249a7183f",
+      "answerHash": "f6baa6ac8c0a4f750963804270d15333446e0a5052e7a101bade2407532b9b31",
+      "finishReason": "stop",
+      "inputTokens": 1748,
+      "outputTokens": 546,
+      "seconds": 101.205,
+      "core": "gap",
+      "compiler": "typecheck_failed",
+      "probes": [
+        {
+          "status": "typecheck_failed",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "9101ec6af003698c1f625749b27be089c500f28be7af1bba247a15406b38ddea",
+          "reason": null
+        }
+      ],
+      "compilerErrors": [
+        "value of type 'UILabel' has no member 'adjustsFontForContentSize'"
+      ]
+    },
+    {
+      "id": "gemma4_12b-GP26-04-BR",
+      "model": "gemma4:12b",
+      "condition": "BR",
+      "prompt": "GP26-04",
+      "framework": "SwiftUI",
+      "platform": "iPadOS",
+      "payloadHash": "dcbb25d2c5df3073bda2ff1eb89847d44fed65f82135f36ffc5a35e2e5656071",
+      "answerHash": "230627d6aea71d659063a0545a7e0c71b6232268c7733ca94c4ab93b600a1c6f",
+      "finishReason": "stop",
+      "inputTokens": 2515,
+      "outputTokens": 437,
+      "seconds": 88.607,
+      "core": "gap",
+      "compiler": "typecheck_failed",
+      "probes": [
+        {
+          "status": "typecheck_failed",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "88d94c18d863b124133b511fbc37f352ab1c86b226af455b48e453ce48f404a1",
+          "reason": null
+        }
+      ],
+      "compilerErrors": [
+        "cannot convert value of type 'String' to expected argument type 'AccessibilityActionKind'"
+      ]
+    },
+    {
+      "id": "gemma4_12b-GP26-04-F",
+      "model": "gemma4:12b",
+      "condition": "F",
+      "prompt": "GP26-04",
+      "framework": "SwiftUI",
+      "platform": "iPadOS",
+      "payloadHash": "0665c4cf9e2cef31ef3975a391f2d2eeac8d7ac0d1099df614277a3951c0a20b",
+      "answerHash": "12f84ec5eac7aa7c477056c79aeb56a7b63f26acb41fc05a857bbf87872af63c",
+      "finishReason": "stop",
+      "inputTokens": 3555,
+      "outputTokens": 607,
+      "seconds": 137.227,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "4972b50fddaa1c4bd30afe32e794063690ebe5b4fdf3df41cb61036a5fc008cf",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "gemma4_12b-GP26-05-F",
+      "model": "gemma4:12b",
+      "condition": "F",
+      "prompt": "GP26-05",
+      "framework": "SwiftUI",
+      "platform": "tvOS",
+      "payloadHash": "b6028aa9f921c61c9a7355b74327fe0a8149bbdfceb20bd69691227d5a4d5e44",
+      "answerHash": "b81dd88b0c4c5fcb5e6e5f6d77d6cbf11231e6b96e13cb6e3c18511b760380b9",
+      "finishReason": "stop",
+      "inputTokens": 3294,
+      "outputTokens": 721,
+      "seconds": 146.055,
+      "core": "met",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "556b946670f39bbefc429da3e6f889370fdee346b0b817f0322b3644295f36ca",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "gemma4_12b-GP26-05-BR",
+      "model": "gemma4:12b",
+      "condition": "BR",
+      "prompt": "GP26-05",
+      "framework": "SwiftUI",
+      "platform": "tvOS",
+      "payloadHash": "d983bf030f6fc119580f727caefcef673cfc9586aa6e9aee090efea0cd9dcfde",
+      "answerHash": "abc8622401620a099e8b6c4ff0ef64f4c1c4fb2126384888fcd8c2278a91c53a",
+      "finishReason": "stop",
+      "inputTokens": 2254,
+      "outputTokens": 563,
+      "seconds": 110.227,
+      "core": "met",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "f22d96394ccff4779c35c68fad550d0982358d0333588237ba544c0a0c62d7bf",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "gemma4_12b-GP26-06-BR",
+      "model": "gemma4:12b",
+      "condition": "BR",
+      "prompt": "GP26-06",
+      "framework": "SwiftUI",
+      "platform": "iOS",
+      "payloadHash": "b137e87cb96e3b6a0419b7da9a0e39bea5fac1e41a9f79f0bf1bd23c20ee0b32",
+      "answerHash": "2d638d92e3985088c59a4b6cecd5b1376d71bfa7fce2557ac2546dc82c8abb70",
+      "finishReason": "stop",
+      "inputTokens": 1698,
+      "outputTokens": 276,
+      "seconds": 56.296,
+      "core": "met",
+      "compiler": "not_applicable",
+      "probes": [
+        {
+          "status": "not_applicable",
+          "blocks": [],
+          "sourceHash": null,
+          "reason": "Reviewed no-change answer explicitly preserves the native Toggle and binding; no new code to compile."
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "gemma4_12b-GP26-06-F",
+      "model": "gemma4:12b",
+      "condition": "F",
+      "prompt": "GP26-06",
+      "framework": "SwiftUI",
+      "platform": "iOS",
+      "payloadHash": "959b6c804933ef9784f72fdcd11ef8d767fd761dd69cc558bc15077c5f0b25cd",
+      "answerHash": "308ba1e15ca80d0ac1378ffcdced25ce1593270e6f3d85605f74d7a4603ce53d",
+      "finishReason": "stop",
+      "inputTokens": 2738,
+      "outputTokens": 527,
+      "seconds": 104.801,
+      "core": "met",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "970b47d618e82103f4ed935052a09ce478eb28ee0675b1030c3123ee29984fd7",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen2_5_coder_14b-GP26-01-BR",
+      "model": "qwen2.5-coder:14b",
+      "condition": "BR",
+      "prompt": "GP26-01",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "c454fbee09c5a2dbcb30018dcd2b0d18b5ab7253161b8805ddaea45653ad749f",
+      "answerHash": "e4e20392947846480bd363783db7dc66feb4d6f7946f86ebd7aa07a4864774fa",
+      "finishReason": "stop",
+      "inputTokens": 2015,
+      "outputTokens": 361,
+      "seconds": 91.526,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "931b6ea77035d8b5c51ae1e1b25a202b6354b94d750eaee267f6fdea65a2a2de",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen2_5_coder_14b-GP26-01-F",
+      "model": "qwen2.5-coder:14b",
+      "condition": "F",
+      "prompt": "GP26-01",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "d84ad27e4490c713ac61a7811e83c74b77c05d15a571f2fe80cf0c1f05a34a4c",
+      "answerHash": "8855bf1e262b2422e18d588a5156e1e45f6cd5c33bd416e74e9c1394c00117e3",
+      "finishReason": "stop",
+      "inputTokens": 2925,
+      "outputTokens": 408,
+      "seconds": 102.826,
+      "core": "gap",
+      "compiler": "typecheck_failed",
+      "probes": [
+        {
+          "status": "typecheck_failed",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "8723b3fad6d53855a6a2340aed9411bbcdd77f00642295709f54ed1817ec4861",
+          "reason": null
+        }
+      ],
+      "compilerErrors": [
+        "type 'UIAccessibilityTraits' has no member 'switch'"
+      ]
+    },
+    {
+      "id": "qwen2_5_coder_14b-GP26-02-F",
+      "model": "qwen2.5-coder:14b",
+      "condition": "F",
+      "prompt": "GP26-02",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "9a7e8798675b3bfb48b77bc9e2685a570c3150fc7ba6192512a2183cf2146035",
+      "answerHash": "11ecd46015bfa0bdafc83ca22e15dad72e03b479026b1dc8c850a60b85123f0e",
+      "finishReason": "stop",
+      "inputTokens": 3024,
+      "outputTokens": 499,
+      "seconds": 94.941,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "474751031bc006714743af72d1c2bfb3d739e5780d1e0e64acf08017e0f61d30",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen2_5_coder_14b-GP26-02-BR",
+      "model": "qwen2.5-coder:14b",
+      "condition": "BR",
+      "prompt": "GP26-02",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "a107f1125c074fe99935928763b1446ca2b3b283bbe4cd210b6a9a1604872b68",
+      "answerHash": "79bfb3594cc2bc8d458286995dd6c803ada7655331f4b77d5bcba70eddfa1c32",
+      "finishReason": "stop",
+      "inputTokens": 2114,
+      "outputTokens": 346,
+      "seconds": 72.603,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "8f5fc8520aff5afc74940b86c84aea439ae404b6d7d476f9fa8c5b6013319c78",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen2_5_coder_14b-GP26-03-BR",
+      "model": "qwen2.5-coder:14b",
+      "condition": "BR",
+      "prompt": "GP26-03",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "f62643a39742c096a1c5695ddefe3ec4dbff70d1d287b559e0faa24249a7183f",
+      "answerHash": "8da74507c9c941205c7b0616e4490d01e56927dc0e65403ba383a3ffb134037c",
+      "finishReason": "stop",
+      "inputTokens": 1637,
+      "outputTokens": 492,
+      "seconds": 85.02,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "13f2a78ba428d4a01f35ed844a2a9b9d56aba5cddb861945486d27d4ff314ada",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen2_5_coder_14b-GP26-03-F",
+      "model": "qwen2.5-coder:14b",
+      "condition": "F",
+      "prompt": "GP26-03",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "2945fb4833bb5e9c00d4ceb6d2eeab67e041561ee525640be26d6be69bbe03a7",
+      "answerHash": "0480f40ec3c528c88b4d4f2895823cbe961614e11000505854176d6a9d8dfec7",
+      "finishReason": "stop",
+      "inputTokens": 2547,
+      "outputTokens": 580,
+      "seconds": 97.742,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "ed4c2e5845b76f6357350b97a247e20599f336fd042aae2b74087546366e9aea",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen2_5_coder_14b-GP26-04-F",
+      "model": "qwen2.5-coder:14b",
+      "condition": "F",
+      "prompt": "GP26-04",
+      "framework": "SwiftUI",
+      "platform": "iPadOS",
+      "payloadHash": "0665c4cf9e2cef31ef3975a391f2d2eeac8d7ac0d1099df614277a3951c0a20b",
+      "answerHash": "44486ba93dcacff753a1cae8e45e303b3daf24f37ca6c849b7e566cc72ddc84d",
+      "finishReason": "stop",
+      "inputTokens": 3267,
+      "outputTokens": 571,
+      "seconds": 109.142,
+      "core": "gap",
+      "compiler": "typecheck_failed",
+      "probes": [
+        {
+          "status": "typecheck_failed",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "edbc9979930819bac711a369ab558a90e464dae59f9275b3f4e8e9468d0eef33",
+          "reason": null
+        }
+      ],
+      "compilerErrors": [
+        "trailing closure passed to parameter of type 'KeyboardShortcut.Localization' that does not accept a closure"
+      ]
+    },
+    {
+      "id": "qwen2_5_coder_14b-GP26-04-BR",
+      "model": "qwen2.5-coder:14b",
+      "condition": "BR",
+      "prompt": "GP26-04",
+      "framework": "SwiftUI",
+      "platform": "iPadOS",
+      "payloadHash": "dcbb25d2c5df3073bda2ff1eb89847d44fed65f82135f36ffc5a35e2e5656071",
+      "answerHash": "c6aeb21b728a7c98966fbac47bc1583eb1f71e64482426c38b843bb9f7236663",
+      "finishReason": "stop",
+      "inputTokens": 2357,
+      "outputTokens": 356,
+      "seconds": 78.798,
+      "core": "gap",
+      "compiler": "typecheck_failed",
+      "probes": [
+        {
+          "status": "typecheck_failed",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "f0ce24c797eefaa06e5db0fe1d16d7e8ecc252656d66092e3b5c0e0a5b02f3ce",
+          "reason": null
+        }
+      ],
+      "compilerErrors": [
+        "'delete' is unavailable in iOS"
+      ]
+    },
+    {
+      "id": "qwen2_5_coder_14b-GP26-05-BR",
+      "model": "qwen2.5-coder:14b",
+      "condition": "BR",
+      "prompt": "GP26-05",
+      "framework": "SwiftUI",
+      "platform": "tvOS",
+      "payloadHash": "d983bf030f6fc119580f727caefcef673cfc9586aa6e9aee090efea0cd9dcfde",
+      "answerHash": "06e146d72a7b3c5837fed72f8fa3330b0f648423dc5646758b9a376d9754b889",
+      "finishReason": "stop",
+      "inputTokens": 2088,
+      "outputTokens": 588,
+      "seconds": 105.749,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "47a9b6e8a0fd416bd466fb1d44e7d7c90f9bd274f20592188d07593c087fbb0c",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen2_5_coder_14b-GP26-05-F",
+      "model": "qwen2.5-coder:14b",
+      "condition": "F",
+      "prompt": "GP26-05",
+      "framework": "SwiftUI",
+      "platform": "tvOS",
+      "payloadHash": "b6028aa9f921c61c9a7355b74327fe0a8149bbdfceb20bd69691227d5a4d5e44",
+      "answerHash": "0c398cb656f6bc006bbd6353cfa9dd03622bc0529721e37f1a6a71514649ad38",
+      "finishReason": "stop",
+      "inputTokens": 2998,
+      "outputTokens": 527,
+      "seconds": 101.324,
+      "core": "gap",
+      "compiler": "typecheck_failed",
+      "probes": [
+        {
+          "status": "typecheck_failed",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "a196409b590d9575d8f30826157918b7748618ef28ac9f2601e3112db4127db4",
+          "reason": null
+        }
+      ],
+      "compilerErrors": [
+        "value of type 'ModifiedContent<some View, AccessibilityAttachmentModifier>' has no member 'accessibilityTraits'"
+      ]
+    },
+    {
+      "id": "qwen2_5_coder_14b-GP26-06-F",
+      "model": "qwen2.5-coder:14b",
+      "condition": "F",
+      "prompt": "GP26-06",
+      "framework": "SwiftUI",
+      "platform": "iOS",
+      "payloadHash": "959b6c804933ef9784f72fdcd11ef8d767fd761dd69cc558bc15077c5f0b25cd",
+      "answerHash": "d6b97a09d8a5cc1c88434967500b498e6d6db36b45bb3b6fc4b90ea6ccbd6ea5",
+      "finishReason": "stop",
+      "inputTokens": 2509,
+      "outputTokens": 535,
+      "seconds": 91.199,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "83b98517d5f43500600675df2ebd18ccb5082ae3eb49632d30df3b878ae9f63c",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen2_5_coder_14b-GP26-06-BR",
+      "model": "qwen2.5-coder:14b",
+      "condition": "BR",
+      "prompt": "GP26-06",
+      "framework": "SwiftUI",
+      "platform": "iOS",
+      "payloadHash": "b137e87cb96e3b6a0419b7da9a0e39bea5fac1e41a9f79f0bf1bd23c20ee0b32",
+      "answerHash": "b718c3a8bb10aa619f41dacb96a851aa51dae0a787231c9550f1e9d2e7b31af1",
+      "finishReason": "stop",
+      "inputTokens": 1599,
+      "outputTokens": 339,
+      "seconds": 58.049,
+      "core": "met",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "503875fca3766dfd2fe98e3eb5bf1cb9350c4d6301f6ec960ff68b58f2d2a64c",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen3_5_latest-GP26-01-F",
+      "model": "qwen3.5:latest",
+      "condition": "F",
+      "prompt": "GP26-01",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "d84ad27e4490c713ac61a7811e83c74b77c05d15a571f2fe80cf0c1f05a34a4c",
+      "answerHash": "ad59986894d25c6ac694add489909a2234c43bf4a01ee6c7329957b4abfe4272",
+      "finishReason": "length",
+      "inputTokens": 3077,
+      "outputTokens": 1024,
+      "seconds": 131.929,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "f654752d53c1a3503bebeacfbb314aed21e97f6a7aa67d53bf42901fc9f1f638",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen3_5_latest-GP26-01-BR",
+      "model": "qwen3.5:latest",
+      "condition": "BR",
+      "prompt": "GP26-01",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "c454fbee09c5a2dbcb30018dcd2b0d18b5ab7253161b8805ddaea45653ad749f",
+      "answerHash": "8658de12e6f8f27647e12a1324b959e54d36d8228558b8c26b45ff2c0068a2bb",
+      "finishReason": "stop",
+      "inputTokens": 2086,
+      "outputTokens": 475,
+      "seconds": 65.852,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "a6f2e77686d18b412c902a870eae6739c3f5dcb0aa0c6bdb1cf3c5b00758a411",
+          "reason": null
+        },
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            1
+          ],
+          "sourceHash": "000d398e011df116f9bf481ad670ac0d49089abb1e08cd4342bd4b6b60123c56",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen3_5_latest-GP26-02-BR",
+      "model": "qwen3.5:latest",
+      "condition": "BR",
+      "prompt": "GP26-02",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "a107f1125c074fe99935928763b1446ca2b3b283bbe4cd210b6a9a1604872b68",
+      "answerHash": "cb86147a52699c14c18a9352eee1b21d3e337f83e814e599e27933c0181f8bfb",
+      "finishReason": "stop",
+      "inputTokens": 2192,
+      "outputTokens": 541,
+      "seconds": 69.148,
+      "core": "gap",
+      "compiler": "typecheck_failed",
+      "probes": [
+        {
+          "status": "typecheck_failed",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "956a97575c3553e9fa182b54307c759ac4022ddf3b05d61ff32240324e387ca0",
+          "reason": null
+        }
+      ],
+      "compilerErrors": [
+        "initializer for conditional binding must have Optional type, not 'String'"
+      ]
+    },
+    {
+      "id": "qwen3_5_latest-GP26-02-F",
+      "model": "qwen3.5:latest",
+      "condition": "F",
+      "prompt": "GP26-02",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "9a7e8798675b3bfb48b77bc9e2685a570c3150fc7ba6192512a2183cf2146035",
+      "answerHash": "06f2f51371457a1b7f49ff28dd3204f279239820c169776b9b56e8089df381f6",
+      "finishReason": "length",
+      "inputTokens": 3183,
+      "outputTokens": 1024,
+      "seconds": 126.098,
+      "core": "inconclusive",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "4778a227da0585c0113b6bfb61850682b7a7290b3b094402adf8dbfb74cc40f7",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen3_5_latest-GP26-03-F",
+      "model": "qwen3.5:latest",
+      "condition": "F",
+      "prompt": "GP26-03",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "2945fb4833bb5e9c00d4ceb6d2eeab67e041561ee525640be26d6be69bbe03a7",
+      "answerHash": "1fb499d2089814fb350a8fdfaa1bf441c65f1941fdaa597154d8da4d6c3d2998",
+      "finishReason": "stop",
+      "inputTokens": 2680,
+      "outputTokens": 693,
+      "seconds": 79.866,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "93e9d7f7f556cbf5b173ecf3b6da7020558cb980743515b54582cbf30a911a34",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen3_5_latest-GP26-03-BR",
+      "model": "qwen3.5:latest",
+      "condition": "BR",
+      "prompt": "GP26-03",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "payloadHash": "f62643a39742c096a1c5695ddefe3ec4dbff70d1d287b559e0faa24249a7183f",
+      "answerHash": "ccaf2305f65154e488e6f8eeedb4d987595685c42005f98b53d1cf1fe15ffd81",
+      "finishReason": "stop",
+      "inputTokens": 1689,
+      "outputTokens": 601,
+      "seconds": 69.91,
+      "core": "gap",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "d76abd7997b6beb1b31db5ae3fb21911ded527bea4fa16548eeabbbca7858144",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen3_5_latest-GP26-04-BR",
+      "model": "qwen3.5:latest",
+      "condition": "BR",
+      "prompt": "GP26-04",
+      "framework": "SwiftUI",
+      "platform": "iPadOS",
+      "payloadHash": "dcbb25d2c5df3073bda2ff1eb89847d44fed65f82135f36ffc5a35e2e5656071",
+      "answerHash": "e50eea2ad18a203c14885b415381e5c3c5afd57830383bba5618729c14b768b1",
+      "finishReason": "stop",
+      "inputTokens": 2439,
+      "outputTokens": 406,
+      "seconds": 57.446,
+      "core": "gap",
+      "compiler": "typecheck_failed",
+      "probes": [
+        {
+          "status": "typecheck_failed",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "aa1020474dadffd0cef6f4cf721e08322f0340c1681031aa790bf2c7830becb8",
+          "reason": null
+        }
+      ],
+      "compilerErrors": [
+        "cannot find 'AccessibilityAction' in scope"
+      ]
+    },
+    {
+      "id": "qwen3_5_latest-GP26-04-F",
+      "model": "qwen3.5:latest",
+      "condition": "F",
+      "prompt": "GP26-04",
+      "framework": "SwiftUI",
+      "platform": "iPadOS",
+      "payloadHash": "0665c4cf9e2cef31ef3975a391f2d2eeac8d7ac0d1099df614277a3951c0a20b",
+      "answerHash": "941711ab524284818235764bb56e209a4c201a048a5f137360501ed00e96ac29",
+      "finishReason": "stop",
+      "inputTokens": 3430,
+      "outputTokens": 808,
+      "seconds": 111.072,
+      "core": "gap",
+      "compiler": "typecheck_failed",
+      "probes": [
+        {
+          "status": "typecheck_failed",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "9051c84d69b7997afde26969d10cb84b804782cf8945f9dbdb4eb4928cdee670",
+          "reason": null
+        }
+      ],
+      "compilerErrors": [
+        "extraneous argument label 'action:' in call",
+        "cannot convert value of type 'String' to expected argument type 'AccessibilityActionKind'"
+      ]
+    },
+    {
+      "id": "qwen3_5_latest-GP26-05-F",
+      "model": "qwen3.5:latest",
+      "condition": "F",
+      "prompt": "GP26-05",
+      "framework": "SwiftUI",
+      "platform": "tvOS",
+      "payloadHash": "b6028aa9f921c61c9a7355b74327fe0a8149bbdfceb20bd69691227d5a4d5e44",
+      "answerHash": "167b99e480f8af21853a30a81d0c2810830244b6e9ad831cf5fbce9de3a56809",
+      "finishReason": "stop",
+      "inputTokens": 3160,
+      "outputTokens": 826,
+      "seconds": 105.893,
+      "core": "met",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "5a1c1b173839846e2c8f195372008adbca18aa3effad9b787f3c2904c08a42db",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen3_5_latest-GP26-05-BR",
+      "model": "qwen3.5:latest",
+      "condition": "BR",
+      "prompt": "GP26-05",
+      "framework": "SwiftUI",
+      "platform": "tvOS",
+      "payloadHash": "d983bf030f6fc119580f727caefcef673cfc9586aa6e9aee090efea0cd9dcfde",
+      "answerHash": "0acce9e2678e60fe6d2a085720b561a45525cf727aa0d35df0267eebf72913a7",
+      "finishReason": "stop",
+      "inputTokens": 2169,
+      "outputTokens": 660,
+      "seconds": 78.809,
+      "core": "gap",
+      "compiler": "typecheck_failed",
+      "probes": [
+        {
+          "status": "typecheck_failed",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "f7293f22123eea08544636d3328630499b939cb62eb7a617d50de0c801a738a9",
+          "reason": null
+        }
+      ],
+      "compilerErrors": [
+        "contextual closure type '() -> Void' expects 0 arguments, but 1 was used in closure body"
+      ]
+    },
+    {
+      "id": "qwen3_5_latest-GP26-06-BR",
+      "model": "qwen3.5:latest",
+      "condition": "BR",
+      "prompt": "GP26-06",
+      "framework": "SwiftUI",
+      "platform": "iOS",
+      "payloadHash": "b137e87cb96e3b6a0419b7da9a0e39bea5fac1e41a9f79f0bf1bd23c20ee0b32",
+      "answerHash": "18868637efd444419c312a1f4a1fcce1651141ea9fa95e5699c3511510fb7bcc",
+      "finishReason": "stop",
+      "inputTokens": 1655,
+      "outputTokens": 294,
+      "seconds": 33.646,
+      "core": "met",
+      "compiler": "not_applicable",
+      "probes": [
+        {
+          "status": "not_applicable",
+          "blocks": [],
+          "sourceHash": null,
+          "reason": "Correct no-change answer; no new Swift code emitted, and original Toggle/binding is retained."
+        }
+      ],
+      "compilerErrors": []
+    },
+    {
+      "id": "qwen3_5_latest-GP26-06-F",
+      "model": "qwen3.5:latest",
+      "condition": "F",
+      "prompt": "GP26-06",
+      "framework": "SwiftUI",
+      "platform": "iOS",
+      "payloadHash": "959b6c804933ef9784f72fdcd11ef8d767fd761dd69cc558bc15077c5f0b25cd",
+      "answerHash": "59751995cc6123b280d2d6eef43d64ff79474ad5df5b6e6f8140b84de9ac72c2",
+      "finishReason": "stop",
+      "inputTokens": 2646,
+      "outputTokens": 750,
+      "seconds": 77.48,
+      "core": "met",
+      "compiler": "typecheck_pass",
+      "probes": [
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            0
+          ],
+          "sourceHash": "8ef04c8b017eb0dc8d79468aea874c6c5cf5e798164b73ef557b64c4e5048e75",
+          "reason": null
+        },
+        {
+          "status": "typecheck_pass",
+          "blocks": [
+            1
+          ],
+          "sourceHash": "4087111a310435fa51ba80f144693909fac4dec872bfd6621cc562d80d78eb28",
+          "reason": null
+        }
+      ],
+      "compilerErrors": []
+    }
+  ]
+}
