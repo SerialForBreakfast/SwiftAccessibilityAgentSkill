@@ -151,7 +151,7 @@ Full-skill answers emitted the exact skill/version identity in 18/18 answers per
 
 ## Quota snapshots
 
-Claude before: owner display **0% session used, 14% weekly used**. The displayed session bucket is not relabeled as a documented five-hour bucket. Final snapshot pending owner reading. The old $1.92 CLI session display is not this batch’s cost.
+Claude used: **session 0% → 2%; weekly 14% → 14%**, at whole-percent precision. Before values came from the owner display; after values were read directly through the documented interactive CLI `/usage`, after its refresh. Usage credits showed OFF. The quota check reported zero model input/output tokens and zero API duration. These are account-wide snapshots, not an exact isolated batch debit. The displayed session bucket is not relabeled as a documented five-hour bucket. The old $1.92 CLI session display is not this batch’s cost.
 
 **AGY weekly remaining: 66% → 66%; five-hour remaining: 100% → 98% (2 percentage points consumed on the display).** Both snapshots came from the documented CLI usage command, without inference. Whole-percent account snapshots are coarse and may include concurrent use; they are not exact per-batch billing or token rates.
 
@@ -173,4 +173,4 @@ Claude before: owner display **0% session used, 14% weekly used**. The displayed
 3. Freeze the next candidate and a fresh confirmation set before requesting a separate bounded run. Do not optimize against the same development answers repeatedly.
 4. Retain a compact shared core and on-demand target guidance; these two model samples do not justify separate model-specific skill variants.
 
-**Owner next:** provide the final Claude quota reading and review the tradeoffs. **Assistant next:** prepare the independent-review packet and concrete revision proposal; no further model runs or released-skill changes without approval.
+**Owner next:** review the tradeoffs; no manual quota reading is needed. **Assistant next:** prepare the independent-review packet and concrete revision proposal; no further model runs or released-skill changes without approval.
