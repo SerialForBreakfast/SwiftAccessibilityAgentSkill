@@ -9,6 +9,14 @@ that approval does not promote these library examples.
 
 ## Available now
 
+[Cross-platform closure campaign](../research/evaluation/cross-platform-closure-v1/README.md)
+consolidates asynchronous ownership, platform-native text rotors, state recovery,
+explicit AppKit row semantics and direct keyboard-entry contracts. The ledger
+accounts for 507 clauses/36 guidelines. Exact native receipts, preserved failures,
+13 new draft question/rubric pairs and a single independent-review packet are linked
+there. This supersedes older "next tranche" lists below without rewriting their
+history. Installed skill routing and frozen baselines remain unchanged.
+
 [Mac navigation and Apple TV results](../research/evaluation/platform-navigation-v1/README.md)
 adds 34 positive methods across table selection, key-view ownership, filtered result
 actions and motion-independent status. Four question/rubric pairs are draft; the

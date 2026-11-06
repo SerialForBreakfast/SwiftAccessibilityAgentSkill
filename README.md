@@ -8,7 +8,7 @@ is practical: help agents preserve working accessibility, find real defects, and
 make changes that improve the experience of people using Apple-platform software.
 
 **Released skill: `0.2.2`** · [Install or upgrade](INSTALLATION.md) ·
-[Latest UIKit evidence](research/evaluation/failure-driven/uikit-closure-v1/RESULTS.md) ·
+[Latest native evidence](research/evaluation/cross-platform-closure-v1/RESULTS.md) ·
 [Evaluation dashboard](evals/reports/README.md)
 
 ## What Makes This Different
@@ -47,18 +47,22 @@ skill. Each linked report explains exactly what its assertions establish.
 
 | Framework / platform | Examples currently tested | Recorded runtime | Positive unit methods passed |
 | --- | --- | --- | ---: |
-| [UIKit / iOS](research/evaluation/failure-driven/uikit-closure-v1/RESULTS.md) | Naming, traits, controls, grouping, actions, reuse, rotors, text scaling, preferences, modal restoration requests, media and form state | iOS 26.5 | 202 |
-| [AppKit + AVFoundation / macOS](research/evaluation/platform-structure-v1/RESULTS.md) | Names/actions, tables and outline hierarchy, form recovery, key-view and modal request state, preferences, media metadata/selection/inspection | macOS 27.0 | 119 |
-| [UIKit + AVFoundation / Apple TV](research/evaluation/platform-structure-v1/RESULTS.md) | Card/shelf actions and hierarchy, filtered results, form recovery, preferred focus and modal request state, preferences, media metadata/selection/inspection | tvOS 26.5 | 121 |
+| [UIKit / iOS](research/evaluation/cross-platform-closure-v1/RESULTS.md) | Existing semantics, controls, rotors, text, lifecycle and media contracts; asynchronous form and current-item result ownership | iOS 26.5 | 223 |
+| [AppKit + AVFoundation / macOS](research/evaluation/cross-platform-closure-v1/RESULTS.md) | Actions, tables/outlines, form and media ownership, text rotors, explicit row state, keyboard entry points, preferences and modal metadata | macOS 27.0 | 169 |
+| [UIKit + AVFoundation / Apple TV](research/evaluation/cross-platform-closure-v1/RESULTS.md) | Actions/shelves, form and media ownership, text rotors, search/selection recovery, preferences and modal metadata | tvOS 26.5 | 166 |
 
 Checkpoint: November 6, 2026. Method counts are not coverage percentages or proof of
 real-world assistive-tool behavior. SwiftUI and visionOS guidance is available in
 the skill; the tested companion currently covers the three lanes above.
 
-The [platform parity matrix](research/evaluation/platform-structure-v1/COVERAGE.md)
-shows validated behavioral subsets and remaining async validation, text/rotor, deeper collection and media-lifecycle
-work. Matching test counts is not the goal. New platform prompt/rubric pairs remain
-drafts until independent review; the existing Gemini plan is unchanged.
+The [cross-platform ledger](research/evaluation/cross-platform-closure-v1/COVERAGE.md)
+accounts for 507 clauses across 36 guidelines, with exact assertion/receipt bindings
+and explicit scope limits. Counts above exclude superseded TV state copies; shared
+algorithms exercised on different platforms are not independent behavioral coverage.
+Thirteen new development prompt/rubric pairs accompany this campaign. They await
+independent technical review, not mandatory manual accessibility verification.
+The existing Gemini plan is unchanged; the complete new member-level availability
+inventory and benchmark-backed promotion remain separate work.
 
 **Development status:** the companion's new findings and retrieval changes await
 review and evaluation before inclusion in a future skill release. The installed

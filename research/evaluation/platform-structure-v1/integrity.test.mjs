@@ -15,7 +15,7 @@ test('substantive inputs and historical checker preserved',()=>{
 test('all23 platform questions accounted for without expanding prior indices',()=>{
  const indices=['prompt-records-v1/platform-prompts.json','platform-lifecycle-v1/prompt-records.json','platform-media-v1/prompt-records.json','platform-structure-v1/prompt-records.json'].map(p=>JSON.parse(read('research/evaluation/'+p)).cases);
  assert.deepEqual(indices.map(c=>c.length),[9,4,6,4]);const all=indices.flat();
- const found=fs.readdirSync(root+'code-examples/platforms').filter(n=>!n.startsWith('.')).flatMap(n=>{const d=`code-examples/platforms/${n}/evaluation`;return fs.existsSync(root+d)?fs.readdirSync(root+d).filter(f=>f.endsWith('.prompt.md')).map(f=>d+'/'+f):[];});
+ const found=fs.readdirSync(root+'code-examples/platforms').filter(n=>!n.startsWith('.')&&!n.includes('-closure-')&&!n.includes('-state-recovery-')).flatMap(n=>{const d=`code-examples/platforms/${n}/evaluation`;return fs.existsSync(root+d)?fs.readdirSync(root+d).filter(f=>f.endsWith('.prompt.md')).map(f=>d+'/'+f):[];});
  assert.deepEqual(all.map(c=>c.subject.path).sort(),found.sort());assert.equal(new Set(all.map(c=>c.id)).size,23);
  for(const c of indices[3]){assert.equal(c.subject.text,read(c.subject.path).toString());assert.equal(c.subject.sha256,hash(read(c.subject.path)));assert.equal(c.analysis.sha256,hash(read(c.analysis.path)));assert.equal(c.outputs.status,'not-run');assert.deepEqual(c.outputs.attempts,[]);assert.equal(c.analysis.answerAnalysis,null);assert.ok(fs.existsSync(root+c.nativeManifest));}
 });

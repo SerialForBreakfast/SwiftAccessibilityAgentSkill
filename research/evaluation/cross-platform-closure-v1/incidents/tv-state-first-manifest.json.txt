@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "id": "tvos-state-recovery-v1",
+  "revision": "1",
+  "platform": "tvOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Unit/configuration/ownership callbacks only, deterministic injected completions rather than network/Task scheduling. Existing metadata loaders have separate fixture evidence. No UI tests, speech/focus delivery or broad runtime support claim.",
+  "claims": [
+    {
+      "id": "state",
+      "url": "https://developer.apple.com/documentation/uikit/accessibility-for-uikit",
+      "section": "Role/value/action, grouping, modal metadata and native controls",
+      "statement": "Expose explicit metadata and non-color state; preserve normal controls and previous modal configuration.",
+      "availability": "Target26 compilation against installed SDK27; runtime receipt distinct. Mac rotor macOS10.13. TV editable UITextView member excluded as unavailable; no TV27 Larger Text runtime claim.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/StateContracts.swift",
+      "sha256": "805c307049316a4e40c7e6e935dcfd7e79326ea64237cf13fd7cb3bc4a58d1ac"
+    },
+    {
+      "path": "Tests/StateContractTests.swift",
+      "sha256": "63cbc1a074f91fbeff67e93580ba20694b35f6fefacb4dda2c17694983c9145b"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "state"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "state"
+      ],
+      "testIds": [
+        "StateContractTests/testSearchThenSelectionDoesNotLeaveStaleLabel",
+        "StateContractTests/testRepeatedSearchAndSelectionKeepCurrentStatus",
+        "StateContractTests/testRegionPreservesOrdinaryControlAndNamedBoundary",
+        "StateContractTests/testSelectedStateHasNonColorTextAndValue",
+        "StateContractTests/testReconfigureClearsStaleSelectionText",
+        "StateContractTests/testReducedTransparencyDoesNotRemoveContent",
+        "StateContractTests/testNativePlayerControlsAndPlayerArePreserved",
+        "StateContractTests/testModalFlagRestoresOriginalFalse",
+        "StateContractTests/testRepeatedModalBeginRestoresOriginalTrue",
+        "StateContractTests/testSearchQueryAndResultCountRemainVisible",
+        "StateContractTests/testSelectionPreservesUnrelatedTraits",
+        "StateContractTests/testTextUsesFlexibleSemanticConfigurationWithoutOS27Claim"
+      ],
+      "failureIds": []
+    }
+  ]
+}

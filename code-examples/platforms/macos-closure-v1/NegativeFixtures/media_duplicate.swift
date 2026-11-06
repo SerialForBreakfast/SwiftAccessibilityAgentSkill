@@ -1,0 +1,79 @@
+import AppKit
+import AVFoundation
+
+@MainActor
+final class ValidationOwner {
+    typealias Validator = ([String: String], @escaping @MainActor ([String: String]) -> Void) -> Void
+    let order = ["name", "email"]
+    let fields: [String: NSTextField] = ["name": NSTextField(), "email": NSTextField()]
+    let status = NSTextField(labelWithString: "")
+    private(set) var errors: [String: String] = [:]
+    private(set) var busy = false
+    private var generation = 0
+    private var active: Int?
+    private let validate: Validator
+    private let request: (NSTextField) -> Void
+    private let accept: ([String: String]) -> Void
+    init(validate: @escaping Validator, request: @escaping (NSTextField) -> Void = { _ in }, accept: @escaping ([String: String]) -> Void = { _ in }) {
+        self.validate = validate; self.request = request; self.accept = accept
+        for id in order { fields[id]?.setAccessibilityLabel(id) }
+    }
+    var snapshot: [String: String] { fields.mapValues { $0.stringValue } }
+    func edit(_ id: String, _ text: String) {
+        guard let field = fields[id] else { return }
+        field.stringValue = text; cancel()
+    }
+    func cancel() {
+        generation += 1; active = nil; busy = false; errors = [:]; status.stringValue = ""
+    }
+    func submit() {
+        generation += 1
+        let ticket = generation, input = snapshot
+        active = ticket; busy = true; errors = [:]; status.stringValue = "Checking"
+        validate(input) { [weak self] result in
+            guard let self, self.active == ticket else { return }
+            guard self.snapshot == input else { self.cancel(); return }
+            // Consume before calling client code that can begin another request.
+            self.active = nil; self.busy = false
+            guard result.keys.allSatisfy({ self.fields[$0] != nil }), result.values.allSatisfy({ !$0.isEmpty }) else {
+                self.status.stringValue = "Validation unavailable"; return
+            }
+            self.errors = result
+            if let id = self.order.first(where: { result[$0] != nil }), let field = self.fields[id] {
+                self.status.stringValue = result[id]!
+                self.request(field)
+            } else {
+                self.status.stringValue = "Ready"; self.accept(input)
+            }
+        }
+    }
+}
+
+@MainActor
+final class MediaLoadOwner {
+    typealias Loader = (AVPlayerItem, @escaping @MainActor (Result<String, Error>) -> Void) -> Void
+    let player = AVPlayer()
+    private(set) var value: String?
+    private(set) var state = "unavailable"
+    private var generation = 0
+    private var active: Int?
+    func replace(_ item: AVPlayerItem?, load: Loader) {
+        generation += 1; let ticket = generation
+        active = nil; value = nil
+        player.replaceCurrentItem(with: item)
+        guard let item else { state = "unavailable"; return }
+        active = ticket; state = "loading"
+        load(item) { [weak self, weak item] result in
+            guard let self, self.active == ticket else { return }
+            guard let item, self.player.currentItem === item else {
+                self.active = nil; self.state = "superseded"; return
+            }
+            // Mutant: leaves completion active.
+            switch result {
+            case .success(let value): self.value = value; self.state = "loaded"
+            case .failure: self.value = nil; self.state = "failed"
+            }
+        }
+    }
+    func cancel() { generation += 1; active = nil; value = nil; state = "cancelled" }
+}

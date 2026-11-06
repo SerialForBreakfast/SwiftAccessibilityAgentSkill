@@ -1,0 +1,495 @@
+{
+  "schema": 1,
+  "retrievedOn": "2026-11-06",
+  "scope": "Targeted Apple documentation and installed SDK declarations. Not a completed member-level introduction/deprecation matrix.",
+  "documents": [
+    {
+      "url": "https://developer.apple.com/documentation/appkit/nsaccessibilitycustomrotor",
+      "sha256": "1363b6d9c26a9239925795eb490016bcdb096fb33f6fa88f7b4c2e6ea4f27e51",
+      "archiveFile": "sources/mac-rotor.md",
+      "tier": 1
+    },
+    {
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycustomrotor",
+      "sha256": "39cd7ec9af4749070fde0356405642f114089199bd7415d12a7cfd573b241ee0",
+      "archiveFile": "sources/ui-rotor.md",
+      "tier": 1
+    },
+    {
+      "url": "https://developer.apple.com/documentation/appkit/nstextview",
+      "sha256": "9dd1e661b7ee44de161c2f7d2dbcf0c584bfd6a1155d11f6e64522e5d1e805e8",
+      "archiveFile": "sources/mac-text.md",
+      "tier": 1
+    }
+  ],
+  "declarations": [
+    {
+      "header": "AppKit/NSAccessibilityCustomRotor.h",
+      "sha256": "2b0f5eff6c1557568d99fdb531db508ed7737e0349f6616dc29a40673000ec71",
+      "sdk": "27.0",
+      "matches": [
+        {
+          "line": 30,
+          "text": "@class NSAccessibilityCustomRotorItemResult;"
+        },
+        {
+          "line": 31,
+          "text": "@class NSAccessibilityCustomRotorSearchParameters;"
+        },
+        {
+          "line": 38,
+          "text": " * @brief Direction to search for an NSAccessibilityCustomRotorItemResult."
+        },
+        {
+          "line": 43,
+          "text": "} API_AVAILABLE(macos(10.13));"
+        },
+        {
+          "line": 79,
+          "text": "} API_AVAILABLE(macos(10.13));"
+        },
+        {
+          "line": 86,
+          "text": "API_AVAILABLE(macos(10.13)) @interface NSAccessibilityCustomRotor : NSObject"
+        },
+        {
+          "line": 94,
+          "text": "           itemSearchDelegate:(id<NSAccessibilityCustomRotorItemSearchDelegate>)itemSearchDelegate;"
+        },
+        {
+          "line": 101,
+          "text": "               itemSearchDelegate:(id<NSAccessibilityCustomRotorItemSearchDelegate>)itemSearchDelegate;"
+        },
+        {
+          "line": 120,
+          "text": " * @brief The itemSearchDelegate will be asked to find the next item result"
+        },
+        {
+          "line": 123,
+          "text": "@property (weak) id<NSAccessibilityCustomRotorItemSearchDelegate> itemSearchDelegate;"
+        },
+        {
+          "line": 138,
+          "text": " * @brief NSAccessibilityCustomRotorSearchParameters is a container for "
+        },
+        {
+          "line": 140,
+          "text": " * NSAccessibilityCustomRotorItemResult."
+        },
+        {
+          "line": 142,
+          "text": "API_AVAILABLE(macos(10.13)) @interface NSAccessibilityCustomRotorSearchParameters : NSObject"
+        },
+        {
+          "line": 150,
+          "text": "@property (nullable, strong) NSAccessibilityCustomRotorItemResult *currentItem;"
+        },
+        {
+          "line": 169,
+          "text": " * @brief NSAccessibilityCustomRotorItemResults are the objects returned"
+        },
+        {
+          "line": 172,
+          "text": "API_AVAILABLE(macos(10.13)) @interface NSAccessibilityCustomRotorItemResult : NSObject"
+        },
+        {
+          "line": 223,
+          "text": "API_AVAILABLE(macos(10.13)) @protocol NSAccessibilityCustomRotorItemSearchDelegate <NSObject>"
+        },
+        {
+          "line": 227,
+          "text": " * @brief Returns the found NSAccessibilityCustomRotorItemResult after"
+        },
+        {
+          "line": 230,
+          "text": "- (nullable NSAccessibilityCustomRotorItemResult *)rotor:(NSAccessibilityCustomRotor *)rotor"
+        },
+        {
+          "line": 231,
+          "text": "                               resultForSearchParameters:(NSAccessibilityCustomRotorSearchParameters *)searchParameters;"
+        }
+      ]
+    },
+    {
+      "header": "AppKit/NSAccessibilityProtocols.h",
+      "sha256": "670f13a595760ab59aebca9447c35e87709f094ac702a928edc66beab28e00b6",
+      "sdk": "27.0",
+      "matches": [
+        {
+          "line": 314,
+          "text": "@property (nullable, copy) NSAccessibilityRole accessibilityRole API_AVAILABLE(macos(10.10));"
+        },
+        {
+          "line": 330,
+          "text": "@property (getter = isAccessibilitySelected) BOOL accessibilitySelected API_AVAILABLE(macos(10.10));"
+        },
+        {
+          "line": 374,
+          "text": "@property (getter = isAccessibilityExpanded) BOOL accessibilityExpanded API_AVAILABLE(macos(10.10));"
+        },
+        {
+          "line": 410,
+          "text": "@property (nullable, copy) NSString *accessibilityLabel API_AVAILABLE(macos(10.10));"
+        },
+        {
+          "line": 429,
+          "text": "@property (copy) NSArray<NSAccessibilityCustomRotor *> *accessibilityCustomRotors API_AVAILABLE(macos(10.13));"
+        },
+        {
+          "line": 433,
+          "text": " * Use this property when the accessibilityLabel is not appropriate for dictated or typed input."
+        },
+        {
+          "line": 437,
+          "text": " * If this property returns an empty or invalid value, the accessibilityLabel will be used instead."
+        },
+        {
+          "line": 777,
+          "text": "@property (getter = isAccessibilityModal) BOOL accessibilityModal API_AVAILABLE(macos(10.10));"
+        }
+      ]
+    },
+    {
+      "header": "UIKit/UITextView.h",
+      "sha256": "5fe1ad340b0c0fb7c66bec3169aadf356fbb8ee60ff045f18fcd8c96ee9e1cd0",
+      "sdk": "27.0",
+      "matches": [
+        {
+          "line": 35,
+          "text": "API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+        },
+        {
+          "line": 58,
+          "text": "- (BOOL)textView:(UITextView *)textView shouldChangeTextInRanges:(NSArray<NSValue *> *)ranges replacementText:(NSString *)text API_AVAILABLE(ios(26.0), tvos(26.0), visionos(26.0), watchos(26.0));"
+        },
+        {
+          "line": 73,
+          "text": "- (nullable UIMenu *)textView:(UITextView *)textView editMenuForTextInRange:(NSRange)range suggestedActions:(NSArray<UIMenuElement *> *)suggestedActions API_UNAVAILABLE(watchos) API_DEPRECATED_WITH_REPLACEMENT(\"-textView:editMenuForTextInRanges:suggestedActions:\", ios(16.0, API_TO_BE_DEPRECATED));"
+        },
+        {
+          "line": 86,
+          "text": "- (nullable UIMenu *)textView:(UITextView *)textView editMenuForTextInRanges:(NSArray<NSValue *> *)ranges suggestedActions:(NSArray<UIMenuElement *> *)suggestedActions API_AVAILABLE(ios(26.0), tvos(26.0), visionos(26.0), watchos(26.0));"
+        },
+        {
+          "line": 94,
+          "text": "- (void)textView:(UITextView *)textView willPresentEditMenuWithAnimator:(id<UIEditMenuInteractionAnimating>)animator API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 102,
+          "text": "- (void)textView:(UITextView *)textView willDismissEditMenuWithAnimator:(id<UIEditMenuInteractionAnimating>)animator API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 114,
+          "text": "- (nullable UIAction *)textView:(UITextView *)textView primaryActionForTextItem:(UITextItem *)textItem defaultAction:(UIAction *)defaultAction API_AVAILABLE(ios(17.0)) API_UNAVAILABLE(tvos, watchos);"
+        },
+        {
+          "line": 125,
+          "text": "- (nullable UITextItemMenuConfiguration *)textView:(UITextView *)textView menuConfigurationForTextItem:(UITextItem *)textItem defaultMenu:(UIMenu *)defaultMenu API_AVAILABLE(ios(17.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(watchos) ;"
+        },
+        {
+          "line": 134,
+          "text": "- (void)textView:(UITextView *)textView textItemMenuWillDisplayForTextItem:(UITextItem *)textItem animator:(id<UIContextMenuInteractionAnimating>)animator API_AVAILABLE(ios(17.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 143,
+          "text": "- (void)textView:(UITextView *)textView textItemMenuWillEndForTextItem:(UITextItem *)textItem animator:(id<UIContextMenuInteractionAnimating>)animator API_AVAILABLE(ios(17.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 150,
+          "text": "- (void)textViewWritingToolsWillBegin:(UITextView *)textView API_AVAILABLE(ios(18.0), visionos(2.4)) API_UNAVAILABLE(tvos, watchos);"
+        },
+        {
+          "line": 157,
+          "text": "- (void)textViewWritingToolsDidEnd:(UITextView *)textView API_AVAILABLE(ios(18.0), visionos(2.4)) API_UNAVAILABLE(tvos, watchos);"
+        },
+        {
+          "line": 167,
+          "text": "- (NSArray<NSValue *> *)textView:(UITextView *)textView writingToolsIgnoredRangesInEnclosingRange:(NSRange)enclosingRange API_AVAILABLE(ios(18.0), visionos(2.4)) API_UNAVAILABLE(tvos, watchos);"
+        },
+        {
+          "line": 170,
+          "text": "- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction API_DEPRECATED(\"Replaced by primaryActionForTextItem: and menuConfigurationForTextItem: for additional customization options.\", ios(10.0, 17.0), visionos(1.0, 1.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 171,
+          "text": "- (BOOL)textView:(UITextView *)textView shouldInteractWithTextAttachment:(NSTextAttachment *)textAttachment inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction API_DEPRECATED(\"Replaced by primaryActionForTextItem: and menuConfigurationForTextItem: for additional customization options.\", ios(10.0, 17.0), visionos(1.0, 1.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 173,
+          "text": "- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange API_DEPRECATED_WITH_REPLACEMENT(\"textView:shouldInteractWithURL:inRange:interaction:\", ios(7.0, 10.0)) API_UNAVAILABLE(visionos, watchos);"
+        },
+        {
+          "line": 174,
+          "text": "- (BOOL)textView:(UITextView *)textView shouldInteractWithTextAttachment:(NSTextAttachment *)textAttachment inRange:(NSRange)characterRange API_DEPRECATED_WITH_REPLACEMENT(\"textView:shouldInteractWithTextAttachment:inRange:interaction:\", ios(7.0, 10.0)) API_UNAVAILABLE(visionos, watchos);"
+        },
+        {
+          "line": 181,
+          "text": "- (void)textView:(UITextView *)textView willBeginFormattingWithViewController:(UITextFormattingViewController *)viewController API_AVAILABLE(ios(18.0), visionos(26.0)) API_UNAVAILABLE(macCatalyst) API_UNAVAILABLE(watchos, tvos);"
+        },
+        {
+          "line": 188,
+          "text": "- (void)textView:(UITextView *)textView didBeginFormattingWithViewController:(UITextFormattingViewController *)viewController API_AVAILABLE(ios(18.0), visionos(26.0)) API_UNAVAILABLE(macCatalyst) API_UNAVAILABLE(watchos, tvos);"
+        },
+        {
+          "line": 195,
+          "text": "- (void)textView:(UITextView *)textView willEndFormattingWithViewController:(UITextFormattingViewController *)viewController API_AVAILABLE(ios(18.0), visionos(26.0)) API_UNAVAILABLE(macCatalyst) API_UNAVAILABLE(watchos, tvos);"
+        },
+        {
+          "line": 202,
+          "text": "- (void)textView:(UITextView *)textView didEndFormattingWithViewController:(UITextFormattingViewController *)viewController API_AVAILABLE(ios(18.0), visionos(26.0)) API_UNAVAILABLE(macCatalyst) API_UNAVAILABLE(watchos, tvos);"
+        },
+        {
+          "line": 209,
+          "text": "- (void)textView:(UITextView *)textView insertInputSuggestion:(UIInputSuggestion *)inputSuggestion NS_SWIFT_NAME(textView(_:insertInputSuggestion:)) API_AVAILABLE(ios(18.4)) API_UNAVAILABLE(tvos, watchos, visionos, macCatalyst);"
+        },
+        {
+          "line": 219,
+          "text": "    UITextViewBorderStyleRoundedRect API_AVAILABLE(visionos(1.0)) API_UNAVAILABLE(ios, watchos),"
+        },
+        {
+          "line": 220,
+          "text": "} API_AVAILABLE(ios(17.0), visionos(1.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 222,
+          "text": "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+        },
+        {
+          "line": 236,
+          "text": "@property(nonatomic, copy, nonnull) NSArray<NSValue *> *selectedRanges API_AVAILABLE(ios(26.0), tvos(26.0), visionos(26.0), watchos(26.0)) NS_REFINED_FOR_SWIFT;"
+        },
+        {
+          "line": 238,
+          "text": "@property(nonatomic,getter=isEditable) BOOL editable API_UNAVAILABLE(tvos);"
+        },
+        {
+          "line": 240,
+          "text": "// By default, text item interaction follows selectable if the text item methods on UITextViewDelegate are not implemented; otherwise, they follow the result of the specified delegate methods."
+        },
+        {
+          "line": 241,
+          "text": "@property(nonatomic,getter=isSelectable) BOOL selectable API_AVAILABLE(ios(7.0));"
+        },
+        {
+          "line": 242,
+          "text": "@property(nonatomic) UIDataDetectorTypes dataDetectorTypes API_AVAILABLE(ios(3.0)) API_UNAVAILABLE(tvos);"
+        },
+        {
+          "line": 244,
+          "text": "@property(nonatomic) BOOL allowsEditingTextAttributes API_AVAILABLE(ios(6.0)); // defaults to NO"
+        },
+        {
+          "line": 245,
+          "text": "@property(null_resettable,copy) NSAttributedString *attributedText API_AVAILABLE(ios(6.0));"
+        },
+        {
+          "line": 246,
+          "text": "@property(nonatomic,copy) NSDictionary<NSAttributedStringKey, id> *typingAttributes API_AVAILABLE(ios(6.0)); // automatically resets when the selection changes"
+        },
+        {
+          "line": 254,
+          "text": "@property (nullable, readwrite, strong) UIView *inputAccessoryView API_UNAVAILABLE(visionos);"
+        },
+        {
+          "line": 256,
+          "text": "@property(nonatomic) BOOL clearsOnInsertion API_AVAILABLE(ios(6.0)); // defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field. changing the selection will automatically set this to NO."
+        },
+        {
+          "line": 261,
+          "text": "- (instancetype)initWithFrame:(CGRect)frame textContainer:(nullable NSTextContainer *)textContainer API_AVAILABLE(ios(7.0)) NS_DESIGNATED_INITIALIZER;"
+        },
+        {
+          "line": 265,
+          "text": "+ (instancetype)textViewUsingTextLayoutManager:(BOOL)usingTextLayoutManager API_AVAILABLE(ios(16.0), tvos(16.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 270,
+          "text": "@property(nonatomic, readonly) NSTextContainer *textContainer API_AVAILABLE(ios(7.0));"
+        },
+        {
+          "line": 272,
+          "text": "@property(nonatomic, assign) UIEdgeInsets textContainerInset API_AVAILABLE(ios(7.0));"
+        },
+        {
+          "line": 275,
+          "text": "@property(nonatomic, nullable, readonly) NSTextLayoutManager *textLayoutManager API_AVAILABLE(ios(16.0), tvos(16.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 278,
+          "text": "@property(nonatomic, readonly) NSLayoutManager *layoutManager API_AVAILABLE(ios(7.0));"
+        },
+        {
+          "line": 281,
+          "text": "@property(nonatomic, readonly, strong) NSTextStorage *textStorage API_AVAILABLE(ios(7.0));"
+        },
+        {
+          "line": 284,
+          "text": "@property(null_resettable, nonatomic, copy) NSDictionary<NSAttributedStringKey,id> *linkTextAttributes API_AVAILABLE(ios(7.0));"
+        },
+        {
+          "line": 287,
+          "text": "@property (nonatomic) BOOL usesStandardTextScaling API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 290,
+          "text": "@property (nonatomic, nullable, readonly) UIFindInteraction *findInteraction API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(watchos, tvos);"
+        },
+        {
+          "line": 293,
+          "text": "@property (nonatomic, readwrite, getter=isFindInteractionEnabled) BOOL findInteractionEnabled API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(watchos, tvos);"
+        },
+        {
+          "line": 297,
+          "text": "@property (nonatomic) UITextViewBorderStyle borderStyle API_AVAILABLE(ios(17.0), visionos(1.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 301,
+          "text": "@property (nonatomic, copy, null_resettable) NSDictionary<NSAttributedStringKey, id> *textHighlightAttributes API_AVAILABLE(ios(18.0), tvos(18.0), visionos(2.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 304,
+          "text": "- (void)drawTextHighlightBackgroundForTextRange:(NSTextRange *)textRange origin:(CGPoint)origin API_AVAILABLE(ios(18.0), tvos(18.0), visionos(2.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 311,
+          "text": "@property(nonatomic,readonly,getter=isWritingToolsActive) BOOL writingToolsActive API_AVAILABLE(ios(18.0), visionos(2.4)) API_UNAVAILABLE(tvos, watchos);"
+        },
+        {
+          "line": 314,
+          "text": "@property UIWritingToolsBehavior writingToolsBehavior API_AVAILABLE(ios(18.0), visionos(2.4)) API_UNAVAILABLE(tvos, watchos);"
+        },
+        {
+          "line": 317,
+          "text": "@property UIWritingToolsResultOptions allowedWritingToolsResultOptions API_AVAILABLE(ios(18.0), visionos(2.4)) API_UNAVAILABLE(tvos, watchos);"
+        },
+        {
+          "line": 319,
+          "text": "@property(nonatomic,readonly) Class subclassForWritingToolsCoordinator API_AVAILABLE(ios(18.2), visionos(2.4)) API_UNAVAILABLE(tvos, watchos); // Asserts this is actually a subclass of UIWritingToolsCoordinator"
+        },
+        {
+          "line": 320,
+          "text": "@property(nonatomic,readonly) UIWritingToolsCoordinator *writingToolsCoordinator API_AVAILABLE(ios(18.2), visionos(2.4)) API_UNAVAILABLE(tvos, watchos);"
+        },
+        {
+          "line": 327,
+          "text": "@property(nonatomic, nullable, readwrite, copy) UITextFormattingViewControllerConfiguration *textFormattingConfiguration API_AVAILABLE(ios(18.0), visionos(26.0)) API_UNAVAILABLE(macCatalyst) API_UNAVAILABLE(watchos, tvos);"
+        },
+        {
+          "line": 330,
+          "text": "- (void)registerTextAttachmentViewProviderReusePolicy:(UITextAttachmentViewProviderReusePolicy)policy forTextAttachmentViewProviderType:(Class)viewProviderType API_AVAILABLE(ios(27.0),tvos(27.0),visionos(27.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 333,
+          "text": "- (void)textViewportLayoutController:(NSTextViewportLayoutController *)textViewportLayoutController configureRenderingSurfaceForTextLayoutFragment:(NSTextLayoutFragment *)textLayoutFragment API_AVAILABLE(ios(27.0),tvos(27.0),visionos(27.0)) API_UNAVAILABLE(watchos) NS_REQUIRES_SUPER;"
+        },
+        {
+          "line": 336,
+          "text": "- (CGRect)viewportBoundsForTextViewportLayoutController:(NSTextViewportLayoutController *)textViewportLayoutController API_AVAILABLE(ios(27.0),tvos(27.0),visionos(27.0)) API_UNAVAILABLE(watchos) NS_REQUIRES_SUPER;"
+        },
+        {
+          "line": 339,
+          "text": "- (void)textViewportLayoutControllerWillLayout:(NSTextViewportLayoutController *)textViewportLayoutController API_AVAILABLE(ios(27.0),tvos(27.0),visionos(27.0)) API_UNAVAILABLE(watchos) NS_REQUIRES_SUPER;"
+        },
+        {
+          "line": 342,
+          "text": "- (void)textViewportLayoutControllerDidLayout:(NSTextViewportLayoutController *)textViewportLayoutController API_AVAILABLE(ios(27.0),tvos(27.0),visionos(27.0)) API_UNAVAILABLE(watchos) NS_REQUIRES_SUPER;"
+        },
+        {
+          "line": 345,
+          "text": "- (void)textViewportLayoutControllerReceivedSetNeedsLayout:(NSTextViewportLayoutController *)textViewportLayoutController API_AVAILABLE(ios(27.0),tvos(27.0),visionos(27.0)) API_UNAVAILABLE(watchos) NS_REQUIRES_SUPER;"
+        },
+        {
+          "line": 365,
+          "text": "@property (nonatomic, copy) id interactionState API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 369,
+          "text": "UIKIT_EXTERN NSNotificationName const UITextViewTextDidBeginEditingNotification API_UNAVAILABLE(watchos) NS_SWIFT_NONISOLATED;"
+        },
+        {
+          "line": 370,
+          "text": "UIKIT_EXTERN NSNotificationName const UITextViewTextDidChangeNotification API_UNAVAILABLE(watchos) NS_SWIFT_NONISOLATED;"
+        },
+        {
+          "line": 371,
+          "text": "UIKIT_EXTERN NSNotificationName const UITextViewTextDidEndEditingNotification API_UNAVAILABLE(watchos) NS_SWIFT_NONISOLATED;"
+        }
+      ]
+    },
+    {
+      "header": "UIKit/UIAccessibilityCustomRotor.h",
+      "sha256": "f5ada726d43dd877fa1689924dc30dcc88bd58cdfad6c3b2fa3339bddb6913af",
+      "sdk": "27.0",
+      "matches": [
+        {
+          "line": 32,
+          "text": "    UIAccessibilityCustomRotorDirectionPrevious API_AVAILABLE(ios(10.0)),"
+        },
+        {
+          "line": 33,
+          "text": "    UIAccessibilityCustomRotorDirectionNext API_AVAILABLE(ios(10.0)),"
+        },
+        {
+          "line": 34,
+          "text": "} API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 60,
+          "text": "} API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 62,
+          "text": "typedef UIAccessibilityCustomRotorItemResult *_Nullable(^UIAccessibilityCustomRotorSearch)(UIAccessibilityCustomRotorSearchPredicate *predicate) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+        },
+        {
+          "line": 66,
+          "text": "@property (nonatomic, retain, nullable) NSArray<UIAccessibilityCustomRotor *> *accessibilityCustomRotors API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+        },
+        {
+          "line": 68,
+          "text": "typedef NSArray<UIAccessibilityCustomRotor *> * __nullable (^AXCustomRotorsReturnBlock)(void) API_AVAILABLE(ios(17.0), tvos(17.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+        },
+        {
+          "line": 69,
+          "text": "@property (nullable, nonatomic, copy) AXCustomRotorsReturnBlock accessibilityCustomRotorsBlock API_AVAILABLE(ios(17.0), tvos(17.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+        },
+        {
+          "line": 74,
+          "text": "UIKIT_EXTERN API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+        },
+        {
+          "line": 80,
+          "text": "UIKIT_EXTERN API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+        },
+        {
+          "line": 83,
+          "text": "- (instancetype)initWithName:(NSString *)name itemSearchBlock:(UIAccessibilityCustomRotorSearch)itemSearchBlock;"
+        },
+        {
+          "line": 84,
+          "text": "- (instancetype)initWithAttributedName:(NSAttributedString *)attributedName itemSearchBlock:(UIAccessibilityCustomRotorSearch)itemSearchBlock API_AVAILABLE(ios(11.0), tvos(11.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 85,
+          "text": "- (instancetype)initWithSystemType:(UIAccessibilityCustomSystemRotorType)type itemSearchBlock:(UIAccessibilityCustomRotorSearch)itemSearchBlock API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 92,
+          "text": "@property (nonatomic, copy) NSAttributedString *attributedName API_AVAILABLE(ios(11.0), tvos(11.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 100,
+          "text": "@property (nonatomic, readonly) UIAccessibilityCustomSystemRotorType systemRotorType API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(watchos);"
+        },
+        {
+          "line": 105,
+          "text": "UIKIT_EXTERN API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+        },
+        {
+          "line": 108,
+          "text": "- (instancetype)initWithTargetElement:(id<NSObject>)targetElement targetRange:(nullable UITextRange *)targetRange;"
+        }
+      ]
+    }
+  ]
+}

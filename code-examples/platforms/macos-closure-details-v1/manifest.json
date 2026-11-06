@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "id": "macos-closure-details-v1",
+  "revision": "1",
+  "platform": "macOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 27,
+  "limitations": "Direct metadata getters, native action dispatch and synthetic NSEvent method calls only. No event-loop delivery, keyboard traversal, row virtualization or spoken output claim.",
+  "claims": [
+    {
+      "id": "row",
+      "url": "https://developer.apple.com/documentation/appkit/nsaccessibilityprotocol",
+      "section": "NSAccessibilityProtocols.h row role, selected, expanded properties",
+      "statement": "Explicit row metadata and independent ordinary action; application current-item reuse policy.",
+      "availability": "Protocol metadata declarations macOS10.10; exact SDK27 compilation and host27 execution separately recorded.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "keyboard",
+      "url": "https://developer.apple.com/documentation/appkit/nsresponder/keydown(with:)",
+      "section": "Direct keyDown responder override",
+      "statement": "The supplied control routes supported key events through its enabled-state action guard.",
+      "availability": "Installed SDK declaration compiled for target26; no earliest version inferred.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/DesktopRow.swift",
+      "sha256": "89620264fcdb259eb0875d208b1f568768d68df0ba3732d1b9c1aa66de146f5c"
+    },
+    {
+      "path": "Sources/StateContracts.swift",
+      "sha256": "e98fe859e82384d9f921bf3506712083b7804d517f15e0db99a3965cbe1eb007"
+    },
+    {
+      "path": "Tests/DesktopContractTests.swift",
+      "sha256": "3e43d35fefc28a8cc68ffbbc472da98bad311a6b6f13b400527c11835e2729eb"
+    },
+    {
+      "path": "NegativeFixtures/keyboard_disabled.swift",
+      "sha256": "75936e1ffc283cc62cc703dc354d4b760089322abfb25d293e640ced65a06398"
+    },
+    {
+      "path": "NegativeFixtures/row_selected.swift",
+      "sha256": "fdc7376abbf50713bfa5f8bb016c922844d604d52ddc58cbefd1512d4314a52f"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "row",
+        "keyboard"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "row",
+        "keyboard"
+      ],
+      "testIds": [
+        "DesktopContractTests/testExplicitRowRoleAndChildSemantics",
+        "DesktopContractTests/testReconfigureClearsSelectionExpansionAndNames",
+        "DesktopContractTests/testOrdinaryRowActionUsesCurrentIdentity",
+        "DesktopContractTests/testDisabledRowActionDoesNotChoose",
+        "DesktopContractTests/testSpaceEventUsesOrdinaryToggleTransition",
+        "DesktopContractTests/testReturnEventUsesSameTransitionAsAccessibilityPress",
+        "DesktopContractTests/testDisabledKeyboardEventCannotToggle"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "row-selected",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "row"
+      ],
+      "testIds": [
+        "DesktopContractTests/testExplicitRowRoleAndChildSemantics"
+      ],
+      "failureIds": [
+        "DesktopContractTests/testExplicitRowRoleAndChildSemantics"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopRow.swift",
+        "source": "NegativeFixtures/row_selected.swift"
+      }
+    },
+    {
+      "id": "keyboard-disabled",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "keyboard"
+      ],
+      "testIds": [
+        "DesktopContractTests/testDisabledKeyboardEventCannotToggle"
+      ],
+      "failureIds": [
+        "DesktopContractTests/testDisabledKeyboardEventCannotToggle"
+      ],
+      "replacement": {
+        "target": "Sources/StateContracts.swift",
+        "source": "NegativeFixtures/keyboard_disabled.swift"
+      }
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "id": "ios-closure-v1",
+  "revision": "1",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Unit/configuration/ownership callbacks only, deterministic injected completions rather than network/Task scheduling. Existing metadata loaders have separate fixture evidence. No UI tests, speech/focus delivery or broad runtime support claim.",
+  "claims": [
+    {
+      "id": "async",
+      "url": "https://developer.apple.com/documentation/swift/mainactor",
+      "section": "Actor ownership and native field snapshots; application policy",
+      "statement": "Latest validation owns results; preserve input, ordered invalid-target request and current UI state. Transport cancellation is not claimed.",
+      "availability": "Target26 compilation against installed SDK27; runtime receipt distinct. Mac rotor macOS10.13. TV editable UITextView member excluded as unavailable; no TV27 Larger Text runtime claim.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "media",
+      "url": "https://developer.apple.com/documentation/avfoundation/avplayer/currentitem",
+      "section": "Actual current-item identity plus application request generation",
+      "statement": "Accept a loaded result only for the current item and active request; cancellation and duplicates cannot overwrite it.",
+      "availability": "Target26 compilation against installed SDK27; runtime receipt distinct. Mac rotor macOS10.13. TV editable UITextView member excluded as unavailable; no TV27 Larger Text runtime claim.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/AsyncOwnership.swift",
+      "sha256": "40c47374c2a65b75c54b4bdfa72741126b2c8ab2d0306c8d60c2294235297d76"
+    },
+    {
+      "path": "Tests/AsyncOwnershipTests.swift",
+      "sha256": "b1adee5cf97d7e8df8571d04671b024fb535a56e689bd08b00e5343960534caa"
+    },
+    {
+      "path": "NegativeFixtures/media_duplicate.swift",
+      "sha256": "bb8eebd0fdf77289cbc2debe7b35b82faf609557ce1a7849636a1a3441e4eae4"
+    },
+    {
+      "path": "NegativeFixtures/media_identity.swift",
+      "sha256": "afb7ccd78388f21e4d6f2acae15af1cbd9d9c0cf1fe90c02d72b8af2ae092abf"
+    },
+    {
+      "path": "NegativeFixtures/validation_generation.swift",
+      "sha256": "587ffb0b6f6225c4509dda3cbcfee975c260cb231b9dddd2353741ca706288bb"
+    },
+    {
+      "path": "NegativeFixtures/validation_snapshot.swift",
+      "sha256": "328f0af7e4f15237acd29995367798084d38e6c3d53fe4427f0f0a6a56823a7b"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "async",
+        "media"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "async",
+        "media"
+      ],
+      "testIds": [
+        "AsyncOwnershipTests/testPendingStateAndSnapshotPreserveInput",
+        "AsyncOwnershipTests/testOutOfOrderReplyCannotReplaceLatestErrors",
+        "AsyncOwnershipTests/testEditInvalidatesInFlightResult",
+        "AsyncOwnershipTests/testCancelRejectsLateReply",
+        "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot",
+        "AsyncOwnershipTests/testFirstInvalidUsesDeclaredFieldOrder",
+        "AsyncOwnershipTests/testDuplicateReplyCannotAcceptTwice",
+        "AsyncOwnershipTests/testUnknownFieldAndEmptyErrorAreNotSuccess",
+        "AsyncOwnershipTests/testSynchronousCompletionWorks",
+        "AsyncOwnershipTests/testReentrantAcceptancePreservesNewRequest",
+        "AsyncOwnershipTests/testRetainedReplyDoesNotRetainForm",
+        "AsyncOwnershipTests/testSuccessRecoversAfterErrorAndKeepsFieldIdentity",
+        "MediaLoadOwnerTests/testNilItemDoesNotInvokeLoader",
+        "MediaLoadOwnerTests/testReplacementRejectsOldItemCompletion",
+        "MediaLoadOwnerTests/testSameItemNewRequestRejectsOldGeneration",
+        "MediaLoadOwnerTests/testExternalReplacementRejectsOldResult",
+        "MediaLoadOwnerTests/testCancellationRejectsLateSuccess",
+        "MediaLoadOwnerTests/testErrorIsNotMissingOrSuccessfulMetadata",
+        "MediaLoadOwnerTests/testDuplicateCallbackCannotOverwriteFirstResult",
+        "MediaLoadOwnerTests/testInspectionDoesNotChangePlayerPreferences",
+        "MediaLoadOwnerTests/testRetainedLoaderReplyDoesNotRetainOwner"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "validation-generation",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "async"
+      ],
+      "testIds": [
+        "AsyncOwnershipTests/testOutOfOrderReplyCannotReplaceLatestErrors"
+      ],
+      "failureIds": [
+        "AsyncOwnershipTests/testOutOfOrderReplyCannotReplaceLatestErrors"
+      ],
+      "replacement": {
+        "target": "Sources/AsyncOwnership.swift",
+        "source": "NegativeFixtures/validation_generation.swift"
+      }
+    },
+    {
+      "id": "validation-snapshot",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "async"
+      ],
+      "testIds": [
+        "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot"
+      ],
+      "failureIds": [
+        "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot"
+      ],
+      "replacement": {
+        "target": "Sources/AsyncOwnership.swift",
+        "source": "NegativeFixtures/validation_snapshot.swift"
+      }
+    },
+    {
+      "id": "media-identity",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "media"
+      ],
+      "testIds": [
+        "MediaLoadOwnerTests/testExternalReplacementRejectsOldResult"
+      ],
+      "failureIds": [
+        "MediaLoadOwnerTests/testExternalReplacementRejectsOldResult"
+      ],
+      "replacement": {
+        "target": "Sources/AsyncOwnership.swift",
+        "source": "NegativeFixtures/media_identity.swift"
+      }
+    },
+    {
+      "id": "media-duplicate",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "media"
+      ],
+      "testIds": [
+        "MediaLoadOwnerTests/testDuplicateCallbackCannotOverwriteFirstResult"
+      ],
+      "failureIds": [
+        "MediaLoadOwnerTests/testDuplicateCallbackCannotOverwriteFirstResult"
+      ],
+      "replacement": {
+        "target": "Sources/AsyncOwnership.swift",
+        "source": "NegativeFixtures/media_duplicate.swift"
+      }
+    }
+  ]
+}

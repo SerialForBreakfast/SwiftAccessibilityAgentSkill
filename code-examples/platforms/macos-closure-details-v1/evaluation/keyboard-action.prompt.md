@@ -1,0 +1,1 @@
+In our programmatic AppKit Notifications checkbox, Space, Return and the accessibility press action should use the same on/off transition. The control can be disabled. Show the native responder override and unit tests that pass synthetic key events directly into it; do not use UI automation or require a real window. Target macOS26.

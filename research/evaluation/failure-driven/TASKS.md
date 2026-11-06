@@ -254,3 +254,17 @@ controller answer material enters subject context; no frozen fixtures are rewrit
   nine-case BigDog/Gemini plan remains unchanged; no live model runs or UI tests.
 - Next: multi-field/async validation ownership, native text/rotor audit, deeper
   collection reuse and media-item replacement. SwiftUI remains deferred.
+
+## Consolidated native campaign
+
+The [cross-platform closure ledger](../cross-platform-closure-v1/README.md) replaces
+further small-tranche requests for this native pass. It adds async ownership,
+platform text/rotors, native state, row/keyboard entry points and transition recovery,
+with thirteen separate development questions/rubrics. It preserves the first failures
+and all previous iOS/source inventories. SwiftUI and installed skill promotion stay
+separate. The corpus now has507 explicitly dispositioned clauses across36 guidelines;
+this is accounting, not a claim of100% behavioral coverage.
+
+Independent agent review should adjudicate one consolidated packet. The maintainer
+is not a mandatory manual-test gate. Model runs still require an approved bounded
+quota/scope, and these questions do not alter frozen gold prompts or create holdouts.
