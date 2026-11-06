@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "kind": "synthetic-tagged-media",
+  "generator": "Existing FFmpeg8.0.1 remux plus this build-fixture.mjs; no installs",
+  "sourceFixture": "../uikit-media-v1/Tests/MediaFixture.swift",
+  "sourcePayloadHash": "eeb70b420ebc03ae18f82b7d799f1be4436a5abc2ffa56cddbfc381207406ec0",
+  "remuxCommand": "ffmpeg -nostdin -v error -i original.mp4 -map 0 -c copy -f mov untagged.mov",
+  "tagging": "Append documented tagc userdata to the second audio track; moov remains last, media offsets unchanged.",
+  "positive": {
+    "sha256": "c08c9e5d23f035221aedfd9004dde8873a1b9edeff1d21b45a73a4b5626f76f3",
+    "bytes": 4272
+  },
+  "control": {
+    "sha256": "53c77b174e63ca61b06d87901f297bfd5343a14ca77d637f7e5937a611d4d945",
+    "bytes": 4220
+  },
+  "limitations": "One second black video, silent en/es audio, synthetic captions. Tag is intentionally synthetic and does not establish audible description content or quality. Byte-identical remux across FFmpeg builds not promised."
+}

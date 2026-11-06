@@ -9,10 +9,17 @@ that approval does not promote these library examples.
 
 ## Available now
 
+[Audio-description metadata and loaded assets](pilots/uikit-media-metadata-v1/README.md)
+adds actual tagged/untagged MOV extraction, selected-option observation, duration
+and missing/error-state tests. The matched synthetic fixture establishes metadata
+recognition, not narration quality. Its draft prompt/rubric remains independent of
+the implementation; first-attempt deprecation evidence and repair are preserved.
+
 [Media inspection: time and buffering](pilots/uikit-media-inspection-v1/README.md)
 adds a separate UPAIR-06A example and draft prompt/rubric. It distinguishes
 duration states, discontinuous seekable/loaded ranges and independent playback
-flags. Audio-description metadata and loaded-item extraction remain open.
+flags. The separate metadata packet above supplies local loaded-asset evidence;
+neither packet tests live playback or assistive-technology interaction.
 
 [Edited documents and rotor ranges](pilots/uikit-edited-rotor-v1/README.md) adds
 UTF16/whole-grapheme matching, explicit overlap policy, revision-safe callbacks
@@ -43,23 +50,24 @@ It remains outside runtime skill routing and frozen model-evaluation inputs.
 
 ### Latest validation and next gate
 
-The media time/buffering subtranche passed one compile check and nine positive unit
+The media metadata subtranche passed one compile check and seven positive unit
 tests on iOS26.5, and rejected three deliberate defects at their intended assertions.
-[Native evidence](pilots/uikit-media-inspection-v1/validation/README.md),
-[difficulty ledger](pilots/uikit-media-inspection-v1/DIFFICULTIES.md), and
-[exact mutation diffs](pilots/uikit-media-inspection-v1/MUTATIONS.md) preserve the results.
-No unexpected Swift failure occurred in this subtranche. Actual audio-description
-metadata and loaded-item extraction remain open.
+[Native evidence](pilots/uikit-media-metadata-v1/validation/README.md),
+[difficulty ledger](pilots/uikit-media-metadata-v1/DIFFICULTIES.md), and
+[exact mutation diffs](pilots/uikit-media-metadata-v1/MUTATIONS.md) preserve the results.
+The first-attempt locale deprecation warning and revision2 repair are retained.
+Actual local tagged-asset extraction is now covered; narration quality and live
+playback are not inferred from those unit assertions.
 
-The [draft developer question](pilots/uikit-media-inspection-v1/evaluation/prompt.json) and
-[controller rubric](pilots/uikit-media-inspection-v1/evaluation/controller.md) need independent
+The [draft developer question](pilots/uikit-media-metadata-v1/evaluation/prompt.json) and
+[controller rubric](pilots/uikit-media-metadata-v1/evaluation/controller.md) need independent
 review before gold promotion. Keep the controller material out of model inputs.
 Model execution and skill improvement claims remain separate, uncompleted gates.
-The combined offline library/evaluation suite currently passes 188 tests, including
+The combined offline library/evaluation suite currently passes 193 tests, including
 media inspection, edited rotors, contrast and modal history/evidence-contract checks; this count
 does not include native XCTest methods or imply additional gold readiness.
 See [current successes, change inventory and next steps](../research/evaluation/failure-driven/CURRENT-STATUS.md)
-for the six-tranche rollup and the uncommitted checkpoint since `f0bfc51`.
+for the seven-packet rollup and the uncommitted checkpoint since `6cdaa0b`.
 
 - Manifest/result contracts with source and evidence hashes, Apple claim links,
   explicit compile/unit lanes, platform/target/runtime checks and scoped negatives.

@@ -2,9 +2,15 @@
 
 ## New paired UIKit evidence
 
+[Audio-description metadata subtranche](../code-examples/pilots/uikit-media-metadata-v1/README.md)
+adds actual local tagged/untagged asset extraction and selection preservation.
+Seven positive native methods and three isolated mutations pair with a separate
+draft question/rubric. Compiler warning and repair are preserved, not silently
+discarded. No model evaluation or gold promotion is implied.
+
 [Current status and checkpoint summary](../research/evaluation/failure-driven/CURRENT-STATUS.md)
-lists verified native successes, changes since `f0bfc51`, review gates and next steps.
-Across six new paired tranches, 60 positive methods and 24 deliberate defects have
+lists verified native successes, changes since `6cdaa0b`, review gates and next steps.
+Across seven new paired packets, 67 positive methods and 27 deliberate defects have
 native evidence; their prompts remain drafts, separate from qualified gold below.
 
 [Incoming Haiku baseline analysis](../research/evaluation/failure-driven/HAIKU-INPUT-ANALYSIS.md)
@@ -14,15 +20,15 @@ the upstream report and frozen inputs unchanged.
 [Media time/buffering subtranche](../code-examples/pilots/uikit-media-inspection-v1/README.md)
 adds a draft question and separate rubric. It covers value-layer edge cases and
 empty-player capture: nine positive unit methods, one compile check and three
-intended mutant rejections passed. Audio-description and loaded-item validation
-remain open; independent review and model evaluation have not run for this pair.
+intended mutant rejections passed. The separate metadata packet above covers local
+loaded-asset extraction; independent review and model evaluation remain pending.
 
 [Naming and independent-control tranche](../code-examples/pilots/uikit-naming-v1/README.md):
 eight positive unit tests, one compile check and three intended mutant rejections.
 Its separate developer question and rubric are development drafts pending independent
 review, not additions to the six qualified gold prompts below. See the
 [failure-driven work plan](../research/evaluation/failure-driven/TASKS.md) for the
-test-to-prompt workflow and remaining gates. The combined offline suite passes 188
+test-to-prompt workflow and remaining gates. The combined offline suite passes 193
 tests; the115 count below describes the historical gold-closeout checkpoint.
 
 [Long-text/non-color selection tranche](../code-examples/pilots/uikit-choice-v1/README.md)

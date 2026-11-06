@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "revision": "1",
+  "manifestHash": "31da466f57a63197b1667664e8038126f79453f0be28bf43d5ed2e3448ccfa6d",
+  "redaction": "Private paths and addresses removed; raw artifacts retained privately.",
+  "rows": [
+    {
+      "check": "compile-metadata",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "manifestHash": "31da466f57a63197b1667664e8038126f79453f0be28bf43d5ed2e3448ccfa6d",
+      "recordedAt": "2026-11-06T06:56:53.329Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "30dc8929391be127f05e430c6efb9c8391f256461a8728ab81f0a94555d9911f",
+      "nativeLogHash": "5902c86cb9cd9d3eb7713f11509e0fed6979e4e48e43369067f57ce83a0e2f53",
+      "excerpts": [
+        "<private-run-file>:29:42: warning: 'languageCode' was deprecated in iOS 16: renamed to 'language.languageCode.identifier' [#DeprecatedDeclaration]",
+        "   |                                          |- warning: 'languageCode' was deprecated in iOS 16: renamed to 'language.languageCode.identifier' [#DeprecatedDeclaration]",
+        "   |                                          `- note: use 'language.languageCode.identifier' instead"
+      ]
+    },
+    {
+      "check": "metadata-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "manifestHash": "31da466f57a63197b1667664e8038126f79453f0be28bf43d5ed2e3448ccfa6d",
+      "recordedAt": "2026-11-06T06:56:57.749Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaMetadataTests/testInspectionPreservesChosenAudioAndSubtitleOff",
+          "MediaMetadataTests/testKnownMissingGroupIsAbsent",
+          "MediaMetadataTests/testLoadedItemDurationAndSubtitleVariants",
+          "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent",
+          "MediaMetadataTests/testTaggedOptionIsRecognizedWithoutInferringOtherAudio",
+          "MediaMetadataTests/testUnreadableLocalAssetPropagatesError",
+          "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "bde1f8f6e6c82a8b0b85890c7a473d8b861e44aa957dbf6559359e69ed747811",
+      "nativeLogHash": "7d3d5a6608512c81ec0feb8c5531f774634cd513ca0d4a0b9fd892258707fcbc",
+      "excerpts": [
+        "<private-run-file>:29:42: warning: 'languageCode' was deprecated in iOS 16: renamed to 'language.languageCode.identifier' [#DeprecatedDeclaration]",
+        "   |                                          |- warning: 'languageCode' was deprecated in iOS 16: renamed to 'language.languageCode.identifier' [#DeprecatedDeclaration]",
+        "   |                                          `- note: use 'language.languageCode.identifier' instead",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testInspectionPreservesChosenAudioAndSubtitleOff]' passed (0.632 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testKnownMissingGroupIsAbsent]' passed (0.003 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testLoadedItemDurationAndSubtitleVariants]' passed (0.017 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testMissingItemIsUnavailableRatherThanAbsent]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testTaggedOptionIsRecognizedWithoutInferringOtherAudio]' passed (0.009 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testUnreadableLocalAssetPropagatesError]' passed (0.006 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testUntaggedAlternateAudioIsNotDescription]' passed (0.008 seconds)."
+      ]
+    }
+  ]
+}

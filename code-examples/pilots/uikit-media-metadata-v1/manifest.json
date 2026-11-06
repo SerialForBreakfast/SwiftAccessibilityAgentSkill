@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "id": "uikit-media-metadata",
+  "revision": "2",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Local asset loading and direct media-selection unit assertions only. Synthetic silent description tag; no playback, UI, narration quality or readyToPlay claim.",
+  "claims": [
+    {
+      "id": "metadata",
+      "url": "https://developer.apple.com/documentation/avfoundation/avmediacharacteristic/describesvideoforaccessibility",
+      "section": "AVMediaFormat.h explicit tagging of MOV tracks; AVMediaSelectionGroup.h hasMediaCharacteristic",
+      "statement": "Read explicit description characteristic from actual loaded media options; names/language do not prove a tag or narration quality.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Async loaders iOS15+; media characteristics/selection predate deployment26.0. SDK/runtime recorded separately."
+    },
+    {
+      "id": "loading",
+      "url": "https://developer.apple.com/documentation/avfoundation/avasset/loadmediaselectiongroup(for:)",
+      "section": "AVAsset.h async duration/group loading",
+      "statement": "Separate missing item, absent group and load error. Asset metadata loading is not readiness to play.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Async loaders iOS15+; media characteristics/selection predate deployment26.0. SDK/runtime recorded separately."
+    },
+    {
+      "id": "selection",
+      "url": "https://developer.apple.com/documentation/avfoundation/avmediaselection/selectedmediaoption(in:)",
+      "section": "AVMediaSelection.h current option; AVPlayerItem.h currentMediaSelection",
+      "statement": "Report selected options without modifying selection, including subtitle-off state.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Async loaders iOS15+; media characteristics/selection predate deployment26.0. SDK/runtime recorded separately."
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/MediaMetadata.swift",
+      "sha256": "1a2b02faa406d9334d96b3d94cc52d9e503778538acb73766e930f267aaf5b09"
+    },
+    {
+      "path": "Tests/MediaMetadataTests.swift",
+      "sha256": "74829d251128f976de384de4bfaf761880cdf92492b54623e54a5826fdd8d658"
+    },
+    {
+      "path": "Tests/DescriptionFixture.swift",
+      "sha256": "b65a164d2ea9121fa058094c177116405c31904789e300872aea15cae7ad0a2e"
+    },
+    {
+      "path": "NegativeFixtures/AllAudioDescribed.swift",
+      "sha256": "d449e70f693a3cfe1e4c860039c768384a8371b81cc0477ac4c4e5e262d6ae36"
+    },
+    {
+      "path": "NegativeFixtures/NoItemAbsent.swift",
+      "sha256": "1a8b332c418062e765de4639f8c1c6faab48dc10e4c504b637edda3d2093c559"
+    },
+    {
+      "path": "NegativeFixtures/SelectionLost.swift",
+      "sha256": "715bc4af3b429270b1103390debe2e9c2651d8fb07d313ff747b470079738279"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-metadata",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "metadata",
+        "loading",
+        "selection"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "metadata-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "metadata",
+        "loading",
+        "selection"
+      ],
+      "testIds": [
+        "MediaMetadataTests/testTaggedOptionIsRecognizedWithoutInferringOtherAudio",
+        "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription",
+        "MediaMetadataTests/testInspectionPreservesChosenAudioAndSubtitleOff",
+        "MediaMetadataTests/testLoadedItemDurationAndSubtitleVariants",
+        "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent",
+        "MediaMetadataTests/testKnownMissingGroupIsAbsent",
+        "MediaMetadataTests/testUnreadableLocalAssetPropagatesError"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "allaudiodescribed-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "metadata"
+      ],
+      "testIds": [
+        "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription"
+      ],
+      "failureIds": [
+        "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription"
+      ],
+      "replacement": {
+        "target": "Sources/MediaMetadata.swift",
+        "source": "NegativeFixtures/AllAudioDescribed.swift"
+      }
+    },
+    {
+      "id": "noitemabsent-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "loading"
+      ],
+      "testIds": [
+        "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent"
+      ],
+      "failureIds": [
+        "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent"
+      ],
+      "replacement": {
+        "target": "Sources/MediaMetadata.swift",
+        "source": "NegativeFixtures/NoItemAbsent.swift"
+      }
+    },
+    {
+      "id": "selectionlost-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "selection"
+      ],
+      "testIds": [
+        "MediaMetadataTests/testInspectionPreservesChosenAudioAndSubtitleOff"
+      ],
+      "failureIds": [
+        "MediaMetadataTests/testInspectionPreservesChosenAudioAndSubtitleOff"
+      ],
+      "replacement": {
+        "target": "Sources/MediaMetadata.swift",
+        "source": "NegativeFixtures/SelectionLost.swift"
+      }
+    }
+  ]
+}

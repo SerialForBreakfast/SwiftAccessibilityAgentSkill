@@ -1,0 +1,217 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "revision": "2",
+  "manifestHash": "f067eafd1bf4a5c834a794aa7bf688f2a5f8ad748b23e20307cc888d890af757",
+  "redaction": "Private paths and addresses removed; raw artifacts retained privately.",
+  "rows": [
+    {
+      "check": "compile-metadata",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "manifestHash": "f067eafd1bf4a5c834a794aa7bf688f2a5f8ad748b23e20307cc888d890af757",
+      "recordedAt": "2026-11-06T06:58:55.952Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "6e4582c4260c13ca4d9d5c3668fc63edc3a7f4bc5b93e2732770a8cd8255bf2f",
+      "nativeLogHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "excerpts": []
+    },
+    {
+      "check": "metadata-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "manifestHash": "f067eafd1bf4a5c834a794aa7bf688f2a5f8ad748b23e20307cc888d890af757",
+      "recordedAt": "2026-11-06T06:58:59.100Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaMetadataTests/testInspectionPreservesChosenAudioAndSubtitleOff",
+          "MediaMetadataTests/testKnownMissingGroupIsAbsent",
+          "MediaMetadataTests/testLoadedItemDurationAndSubtitleVariants",
+          "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent",
+          "MediaMetadataTests/testTaggedOptionIsRecognizedWithoutInferringOtherAudio",
+          "MediaMetadataTests/testUnreadableLocalAssetPropagatesError",
+          "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "a990dbdcc510e88e2f0c7a8d1d04f196ab043dbd11194c6b32259f111bbf5376",
+      "nativeLogHash": "21176673f4c2a11f6aab887c11c6ef8bdea61358a68a49e5883b4c364d284ea9",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testInspectionPreservesChosenAudioAndSubtitleOff]' passed (0.803 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testKnownMissingGroupIsAbsent]' passed (0.003 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testLoadedItemDurationAndSubtitleVariants]' passed (0.012 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testMissingItemIsUnavailableRatherThanAbsent]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testTaggedOptionIsRecognizedWithoutInferringOtherAudio]' passed (0.005 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testUnreadableLocalAssetPropagatesError]' passed (0.013 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testUntaggedAlternateAudioIsNotDescription]' passed (0.005 seconds)."
+      ]
+    },
+    {
+      "check": "allaudiodescribed-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "manifestHash": "f067eafd1bf4a5c834a794aa7bf688f2a5f8ad748b23e20307cc888d890af757",
+      "recordedAt": "2026-11-06T06:59:22.032Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription"
+        ],
+        "failedTestIds": [
+          "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "13ed4c264b017eb4f4ceeb84a8b9365e06d4d9b73f0ccf4eccd686f9c4fff38a",
+      "nativeLogHash": "b92046125c1ac580a343dee09cebb29adab10a33318e52728e34ac5e4fa695e1",
+      "excerpts": [
+        "<private-run-file>:29: error: -[AccessibilityExamplesTests.MediaMetadataTests testUntaggedAlternateAudioIsNotDescription] : XCTAssertTrue failed",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testUntaggedAlternateAudioIsNotDescription]' failed (1.119 seconds)."
+      ]
+    },
+    {
+      "check": "noitemabsent-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "manifestHash": "f067eafd1bf4a5c834a794aa7bf688f2a5f8ad748b23e20307cc888d890af757",
+      "recordedAt": "2026-11-06T06:59:43.781Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent"
+        ],
+        "failedTestIds": [
+          "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "c96265425144c8b8a75cfa8c18f3314b4fd452792772fe373b2df57dfe268f90",
+      "nativeLogHash": "6598b0ef212a2120295f46453190bc4d94e6068a2bb63636a2e04d325e3426e7",
+      "excerpts": [
+        "<private-run-file>:70: error: -[AccessibilityExamplesTests.MediaMetadataTests testMissingItemIsUnavailableRatherThanAbsent] : XCTAssertTrue failed",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testMissingItemIsUnavailableRatherThanAbsent]' failed (0.586 seconds)."
+      ]
+    },
+    {
+      "check": "selectionlost-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "manifestHash": "f067eafd1bf4a5c834a794aa7bf688f2a5f8ad748b23e20307cc888d890af757",
+      "recordedAt": "2026-11-06T07:00:05.772Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaMetadataTests/testInspectionPreservesChosenAudioAndSubtitleOff"
+        ],
+        "failedTestIds": [
+          "MediaMetadataTests/testInspectionPreservesChosenAudioAndSubtitleOff"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "dd4e4add2373050816c0efd752b38a029c11b336e0d422911e044b3189e807db",
+      "nativeLogHash": "97e564b23291c12ef76638bb42cf3b56a596fb3d49aa359d446d79d2e2675f08",
+      "excerpts": [
+        "<private-run-file>:46: error: -[AccessibilityExamplesTests.MediaMetadataTests testInspectionPreservesChosenAudioAndSubtitleOff] : XCTAssertEqual failed: (\"0\") is not equal to (\"1\")",
+        "<private-run-file>:47: error: -[AccessibilityExamplesTests.MediaMetadataTests testInspectionPreservesChosenAudioAndSubtitleOff] : XCTAssertEqual failed: (\"nil\") is not equal to (\"Optional(true)\")",
+        "Test Case '-[AccessibilityExamplesTests.MediaMetadataTests testInspectionPreservesChosenAudioAndSubtitleOff]' failed (0.896 seconds)."
+      ]
+    }
+  ]
+}

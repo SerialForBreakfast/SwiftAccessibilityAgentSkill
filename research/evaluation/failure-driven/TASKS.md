@@ -66,8 +66,12 @@ review/model evaluation remain pending.
 UPAIR-06A adds [media time/buffering contracts](../../../code-examples/pilots/uikit-media-inspection-v1/README.md)
 and a separate draft prompt/rubric. Nine positive methods, one compile check and
 three intended mutant rejections passed on iOS26.5. Independent review/model
-evaluation remain pending. UPAIR-06 remains open for audio-description
-metadata and loaded-item extraction. UPAIR-07 and UPAIR-08 remain pending.
+evaluation remain pending. UPAIR-06B adds
+[actual tagged metadata and loaded-asset extraction](../../../code-examples/pilots/uikit-media-metadata-v1/README.md),
+with seven positive methods, matched tagged/untagged fixtures and a separate draft
+prompt/rubric. Its revisioned validation records distinguish first-attempt warning
+from repair and deliberate negatives. Independent review of both media packets
+remains pending; UPAIR-07 and UPAIR-08 remain pending.
 See [incoming Haiku analysis](HAIKU-INPUT-ANALYSIS.md) for evidence limits and
 future no-change, availability and efficiency cases; frozen inputs stay unchanged.
 

@@ -1,15 +1,32 @@
 # UIKit Evidence and Evaluation Status
 
 Updated November 5, 2026 (America/Los_Angeles).
-Publication boundary: `f0bfc51`, the pushed merge preserving local UIKit work and
-upstream Haiku report `67649d9`. The changes described below are the next,
-uncommitted documentation/media checkpoint. This document does not authorize
-publication, model runs or skill promotion.
+Publication boundary: `6cdaa0b`, the pushed merge preserving checkpoint `a47d975`
+and upstream research proposal `d93efa9`. The current uncommitted addition is
+UPAIR-06B audio-description metadata and loaded-asset extraction. The earlier
+checkpoint inventory below remains labeled by its original boundary. This document
+does not authorize publication, model runs or skill promotion.
+
+## Latest Addition Since 6cdaa0b
+
+[UPAIR-06B](../../../code-examples/pilots/uikit-media-metadata-v1/README.md) adds
+matched tagged/untagged synthetic MOV fixtures, actual audio-description tag
+recognition, selected audio/subtitle-off preservation, loaded duration, subtitle
+variants and distinct missing/error states. Seven positive methods and three
+intended mutant rejections passed. The first attempt compiled with a deprecated
+locale accessor; revision1 source/diagnostics are preserved and revision2 passes
+after its replacement. Five offline checks bind payloads, history and evidence.
+
+Its natural developer prompt and controller rubric remain separate drafts. The
+silent fixture proves metadata recognition, not narration quality. Local asset
+loading is not live playback or player readiness. No model runs were performed.
+Upstream ADR-004 and the compact candidate batch are proposals; merging them did
+not authorize their execution or change the installed skill.
 
 ## Verified Successes
 
-The six paired development tranches below have 60 positive native unit methods,
-six successful compile checks and 24 deliberately rejected mutants across their
+The seven paired development packets below have 67 positive native unit methods,
+seven successful compile checks and 27 deliberately rejected mutants across their
 current revisions. These totals cover this table, not the entire historical library.
 Each negative passed its expectation by failing its selected assertion; it is not
 an additional independent scenario or a spontaneous model failure.
@@ -22,18 +39,19 @@ an additional independent scenario or a spontaneous model failure.
 | UPAIR-04 Modal lifecycle | [Revision 3](../../../code-examples/pilots/uikit-modal-v1/validation/revision-3.json) | 13 | 5 | Draft; independent review pending |
 | UPAIR-05 Edited rotors | [Revision 1](../../../code-examples/pilots/uikit-edited-rotor-v1/validation/revision-1.json) | 12 | 5 | Draft; independent review pending |
 | UPAIR-06A Media time/buffering | [Revision 1](../../../code-examples/pilots/uikit-media-inspection-v1/validation/revision-1.json) | 9 | 3 | Draft; UPAIR-06 remains partially complete |
+| UPAIR-06B Media metadata | [Revision 2](../../../code-examples/pilots/uikit-media-metadata-v1/validation/revision-2.json) | 7 | 3 | Draft; independent review pending |
 
 The modal history preserves an actual retained-but-removed target failure and its
 repair after an earlier green suite. Media revision 1 had no unexpected native
 failure. Both are useful evidence, but must not be conflated.
 
-Current offline checks: **188 passing tests**, **210 frozen baseline files verified**,
+Current offline checks: **193 passing tests**, **210 frozen baseline files verified**,
 and **87 historical evidence pins verified**. Native method counts and offline
 test counts measure different layers and are not added together. Skill version
 remains `0.2.2`; verified candidate content hash:
 `3a1a2d58af19a94eec940000d9edcca7928bb5139aa3d52b1ef6e917c0271bbd`.
 
-## Changes Since f0bfc51
+## Previous Checkpoint: f0bfc51 to a47d975
 
 ### Media implementation and native tests
 
@@ -109,12 +127,11 @@ claims and this repository's unit-test-only promotion gates.
 
 ## Remaining Work and Acceptance
 
-1. **Finish UPAIR-06 media evidence.** Add a public/synthetic fixture with actual
-   audio-description metadata, exercise extraction from a loaded native item,
-   and inspect media options/selection. Distinguish absent metadata from unavailable
-   information. Acceptance: source-backed positive assertions, intended negatives,
-   exact run records and separate draft questions/rubrics. Do not describe injected
-   metadata as a native extraction result or claim content quality from a tag.
+1. **Review UPAIR-06 media evidence.** Both time/buffering and tagged-metadata
+   packets now have native records and draft pairs. Confirm scope against the
+   inventory and identify any further gaps without inferring live playback or
+   description quality from metadata. Acceptance: independent source/oracle/prompt
+   decisions; additional gaps become explicit tasks, not silently closed coverage.
 2. **Complete UPAIR-07 availability.** Audit used public declarations and applicable
    deployment guards against the selected toolchain. Acceptance: exact declaration
    evidence and appropriate compile checks, with SDK, target and runtime separated.
@@ -150,7 +167,7 @@ These commands do not run models or native simulators. Native rerun instructions
 are in the media package README and require a fresh private output path. No UI
 tests or mandatory manual verification are introduced.
 
-## Suggested Commit Message
+## Previous Checkpoint Commit Message
 
 ```text
 Validate UIKit media inspection contracts and summarize baseline findings
