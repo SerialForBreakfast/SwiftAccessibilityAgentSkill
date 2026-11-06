@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "id": "uikit-naming",
+  "revision": "1",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Explicit UIKit configuration and ordinary UIControl callback unit tests only. No layout, spoken output, actual navigation, native-default role or usability claim.",
+  "claims": [
+    {
+      "id": "decorative",
+      "url": "https://developer.apple.com/documentation/objectivec/nsobject-swift.class/isaccessibilityelement",
+      "section": "UIAccessibility.h isaccessibilityelement; UIControl.h addAction/sendActions; project-owned reconfiguration policy",
+      "statement": "Explicitly exclude a decorative label and expose meaningful title/control elements.",
+      "availability": "Established UIKit declarations in installed SDK27; deployment26.0. UIAction control registration iOS14+.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "container",
+      "url": "https://developer.apple.com/documentation/objectivec/nsobject-swift.class/accessibilityelementshidden",
+      "section": "UIAccessibility.h accessibilityelementshidden; UIControl.h addAction/sendActions; project-owned reconfiguration policy",
+      "statement": "Leave the container non-element and its descendant accessibility-hidden flag false; retain ordinary controls.",
+      "availability": "Established UIKit declarations in installed SDK27; deployment26.0. UIAction control registration iOS14+.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "names",
+      "url": "https://developer.apple.com/documentation/objectivec/nsobject-swift.class/accessibilitylabel",
+      "section": "UIAccessibility.h accessibilitylabel; UIControl.h addAction/sendActions; project-owned reconfiguration policy",
+      "statement": "Set caller-provided complete localized contextual names on each configuration, rather than retaining names from an earlier item.",
+      "availability": "Established UIKit declarations in installed SDK27; deployment26.0. UIAction control registration iOS14+.",
+      "reviewedOn": "2026-11-05"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/NamingUIKit.swift",
+      "sha256": "4d54ea0311467b0c2994029076c3b86eb2b6c0e1ef09cff1c3b1d7fb3d6639ef"
+    },
+    {
+      "path": "Tests/NamingUIKitTests.swift",
+      "sha256": "3587b4579d55d8f072b207030553aae982ee4d58336c13222a5565176aa14960"
+    },
+    {
+      "path": "NegativeFixtures/ExposedDecoration.swift",
+      "sha256": "237e835c21bd1457bd9e7ee5ba4e4f998556ec617d676404d714f59a2b96a636"
+    },
+    {
+      "path": "NegativeFixtures/HiddenControls.swift",
+      "sha256": "9654ba93bd132e95fc29d9ac8c545b3464d71cee84bf5d27a6309362b3e68452"
+    },
+    {
+      "path": "NegativeFixtures/StaleNames.swift",
+      "sha256": "888ece18d12864d9a4710f5b51695558d50c423c27038f2a161be8f5d81314e9"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-naming",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "decorative",
+        "container",
+        "names"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "naming-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "decorative",
+        "container",
+        "names"
+      ],
+      "testIds": [
+        "NamingUIKitTests/testDecorationIsExplicitlyExcluded",
+        "NamingUIKitTests/testContainerPreservesIndependentControls",
+        "NamingUIKitTests/testRepeatedVisibleTitlesHaveContextualNames",
+        "NamingUIKitTests/testReconfigurationReplacesNamesWithoutReuseCallback",
+        "NamingUIKitTests/testCompleteLocalizedNamesArePreserved",
+        "NamingUIKitTests/testOrdinaryActionsRemainIndependent",
+        "NamingUIKitTests/testReconfigurationReplacesHandlersWithoutDuplicates",
+        "NamingUIKitTests/testReconfigurationResetsOwnedContainerState"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "exposeddecoration-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "decorative"
+      ],
+      "testIds": [
+        "NamingUIKitTests/testDecorationIsExplicitlyExcluded"
+      ],
+      "failureIds": [
+        "NamingUIKitTests/testDecorationIsExplicitlyExcluded"
+      ],
+      "replacement": {
+        "target": "Sources/NamingUIKit.swift",
+        "source": "NegativeFixtures/ExposedDecoration.swift"
+      }
+    },
+    {
+      "id": "hiddencontrols-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "container"
+      ],
+      "testIds": [
+        "NamingUIKitTests/testContainerPreservesIndependentControls"
+      ],
+      "failureIds": [
+        "NamingUIKitTests/testContainerPreservesIndependentControls"
+      ],
+      "replacement": {
+        "target": "Sources/NamingUIKit.swift",
+        "source": "NegativeFixtures/HiddenControls.swift"
+      }
+    },
+    {
+      "id": "stalenames-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "names"
+      ],
+      "testIds": [
+        "NamingUIKitTests/testReconfigurationReplacesNamesWithoutReuseCallback"
+      ],
+      "failureIds": [
+        "NamingUIKitTests/testReconfigurationReplacesNamesWithoutReuseCallback"
+      ],
+      "replacement": {
+        "target": "Sources/NamingUIKit.swift",
+        "source": "NegativeFixtures/StaleNames.swift"
+      }
+    }
+  ]
+}

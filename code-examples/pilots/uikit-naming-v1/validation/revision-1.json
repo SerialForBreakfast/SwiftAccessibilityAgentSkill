@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "manifestHash": "1dbd5f6c6500efa6b52810ddd3a875f2261d9fdd6cec6803d056f929508a6963",
+  "revision": "1",
+  "redaction": "Private run paths and object addresses replaced; original logs retained privately.",
+  "rows": [
+    {
+      "check": "compile-naming",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T04:00:08.485Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "1007e077921c1f6f0379c192e663031e760e182ad32cca617f8de25eefbb8af1",
+      "nativeLogHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "excerpts": []
+    },
+    {
+      "check": "naming-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T04:00:11.744Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "NamingUIKitTests/testCompleteLocalizedNamesArePreserved",
+          "NamingUIKitTests/testContainerPreservesIndependentControls",
+          "NamingUIKitTests/testDecorationIsExplicitlyExcluded",
+          "NamingUIKitTests/testOrdinaryActionsRemainIndependent",
+          "NamingUIKitTests/testReconfigurationReplacesHandlersWithoutDuplicates",
+          "NamingUIKitTests/testReconfigurationReplacesNamesWithoutReuseCallback",
+          "NamingUIKitTests/testReconfigurationResetsOwnedContainerState",
+          "NamingUIKitTests/testRepeatedVisibleTitlesHaveContextualNames"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "5f40e5dd3c46f5fafe2066a7554c577967d73fbeb8aebcd22d3a90e7a5597f70",
+      "nativeLogHash": "ada4c2ef95115dc3bee747e52a7d03a10b0a3715cbdbd3bc028307d653cd11c1",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.NamingUIKitTests testCompleteLocalizedNamesArePreserved]' passed (0.073 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.NamingUIKitTests testContainerPreservesIndependentControls]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.NamingUIKitTests testDecorationIsExplicitlyExcluded]' passed (0.005 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.NamingUIKitTests testOrdinaryActionsRemainIndependent]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.NamingUIKitTests testReconfigurationReplacesHandlersWithoutDuplicates]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.NamingUIKitTests testReconfigurationReplacesNamesWithoutReuseCallback]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.NamingUIKitTests testReconfigurationResetsOwnedContainerState]' passed (0.003 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.NamingUIKitTests testRepeatedVisibleTitlesHaveContextualNames]' passed (0.005 seconds)."
+      ]
+    },
+    {
+      "check": "exposeddecoration-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T04:01:54.619Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "NamingUIKitTests/testDecorationIsExplicitlyExcluded"
+        ],
+        "failedTestIds": [
+          "NamingUIKitTests/testDecorationIsExplicitlyExcluded"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "ac664ed0b52247fffbcf84d55e3a431775c7b0b09fb224a1a0fa38e795e47669",
+      "nativeLogHash": "55eff9351e362de8cdba6213c4405067d67d3c193154591d60b844a584a96dec",
+      "excerpts": [
+        "/tmp/adr003-naming-r1-decoration/workspace/Tests/AccessibilityExamplesTests/NamingUIKitTests.swift:18: error: -[AccessibilityExamplesTests.NamingUIKitTests testDecorationIsExplicitlyExcluded] : XCTAssertFalse failed",
+        "Test Case '-[AccessibilityExamplesTests.NamingUIKitTests testDecorationIsExplicitlyExcluded]' failed (0.341 seconds)."
+      ]
+    },
+    {
+      "check": "hiddencontrols-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T04:02:14.651Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "NamingUIKitTests/testContainerPreservesIndependentControls"
+        ],
+        "failedTestIds": [
+          "NamingUIKitTests/testContainerPreservesIndependentControls"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "9ebcdae6ab6fbf56c386b499d9642a305b2a2984dfd509c85690ab4516398051",
+      "nativeLogHash": "c4215faa0afd874cb2cefe2dd17296f83eaf5a59eb5682950fa494589a0bd446",
+      "excerpts": [
+        "/tmp/adr003-naming-r1-hidden/workspace/Tests/AccessibilityExamplesTests/NamingUIKitTests.swift:26: error: -[AccessibilityExamplesTests.NamingUIKitTests testContainerPreservesIndependentControls] : XCTAssertFalse failed",
+        "Test Case '-[AccessibilityExamplesTests.NamingUIKitTests testContainerPreservesIndependentControls]' failed (0.651 seconds)."
+      ]
+    },
+    {
+      "check": "stalenames-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T04:02:33.427Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "NamingUIKitTests/testReconfigurationReplacesNamesWithoutReuseCallback"
+        ],
+        "failedTestIds": [
+          "NamingUIKitTests/testReconfigurationReplacesNamesWithoutReuseCallback"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "8496908da5923052c730f9f172fa0ed382f3c567d68c394759acf6922ab1415d",
+      "nativeLogHash": "1f14fb3ca42fe11c8da38246909f07b9d7b1e23f48b262ccc240d3136876aabe",
+      "excerpts": [
+        "/tmp/adr003-naming-r1-stale/workspace/Tests/AccessibilityExamplesTests/NamingUIKitTests.swift:49: error: -[AccessibilityExamplesTests.NamingUIKitTests testReconfigurationReplacesNamesWithoutReuseCallback] : XCTAssertEqual failed: (\"Optional(\"Open Invoice A\")\") is not equal to (\"Optional(\"Open Invoice B\")\")",
+        "Test Case '-[AccessibilityExamplesTests.NamingUIKitTests testReconfigurationReplacesNamesWithoutReuseCallback]' failed (0.669 seconds)."
+      ]
+    }
+  ]
+}

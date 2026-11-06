@@ -3,9 +3,32 @@
 Initial offline implementation of [ADR-003](../research/adr/ADR-003-version-anchored-unit-tested-examples.md).
 This directory is not integrated with skill routing. No example library or annual
 anchor is promoted yet. Existing OS26 evaluation fixtures remain separate and
-unchanged while independent review is pending.
+unchanged by this library. The separate OS26 gold fixtures now have a
+[reviewed closeout](../evals/os26/reports/2026-11-05-gold-closeout/REVIEW.md);
+that approval does not promote these library examples.
 
 ## Available now
+
+New paired tranche: [decorative content and independent named controls](pilots/uikit-naming-v1/README.md),
+with a separate draft developer prompt/rubric and difficulty ledger. It is linked
+here rather than altering the index pinned by the historical evidence packet.
+It remains outside runtime skill routing and frozen model-evaluation inputs.
+
+### Latest validation and next gate
+
+The naming tranche passed one compile check and eight positive unit tests on
+iOS26.5, and rejected three deliberate defects at their intended assertions.
+[Native evidence](pilots/uikit-naming-v1/validation/README.md),
+[difficulty ledger](pilots/uikit-naming-v1/DIFFICULTIES.md), and
+[exact mutation diffs](pilots/uikit-naming-v1/MUTATIONS.md) preserve the results.
+No unexpected Swift failure occurred in this tranche.
+
+The [draft developer question](pilots/uikit-naming-v1/evaluation/prompt.json) and
+[controller rubric](pilots/uikit-naming-v1/evaluation/controller.md) need independent
+review before gold promotion. Keep the controller material out of model inputs.
+Model execution and skill improvement claims remain separate, uncompleted gates.
+The combined offline library/evaluation suite currently passes172 tests; this count
+does not include native XCTest methods or imply additional gold readiness.
 
 - Manifest/result contracts with source and evidence hashes, Apple claim links,
   explicit compile/unit lanes, platform/target/runtime checks and scoped negatives.

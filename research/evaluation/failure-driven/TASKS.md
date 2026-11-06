@@ -38,6 +38,10 @@ assumed assignment, before scheduling work. There is no estimated completion dat
 
 ## Remaining UIKit Feature Pairs
 
+UPAIR-01 now has [native evidence and a draft paired case](../../../code-examples/pilots/uikit-naming-v1/README.md):
+eight positive methods and three intended mutant rejections. Independent case review
+and model execution remain pending. Other rows below retain their pending status.
+
 Each row requires a source claim, exact test IDs, recorded environment/result, natural
 prompt, atomic rubric, accepted alternatives and a link to baseline eligibility.
 The questions below are authoring seeds, not frozen gold cases.

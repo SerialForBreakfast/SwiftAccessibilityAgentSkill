@@ -1,5 +1,20 @@
 # Evidence-Backed Evaluation
 
+## New paired UIKit evidence
+
+[Naming and independent-control tranche](../code-examples/pilots/uikit-naming-v1/README.md):
+eight positive unit tests, one compile check and three intended mutant rejections.
+Its separate developer question and rubric are development drafts pending independent
+review, not additions to the six qualified gold prompts below. See the
+[failure-driven work plan](../research/evaluation/failure-driven/TASKS.md) for the
+test-to-prompt workflow and remaining gates. The combined offline suite passes172
+tests; the115 count below describes the historical gold-closeout checkpoint.
+
+The [closeout supersession record](os26/CLOSEOUT-SUPERSESSION.md) explains why the
+earlier local note remains unchanged for provenance while newer review governs readiness.
+
+## Qualified OS26 fixtures
+
 **Gold readiness: 6/6 prompts · 42/42 gates · 6 passing reference fixes · 12/12 detected defects · 115 offline tests passed.**
 
 [Closeout review and frozen grading rules](os26/reports/2026-11-05-gold-closeout/REVIEW.md) · [Machine-readable readiness](os26/reports/2026-11-05-gold-closeout/readiness.json).
