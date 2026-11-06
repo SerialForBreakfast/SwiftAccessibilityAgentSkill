@@ -3,11 +3,12 @@
 Current readiness review: [gold-prompt audit](GOLD-AUDIT-2026-11-05.md).
 The newer OS26-first methodology takes priority over the older broad Gemini spike;
 its promotion gates now use compile/unit evidence and source review only. Native
-evidence and calibration remain pending before baseline execution.
+evidence is recorded in the [complete OS26 unit matrix](os26/reports/2026-11-05-r4/README.md).
+Independent review and grading calibration remain pending before baseline execution.
 [Coordinator enrollment](COORDINATOR-ONBOARDING.md) is now requested for messaging
 only. The public client packet is reviewed; host-bound enrollment remains pending.
 
-[Methodology decisions](METHODOLOGY-DECISIONS-2026-11-05.md) · [OS26 promotion protocol and offline gate](os26/README.md). Six revised cases are registered; native/oracle evidence is pending.
+[Methodology decisions](METHODOLOGY-DECISIONS-2026-11-05.md) · [OS26 promotion protocol and offline gate](os26/README.md). Six revised cases have native evidence; independent promotion review is pending.
 
 **OS 26 first:** [Gold prompts at a glance](../GoldPrompts.md) · [Optimization work packages](NEXT-SKILL-VERSION.md#os-26-first-optimization-proposal). OS 27 integration follows an accepted OS 26 baseline.
 
@@ -20,6 +21,8 @@ subscription invocations; preliminary findings, not a release baseline.
 New: [local OS26 model and compile/API-gate results](reports/local-os26-model-testing-2026-11-05.md).
 This is a zero-spend diagnostic lane covering three Ollama models; raw model and
 simulator artifacts remain private and the results do not promote any fixture.
+See the [MaxMini findings analysis](reports/local-os26-analysis-2026-11-05.md)
+for compiler-probe limitations and implications for the frontier baseline.
 
 Next priority: [zero-spend subscription evaluation](SUBSCRIPTION-EVALUATION.md),
 starting with the [BigDog Gemini spike and baseline tasks](BIGDOG-GEMINI-BASELINE.md).
