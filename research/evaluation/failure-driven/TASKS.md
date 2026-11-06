@@ -38,6 +38,11 @@ assumed assignment, before scheduling work. There is no estimated completion dat
 
 ## Remaining UIKit Feature Pairs
 
+UPAIR-07 now has a [sixteen-pilot compile sweep](../../../code-examples/audits/availability-v1/README.md)
+with source/manifest hashes, recorded diagnostics and a separate draft prompt/rubric.
+All selected source sets compile at deployment26.0; the full public-member
+declaration matrix is still required before closing the availability audit.
+
 See [current status](CURRENT-STATUS.md) for the verified six-tranche rollup,
 changes since the last pushed commit and sequenced acceptance gates.
 

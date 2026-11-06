@@ -1,9 +1,13 @@
 # UIKit Evidence and Evaluation Status
 
 Updated November 5, 2026 (America/Los_Angeles).
-Publication boundary: `6cdaa0b`, the pushed merge preserving checkpoint `a47d975`
-and upstream research proposal `d93efa9`. The current uncommitted addition is
-UPAIR-06B audio-description metadata and loaded-asset extraction. The earlier
+Published boundary: `6cdaa0b`, preserving checkpoint `a47d975` and upstream proposal
+`d93efa9`. Local commit `62fe91d` now records UPAIR-06B metadata and loaded-asset
+extraction; it has not been pushed. The current uncommitted addition is the
+[UPAIR-07 compile sweep](../../../code-examples/audits/availability-v1/README.md).
+All sixteen current source sets type-check at deployment26.0; two historical
+media locale-accessor warnings are retained. The complete member/declaration
+matrix remains pending. The earlier
 checkpoint inventory below remains labeled by its original boundary. This document
 does not authorize publication, model runs or skill promotion.
 
@@ -45,7 +49,7 @@ The modal history preserves an actual retained-but-removed target failure and it
 repair after an earlier green suite. Media revision 1 had no unexpected native
 failure. Both are useful evidence, but must not be conflated.
 
-Current offline checks: **193 passing tests**, **210 frozen baseline files verified**,
+Current offline checks: **195 passing tests**, **210 frozen baseline files verified**,
 and **87 historical evidence pins verified**. Native method counts and offline
 test counts measure different layers and are not added together. Skill version
 remains `0.2.2`; verified candidate content hash:

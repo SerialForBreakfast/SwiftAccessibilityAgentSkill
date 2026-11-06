@@ -2,6 +2,10 @@
 
 ## New paired UIKit evidence
 
+[Availability audit draft](../code-examples/audits/availability-v1/README.md)
+adds a compile-only sweep over sixteen current source sets and a separate
+developer question/rubric. It is not a new frozen case or runtime qualification.
+
 [Audio-description metadata subtranche](../code-examples/pilots/uikit-media-metadata-v1/README.md)
 adds actual local tagged/untagged asset extraction and selection preservation.
 Seven positive native methods and three isolated mutations pair with a separate
@@ -28,7 +32,7 @@ eight positive unit tests, one compile check and three intended mutant rejection
 Its separate developer question and rubric are development drafts pending independent
 review, not additions to the six qualified gold prompts below. See the
 [failure-driven work plan](../research/evaluation/failure-driven/TASKS.md) for the
-test-to-prompt workflow and remaining gates. The combined offline suite passes 193
+test-to-prompt workflow and remaining gates. The combined offline suite passes 195
 tests; the115 count below describes the historical gold-closeout checkpoint.
 
 [Long-text/non-color selection tranche](../code-examples/pilots/uikit-choice-v1/README.md)
