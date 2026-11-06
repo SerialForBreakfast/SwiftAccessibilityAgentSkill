@@ -1,9 +1,18 @@
 # Does the skill help?
 
-**Not reliably in the small-model runs reviewed so far.** Supplied reference text
-improved some rubric scores, but the reviewed Qwen deployment still produced
-incorrect code and lost necessary user actions. This is evidence about one deployment
-and four question families, not all models or the skill's overall effectiveness.
+**We have useful diagnostic evidence, but not a release-qualified estimate of skill lift.**
+The latest AGY candidate comparison is promising under source review. MaxMini's
+compact candidate saves tokens but has mixed correctness. Neither new comparison
+measures a bare model against the released skill, and their scores are not pooled.
+
+[Current reconciliation and decisions](reconciliation-20261106/README.md)
+
+| Evidence lane | Current outcome | Remaining qualification |
+| --- | --- | --- |
+| [AGY candidate comparison](skill-0.3.0-dev.1-vs-0.3.0-dev.2-20261106/README.md) | 14 answers: dev.1 six met plus one inconclusive; dev.2 seven met. Token-efficiency screen missed. | Native answer checks, independent families and release gates |
+| [MaxMini local diagnostic](local-compact-b-20261106/README.md) | 36 answers; 29.9-34.7% token reductions with mixed source/compiler results | Diagnostic evidence, not the release optimization target |
+| Claude candidate comparison | Zero calls; 14 planned cells remain deferred | Login, fresh quota checks and bounded scope confirmation |
+| [Native companion](../../research/evaluation/cross-platform-closure-v1/RESULTS.md) | Recorded code contracts across iOS/UIKit, tvOS/UIKit and macOS/AppKit | Separate independent review; not generated-answer grades |
 
 [Read the full v2 review](v2/README.md) · [Review the method](../GRADING.md) ·
 [Next worker pilots](../PILOT-REQUESTS.md) · [New report template](TEMPLATE.md)
@@ -16,13 +25,15 @@ versus seven met; 65,400 tokens total. No efficiency improvement or release
 qualification established. Claude deferred. The small-model report below remains
 historical diagnostic evidence with its original limits.
 
-## Evidence at a glance
+## Historical v2 Evidence
+
+The following tables describe the original v2 Qwen review, not the newer runs above.
 
 | What we have | What it establishes |
 | --- | --- |
 | 64 generated answers; 34 distinct response strings | A small, reproducible diagnostic sample, not 64 independent questions |
 | One retrospective reviewer; no independent calibration | Descriptive findings, not release acceptance |
-| BigDog Qwen3.5-2B Q4_K_M | One deployment; MaxMini and frontier results remain pending |
+| BigDog Qwen3.5-2B Q4_K_M | One deployment; newer MaxMini and AGY results are separate reports above |
 | C3 reads: 0/4 eligible smoke jobs and 0/12 development jobs | Autonomous reference lookup did not work in these runs |
 
 ## What a developer would experience
@@ -44,12 +55,11 @@ framework-as-OS wording and truncated responses remain in the frozen records.
 
 ## What happens next
 
-1. BigDog and MaxMini confirm actual model, runtime, tokenizer and tool capabilities.
-2. Each qualified worker runs the bounded development pilot and returns all outcomes.
-3. Independent, source-backed grading separates answer quality from protocol compliance.
+1. Preserve and independently inspect the exact AGY answers; prepare question-specific compile/unit checks without silently repairing code.
+2. Complete the consolidated native-campaign and exploratory-prompt review; keep generated-answer grades separate from companion tests.
+3. Resume Claude only after login, quota and scope confirmation. A future skill-lift comparison needs matched generic/released/candidate conditions.
 
-**Delivery status:** handoff prepared for Git or owner copy/paste; not dispatched.
-No coordinator contact, new inference or release decision is represented here.
+No new inference, remote execution or release promotion is authorized by this index.
 
 ## Report archive
 
