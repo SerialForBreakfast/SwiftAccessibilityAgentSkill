@@ -38,6 +38,11 @@ assumed assignment, before scheduling work. There is no estimated completion dat
 
 ## Remaining UIKit Feature Pairs
 
+UPAIR-06C now has [speed-control evidence](../../../code-examples/pilots/uikit-speed-v1/README.md):
+eight positive methods and three intended mutant rejections, with a separate draft
+question/rubric. It addresses the identified configuration/direct-action gap;
+independent review and broader media coverage acceptance remain pending.
+
 UPAIR-08 now has an [exact clause inventory and first media review](../../../code-examples/audits/requirements-v1/README.md).
 All15 guideline sources are pinned;209 selected clauses are inventoried, not counted
 as passing tests. Media review identifies UPAIR-06C speed-control semantics as an

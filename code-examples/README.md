@@ -9,12 +9,17 @@ that approval does not promote these library examples.
 
 ## Available now
 
-[Clause-level requirements audit](audits/requirements-v1/README.md) preserves209
-selected clauses across all15 UIKit guidelines. Its first media review identifies
-an outstanding speed-control contract; diagnostic playback-rate tests do not fill
-that gap. The remaining clause reviews and full API matrix are still in progress.
+[Ordinary playback-speed choices](pilots/uikit-speed-v1/README.md) supplies the
+speed-control gap identified by the media clause audit: eight positive unit methods,
+three rejected mutants, ordinary button events and explicit selected-state metadata.
+Its independent question/rubric remains draft; no playback or speech is claimed.
 
-[Availability compile sweep](audits/availability-v1/README.md) pins all sixteen
+[Clause-level requirements audit](audits/requirements-v1/README.md) preserves209
+selected clauses across all15 UIKit guidelines. Its first media review identified
+the speed-control contract now addressed by UPAIR-06C; diagnostic playback-rate
+tests were not relabeled as control tests. The remaining clause reviews and full API matrix are still in progress.
+
+[Availability compile sweep](audits/availability-v1/README.md) pins all seventeen
 current pilot source sets and their successful deployment26.0 type checks.
 Historical media deprecation warnings remain recorded; the complete declaration
 matrix and final inventory audit are still pending. Its prompt/rubric is a draft.
@@ -73,7 +78,7 @@ The [draft developer question](pilots/uikit-media-metadata-v1/evaluation/prompt.
 [controller rubric](pilots/uikit-media-metadata-v1/evaluation/controller.md) need independent
 review before gold promotion. Keep the controller material out of model inputs.
 Model execution and skill improvement claims remain separate, uncompleted gates.
-The combined offline library/evaluation suite currently passes 197 tests, including
+The combined offline library/evaluation suite currently passes 201 tests, including
 media inspection, edited rotors, contrast and modal history/evidence-contract checks; this count
 does not include native XCTest methods or imply additional gold readiness.
 See [current successes, change inventory and next steps](../research/evaluation/failure-driven/CURRENT-STATUS.md)

@@ -1,7 +1,7 @@
 # UIKit Availability Audit: Compile Sweep
 
 UPAIR-07 is in progress. This additive audit preserves historical pilot manifests
-and runtime skill inputs. It inventories all sixteen current pilot Sources sets,
+and runtime skill inputs. It inventories all seventeen current pilot Sources sets,
 then invokes each existing successful compile check at its declared deployment
 target26.0. Tests, mutation sources and historical revisions are not the scope of
 this sweep. Existing native test evidence remains separately versioned.
@@ -36,3 +36,10 @@ The complete declaration audit is still pending; green compilation does not clos
 UPAIR-07. A [natural developer question](evaluation/prompt.json) and
 [independent grading criteria](evaluation/controller.md) are draft development
 material. No model run, gold promotion or skill change is authorized by this audit.
+
+## Incremental Sweep Extension
+
+UPAIR-06C adds the seventeenth source set. Its compile record is appended without
+rerunning or replacing the prior sixteen outcomes. The original inventory, results
+and case pins are retained under history/sweep-1. This is an incremental evidence
+collection, not a claim that all compilations occurred at the same instant.

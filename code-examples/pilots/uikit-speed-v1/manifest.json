@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "id": "uikit-speed",
+  "revision": "1",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Unit-only configured button metadata and programmatic control-event dispatch. No actual playback, speech, gesture or rendered layout claim.",
+  "claims": [
+    {
+      "id": "state",
+      "url": "https://developer.apple.com/documentation/uikit/accessibility-for-uikit",
+      "section": "UIAccessibility.h accessibilityLabel/value/traits; UIControl.h selected",
+      "statement": "Explicit names and current-choice state remain consistent. Four choices and English fixture strings are application policy, not mandated speech.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Existing UIKit properties available at deployment26.0."
+    },
+    {
+      "id": "action",
+      "url": "https://developer.apple.com/documentation/uikit/uicontrol/addaction(_:for:)",
+      "section": "UIControl.h addAction/sendActions; enabled; UIAction handler",
+      "statement": "Ordinary buttons dispatch primary control events to one bounded selection path. Direct dispatch tests do not establish physical or assistive input delivery.",
+      "reviewedOn": "2026-11-05",
+      "availability": "addAction iOS14+; deployment26.0."
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/PlaybackSpeed.swift",
+      "sha256": "0fa8804d21ade1d75ac70d2046ee4a786c2c8bc7e0b101b7fa556e5642bf7989"
+    },
+    {
+      "path": "Tests/PlaybackSpeedTests.swift",
+      "sha256": "e857075b92702c3c30aaf8c3d2f681525d31c72e1fe98bb19a932206fe2b7391"
+    },
+    {
+      "path": "NegativeFixtures/StaleMetadata.swift",
+      "sha256": "93866b3a208ef624e3ee47a1f171e49906d7cea47ed4d7699934d870a3b14d4b"
+    },
+    {
+      "path": "NegativeFixtures/RepeatedChange.swift",
+      "sha256": "af170a05d9e35952b82045a70d8aa65f1d69c5c995d6a58977c10a81434df8ad"
+    },
+    {
+      "path": "NegativeFixtures/IgnoredDisabled.swift",
+      "sha256": "ab514d16d48a1b43cfb8e702c40277d2e23ff329d4b67431e40508e5710d2daf"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-speed",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "state",
+        "action"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "speed-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "state",
+        "action"
+      ],
+      "testIds": [
+        "PlaybackSpeedTests/testOrdinaryButtonsHaveDistinctNamesAndInitialSelection",
+        "PlaybackSpeedTests/testOrdinaryPrimaryActionUpdatesStateBeforeCallback",
+        "PlaybackSpeedTests/testOldSelectionClearsWithoutLosingUnrelatedTraits",
+        "PlaybackSpeedTests/testRepeatedSelectionDoesNotEmitDuplicateChange",
+        "PlaybackSpeedTests/testInvalidRatesLeaveStateAndCallbackUntouched",
+        "PlaybackSpeedTests/testDisabledRequestsAreRejectedAndReenableRestoresOrdinaryPath",
+        "PlaybackSpeedTests/testEverySupportedChoiceHasAnOrdinaryAction",
+        "PlaybackSpeedTests/testRetainedButtonDoesNotRetainOwner"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "stalemetadata-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "state"
+      ],
+      "testIds": [
+        "PlaybackSpeedTests/testOldSelectionClearsWithoutLosingUnrelatedTraits"
+      ],
+      "failureIds": [
+        "PlaybackSpeedTests/testOldSelectionClearsWithoutLosingUnrelatedTraits"
+      ],
+      "replacement": {
+        "target": "Sources/PlaybackSpeed.swift",
+        "source": "NegativeFixtures/StaleMetadata.swift"
+      }
+    },
+    {
+      "id": "repeatedchange-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "action"
+      ],
+      "testIds": [
+        "PlaybackSpeedTests/testRepeatedSelectionDoesNotEmitDuplicateChange"
+      ],
+      "failureIds": [
+        "PlaybackSpeedTests/testRepeatedSelectionDoesNotEmitDuplicateChange"
+      ],
+      "replacement": {
+        "target": "Sources/PlaybackSpeed.swift",
+        "source": "NegativeFixtures/RepeatedChange.swift"
+      }
+    },
+    {
+      "id": "ignoreddisabled-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "action"
+      ],
+      "testIds": [
+        "PlaybackSpeedTests/testDisabledRequestsAreRejectedAndReenableRestoresOrdinaryPath"
+      ],
+      "failureIds": [
+        "PlaybackSpeedTests/testDisabledRequestsAreRejectedAndReenableRestoresOrdinaryPath"
+      ],
+      "replacement": {
+        "target": "Sources/PlaybackSpeed.swift",
+        "source": "NegativeFixtures/IgnoredDisabled.swift"
+      }
+    }
+  ]
+}

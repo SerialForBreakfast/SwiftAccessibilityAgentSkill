@@ -14,15 +14,15 @@ asserted code contract, partial coverage, a remaining gap, framework scope defer
 by the UIKit-first decision, or behavior outside unit evidence. A reference in a
 coverage file alone does not establish that the actual assertion proves the clause.
 
-[U-015 review](U-015-REVIEW.md) is the first detailed pass. It identifies an explicit
-speed-control gap rather than treating playback-rate diagnostics as control tests.
+[U-015 review](U-015-REVIEW.md) is the first detailed pass. Its identified speed-control gap
+now has separate UPAIR-06C evidence rather than relabeled diagnostic tests.
 The remaining fourteen guideline clause reviews are still pending. UPAIR-08 is not
 complete and no runtime skill or frozen evaluation fixture is changed.
 
 ## Next Work
 
-1. Add a focused ordinary speed-control example with explicit metadata, bounded
-   state/action behavior and independent draft prompt/rubric. Preserve valid native
+1. Independently review the new ordinary speed-control example, its metadata, bounded
+   state/action behavior and separate draft prompt/rubric. Preserve valid native
    semantics; do not invent a missing native accessibility value from a nil getter.
 2. Review the remaining clauses against actual source/test assertions and native
    manifest-bound evidence, not method names alone.

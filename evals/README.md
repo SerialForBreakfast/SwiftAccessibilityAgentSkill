@@ -1,6 +1,19 @@
 # Evidence-Backed Evaluation
 
+[November6 BigDog alignment](../research/evaluation/failure-driven/BIGDOG-ALIGNMENT-2026-11-06.md)
+records the latest inbox, candidate-B draft, verified private review packet and
+separate UIKit/SwiftUI review lanes. Further model calls and runtime promotion remain held.
+
+**Start with the [framework-segmented prompt index](FRAMEWORK-INDEX.md).**
+Existing comparison sets mix UIKit, SwiftUI and shared-evidence questions; new
+unit-library development is UIKit-first. Framework-specific results are not
+interchangeable, and draft pairs are distinct from qualified gold fixtures.
+
 ## New paired UIKit evidence
+
+[Speed-control pair](../code-examples/pilots/uikit-speed-v1/README.md) adds eight
+passing native unit methods and three rejected mutants. Its separate developer
+question/rubric is draft development material, not an addition to frozen gold.
 
 [Availability audit draft](../code-examples/audits/availability-v1/README.md)
 adds a compile-only sweep over sixteen current source sets and a separate
@@ -14,7 +27,7 @@ discarded. No model evaluation or gold promotion is implied.
 
 [Current status and checkpoint summary](../research/evaluation/failure-driven/CURRENT-STATUS.md)
 lists verified native successes, changes since `6cdaa0b`, review gates and next steps.
-Across seven new paired packets, 67 positive methods and 27 deliberate defects have
+Across eight new paired packets, 75 positive methods and 30 deliberate defects have
 native evidence; their prompts remain drafts, separate from qualified gold below.
 
 [Incoming Haiku baseline analysis](../research/evaluation/failure-driven/HAIKU-INPUT-ANALYSIS.md)
@@ -32,7 +45,7 @@ eight positive unit tests, one compile check and three intended mutant rejection
 Its separate developer question and rubric are development drafts pending independent
 review, not additions to the six qualified gold prompts below. See the
 [failure-driven work plan](../research/evaluation/failure-driven/TASKS.md) for the
-test-to-prompt workflow and remaining gates. The combined offline suite passes 197
+test-to-prompt workflow and remaining gates. The combined offline suite passes 201
 tests; the115 count below describes the historical gold-closeout checkpoint.
 
 [Long-text/non-color selection tranche](../code-examples/pilots/uikit-choice-v1/README.md)

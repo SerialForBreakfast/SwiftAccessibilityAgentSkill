@@ -49,7 +49,7 @@ The modal history preserves an actual retained-but-removed target failure and it
 repair after an earlier green suite. Media revision 1 had no unexpected native
 failure. Both are useful evidence, but must not be conflated.
 
-Current offline checks: **197 passing tests**, **210 frozen baseline files verified**,
+Current offline checks: **201 passing tests**, **210 frozen baseline files verified**,
 and **87 historical evidence pins verified**. Native method counts and offline
 test counts measure different layers and are not added together. Skill version
 remains `0.2.2`; verified candidate content hash:
@@ -201,3 +201,24 @@ uncommitted work adds eleven partial media declaration records and an exact209-c
 inventory across15 guidelines. The first media review exposes a speed-control unit
 gap (UPAIR-06C); rate diagnostics do not establish user-facing control semantics.
 Remaining declaration and clause reviews stay open.
+
+## Speed-Control Follow-Up
+
+Commit5ac132e records the clause/declaration audit checkpoint (not pushed). The
+uncommitted UPAIR-06C packet now supplies eight passing speed-control unit methods,
+one compile check and three intended mutant rejections. It closes the identified
+configuration/direct-action gap for this example, pending independent review.
+Across eight paired packets there are75 positive native methods and30 deliberate
+mutants; these are scoped example counts, not full guideline coverage.
+The compile inventory now includes17 source sets, preserving the original16-pilot
+sweep separately. The full API matrix and remaining14 clause reviews stay open.
+
+## Latest BigDog Reconciliation
+
+See [November6 alignment](BIGDOG-ALIGNMENT-2026-11-06.md) for the checked inbox,
+verified private16-answer packet, candidate-B preparation and completed quota
+observations. [Framework index](../../../evals/FRAMEWORK-INDEX.md) now separates
+UIKit, SwiftUI, shared principles and interop. Native library progress and historical
+mixed-framework model scores remain separate. No new model execution or runtime
+promotion occurred during reconciliation. Earlier uncommitted/push statements in
+this log describe their respective checkpoints; this update is being published.

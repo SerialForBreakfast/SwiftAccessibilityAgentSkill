@@ -6,11 +6,11 @@ they do not establish every supported OS version or actual playback accessibilit
 
 | Clause | Disposition | Assertion scope / remaining work |
 | --- | --- | --- |
-| L23 controls | Partial; gap | MediaUIKitTests/testPlayPauseControlMetadataTransitions and testTimelineValueAndBounds assert play/pause/timeline metadata. No speed-control label/value/action test exists. Requested-rate diagnostics are not a speed control. |
+| L23 controls | Scoped unit evidence | MediaUIKitTests/testPlayPauseControlMetadataTransitions and testTimelineValueAndBounds assert play/pause/timeline metadata. UPAIR-06C now adds PlaybackSpeedTests/testOrdinaryButtonsHaveDistinctNamesAndInitialSelection and testOrdinaryPrimaryActionUpdatesStateBeforeCallback. These assert configuration and direct dispatch, not speech or playback. |
 | L24 state/time | Scoped unit evidence | The same two tests assert configured state and timing values. They do not establish spoken output or a rendered control. |
 | L25 captions | Scoped unit evidence | MediaUIKitTests/testSubtitleOptionsExposeBothAuthoredLanguages and testSubtitleSelectionAndOffState inspect actual local options and selection. Authored caption quality remains content evidence, not unit evidence. |
 | L26 inspection | Scoped unit evidence | MediaInspectionTests/testWaitingStatusDoesNotBecomePlayingFromRate and range/duration/buffer tests preserve input distinctions; MediaMetadataTests/testInspectionPreservesChosenAudioAndSubtitleOff reads actual options. Stream kind is supplied knowledge, never inferred from duration. |
-| L27 ordinary actions | Partial | Native player controls are explicitly retained by MediaUIKitTests/testNativeControllerPreservesControlsAndAutomaticSelection. Custom speed-control action still needs a unit contract. Native gesture/keyboard delivery is not established. |
+| L27 ordinary actions | Partial | Native player controls are explicitly retained by MediaUIKitTests/testNativeControllerPreservesControlsAndAutomaticSelection. PlaybackSpeedTests/testEverySupportedChoiceHasAnOrdinaryAction now exercises registered primary actions. Native gesture/keyboard delivery is not established. |
 | L31 interop labels | Deferred scope | Mixed AVKit/SwiftUI integration is outside this UIKit-first tranche. UIKit metadata is not cross-framework proof. |
 | L32 shared owner | Deferred scope | Current metadata loader is item-scoped, not an integration coordinator. Host/embedded-player ownership needs a separately scoped interop example. |
 | L33 overlays | Outside current unit evidence | No rendered overlay/hit-testing assertion. Control-retention flags do not establish unobstructed navigation. This adds no UI/manual gate. |
@@ -23,7 +23,7 @@ they do not establish every supported OS version or actual playback accessibilit
 | L51 optional UI hook | Translate code contract only | State and selection transitions have unit evidence. Do not implement the optional XCUITest hook for this project. |
 | L52 inspection fields | Scoped unit evidence | Value-layer and local extraction assertions establish captured fields; they do not prove no speech ever occurs. |
 | L56 named controls | Scoped unit evidence | Play/pause/timeline label/value methods above cover explicit configuration, not full UI behavior. |
-| L57 gesture hiding | Partial | Native controls are retained. Custom-control completion must preserve an ordinary action, not only an accessibility shortcut. |
+| L57 gesture hiding | Partial | Native controls are retained. UPAIR-06C preserves ordinary buttons and tests their registered actions. |
 
 ## Evidence Locations
 
@@ -42,3 +42,10 @@ and any optional accessibility action share semantics, selection updates consist
 invalid input preserves a defined safe state, and tests do not claim actual playback
 or speech. Accept valid alternative controls; do not mandate one widget or an exact
 spoken string. This is an authoring seed, not a frozen or executed model case.
+
+## Speed Gap Follow-Up
+
+The seed above is now implemented as [UPAIR-06C](../../pilots/uikit-speed-v1/README.md)
+with a separate subject prompt and controller rubric. Native evidence covers explicit
+state and direct control-event dispatch; independent review and gold promotion remain
+pending. Other clause dispositions and interop deferrals remain unchanged.
