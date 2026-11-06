@@ -9,6 +9,11 @@ that approval does not promote these library examples.
 
 ## Available now
 
+[Media inspection: time and buffering](pilots/uikit-media-inspection-v1/README.md)
+adds a separate UPAIR-06A example and draft prompt/rubric. It distinguishes
+duration states, discontinuous seekable/loaded ranges and independent playback
+flags. Audio-description metadata and loaded-item extraction remain open.
+
 [Edited documents and rotor ranges](pilots/uikit-edited-rotor-v1/README.md) adds
 UTF16/whole-grapheme matching, explicit overlap policy, revision-safe callbacks
 and ordinary text-access checks. Its prompt and rubric remain separate drafts;
@@ -38,20 +43,23 @@ It remains outside runtime skill routing and frozen model-evaluation inputs.
 
 ### Latest validation and next gate
 
-The long-text/selection tranche passed one compile check and nine positive unit
-tests on iOS26.5, and rejected four deliberate defects at their intended assertions.
-[Native evidence](pilots/uikit-choice-v1/validation/README.md),
-[difficulty ledger](pilots/uikit-choice-v1/DIFFICULTIES.md), and
-[exact mutation diffs](pilots/uikit-choice-v1/MUTATIONS.md) preserve the results.
-No unexpected Swift failure occurred in this tranche.
+The media time/buffering subtranche passed one compile check and nine positive unit
+tests on iOS26.5, and rejected three deliberate defects at their intended assertions.
+[Native evidence](pilots/uikit-media-inspection-v1/validation/README.md),
+[difficulty ledger](pilots/uikit-media-inspection-v1/DIFFICULTIES.md), and
+[exact mutation diffs](pilots/uikit-media-inspection-v1/MUTATIONS.md) preserve the results.
+No unexpected Swift failure occurred in this subtranche. Actual audio-description
+metadata and loaded-item extraction remain open.
 
-The [draft developer question](pilots/uikit-choice-v1/evaluation/prompt.json) and
-[controller rubric](pilots/uikit-choice-v1/evaluation/controller.md) need independent
+The [draft developer question](pilots/uikit-media-inspection-v1/evaluation/prompt.json) and
+[controller rubric](pilots/uikit-media-inspection-v1/evaluation/controller.md) need independent
 review before gold promotion. Keep the controller material out of model inputs.
 Model execution and skill improvement claims remain separate, uncompleted gates.
-The combined offline library/evaluation suite currently passes185 tests, including
-long-text/selection, contrast and modal history/evidence-contract checks; this count
+The combined offline library/evaluation suite currently passes 188 tests, including
+media inspection, edited rotors, contrast and modal history/evidence-contract checks; this count
 does not include native XCTest methods or imply additional gold readiness.
+See [current successes, change inventory and next steps](../research/evaluation/failure-driven/CURRENT-STATUS.md)
+for the six-tranche rollup and the uncommitted checkpoint since `f0bfc51`.
 
 - Manifest/result contracts with source and evidence hashes, Apple claim links,
   explicit compile/unit lanes, platform/target/runtime checks and scoped negatives.

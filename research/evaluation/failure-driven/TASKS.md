@@ -38,6 +38,9 @@ assumed assignment, before scheduling work. There is no estimated completion dat
 
 ## Remaining UIKit Feature Pairs
 
+See [current status](CURRENT-STATUS.md) for the verified six-tranche rollup,
+changes since the last pushed commit and sequenced acceptance gates.
+
 UPAIR-01 now has [native evidence and a draft paired case](../../../code-examples/pilots/uikit-naming-v1/README.md):
 eight positive methods and three intended mutant rejections. Independent case review
 and model execution remain pending.
@@ -58,7 +61,15 @@ Native validation is complete; independent case review/model evaluation remain p
 UPAIR-05 now has [edited-rotor evidence and a draft paired case](../../../code-examples/pilots/uikit-edited-rotor-v1/README.md):
 twelve positive methods and five intended mutant rejections, including Unicode,
 overlap policy and stale callbacks. Native validation is complete; independent
-review/model evaluation remain pending. UPAIR-06 through UPAIR-08 remain pending.
+review/model evaluation remain pending.
+
+UPAIR-06A adds [media time/buffering contracts](../../../code-examples/pilots/uikit-media-inspection-v1/README.md)
+and a separate draft prompt/rubric. Nine positive methods, one compile check and
+three intended mutant rejections passed on iOS26.5. Independent review/model
+evaluation remain pending. UPAIR-06 remains open for audio-description
+metadata and loaded-item extraction. UPAIR-07 and UPAIR-08 remain pending.
+See [incoming Haiku analysis](HAIKU-INPUT-ANALYSIS.md) for evidence limits and
+future no-change, availability and efficiency cases; frozen inputs stay unchanged.
 
 Each row requires a source claim, exact test IDs, recorded environment/result, natural
 prompt, atomic rubric, accepted alternatives and a link to baseline eligibility.

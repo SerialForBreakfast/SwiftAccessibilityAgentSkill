@@ -1,0 +1,147 @@
+{
+  "schema": 1,
+  "id": "uikit-media-inspection",
+  "revision": "1",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Unit-only time/range/buffer value contracts plus empty native player capture. No playback/network/UI tests. Audio-description metadata and loaded-item extraction remain pending.",
+  "claims": [
+    {
+      "id": "time",
+      "url": "https://developer.apple.com/documentation/coremedia/cmtime",
+      "section": "CMTime.h numeric, indefinite, invalid and infinity flags",
+      "statement": "Preserve duration evidence categories; stream kind is explicitly supplied app knowledge, not inferred from duration.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Public declarations predate deployment26.0; compile SDK27.0. Actual unit runtime recorded separately."
+    },
+    {
+      "id": "ranges",
+      "url": "https://developer.apple.com/documentation/avfoundation/avplayeritem/seekabletimeranges",
+      "section": "AVPlayerItem.h seekableTimeRanges/loadedTimeRanges; CMTimeRange.h ContainsTime",
+      "statement": "Keep loaded and seekable ranges separate. Range membership is half-open and does not promise seek completion.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Public declarations predate deployment26.0; compile SDK27.0. Actual unit runtime recorded separately."
+    },
+    {
+      "id": "buffer",
+      "url": "https://developer.apple.com/documentation/avfoundation/avplayeritem/isplaybacklikelytokeepup",
+      "section": "AVPlayerItem.h buffering; AVPlayer.h rate/timeControlStatus/reasonForWaitingToPlay",
+      "statement": "Preserve independent flags and requested rate/status. Capture is a sequence of observations, not an atomic playback guarantee.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Public declarations predate deployment26.0; compile SDK27.0. Actual unit runtime recorded separately."
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/MediaInspection.swift",
+      "sha256": "ffb3809b618e0df4616e25acfee9f67120aab40827188d68064d10145082b03e"
+    },
+    {
+      "path": "Tests/MediaInspectionTests.swift",
+      "sha256": "ba5b09fe530530b151e8be61e888a60d61bc28aeb8fe80a352cc21335c42567c"
+    },
+    {
+      "path": "NegativeFixtures/LoadedAsSeekable.swift",
+      "sha256": "fb411ef532b9bc717cb7b3cbd756a8f220509da4731763b83e125a77f3a14105"
+    },
+    {
+      "path": "NegativeFixtures/FullMeansReady.swift",
+      "sha256": "6287df3042313db0ef7fc5789358f643e46b1bbb0d03a0b0bf80d40ddf340461"
+    },
+    {
+      "path": "NegativeFixtures/InferredLive.swift",
+      "sha256": "2a3ced0562357e1fe6c18e305a54383f35477527f1d0f3dca25d9f47dcde2beb"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-inspection",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "time",
+        "ranges",
+        "buffer"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "inspection-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "time",
+        "ranges",
+        "buffer"
+      ],
+      "testIds": [
+        "MediaInspectionTests/testDurationCategoriesRemainDistinct",
+        "MediaInspectionTests/testIndefiniteDoesNotInventLiveClassification",
+        "MediaInspectionTests/testLoadedRangesDoNotAuthorizeSeeking",
+        "MediaInspectionTests/testDiscontinuousRangesPreserveGapsAndHalfOpenEnds",
+        "MediaInspectionTests/testUnavailableAndEmptyRangesDiffer",
+        "MediaInspectionTests/testFullBufferDoesNotImplyLikelyToKeepUp",
+        "MediaInspectionTests/testWaitingStatusDoesNotBecomePlayingFromRate",
+        "MediaInspectionTests/testWaitingReasonAndIndependentFlagsArePreserved",
+        "MediaInspectionTests/testEmptyNativePlayerCaptureAndControlMetadataRemainUnchanged"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "loadedasseekable-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "ranges"
+      ],
+      "testIds": [
+        "MediaInspectionTests/testLoadedRangesDoNotAuthorizeSeeking"
+      ],
+      "failureIds": [
+        "MediaInspectionTests/testLoadedRangesDoNotAuthorizeSeeking"
+      ],
+      "replacement": {
+        "target": "Sources/MediaInspection.swift",
+        "source": "NegativeFixtures/LoadedAsSeekable.swift"
+      }
+    },
+    {
+      "id": "fullmeansready-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "buffer"
+      ],
+      "testIds": [
+        "MediaInspectionTests/testFullBufferDoesNotImplyLikelyToKeepUp"
+      ],
+      "failureIds": [
+        "MediaInspectionTests/testFullBufferDoesNotImplyLikelyToKeepUp"
+      ],
+      "replacement": {
+        "target": "Sources/MediaInspection.swift",
+        "source": "NegativeFixtures/FullMeansReady.swift"
+      }
+    },
+    {
+      "id": "inferredlive-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "time"
+      ],
+      "testIds": [
+        "MediaInspectionTests/testIndefiniteDoesNotInventLiveClassification"
+      ],
+      "failureIds": [
+        "MediaInspectionTests/testIndefiniteDoesNotInventLiveClassification"
+      ],
+      "replacement": {
+        "target": "Sources/MediaInspection.swift",
+        "source": "NegativeFixtures/InferredLive.swift"
+      }
+    }
+  ]
+}

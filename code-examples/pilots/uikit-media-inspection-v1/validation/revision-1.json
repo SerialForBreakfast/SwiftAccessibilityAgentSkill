@@ -1,0 +1,221 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "revision": "1",
+  "manifestHash": "a0d226d49bc76dfa0d54390a4e29754aba0294a45e6e3e65d95552e72e2b7766",
+  "redaction": "Private paths and addresses replaced; original native outputs retained privately.",
+  "rows": [
+    {
+      "check": "compile-inspection",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "manifestHash": "a0d226d49bc76dfa0d54390a4e29754aba0294a45e6e3e65d95552e72e2b7766",
+      "recordedAt": "2026-11-06T05:51:00.459Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "9a6a2c3212ea91f7f862d2d051da3b3406a88ccb7f782a8f78ccb1760747f1fd",
+      "nativeLogHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "excerpts": []
+    },
+    {
+      "check": "inspection-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "manifestHash": "a0d226d49bc76dfa0d54390a4e29754aba0294a45e6e3e65d95552e72e2b7766",
+      "recordedAt": "2026-11-06T05:51:05.915Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaInspectionTests/testDiscontinuousRangesPreserveGapsAndHalfOpenEnds",
+          "MediaInspectionTests/testDurationCategoriesRemainDistinct",
+          "MediaInspectionTests/testEmptyNativePlayerCaptureAndControlMetadataRemainUnchanged",
+          "MediaInspectionTests/testFullBufferDoesNotImplyLikelyToKeepUp",
+          "MediaInspectionTests/testIndefiniteDoesNotInventLiveClassification",
+          "MediaInspectionTests/testLoadedRangesDoNotAuthorizeSeeking",
+          "MediaInspectionTests/testUnavailableAndEmptyRangesDiffer",
+          "MediaInspectionTests/testWaitingReasonAndIndependentFlagsArePreserved",
+          "MediaInspectionTests/testWaitingStatusDoesNotBecomePlayingFromRate"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "388d6512b28b435aaf5ae8b066b1476c996a6e1ebd6333b14172c93ef945f0c8",
+      "nativeLogHash": "c1c38aad99c52a9044d54a615e93162fce1a8408597d8bc7a361b10e24c24a60",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.MediaInspectionTests testDiscontinuousRangesPreserveGapsAndHalfOpenEnds]' passed (0.004 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaInspectionTests testDurationCategoriesRemainDistinct]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaInspectionTests testEmptyNativePlayerCaptureAndControlMetadataRemainUnchanged]' passed (0.101 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaInspectionTests testFullBufferDoesNotImplyLikelyToKeepUp]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaInspectionTests testIndefiniteDoesNotInventLiveClassification]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaInspectionTests testLoadedRangesDoNotAuthorizeSeeking]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaInspectionTests testUnavailableAndEmptyRangesDiffer]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaInspectionTests testWaitingReasonAndIndependentFlagsArePreserved]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaInspectionTests testWaitingStatusDoesNotBecomePlayingFromRate]' passed (0.001 seconds)."
+      ]
+    },
+    {
+      "check": "loadedasseekable-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "manifestHash": "a0d226d49bc76dfa0d54390a4e29754aba0294a45e6e3e65d95552e72e2b7766",
+      "recordedAt": "2026-11-06T05:53:09.279Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaInspectionTests/testLoadedRangesDoNotAuthorizeSeeking"
+        ],
+        "failedTestIds": [
+          "MediaInspectionTests/testLoadedRangesDoNotAuthorizeSeeking"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "db84ce6d4baa79dbab53b4d87a8a6bfb14843b8219c23a4a48c274bb9bc54163",
+      "nativeLogHash": "2ccbc41a07402bbc50b7efbf13acc43d0d7efb104609092bbc8711ea0b1c7ea0",
+      "excerpts": [
+        "<private-run-file>:40: error: -[AccessibilityExamplesTests.MediaInspectionTests testLoadedRangesDoNotAuthorizeSeeking] : XCTAssertEqual failed: (\"Optional(true)\") is not equal to (\"Optional(false)\")",
+        "Test Case '-[AccessibilityExamplesTests.MediaInspectionTests testLoadedRangesDoNotAuthorizeSeeking]' failed (1.695 seconds)."
+      ]
+    },
+    {
+      "check": "fullmeansready-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "manifestHash": "a0d226d49bc76dfa0d54390a4e29754aba0294a45e6e3e65d95552e72e2b7766",
+      "recordedAt": "2026-11-06T05:53:34.765Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaInspectionTests/testFullBufferDoesNotImplyLikelyToKeepUp"
+        ],
+        "failedTestIds": [
+          "MediaInspectionTests/testFullBufferDoesNotImplyLikelyToKeepUp"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "bd67e7bb5ea950143c83466c66215dd2ec20c3bac6f8428ff1bb8f9bc728279c",
+      "nativeLogHash": "3da397736f83bcd16284853e3319f972804565fb3242a27aefec493fe471b660",
+      "excerpts": [
+        "<private-run-file>:65: error: -[AccessibilityExamplesTests.MediaInspectionTests testFullBufferDoesNotImplyLikelyToKeepUp] : XCTAssertEqual failed: (\"Optional(true)\") is not equal to (\"Optional(false)\")",
+        "Test Case '-[AccessibilityExamplesTests.MediaInspectionTests testFullBufferDoesNotImplyLikelyToKeepUp]' failed (0.314 seconds)."
+      ]
+    },
+    {
+      "check": "inferredlive-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "manifestHash": "a0d226d49bc76dfa0d54390a4e29754aba0294a45e6e3e65d95552e72e2b7766",
+      "recordedAt": "2026-11-06T05:53:57.982Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaInspectionTests/testIndefiniteDoesNotInventLiveClassification"
+        ],
+        "failedTestIds": [
+          "MediaInspectionTests/testIndefiniteDoesNotInventLiveClassification"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "5f762cbb074d814bd4d63417b3838e45b7528e5c50fa5302879cab4ca2956b99",
+      "nativeLogHash": "0fbf4076a25e0f63d0980d273c441fd1a07af942087f59c099e65a8f24d953c3",
+      "excerpts": [
+        "<private-run-file>:33: error: -[AccessibilityExamplesTests.MediaInspectionTests testIndefiniteDoesNotInventLiveClassification] : XCTAssertEqual failed: (\"live\") is not equal to (\"unknown\")",
+        "<private-run-file>:35: error: -[AccessibilityExamplesTests.MediaInspectionTests testIndefiniteDoesNotInventLiveClassification] : XCTAssertEqual failed: (\"live\") is not equal to (\"onDemand\")",
+        "Test Case '-[AccessibilityExamplesTests.MediaInspectionTests testIndefiniteDoesNotInventLiveClassification]' failed (0.335 seconds)."
+      ]
+    }
+  ]
+}
