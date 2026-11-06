@@ -1,0 +1,10 @@
+[
+  {"id":"FD-P01","prompt":"I'm writing a compile-failure check for a Swift example. It rejects the code as intended, but my check still reports an error because the diagnostic text differs from what I expected. How should I make this check reliable without accepting unrelated compiler failures?"},
+  {"id":"FD-P02","prompt":"I want a unit test showing that a label isn't kept alive after its owner is released. My weak reference is still non-nil immediately afterward. How would you investigate this and write a test that catches real retention?"},
+  {"id":"FD-P03","prompt":"My reusable UIKit cell configures a label for Dynamic Type. In a unit test I change the text-size setting and then configure the cell again, but the font size isn't what I expected. How would you write the configuration and test so they agree with the label's environment?"},
+  {"id":"FD-P04","prompt":"In a unit test, a UIButton's accessibilityTraits doesn't contain .button. Does that mean users won't hear it as a button? What can I conclude from this test, and what should I change, if anything?"},
+  {"id":"FD-P05","prompt":"I'm building a captions menu for an AVPlayer item. Our small video has English and French subtitles, but I get more options than the two tracks I added. How should I inspect those options and choose complete subtitles for the user's language?"},
+  {"id":"FD-P06","prompt":"My XCTest code uses XCTAssertTrue(actual.editCategory === expected.editCategory), and the test target won't compile. Both properties are Strings. How should I test this?"},
+  {"id":"FD-P07","prompt":"I have a UIKit reader where people can jump between marked passages with a custom rotor. What should the search callback do the first time, when moving backward, and at either end? Show how to unit test it while keeping the text usable without the shortcut."},
+  {"id":"FD-P08","prompt":"Our test runner must distinguish an intentionally failing assertion from a test crash or build failure. A test using XCTFail isn't being classified correctly. How should we design that distinction without accidentally counting infrastructure errors as successful negative tests?"}
+]

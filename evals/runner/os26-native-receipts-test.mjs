@@ -15,14 +15,21 @@ function fixture(t) {
   const bytes=fs.readFileSync(path.join(base,'fixtures/manifest.json'));
   const manifest=JSON.parse(bytes),records=[];
   fs.writeFileSync(path.join(root,'fixture-manifest.json'),bytes);
+  const tests=path.join(base,'fixtures/Tests/OS26FixturesTests');
+  fs.cpSync(tests,path.join(root,'workspace/Tests/OS26FixturesTests'),{recursive:true});
+  const testSuiteHash=digest(fs.readdirSync(tests).sort().map(f=>f+'\n'+fs.readFileSync(path.join(tests,f),'utf8')).join('\n'));
+  fs.writeFileSync(path.join(root,'catalog-pins.json'),JSON.stringify({
+    promptHash:digest(fs.readFileSync(path.join(base,'prompts.json'))),
+    acceptanceHash:digest(fs.readFileSync(path.join(base,'acceptance.json')))
+  }));
   fs.writeFileSync(path.join(root,'xcode.txt'),'Xcode synthetic\nBuild version synthetic');
   for(const c of manifest.cases)for(const variant of [c.candidate,...c.mutations]) {
     const id=variant.id??'candidate',stem=c.id+'-'+id;
     const log='SYNTHETIC ONLY '+(c.platform==='iOS'?'iPhoneSimulator':'AppleTVSimulator')+'27.0.sdk';
     const record={case:c.id,variant:id,observed:variant.expected,variantHash:variant.sha256,
-      testSuiteHash:'a'.repeat(64),executedTestIds:[c.testId],
+      testSuiteHash,executedTestIds:[c.testId],exitCode:id==='candidate'?0:65,signal:null,error:null,
       failedTestIds:id==='candidate'?[]:[c.testId],expectedFailureTestIds:id==='candidate'?[]:[c.testId],
-      logHash:digest(log),summary:{totalTestCount:1,skippedTests:0,
+      logHash:digest(log),summary:{totalTestCount:1,skippedTests:0,passedTests:id==='candidate'?1:0,failedTests:id==='candidate'?0:1,
         devicesAndConfigurations:[{device:{osBuildNumber:'synthetic'}}]}};
     fs.writeFileSync(path.join(root,stem+'.log'),log);
     fs.writeFileSync(path.join(root,stem+'-intent.json'),JSON.stringify(record));
@@ -49,4 +56,14 @@ for(const [name,change] of [
   ['changed variant',f=>f.records[1].variantHash='b'.repeat(64)],
   ['changed intent',f=>f.records[1].expectedFailureTestIds=[]],
   ['changed log',f=>fs.appendFileSync(path.join(f.root,'GP26-01-candidate.log'),'changed')],
+  ['changed manifest',f=>fs.appendFileSync(path.join(f.root,'fixture-manifest.json'),' ')],
+  ['changed catalog',f=>fs.writeFileSync(path.join(f.root,'catalog-pins.json'),'{}')],
+  ['missing catalog',f=>fs.unlinkSync(path.join(f.root,'catalog-pins.json'))],
+  ['changed snapshot',f=>fs.appendFileSync(path.join(f.root,'workspace/Tests/OS26FixturesTests/UIKitTests.swift'),'// changed')],
+  ['timeout despite pass label',f=>f.records[0].error='ETIMEDOUT'],
+  ['signal despite pass label',f=>f.records[0].signal='SIGKILL'],
+  ['wrong exit despite pass label',f=>f.records[0].exitCode=65],
+  ['wrong passed count',f=>f.records[0].summary.passedTests=0],
+  ['wrong failed count',f=>f.records[1].summary.failedTests=0],
+  ['wrong failure IDs',f=>f.records[1].failedTestIds=['Other/test']],
 ])test('assembler rejects '+name,t=>{const f=fixture(t);change(f);f.save();assert.throws(()=>assemble(f.root));});

@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "manifestHash": "96bc90d08bcba2bcedf0ef488e0e57dd248673b4290925f41f9df9d54c432e2c",
+  "revision": "1",
+  "redaction": "Object memory addresses removed from excerpts; original logs retained privately.",
+  "rows": [
+    {
+      "check": "compile-lifecycle",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T02:55:58.577Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "445f125b6dbe35214ce945016926d595463edf1055a4b1479dfa2c1daee970dd",
+      "nativeLogHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "excerpts": []
+    },
+    {
+      "check": "lifecycle-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "error",
+      "observed": "not-assessed",
+      "recordedAt": "2026-11-06T02:56:39.653Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "originalRecordHash": "d92511ae72bbbb406e856638e2254e17c7bb04cf4abe7bb7d2cdf4eb16575c93",
+      "nativeLogHash": "92f71ac4418b9e780818020e8b1db74fb56356268a317b3512a47faef674ed4f",
+      "excerpts": []
+    },
+    {
+      "check": "wrongnotification-negative",
+      "status": "not-run",
+      "reason": "Revision1 stopped after unit-target compilation error"
+    },
+    {
+      "check": "unstopped-negative",
+      "status": "not-run",
+      "reason": "Revision1 stopped after unit-target compilation error"
+    },
+    {
+      "check": "staleedit-negative",
+      "status": "not-run",
+      "reason": "Revision1 stopped after unit-target compilation error"
+    }
+  ]
+}

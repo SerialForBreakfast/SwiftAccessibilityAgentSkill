@@ -1,0 +1,159 @@
+{
+  "schema": 1,
+  "id": "uikit-reuse",
+  "revision": "2",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Metadata, direct reuse hooks, injected notification arguments and font configuration only. No UI tests, dequeue delivery or system notification delivery.",
+  "claims": [
+    {
+      "id": "reuse",
+      "url": "https://developer.apple.com/documentation/uikit/uicollectionreusableview/prepareforreuse()",
+      "section": "UICollectionViewCell.h prepareForReuse; UIAccessibility.h attributed labels/traits/actions; UIAccessibilityConstants.h speech-language attribute",
+      "statement": "Explicit cell configuration and reuse reset metadata; generation guards and callback ownership are example policy. Direct reuse hook invocation, not collection dequeue delivery.",
+      "availability": "Deployment26.0; speech attributed labels available iOS11+.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "section",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycontainer",
+      "section": "UIAccessibilityContainer.h elements/type; UIAccessibilityConstants.h header trait",
+      "statement": "Nested semantic-group/list configuration and heading role transitions preserve unrelated traits; no spoken order claim.",
+      "availability": "Container types iOS11+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "typography",
+      "url": "https://developer.apple.com/documentation/uikit/uifont/preferredfont(forTextStyle:compatibleWith:)",
+      "section": "UIFont.h preferredFontForTextStyle; UILabel.h adjustsFontForContentSizeCategory/numberOfLines",
+      "statement": "Reusable font configuration uses the receiving label trait environment; tests override its size category. No rendered layout claim.",
+      "availability": "Deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "notification",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibility/notification",
+      "section": "UIAccessibilityConstants.h layoutChanged/screenChanged optional element argument",
+      "statement": "Build notification kind and target argument and deliver to an injected recording closure; no system notification is posted.",
+      "availability": "Deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/ReuseUIKit.swift",
+      "sha256": "4dfd9e59adafda3abca189c95aa885ce1cd31704e4a25cad61be455539fd1bbb"
+    },
+    {
+      "path": "Tests/ReuseUIKitTests.swift",
+      "sha256": "aad7a318c7c3d70eb110359c99915267652ac83137ca71a55202afedee1e8406"
+    },
+    {
+      "path": "NegativeFixtures/StaleSelection.swift",
+      "sha256": "e44ef552880f5394fc07f6b5204e2f71019d1f776de9f52a9bad95c448328ebb"
+    },
+    {
+      "path": "NegativeFixtures/StaleIdentity.swift",
+      "sha256": "f4f6332b00a9562d258c414490c51f19409f29aa69f6f69881ba73cd7daa4efe"
+    },
+    {
+      "path": "NegativeFixtures/WrongNotification.swift",
+      "sha256": "076ef13869c6d08cc4f5bffcdae8d3e71157a5770604718cc31a52d826d6bc61"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-reuse",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "reuse",
+        "section",
+        "typography",
+        "notification"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "reuse-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "reuse",
+        "section",
+        "typography",
+        "notification"
+      ],
+      "testIds": [
+        "ReuseUIKitTests/testReconfigureReplacesLanguageAndName",
+        "ReuseUIKitTests/testReconfigureClearsSelectedStateWithoutLosingOtherTraits",
+        "ReuseUIKitTests/testRetainedActionRejectsReconfiguredIdentity",
+        "ReuseUIKitTests/testPrepareForReuseClearsMetadataAndCallback",
+        "ReuseUIKitTests/testNewConfigurationAfterReuseUsesNewCallback",
+        "ReuseUIKitTests/testMissingHandlerReturnsFalse",
+        "ReuseUIKitTests/testHeaderRoleTransitionPreservesOtherTraits",
+        "ReuseUIKitTests/testNestedSectionKeepsHeaderAndListSeparate",
+        "ReuseUIKitTests/testTypographyReconfigurationReplacesStyleAndSizePolicy",
+        "ReuseUIKitTests/testLayoutUpdatePreservesTargetIdentity",
+        "ReuseUIKitTests/testScreenUpdateAllowsNoTarget"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "staleselection-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "reuse"
+      ],
+      "testIds": [
+        "ReuseUIKitTests/testReconfigureClearsSelectedStateWithoutLosingOtherTraits"
+      ],
+      "failureIds": [
+        "ReuseUIKitTests/testReconfigureClearsSelectedStateWithoutLosingOtherTraits"
+      ],
+      "replacement": {
+        "target": "Sources/ReuseUIKit.swift",
+        "source": "NegativeFixtures/StaleSelection.swift"
+      }
+    },
+    {
+      "id": "staleidentity-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "reuse"
+      ],
+      "testIds": [
+        "ReuseUIKitTests/testRetainedActionRejectsReconfiguredIdentity"
+      ],
+      "failureIds": [
+        "ReuseUIKitTests/testRetainedActionRejectsReconfiguredIdentity"
+      ],
+      "replacement": {
+        "target": "Sources/ReuseUIKit.swift",
+        "source": "NegativeFixtures/StaleIdentity.swift"
+      }
+    },
+    {
+      "id": "wrongnotification-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "notification"
+      ],
+      "testIds": [
+        "ReuseUIKitTests/testLayoutUpdatePreservesTargetIdentity"
+      ],
+      "failureIds": [
+        "ReuseUIKitTests/testLayoutUpdatePreservesTargetIdentity"
+      ],
+      "replacement": {
+        "target": "Sources/ReuseUIKit.swift",
+        "source": "NegativeFixtures/WrongNotification.swift"
+      }
+    }
+  ]
+}

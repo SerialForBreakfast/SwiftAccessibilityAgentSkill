@@ -1,0 +1,429 @@
+{
+  "schema": 1,
+  "kind": "sanitized-pilot-evidence-not-anchor-approval",
+  "manifestHash": "609af86e4ee70b60c177ea0b3b9901557b83db7117d3fb6e72ab618dbb89199c",
+  "manifestRevision": "2",
+  "anchorPromoted": false,
+  "rows": [
+    {
+      "check": "compile-pilot",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T00:52:58.495Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "bd967564bb828d1dd1a04d649b6fda14593869b8fd3511e95d4981eafb5dbf03",
+      "nativeLogHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "adapterHashes": [
+        {
+          "path": "adapter-native.mjs",
+          "sha256": "a5ef80406991398af7a98b7046b53cf51f1f6d54d9c48503fd1b64aa01067f75"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "8b52c9a1d527e53f7427096846f5c7e0335230728b96dbac8de7d1128b69e09a"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "ee5e5d98808c27244afdfc83d346cc9a26557b903a53d497e4793152645f0ba7"
+        }
+      ],
+      "excerpts": []
+    },
+    {
+      "check": "row-actions-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T00:53:16.905Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "UIKitTests/testSettingsCallbacksAndExposedControls"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "0e861ed0347e547e6233f83e06bce6cb3ae88e70b6720c2d6f650f50131d5ac7",
+      "nativeLogHash": "3014c20b98130aa590cbe2186c485088acde6228a85a10d69ba3e3b0ce15ea5f",
+      "adapterHashes": [
+        {
+          "path": "adapter-native.mjs",
+          "sha256": "a5ef80406991398af7a98b7046b53cf51f1f6d54d9c48503fd1b64aa01067f75"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "8b52c9a1d527e53f7427096846f5c7e0335230728b96dbac8de7d1128b69e09a"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "ee5e5d98808c27244afdfc83d346cc9a26557b903a53d497e4793152645f0ba7"
+        }
+      ],
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.UIKitTests testSettingsCallbacksAndExposedControls]' started.",
+        "Test Case '-[AccessibilityExamplesTests.UIKitTests testSettingsCallbacksAndExposedControls]' passed (0.712 seconds)."
+      ]
+    },
+    {
+      "check": "row-actions-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T00:54:07.172Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "UIKitTests/testSettingsCallbacksAndExposedControls"
+        ],
+        "failedTestIds": [
+          "UIKitTests/testSettingsCallbacksAndExposedControls"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "f00f701c1f22665cc834423abd2b0434a2e35fa8cef2ca4b7770584b0164fd6a",
+      "nativeLogHash": "5cd9dba61a6925ab3f634683df7fc8ce8099b119c3ac4acb43d48dbcd1c94b9c",
+      "adapterHashes": [
+        {
+          "path": "adapter-native.mjs",
+          "sha256": "a5ef80406991398af7a98b7046b53cf51f1f6d54d9c48503fd1b64aa01067f75"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "8b52c9a1d527e53f7427096846f5c7e0335230728b96dbac8de7d1128b69e09a"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "ee5e5d98808c27244afdfc83d346cc9a26557b903a53d497e4793152645f0ba7"
+        }
+      ],
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.UIKitTests testSettingsCallbacksAndExposedControls]' started.",
+        "error: -[AccessibilityExamplesTests.UIKitTests testSettingsCallbacksAndExposedControls] : XCTAssertFalse failed",
+        "Test Case '-[AccessibilityExamplesTests.UIKitTests testSettingsCallbacksAndExposedControls]' failed (4.048 seconds)."
+      ]
+    },
+    {
+      "check": "cell-state-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T00:55:11.237Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "UIKitTests/testReconfigurationWithoutPrepareForReuse"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "7ea3a3bc52af1a807b336353c8d4e47d45495473432a14f124f5e1b3cd1b10c8",
+      "nativeLogHash": "2e2d5f3e2a852d7098f5e1d5a56399f9efaf005e187db45be8bcca8d0f7dfe6e",
+      "adapterHashes": [
+        {
+          "path": "adapter-native.mjs",
+          "sha256": "a5ef80406991398af7a98b7046b53cf51f1f6d54d9c48503fd1b64aa01067f75"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "8b52c9a1d527e53f7427096846f5c7e0335230728b96dbac8de7d1128b69e09a"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "ee5e5d98808c27244afdfc83d346cc9a26557b903a53d497e4793152645f0ba7"
+        }
+      ],
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.UIKitTests testReconfigurationWithoutPrepareForReuse]' started.",
+        "Test Case '-[AccessibilityExamplesTests.UIKitTests testReconfigurationWithoutPrepareForReuse]' passed (0.182 seconds)."
+      ]
+    },
+    {
+      "check": "cell-state-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T00:55:58.032Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "UIKitTests/testReconfigurationWithoutPrepareForReuse"
+        ],
+        "failedTestIds": [
+          "UIKitTests/testReconfigurationWithoutPrepareForReuse"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "3e18a8ebdaf001fba4b291f1987bd6c5a66b72a62965a87e097b31e30c8919a4",
+      "nativeLogHash": "9d3c3f3fb973e5342977ba8ed5b42d6ae1b87db3eda6267cc53628c729b3dc72",
+      "adapterHashes": [
+        {
+          "path": "adapter-native.mjs",
+          "sha256": "a5ef80406991398af7a98b7046b53cf51f1f6d54d9c48503fd1b64aa01067f75"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "8b52c9a1d527e53f7427096846f5c7e0335230728b96dbac8de7d1128b69e09a"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "ee5e5d98808c27244afdfc83d346cc9a26557b903a53d497e4793152645f0ba7"
+        }
+      ],
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.UIKitTests testReconfigurationWithoutPrepareForReuse]' started.",
+        "error: -[AccessibilityExamplesTests.UIKitTests testReconfigurationWithoutPrepareForReuse] : XCTAssertEqual failed: (\"Optional(\"Shipped\")\") is not equal to (\"Optional(\"Processing\")\")",
+        "error: -[AccessibilityExamplesTests.UIKitTests testReconfigurationWithoutPrepareForReuse] : XCTAssertEqual failed: (\"Optional(\"Shipped\")\") is not equal to (\"Optional(\"Processing\")\")",
+        "Test Case '-[AccessibilityExamplesTests.UIKitTests testReconfigurationWithoutPrepareForReuse]' failed (3.781 seconds)."
+      ]
+    },
+    {
+      "check": "text-scaling-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T00:56:38.881Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "UIKitTests/testCheckoutCallbackAndResizePrerequisites"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "1f557cb89ff226fa4572044976dbabc83c0f861a3ff427eac1ec6e509c7502ac",
+      "nativeLogHash": "e1407d45eb06802ec0b77ca0580776ebea07b32f5f5532f74486f23c748f2c83",
+      "adapterHashes": [
+        {
+          "path": "adapter-native.mjs",
+          "sha256": "55ca6a72cb03657ed942aa09fe89a4a391cffce454dad2f3a5f4f2cbbf758d25"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "ee5e5d98808c27244afdfc83d346cc9a26557b903a53d497e4793152645f0ba7"
+        }
+      ],
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.UIKitTests testCheckoutCallbackAndResizePrerequisites]' started.",
+        "Test Case '-[AccessibilityExamplesTests.UIKitTests testCheckoutCallbackAndResizePrerequisites]' passed (0.145 seconds)."
+      ]
+    },
+    {
+      "check": "text-scaling-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T00:57:14.611Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "UIKitTests/testCheckoutCallbackAndResizePrerequisites"
+        ],
+        "failedTestIds": [
+          "UIKitTests/testCheckoutCallbackAndResizePrerequisites"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "a7548ba82d186d98c371062d4eecfccf4d3a7adba9969eb20bb14f8f8e2748b7",
+      "nativeLogHash": "844fac14e0285794eeb712f86ff6ebe9ed9013d3c3c46da27516242b6e40102e",
+      "adapterHashes": [
+        {
+          "path": "adapter-native.mjs",
+          "sha256": "55ca6a72cb03657ed942aa09fe89a4a391cffce454dad2f3a5f4f2cbbf758d25"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "ee5e5d98808c27244afdfc83d346cc9a26557b903a53d497e4793152645f0ba7"
+        }
+      ],
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.UIKitTests testCheckoutCallbackAndResizePrerequisites]' started.",
+        "error: -[AccessibilityExamplesTests.UIKitTests testCheckoutCallbackAndResizePrerequisites] : XCTAssertTrue failed",
+        "Test Case '-[AccessibilityExamplesTests.UIKitTests testCheckoutCallbackAndResizePrerequisites]' failed (2.193 seconds)."
+      ]
+    },
+    {
+      "check": "compile-label-type-negative",
+      "lane": "compile",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T00:53:06.424Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 1,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "failed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": [
+          "label-type-mismatch"
+        ]
+      },
+      "originalRecordHash": "33e2bf6b508a94de97b9656388a770dba0cab766cb4f2f23ff128f8f0886c2a2",
+      "nativeLogHash": "243301369f6d2afd86868f14ab56ea31afb0f78effdb2878b93a4c19f0ff6280",
+      "adapterHashes": [
+        {
+          "path": "adapter-native.mjs",
+          "sha256": "a5ef80406991398af7a98b7046b53cf51f1f6d54d9c48503fd1b64aa01067f75"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "8b52c9a1d527e53f7427096846f5c7e0335230728b96dbac8de7d1128b69e09a"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "ee5e5d98808c27244afdfc83d346cc9a26557b903a53d497e4793152645f0ba7"
+        }
+      ],
+      "excerpts": [
+        "error: cannot assign value of type 'Int' to type 'String'"
+      ]
+    }
+  ]
+}

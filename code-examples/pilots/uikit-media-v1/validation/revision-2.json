@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "revision": "2",
+  "manifestHash": "88bed6eb69a4b7cda99a2746da36ac0f120a629a8b31d85b591405cf5bfc768c",
+  "redaction": "Private paths excluded and memory addresses removed; raw evidence retained privately.",
+  "rows": [
+    {
+      "check": "compile-media",
+      "status": "not-run",
+      "reason": "Diagnostic revision scheduled unit suite only"
+    },
+    {
+      "check": "media-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "failed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T02:47:58.947Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaUIKitTests/testAlternateAudioDoesNotReplaceSubtitleSelection",
+          "MediaUIKitTests/testMissingSubtitleLanguagePreservesSelection",
+          "MediaUIKitTests/testNativeControllerPreservesControlsAndAutomaticSelection",
+          "MediaUIKitTests/testPlayPauseControlMetadataTransitions",
+          "MediaUIKitTests/testSubtitleOptionsExposeBothAuthoredLanguages",
+          "MediaUIKitTests/testSubtitleSelectionAndOffState",
+          "MediaUIKitTests/testTimelineValueAndBounds",
+          "MediaUIKitTests/testUnavailableTimelineResetsPreviousState"
+        ],
+        "failedTestIds": [
+          "MediaUIKitTests/testSubtitleOptionsExposeBothAuthoredLanguages"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "0b468cc3e2deafa04e8366eb66c31a45bdcfb9bb3c2405ddf2ad2dbb8a08385c",
+      "nativeLogHash": "398effdf9a7ec9f86c25f369a57834ef01c9b0f69249ee516e2942a34dcb3eb1",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testAlternateAudioDoesNotReplaceSubtitleSelection]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testAlternateAudioDoesNotReplaceSubtitleSelection]' passed (1.889 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testMissingSubtitleLanguagePreservesSelection]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testMissingSubtitleLanguagePreservesSelection]' passed (0.012 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testNativeControllerPreservesControlsAndAutomaticSelection]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testNativeControllerPreservesControlsAndAutomaticSelection]' passed (0.526 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testPlayPauseControlMetadataTransitions]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testPlayPauseControlMetadataTransitions]' passed (0.027 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleOptionsExposeBothAuthoredLanguages]' started.",
+        "MEDIA_OPTION name=English language=en forced=false type=sbtl",
+        "MEDIA_OPTION name=English Forced language=en forced=true type=sbtl",
+        "MEDIA_OPTION name=Spanish language=es forced=false type=sbtl",
+        "MEDIA_OPTION name=Spanish Forced language=es forced=true type=sbtl",
+        "error: -[AccessibilityExamplesTests.MediaUIKitTests testSubtitleOptionsExposeBothAuthoredLanguages] : XCTAssertEqual failed: (\"4\") is not equal to (\"2\")",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleOptionsExposeBothAuthoredLanguages]' failed (1.416 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleSelectionAndOffState]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleSelectionAndOffState]' passed (0.021 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testTimelineValueAndBounds]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testTimelineValueAndBounds]' passed (0.057 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState]' passed (0.002 seconds)."
+      ]
+    },
+    {
+      "check": "hiddencontrols-negative",
+      "status": "not-run",
+      "reason": "Diagnostic revision scheduled unit suite only"
+    },
+    {
+      "check": "wronglanguage-negative",
+      "status": "not-run",
+      "reason": "Diagnostic revision scheduled unit suite only"
+    },
+    {
+      "check": "staleposition-negative",
+      "status": "not-run",
+      "reason": "Diagnostic revision scheduled unit suite only"
+    }
+  ]
+}

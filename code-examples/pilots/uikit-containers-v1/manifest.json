@@ -1,0 +1,151 @@
+{
+  "schema": 1,
+  "id": "uikit-containers",
+  "revision": "2",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Direct protocol, hook and configuration unit assertions. No UI automation, assistive-input delivery or rendered geometry claim.",
+  "claims": [
+    {
+      "id": "data-table",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycontainerdatatable",
+      "section": "UIAccessibilityContainer.h data-table/cell protocol; container type and elements",
+      "statement": "Public row/column ranges, counts, cell/header lookup and data-table type. Sparse insertion, overlap rejection and ordering are example policy.",
+      "availability": "Data-table protocol iOS11+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "escape",
+      "url": "https://developer.apple.com/documentation/objectivec/nsobject-swift.class/accessibilityperformescape()",
+      "section": "UIAccessibility.h escape return value and modal/hidden properties; UIControl.h direct dispatch",
+      "statement": "Direct escape hook returns success/failure; example resets overlay modal/hidden configuration and shares dismissal with ordinary button.",
+      "availability": "Escape iOS5+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "activation",
+      "url": "https://developer.apple.com/documentation/objectivec/nsobject-swift.class/accessibilityactivate()",
+      "section": "UIAccessibility.h activation return contract; UIControl.h enabled",
+      "statement": "Direct activation hook propagates callback result; example rejects disabled activation.",
+      "availability": "Activation iOS7+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/ContainerUIKit.swift",
+      "sha256": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3"
+    },
+    {
+      "path": "Tests/ContainerUIKitTests.swift",
+      "sha256": "ab22df52dd5b7b048155718b593b2089cdf005de35266d2015481ae5cb629982"
+    },
+    {
+      "path": "NegativeFixtures/WrongSpan.swift",
+      "sha256": "2ca58c5510c80b6d4198e62734f7f46395835bd4e12a7b484aede0d7de58c75d"
+    },
+    {
+      "path": "NegativeFixtures/StaleModal.swift",
+      "sha256": "38c31423f800e25c73606d78c12bf131c69c8e1aaa49d8f57e6f33e156b55133"
+    },
+    {
+      "path": "NegativeFixtures/IgnoredEnabled.swift",
+      "sha256": "f42f4e4003d6cd6aec56cb450772028fec8c886db42286356153cd66ef5312eb"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-containers",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "data-table",
+        "escape",
+        "activation"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "containers-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "data-table",
+        "escape",
+        "activation"
+      ],
+      "testIds": [
+        "ContainerUIKitTests/testEmptyGridDeclaresContainerAndDimensions",
+        "ContainerUIKitTests/testSpanningCellResolvesEveryCoveredCoordinate",
+        "ContainerUIKitTests/testInvalidCoordinatesReturnNil",
+        "ContainerUIKitTests/testInvalidRangesLeaveContainerUnchanged",
+        "ContainerUIKitTests/testOverlapRejectedWithoutReplacingExistingCell",
+        "ContainerUIKitTests/testHeaderMetadataAndVirtualContainerIdentity",
+        "ContainerUIKitTests/testRemovingVirtualElementsClearsBothLookupPaths",
+        "ContainerUIKitTests/testEscapeDismissesAndClearsModalState",
+        "ContainerUIKitTests/testRejectedEscapePreservesOpenState",
+        "ContainerUIKitTests/testOrdinaryCloseButtonUsesSameDismissal",
+        "ContainerUIKitTests/testPanelCanReopenAfterEscape",
+        "ContainerUIKitTests/testActivationReturnsHandlerSuccessAndFailure",
+        "ContainerUIKitTests/testDisabledActivationDoesNotInvokeHandler"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "wrongspan-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "data-table"
+      ],
+      "testIds": [
+        "ContainerUIKitTests/testSpanningCellResolvesEveryCoveredCoordinate"
+      ],
+      "failureIds": [
+        "ContainerUIKitTests/testSpanningCellResolvesEveryCoveredCoordinate"
+      ],
+      "replacement": {
+        "target": "Sources/ContainerUIKit.swift",
+        "source": "NegativeFixtures/WrongSpan.swift"
+      }
+    },
+    {
+      "id": "stalemodal-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "escape"
+      ],
+      "testIds": [
+        "ContainerUIKitTests/testEscapeDismissesAndClearsModalState"
+      ],
+      "failureIds": [
+        "ContainerUIKitTests/testEscapeDismissesAndClearsModalState"
+      ],
+      "replacement": {
+        "target": "Sources/ContainerUIKit.swift",
+        "source": "NegativeFixtures/StaleModal.swift"
+      }
+    },
+    {
+      "id": "ignoredenabled-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "activation"
+      ],
+      "testIds": [
+        "ContainerUIKitTests/testDisabledActivationDoesNotInvokeHandler"
+      ],
+      "failureIds": [
+        "ContainerUIKitTests/testDisabledActivationDoesNotInvokeHandler"
+      ],
+      "replacement": {
+        "target": "Sources/ContainerUIKit.swift",
+        "source": "NegativeFixtures/IgnoredEnabled.swift"
+      }
+    }
+  ]
+}

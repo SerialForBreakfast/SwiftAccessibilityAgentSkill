@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "id": "uikit-preferences",
+  "revision": "1",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Configuration and app-policy unit tests only. No UI automation or device-preference mutation.",
+  "claims": [
+    {
+      "id": "motion-policy",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibility/isreducemotionenabled",
+      "section": "UIAccessibility.h Reduce Motion declaration",
+      "statement": "Read the public preference; immediate versus 0.25 second duration is example policy. No animation delivery claim.",
+      "availability": "Preference API iOS8+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "semantic-color",
+      "url": "https://developer.apple.com/documentation/uikit/uicolor/resolvedcolor(with:)",
+      "section": "UIColor.h resolvedColorWithTraitCollection:",
+      "statement": "Resolve semantic colors with explicit traits and refresh concrete layer color. No rendered contrast-ratio claim.",
+      "availability": "Resolution API iOS13+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "form-state",
+      "url": "https://developer.apple.com/documentation/uikit/accessibility-for-uikit",
+      "section": "UIAccessibility.h label/hint; UIControl.h enabled; UILabel.h text",
+      "statement": "Example policy uses visible text plus accessible naming and resets error hints when valid. Assertions inspect configuration only.",
+      "availability": "Deployment26.0; no introduction inference.",
+      "reviewedOn": "2026-11-05"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/PreferenceUIKit.swift",
+      "sha256": "24974dbbfb848289218cf3cbe74cba0a9f62c0625864a5d4608c000436d8cf02"
+    },
+    {
+      "path": "Tests/PreferenceUIKitTests.swift",
+      "sha256": "5a6358da6a53fb898dbf59bab3b5ecd7846b4646ac54c45efe7abafae9a38e45"
+    },
+    {
+      "path": "NegativeFixtures/IgnoredMotion.swift",
+      "sha256": "491b945c8807cca6e8601fcf50f8c7b7a9e4812daf321840b1e5f3d61834c031"
+    },
+    {
+      "path": "NegativeFixtures/StaleHint.swift",
+      "sha256": "dbe02846a24a5123da095ca19837febca5b298ad5f6cc250cbe82db0dbd21be7"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-preferences",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "motion-policy",
+        "semantic-color",
+        "form-state"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "preferences-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "motion-policy",
+        "semantic-color",
+        "form-state"
+      ],
+      "testIds": [
+        "PreferenceUIKitTests/testReducedMotionUsesImmediateTransition",
+        "PreferenceUIKitTests/testOrdinaryMotionUsesBoundedDuration",
+        "PreferenceUIKitTests/testLivePreferenceMatchesPolicy",
+        "PreferenceUIKitTests/testErrorHasTextCueAndAccessibleName",
+        "PreferenceUIKitTests/testRecoveryRemovesStaleErrorAndHint",
+        "PreferenceUIKitTests/testReplacementErrorReplacesAllMetadata",
+        "PreferenceUIKitTests/testSemanticColorsResolveForExplicitAppearanceAndContrast",
+        "PreferenceUIKitTests/testBorderReresolvesWhenAppearanceChanges"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "ignoredmotion-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "motion-policy"
+      ],
+      "testIds": [
+        "PreferenceUIKitTests/testReducedMotionUsesImmediateTransition"
+      ],
+      "failureIds": [
+        "PreferenceUIKitTests/testReducedMotionUsesImmediateTransition"
+      ],
+      "replacement": {
+        "target": "Sources/PreferenceUIKit.swift",
+        "source": "NegativeFixtures/IgnoredMotion.swift"
+      }
+    },
+    {
+      "id": "stalehint-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "form-state"
+      ],
+      "testIds": [
+        "PreferenceUIKitTests/testRecoveryRemovesStaleErrorAndHint"
+      ],
+      "failureIds": [
+        "PreferenceUIKitTests/testRecoveryRemovesStaleErrorAndHint"
+      ],
+      "replacement": {
+        "target": "Sources/PreferenceUIKit.swift",
+        "source": "NegativeFixtures/StaleHint.swift"
+      }
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "schema": 1,
+  "id": "uikit-media",
+  "revision": "2",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Unit-only media selection/configuration with embedded synthetic local MP4; no playback, rendering, networking or UI automation.",
+  "claims": [
+    {
+      "id": "native-controls",
+      "url": "https://developer.apple.com/documentation/avkit/avplayerviewcontroller/showsplaybackcontrols",
+      "section": "AVPlayerViewController.h showsPlaybackControls/requiresLinearPlayback; AVPlayer.h appliesMediaSelectionCriteriaAutomatically",
+      "statement": "Configure native playback controls before presentation, retain automatic media criteria and do not start playback. Properties only; no displayed UI claim.",
+      "availability": "Deployment26.0; requiresLinearPlayback iOS11+.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "media-selection",
+      "url": "https://developer.apple.com/documentation/avfoundation/selecting-subtitles-and-alternative-audio-tracks",
+      "section": "AVAsset.h loadMediaSelectionGroup; AVMediaSelectionGroup.h options/locale; AVPlayerItem.h select; AVMediaSelection.h selectedMediaOption",
+      "statement": "Load actual local subtitle/audio groups, inspect authored options, select a language or turn subtitles off. No caption rendering or audio-description quality claim.",
+      "availability": "Async group loader iOS15+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "control-metadata",
+      "url": "https://developer.apple.com/documentation/uikit/accessibility-for-uikit",
+      "section": "UIAccessibility.h label/value; UIButton.h titles; UISlider.h value/bounds; UIControl.h enabled",
+      "statement": "Example control state exposes playback labels and bounded time values, resets unavailable duration. English fixture formatting is app policy, not a localization prescription.",
+      "availability": "Deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/MediaUIKit.swift",
+      "sha256": "d68cf534b44d7b3ec9a7d61efa098b80cef7c4cc03fedbc5d4a386f926e7bf16"
+    },
+    {
+      "path": "Tests/MediaUIKitTests.swift",
+      "sha256": "1190b954d230ff50fc48e1953603204c8c51c0229e14294075a1de377e4ee6c1"
+    },
+    {
+      "path": "Tests/MediaFixture.swift",
+      "sha256": "1dfada460280199074c7424647e29d1f72d391f4c2fac15f06b0e0436a8f5e08"
+    },
+    {
+      "path": "NegativeFixtures/HiddenControls.swift",
+      "sha256": "f1428f802b1af22f44275f550b653ddec3d1a1945527203824a5c20dcad35578"
+    },
+    {
+      "path": "NegativeFixtures/WrongLanguage.swift",
+      "sha256": "129b7c2e4d72102da335897e7ab07f2ea3b063a14fbed2345acbfc924ee8aee4"
+    },
+    {
+      "path": "NegativeFixtures/StalePosition.swift",
+      "sha256": "4391af4107020400d57eb3466733d06648c03c04cf97acc948018a4cc942647c"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-media",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "native-controls",
+        "media-selection",
+        "control-metadata"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "media-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "native-controls",
+        "media-selection",
+        "control-metadata"
+      ],
+      "testIds": [
+        "MediaUIKitTests/testNativeControllerPreservesControlsAndAutomaticSelection",
+        "MediaUIKitTests/testPlayPauseControlMetadataTransitions",
+        "MediaUIKitTests/testTimelineValueAndBounds",
+        "MediaUIKitTests/testUnavailableTimelineResetsPreviousState",
+        "MediaUIKitTests/testSubtitleOptionsExposeBothAuthoredLanguages",
+        "MediaUIKitTests/testSubtitleSelectionAndOffState",
+        "MediaUIKitTests/testMissingSubtitleLanguagePreservesSelection",
+        "MediaUIKitTests/testAlternateAudioDoesNotReplaceSubtitleSelection"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "hiddencontrols-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "native-controls"
+      ],
+      "testIds": [
+        "MediaUIKitTests/testNativeControllerPreservesControlsAndAutomaticSelection"
+      ],
+      "failureIds": [
+        "MediaUIKitTests/testNativeControllerPreservesControlsAndAutomaticSelection"
+      ],
+      "replacement": {
+        "target": "Sources/MediaUIKit.swift",
+        "source": "NegativeFixtures/HiddenControls.swift"
+      }
+    },
+    {
+      "id": "wronglanguage-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "media-selection"
+      ],
+      "testIds": [
+        "MediaUIKitTests/testSubtitleSelectionAndOffState"
+      ],
+      "failureIds": [
+        "MediaUIKitTests/testSubtitleSelectionAndOffState"
+      ],
+      "replacement": {
+        "target": "Sources/MediaUIKit.swift",
+        "source": "NegativeFixtures/WrongLanguage.swift"
+      }
+    },
+    {
+      "id": "staleposition-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "control-metadata"
+      ],
+      "testIds": [
+        "MediaUIKitTests/testUnavailableTimelineResetsPreviousState"
+      ],
+      "failureIds": [
+        "MediaUIKitTests/testUnavailableTimelineResetsPreviousState"
+      ],
+      "replacement": {
+        "target": "Sources/MediaUIKit.swift",
+        "source": "NegativeFixtures/StalePosition.swift"
+      }
+    }
+  ]
+}

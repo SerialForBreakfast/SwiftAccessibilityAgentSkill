@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "kind": "synthetic-media",
+  "generator": "FFmpeg8.0.1, installed locally; no installation required",
+  "sha256": "eeb70b420ebc03ae18f82b7d799f1be4436a5abc2ffa56cddbfc381207406ec0",
+  "bytes": 3941,
+  "content": "One second of black16x16 video, silent English/Spanish audio and two synthetic English/Spanish subtitle tracks. No real user media.",
+  "inputs": {
+    "en": "1\n00:00:00,000 --> 00:00:01,000\nSynthetic English caption\n",
+    "es": "1\n00:00:00,000 --> 00:00:01,000\nSubtitulo sintetico\n"
+  },
+  "command": "ffmpeg -nostdin -v error -f lavfi -i color=c=black:s=16x16:r=1:d=1 -f lavfi -i anullsrc=r=8000:cl=mono -i en.srt -i es.srt -map 0:v -map 1:a -map 1:a -map 2:s -map 3:s -t 1 -c:v libx264 -threads 1 -c:a aac -c:s mov_text -metadata:s:a:0 language=eng -metadata:s:a:1 language=spa -metadata:s:s:0 language=eng -metadata:s:s:1 language=spa -disposition:s:0 0 -disposition:s:1 0 -movflags +faststart -fflags +bitexact captions.mp4",
+  "note": "Tests use pinned embedded bytes; byte-identical regeneration across encoder builds is not claimed. Alternate audio is silent and is not an audio-description fixture."
+}

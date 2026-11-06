@@ -1,0 +1,210 @@
+{
+  "schema": 1,
+  "id": "uikit-semantics",
+  "revision": "1",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Public API getters/configuration and direct callback execution only; application policies identified separately. No assistive-technology navigation, interaction delivery or visual-layout assertions.",
+  "claims": [
+    {
+      "id": "semantic-properties",
+      "url": "https://developer.apple.com/documentation/uikit/accessibility-for-uikit",
+      "section": "UIAccessibility.h: label/hint/value and attributed counterparts",
+      "statement": "Plain and attributed semantic property access; example reconfiguration clears stale values.",
+      "availability": "iOS11+ for attributed semantics; iOS13+ for user-input labels.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "traits",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitytraits",
+      "section": "UIAccessibility.h: accessibilityTraits; UIAccessibilityConstants.h",
+      "statement": "Traits compose; the example preserves unrelated traits while changing selected state.",
+      "availability": "Pilot deployment26.0; individual trait introduction is not inferred.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "containers",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilityelement",
+      "section": "UIAccessibilityContainer.h and UIAccessibilityElement.h",
+      "statement": "Explicit container elements and virtual element configuration remain inspectable.",
+      "availability": "Pilot deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "modal",
+      "url": "https://developer.apple.com/documentation/uikit/accessibility-for-uikit",
+      "section": "UIAccessibility.h: accessibilityViewIsModal and accessibilityElementsHidden",
+      "statement": "Modal and descendant-hiding flags are distinct configuration; tests do not assert navigation.",
+      "availability": "iOS5+ declarations in SDK27.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "adjustable",
+      "url": "https://developer.apple.com/documentation/uikit/accessibility-for-uikit",
+      "section": "UIAccessibility.h: accessibilityIncrement/accessibilityDecrement",
+      "statement": "Public adjustable hooks drive example state/value; bounds are application policy.",
+      "availability": "Pilot deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "actions",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycustomaction",
+      "section": "Overview; actionHandler; UIAccessibilityCustomAction.h",
+      "statement": "Named custom actions expose a Bool handler; the example retains ordinary button activation.",
+      "availability": "Closure initializer iOS13+ in SDK27.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "rotors",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycustomrotor",
+      "section": "Overview; itemSearchBlock; UIAccessibilityCustomRotor.h",
+      "statement": "Rotor search callback returns next/previous item results. Non-wrapping and unknown-anchor handling are example policies.",
+      "availability": "Custom rotors iOS10+; no nil-current-item case covered yet.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "font-metrics",
+      "url": "https://developer.apple.com/documentation/uikit/uifontmetrics/scaledfont(for:compatiblewith:)",
+      "section": "Parameters and return value; UIFontMetrics.h",
+      "statement": "Explicit trait collections select font metrics; maximum size constrains the returned font.",
+      "availability": "UIFontMetrics iOS11+; pilot deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/UIKitSemantics.swift",
+      "sha256": "e946914c1988cf8f3596965e85a20f0743f06a45fc02b502d658ba34bd361769"
+    },
+    {
+      "path": "Tests/UIKitSemanticsTests.swift",
+      "sha256": "c0d1964dc7427a0276b98e333b08319abbae4d8ca82c796df0b050b6ce47a538"
+    },
+    {
+      "path": "NegativeFixtures/DroppedAction.swift",
+      "sha256": "b8efd8fa176a89c264391b8b4b07b6f0ebbec6e22fe281bd0265cf0b8ceedf7b"
+    },
+    {
+      "path": "NegativeFixtures/LostTraits.swift",
+      "sha256": "102b8016a2580e5f6cfaa32e8d304cb0c76a1e55554fa68569ab4b5c3641a1f4"
+    },
+    {
+      "path": "NegativeFixtures/WrongRotorDirection.swift",
+      "sha256": "8fb8b54d442e45a0cefaefd1f05ba1256437336ebac3f690b86211f0f53be219"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-semantics",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "semantic-properties",
+        "traits",
+        "containers",
+        "modal",
+        "adjustable",
+        "actions",
+        "rotors",
+        "font-metrics"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "semantics-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "semantic-properties",
+        "traits",
+        "containers",
+        "modal",
+        "adjustable",
+        "actions",
+        "rotors",
+        "font-metrics"
+      ],
+      "testIds": [
+        "UIKitSemanticsTests/testLabelValueAndHintAreSeparate",
+        "UIKitSemanticsTests/testReconfigurationClearsStaleHintAndValue",
+        "UIKitSemanticsTests/testSelectedTraitPreservesOtherTraits",
+        "UIKitSemanticsTests/testAttributedLabelAndPlainLabelStayLinked",
+        "UIKitSemanticsTests/testAttributedHintAndValueStayLinked",
+        "UIKitSemanticsTests/testUserInputLabelsKeepPrimaryNameFirst",
+        "UIKitSemanticsTests/testContainerRetainsExplicitOrderAndExposedChildren",
+        "UIKitSemanticsTests/testEmptyContainerHasEmptyElementList",
+        "UIKitSemanticsTests/testVirtualElementRetainsContainerAndConfiguration",
+        "UIKitSemanticsTests/testModalConfigurationDoesNotHideOwnChildren",
+        "UIKitSemanticsTests/testAdjustableHooksSynchronizeValue",
+        "UIKitSemanticsTests/testAdjustableBoundsDoNotOverflow",
+        "UIKitSemanticsTests/testCustomActionHasNameAndInvokesOneCallback",
+        "UIKitSemanticsTests/testOrdinaryButtonRemainsAnIndependentPath",
+        "UIKitSemanticsTests/testCustomActionDoesNotRetainOwner",
+        "UIKitSemanticsTests/testRotorNextAndPreviousReturnCorrectIdentity",
+        "UIKitSemanticsTests/testRotorBoundaryPolicyDoesNotWrap",
+        "UIKitSemanticsTests/testRotorUnknownAnchorAndEmptyResults",
+        "UIKitSemanticsTests/testRotorKeepsOrdinaryElementsAndHeadingTraits",
+        "UIKitSemanticsTests/testRotorDoesNotRetainOwner",
+        "UIKitSemanticsTests/testPreferredFontRespondsToExplicitContentSizeTraits",
+        "UIKitSemanticsTests/testCustomFontMetricsScaleAndRespectMaximum"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "droppedaction-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions"
+      ],
+      "testIds": [
+        "UIKitSemanticsTests/testCustomActionHasNameAndInvokesOneCallback"
+      ],
+      "failureIds": [
+        "UIKitSemanticsTests/testCustomActionHasNameAndInvokesOneCallback"
+      ],
+      "replacement": {
+        "target": "Sources/UIKitSemantics.swift",
+        "source": "NegativeFixtures/DroppedAction.swift"
+      }
+    },
+    {
+      "id": "wrongrotordirection-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "rotors"
+      ],
+      "testIds": [
+        "UIKitSemanticsTests/testRotorNextAndPreviousReturnCorrectIdentity"
+      ],
+      "failureIds": [
+        "UIKitSemanticsTests/testRotorNextAndPreviousReturnCorrectIdentity"
+      ],
+      "replacement": {
+        "target": "Sources/UIKitSemantics.swift",
+        "source": "NegativeFixtures/WrongRotorDirection.swift"
+      }
+    },
+    {
+      "id": "losttraits-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "traits"
+      ],
+      "testIds": [
+        "UIKitSemanticsTests/testSelectedTraitPreservesOtherTraits"
+      ],
+      "failureIds": [
+        "UIKitSemanticsTests/testSelectedTraitPreservesOtherTraits"
+      ],
+      "replacement": {
+        "target": "Sources/UIKitSemantics.swift",
+        "source": "NegativeFixtures/LostTraits.swift"
+      }
+    }
+  ]
+}

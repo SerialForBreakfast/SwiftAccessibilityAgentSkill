@@ -1,0 +1,164 @@
+{
+  "schema": 1,
+  "id": "uikit-text",
+  "revision": "1",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Text range, configuration, ownership and direct callback assertions only; no UI automation, speech or rendered-layout claim.",
+  "claims": [
+    {
+      "id": "text-ranges",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycustomrotoritemresult",
+      "section": "UIAccessibilityCustomRotor.h targetRange/weak targetElement; UITextInput.h positions/ranges/text",
+      "statement": "Text rotor results use real UITextRange objects. Literal matching, no wrapping and foreign-element restart are example policy.",
+      "availability": "Rotor API iOS10+; target26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "action-metadata",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycustomaction",
+      "section": "UIAccessibilityCustomAction.h attributedName, category, target and actionHandler",
+      "statement": "Attributed/plain action names, edit category configuration and weak target ownership.",
+      "availability": "Attributed names iOS11+, closure initializer iOS13+, categories iOS18+.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "control-values",
+      "url": "https://developer.apple.com/documentation/uikit/uislider",
+      "section": "UISlider.h value; UIStepper.h defaults/clamping; UISwitch.h setOn; UIControl.h sendActions",
+      "statement": "Native bounds/defaults and explicitly dispatched switch callback state; no interaction delivery claim.",
+      "availability": "Pilot deployment26.0; no introduction inference.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "font-categories",
+      "url": "https://developer.apple.com/documentation/uikit/uifont/preferredfont(forTextStyle:compatibleWith:)",
+      "section": "UIFont.h preferredFontForTextStyle:compatibleWithTraitCollection:",
+      "statement": "Body font sizes observed across explicit content-size traits, not visual-layout fitness.",
+      "availability": "Pilot deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/TextUIKit.swift",
+      "sha256": "442b81a50096a5ec516e160485c22c90cc2ed0418b237534422c8906bf2b3479"
+    },
+    {
+      "path": "Tests/TextUIKitTests.swift",
+      "sha256": "689c433a7b7da19218ab8940d778c0ce8ece7fe8dcb9eff75318a6dbb251f526"
+    },
+    {
+      "path": "NegativeFixtures/MissingCategory.swift",
+      "sha256": "6890a24962ca33b05a12b2b36ad16d3b09e68397ee3f24d4cb2d78544fa5d0ed"
+    },
+    {
+      "path": "NegativeFixtures/StaleMatches.swift",
+      "sha256": "1e6a155e920ed53112bad1acb351bd7826da1a6cc9c6ecf5291a41dd48cc9729"
+    },
+    {
+      "path": "NegativeFixtures/WrongRange.swift",
+      "sha256": "a289b20e51b7e802fb6dca4a51ad41181a229b80b00e3e7a1bde4176393c641b"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-text",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "text-ranges",
+        "action-metadata",
+        "control-values",
+        "font-categories"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "text-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "text-ranges",
+        "action-metadata",
+        "control-values",
+        "font-categories"
+      ],
+      "testIds": [
+        "TextUIKitTests/testInitialRangeSelectsFirstOrLastMatch",
+        "TextUIKitTests/testRangeSearchMovesBothDirections",
+        "TextUIKitTests/testRangeBoundariesReturnNil",
+        "TextUIKitTests/testUnicodePrefixProducesExactSelectedText",
+        "TextUIKitTests/testReplacingTextDiscardsOldMatches",
+        "TextUIKitTests/testEmptyQueryRejectsWithoutChangingDocument",
+        "TextUIKitTests/testForeignElementRangeRestartsWithoutUsingForeignPositions",
+        "TextUIKitTests/testAttributedActionNameRoundTrips",
+        "TextUIKitTests/testEditCategoryConfigurationAndDefault",
+        "TextUIKitTests/testAttributedActionInvokesStoredHandlerOnce",
+        "TextUIKitTests/testSelectorActionDoesNotRetainTarget",
+        "TextUIKitTests/testRotorResultDoesNotRetainTargetElement",
+        "TextUIKitTests/testSliderClampsValuesToConfiguredBounds",
+        "TextUIKitTests/testStepperDefaultsAndClamping",
+        "TextUIKitTests/testSwitchExplicitDispatchReportsCurrentState",
+        "TextUIKitTests/testBodyFontSizesAcrossContentSizeCategories"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "wrongrange-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "text-ranges"
+      ],
+      "testIds": [
+        "TextUIKitTests/testUnicodePrefixProducesExactSelectedText"
+      ],
+      "failureIds": [
+        "TextUIKitTests/testUnicodePrefixProducesExactSelectedText"
+      ],
+      "replacement": {
+        "target": "Sources/TextUIKit.swift",
+        "source": "NegativeFixtures/WrongRange.swift"
+      }
+    },
+    {
+      "id": "stalematches-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "text-ranges"
+      ],
+      "testIds": [
+        "TextUIKitTests/testReplacingTextDiscardsOldMatches"
+      ],
+      "failureIds": [
+        "TextUIKitTests/testReplacingTextDiscardsOldMatches"
+      ],
+      "replacement": {
+        "target": "Sources/TextUIKit.swift",
+        "source": "NegativeFixtures/StaleMatches.swift"
+      }
+    },
+    {
+      "id": "missingcategory-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "action-metadata"
+      ],
+      "testIds": [
+        "TextUIKitTests/testEditCategoryConfigurationAndDefault"
+      ],
+      "failureIds": [
+        "TextUIKitTests/testEditCategoryConfigurationAndDefault"
+      ],
+      "replacement": {
+        "target": "Sources/TextUIKit.swift",
+        "source": "NegativeFixtures/MissingCategory.swift"
+      }
+    }
+  ]
+}

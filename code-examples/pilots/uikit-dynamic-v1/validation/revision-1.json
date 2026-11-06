@@ -1,0 +1,145 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "manifestHash": "9cab8be5f5040423027ce70b156bd5f8b152434a522c5340bacfb019771e4cec",
+  "revision": "1",
+  "redaction": "Object memory addresses removed from excerpts; original logs retained privately.",
+  "rows": [
+    {
+      "check": "compile-dynamic",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T01:25:43.025Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "964ce74a05fc1322d748a92e4a6e13c16a952167f6b6c3a294f7cac79ebd8d65",
+      "nativeLogHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "excerpts": []
+    },
+    {
+      "check": "dynamic-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "failed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T01:25:46.901Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "DynamicUIKitTests/testCustomActionsAreIndependentAndNamed",
+          "DynamicUIKitTests/testDisableAndReenableRefreshesBothActionPaths",
+          "DynamicUIKitTests/testDuplicateIDsRejectWithoutPartialMutation",
+          "DynamicUIKitTests/testEmptyReplacementClearsOrdinaryAndRotorContent",
+          "DynamicUIKitTests/testNativeActionIdentifierReplacesPreviousHandler",
+          "DynamicUIKitTests/testNativeActionRemovalPreservesOtherIdentifier",
+          "DynamicUIKitTests/testNativeControlFlagsAndSynthesizedState",
+          "DynamicUIKitTests/testOrdinaryButtonsUseCurrentItemAfterReuse",
+          "DynamicUIKitTests/testRemovedCurrentItemUsesDeclaredBoundaryPolicy",
+          "DynamicUIKitTests/testRemovedElementIsNotRetainedByIndexOrContainer",
+          "DynamicUIKitTests/testReorderPreservesIdentityAndChangesSearchOrder",
+          "DynamicUIKitTests/testRetainedCustomActionDoesNotKeepViewAlive",
+          "DynamicUIKitTests/testRetainedOldActionCannotAffectReusedView",
+          "DynamicUIKitTests/testRetitleUpdatesExistingElementWithoutLosingHeader",
+          "DynamicUIKitTests/testRotorInsertAndInitialSearch"
+        ],
+        "failedTestIds": [
+          "DynamicUIKitTests/testRemovedElementIsNotRetainedByIndexOrContainer"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "9a3d7c57b4ee82e659ab68c31089b708755d8c7f6d86b9299b2da43cca9b204d",
+      "nativeLogHash": "7dc4bde34a51b946a6b23c36d8a3a36db8154c4f3ae5324f7061522a110f997c",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testCustomActionsAreIndependentAndNamed]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testCustomActionsAreIndependentAndNamed]' passed (0.102 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testDisableAndReenableRefreshesBothActionPaths]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testDisableAndReenableRefreshesBothActionPaths]' passed (0.003 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testDuplicateIDsRejectWithoutPartialMutation]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testDuplicateIDsRejectWithoutPartialMutation]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testEmptyReplacementClearsOrdinaryAndRotorContent]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testEmptyReplacementClearsOrdinaryAndRotorContent]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testNativeActionIdentifierReplacesPreviousHandler]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testNativeActionIdentifierReplacesPreviousHandler]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testNativeActionRemovalPreservesOtherIdentifier]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testNativeActionRemovalPreservesOtherIdentifier]' passed (0.000 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testNativeControlFlagsAndSynthesizedState]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testNativeControlFlagsAndSynthesizedState]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testOrdinaryButtonsUseCurrentItemAfterReuse]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testOrdinaryButtonsUseCurrentItemAfterReuse]' passed (0.005 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testRemovedCurrentItemUsesDeclaredBoundaryPolicy]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testRemovedCurrentItemUsesDeclaredBoundaryPolicy]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testRemovedElementIsNotRetainedByIndexOrContainer]' started.",
+        "error: -[AccessibilityExamplesTests.DynamicUIKitTests testRemovedElementIsNotRetainedByIndexOrContainer] : XCTAssertNil failed: \"<UILabel: <address>; frame = (0 0; 0 0); text = 'A...a' (length = 5); userInteractionEnabled = NO; backgroundColor = UIExtendedGrayColorSpace 0 0; layer = <_UILabelLayer: <address>>>\"",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testRemovedElementIsNotRetainedByIndexOrContainer]' failed (0.932 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testReorderPreservesIdentityAndChangesSearchOrder]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testReorderPreservesIdentityAndChangesSearchOrder]' passed (0.003 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testRetainedCustomActionDoesNotKeepViewAlive]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testRetainedCustomActionDoesNotKeepViewAlive]' passed (0.003 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testRetainedOldActionCannotAffectReusedView]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testRetainedOldActionCannotAffectReusedView]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testRetitleUpdatesExistingElementWithoutLosingHeader]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testRetitleUpdatesExistingElementWithoutLosingHeader]' passed (0.007 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testRotorInsertAndInitialSearch]' started.",
+        "Test Case '-[AccessibilityExamplesTests.DynamicUIKitTests testRotorInsertAndInitialSearch]' passed (0.001 seconds)."
+      ]
+    },
+    {
+      "check": "staleaction-negative",
+      "status": "not-run",
+      "reason": "Revision1 stopped after positive-suite failure"
+    },
+    {
+      "check": "duplicatecallback-negative",
+      "status": "not-run",
+      "reason": "Revision1 stopped after positive-suite failure"
+    },
+    {
+      "check": "missingelements-negative",
+      "status": "not-run",
+      "reason": "Revision1 stopped after positive-suite failure"
+    },
+    {
+      "check": "retainedremoved-negative",
+      "status": "not-run",
+      "reason": "Revision1 stopped after positive-suite failure"
+    }
+  ]
+}

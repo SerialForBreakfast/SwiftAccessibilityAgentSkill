@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "id": "uikit-lifecycle",
+  "revision": "2",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Unit-only injected preference notifications, ownership and configuration. No system preference mutation, UI presentation or automation.",
+  "claims": [
+    {
+      "id": "motion-observation",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibility/reducemotionstatusdidchangenotification",
+      "section": "UIAccessibility.h notification name; NSNotification.h block observer/queue/removal",
+      "statement": "Observe the named preference notification; injected private center and reader validate refresh, stop/restart and ownership. Default production center is .default. Tests do not change system preferences or claim UIKit posted an event.",
+      "availability": "Reduce Motion preference notification iOS8+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "presentation",
+      "url": "https://developer.apple.com/documentation/uikit/uiviewcontroller/ismodalinpresentation",
+      "section": "UIViewController.h modalPresentationStyle and modalInPresentation",
+      "statement": "Configure form-sheet style and dismissal guard without loading or presenting the view.",
+      "availability": "isModalInPresentation iOS13+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "action-category",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycustomaction",
+      "section": "UIAccessibilityCustomAction.h editCategory; UIAccessibility.h custom actions/hint",
+      "statement": "Replace or remove state-dependent edit action/category metadata and associated hint. Caller-owned handler enforces operation authorization.",
+      "availability": "Action categories iOS18+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/LifecycleUIKit.swift",
+      "sha256": "d16974dcb156633565bf7a9e60a3c2e99e42a1a3212bfbb7143b69811320b272"
+    },
+    {
+      "path": "Tests/LifecycleUIKitTests.swift",
+      "sha256": "5a829cf732a2b099a39c243a834d63f1e9e32eb9a45a7c7318616203a55a0db5"
+    },
+    {
+      "path": "NegativeFixtures/WrongNotification.swift",
+      "sha256": "0282284468bd070020ca0839a30412334e8d7ea8415fa6ce9c0d30305bed7c69"
+    },
+    {
+      "path": "NegativeFixtures/UnstoppedObserver.swift",
+      "sha256": "b35f682d062fedebb870dcd6e0b53539e540e4a2e0d27db42cadb1a46ecbed72"
+    },
+    {
+      "path": "NegativeFixtures/StaleEditAction.swift",
+      "sha256": "6c20fe1585041320b10ea183ade1333024da78b036bd3cd06522bb2c5c6709ea"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-lifecycle",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "motion-observation",
+        "presentation",
+        "action-category"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "lifecycle-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "motion-observation",
+        "presentation",
+        "action-category"
+      ],
+      "testIds": [
+        "LifecycleUIKitTests/testInitialMotionReadAndNotificationRefresh",
+        "LifecycleUIKitTests/testUnrelatedNotificationDoesNotReadPreference",
+        "LifecycleUIKitTests/testStopRemovesObserverAndRestartRefreshes",
+        "LifecycleUIKitTests/testRepeatedStartDoesNotDuplicateRegistration",
+        "LifecycleUIKitTests/testObservationDoesNotRetainOwner",
+        "LifecycleUIKitTests/testPresentationConfigurationCanRestoreDismissal",
+        "LifecycleUIKitTests/testReadOnlyStateRemovesEditCategoryAndHint",
+        "LifecycleUIKitTests/testReenabledEditingUsesReplacementHandler"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "wrongnotification-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "motion-observation"
+      ],
+      "testIds": [
+        "LifecycleUIKitTests/testInitialMotionReadAndNotificationRefresh"
+      ],
+      "failureIds": [
+        "LifecycleUIKitTests/testInitialMotionReadAndNotificationRefresh"
+      ],
+      "replacement": {
+        "target": "Sources/LifecycleUIKit.swift",
+        "source": "NegativeFixtures/WrongNotification.swift"
+      }
+    },
+    {
+      "id": "unstopped-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "motion-observation"
+      ],
+      "testIds": [
+        "LifecycleUIKitTests/testStopRemovesObserverAndRestartRefreshes"
+      ],
+      "failureIds": [
+        "LifecycleUIKitTests/testStopRemovesObserverAndRestartRefreshes"
+      ],
+      "replacement": {
+        "target": "Sources/LifecycleUIKit.swift",
+        "source": "NegativeFixtures/UnstoppedObserver.swift"
+      }
+    },
+    {
+      "id": "staleedit-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "action-category"
+      ],
+      "testIds": [
+        "LifecycleUIKitTests/testReadOnlyStateRemovesEditCategoryAndHint"
+      ],
+      "failureIds": [
+        "LifecycleUIKitTests/testReadOnlyStateRemovesEditCategoryAndHint"
+      ],
+      "replacement": {
+        "target": "Sources/LifecycleUIKit.swift",
+        "source": "NegativeFixtures/StaleEditAction.swift"
+      }
+    }
+  ]
+}

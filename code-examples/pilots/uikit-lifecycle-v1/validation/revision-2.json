@@ -1,0 +1,227 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "manifestHash": "8ac1bc1a1c4d47dc91768418631eac7a13b5d00922012c4398ea15395a734f3b",
+  "revision": "2",
+  "redaction": "Object memory addresses removed from excerpts; original logs retained privately.",
+  "rows": [
+    {
+      "check": "compile-lifecycle",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T02:58:10.266Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "78904b7727b275ea0cdf8f2a486dd4e531e63ff839c76429385428713a20b7aa",
+      "nativeLogHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "excerpts": []
+    },
+    {
+      "check": "lifecycle-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T02:58:13.239Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "LifecycleUIKitTests/testInitialMotionReadAndNotificationRefresh",
+          "LifecycleUIKitTests/testObservationDoesNotRetainOwner",
+          "LifecycleUIKitTests/testPresentationConfigurationCanRestoreDismissal",
+          "LifecycleUIKitTests/testReadOnlyStateRemovesEditCategoryAndHint",
+          "LifecycleUIKitTests/testReenabledEditingUsesReplacementHandler",
+          "LifecycleUIKitTests/testRepeatedStartDoesNotDuplicateRegistration",
+          "LifecycleUIKitTests/testStopRemovesObserverAndRestartRefreshes",
+          "LifecycleUIKitTests/testUnrelatedNotificationDoesNotReadPreference"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "de5c8293a70d53cd836e33c6fa293dc343fbff4ef2bac4fd186c7c3c3353f74f",
+      "nativeLogHash": "b92de2c9264f92270368d0e7900823fd5ac294ad712aaf04e60dd0d23d18da46",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testInitialMotionReadAndNotificationRefresh]' started.",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testInitialMotionReadAndNotificationRefresh]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testObservationDoesNotRetainOwner]' started.",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testObservationDoesNotRetainOwner]' passed (0.008 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testPresentationConfigurationCanRestoreDismissal]' started.",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testPresentationConfigurationCanRestoreDismissal]' passed (0.040 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testReadOnlyStateRemovesEditCategoryAndHint]' started.",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testReadOnlyStateRemovesEditCategoryAndHint]' passed (0.068 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testReenabledEditingUsesReplacementHandler]' started.",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testReenabledEditingUsesReplacementHandler]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testRepeatedStartDoesNotDuplicateRegistration]' started.",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testRepeatedStartDoesNotDuplicateRegistration]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testStopRemovesObserverAndRestartRefreshes]' started.",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testStopRemovesObserverAndRestartRefreshes]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testUnrelatedNotificationDoesNotReadPreference]' started.",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testUnrelatedNotificationDoesNotReadPreference]' passed (0.000 seconds)."
+      ]
+    },
+    {
+      "check": "wrongnotification-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T02:58:58.070Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "LifecycleUIKitTests/testInitialMotionReadAndNotificationRefresh"
+        ],
+        "failedTestIds": [
+          "LifecycleUIKitTests/testInitialMotionReadAndNotificationRefresh"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "0fedcbb87ff39b2793ecb153e2c17843570dcf607299cbdc083b46f31237d9c9",
+      "nativeLogHash": "e6e21d547014b13d611de593553a93af6d29040819526e1ccdf4b0671468bdb1",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testInitialMotionReadAndNotificationRefresh]' started.",
+        "error: -[AccessibilityExamplesTests.LifecycleUIKitTests testInitialMotionReadAndNotificationRefresh] : XCTAssertTrue failed",
+        "error: -[AccessibilityExamplesTests.LifecycleUIKitTests testInitialMotionReadAndNotificationRefresh] : XCTAssertEqual failed: (\"1\") is not equal to (\"2\")",
+        "error: -[AccessibilityExamplesTests.LifecycleUIKitTests testInitialMotionReadAndNotificationRefresh] : XCTAssertEqual failed: (\"1\") is not equal to (\"3\")",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testInitialMotionReadAndNotificationRefresh]' failed (0.352 seconds)."
+      ]
+    },
+    {
+      "check": "unstopped-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T02:59:18.796Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "LifecycleUIKitTests/testStopRemovesObserverAndRestartRefreshes"
+        ],
+        "failedTestIds": [
+          "LifecycleUIKitTests/testStopRemovesObserverAndRestartRefreshes"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "4c56c91782b247e46c214aac0ebc4d95aa98558cfca60662a27a2e920f3ae652",
+      "nativeLogHash": "c7f406b206aa5783e5e98ba4bda61b755cae9289f365034b5dc8e593c913db6d",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testStopRemovesObserverAndRestartRefreshes]' started.",
+        "error: -[AccessibilityExamplesTests.LifecycleUIKitTests testStopRemovesObserverAndRestartRefreshes] : XCTAssertEqual failed: (\"2\") is not equal to (\"1\")",
+        "error: -[AccessibilityExamplesTests.LifecycleUIKitTests testStopRemovesObserverAndRestartRefreshes] : XCTAssertFalse failed",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testStopRemovesObserverAndRestartRefreshes]' failed (0.716 seconds)."
+      ]
+    },
+    {
+      "check": "staleedit-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T02:59:38.677Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "LifecycleUIKitTests/testReadOnlyStateRemovesEditCategoryAndHint"
+        ],
+        "failedTestIds": [
+          "LifecycleUIKitTests/testReadOnlyStateRemovesEditCategoryAndHint"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "867a20f5e6bd1badbe92665b4f5799571c9bb202422b691bc1d365d8a305b85d",
+      "nativeLogHash": "788389b8983a3d008ae976bdf49c152f22c31a32d5d6a732a8f0365f6f22838b",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testReadOnlyStateRemovesEditCategoryAndHint]' started.",
+        "error: -[AccessibilityExamplesTests.LifecycleUIKitTests testReadOnlyStateRemovesEditCategoryAndHint] : XCTAssertEqual failed: (\"Optional(1)\") is not equal to (\"Optional(0)\")",
+        "Test Case '-[AccessibilityExamplesTests.LifecycleUIKitTests testReadOnlyStateRemovesEditCategoryAndHint]' failed (0.489 seconds)."
+      ]
+    }
+  ]
+}

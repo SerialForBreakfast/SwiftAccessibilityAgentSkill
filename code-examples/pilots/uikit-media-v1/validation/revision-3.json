@@ -1,0 +1,274 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "revision": "3",
+  "manifestHash": "fcc238a58b9ae1d89c867ba6268e2ec4bda256051d3f9973477e7ca16124b804",
+  "redaction": "Private paths excluded and memory addresses removed; raw evidence retained privately.",
+  "rows": [
+    {
+      "check": "compile-media",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T02:49:26.615Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "a8d8edec0070a4864035cbc26b852f8b8dde8cf512dcf77286a55c926ef5b367",
+      "nativeLogHash": "e0b83caf8a08f93a49877288cbded9ab8a8699acf11c434326cacfdd9005d2c0",
+      "excerpts": []
+    },
+    {
+      "check": "media-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T02:49:30.836Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaUIKitTests/testAlternateAudioDoesNotReplaceSubtitleSelection",
+          "MediaUIKitTests/testMissingSubtitleLanguagePreservesSelection",
+          "MediaUIKitTests/testNativeControllerPreservesControlsAndAutomaticSelection",
+          "MediaUIKitTests/testPlayPauseControlMetadataTransitions",
+          "MediaUIKitTests/testSubtitleOptionsExposeBothAuthoredLanguages",
+          "MediaUIKitTests/testSubtitleSelectionAndOffState",
+          "MediaUIKitTests/testTimelineValueAndBounds",
+          "MediaUIKitTests/testUnavailableTimelineResetsPreviousState"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "a7acea6ba6bd8f9f5e279cb92b3c98ad2b00f569d4cc653292cb196b2c4e472c",
+      "nativeLogHash": "d779520987ddbf570c95344ee5b4f12b0d8d8df15f9cb2745a930743eb016c1b",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testAlternateAudioDoesNotReplaceSubtitleSelection]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testAlternateAudioDoesNotReplaceSubtitleSelection]' passed (0.373 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testMissingSubtitleLanguagePreservesSelection]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testMissingSubtitleLanguagePreservesSelection]' passed (0.007 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testNativeControllerPreservesControlsAndAutomaticSelection]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testNativeControllerPreservesControlsAndAutomaticSelection]' passed (0.461 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testPlayPauseControlMetadataTransitions]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testPlayPauseControlMetadataTransitions]' passed (0.005 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleOptionsExposeBothAuthoredLanguages]' started.",
+        "MEDIA_OPTION name=English language=en forced=false type=sbtl",
+        "MEDIA_OPTION name=English Forced language=en forced=true type=sbtl",
+        "MEDIA_OPTION name=Spanish language=es forced=false type=sbtl",
+        "MEDIA_OPTION name=Spanish Forced language=es forced=true type=sbtl",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleOptionsExposeBothAuthoredLanguages]' passed (0.036 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleSelectionAndOffState]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleSelectionAndOffState]' passed (0.006 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testTimelineValueAndBounds]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testTimelineValueAndBounds]' passed (0.016 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState]' passed (0.014 seconds)."
+      ]
+    },
+    {
+      "check": "hiddencontrols-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T02:50:25.162Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaUIKitTests/testNativeControllerPreservesControlsAndAutomaticSelection"
+        ],
+        "failedTestIds": [
+          "MediaUIKitTests/testNativeControllerPreservesControlsAndAutomaticSelection"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "919ed8effbe298462ab03810f4adaf22db21768ed68992e24b384b3aaff1522a",
+      "nativeLogHash": "68edaea8c98a55cba88169e98225176b95c754d853e6bf21d5acffcc1d3b0d63",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testNativeControllerPreservesControlsAndAutomaticSelection]' started.",
+        "error: -[AccessibilityExamplesTests.MediaUIKitTests testNativeControllerPreservesControlsAndAutomaticSelection] : XCTAssertTrue failed",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testNativeControllerPreservesControlsAndAutomaticSelection]' failed (0.723 seconds)."
+      ]
+    },
+    {
+      "check": "wronglanguage-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T02:50:48.991Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaUIKitTests/testSubtitleSelectionAndOffState"
+        ],
+        "failedTestIds": [
+          "MediaUIKitTests/testSubtitleSelectionAndOffState"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "2bcdb0beb470bd3db8f5e41da2a3382d1e9106e1451e7ae62f66bc259c6731a2",
+      "nativeLogHash": "820cafb5fd9e59e61af49596028d61295d4214e9491f8d71526a9c319f859b7d",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleSelectionAndOffState]' started.",
+        "error: -[AccessibilityExamplesTests.MediaUIKitTests testSubtitleSelectionAndOffState] : XCTAssertEqual failed: (\"Optional(\"en\")\") is not equal to (\"Optional(\"es\")\")",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleSelectionAndOffState]' failed (0.433 seconds)."
+      ]
+    },
+    {
+      "check": "staleposition-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T02:51:09.882Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaUIKitTests/testUnavailableTimelineResetsPreviousState"
+        ],
+        "failedTestIds": [
+          "MediaUIKitTests/testUnavailableTimelineResetsPreviousState"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "06868ccaeab2fb1f16724461285cf7b1796e925ed46640a0f390765539d39105",
+      "nativeLogHash": "d40c1b1f82d04636961bebe643a45d0d4db8629c315c6cc247a460e8ed315503",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState]' started.",
+        "error: -[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState] : XCTAssertEqual failed: (\"Optional(\"30 of 120 seconds\")\") is not equal to (\"Optional(\"Position unavailable\")\")",
+        "error: -[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState] : XCTAssertEqual failed: (\"Optional(\"30 of 120 seconds\")\") is not equal to (\"Optional(\"Position unavailable\")\")",
+        "error: -[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState] : XCTAssertEqual failed: (\"Optional(\"30 of 120 seconds\")\") is not equal to (\"Optional(\"Position unavailable\")\")",
+        "error: -[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState] : XCTAssertEqual failed: (\"Optional(\"30 of 120 seconds\")\") is not equal to (\"Optional(\"Position unavailable\")\")",
+        "error: -[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState] : XCTAssertEqual failed: (\"Optional(\"30 of 120 seconds\")\") is not equal to (\"Optional(\"Position unavailable\")\")",
+        "error: -[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState] : XCTAssertEqual failed: (\"Optional(\"30 of 120 seconds\")\") is not equal to (\"Optional(\"Position unavailable\")\")",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState]' failed (0.501 seconds)."
+      ]
+    },
+    {
+      "check": "forcedonly-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T02:51:31.720Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaUIKitTests/testSubtitleSelectionAndOffState"
+        ],
+        "failedTestIds": [
+          "MediaUIKitTests/testSubtitleSelectionAndOffState"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "33fa49cc882ec029233bc5b6371ff2f0c105f36709f523c32678084e2b9ba67a",
+      "nativeLogHash": "e1e24ff058658ef484ab38046668df14859cac13dc2331ccd474ba15166c855d",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleSelectionAndOffState]' started.",
+        "error: -[AccessibilityExamplesTests.MediaUIKitTests testSubtitleSelectionAndOffState] : XCTAssertEqual failed: (\"Optional(true)\") is not equal to (\"Optional(false)\")",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleSelectionAndOffState]' failed (0.803 seconds)."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "schema": 1,
+  "id": "uikit-dynamic",
+  "revision": "1",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Configuration, direct callbacks and ownership assertions, not UI navigation or event delivery. Application policies distinguished from UIKit contracts.",
+  "claims": [
+    {
+      "id": "dynamic-rotor",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycustomrotor",
+      "section": "itemSearchBlock and item results; UIAccessibilityCustomRotor.h; UIAccessibilityContainer.h",
+      "statement": "Public rotor callback and element list reflect the examples current contents. Stable IDs, duplicate rejection and removed-anchor restart are application policies.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Custom rotors iOS10+; pilot deployment26.0."
+    },
+    {
+      "id": "actions",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycustomaction",
+      "section": "Overview and actionHandler; UIAccessibilityCustomAction.h",
+      "statement": "Named custom action handlers return Bool. Revision-token rejection, independent operations and ordinary-button parity are example policies.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Closure initializer iOS13+; pilot deployment26.0."
+    },
+    {
+      "id": "native-controls",
+      "url": "https://developer.apple.com/documentation/uikit/uicontrol",
+      "section": "UIControl.h: enabled/selected/state, addAction:forControlEvents:, removeActionForIdentifier:forControlEvents:",
+      "statement": "Native enabled/selected defaults and state flags; action identifiers replace handlers and permit selective removal.",
+      "reviewedOn": "2026-11-05",
+      "availability": "UIAction control integration iOS14+ as declared in installed SDK27; pilot deployment26.0."
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/DynamicUIKit.swift",
+      "sha256": "d2663c145314f29cbd4574efc14fc33cbf0c66a8307e01c2d4b0bde5a54ecc27"
+    },
+    {
+      "path": "Tests/DynamicUIKitTests.swift",
+      "sha256": "b9947a7976508984ecbd3e05ff30506f4557ccd2833ed3267b1ffbe31b6eeb84"
+    },
+    {
+      "path": "NegativeFixtures/DuplicateCallback.swift",
+      "sha256": "9112de502f8acb0e237861d6cd8ea068b0f7e48ab218f6981ea4e3fe4cdcb993"
+    },
+    {
+      "path": "NegativeFixtures/MissingElements.swift",
+      "sha256": "7c1bd3d9d37a852f487d32a53202172a2518fb2aab9a190dd4016fa1ebcac9e2"
+    },
+    {
+      "path": "NegativeFixtures/RetainedRemoved.swift",
+      "sha256": "f5ca9181d523813c8cab67c4fbc1510e7d618a7406522fb1597837b819989b98"
+    },
+    {
+      "path": "NegativeFixtures/StaleAction.swift",
+      "sha256": "dd934b74ce7705e81b3dd3ccff6551de38f4e9f8dca2f80697e6783311bbec4f"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-dynamic",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "dynamic-rotor",
+        "actions",
+        "native-controls"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "dynamic-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "dynamic-rotor",
+        "actions",
+        "native-controls"
+      ],
+      "testIds": [
+        "DynamicUIKitTests/testRotorInsertAndInitialSearch",
+        "DynamicUIKitTests/testReorderPreservesIdentityAndChangesSearchOrder",
+        "DynamicUIKitTests/testRemovedCurrentItemUsesDeclaredBoundaryPolicy",
+        "DynamicUIKitTests/testEmptyReplacementClearsOrdinaryAndRotorContent",
+        "DynamicUIKitTests/testDuplicateIDsRejectWithoutPartialMutation",
+        "DynamicUIKitTests/testRetitleUpdatesExistingElementWithoutLosingHeader",
+        "DynamicUIKitTests/testRemovedElementIsNotRetainedByIndexOrContainer",
+        "DynamicUIKitTests/testCustomActionsAreIndependentAndNamed",
+        "DynamicUIKitTests/testOrdinaryButtonsUseCurrentItemAfterReuse",
+        "DynamicUIKitTests/testRetainedOldActionCannotAffectReusedView",
+        "DynamicUIKitTests/testDisableAndReenableRefreshesBothActionPaths",
+        "DynamicUIKitTests/testRetainedCustomActionDoesNotKeepViewAlive",
+        "DynamicUIKitTests/testNativeControlFlagsAndSynthesizedState",
+        "DynamicUIKitTests/testNativeActionIdentifierReplacesPreviousHandler",
+        "DynamicUIKitTests/testNativeActionRemovalPreservesOtherIdentifier"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "staleaction-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions"
+      ],
+      "testIds": [
+        "DynamicUIKitTests/testRetainedOldActionCannotAffectReusedView"
+      ],
+      "failureIds": [
+        "DynamicUIKitTests/testRetainedOldActionCannotAffectReusedView"
+      ],
+      "replacement": {
+        "target": "Sources/DynamicUIKit.swift",
+        "source": "NegativeFixtures/StaleAction.swift"
+      }
+    },
+    {
+      "id": "duplicatecallback-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions"
+      ],
+      "testIds": [
+        "DynamicUIKitTests/testCustomActionsAreIndependentAndNamed"
+      ],
+      "failureIds": [
+        "DynamicUIKitTests/testCustomActionsAreIndependentAndNamed"
+      ],
+      "replacement": {
+        "target": "Sources/DynamicUIKit.swift",
+        "source": "NegativeFixtures/DuplicateCallback.swift"
+      }
+    },
+    {
+      "id": "missingelements-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "dynamic-rotor"
+      ],
+      "testIds": [
+        "DynamicUIKitTests/testReorderPreservesIdentityAndChangesSearchOrder"
+      ],
+      "failureIds": [
+        "DynamicUIKitTests/testReorderPreservesIdentityAndChangesSearchOrder"
+      ],
+      "replacement": {
+        "target": "Sources/DynamicUIKit.swift",
+        "source": "NegativeFixtures/MissingElements.swift"
+      }
+    },
+    {
+      "id": "retainedremoved-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "dynamic-rotor"
+      ],
+      "testIds": [
+        "DynamicUIKitTests/testRemovedElementIsNotRetainedByIndexOrContainer"
+      ],
+      "failureIds": [
+        "DynamicUIKitTests/testRemovedElementIsNotRetainedByIndexOrContainer"
+      ],
+      "replacement": {
+        "target": "Sources/DynamicUIKit.swift",
+        "source": "NegativeFixtures/RetainedRemoved.swift"
+      }
+    }
+  ]
+}

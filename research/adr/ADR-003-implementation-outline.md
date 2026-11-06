@@ -1,6 +1,7 @@
 # ADR-003 implementation outline
 
-Status: design only; no native execution or skill integration authorized here.
+Status: initial offline contracts implemented; native library pilot and skill
+integration remain separate. See [infrastructure](../../code-examples/README.md).
 Implements [ADR-003](ADR-003-version-anchored-unit-tested-examples.md), retaining
 its existing source tiers, annual cadence and two version anchors.
 
@@ -56,14 +57,22 @@ an unexpected failure green. Source discrepancies get linked records.
 
 ## Implementation tasks
 
-- [ ] Agree code-contract evaluation endpoint and resolve existing manual/UI gates.
-- [ ] Confirm Apple worker, selected OS26 SDK/runtime and bounded resource allowance.
-- [ ] Specify manifest/results schemas and synthetic runner tests, including path
+- [x] Agree code-contract evaluation endpoint and resolve existing manual/UI gates.
+- [x] Confirm this Mac as Apple worker; existing fixture runs used SDK27 with
+  iOS/tvOS26.5. Further native library execution remains separately bounded.
+- [x] Specify initial manifest/results contracts and synthetic runner tests, including path
   confinement, immutable outputs, malformed evidence and diagnostic matching.
-- [ ] Create reproducible host/package commands without UI-test targets; prove that
+- [x] Qualify the initial iOS type-error diagnostic mapping against actual compiler
+  output; preserve the initial mismatch and version the expectation. Other compiler
+  diagnostic families remain outside the qualified pilot.
+- [x] Create reproducible host/package commands without UI-test targets; prove that
   a wrong platform or zero discovered tests cannot produce a successful claim.
-- [ ] Validate the three-example pilot and independent source/assertion review.
-- [ ] Publish sanitized immutable results and derive snippets from tested source.
+- [x] Execute the bounded three-example pilot: eight compile/unit checks matched
+  expectations; see code-examples/pilots/uikit-v1/validation/README.md.
+- [ ] Independently review the new adapter, example claim bindings and assertions;
+  existing OS26 fixture review does not automatically approve this pilot.
+- [x] Prepare sanitized results and an index pointing to actual tested sources.
+- [ ] Publish the reviewed checkpoint; no skill integration or anchor promotion yet.
 - [ ] After agent baselines, evaluate optional retrieval quality and token costs.
 - [ ] Add the next annual anchor only when the maintainer selects it; retain archives.
 

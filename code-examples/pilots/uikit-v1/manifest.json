@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "id": "uikit-pilot",
+  "revision": "2",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Public configuration and direct callbacks only. No speech, navigation, input delivery or rendered-layout claim. Candidate library evidence; no anchor promoted.",
+  "sourceLineage": "Adapted from evals/os26/fixtures at b0f4e449d22086fcce87765c154d390507c31b75. Test module renamed; historical evidence not transferred.",
+  "claims": [
+    {
+      "id": "container-semantics",
+      "statement": "Expose independent child controls and dispatch independent callbacks; accessibilityLabel is String?.",
+      "url": "https://developer.apple.com/documentation/uikit/accessibility-for-uikit",
+      "section": "Accessibility configuration; installed UIKit UIAccessibility.h declarations, as reviewed in SOURCE-REVIEW-R4",
+      "reviewedOn": "2026-11-05",
+      "availability": "Pilot deployment iOS26.0; installed SDK27 declarations, not a claim of introduction in26."
+    },
+    {
+      "id": "cell-reconfiguration",
+      "statement": "Update current content during every cell configuration, including reuse without prepareForReuse.",
+      "url": "https://developer.apple.com/documentation/uikit/uitableviewcell/prepareforreuse()",
+      "section": "Discussion",
+      "reviewedOn": "2026-11-05",
+      "availability": "Pilot deployment iOS26.0; no earliest behavioral-change inference."
+    },
+    {
+      "id": "font-scaling",
+      "statement": "Use a preferred/scaled font and automatic content-size adjustment; inspect prerequisites without asserting visual fit.",
+      "url": "https://developer.apple.com/documentation/uikit/uicontentsizecategoryadjusting/adjustsfontforcontentsizecategory",
+      "section": "Discussion",
+      "reviewedOn": "2026-11-05",
+      "availability": "Pilot deployment iOS26.0; no earliest behavioral-change inference."
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/CheckoutSummary.swift",
+      "sha256": "698764ca8207a548b70d025b61112e9ffcaf724ea6f1acd9f94031cdf818722d"
+    },
+    {
+      "path": "Sources/OrderCell.swift",
+      "sha256": "9a5ab3e8eea18bc1cb458d01984eb3955caed316c534d312446b0a0d39d6fcc4"
+    },
+    {
+      "path": "Sources/SettingsRow.swift",
+      "sha256": "5f1a2b75f9c19aa569cb8423e8ffe56532d0b5af39040c6303c42cf418337c0f"
+    },
+    {
+      "path": "Tests/UIKitTests.swift",
+      "sha256": "f102b465c88c8d7cb01f2e3a8507bfb550fc0df9bfc4e4116b8d1cec6a1f1ed1"
+    },
+    {
+      "path": "NegativeFixtures/CheckoutSummary.swift",
+      "sha256": "8869857c1d19bf148b4a01298a0249408f13c4a5b7365e464dc2c0010d976df9"
+    },
+    {
+      "path": "NegativeFixtures/OrderCell.swift",
+      "sha256": "691ea67e293b1d3556de0191a2617bba38aaa73d7c42eda44e1ac5aa12d2214b"
+    },
+    {
+      "path": "NegativeFixtures/SettingsRow.swift",
+      "sha256": "694c07e4a08eb98e5e3ebe0c12636de46cf1875360e705727f48142aafaf3f63"
+    },
+    {
+      "path": "NegativeFixtures/WrongLabelType.swift",
+      "sha256": "e9123c7aef47a7e3e47465786093b0399c96ec5da843cfa33b2bdfae76a4a920"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-pilot",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "container-semantics",
+        "cell-reconfiguration",
+        "font-scaling"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "row-actions-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "container-semantics"
+      ],
+      "testIds": [
+        "UIKitTests/testSettingsCallbacksAndExposedControls"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "row-actions-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "container-semantics"
+      ],
+      "testIds": [
+        "UIKitTests/testSettingsCallbacksAndExposedControls"
+      ],
+      "failureIds": [
+        "UIKitTests/testSettingsCallbacksAndExposedControls"
+      ],
+      "replacement": {
+        "target": "Sources/SettingsRow.swift",
+        "source": "NegativeFixtures/SettingsRow.swift"
+      }
+    },
+    {
+      "id": "cell-state-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "cell-reconfiguration"
+      ],
+      "testIds": [
+        "UIKitTests/testReconfigurationWithoutPrepareForReuse"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "cell-state-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "cell-reconfiguration"
+      ],
+      "testIds": [
+        "UIKitTests/testReconfigurationWithoutPrepareForReuse"
+      ],
+      "failureIds": [
+        "UIKitTests/testReconfigurationWithoutPrepareForReuse"
+      ],
+      "replacement": {
+        "target": "Sources/OrderCell.swift",
+        "source": "NegativeFixtures/OrderCell.swift"
+      }
+    },
+    {
+      "id": "text-scaling-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "font-scaling"
+      ],
+      "testIds": [
+        "UIKitTests/testCheckoutCallbackAndResizePrerequisites"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "text-scaling-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "font-scaling"
+      ],
+      "testIds": [
+        "UIKitTests/testCheckoutCallbackAndResizePrerequisites"
+      ],
+      "failureIds": [
+        "UIKitTests/testCheckoutCallbackAndResizePrerequisites"
+      ],
+      "replacement": {
+        "target": "Sources/CheckoutSummary.swift",
+        "source": "NegativeFixtures/CheckoutSummary.swift"
+      }
+    },
+    {
+      "id": "compile-label-type-negative",
+      "lane": "compile",
+      "expected": "failure",
+      "claimIds": [
+        "container-semantics"
+      ],
+      "testIds": [],
+      "failureIds": [
+        "label-type-mismatch"
+      ],
+      "compileSources": [
+        "NegativeFixtures/WrongLabelType.swift"
+      ],
+      "diagnostics": [
+        {
+          "id": "label-type-mismatch",
+          "contains": "cannot assign value of type 'Int' to type 'String'"
+        }
+      ]
+    }
+  ]
+}

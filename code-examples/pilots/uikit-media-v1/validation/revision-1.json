@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "revision": "1",
+  "manifestHash": "4062612a1b8876c63fb78b1a1a25aace2497b405dc000a9d57dcbff904c2ea41",
+  "redaction": "Private paths excluded and memory addresses removed; raw evidence retained privately.",
+  "rows": [
+    {
+      "check": "compile-media",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T02:45:32.289Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "0f87f95cb5394a616934ff0baef1c9ddde9962ba3f26880cf58c2601c4457195",
+      "nativeLogHash": "f3d0c56127b8d7f5299ec8087100d58b6e7f655afe65111095f639b42ca8e59c",
+      "excerpts": []
+    },
+    {
+      "check": "media-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "failed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T02:46:22.911Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "MediaUIKitTests/testAlternateAudioDoesNotReplaceSubtitleSelection",
+          "MediaUIKitTests/testMissingSubtitleLanguagePreservesSelection",
+          "MediaUIKitTests/testNativeControllerPreservesControlsAndAutomaticSelection",
+          "MediaUIKitTests/testPlayPauseControlMetadataTransitions",
+          "MediaUIKitTests/testSubtitleOptionsExposeBothAuthoredLanguages",
+          "MediaUIKitTests/testSubtitleSelectionAndOffState",
+          "MediaUIKitTests/testTimelineValueAndBounds",
+          "MediaUIKitTests/testUnavailableTimelineResetsPreviousState"
+        ],
+        "failedTestIds": [
+          "MediaUIKitTests/testPlayPauseControlMetadataTransitions",
+          "MediaUIKitTests/testSubtitleOptionsExposeBothAuthoredLanguages"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "0f5bfc2995d252a12e6d6ef55cc3e379e374173ecd82c1b2c5b86679e8273452",
+      "nativeLogHash": "1ce27959bdd7346d92f68e2cf930f9ea029b7cc75f4b0c39d341976f43d4de56",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testAlternateAudioDoesNotReplaceSubtitleSelection]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testAlternateAudioDoesNotReplaceSubtitleSelection]' passed (0.496 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testMissingSubtitleLanguagePreservesSelection]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testMissingSubtitleLanguagePreservesSelection]' passed (0.016 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testNativeControllerPreservesControlsAndAutomaticSelection]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testNativeControllerPreservesControlsAndAutomaticSelection]' passed (0.500 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testPlayPauseControlMetadataTransitions]' started.",
+        "error: -[AccessibilityExamplesTests.MediaUIKitTests testPlayPauseControlMetadataTransitions] : XCTAssertTrue failed",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testPlayPauseControlMetadataTransitions]' failed (0.483 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleOptionsExposeBothAuthoredLanguages]' started.",
+        "error: -[AccessibilityExamplesTests.MediaUIKitTests testSubtitleOptionsExposeBothAuthoredLanguages] : XCTAssertEqual failed: (\"4\") is not equal to (\"2\")",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleOptionsExposeBothAuthoredLanguages]' failed (0.019 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleSelectionAndOffState]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testSubtitleSelectionAndOffState]' passed (0.005 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testTimelineValueAndBounds]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testTimelineValueAndBounds]' passed (0.023 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState]' started.",
+        "Test Case '-[AccessibilityExamplesTests.MediaUIKitTests testUnavailableTimelineResetsPreviousState]' passed (0.002 seconds)."
+      ]
+    },
+    {
+      "check": "hiddencontrols-negative",
+      "status": "not-run",
+      "reason": "Stopped after positive-suite failure"
+    },
+    {
+      "check": "wronglanguage-negative",
+      "status": "not-run",
+      "reason": "Stopped after positive-suite failure"
+    },
+    {
+      "check": "staleposition-negative",
+      "status": "not-run",
+      "reason": "Stopped after positive-suite failure"
+    }
+  ]
+}

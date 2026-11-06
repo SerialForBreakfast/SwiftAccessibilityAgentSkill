@@ -1,0 +1,166 @@
+{
+  "schema": 1,
+  "integration": "offline-only",
+  "examples": [
+    {
+      "id": "row-actions",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "manifest": "pilots/uikit-v1/manifest.json",
+      "source": "pilots/uikit-v1/Sources/SettingsRow.swift",
+      "checks": [
+        "compile-pilot",
+        "row-actions-unit",
+        "row-actions-negative"
+      ],
+      "status": "pilot-not-promoted"
+    },
+    {
+      "id": "cell-state",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "manifest": "pilots/uikit-v1/manifest.json",
+      "source": "pilots/uikit-v1/Sources/OrderCell.swift",
+      "checks": [
+        "compile-pilot",
+        "cell-state-unit",
+        "cell-state-negative"
+      ],
+      "status": "pilot-not-promoted"
+    },
+    {
+      "id": "text-scaling",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "manifest": "pilots/uikit-v1/manifest.json",
+      "source": "pilots/uikit-v1/Sources/CheckoutSummary.swift",
+      "checks": [
+        "compile-pilot",
+        "text-scaling-unit",
+        "text-scaling-negative"
+      ],
+      "status": "pilot-not-promoted"
+    },
+    {
+      "id": "uikit-semantics",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "manifest": "pilots/uikit-semantics-v1/manifest.json",
+      "source": "pilots/uikit-semantics-v1/Sources/UIKitSemantics.swift",
+      "checks": [
+        "compile-semantics",
+        "semantics-unit",
+        "droppedaction-negative",
+        "wrongrotordirection-negative",
+        "losttraits-negative"
+      ],
+      "status": "pilot-not-promoted"
+    },
+    {
+      "id": "uikit-dynamic",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "manifest": "pilots/uikit-dynamic-v1/manifest.json",
+      "source": "pilots/uikit-dynamic-v1/Sources/DynamicUIKit.swift",
+      "checks": [
+        "compile-dynamic",
+        "dynamic-unit",
+        "staleaction-negative",
+        "duplicatecallback-negative",
+        "missingelements-negative",
+        "retainedremoved-negative"
+      ],
+      "status": "pilot-not-promoted"
+    },
+    {
+      "id": "uikit-text",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "manifest": "pilots/uikit-text-v1/manifest.json",
+      "source": "pilots/uikit-text-v1/Sources/TextUIKit.swift",
+      "checks": [
+        "compile-text",
+        "text-unit",
+        "wrongrange-negative",
+        "stalematches-negative",
+        "missingcategory-negative"
+      ],
+      "status": "pilot-not-promoted"
+    },
+    {
+      "id": "uikit-preferences",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "manifest": "pilots/uikit-preferences-v1/manifest.json",
+      "source": "pilots/uikit-preferences-v1/Sources/PreferenceUIKit.swift",
+      "checks": [
+        "compile-preferences",
+        "preferences-unit",
+        "ignoredmotion-negative",
+        "stalehint-negative"
+      ],
+      "status": "pilot-not-promoted"
+    },
+    {
+      "id": "uikit-containers",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "manifest": "pilots/uikit-containers-v1/manifest.json",
+      "source": "pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+      "checks": [
+        "compile-containers",
+        "containers-unit",
+        "wrongspan-negative",
+        "stalemodal-negative",
+        "ignoredenabled-negative"
+      ],
+      "status": "pilot-not-promoted"
+    },
+    {
+      "id": "uikit-reuse",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "manifest": "pilots/uikit-reuse-v1/manifest.json",
+      "source": "pilots/uikit-reuse-v1/Sources/ReuseUIKit.swift",
+      "checks": [
+        "compile-reuse",
+        "reuse-unit",
+        "staleselection-negative",
+        "staleidentity-negative",
+        "wrongnotification-negative"
+      ],
+      "status": "pilot-not-promoted"
+    },
+    {
+      "id": "uikit-media",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "manifest": "pilots/uikit-media-v1/manifest.json",
+      "source": "pilots/uikit-media-v1/Sources/MediaUIKit.swift",
+      "checks": [
+        "compile-media",
+        "media-unit",
+        "hiddencontrols-negative",
+        "wronglanguage-negative",
+        "staleposition-negative",
+        "forcedonly-negative"
+      ],
+      "status": "pilot-not-promoted"
+    },
+    {
+      "id": "uikit-lifecycle",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "manifest": "pilots/uikit-lifecycle-v1/manifest.json",
+      "source": "pilots/uikit-lifecycle-v1/Sources/LifecycleUIKit.swift",
+      "checks": [
+        "compile-lifecycle",
+        "lifecycle-unit",
+        "wrongnotification-negative",
+        "unstopped-negative",
+        "staleedit-negative"
+      ],
+      "status": "pilot-not-promoted"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "manifestHash": "976e13d79accf6b40cdcd40bdede5c0823f9c94ecc39dbc0fafdcc02b4d554f4",
+  "revision": "1",
+  "redaction": "Object memory addresses removed from excerpts; original logs retained privately.",
+  "rows": [
+    {
+      "check": "compile-reuse",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T02:35:49.547Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "f04d7629fcf2c7383d13e70026ffc8a8901bf3757a0cd45fc5ac5647b7b541bc",
+      "nativeLogHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "excerpts": []
+    },
+    {
+      "check": "reuse-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "failed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T02:36:27.232Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "ReuseUIKitTests/testHeaderRoleTransitionPreservesOtherTraits",
+          "ReuseUIKitTests/testLayoutUpdatePreservesTargetIdentity",
+          "ReuseUIKitTests/testMissingHandlerReturnsFalse",
+          "ReuseUIKitTests/testNestedSectionKeepsHeaderAndListSeparate",
+          "ReuseUIKitTests/testNewConfigurationAfterReuseUsesNewCallback",
+          "ReuseUIKitTests/testPrepareForReuseClearsMetadataAndCallback",
+          "ReuseUIKitTests/testReconfigureClearsSelectedStateWithoutLosingOtherTraits",
+          "ReuseUIKitTests/testReconfigureReplacesLanguageAndName",
+          "ReuseUIKitTests/testRetainedActionRejectsReconfiguredIdentity",
+          "ReuseUIKitTests/testScreenUpdateAllowsNoTarget",
+          "ReuseUIKitTests/testTypographyReconfigurationReplacesStyleAndSizePolicy"
+        ],
+        "failedTestIds": [
+          "ReuseUIKitTests/testTypographyReconfigurationReplacesStyleAndSizePolicy"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "382c5e09f7e08ef8b2f10c49410edc794decc1e93df9f2fe58f40a12fc4b233d",
+      "nativeLogHash": "4ed9f851104fcad18f5173f339fc3532bedfd1fe77a542b4f48bdd710c98aeb3",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testHeaderRoleTransitionPreservesOtherTraits]' started.",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testHeaderRoleTransitionPreservesOtherTraits]' passed (0.204 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testLayoutUpdatePreservesTargetIdentity]' started.",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testLayoutUpdatePreservesTargetIdentity]' passed (0.035 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testMissingHandlerReturnsFalse]' started.",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testMissingHandlerReturnsFalse]' passed (0.007 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testNestedSectionKeepsHeaderAndListSeparate]' started.",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testNestedSectionKeepsHeaderAndListSeparate]' passed (0.013 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testNewConfigurationAfterReuseUsesNewCallback]' started.",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testNewConfigurationAfterReuseUsesNewCallback]' passed (0.004 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testPrepareForReuseClearsMetadataAndCallback]' started.",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testPrepareForReuseClearsMetadataAndCallback]' passed (0.015 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testReconfigureClearsSelectedStateWithoutLosingOtherTraits]' started.",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testReconfigureClearsSelectedStateWithoutLosingOtherTraits]' passed (0.003 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testReconfigureReplacesLanguageAndName]' started.",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testReconfigureReplacesLanguageAndName]' passed (0.009 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testRetainedActionRejectsReconfiguredIdentity]' started.",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testRetainedActionRejectsReconfiguredIdentity]' passed (0.005 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testScreenUpdateAllowsNoTarget]' started.",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testScreenUpdateAllowsNoTarget]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testTypographyReconfigurationReplacesStyleAndSizePolicy]' started.",
+        "error: -[AccessibilityExamplesTests.ReuseUIKitTests testTypographyReconfigurationReplacesStyleAndSizePolicy] : XCTAssertEqual failed: (\"17.0\") is not equal to (\"53.0\")",
+        "error: -[AccessibilityExamplesTests.ReuseUIKitTests testTypographyReconfigurationReplacesStyleAndSizePolicy] : XCTAssertEqual failed: (\"17.0\") is not equal to (\"15.0\")",
+        "error: -[AccessibilityExamplesTests.ReuseUIKitTests testTypographyReconfigurationReplacesStyleAndSizePolicy] : XCTAssertEqual failed: (\"12.0\") is not equal to (\"43.0\")",
+        "error: -[AccessibilityExamplesTests.ReuseUIKitTests testTypographyReconfigurationReplacesStyleAndSizePolicy] : XCTAssertEqual failed: (\"12.0\") is not equal to (\"11.0\")",
+        "error: -[AccessibilityExamplesTests.ReuseUIKitTests testTypographyReconfigurationReplacesStyleAndSizePolicy] : XCTAssertEqual failed: (\"17.0\") is not equal to (\"53.0\")",
+        "error: -[AccessibilityExamplesTests.ReuseUIKitTests testTypographyReconfigurationReplacesStyleAndSizePolicy] : XCTAssertEqual failed: (\"17.0\") is not equal to (\"15.0\")",
+        "Test Case '-[AccessibilityExamplesTests.ReuseUIKitTests testTypographyReconfigurationReplacesStyleAndSizePolicy]' failed (0.734 seconds)."
+      ]
+    },
+    {
+      "check": "staleselection-negative",
+      "status": "not-run",
+      "reason": "Revision stopped after positive-suite failure"
+    },
+    {
+      "check": "staleidentity-negative",
+      "status": "not-run",
+      "reason": "Revision stopped after positive-suite failure"
+    },
+    {
+      "check": "wrongnotification-negative",
+      "status": "not-run",
+      "reason": "Revision stopped after positive-suite failure"
+    }
+  ]
+}

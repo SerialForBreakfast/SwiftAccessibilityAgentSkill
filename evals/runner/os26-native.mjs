@@ -28,6 +28,10 @@ fs.writeFileSync(path.join(output,'devices.json'),inventory.stdout);
 fs.writeFileSync(path.join(output,'xcode.txt'),run('xcodebuild',['-version']).stdout);
 fs.writeFileSync(path.join(output,'swift.txt'),run('xcrun',['swift','--version']).stdout);
 fs.copyFileSync(path.join(source,'manifest.json'),path.join(output,'fixture-manifest.json'));
+fs.writeFileSync(path.join(output,'catalog-pins.json'),JSON.stringify({
+  promptHash:hash(fs.readFileSync(path.join(source,'../prompts.json'))),
+  acceptanceHash:hash(fs.readFileSync(path.join(source,'../acceptance.json')))
+},null,2),{flag:'wx'});
 const workspace=path.join(output,'workspace');fs.mkdirSync(workspace);
 for(const name of ['Sources','Tests','Package.swift'])fs.cpSync(path.join(source,name),path.join(workspace,name),{recursive:true});
 const testFiles=fs.readdirSync(path.join(source,'Tests/OS26FixturesTests')).sort();
