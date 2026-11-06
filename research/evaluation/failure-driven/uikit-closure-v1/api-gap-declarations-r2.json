@@ -1,0 +1,908 @@
+{
+  "schema": 1,
+  "scope": "Compiler-resolved external member/override references in selected production source sets; excludes test/helper APIs, Swift standard library and transitive SDK internals. Type-only uses and synthesized/conformance requirements require separate source review.",
+  "status": "inventory-with-explicit-unresolved-availability",
+  "sdkVersion": "27.0",
+  "sdkBuild": "24A430",
+  "target": "arm64-apple-ios26.0-simulator",
+  "runs": [
+    {
+      "package": "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "sources": [
+        {
+          "path": "Sources/GapContracts.swift",
+          "sha256": "641c7d777126ca05c1cfffee844d094908962e30cd3f3dbabd82573c6b9a6583"
+        }
+      ],
+      "astHash": "a964fc5fc86803c8d8d98e6fb2a225ad5dff7e13dd52feda9a24f8fd1e82b644",
+      "diagnosticsHash": "08155591b131fe8b85a045b7ad4fd16a56bc99c4c4e7f410b92895edd8819789"
+    }
+  ],
+  "rows": [
+    {
+      "symbol": "CoreGraphics.(file).CGRect extension.zero",
+      "module": "CoreGraphics",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "unresolved-declaration-location",
+      "declaration": null,
+      "enclosingDeclaration": null,
+      "availability": [],
+      "introduction": null,
+      "note": "Compiler accepted at deployment26 with this SDK; no introduction date inferred."
+    },
+    {
+      "symbol": "UIKit.(file).NSObject extension.accessibilityDecrement()",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h",
+        "line": 355,
+        "column": 1,
+        "sha256": "3195e4606414a2a834d9f62933c2ec0c2d3afa6a5b3c535f35b0da6c4c57c39b",
+        "contextStart": 355,
+        "context": [
+          "- (void)accessibilityDecrement API_AVAILABLE(ios(4.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 337,
+        "context": [
+          " UIAccessibilityAction",
+          "",
+          " An element should implement methods in this category if it supports the action.",
+          " */",
+          "@interface NSObject (UIAccessibilityAction)",
+          ""
+        ]
+      },
+      "availability": [
+        "- (void)accessibilityDecrement API_AVAILABLE(ios(4.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).NSObject extension.accessibilityIncrement()",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h",
+        "line": 354,
+        "column": 1,
+        "sha256": "3195e4606414a2a834d9f62933c2ec0c2d3afa6a5b3c535f35b0da6c4c57c39b",
+        "contextStart": 348,
+        "context": [
+          "/* ",
+          " If an element has the UIAccessibilityTraitAdjustable trait, it must also implement",
+          " the following methods. Incrementing will adjust the element so that it increases its content,",
+          " while decrementing decreases its content. For example, accessibilityIncrement will increase the value",
+          " of a UISlider, and accessibilityDecrement will decrease the value.",
+          " */   ",
+          "- (void)accessibilityIncrement API_AVAILABLE(ios(4.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 337,
+        "context": [
+          " UIAccessibilityAction",
+          "",
+          " An element should implement methods in this category if it supports the action.",
+          " */",
+          "@interface NSObject (UIAccessibilityAction)",
+          ""
+        ]
+      },
+      "availability": [
+        "- (void)accessibilityIncrement API_AVAILABLE(ios(4.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).NSObject extension.accessibilityLabel",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h",
+        "line": 64,
+        "column": 49,
+        "sha256": "3195e4606414a2a834d9f62933c2ec0c2d3afa6a5b3c535f35b0da6c4c57c39b",
+        "contextStart": 57,
+        "context": [
+          " should return text that best labels the element. For example: \"Play\" could be used for",
+          " a button that is used to play music. \"Play button\" should not be used, since there is a trait",
+          " that identifies the control is a button.",
+          " default == nil",
+          " default on UIKit controls == derived from the title",
+          " Setting the property will change the label that is returned to the accessibility client. ",
+          " */",
+          "@property (nullable, nonatomic, copy) NSString *accessibilityLabel API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 44,
+        "context": [
+          " A completely custom subclass of UIView might need to override all of the",
+          " UIAccessibility methods except accessibilityFrame.",
+          " */",
+          "",
+          "@interface NSObject (UIAccessibility)",
+          ""
+        ]
+      },
+      "availability": [
+        "@property (nullable, nonatomic, copy) NSString *accessibilityLabel API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).NSObject extension.accessibilityTraits",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h",
+        "line": 113,
+        "column": 45,
+        "sha256": "3195e4606414a2a834d9f62933c2ec0c2d3afa6a5b3c535f35b0da6c4c57c39b",
+        "contextStart": 106,
+        "context": [
+          " See UIAccessibilityConstants.h for a list of traits.",
+          " When overriding this method, remember to combine your custom traits",
+          " with [super accessibilityTraits].",
+          " default == UIAccessibilityTraitNone",
+          " default on UIKit controls == traits that best characterize individual controls. ",
+          " Setting the property will change the traits that are returned to the accessibility client. ",
+          " */",
+          "@property (nonatomic) UIAccessibilityTraits accessibilityTraits API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 44,
+        "context": [
+          " A completely custom subclass of UIView might need to override all of the",
+          " UIAccessibility methods except accessibilityFrame.",
+          " */",
+          "",
+          "@interface NSObject (UIAccessibility)",
+          ""
+        ]
+      },
+      "availability": [
+        "@property (nonatomic) UIAccessibilityTraits accessibilityTraits API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).NSObject extension.accessibilityValue",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h",
+        "line": 95,
+        "column": 49,
+        "sha256": "3195e4606414a2a834d9f62933c2ec0c2d3afa6a5b3c535f35b0da6c4c57c39b",
+        "contextStart": 88,
+        "context": [
+          " Returns a localized string that represents the value of the element, such as the value ",
+          " of a slider or the text in a text field. Use only when the label of the element",
+          " differs from a value. For example: A volume slider has a label of \"Volume\", but a value of \"60%\".",
+          " default == nil",
+          " default on UIKit controls == values for appropriate controls ",
+          " Setting the property will change the value that is returned to the accessibility client.  ",
+          " */",
+          "@property (nullable, nonatomic, copy) NSString *accessibilityValue API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 44,
+        "context": [
+          " A completely custom subclass of UIView might need to override all of the",
+          " UIAccessibility methods except accessibilityFrame.",
+          " */",
+          "",
+          "@interface NSObject (UIAccessibility)",
+          ""
+        ]
+      },
+      "availability": [
+        "@property (nullable, nonatomic, copy) NSString *accessibilityValue API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).NSObject extension.isAccessibilityElement",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h",
+        "line": 52,
+        "column": 28,
+        "sha256": "3195e4606414a2a834d9f62933c2ec0c2d3afa6a5b3c535f35b0da6c4c57c39b",
+        "contextStart": 46,
+        "context": [
+          "/*",
+          " Return YES if the receiver should be exposed as an accessibility element. ",
+          " default == NO",
+          " default on UIKit controls == YES ",
+          " Setting the property to YES will cause the receiver to be visible to assistive applications. ",
+          " */",
+          "@property (nonatomic) BOOL isAccessibilityElement API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 44,
+        "context": [
+          " A completely custom subclass of UIView might need to override all of the",
+          " UIAccessibility methods except accessibilityFrame.",
+          " */",
+          "",
+          "@interface NSObject (UIAccessibility)",
+          ""
+        ]
+      },
+      "availability": [
+        "@property (nonatomic) BOOL isAccessibilityElement API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR;"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UIAccessibility extension.isReduceMotionEnabled",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "unresolved-declaration-location",
+      "declaration": null,
+      "enclosingDeclaration": null,
+      "availability": [],
+      "introduction": null,
+      "note": "Compiler accepted at deployment26 with this SDK; no introduction date inferred."
+    },
+    {
+      "symbol": "UIKit.(file).UIAccessibilityTraits extension.adjustable",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityConstants.h",
+        "line": 90,
+        "column": 42,
+        "sha256": "0a0c346482068ee869df77b93d8d9323f9d9cde2051105991003a29f26719b6e",
+        "contextStart": 86,
+        "context": [
+          "/*",
+          " Used when an element can be \"adjusted\" (e.g. a slider). The element must also ",
+          " implement accessibilityIncrement and accessibilityDecrement.",
+          " */",
+          "UIKIT_EXTERN const UIAccessibilityTraits UIAccessibilityTraitAdjustable API_AVAILABLE(ios(4.0), watchos(2.0)) NS_SWIFT_NONISOLATED;"
+        ]
+      },
+      "enclosingDeclaration": null,
+      "availability": [
+        "UIKIT_EXTERN const UIAccessibilityTraits UIAccessibilityTraitAdjustable API_AVAILABLE(ios(4.0), watchos(2.0)) NS_SWIFT_NONISOLATED;"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UIAccessibilityTraits extension.notEnabled",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityConstants.h",
+        "line": 72,
+        "column": 42,
+        "sha256": "0a0c346482068ee869df77b93d8d9323f9d9cde2051105991003a29f26719b6e",
+        "contextStart": 71,
+        "context": [
+          "// Used when the control is not enabled and does not respond to user input.",
+          "UIKIT_EXTERN const UIAccessibilityTraits UIAccessibilityTraitNotEnabled API_AVAILABLE(watchos(2.0)) NS_SWIFT_NONISOLATED;"
+        ]
+      },
+      "enclosingDeclaration": null,
+      "availability": [
+        "UIKIT_EXTERN const UIAccessibilityTraits UIAccessibilityTraitNotEnabled API_AVAILABLE(watchos(2.0)) NS_SWIFT_NONISOLATED;"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UIAccessibilityTraits extension.staticText",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityConstants.h",
+        "line": 61,
+        "column": 42,
+        "sha256": "0a0c346482068ee869df77b93d8d9323f9d9cde2051105991003a29f26719b6e",
+        "contextStart": 60,
+        "context": [
+          "// Used when the element should be treated as static text that cannot change.",
+          "UIKIT_EXTERN const UIAccessibilityTraits UIAccessibilityTraitStaticText API_AVAILABLE(watchos(2.0)) NS_SWIFT_NONISOLATED;"
+        ]
+      },
+      "enclosingDeclaration": null,
+      "availability": [
+        "UIKIT_EXTERN const UIAccessibilityTraits UIAccessibilityTraitStaticText API_AVAILABLE(watchos(2.0)) NS_SWIFT_NONISOLATED;"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UIAction extension.init(title:image:identifier:discoverabilityTitle:attributes:state:handler:)",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "unresolved-declaration-location",
+      "declaration": null,
+      "enclosingDeclaration": null,
+      "availability": [],
+      "introduction": null,
+      "note": "Compiler accepted at deployment26 with this SDK; no introduction date inferred."
+    },
+    {
+      "symbol": "UIKit.(file).UIButton extension.ButtonType.system",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "unresolved-declaration-location",
+      "declaration": null,
+      "enclosingDeclaration": null,
+      "availability": [],
+      "introduction": null,
+      "note": "Compiler accepted at deployment26 with this SDK; no introduction date inferred."
+    },
+    {
+      "symbol": "UIKit.(file).UIButton.init(type:)",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIButton.h",
+        "line": 57,
+        "column": 1,
+        "sha256": "5a73838312c4b387723f03bcff039077211e0e790d459986d3e4ce0851e77e97",
+        "contextStart": 57,
+        "context": [
+          "+ (instancetype)buttonWithType:(UIButtonType)buttonType;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 49,
+        "context": [
+          "typedef UIPointerStyle *_Nullable(^UIButtonPointerStyleProvider)(UIButton *button, UIPointerEffect *proposedEffect, UIPointerShape *proposedShape) API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos);",
+          "typedef void (^UIButtonConfigurationUpdateHandler)(__kindof UIButton *button) API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
+          "",
+          "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+          "@interface UIButton : UIControl <NSCoding>",
+          ""
+        ]
+      },
+      "availability": [
+        "typedef UIPointerStyle *_Nullable(^UIButtonPointerStyleProvider)(UIButton *button, UIPointerEffect *proposedEffect, UIPointerShape *proposedShape) API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos);",
+        "typedef void (^UIButtonConfigurationUpdateHandler)(__kindof UIButton *button) API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
+        "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UIButton.setTitle(_:for:)",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIButton.h",
+        "line": 119,
+        "column": 1,
+        "sha256": "5a73838312c4b387723f03bcff039077211e0e790d459986d3e4ce0851e77e97",
+        "contextStart": 119,
+        "context": [
+          "- (void)setTitle:(nullable NSString *)title forState:(UIControlState)state;                     // default is nil. title is assumed to be single line"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 49,
+        "context": [
+          "typedef UIPointerStyle *_Nullable(^UIButtonPointerStyleProvider)(UIButton *button, UIPointerEffect *proposedEffect, UIPointerShape *proposedShape) API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos);",
+          "typedef void (^UIButtonConfigurationUpdateHandler)(__kindof UIButton *button) API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
+          "",
+          "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+          "@interface UIButton : UIControl <NSCoding>",
+          ""
+        ]
+      },
+      "availability": [
+        "typedef UIPointerStyle *_Nullable(^UIButtonPointerStyleProvider)(UIButton *button, UIPointerEffect *proposedEffect, UIPointerShape *proposedShape) API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos);",
+        "typedef void (^UIButtonConfigurationUpdateHandler)(__kindof UIButton *button) API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
+        "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UIControl extension.Event.primaryActionTriggered",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "unresolved-declaration-location",
+      "declaration": null,
+      "enclosingDeclaration": null,
+      "availability": [],
+      "introduction": null,
+      "note": "Compiler accepted at deployment26 with this SDK; no introduction date inferred."
+    },
+    {
+      "symbol": "UIKit.(file).UIControl extension.State.normal",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "unresolved-declaration-location",
+      "declaration": null,
+      "enclosingDeclaration": null,
+      "availability": [],
+      "introduction": null,
+      "note": "Compiler accepted at deployment26 with this SDK; no introduction date inferred."
+    },
+    {
+      "symbol": "UIKit.(file).UIControl.addAction(_:for:)",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIControl.h",
+        "line": 109,
+        "column": 1,
+        "sha256": "843922e4422c3689a847e683cf93266fb4d273486960cb666ae3abb08860b4de",
+        "contextStart": 108,
+        "context": [
+          "/// Adds the UIAction to a given event. UIActions are uniqued based on their identifier, and subsequent actions with the same identifier replace previously added actions. You may add multiple UIActions for corresponding controlEvents, and you may add the same action to multiple controlEvents.",
+          "- (void)addAction:(UIAction *)action forControlEvents:(UIControlEvents)controlEvents API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos);"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 76,
+        "context": [
+          "",
+          "//______________________________________________________",
+          "",
+          "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+          "@interface UIControl : UIView",
+          ""
+        ]
+      },
+      "availability": [
+        "- (void)addAction:(UIAction *)action forControlEvents:(UIControlEvents)controlEvents API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos);",
+        "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UIControl.isEnabled",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIControl.h",
+        "line": 84,
+        "column": 44,
+        "sha256": "843922e4422c3689a847e683cf93266fb4d273486960cb666ae3abb08860b4de",
+        "contextStart": 84,
+        "context": [
+          "@property(nonatomic,getter=isEnabled) BOOL enabled;                                  // default is YES. if NO, ignores touch events and subclasses may draw differently"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 76,
+        "context": [
+          "",
+          "//______________________________________________________",
+          "",
+          "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+          "@interface UIControl : UIView",
+          ""
+        ]
+      },
+      "availability": [
+        "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UILabel.init()",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+        "line": 158,
+        "column": 1,
+        "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+        "contextStart": 158,
+        "context": [
+          "- (instancetype)init API_AVAILABLE(ios(2.0), tvos(9.0), visionos(1.0)) API_UNAVAILABLE(watchos);"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 152,
+        "context": [
+          "",
+          "@class UIBezierPath, UIEvent, UIWindow, UIViewController, UIColor, UIGestureRecognizer, UIMotionEffect, CALayer, UILayoutGuide, UIKeyboardLayoutGuide;",
+          "",
+          "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+          "@interface UIView : UIResponder <NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate>",
+          ""
+        ]
+      },
+      "availability": [
+        "- (instancetype)init API_AVAILABLE(ios(2.0), tvos(9.0), visionos(1.0)) API_UNAVAILABLE(watchos);",
+        "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UILabel.init(coder:)",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+        "line": 157,
+        "column": 1,
+        "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+        "contextStart": 157,
+        "context": [
+          "- (nullable instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 152,
+        "context": [
+          "",
+          "@class UIBezierPath, UIEvent, UIWindow, UIViewController, UIColor, UIGestureRecognizer, UIMotionEffect, CALayer, UILayoutGuide, UIKeyboardLayoutGuide;",
+          "",
+          "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+          "@interface UIView : UIResponder <NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate>",
+          ""
+        ]
+      },
+      "availability": [
+        "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UILabel.init(frame:)",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+        "line": 156,
+        "column": 1,
+        "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+        "contextStart": 156,
+        "context": [
+          "- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 152,
+        "context": [
+          "",
+          "@class UIBezierPath, UIEvent, UIWindow, UIViewController, UIColor, UIGestureRecognizer, UIMotionEffect, CALayer, UILayoutGuide, UIKeyboardLayoutGuide;",
+          "",
+          "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+          "@interface UIView : UIResponder <NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate>",
+          ""
+        ]
+      },
+      "availability": [
+        "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UILabel.text",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UILabel.h",
+        "line": 35,
+        "column": 59,
+        "sha256": "dbd8f01a758942f5b9341874f88adcba5087c19cf13f49621790a6e806845413",
+        "contextStart": 35,
+        "context": [
+          "@property(nullable, nonatomic,copy)   NSString           *text; // default is nil"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 33,
+        "context": [
+          "    UILabelVibrancyAutomatic,",
+          "} API_AVAILABLE(visionos(1.0), ios(17.0), tvos(17.0)) API_UNAVAILABLE(watchos);",
+          "",
+          "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+          "@interface UILabel : UIView <NSCoding, UIContentSizeCategoryAdjusting, UILetterformAwareAdjusting>",
+          ""
+        ]
+      },
+      "availability": [
+        "} API_AVAILABLE(visionos(1.0), ios(17.0), tvos(17.0)) API_UNAVAILABLE(watchos);",
+        "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UIStackView.addArrangedSubview",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIStackView.h",
+        "line": 148,
+        "column": 1,
+        "sha256": "6280f74610a8918678a8e8d783fa91ab0fa50a12d94b0edd574567da07eaa14a",
+        "contextStart": 141,
+        "context": [
+          "/* Add a view to the end of the arrangedSubviews list.",
+          " Maintains the rule that the arrangedSubviews list is a subset of the",
+          " subviews list by adding the view as a subview of the receiver if",
+          " necessary.",
+          "    Does not affect the subview ordering if view is already a subview ",
+          " of the receiver.",
+          " */",
+          "- (void)addArrangedSubview:(UIView *)view;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 124,
+        "context": [
+          " viewForFirst/LastBaselineLayout from that stack view.",
+          " */",
+          "NS_HEADER_AUDIT_BEGIN(nullability, sendability)",
+          "UIKIT_EXTERN API_AVAILABLE(ios(9.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+          "@interface UIStackView : UIView",
+          ""
+        ]
+      },
+      "availability": [
+        "UIKIT_EXTERN API_AVAILABLE(ios(9.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UIStackView.init(coder:)",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIStackView.h",
+        "line": 127,
+        "column": 1,
+        "sha256": "6280f74610a8918678a8e8d783fa91ab0fa50a12d94b0edd574567da07eaa14a",
+        "contextStart": 127,
+        "context": [
+          "- (instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 124,
+        "context": [
+          " viewForFirst/LastBaselineLayout from that stack view.",
+          " */",
+          "NS_HEADER_AUDIT_BEGIN(nullability, sendability)",
+          "UIKIT_EXTERN API_AVAILABLE(ios(9.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+          "@interface UIStackView : UIView",
+          ""
+        ]
+      },
+      "availability": [
+        "UIKIT_EXTERN API_AVAILABLE(ios(9.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UIStackView.init(frame:)",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIStackView.h",
+        "line": 126,
+        "column": 1,
+        "sha256": "6280f74610a8918678a8e8d783fa91ab0fa50a12d94b0edd574567da07eaa14a",
+        "contextStart": 126,
+        "context": [
+          "- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 124,
+        "context": [
+          " viewForFirst/LastBaselineLayout from that stack view.",
+          " */",
+          "NS_HEADER_AUDIT_BEGIN(nullability, sendability)",
+          "UIKIT_EXTERN API_AVAILABLE(ios(9.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+          "@interface UIStackView : UIView",
+          ""
+        ]
+      },
+      "availability": [
+        "UIKIT_EXTERN API_AVAILABLE(ios(9.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UIView extension.addSubview",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+        "line": 237,
+        "column": 1,
+        "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+        "contextStart": 237,
+        "context": [
+          "- (void)addSubview:(UIView *)view;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 227,
+        "context": [
+          "- (void)sizeToFit;                       // calls sizeThatFits: with current view bounds and changes bounds size.",
+          "",
+          "@end",
+          "",
+          "@interface UIView(UIViewHierarchy)",
+          ""
+        ]
+      },
+      "availability": [],
+      "introduction": null,
+      "note": "Declaration located; no explicit version annotation captured. Introduction remains unresolved."
+    },
+    {
+      "symbol": "UIKit.(file).UIView.init(coder:)",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+        "line": 157,
+        "column": 1,
+        "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+        "contextStart": 157,
+        "context": [
+          "- (nullable instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 152,
+        "context": [
+          "",
+          "@class UIBezierPath, UIEvent, UIWindow, UIViewController, UIColor, UIGestureRecognizer, UIMotionEffect, CALayer, UILayoutGuide, UIKeyboardLayoutGuide;",
+          "",
+          "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+          "@interface UIView : UIResponder <NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate>",
+          ""
+        ]
+      },
+      "availability": [
+        "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    },
+    {
+      "symbol": "UIKit.(file).UIView.init(frame:)",
+      "module": "UIKit",
+      "packages": [
+        "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts"
+      ],
+      "status": "located-availability-context",
+      "declaration": {
+        "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+        "line": 156,
+        "column": 1,
+        "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+        "contextStart": 156,
+        "context": [
+          "- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;"
+        ]
+      },
+      "enclosingDeclaration": {
+        "line": 152,
+        "context": [
+          "",
+          "@class UIBezierPath, UIEvent, UIWindow, UIViewController, UIColor, UIGestureRecognizer, UIMotionEffect, CALayer, UILayoutGuide, UIKeyboardLayoutGuide;",
+          "",
+          "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+          "@interface UIView : UIResponder <NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate>",
+          ""
+        ]
+      },
+      "availability": [
+        "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR"
+      ],
+      "introduction": null,
+      "note": "Exact availability context retained; enclosing/renamed overlays require reviewer interpretation."
+    }
+  ]
+}

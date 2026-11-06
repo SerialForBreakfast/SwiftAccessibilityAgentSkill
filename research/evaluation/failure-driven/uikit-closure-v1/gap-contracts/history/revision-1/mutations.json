@@ -1,0 +1,43 @@
+[
+  {
+    "id": "summary-name",
+    "file": "WrongSummary.swift",
+    "removed": "accessibilityLabel = spokenSummary",
+    "inserted": "accessibilityLabel = title",
+    "expectedFailedMethods": [
+      "testSummaryPreservesCompleteLocalizedName",
+      "testSummaryReuseReplacesOwnedTextAndClearsValue"
+    ]
+  },
+  {
+    "id": "ordinary-quantity",
+    "file": "MissingOrdinaryPath.swift",
+    "removed": "more.addAction(UIAction { [weak self] _ in self?.change(by: 1) }, for: .primaryActionTriggered)",
+    "inserted": "// Deliberate omission of the ordinary increase path.",
+    "expectedFailedMethods": [
+      "testOrdinaryQuantityButtonsChangeSameState",
+      "testQuantityReenableRestoresBothPaths"
+    ]
+  },
+  {
+    "id": "disabled-quantity",
+    "file": "MissingDisabledGuard.swift",
+    "removed": "guard enabled else { return }",
+    "inserted": "// Deliberate omission of the shared disabled guard.",
+    "expectedFailedMethods": [
+      "testDisabledQuantityRejectsBothDirectPaths"
+    ]
+  },
+  {
+    "id": "motion-feedback",
+    "file": "MissingReducedFeedback.swift",
+    "removed": "public func update(message: String) {",
+    "inserted": "public func update(message: String) {\n        if readReduceMotion() { return }",
+    "expectedFailedMethods": [
+      "testReducedMotionUpdatesTextWithoutAnimation",
+      "testMotionPreferenceIsReadOnEachUpdate",
+      "testMotionUpdatesReplaceErrorWithCompletion",
+      "testMotionPreservesSuppliedLocalizedMessage"
+    ]
+  }
+]

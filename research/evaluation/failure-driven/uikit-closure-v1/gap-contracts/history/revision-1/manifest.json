@@ -1,0 +1,224 @@
+{
+  "schema": 1,
+  "id": "uikit-closure-gaps",
+  "revision": "1",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Stored metadata, direct callbacks and injected motion policy only; no speech, navigation or rendered readability claims.",
+  "claims": [
+    {
+      "id": "metadata",
+      "url": "https://developer.apple.com/documentation/uikit/accessibility-for-uikit",
+      "section": "UIAccessibility label/traits/adjustable hooks and container flags",
+      "statement": "Explicit label/traits/state and independent ordinary controls; wording, bounds and callbacks are fixture policy.",
+      "availability": "Existing UIKit APIs in SDK27, deployment26.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "motion",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibility/isreducemotionenabled",
+      "section": "UIAccessibility preference read; final-state fixture contract",
+      "statement": "Optional animation follows preference; text state is not delayed or omitted by this example.",
+      "availability": "Public preference API; default reader plus injected deterministic reader.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/GapContracts.swift",
+      "sha256": "1f62d77a6fd76b951dcd222bf16c8f371d2c93e9b1dcce6973be1bfd2e088e0d"
+    },
+    {
+      "path": "Tests/GapContractTests.swift",
+      "sha256": "ea80d7fd2a3ea4c015c7263b20b97a6c2cd1881444d9d4d90a1e18746979789a"
+    },
+    {
+      "path": "NegativeFixtures/WrongSummary.swift",
+      "sha256": "c083a75fd0f7cd57b645df94bd4091656f6757484eb41615f6b3694fcdd4159e"
+    },
+    {
+      "path": "NegativeFixtures/MissingOrdinaryPath.swift",
+      "sha256": "e94808b8259b4b00fa678784066f9f250c55de9f1aa9c4a379ceb15bd22b1e77"
+    },
+    {
+      "path": "NegativeFixtures/MissingDisabledGuard.swift",
+      "sha256": "2cd3a7c547426f5fa3a025ed66da9a8300b55d5e6d1fd9ce4dd04eb89d01cd44"
+    },
+    {
+      "path": "NegativeFixtures/MissingReducedFeedback.swift",
+      "sha256": "49c22ca8dba5a2a7fd4fac8aebdb63037a37b73d08bac40d0bfa44a26e2a4c23"
+    }
+  ],
+  "checks": [
+    {
+      "id": "gap-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "metadata",
+        "motion"
+      ],
+      "testIds": [
+        "GapContractTests/testSummaryPreservesCompleteLocalizedName",
+        "GapContractTests/testSummaryExposesOneNoninteractiveConcept",
+        "GapContractTests/testSummaryReuseReplacesOwnedTextAndClearsValue",
+        "GapContractTests/testSummaryPreservesUnrelatedTrait",
+        "GapContractTests/testQuantityHasNamedAdjustableValueAndOrdinaryButtons",
+        "GapContractTests/testOrdinaryQuantityButtonsChangeSameState",
+        "GapContractTests/testAdjustableHooksSynchronizeBeforeCallback",
+        "GapContractTests/testDisabledQuantityRejectsBothDirectPaths",
+        "GapContractTests/testQuantityReenableRestoresBothPaths",
+        "GapContractTests/testQuantityBoundsSuppressRedundantEvents",
+        "GapContractTests/testQuantityRetainedChildrenDoNotRetainOwner",
+        "GapContractTests/testReducedMotionUpdatesTextWithoutAnimation",
+        "GapContractTests/testMotionFeedbackPrecedesOptionalAnimation",
+        "GapContractTests/testMotionPreferenceIsReadOnEachUpdate",
+        "GapContractTests/testMotionUpdatesReplaceErrorWithCompletion",
+        "GapContractTests/testMotionPreservesSuppliedLocalizedMessage"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "summary-name",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "metadata",
+        "motion"
+      ],
+      "testIds": [
+        "GapContractTests/testSummaryPreservesCompleteLocalizedName",
+        "GapContractTests/testSummaryExposesOneNoninteractiveConcept",
+        "GapContractTests/testSummaryReuseReplacesOwnedTextAndClearsValue",
+        "GapContractTests/testSummaryPreservesUnrelatedTrait",
+        "GapContractTests/testQuantityHasNamedAdjustableValueAndOrdinaryButtons",
+        "GapContractTests/testOrdinaryQuantityButtonsChangeSameState",
+        "GapContractTests/testAdjustableHooksSynchronizeBeforeCallback",
+        "GapContractTests/testDisabledQuantityRejectsBothDirectPaths",
+        "GapContractTests/testQuantityReenableRestoresBothPaths",
+        "GapContractTests/testQuantityBoundsSuppressRedundantEvents",
+        "GapContractTests/testQuantityRetainedChildrenDoNotRetainOwner",
+        "GapContractTests/testReducedMotionUpdatesTextWithoutAnimation",
+        "GapContractTests/testMotionFeedbackPrecedesOptionalAnimation",
+        "GapContractTests/testMotionPreferenceIsReadOnEachUpdate",
+        "GapContractTests/testMotionUpdatesReplaceErrorWithCompletion",
+        "GapContractTests/testMotionPreservesSuppliedLocalizedMessage"
+      ],
+      "failureIds": [
+        "GapContractTests/testSummaryPreservesCompleteLocalizedName",
+        "GapContractTests/testSummaryReuseReplacesOwnedTextAndClearsValue"
+      ],
+      "replacement": {
+        "target": "Sources/GapContracts.swift",
+        "source": "NegativeFixtures/WrongSummary.swift"
+      }
+    },
+    {
+      "id": "ordinary-quantity",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "metadata",
+        "motion"
+      ],
+      "testIds": [
+        "GapContractTests/testSummaryPreservesCompleteLocalizedName",
+        "GapContractTests/testSummaryExposesOneNoninteractiveConcept",
+        "GapContractTests/testSummaryReuseReplacesOwnedTextAndClearsValue",
+        "GapContractTests/testSummaryPreservesUnrelatedTrait",
+        "GapContractTests/testQuantityHasNamedAdjustableValueAndOrdinaryButtons",
+        "GapContractTests/testOrdinaryQuantityButtonsChangeSameState",
+        "GapContractTests/testAdjustableHooksSynchronizeBeforeCallback",
+        "GapContractTests/testDisabledQuantityRejectsBothDirectPaths",
+        "GapContractTests/testQuantityReenableRestoresBothPaths",
+        "GapContractTests/testQuantityBoundsSuppressRedundantEvents",
+        "GapContractTests/testQuantityRetainedChildrenDoNotRetainOwner",
+        "GapContractTests/testReducedMotionUpdatesTextWithoutAnimation",
+        "GapContractTests/testMotionFeedbackPrecedesOptionalAnimation",
+        "GapContractTests/testMotionPreferenceIsReadOnEachUpdate",
+        "GapContractTests/testMotionUpdatesReplaceErrorWithCompletion",
+        "GapContractTests/testMotionPreservesSuppliedLocalizedMessage"
+      ],
+      "failureIds": [
+        "GapContractTests/testOrdinaryQuantityButtonsChangeSameState",
+        "GapContractTests/testQuantityReenableRestoresBothPaths"
+      ],
+      "replacement": {
+        "target": "Sources/GapContracts.swift",
+        "source": "NegativeFixtures/MissingOrdinaryPath.swift"
+      }
+    },
+    {
+      "id": "disabled-quantity",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "metadata",
+        "motion"
+      ],
+      "testIds": [
+        "GapContractTests/testSummaryPreservesCompleteLocalizedName",
+        "GapContractTests/testSummaryExposesOneNoninteractiveConcept",
+        "GapContractTests/testSummaryReuseReplacesOwnedTextAndClearsValue",
+        "GapContractTests/testSummaryPreservesUnrelatedTrait",
+        "GapContractTests/testQuantityHasNamedAdjustableValueAndOrdinaryButtons",
+        "GapContractTests/testOrdinaryQuantityButtonsChangeSameState",
+        "GapContractTests/testAdjustableHooksSynchronizeBeforeCallback",
+        "GapContractTests/testDisabledQuantityRejectsBothDirectPaths",
+        "GapContractTests/testQuantityReenableRestoresBothPaths",
+        "GapContractTests/testQuantityBoundsSuppressRedundantEvents",
+        "GapContractTests/testQuantityRetainedChildrenDoNotRetainOwner",
+        "GapContractTests/testReducedMotionUpdatesTextWithoutAnimation",
+        "GapContractTests/testMotionFeedbackPrecedesOptionalAnimation",
+        "GapContractTests/testMotionPreferenceIsReadOnEachUpdate",
+        "GapContractTests/testMotionUpdatesReplaceErrorWithCompletion",
+        "GapContractTests/testMotionPreservesSuppliedLocalizedMessage"
+      ],
+      "failureIds": [
+        "GapContractTests/testDisabledQuantityRejectsBothDirectPaths"
+      ],
+      "replacement": {
+        "target": "Sources/GapContracts.swift",
+        "source": "NegativeFixtures/MissingDisabledGuard.swift"
+      }
+    },
+    {
+      "id": "motion-feedback",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "metadata",
+        "motion"
+      ],
+      "testIds": [
+        "GapContractTests/testSummaryPreservesCompleteLocalizedName",
+        "GapContractTests/testSummaryExposesOneNoninteractiveConcept",
+        "GapContractTests/testSummaryReuseReplacesOwnedTextAndClearsValue",
+        "GapContractTests/testSummaryPreservesUnrelatedTrait",
+        "GapContractTests/testQuantityHasNamedAdjustableValueAndOrdinaryButtons",
+        "GapContractTests/testOrdinaryQuantityButtonsChangeSameState",
+        "GapContractTests/testAdjustableHooksSynchronizeBeforeCallback",
+        "GapContractTests/testDisabledQuantityRejectsBothDirectPaths",
+        "GapContractTests/testQuantityReenableRestoresBothPaths",
+        "GapContractTests/testQuantityBoundsSuppressRedundantEvents",
+        "GapContractTests/testQuantityRetainedChildrenDoNotRetainOwner",
+        "GapContractTests/testReducedMotionUpdatesTextWithoutAnimation",
+        "GapContractTests/testMotionFeedbackPrecedesOptionalAnimation",
+        "GapContractTests/testMotionPreferenceIsReadOnEachUpdate",
+        "GapContractTests/testMotionUpdatesReplaceErrorWithCompletion",
+        "GapContractTests/testMotionPreservesSuppliedLocalizedMessage"
+      ],
+      "failureIds": [
+        "GapContractTests/testReducedMotionUpdatesTextWithoutAnimation",
+        "GapContractTests/testMotionPreferenceIsReadOnEachUpdate",
+        "GapContractTests/testMotionUpdatesReplaceErrorWithCompletion",
+        "GapContractTests/testMotionPreservesSuppliedLocalizedMessage"
+      ],
+      "replacement": {
+        "target": "Sources/GapContracts.swift",
+        "source": "NegativeFixtures/MissingReducedFeedback.swift"
+      }
+    }
+  ]
+}

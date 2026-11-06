@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "id": "uikit-checkout-preservation",
+  "revision": "1",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Configuration, direct control-event dispatch and ownership only; no rendered layout/input/speech claims. New authored development example, not repaired model answers.",
+  "claims": [
+    {
+      "id": "text",
+      "url": "https://developer.apple.com/videos/play/wwdc2024/10074/",
+      "section": "Scaled text and Dynamic layouts",
+      "statement": "UIKit scalable multiline text and flexible containers; no mandatory axis switching for this example.",
+      "reviewedOn": "2026-11-06",
+      "availability": "Existing UIKit APIs, deployment26."
+    },
+    {
+      "id": "preservation",
+      "url": "https://developer.apple.com/documentation/uikit/uicontrol/sendactions(for:)",
+      "section": "UIControl.h sendActionsForControlEvents/addAction:forControlEvents:",
+      "statement": "Programmatic event dispatch exercises registered actions. Preservation and exact counts are this component contract, not speech or real input guarantees.",
+      "reviewedOn": "2026-11-06",
+      "availability": "addAction available iOS14+."
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/CheckoutSummary.swift",
+      "sha256": "ffbd1a2999450ec768ef7ecb3cd8e79073cdb96d4ff75b248e7efddd4cd5697c"
+    },
+    {
+      "path": "Tests/CheckoutSummaryTests.swift",
+      "sha256": "756b304a0ba25410760dc422ac05b3e0624410b502273143bca3e09a49afea21"
+    },
+    {
+      "path": "NegativeFixtures/ChangedFont.swift",
+      "sha256": "fbf0fe4e5ce5e56ae6e46fb2f3353257ef818c346def92521e88f7cce103cf7e"
+    },
+    {
+      "path": "NegativeFixtures/FixedHeight.swift",
+      "sha256": "6de943013f3da9327fd5c9359b760cb18a26b119a8836a084142e62df7920e27"
+    }
+  ],
+  "checks": [
+    {
+      "id": "checkout-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "text",
+        "preservation"
+      ],
+      "testIds": [
+        "CheckoutSummaryTests/testPreservesExistingButtonIdentityTypographyAndTitle",
+        "CheckoutSummaryTests/testRepeatedUpdatesPreserveExistingActionExactlyOnce",
+        "CheckoutSummaryTests/testFlexibleTextConfigurationAndNoFixedEnclosingHeight",
+        "CheckoutSummaryTests/testPreservesConfiguredButtonAndDisabledState",
+        "CheckoutSummaryTests/testRetainedButtonDoesNotRetainSummary"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "changed-font",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "text",
+        "preservation"
+      ],
+      "testIds": [
+        "CheckoutSummaryTests/testPreservesExistingButtonIdentityTypographyAndTitle",
+        "CheckoutSummaryTests/testRepeatedUpdatesPreserveExistingActionExactlyOnce",
+        "CheckoutSummaryTests/testFlexibleTextConfigurationAndNoFixedEnclosingHeight",
+        "CheckoutSummaryTests/testPreservesConfiguredButtonAndDisabledState",
+        "CheckoutSummaryTests/testRetainedButtonDoesNotRetainSummary"
+      ],
+      "failureIds": [
+        "CheckoutSummaryTests/testPreservesExistingButtonIdentityTypographyAndTitle"
+      ],
+      "replacement": {
+        "target": "Sources/CheckoutSummary.swift",
+        "source": "NegativeFixtures/ChangedFont.swift"
+      }
+    },
+    {
+      "id": "fixed-height",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "text",
+        "preservation"
+      ],
+      "testIds": [
+        "CheckoutSummaryTests/testPreservesExistingButtonIdentityTypographyAndTitle",
+        "CheckoutSummaryTests/testRepeatedUpdatesPreserveExistingActionExactlyOnce",
+        "CheckoutSummaryTests/testFlexibleTextConfigurationAndNoFixedEnclosingHeight",
+        "CheckoutSummaryTests/testPreservesConfiguredButtonAndDisabledState",
+        "CheckoutSummaryTests/testRetainedButtonDoesNotRetainSummary"
+      ],
+      "failureIds": [
+        "CheckoutSummaryTests/testFlexibleTextConfigurationAndNoFixedEnclosingHeight"
+      ],
+      "replacement": {
+        "target": "Sources/CheckoutSummary.swift",
+        "source": "NegativeFixtures/FixedHeight.swift"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "status": "development-drafts",
+  "framework": "UIKit",
+  "holdout": false,
+  "cases": [
+    {
+      "id": "UC-SUMMARY-D1",
+      "prompt": "Our UIKit hotel card has a title and a subtitle but no buttons. We want one concise description rather than two repeated stops, and the same card instance is reused for different bookings. We already have a fully localized summary string. Show a small implementation and unit tests that keep its description current."
+    },
+    {
+      "id": "UC-QUANTITY-D1",
+      "prompt": "Our UIKit ticket picker has a custom quantity display, with a range of zero to three. People should be able to change it with ordinary plus/minus buttons as well as accessibility adjustment. Both paths should obey the disabled state and call our change handler only when the quantity changes. People should also be able to tell when adjustment is unavailable. Show a complete implementation and focused tests."
+    },
+    {
+      "id": "UC-MOTION-FEEDBACK-D1",
+      "prompt": "Our UIKit save status sometimes stays on Saving when animations are disabled. We need the final message to update immediately whether Reduce Motion is enabled or not, with optional animation handled separately. Show how you would structure and unit-test that behavior, including a preference change between saves."
+    }
+  ]
+}

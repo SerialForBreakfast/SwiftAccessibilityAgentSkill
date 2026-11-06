@@ -7,6 +7,15 @@ evaluation work. This file augments, rather than rewrites, the pinned
 
 ## Work Packages
 
+The [UIKit coverage-closure campaign](uikit-closure-v1/README.md) now replaces small
+delivery tranches for UPAIR-07/08. It accounts for all 209 clauses and 15 rules,
+reuses completed packages, and pairs three newly identified behavioral families
+with separate draft questions/rubrics. The frozen sequential native campaign
+completed 104 checks with expected outcomes: 202 positive methods and 66 intended
+negative rejections across 19 packages. Independent review and baseline eligibility
+remain pending. Earlier
+pending rows below are historical progress notes, not a request to rebuild work.
+
 The [eight-answer UIKit checkout review](checkout-review-20261106/README.md)
 records first type-check outcomes and provisional source assessments for existing
 GP26-03 outputs. Exact first failures are preserved privately; BigDog adjudication
@@ -56,6 +65,15 @@ assumed assignment, before scheduling work. There is no estimated completion dat
 | Acceptance mismatch | C02 | Controller-only evidence-review task before any gold promotion; trace criterion to actual assertions |
 
 ## Remaining UIKit Feature Pairs
+
+The new [checkout preservation contract](checkout-contract-v1/README.md) extends
+UPAIR-02 with explicitly supplied existing-button wiring, repeated updates and
+configuration preservation. It is a new authored example, not a repair of the
+eight reviewed answers. The first failed configuration oracle is preserved;
+production source remains unchanged after the oracle revision. Two separate draft
+questions cover implementation and oracle diagnosis. See its validation record
+for native outcomes; independent prompt/oracle review and model execution remain
+pending. No frozen gold prompt, score report or runtime skill changed.
 
 UPAIR-06C now has [speed-control evidence](../../../code-examples/pilots/uikit-speed-v1/README.md):
 eight positive methods and three intended mutant rejections, with a separate draft

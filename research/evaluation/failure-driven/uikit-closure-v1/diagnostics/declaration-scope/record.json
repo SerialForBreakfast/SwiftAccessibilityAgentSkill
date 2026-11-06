@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "classification": "author-tooling-defect",
+  "observation": "Source audit, not a failing native unit or model answer",
+  "firstSourceHash": "7b05a6e48a8bb996d3bb3fa68b5b358bfd70588aab2eca89fa816d0db0db3454",
+  "firstInventoryHash": "735e9b33ae2a8ba06712e7abf4a6747433799fb80964137af0aaaf9abd82ab4d",
+  "differences": [
+    {
+      "symbol": "UIKit.(file).TextStyle extension.body",
+      "header": "System/Library/Frameworks/UIKit.framework/Headers/UIFontDescriptor.h",
+      "headerHash": "bec705a1cd81ee51a9994ade6c4bbf72d6bd19019b9d70b45604ca9741cc642c",
+      "declarationLine": 184,
+      "originalEnclosingLine": 67,
+      "correctedEnclosingLine": null
+    },
+    {
+      "symbol": "UIKit.(file).UIAccessibility extension.post(notification:argument:)",
+      "header": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h",
+      "headerHash": "3195e4606414a2a834d9f62933c2ec0c2d3afa6a5b3c535f35b0da6c4c57c39b",
+      "declarationLine": 521,
+      "originalEnclosingLine": 504,
+      "correctedEnclosingLine": null
+    },
+    {
+      "symbol": "UIKit.(file).UIAccessibility extension.reduceMotionStatusDidChangeNotification",
+      "header": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibility.h",
+      "headerHash": "3195e4606414a2a834d9f62933c2ec0c2d3afa6a5b3c535f35b0da6c4c57c39b",
+      "declarationLine": 567,
+      "originalEnclosingLine": 504,
+      "correctedEnclosingLine": null
+    },
+    {
+      "symbol": "UIKit.(file).UIAccessibilityCustomAction extension.editCategory",
+      "header": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityCustomAction.h",
+      "headerHash": "33d8e20fbdcf72eeeba214788596e743a8fa5282a8a5877f7648554733e39de4",
+      "declarationLine": 72,
+      "originalEnclosingLine": 16,
+      "correctedEnclosingLine": null
+    }
+  ],
+  "consequence": "Four global declarations were assigned a preceding closed Objective-C scope. No introduction date had been inferred from it. Derived matrix corrects enclosure and retains raw first inventory.",
+  "repairAttempts": 1,
+  "skillFixProposed": false
+}

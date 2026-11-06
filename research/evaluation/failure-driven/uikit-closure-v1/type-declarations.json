@@ -1,0 +1,3746 @@
+{
+  "schema": 1,
+  "scope": "Lexical Apple-prefixed identifiers in production sources. Modules excluded; includes C functions/constants and namespaces explicitly when no type declaration exists. Member AST inventory is complementary.",
+  "rows": [
+    {
+      "name": "UITableViewCell",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-choice-v1/Sources/ChoiceUIKit.swift",
+          "sha256": "376acadcfba854b9dd04e5e9245bb9ead1144e1ffb4f714ac00ee83f859d1ec2"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/OrderCell.swift",
+          "sha256": "9a5ab3e8eea18bc1cb458d01984eb3955caed316c534d312446b0a0d39d6fcc4"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h",
+          "line": 81,
+          "sha256": "27a4008d4129b16ce42a2d6237bd0a788b636f3f8d1a418aa351a16043236d85",
+          "context": [
+            "",
+            "typedef void (^UITableViewCellConfigurationUpdateHandler)(__kindof UITableViewCell *cell, UICellConfigurationState *state) API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UITableViewCell : UIView <NSCoding, UIGestureRecognizerDelegate>",
+            "",
+            "// Designated initializer.  If the cell can be reused, you must pass in a reuse identifier.  You should use the same reuse identifier for all cells of the same form.  "
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h",
+          "line": 187,
+          "sha256": "27a4008d4129b16ce42a2d6237bd0a788b636f3f8d1a418aa351a16043236d85",
+          "context": [
+            "@property (nonatomic) BOOL userInteractionEnabledWhileDragging API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos);",
+            "",
+            "@end",
+            "",
+            "@interface UITableViewCell (UIDeprecated)",
+            "",
+            "// Frame is ignored.  The size will be specified by the table view width and row height."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UILabel",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-choice-v1/Sources/ChoiceUIKit.swift",
+          "sha256": "376acadcfba854b9dd04e5e9245bb9ead1144e1ffb4f714ac00ee83f859d1ec2"
+        },
+        {
+          "path": "code-examples/pilots/uikit-dynamic-v1/Sources/DynamicUIKit.swift",
+          "sha256": "d2663c145314f29cbd4574efc14fc33cbf0c66a8307e01c2d4b0bde5a54ecc27"
+        },
+        {
+          "path": "code-examples/pilots/uikit-modal-v1/Sources/ModalUIKit.swift",
+          "sha256": "0a1b2fa1fa420044467fd4024b030831e6d8fee4d0074d0de5f2c921402a29b3"
+        },
+        {
+          "path": "code-examples/pilots/uikit-naming-v1/Sources/NamingUIKit.swift",
+          "sha256": "4d54ea0311467b0c2994029076c3b86eb2b6c0e1ef09cff1c3b1d7fb3d6639ef"
+        },
+        {
+          "path": "code-examples/pilots/uikit-preferences-v1/Sources/PreferenceUIKit.swift",
+          "sha256": "24974dbbfb848289218cf3cbe74cba0a9f62c0625864a5d4608c000436d8cf02"
+        },
+        {
+          "path": "code-examples/pilots/uikit-reuse-v1/Sources/ReuseUIKit.swift",
+          "sha256": "4dfd9e59adafda3abca189c95aa885ce1cd31704e4a25cad61be455539fd1bbb"
+        },
+        {
+          "path": "code-examples/pilots/uikit-semantics-v1/Sources/UIKitSemantics.swift",
+          "sha256": "3e32ee71d21fccc4c074fff4916c4dfebbe7791c0842bdf8d463757337a238e0"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/CheckoutSummary.swift",
+          "sha256": "698764ca8207a548b70d025b61112e9ffcaf724ea6f1acd9f94031cdf818722d"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/OrderCell.swift",
+          "sha256": "9a5ab3e8eea18bc1cb458d01984eb3955caed316c534d312446b0a0d39d6fcc4"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/SettingsRow.swift",
+          "sha256": "5f1a2b75f9c19aa569cb8423e8ffe56532d0b5af39040c6303c42cf418337c0f"
+        },
+        {
+          "path": "research/evaluation/failure-driven/checkout-contract-v1/Sources/CheckoutSummary.swift",
+          "sha256": "ffbd1a2999450ec768ef7ecb3cd8e79073cdb96d4ff75b248e7efddd4cd5697c"
+        },
+        {
+          "path": "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts/Sources/GapContracts.swift",
+          "sha256": "641c7d777126ca05c1cfffee844d094908962e30cd3f3dbabd82573c6b9a6583"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UILabel.h",
+          "line": 33,
+          "sha256": "dbd8f01a758942f5b9341874f88adcba5087c19cf13f49621790a6e806845413",
+          "context": [
+            "    UILabelVibrancyAutomatic,",
+            "} API_AVAILABLE(visionos(1.0), ios(17.0), tvos(17.0)) API_UNAVAILABLE(watchos);",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UILabel : UIView <NSCoding, UIContentSizeCategoryAdjusting, UILetterformAwareAdjusting>",
+            "",
+            "@property(nullable, nonatomic,copy)   NSString           *text; // default is nil"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIStackView",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-choice-v1/Sources/ChoiceUIKit.swift",
+          "sha256": "376acadcfba854b9dd04e5e9245bb9ead1144e1ffb4f714ac00ee83f859d1ec2"
+        },
+        {
+          "path": "code-examples/pilots/uikit-speed-v1/Sources/PlaybackSpeed.swift",
+          "sha256": "0fa8804d21ade1d75ac70d2046ee4a786c2c8bc7e0b101b7fa556e5642bf7989"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/CheckoutSummary.swift",
+          "sha256": "698764ca8207a548b70d025b61112e9ffcaf724ea6f1acd9f94031cdf818722d"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/SettingsRow.swift",
+          "sha256": "5f1a2b75f9c19aa569cb8423e8ffe56532d0b5af39040c6303c42cf418337c0f"
+        },
+        {
+          "path": "research/evaluation/failure-driven/checkout-contract-v1/Sources/CheckoutSummary.swift",
+          "sha256": "ffbd1a2999450ec768ef7ecb3cd8e79073cdb96d4ff75b248e7efddd4cd5697c"
+        },
+        {
+          "path": "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts/Sources/GapContracts.swift",
+          "sha256": "641c7d777126ca05c1cfffee844d094908962e30cd3f3dbabd82573c6b9a6583"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIStackView.h",
+          "line": 124,
+          "sha256": "6280f74610a8918678a8e8d783fa91ab0fa50a12d94b0edd574567da07eaa14a",
+          "context": [
+            " viewForFirst/LastBaselineLayout from that stack view.",
+            " */",
+            "NS_HEADER_AUDIT_BEGIN(nullability, sendability)",
+            "UIKIT_EXTERN API_AVAILABLE(ios(9.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UIStackView : UIView",
+            "",
+            "- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "NSLayoutConstraint",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-choice-v1/Sources/ChoiceUIKit.swift",
+          "sha256": "376acadcfba854b9dd04e5e9245bb9ead1144e1ffb4f714ac00ee83f859d1ec2"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/OrderCell.swift",
+          "sha256": "9a5ab3e8eea18bc1cb458d01984eb3955caed316c534d312446b0a0d39d6fcc4"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/NSLayoutConstraint.h",
+          "line": 126,
+          "sha256": "f91bbfafec6e61b55d8763c68c79a9a4001d215f10f6b2a31758bd5b91e16c89",
+          "context": [
+            "#endif",
+            "} API_UNAVAILABLE(watchos);",
+            "",
+            "NSLAYOUTCONSTRAINT_EXTERN API_AVAILABLE(macos(10.7), ios(6.0), tvos(9.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface NSLayoutConstraint : NSObject",
+            "",
+            "/* Create an array of constraints using an ASCII-art-like visual format string.  The values of the `metrics` dictionary should be NSNumber (or some other type that responds to -doubleValue and returns a double)."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/NSLayoutConstraint.h",
+          "line": 191,
+          "sha256": "f91bbfafec6e61b55d8763c68c79a9a4001d215f10f6b2a31758bd5b91e16c89",
+          "context": [
+            "+ (void)deactivateConstraints:(NSArray<NSLayoutConstraint *> *)constraints API_AVAILABLE(macos(10.10), ios(8.0));",
+            "",
+            "@end",
+            "",
+            "@interface NSLayoutConstraint (NSIdentifier)",
+            "",
+            "/* For ease in debugging, name a constraint by setting its identifier, which will be printed in the constraint's description."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "NSCoder",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-choice-v1/Sources/ChoiceUIKit.swift",
+          "sha256": "376acadcfba854b9dd04e5e9245bb9ead1144e1ffb4f714ac00ee83f859d1ec2"
+        },
+        {
+          "path": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+          "sha256": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3"
+        },
+        {
+          "path": "code-examples/pilots/uikit-dynamic-v1/Sources/DynamicUIKit.swift",
+          "sha256": "d2663c145314f29cbd4574efc14fc33cbf0c66a8307e01c2d4b0bde5a54ecc27"
+        },
+        {
+          "path": "code-examples/pilots/uikit-edited-rotor-v1/Sources/EditedRotorUIKit.swift",
+          "sha256": "b5f5572d6a20714b7e151261f75d84c69c66162242eac9637472e1e921c11b64"
+        },
+        {
+          "path": "code-examples/pilots/uikit-modal-v1/Sources/ModalUIKit.swift",
+          "sha256": "0a1b2fa1fa420044467fd4024b030831e6d8fee4d0074d0de5f2c921402a29b3"
+        },
+        {
+          "path": "code-examples/pilots/uikit-naming-v1/Sources/NamingUIKit.swift",
+          "sha256": "4d54ea0311467b0c2994029076c3b86eb2b6c0e1ef09cff1c3b1d7fb3d6639ef"
+        },
+        {
+          "path": "code-examples/pilots/uikit-preferences-v1/Sources/PreferenceUIKit.swift",
+          "sha256": "24974dbbfb848289218cf3cbe74cba0a9f62c0625864a5d4608c000436d8cf02"
+        },
+        {
+          "path": "code-examples/pilots/uikit-reuse-v1/Sources/ReuseUIKit.swift",
+          "sha256": "4dfd9e59adafda3abca189c95aa885ce1cd31704e4a25cad61be455539fd1bbb"
+        },
+        {
+          "path": "code-examples/pilots/uikit-semantics-v1/Sources/UIKitSemantics.swift",
+          "sha256": "3e32ee71d21fccc4c074fff4916c4dfebbe7791c0842bdf8d463757337a238e0"
+        },
+        {
+          "path": "code-examples/pilots/uikit-speed-v1/Sources/PlaybackSpeed.swift",
+          "sha256": "0fa8804d21ade1d75ac70d2046ee4a786c2c8bc7e0b101b7fa556e5642bf7989"
+        },
+        {
+          "path": "code-examples/pilots/uikit-text-v1/Sources/TextUIKit.swift",
+          "sha256": "442b81a50096a5ec516e160485c22c90cc2ed0418b237534422c8906bf2b3479"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/CheckoutSummary.swift",
+          "sha256": "698764ca8207a548b70d025b61112e9ffcaf724ea6f1acd9f94031cdf818722d"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/OrderCell.swift",
+          "sha256": "9a5ab3e8eea18bc1cb458d01984eb3955caed316c534d312446b0a0d39d6fcc4"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/SettingsRow.swift",
+          "sha256": "5f1a2b75f9c19aa569cb8423e8ffe56532d0b5af39040c6303c42cf418337c0f"
+        },
+        {
+          "path": "research/evaluation/failure-driven/checkout-contract-v1/Sources/CheckoutSummary.swift",
+          "sha256": "ffbd1a2999450ec768ef7ecb3cd8e79073cdb96d4ff75b248e7efddd4cd5697c"
+        },
+        {
+          "path": "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts/Sources/GapContracts.swift",
+          "sha256": "641c7d777126ca05c1cfffee844d094908962e30cd3f3dbabd82573c6b9a6583"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIGeometry.h",
+          "line": 214,
+          "sha256": "304de5838719d1a16c856107ceca0f9c895e3015e1b440f3c155e00595b30b72",
+          "context": [
+            "@property(nonatomic, readonly) UIOffset UIOffsetValue API_AVAILABLE(ios(5.0), watchos(2.0));",
+            "",
+            "@end",
+            "    ",
+            "@interface NSCoder (UIGeometryKeyedCoding)",
+            "",
+            "- (void)encodeCGPoint:(CGPoint)point forKey:(NSString *)key API_AVAILABLE(watchos(2.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSCoder.h",
+          "line": 35,
+          "sha256": "45205b89ddcbb06d9eecda8175d16fa0388fe7542da9569cb8866e70bd8eb621",
+          "context": [
+            "///",
+            "/// ### Subclassing Notes",
+            "///",
+            "/// For details of how to create a subclass of `NSCoder`, see [Subclassing NSCoder](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Archiving/Articles/subclassing.html#//apple_ref/doc/uid/20000951) in [Archives and Serializations Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Archiving/Archiving.html#//apple_ref/doc/uid/10000047i).",
+            "@interface NSCoder : NSObject",
+            "",
+            "/// Encodes a value of the given type at the given address."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSCoder.h",
+          "line": 67,
+          "sha256": "45205b89ddcbb06d9eecda8175d16fa0388fe7542da9569cb8866e70bd8eb621",
+          "context": [
+            "/// - Returns: The version in effect for the class named `className` or `NSNotFound` if no class named `className` exists.",
+            "- (NSInteger)versionForClassName:(NSString *)className;",
+            "@end",
+            "",
+            "@interface NSCoder (NSExtendedCoder)",
+            "",
+            "/// Encodes an object."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSCoder.h",
+          "line": 428,
+          "sha256": "45205b89ddcbb06d9eecda8175d16fa0388fe7542da9569cb8866e70bd8eb621",
+          "context": [
+            "/// - Parameter decoder: The coder from which to read the object.",
+            "/// - Returns: The next object from the coder.",
+            "FOUNDATION_EXPORT NSObject * _Nullable NXReadNSObjectFromCoder(NSCoder *decoder) API_DEPRECATED(\"Not supported\", macos(10.0,10.5), ios(2.0,2.0), watchos(2.0,2.0), tvos(9.0,9.0));",
+            "",
+            "@interface NSCoder (NSTypedstreamCompatibility)",
+            "",
+            "/// Encodes an old-style object onto the coder."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVTime.h",
+          "line": 41,
+          "sha256": "e32984294fb2b7dd5cb9da2ad44cde4d5a124218bbd73ec38967bc4ed8e02a85",
+          "context": [
+            "@end",
+            "",
+            "// utilities for encoding and decoding CoreMedia time structures for NSCoding",
+            "",
+            "@interface NSCoder (AVTimeCoding)",
+            "",
+            "- (void)encodeCMTime:(CMTime)time forKey:(NSString *)key API_AVAILABLE(macos(10.7), ios(4.0), tvos(9.0), watchos(1.0), visionos(1.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UITableView",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-choice-v1/Sources/ChoiceUIKit.swift",
+          "sha256": "376acadcfba854b9dd04e5e9245bb9ead1144e1ffb4f714ac00ee83f859d1ec2"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITableView.h",
+          "line": 347,
+          "sha256": "05044873355dffa302716a278183ec4031e1ede10c971d994f8589bf7bd47c2b",
+          "context": [
+            "",
+            "//_______________________________________________________________________________________________________________",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UITableView : UIScrollView <NSCoding, UIDataSourceTranslating>",
+            "",
+            "- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style NS_DESIGNATED_INITIALIZER; // must specify style at creation. -initWithFrame: calls this with UITableViewStylePlain"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITableView.h",
+          "line": 531,
+          "sha256": "05044873355dffa302716a278183ec4031e1ede10c971d994f8589bf7bd47c2b",
+          "context": [
+            "",
+            "@end",
+            "",
+            "#if TARGET_OS_IOS",
+            "@interface UITableView (UIDragAndDrop) <UISpringLoadedInteractionSupporting>",
+            "@end",
+            "#endif"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIAccessibilityElement",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+          "sha256": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityElement.h",
+          "line": 26,
+          "sha256": "43b6da20c81fa4eb90e6f620db1fdda09401334b408f4732fcae082805e99fa7",
+          "context": [
+            " backed by a UIView (for example: painted text or icon).",
+            " */",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(3.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UIAccessibilityElement : UIResponder<UIAccessibilityIdentification>",
+            "",
+            "// initialize with the accessibility container that contains this element"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIAccessibilityContainerDataTableCell",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+          "sha256": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityContainer.h",
+          "line": 75,
+          "sha256": "44e624817f843f48cf3f23ef5e766bf92f7b212f07455b11b3eaa641daa11cc8",
+          "context": [
+            " convey more information specific to tables that contain structured data.",
+            " */",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@protocol UIAccessibilityContainerDataTableCell <NSObject>",
+            "@required",
+            ""
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "NSRange",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+          "sha256": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3"
+        },
+        {
+          "path": "code-examples/pilots/uikit-edited-rotor-v1/Sources/EditedRotorUIKit.swift",
+          "sha256": "b5f5572d6a20714b7e151261f75d84c69c66162242eac9637472e1e921c11b64"
+        },
+        {
+          "path": "code-examples/pilots/uikit-text-v1/Sources/TextUIKit.swift",
+          "sha256": "442b81a50096a5ec516e160485c22c90cc2ed0418b237534422c8906bf2b3479"
+        }
+      ],
+      "declarations": [],
+      "status": "explicit-unresolved-or-function-namespace",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIView",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+          "sha256": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3"
+        },
+        {
+          "path": "code-examples/pilots/uikit-dynamic-v1/Sources/DynamicUIKit.swift",
+          "sha256": "d2663c145314f29cbd4574efc14fc33cbf0c66a8307e01c2d4b0bde5a54ecc27"
+        },
+        {
+          "path": "code-examples/pilots/uikit-edited-rotor-v1/Sources/EditedRotorUIKit.swift",
+          "sha256": "b5f5572d6a20714b7e151261f75d84c69c66162242eac9637472e1e921c11b64"
+        },
+        {
+          "path": "code-examples/pilots/uikit-modal-v1/Sources/ModalUIKit.swift",
+          "sha256": "0a1b2fa1fa420044467fd4024b030831e6d8fee4d0074d0de5f2c921402a29b3"
+        },
+        {
+          "path": "code-examples/pilots/uikit-naming-v1/Sources/NamingUIKit.swift",
+          "sha256": "4d54ea0311467b0c2994029076c3b86eb2b6c0e1ef09cff1c3b1d7fb3d6639ef"
+        },
+        {
+          "path": "code-examples/pilots/uikit-preferences-v1/Sources/PreferenceUIKit.swift",
+          "sha256": "24974dbbfb848289218cf3cbe74cba0a9f62c0625864a5d4608c000436d8cf02"
+        },
+        {
+          "path": "code-examples/pilots/uikit-reuse-v1/Sources/ReuseUIKit.swift",
+          "sha256": "4dfd9e59adafda3abca189c95aa885ce1cd31704e4a25cad61be455539fd1bbb"
+        },
+        {
+          "path": "code-examples/pilots/uikit-semantics-v1/Sources/UIKitSemantics.swift",
+          "sha256": "3e32ee71d21fccc4c074fff4916c4dfebbe7791c0842bdf8d463757337a238e0"
+        },
+        {
+          "path": "code-examples/pilots/uikit-text-v1/Sources/TextUIKit.swift",
+          "sha256": "442b81a50096a5ec516e160485c22c90cc2ed0418b237534422c8906bf2b3479"
+        },
+        {
+          "path": "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts/Sources/GapContracts.swift",
+          "sha256": "641c7d777126ca05c1cfffee844d094908962e30cd3f3dbabd82573c6b9a6583"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityIdentification.h",
+          "line": 29,
+          "sha256": "1cf19ddd8b5f74d023806e6d7b35e886f6958ff5a16a2fb2121577bbde2a4f63",
+          "context": [
+            "@property(nullable, nonatomic, copy) NSString *accessibilityIdentifier API_AVAILABLE(ios(5.0)) NS_SWIFT_UI_ACTOR;",
+            "",
+            "@end",
+            "",
+            "@interface UIView (UIAccessibility) <UIAccessibilityIdentification>",
+            "@end",
+            ""
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 152,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "",
+            "@class UIBezierPath, UIEvent, UIWindow, UIViewController, UIColor, UIGestureRecognizer, UIMotionEffect, CALayer, UILayoutGuide, UIKeyboardLayoutGuide;",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UIView : UIResponder <NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate>",
+            "",
+            "@property(class, nonatomic, readonly) Class layerClass;                        // default is [CALayer class]. Used when creating the underlying layer for the view."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 391,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "+ (void)modifyAnimationsWithRepeatCount:(CGFloat)count autoreverses:(BOOL)autoreverses animations:(void(NS_NOESCAPE ^)(void))animations API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);",
+            "",
+            "@end",
+            "",
+            "@interface UIView (UIViewKeyframeAnimations)",
+            "",
+            "+ (void)animateKeyframesWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewKeyframeAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion API_AVAILABLE(ios(7.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 398,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "+ (void)addKeyframeWithRelativeStartTime:(double)frameStartTime relativeDuration:(double)frameDuration animations:(void (^)(void))animations API_AVAILABLE(ios(7.0)); // start time and duration are values between 0.0 and 1.0 specifying time and duration relative to the overall time of the keyframe animation",
+            "",
+            "@end",
+            "",
+            "@interface UIView (UIViewGestureRecognizers)",
+            "",
+            "@property(nullable, nonatomic,copy) NSArray<__kindof UIGestureRecognizer *> *gestureRecognizers API_AVAILABLE(ios(3.2));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 412,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer API_AVAILABLE(ios(6.0));",
+            "",
+            "@end",
+            "    ",
+            "@interface UIView (UIViewMotionEffects)",
+            "",
+            "/*! Begins applying `effect` to the receiver. The effect's emitted keyPath/value pairs will be"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 444,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "",
+            "/* A constraint is typically installed on the closest common ancestor of the views involved in the constraint. ",
+            " It is required that a constraint be installed on _a_ common ancestor of every view involved.  The numbers in a constraint are interpreted in the coordinate system of the view it is installed on.  A view is considered to be an ancestor of itself.",
+            " */",
+            "@interface UIView (UIConstraintBasedLayoutInstallingConstraints)",
+            "",
+            "@property(nonatomic,readonly) NSArray<__kindof NSLayoutConstraint *> *constraints API_AVAILABLE(ios(6.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 465,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            " ",
+            " Please see the conceptual documentation for a discussion of these methods.",
+            " */",
+            "",
+            "@interface UIView (UIConstraintBasedLayoutCoreMethods) ",
+            "- (void)updateConstraintsIfNeeded API_AVAILABLE(ios(6.0)); // Updates the constraints from the bottom up for the view hierarchy rooted at the receiver. UIWindow's implementation creates a layout engine if necessary first.",
+            "- (void)updateConstraints API_AVAILABLE(ios(6.0)) NS_REQUIRES_SUPER; // Override this to adjust your special constraints during a constraints update pass"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 474,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "@end",
+            "",
+            "// Compatibility and Adoption",
+            "",
+            "@interface UIView (UIConstraintBasedCompatibility) ",
+            "",
+            "/* By default, the autoresizing mask on a view gives rise to constraints that fully determine "
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 492,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "@end",
+            "",
+            "// Separation of Concerns",
+            "",
+            "@interface UIView (UIConstraintBasedLayoutLayering)",
+            "",
+            "/* Constraints do not actually relate the frames of the views, rather they relate the \"alignment rects\" of views.  This is the same as the frame unless overridden by a subclass of UIView.  Alignment rects are the same as the \"layout rects\" shown in Interface Builder 3.  Typically the alignment rect of a view is what the end user would think of as the bounding rect around a control, omitting ornamentation like shadows and engraving lines.  The edges of the alignment rect are what is interesting to align, not the shadows and such.  "
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 563,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "",
+            "UIKIT_EXTERN const CGSize UILayoutFittingCompressedSize API_AVAILABLE(ios(6.0)) API_UNAVAILABLE(watchos);",
+            "UIKIT_EXTERN const CGSize UILayoutFittingExpandedSize API_AVAILABLE(ios(6.0)) API_UNAVAILABLE(watchos);",
+            "",
+            "@interface UIView (UIConstraintBasedLayoutFittingSize)",
+            "/* The size fitting most closely to targetSize in which the receiver's subtree can be laid out while optimally satisfying the constraints. If you want the smallest possible size, pass UILayoutFittingCompressedSize; for the largest possible size, pass UILayoutFittingExpandedSize.",
+            " Also see the comment for UILayoutPriorityFittingSizeLevel."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 571,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize API_AVAILABLE(ios(6.0)); // Equivalent to sending -systemLayoutSizeFittingSize:withHorizontalFittingPriority:verticalFittingPriority: with UILayoutPriorityFittingSizeLevel for both priorities.",
+            "- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize withHorizontalFittingPriority:(UILayoutPriority)horizontalFittingPriority verticalFittingPriority:(UILayoutPriority)verticalFittingPriority API_AVAILABLE(ios(8.0));",
+            "@end",
+            "",
+            "@interface UIView (UILayoutGuideSupport)",
+            "",
+            "/* UILayoutGuide objects owned by the receiver."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 587,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "- (void)removeLayoutGuide:(UILayoutGuide *)layoutGuide API_AVAILABLE(ios(9.0));",
+            "@end",
+            "",
+            "@class NSLayoutXAxisAnchor,NSLayoutYAxisAnchor,NSLayoutDimension;",
+            "@interface UIView (UIViewLayoutConstraintCreation)",
+            "/* Constraint creation conveniences. See NSLayoutAnchor.h for details.",
+            " */"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 609,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "// Debugging",
+            "",
+            "/* Everything in this section should be used in debugging only, never in shipping code.  These methods may not exist in the future - no promises.  ",
+            " */",
+            "@interface UIView (UIConstraintBasedLayoutDebugging)",
+            "",
+            "/* This returns a list of all the constraints that are affecting the current location of the receiver.  The constraints do not necessarily involve the receiver, they may affect the frame indirectly."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 642,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            " */",
+            "@property(nonatomic, readonly) BOOL hasAmbiguousLayout API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(watchos);",
+            "@end",
+            "",
+            "@interface UIView (UIStateRestoration)",
+            "@property (nullable, nonatomic, copy) NSString *restorationIdentifier API_AVAILABLE(ios(6.0));",
+            "- (void) encodeRestorableStateWithCoder:(NSCoder *)coder API_AVAILABLE(ios(6.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 648,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "- (void) encodeRestorableStateWithCoder:(NSCoder *)coder API_AVAILABLE(ios(6.0));",
+            "- (void) decodeRestorableStateWithCoder:(NSCoder *)coder API_AVAILABLE(ios(6.0));",
+            "@end",
+            "",
+            "@interface UIView (UISnapshotting)",
+            "/* ",
+            "* When requesting a snapshot, 'afterUpdates' defines whether the snapshot is representative of what's currently on screen or if you wish to include any recent changes before taking the snapshot. "
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 669,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "// Use this method to render a snapshot of the view hierarchy into the current context. Returns NO if the snapshot is missing image data, YES if the snapshot is complete. Calling this method from layoutSubviews while the current transaction is committing will capture what is currently displayed regardless if afterUpdates is YES.",
+            "- (BOOL)drawViewHierarchyInRect:(CGRect)rect afterScreenUpdates:(BOOL)afterUpdates API_AVAILABLE(ios(7.0));",
+            "@end",
+            "",
+            "@interface UIView (DeprecatedAnimations)",
+            "",
+            "/* Deprecated in iOS 13.0. Please use the block-based animation API instead. */"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 689,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "+ (void)setAnimationTransition:(UIViewAnimationTransition)transition forView:(UIView *)view cache:(BOOL)cache   API_DEPRECATED(\"Use the block-based animation API instead\", ios(2.0, 13.0)) API_UNAVAILABLE(visionos, watchos);",
+            "",
+            "@end",
+            "",
+            "@interface UIView (UserInterfaceStyle)",
+            "",
+            "/* Set `overrideUserInterfaceStyle` to cause this view and its subviews to have a specific `UIUserInterfaceStyle`."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 710,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface UIView (UIContentSizeCategoryLimit)",
+            "",
+            "/// Specify content size category limits. Setting one or both of these properties will limit the"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 738,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "",
+            "@end",
+            "",
+            "API_AVAILABLE(ios(17.0), tvos(17.0)) API_UNAVAILABLE(watchos)",
+            "@interface UIView () <UITraitChangeObservable>",
+            "",
+            "@property (nonatomic, readonly) id<UITraitOverrides> traitOverrides API_AVAILABLE(ios(17.0), tvos(17.0)) API_UNAVAILABLE(watchos);"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 750,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "@end",
+            "",
+            "",
+            "API_AVAILABLE(ios(26.0), tvos(26.0), visionos(26.0)) API_UNAVAILABLE(watchos)",
+            "@interface UIView (LayoutRegions)",
+            "",
+            "- (UILayoutGuide *)layoutGuideForLayoutRegion:(UIViewLayoutRegion *)layoutRegion NS_REFINED_FOR_SWIFT;"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 759,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "",
+            "@end",
+            "",
+            "API_AVAILABLE(ios(26.0), tvos(26.0), visionos(26.0)) API_UNAVAILABLE(watchos)",
+            "@interface UIView (CornerConfiguration)",
+            "",
+            "/// A configuration that defines the corners of the view."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 775,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "- (CGFloat)effectiveRadiusForCorner:(UIRectCorner)corner NS_SWIFT_NAME(effectiveRadius(corner:));",
+            "",
+            "@end",
+            "",
+            "@interface UIView () <CLBodyIdentifiable> @end",
+            "",
+            "#if __has_include(<CoreMotion/CMBody.h>)"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIView.h",
+          "line": 778,
+          "sha256": "4c32ba3d935779944ee8e6b1f0bb5a222fe1d41390d5e22249af92c52adfdf2f",
+          "context": [
+            "",
+            "@interface UIView () <CLBodyIdentifiable> @end",
+            "",
+            "#if __has_include(<CoreMotion/CMBody.h>)",
+            "@interface UIView () <CMBodyIdentifiable> @end",
+            "#endif",
+            ""
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIInteraction.h",
+          "line": 24,
+          "sha256": "d56363e487dff6b9488030bd819c8aece51346bc100c3d544aef77a0123b5462",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface UIView (Interactions)",
+            "",
+            "- (void)addInteraction:(id<UIInteraction>)interaction API_AVAILABLE(ios(11.0), tvos(13.0)) API_UNAVAILABLE(watchos);"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h",
+          "line": 63,
+          "sha256": "96d890f4583569c99a05037a77b2011ae665a1b886a614e9496ebda7d08b6430",
+          "context": [
+            "",
+            "   If a view already uses a dark themed design, it may also be appropriate to set this",
+            "   property.",
+            " */",
+            "@interface UIView (UIAccessibilityInvertColors)",
+            "@property(nonatomic) BOOL accessibilityIgnoresInvertColors API_AVAILABLE(ios(11_0), tvos(11_0)) API_UNAVAILABLE(watchos);",
+            "@end"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIHoverStyle.h",
+          "line": 51,
+          "sha256": "d08286d615887297d85331dbd15a0692456bde3b15fdfeb1146543aad04df965",
+          "context": [
+            "",
+            "@end",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(17.0), visionos(1.0)) API_UNAVAILABLE(watchos, tvos)",
+            "@interface UIView (UIHoverStyle)",
+            "",
+            "/// The hover style associated with this view. Defaults to `nil`,"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UILargeContentViewer.h",
+          "line": 50,
+          "sha256": "92b8c5fa13f60f2a0066ee2ddb28c7fbd7c0d2ec9c4c016fa0a800835fb437cf",
+          "context": [
+            "@property (nonatomic, assign, readonly) UIEdgeInsets largeContentImageInsets;",
+            "",
+            "@end",
+            "",
+            "@interface UIView (UILargeContentViewer) <UILargeContentViewerItem>",
+            "",
+            "// Defaults to NO."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITextField.h",
+          "line": 135,
+          "sha256": "dd15896617bd00bbd3e2301c48497a46d5abb7a9fc1bbdc9c8fb2207273f86b4",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface UIView (UITextField)",
+            "- (BOOL)endEditing:(BOOL)force;    // use to make the view or any subview that is the first responder resign (optionally force)",
+            "@end"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIPopoverPresentationControllerSourceItem.h",
+          "line": 31,
+          "sha256": "3835f8a20fad53b3a6a55796f18ffc86d256d0dd283f8fb2d3847ba7dcd230b9",
+          "context": [
+            "",
+            "@end",
+            "",
+            "API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(tvos)",
+            "@interface UIView (UIPopoverPresentationControllerSourceItem) <UIPopoverPresentationControllerSourceItem>",
+            "@end",
+            ""
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIAccessibilityContainerDataTable",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+          "sha256": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityContainer.h",
+          "line": 86,
+          "sha256": "44e624817f843f48cf3f23ef5e766bf92f7b212f07455b11b3eaa641daa11cc8",
+          "context": [
+            "",
+            "@end",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@protocol UIAccessibilityContainerDataTable <NSObject>",
+            "@required",
+            ""
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "NSIntersectionRange",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+          "sha256": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3"
+        }
+      ],
+      "declarations": [],
+      "status": "explicit-unresolved-or-function-namespace",
+      "independentReview": "pending"
+    },
+    {
+      "name": "NSLocationInRange",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+          "sha256": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3"
+        }
+      ],
+      "declarations": [],
+      "status": "explicit-unresolved-or-function-namespace",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIButton",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+          "sha256": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3"
+        },
+        {
+          "path": "code-examples/pilots/uikit-dynamic-v1/Sources/DynamicUIKit.swift",
+          "sha256": "d2663c145314f29cbd4574efc14fc33cbf0c66a8307e01c2d4b0bde5a54ecc27"
+        },
+        {
+          "path": "code-examples/pilots/uikit-lifecycle-v1/Sources/LifecycleUIKit.swift",
+          "sha256": "d16974dcb156633565bf7a9e60a3c2e99e42a1a3212bfbb7143b69811320b272"
+        },
+        {
+          "path": "code-examples/pilots/uikit-media-v1/Sources/MediaUIKit.swift",
+          "sha256": "7fd55e418c7253dadb42c1917471513ef75cb5af4a20e47c90b8c3968b0ed3f6"
+        },
+        {
+          "path": "code-examples/pilots/uikit-modal-v1/Sources/ModalUIKit.swift",
+          "sha256": "0a1b2fa1fa420044467fd4024b030831e6d8fee4d0074d0de5f2c921402a29b3"
+        },
+        {
+          "path": "code-examples/pilots/uikit-naming-v1/Sources/NamingUIKit.swift",
+          "sha256": "4d54ea0311467b0c2994029076c3b86eb2b6c0e1ef09cff1c3b1d7fb3d6639ef"
+        },
+        {
+          "path": "code-examples/pilots/uikit-preferences-v1/Sources/PreferenceUIKit.swift",
+          "sha256": "24974dbbfb848289218cf3cbe74cba0a9f62c0625864a5d4608c000436d8cf02"
+        },
+        {
+          "path": "code-examples/pilots/uikit-semantics-v1/Sources/UIKitSemantics.swift",
+          "sha256": "3e32ee71d21fccc4c074fff4916c4dfebbe7791c0842bdf8d463757337a238e0"
+        },
+        {
+          "path": "code-examples/pilots/uikit-speed-v1/Sources/PlaybackSpeed.swift",
+          "sha256": "0fa8804d21ade1d75ac70d2046ee4a786c2c8bc7e0b101b7fa556e5642bf7989"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/CheckoutSummary.swift",
+          "sha256": "698764ca8207a548b70d025b61112e9ffcaf724ea6f1acd9f94031cdf818722d"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/SettingsRow.swift",
+          "sha256": "5f1a2b75f9c19aa569cb8423e8ffe56532d0b5af39040c6303c42cf418337c0f"
+        },
+        {
+          "path": "research/evaluation/failure-driven/checkout-contract-v1/Sources/CheckoutSummary.swift",
+          "sha256": "ffbd1a2999450ec768ef7ecb3cd8e79073cdb96d4ff75b248e7efddd4cd5697c"
+        },
+        {
+          "path": "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts/Sources/GapContracts.swift",
+          "sha256": "641c7d777126ca05c1cfffee844d094908962e30cd3f3dbabd82573c6b9a6583"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIButton.h",
+          "line": 49,
+          "sha256": "5a73838312c4b387723f03bcff039077211e0e790d459986d3e4ce0851e77e97",
+          "context": [
+            "typedef UIPointerStyle *_Nullable(^UIButtonPointerStyleProvider)(UIButton *button, UIPointerEffect *proposedEffect, UIPointerShape *proposedShape) API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos);",
+            "typedef void (^UIButtonConfigurationUpdateHandler)(__kindof UIButton *button) API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UIButton : UIControl <NSCoding>",
+            "",
+            "- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIButton.h",
+          "line": 184,
+          "sha256": "5a73838312c4b387723f03bcff039077211e0e790d459986d3e4ce0851e77e97",
+          "context": [
+            "",
+            "@end",
+            "",
+            "#if TARGET_OS_IOS",
+            "@interface UIButton (SpringLoading) <UISpringLoadedInteractionSupporting>",
+            "@end",
+            "#endif"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityContentSizeCategoryImageAdjusting.h",
+          "line": 39,
+          "sha256": "dc1cdd106560efc9854041afb6d82d2fb2f9cb8de6dc06cbcdce8ec2b4cf5514",
+          "context": [
+            "@end",
+            "",
+            "// If applicable, the image (not the background image) will be scaled for an accessibility content size category. Image edge insets are left unchanged.",
+            "UIKIT_EXTERN API_AVAILABLE(ios(11.0), tvos(11.0)) API_UNAVAILABLE(watchos)",
+            "@interface UIButton (UIAccessibilityContentSizeCategoryImageAdjusting) <UIAccessibilityContentSizeCategoryImageAdjusting>",
+            "",
+            "@end"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIBehavioralStyle.h",
+          "line": 28,
+          "sha256": "7805f15bc50777e5d37354acc4865df008291ed4dc0bae884f589b0d4781c2ec",
+          "context": [
+            "    UIBehavioralStyleMac,",
+            "} API_UNAVAILABLE(watchos);",
+            "",
+            "API_AVAILABLE(ios(15.0), macCatalyst(15.0)) API_UNAVAILABLE(watchos, tvos)",
+            "@interface UIButton (UIBehavioralStyle)",
+            "",
+            "/// The button's behavioral style. This property always returns a concrete, resolved style (never UIBehavioralStyleAutomatic)."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "CGRect",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+          "sha256": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3"
+        },
+        {
+          "path": "code-examples/pilots/uikit-dynamic-v1/Sources/DynamicUIKit.swift",
+          "sha256": "d2663c145314f29cbd4574efc14fc33cbf0c66a8307e01c2d4b0bde5a54ecc27"
+        },
+        {
+          "path": "code-examples/pilots/uikit-edited-rotor-v1/Sources/EditedRotorUIKit.swift",
+          "sha256": "b5f5572d6a20714b7e151261f75d84c69c66162242eac9637472e1e921c11b64"
+        },
+        {
+          "path": "code-examples/pilots/uikit-modal-v1/Sources/ModalUIKit.swift",
+          "sha256": "0a1b2fa1fa420044467fd4024b030831e6d8fee4d0074d0de5f2c921402a29b3"
+        },
+        {
+          "path": "code-examples/pilots/uikit-naming-v1/Sources/NamingUIKit.swift",
+          "sha256": "4d54ea0311467b0c2994029076c3b86eb2b6c0e1ef09cff1c3b1d7fb3d6639ef"
+        },
+        {
+          "path": "code-examples/pilots/uikit-preferences-v1/Sources/PreferenceUIKit.swift",
+          "sha256": "24974dbbfb848289218cf3cbe74cba0a9f62c0625864a5d4608c000436d8cf02"
+        },
+        {
+          "path": "code-examples/pilots/uikit-reuse-v1/Sources/ReuseUIKit.swift",
+          "sha256": "4dfd9e59adafda3abca189c95aa885ce1cd31704e4a25cad61be455539fd1bbb"
+        },
+        {
+          "path": "code-examples/pilots/uikit-semantics-v1/Sources/UIKitSemantics.swift",
+          "sha256": "3e32ee71d21fccc4c074fff4916c4dfebbe7791c0842bdf8d463757337a238e0"
+        },
+        {
+          "path": "code-examples/pilots/uikit-text-v1/Sources/TextUIKit.swift",
+          "sha256": "442b81a50096a5ec516e160485c22c90cc2ed0418b237534422c8906bf2b3479"
+        },
+        {
+          "path": "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts/Sources/GapContracts.swift",
+          "sha256": "641c7d777126ca05c1cfffee844d094908962e30cd3f3dbabd82573c6b9a6583"
+        }
+      ],
+      "declarations": [],
+      "status": "explicit-unresolved-or-function-namespace",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIAction",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+          "sha256": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3"
+        },
+        {
+          "path": "code-examples/pilots/uikit-dynamic-v1/Sources/DynamicUIKit.swift",
+          "sha256": "d2663c145314f29cbd4574efc14fc33cbf0c66a8307e01c2d4b0bde5a54ecc27"
+        },
+        {
+          "path": "code-examples/pilots/uikit-modal-v1/Sources/ModalUIKit.swift",
+          "sha256": "0a1b2fa1fa420044467fd4024b030831e6d8fee4d0074d0de5f2c921402a29b3"
+        },
+        {
+          "path": "code-examples/pilots/uikit-naming-v1/Sources/NamingUIKit.swift",
+          "sha256": "4d54ea0311467b0c2994029076c3b86eb2b6c0e1ef09cff1c3b1d7fb3d6639ef"
+        },
+        {
+          "path": "code-examples/pilots/uikit-semantics-v1/Sources/UIKitSemantics.swift",
+          "sha256": "3e32ee71d21fccc4c074fff4916c4dfebbe7791c0842bdf8d463757337a238e0"
+        },
+        {
+          "path": "code-examples/pilots/uikit-speed-v1/Sources/PlaybackSpeed.swift",
+          "sha256": "0fa8804d21ade1d75ac70d2046ee4a786c2c8bc7e0b101b7fa556e5642bf7989"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/CheckoutSummary.swift",
+          "sha256": "698764ca8207a548b70d025b61112e9ffcaf724ea6f1acd9f94031cdf818722d"
+        },
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/SettingsRow.swift",
+          "sha256": "5f1a2b75f9c19aa569cb8423e8ffe56532d0b5af39040c6303c42cf418337c0f"
+        },
+        {
+          "path": "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts/Sources/GapContracts.swift",
+          "sha256": "641c7d777126ca05c1cfffee844d094908962e30cd3f3dbabd82573c6b9a6583"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAction.h",
+          "line": 29,
+          "sha256": "923180861288e5e201ad7139d09bb56f18c0a2ec36e4be12ef93f8caee0c2f46",
+          "context": [
+            "",
+            "typedef void (^UIActionHandler)(__kindof UIAction *action) API_UNAVAILABLE(watchos);",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UIAction : UIMenuElement <UIMenuLeaf>",
+            "",
+            "/// Short display title."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAction.h",
+          "line": 85,
+          "sha256": "923180861288e5e201ad7139d09bb56f18c0a2ec36e4be12ef93f8caee0c2f46",
+          "context": [
+            "",
+            "@protocol UIKeyInput;",
+            "@class UIResponder;",
+            "",
+            "@interface UIAction (UICaptureTextFromCameraSupporting)",
+            "",
+            "/*!"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIControl",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+          "sha256": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIControl.h",
+          "line": 76,
+          "sha256": "843922e4422c3689a847e683cf93266fb4d273486960cb666ae3abb08860b4de",
+          "context": [
+            "",
+            "//______________________________________________________",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UIControl : UIView",
+            "",
+            "- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIColor",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-contrast-v1/Sources/ContrastUIKit.swift",
+          "sha256": "33d167795b0e57ea4aeb47d7709797bb102456e7b788e5879a3638a7afeb2308"
+        },
+        {
+          "path": "code-examples/pilots/uikit-preferences-v1/Sources/PreferenceUIKit.swift",
+          "sha256": "24974dbbfb848289218cf3cbe74cba0a9f62c0625864a5d4608c000436d8cf02"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityAdditions.h",
+          "line": 67,
+          "sha256": "96d890f4583569c99a05037a77b2011ae665a1b886a614e9496ebda7d08b6430",
+          "context": [
+            "@interface UIView (UIAccessibilityInvertColors)",
+            "@property(nonatomic) BOOL accessibilityIgnoresInvertColors API_AVAILABLE(ios(11_0), tvos(11_0)) API_UNAVAILABLE(watchos);",
+            "@end",
+            "",
+            "@interface UIColor (UIAccessibility)",
+            "// Provides an accessible name for the UIColor for use in accessibility attribute APIs, such as when using accessibilityLabel.",
+            "@property (nonatomic, readonly) NSString *accessibilityName API_AVAILABLE(ios(14.0), tvos(14.0), macos(11.0)) API_UNAVAILABLE(watchos);"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIColor.h",
+          "line": 31,
+          "sha256": "81eb746ff3ae4e58ffb6503ab07322bcefd4f81ca1b8c2b889697d7022f78f50",
+          "context": [
+            "    UIColorProminenceQuaternary,",
+            "} NS_SWIFT_NAME(UIColor.Prominence) API_AVAILABLE(visionos(2.0), ios(18.0), tvos(18.0)) API_UNAVAILABLE(watchos);",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(2.0), watchos(2.0)) NS_SWIFT_SENDABLE",
+            "@interface UIColor : NSObject <NSSecureCoding, NSCopying>",
+            "",
+            "// Convenience methods for creating colors"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIColor.h",
+          "line": 116,
+          "sha256": "81eb746ff3ae4e58ffb6503ab07322bcefd4f81ca1b8c2b889697d7022f78f50",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface UIColor (UINSItemProvider) <NSItemProviderReading, NSItemProviderWriting>",
+            "",
+            "@end"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIColor.h",
+          "line": 129,
+          "sha256": "81eb746ff3ae4e58ffb6503ab07322bcefd4f81ca1b8c2b889697d7022f78f50",
+          "context": [
+            "",
+            "@end",
+            "#endif",
+            "",
+            "@interface UIColor (UIColorNamedColors)",
+            "+ (nullable UIColor *)colorNamed:(NSString *)name API_AVAILABLE(ios(11.0), watchos(4.0));      // load from main bundle",
+            "+ (nullable UIColor *)colorNamed:(NSString *)name inBundle:(nullable NSBundle *)bundle compatibleWithTraitCollection:(nullable UITraitCollection *)traitCollection API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(watchos);"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIColor.h",
+          "line": 134,
+          "sha256": "81eb746ff3ae4e58ffb6503ab07322bcefd4f81ca1b8c2b889697d7022f78f50",
+          "context": [
+            "+ (nullable UIColor *)colorNamed:(NSString *)name API_AVAILABLE(ios(11.0), watchos(4.0));      // load from main bundle",
+            "+ (nullable UIColor *)colorNamed:(NSString *)name inBundle:(nullable NSBundle *)bundle compatibleWithTraitCollection:(nullable UITraitCollection *)traitCollection API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(watchos);",
+            "@end",
+            "",
+            "@interface UIColor (DynamicColors)",
+            "",
+            "/* Create a dynamic color with a provider."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIColor.h",
+          "line": 152,
+          "sha256": "81eb746ff3ae4e58ffb6503ab07322bcefd4f81ca1b8c2b889697d7022f78f50",
+          "context": [
+            "- (UIColor *)resolvedColorWithTraitCollection:(UITraitCollection *)traitCollection API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);",
+            "",
+            "@end",
+            "",
+            "@interface UIColor (ProminenceSupport)",
+            "",
+            "// Returns a color as the receiver with the specified prominence."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIInterface.h",
+          "line": 113,
+          "sha256": "13fb2855e52b783db0a9b834997c777c49e40d34dc2fe66d37fdff54209f5f67",
+          "context": [
+            "};",
+            "",
+            "// System colors",
+            "",
+            "@interface UIColor (UIColorSystemColors)",
+            "",
+            "#pragma mark System colors"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UITraitCollection",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-contrast-v1/Sources/ContrastUIKit.swift",
+          "sha256": "33d167795b0e57ea4aeb47d7709797bb102456e7b788e5879a3638a7afeb2308"
+        },
+        {
+          "path": "code-examples/pilots/uikit-preferences-v1/Sources/PreferenceUIKit.swift",
+          "sha256": "24974dbbfb848289218cf3cbe74cba0a9f62c0625864a5d4608c000436d8cf02"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITraitCollection.h",
+          "line": 23,
+          "sha256": "aa366f7f4e325e89802d54351768af5a4264b402562a6df3aaa2d8a8c78b495b",
+          "context": [
+            "/*! A trait collection encapsulates the system traits of an interface's environment. */",
+            "NS_HEADER_AUDIT_BEGIN(nullability, sendability)",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(watchos) NS_SWIFT_SENDABLE",
+            "@interface UITraitCollection : NSObject <NSCopying, NSSecureCoding>",
+            "",
+            "- (instancetype)init NS_DESIGNATED_INITIALIZER;"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITraitCollection.h",
+          "line": 190,
+          "sha256": "aa366f7f4e325e89802d54351768af5a4264b402562a6df3aaa2d8a8c78b495b",
+          "context": [
+            "",
+            "typedef void (^UITraitMutations)(id<UIMutableTraits> mutableTraits) API_AVAILABLE(ios(17.0), tvos(17.0)) API_UNAVAILABLE(watchos);",
+            "",
+            "API_AVAILABLE(ios(17.0), tvos(17.0)) API_UNAVAILABLE(watchos)",
+            "@interface UITraitCollection ()",
+            "",
+            "+ (UITraitCollection *)traitCollectionWithTraits:(NS_NOESCAPE UITraitMutations)mutations API_UNAVAILABLE(watchos);"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITraitCollection.h",
+          "line": 258,
+          "sha256": "aa366f7f4e325e89802d54351768af5a4264b402562a6df3aaa2d8a8c78b495b",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface UITraitCollection (CurrentTraitCollection)",
+            "",
+            "/* The current trait collection, used when resolving the appearance of dynamic UIColors and similar objects."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITraitCollection.h",
+          "line": 275,
+          "sha256": "aa366f7f4e325e89802d54351768af5a4264b402562a6df3aaa2d8a8c78b495b",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface UITraitCollection (DynamicAppearance)",
+            "",
+            "/* Return whether this trait collection, compared to a different trait collection, could show a different appearance"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITraitCollection.h",
+          "line": 293,
+          "sha256": "aa366f7f4e325e89802d54351768af5a4264b402562a6df3aaa2d8a8c78b495b",
+          "context": [
+            "",
+            "",
+            "@class UIImageConfiguration;",
+            "",
+            "@interface UITraitCollection (ImageConfiguration)",
+            "",
+            "/*"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "CGColorSpace",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-contrast-v1/Sources/ContrastUIKit.swift",
+          "sha256": "33d167795b0e57ea4aeb47d7709797bb102456e7b788e5879a3638a7afeb2308"
+        }
+      ],
+      "declarations": [],
+      "status": "explicit-unresolved-or-function-namespace",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIAccessibilityCustomRotor",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-dynamic-v1/Sources/DynamicUIKit.swift",
+          "sha256": "d2663c145314f29cbd4574efc14fc33cbf0c66a8307e01c2d4b0bde5a54ecc27"
+        },
+        {
+          "path": "code-examples/pilots/uikit-edited-rotor-v1/Sources/EditedRotorUIKit.swift",
+          "sha256": "b5f5572d6a20714b7e151261f75d84c69c66162242eac9637472e1e921c11b64"
+        },
+        {
+          "path": "code-examples/pilots/uikit-semantics-v1/Sources/UIKitSemantics.swift",
+          "sha256": "3e32ee71d21fccc4c074fff4916c4dfebbe7791c0842bdf8d463757337a238e0"
+        },
+        {
+          "path": "code-examples/pilots/uikit-text-v1/Sources/TextUIKit.swift",
+          "sha256": "442b81a50096a5ec516e160485c22c90cc2ed0418b237534422c8906bf2b3479"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityCustomRotor.h",
+          "line": 81,
+          "sha256": "f5ada726d43dd877fa1689924dc30dcc88bd58cdfad6c3b2fa3339bddb6913af",
+          "context": [
+            "@property (nonatomic) UIAccessibilityCustomRotorDirection searchDirection;",
+            "@end",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UIAccessibilityCustomRotor : NSObject",
+            "",
+            "- (instancetype)initWithName:(NSString *)name itemSearchBlock:(UIAccessibilityCustomRotorSearch)itemSearchBlock;"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIAccessibilityCustomRotorItemResult",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-dynamic-v1/Sources/DynamicUIKit.swift",
+          "sha256": "d2663c145314f29cbd4574efc14fc33cbf0c66a8307e01c2d4b0bde5a54ecc27"
+        },
+        {
+          "path": "code-examples/pilots/uikit-edited-rotor-v1/Sources/EditedRotorUIKit.swift",
+          "sha256": "b5f5572d6a20714b7e151261f75d84c69c66162242eac9637472e1e921c11b64"
+        },
+        {
+          "path": "code-examples/pilots/uikit-semantics-v1/Sources/UIKitSemantics.swift",
+          "sha256": "3e32ee71d21fccc4c074fff4916c4dfebbe7791c0842bdf8d463757337a238e0"
+        },
+        {
+          "path": "code-examples/pilots/uikit-text-v1/Sources/TextUIKit.swift",
+          "sha256": "442b81a50096a5ec516e160485c22c90cc2ed0418b237534422c8906bf2b3479"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityCustomRotor.h",
+          "line": 106,
+          "sha256": "f5ada726d43dd877fa1689924dc30dcc88bd58cdfad6c3b2fa3339bddb6913af",
+          "context": [
+            "@end",
+            "",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UIAccessibilityCustomRotorItemResult : NSObject",
+            "",
+            "- (instancetype)initWithTargetElement:(id<NSObject>)targetElement targetRange:(nullable UITextRange *)targetRange;"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIAccessibilityCustomAction",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-dynamic-v1/Sources/DynamicUIKit.swift",
+          "sha256": "d2663c145314f29cbd4574efc14fc33cbf0c66a8307e01c2d4b0bde5a54ecc27"
+        },
+        {
+          "path": "code-examples/pilots/uikit-lifecycle-v1/Sources/LifecycleUIKit.swift",
+          "sha256": "d16974dcb156633565bf7a9e60a3c2e99e42a1a3212bfbb7143b69811320b272"
+        },
+        {
+          "path": "code-examples/pilots/uikit-reuse-v1/Sources/ReuseUIKit.swift",
+          "sha256": "4dfd9e59adafda3abca189c95aa885ce1cd31704e4a25cad61be455539fd1bbb"
+        },
+        {
+          "path": "code-examples/pilots/uikit-semantics-v1/Sources/UIKitSemantics.swift",
+          "sha256": "3e32ee71d21fccc4c074fff4916c4dfebbe7791c0842bdf8d463757337a238e0"
+        },
+        {
+          "path": "code-examples/pilots/uikit-text-v1/Sources/TextUIKit.swift",
+          "sha256": "442b81a50096a5ec516e160485c22c90cc2ed0418b237534422c8906bf2b3479"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityCustomAction.h",
+          "line": 16,
+          "sha256": "33d8e20fbdcf72eeeba214788596e743a8fa5282a8a5877f7648554733e39de4",
+          "context": [
+            "",
+            "NS_HEADER_AUDIT_BEGIN(nullability, sendability)",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UIAccessibilityCustomAction : NSObject",
+            "",
+            "- (instancetype)initWithName:(NSString *)name target:(nullable id)target selector:(SEL)selector;"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "NSString",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-edited-rotor-v1/Sources/EditedRotorUIKit.swift",
+          "sha256": "b5f5572d6a20714b7e151261f75d84c69c66162242eac9637472e1e921c11b64"
+        },
+        {
+          "path": "code-examples/pilots/uikit-text-v1/Sources/TextUIKit.swift",
+          "sha256": "442b81a50096a5ec516e160485c22c90cc2ed0418b237534422c8906bf2b3479"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UserNotifications.framework/Headers/NSString+UserNotifications.h",
+          "line": 12,
+          "sha256": "28be68b36c1d7686e3d0d86e868196d3e9e49850c94acfd243fe491f5465985c",
+          "context": [
+            "#import <Foundation/Foundation.h>",
+            "",
+            "NS_ASSUME_NONNULL_BEGIN",
+            "",
+            "@interface NSString (UNUserNotificationCenterSupport)",
+            "",
+            "// Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Contacts.framework/Headers/CNContact.h",
+          "line": 43,
+          "sha256": "d848d4d9fb169ab8b14e07b95ecd046118d16915bfb2bd7846df69755de546fd",
+          "context": [
+            "@protocol CNKeyDescriptor <NSObject, NSSecureCoding, NSCopying>",
+            "@end",
+            "",
+            "/*! Allows contact property keys to be used with keysToFetch. */",
+            "@interface NSString (Contacts) <CNKeyDescriptor>",
+            "@end",
+            ""
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/SensorKit.framework/Headers/SRSensors+SRDeletionRecord.h",
+          "line": 17,
+          "sha256": "adb6293b4ba72ca2ceefdcc663ac597e60f71331a88fc518eb05f5daeb166d98",
+          "context": [
+            "API_DEPRECATED(\"Use deletionRecords(matching request: SRFetchRequest) of SRReader<Sensor> class\", ios(14.0, 27.0)) API_UNAVAILABLE(watchos, visionos) API_UNAVAILABLE(tvos, macos)",
+            "#else",
+            "SR_EXTERN API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos, visionos) API_UNAVAILABLE(tvos, macos)",
+            "#endif",
+            "@interface NSString (SRDeletionRecord)",
+            "/**",
+            " * @brief Returns a sensor stream that contains deletion records of the sensor"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/NSStringDrawing.h",
+          "line": 64,
+          "sha256": "1c195c6e6b67f0fb3a925f59fe44889ccdd5a1368e6a99076f18d3f91bb177c7",
+          "context": [
+            "",
+            "",
+            "// NOTE: All of the following methods will default to drawing on a baseline, limiting drawing to a single line.",
+            "// To correctly draw and size multi-line text, pass NSStringDrawingUsesLineFragmentOrigin in the options parameter.",
+            "@interface NSString (NSExtendedStringDrawing)",
+            "- (void)drawWithRect:(CGRect)rect options:(NSStringDrawingOptions)options attributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attributes context:(nullable NSStringDrawingContext *)context API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0), watchos(2.0), visionos(1.0));",
+            "- (CGRect)boundingRectWithSize:(CGSize)size options:(NSStringDrawingOptions)options attributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attributes context:(nullable NSStringDrawingContext *)context API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0), watchos(2.0), visionos(1.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Intents.framework/Headers/NSString+Intents.h",
+          "line": 13,
+          "sha256": "2b465771224b34fc77d970d51869ef5aeb20140d37ab9a349a495f42b8396e06",
+          "context": [
+            "",
+            "NS_ASSUME_NONNULL_BEGIN",
+            "",
+            "API_AVAILABLE(ios(12.0), macos(10.14), watchos(5.0), tvos(14.0))",
+            "@interface NSString (Intents)",
+            "",
+            "// Reads the string from the Localizable.strings file in the main app's bundle"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UniformTypeIdentifiers.framework/Headers/UTAdditions.h",
+          "line": 19,
+          "sha256": "3447acadf5e0d357e23bcd6aeb1ecd8d21ae08599ac4e7000b79db7e3885beb2",
+          "context": [
+            "__BEGIN_DECLS",
+            "NS_ASSUME_NONNULL_BEGIN",
+            "UT_AVAILABLE_BEGIN",
+            "",
+            "@interface NSString (UTAdditions)",
+            "/**",
+            "\t\\brief Generate a path component based on a partial filename and a file"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/CloudKit.framework/Headers/CKRecord.h",
+          "line": 345,
+          "sha256": "881168714f671ea4c3873c798cc70c89b982fa604453daa503dc2bd4fe2d2a89",
+          "context": [
+            "- (void)setParentReferenceFromRecordID:(nullable CKRecordID *)parentRecordID API_AVAILABLE(macos(10.12), ios(10.0), tvos(10.0), watchos(3.0));",
+            "",
+            "@end",
+            "",
+            "@interface NSString (CKRecordValue) <CKRecordValue>",
+            "@end",
+            ""
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSString.h",
+          "line": 196,
+          "sha256": "05794c89d6a8aa19fd27b0bcade8a686ccb83ab3685be865080e7b01f480aae4",
+          "context": [
+            "///",
+            "/// Often a better and easier alternative to making a subclass of `NSString`—or of any other abstract, public class of a class cluster, for that matter—is object composition. This is especially the case when your intent is to add to the subclass metadata or some other attribute that is not essential to a string object. In object composition, you would have an `NSString` object as one instance variable of your custom class (typically a subclass of `NSObject`) and one or more instance variables that store the metadata that you want for the custom object. Then just design your subclass interface to include accessor methods for the embedded string object and the metadata.",
+            "///",
+            "/// If the behavior you want to add supplements that of the existing class, you could write a category on `NSString`. Keep in mind, however, that this category will be in effect for all instances of `NSString` that you use, and this might have unintended consequences.",
+            "@interface NSString : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>",
+            "",
+            "#pragma mark *** String funnel methods ***"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSString.h",
+          "line": 228,
+          "sha256": "05794c89d6a8aa19fd27b0bcade8a686ccb83ab3685be865080e7b01f480aae4",
+          "context": [
+            "- (instancetype)init NS_DESIGNATED_INITIALIZER;",
+            "- (nullable instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;",
+            "@end",
+            "",
+            "@interface NSString (NSStringExtensionMethods)",
+            "",
+            "#pragma mark *** Substrings ***"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSString.h",
+          "line": 1086,
+          "sha256": "05794c89d6a8aa19fd27b0bcade8a686ccb83ab3685be865080e7b01f480aae4",
+          "context": [
+            "",
+            "#if !0",
+            "typedef NSString * NSStringEncodingDetectionOptionsKey NS_TYPED_ENUM;",
+            "",
+            "@interface NSString (NSStringEncodingDetection)",
+            "",
+            "#pragma mark *** Encoding detection ***"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSString.h",
+          "line": 1139,
+          "sha256": "05794c89d6a8aa19fd27b0bcade8a686ccb83ab3685be865080e7b01f480aae4",
+          "context": [
+            "#endif",
+            "",
+            "",
+            "",
+            "@interface NSString (NSItemProvider) <NSItemProviderReading, NSItemProviderWriting>",
+            "@end",
+            ""
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSString.h",
+          "line": 1252,
+          "sha256": "05794c89d6a8aa19fd27b0bcade8a686ccb83ab3685be865080e7b01f480aae4",
+          "context": [
+            "#define NSMaximumStringLength\t(INT_MAX-1)",
+            "",
+            "#pragma mark *** Deprecated/discouraged APIs ***",
+            "",
+            "@interface NSString (NSExtendedStringPropertyListParsing)",
+            "",
+            "/* These methods are no longer recommended since they do not work with property lists and strings files in binary plist format. Please use the APIs in NSPropertyList.h instead."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSString.h",
+          "line": 1270,
+          "sha256": "05794c89d6a8aa19fd27b0bcade8a686ccb83ab3685be865080e7b01f480aae4",
+          "context": [
+            "- (nullable NSDictionary *)propertyListFromStringsFileFormat;",
+            "",
+            "@end",
+            "",
+            "@interface NSString (NSStringDeprecated)",
+            "",
+            "/* The following methods are deprecated and will be removed from this header file in the near future. These methods use NSString.defaultCStringEncoding as the encoding to convert to, which means the results depend on the user's language and potentially other settings. This might be appropriate in some cases, but often these methods are misused, resulting in issues when running in languages other then English. UTF8String in general is a much better choice when converting arbitrary NSStrings into 8-bit representations. Additional potential replacement methods are being introduced in NSString as appropriate."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSPathUtilities.h",
+          "line": 10,
+          "sha256": "d16910e959b0b3aba7b423a4d81cd4f91787e07fc90a47866ef0ad6e24555d0d",
+          "context": [
+            "#import <Foundation/NSArray.h>",
+            "",
+            "NS_HEADER_AUDIT_BEGIN(nullability, sendability)",
+            "",
+            "@interface NSString (NSStringPathExtensions)",
+            "",
+            "/// Returns a string built from the strings in a given array by concatenating them with a path separator between each pair."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSURL.h",
+          "line": 1354,
+          "sha256": "fd98908ae391ef82507f8375942e70a97f8426e6d003fe876d63e31d7e9f2324",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface NSString (NSURLUtilities)",
+            "",
+            "/// Returns a new string made from the receiver by replacing all characters not in the specified set with percent-encoded characters."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSLinguisticTagger.h",
+          "line": 404,
+          "sha256": "9a00824a5009bcaaccf4a35a7b2e4abb58fc6abf3685317baad8daabfa2d387f",
+          "context": [
+            "- (nullable NSArray<NSString *> *)possibleTagsAtIndex:(NSUInteger)charIndex scheme:(NSString *)tagScheme tokenRange:(nullable NSRangePointer)tokenRange sentenceRange:(nullable NSRangePointer)sentenceRange scores:(NSArray<NSValue *> * _Nullable * _Nullable)scores API_DEPRECATED(\"All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API\", macos(10.7, API_TO_BE_DEPRECATED), ios(5.0, API_TO_BE_DEPRECATED), watchos(2.0, API_TO_BE_DEPRECATED), tvos(9.0, API_TO_BE_DEPRECATED));",
+            "",
+            "@end",
+            "",
+            "@interface NSString (NSLinguisticAnalysis)",
+            "",
+            "/// Returns an array of linguistic tags for the specified range and requested tags within the receiving string."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSBundle.h",
+          "line": 663,
+          "sha256": "c6f7b0b5f28509153f90c9f6e9917cfe037335ba227393aae546fb219c8fbf2c",
+          "context": [
+            "\t    [bundle localizedAttributedStringForKey:(key) value:@\"\" table:(tbl)]",
+            "#define NSLocalizedAttributedStringWithDefaultValue(key, tbl, bundle, val, comment) \\",
+            "\t    [bundle localizedAttributedStringForKey:(key) value:(val) table:(tbl)]",
+            "",
+            "@interface NSString (NSBundleExtensionMethods)",
+            "",
+            "/// Returns a string variation suitable for the specified presentation width."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "NSNotFound",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-edited-rotor-v1/Sources/EditedRotorUIKit.swift",
+          "sha256": "b5f5572d6a20714b7e151261f75d84c69c66162242eac9637472e1e921c11b64"
+        },
+        {
+          "path": "code-examples/pilots/uikit-text-v1/Sources/TextUIKit.swift",
+          "sha256": "442b81a50096a5ec516e160485c22c90cc2ed0418b237534422c8906bf2b3479"
+        }
+      ],
+      "declarations": [],
+      "status": "explicit-unresolved-or-function-namespace",
+      "independentReview": "pending"
+    },
+    {
+      "name": "NSMaxRange",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-edited-rotor-v1/Sources/EditedRotorUIKit.swift",
+          "sha256": "b5f5572d6a20714b7e151261f75d84c69c66162242eac9637472e1e921c11b64"
+        },
+        {
+          "path": "code-examples/pilots/uikit-text-v1/Sources/TextUIKit.swift",
+          "sha256": "442b81a50096a5ec516e160485c22c90cc2ed0418b237534422c8906bf2b3479"
+        }
+      ],
+      "declarations": [],
+      "status": "explicit-unresolved-or-function-namespace",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UITextView",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-edited-rotor-v1/Sources/EditedRotorUIKit.swift",
+          "sha256": "b5f5572d6a20714b7e151261f75d84c69c66162242eac9637472e1e921c11b64"
+        },
+        {
+          "path": "code-examples/pilots/uikit-text-v1/Sources/TextUIKit.swift",
+          "sha256": "442b81a50096a5ec516e160485c22c90cc2ed0418b237534422c8906bf2b3479"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITextView.h",
+          "line": 223,
+          "sha256": "5fe1ad340b0c0fb7c66bec3169aadf356fbb8ee60ff045f18fcd8c96ee9e1cd0",
+          "context": [
+            "    UITextViewBorderStyleRoundedRect API_AVAILABLE(visionos(1.0)) API_UNAVAILABLE(ios, watchos),",
+            "} API_AVAILABLE(ios(17.0), visionos(1.0)) API_UNAVAILABLE(watchos);",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UITextView : UIScrollView <UITextInput, UIContentSizeCategoryAdjusting, UILetterformAwareAdjusting, NSTextViewportLayoutControllerDelegate>",
+            "",
+            "@property(nullable,nonatomic,weak) id<UITextViewDelegate> delegate;"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITextView.h",
+          "line": 351,
+          "sha256": "5fe1ad340b0c0fb7c66bec3169aadf356fbb8ee60ff045f18fcd8c96ee9e1cd0",
+          "context": [
+            "@end",
+            "",
+            "#if TARGET_OS_IOS",
+            "",
+            "@interface UITextView () <UITextDraggable, UITextDroppable, UITextPasteConfigurationSupporting, UIFindInteractionDelegate, UITextSearching>",
+            "@end",
+            ""
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITextView.h",
+          "line": 356,
+          "sha256": "5fe1ad340b0c0fb7c66bec3169aadf356fbb8ee60ff045f18fcd8c96ee9e1cd0",
+          "context": [
+            "@end",
+            "",
+            "#endif",
+            "",
+            "@interface UITextView (UIInteractionStateRestorable)",
+            "",
+            "// Note that the interaction state of a UITextView does _not_ encode the"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "NSObjectProtocol",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-lifecycle-v1/Sources/LifecycleUIKit.swift",
+          "sha256": "d16974dcb156633565bf7a9e60a3c2e99e42a1a3212bfbb7143b69811320b272"
+        }
+      ],
+      "declarations": [],
+      "status": "explicit-unresolved-or-function-namespace",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIAccessibility",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-lifecycle-v1/Sources/LifecycleUIKit.swift",
+          "sha256": "d16974dcb156633565bf7a9e60a3c2e99e42a1a3212bfbb7143b69811320b272"
+        },
+        {
+          "path": "code-examples/pilots/uikit-modal-v1/Sources/ModalUIKit.swift",
+          "sha256": "0a1b2fa1fa420044467fd4024b030831e6d8fee4d0074d0de5f2c921402a29b3"
+        },
+        {
+          "path": "code-examples/pilots/uikit-preferences-v1/Sources/PreferenceUIKit.swift",
+          "sha256": "24974dbbfb848289218cf3cbe74cba0a9f62c0625864a5d4608c000436d8cf02"
+        },
+        {
+          "path": "code-examples/pilots/uikit-reuse-v1/Sources/ReuseUIKit.swift",
+          "sha256": "4dfd9e59adafda3abca189c95aa885ce1cd31704e4a25cad61be455539fd1bbb"
+        },
+        {
+          "path": "research/evaluation/failure-driven/uikit-closure-v1/gap-contracts/Sources/GapContracts.swift",
+          "sha256": "641c7d777126ca05c1cfffee844d094908962e30cd3f3dbabd82573c6b9a6583"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIAccessibilityConstants.h",
+          "line": 334,
+          "sha256": "0a0c346482068ee869df77b93d8d9323f9d9cde2051105991003a29f26719b6e",
+          "context": [
+            "UIKIT_EXTERN NSAttributedStringKey const UIAccessibilityTextAttributeContext API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0)) NS_SWIFT_NONISOLATED;",
+            "",
+            "#ifdef __swift__",
+            "// This struct is not available in Objective-C. Its only purpose is to create a namespace for accessibility symbols in Swift.",
+            "typedef struct UIAccessibility { void *_reserved; } UIAccessibility;",
+            "#endif",
+            ""
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIViewController",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-lifecycle-v1/Sources/LifecycleUIKit.swift",
+          "sha256": "d16974dcb156633565bf7a9e60a3c2e99e42a1a3212bfbb7143b69811320b272"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITabBarController.h",
+          "line": 241,
+          "sha256": "1add803cc3d4774fa76f51f1c96d48cf0f179c79f83ce9f0f811d5263eb5bf88",
+          "context": [
+            "                                              toViewController:(UIViewController *)toVC  API_AVAILABLE(ios(7.0)) API_UNAVAILABLE(visionos);",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController (UITabBarControllerItem)",
+            "",
+            "@property(null_resettable, nonatomic, strong) UITabBarItem *tabBarItem; // Automatically created lazily with the view controller's title if it's not set explicitly."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UISplitViewController.h",
+          "line": 297,
+          "sha256": "cbf4f9d33abf61afcad6666afd6f5a2f600f87308cadf9f84c34500f64f59b17",
+          "context": [
+            "- (void)splitViewControllerInteractivePresentationGestureDidEnd:(UISplitViewController *)svc API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos);",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController (UISplitViewController)",
+            "",
+            "@property (nullable, nonatomic, readonly, strong) UISplitViewController *splitViewController; // If the view controller has a split view controller as its ancestor, return it. Returns nil otherwise."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UINavigationController.h",
+          "line": 149,
+          "sha256": "8782080ecbb820e50a7ab45374ff30db2e434a3f39ba340927e6e7fa0a362a21",
+          "context": [
+            "                                                  toViewController:(UIViewController *)toVC  API_AVAILABLE(ios(7.0));",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController (UINavigationControllerItem)",
+            "",
+            "@property(nonatomic,readonly,strong) UINavigationItem *navigationItem; // Created on-demand so that a view controller may customize its navigation appearance."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UINavigationController.h",
+          "line": 157,
+          "sha256": "8782080ecbb820e50a7ab45374ff30db2e434a3f39ba340927e6e7fa0a362a21",
+          "context": [
+            "@property(nullable, nonatomic,readonly,strong) UINavigationController *navigationController; // If this view controller has been pushed onto a navigation controller, return it.",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController (UINavigationControllerContextualToolbarItems)",
+            "",
+            "@property (nullable, nonatomic, strong) NSArray<__kindof UIBarButtonItem *> *toolbarItems API_AVAILABLE(ios(3.0)) API_UNAVAILABLE(tvos);"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UITab.h",
+          "line": 137,
+          "sha256": "084e49dab6598aec09de40abc4b78e49917d3928e3bd14af9abc5efd72491c51",
+          "context": [
+            "@interface UITab (UIAccessibility) <UIAccessibilityIdentification>",
+            "@end",
+            "",
+            "API_AVAILABLE(ios(18.0), tvos(18.0), visionos(2.0)) API_UNAVAILABLE(watchos)",
+            "@interface UIViewController (UITab)",
+            "",
+            "/// The `UITab` instance that was used to create the receiver, and represents the view controller. Default is nil."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 104,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "// Sometimes view controllers that are using showViewController:sender and showDetailViewController:sender: will need to know when the split view controller environment above it has changed. This notification will be posted when that happens (for example, when a split view controller is collapsing or expanding). The NSNotification's object will be the view controller that caused the change.",
+            "UIKIT_EXTERN NSNotificationName const UIViewControllerShowDetailTargetDidChangeNotification API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(watchos) NS_SWIFT_NONISOLATED;",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UIViewController : UIResponder <NSCoding, UIAppearanceContainer, UITraitEnvironment, UIContentContainer, UIFocusEnvironment>",
+            "",
+            "/*"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 376,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "",
+            "@end",
+            "",
+            "// To make it more convenient for applications to adopt rotation, a view controller may implement the below methods. Your UIWindow's frame should use [UIScreen mainScreen].bounds as its frame.",
+            "@interface UIViewController (UIViewControllerRotation)",
+            "",
+            "+ (void)attemptRotationToDeviceOrientation API_DEPRECATED(\"Please use instance method `setNeedsUpdateOfSupportedInterfaceOrientations`.\", ios(5.0, 16.0), visionos(1.0, 1.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(watchos);"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 413,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "@end",
+            "",
+            "// Many view controllers have a view that may be in an editing state or not- for example, a UITableView.  These view",
+            "// controllers can track the editing state, and generate an Edit|Done button to be used in a navigation bar.",
+            "@interface UIViewController (UIViewControllerEditing)",
+            "",
+            "@property(nonatomic,getter=isEditing) BOOL editing;"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 422,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "@property(nonatomic, readonly) UIBarButtonItem *editButtonItem; // Return an Edit|Done button that can be used as a navigation item's custom view. Default action toggles the editing state with animation.",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController (UISearchDisplayControllerSupport)",
+            "",
+            "@property(nullable, nonatomic, readonly, strong) UISearchDisplayController *searchDisplayController API_DEPRECATED(\"\", ios(3.0, 8.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(visionos, watchos);"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 441,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "  The methods in the UIContainerViewControllerProtectedMethods and the UIContainerViewControllerCallbacks",
+            "  categories typically should only be called by subclasses which are implementing new container view",
+            "  controllers. They may be overridden but must call super.",
+            "*/",
+            "@interface UIViewController (UIContainerViewControllerProtectedMethods)",
+            "",
+            "// An array of children view controllers. This array does not include any presented view controllers."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 495,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "@property (nonatomic, readonly, nullable) UIViewController *childViewControllerForUserInterfaceStyle API_AVAILABLE(tvos(11.0)) API_UNAVAILABLE(ios, watchos, visionos);",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController (UIContainerViewControllerCallbacks)",
+            "",
+            "/*"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 534,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "- (void)didMoveToParentViewController:(nullable UIViewController *)parent API_AVAILABLE(ios(5.0));",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController (UIStateRestoration) <UIStateRestoring>",
+            "@property (nullable, nonatomic, copy) NSString *restorationIdentifier API_AVAILABLE(ios(6.0));",
+            "@property (nullable, nonatomic, readwrite, assign) Class<UIViewControllerRestoration> restorationClass API_AVAILABLE(ios(6.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 542,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "- (void) decodeRestorableStateWithCoder:(NSCoder *)coder API_AVAILABLE(ios(6.0));",
+            "- (void) applicationFinishedRestoringState API_AVAILABLE(ios(7.0));",
+            "@end",
+            "",
+            "@interface UIViewController (UIConstraintBasedLayoutCoreMethods)",
+            "/* Base implementation sends -updateConstraints to the view.",
+            "    When a view has a view controller, this message is sent to the view controller during"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 562,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "@property (nullable, nonatomic, weak) id <UIViewControllerTransitioningDelegate> transitioningDelegate API_AVAILABLE(ios(7.0));",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController (UILayoutSupport)",
+            "// These objects may be used as layout items in the NSLayoutConstraint API",
+            "@property(nonatomic,readonly,strong) id<UILayoutSupport> topLayoutGuide API_DEPRECATED(\"Use view.safeAreaLayoutGuide.topAnchor instead of topLayoutGuide.bottomAnchor\", ios(7.0, 11.0), tvos(7.0, 11.0)) API_UNAVAILABLE(visionos, watchos);"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 589,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "- (void)viewSafeAreaInsetsDidChange NS_REQUIRES_SUPER API_AVAILABLE(ios(11.0), tvos(11.0)) API_UNAVAILABLE(watchos);",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController (UIKeyCommand)",
+            "",
+            "- (void)addKeyCommand:(UIKeyCommand *)keyCommand API_AVAILABLE(ios(9.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 596,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "- (void)removeKeyCommand:(UIKeyCommand *)keyCommand API_AVAILABLE(ios(9.0));",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController (UIPerformsActions)",
+            "",
+            "/// Determines whether the receiver continues to respond to actions while it is presenting a view controller modally."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 616,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "@end",
+            "",
+            "@class UIPresentationController, UISheetPresentationController, UIPopoverPresentationController;",
+            "",
+            "@interface UIViewController (UIPresentationController)",
+            "",
+            "@property (nullable, nonatomic, readonly) UIPresentationController *presentationController API_AVAILABLE(ios(8.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 659,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "- (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit API_DEPRECATED(\"UIViewControllerPreviewing is deprecated. Please use UIContextMenuInteraction.\", ios(9.0, 13.0)) API_UNAVAILABLE(visionos, watchos);",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController (UIViewControllerPreviewingRegistration)",
+            "",
+            "// Registers a view controller to participate with 3D Touch preview (peek) and commit (pop)."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 667,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "- (void)unregisterForPreviewingWithContext:(id <UIViewControllerPreviewing>)previewing API_DEPRECATED(\"UIViewControllerPreviewing is deprecated. Please use UIContextMenuInteraction.\", ios(9.0, 13.0)) API_UNAVAILABLE(visionos, watchos);",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController (UIScreenEdgesDeferringSystemGestures)",
+            "",
+            "// Override to return a child view controller or nil. If non-nil, that view controller's screen edges deferring system gestures will be used. If nil, self is used. Whenever the return value changes, -setNeedsScreenEdgesDeferringSystemGesturesUpdate should be called."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 681,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface UIViewController (UIHomeIndicatorAutoHidden)",
+            "",
+            "// Override to return a child view controller or nil. If non-nil, that view controller's home indicator auto-hiding will be used. If nil, self is used. Whenever the return value changes, -setNeedsHomeIndicatorAutoHiddenUpdate should be called."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 695,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface UIViewController (UIPointerLockSupport)",
+            "",
+            "// Override to return a child view controller or nil. If non-nil, that view controller's preferred pointer lock value will be used. If nil, self is used. Whenever the return value changes, setNeedsUpdateOfPrefersPointerLocked() should be called."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 710,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "- (void)setNeedsUpdateOfPrefersPointerLocked API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos, tvos);",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController ()",
+            "",
+            "/// Setting a content unavailable configuration replaces the existing content unavailable view of the view controller with a new content unavailable view instance from the configuration,"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 733,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "- (void)updateContentUnavailableConfigurationUsingState:(UIContentUnavailableConfigurationState *)state API_AVAILABLE(ios(17.0), tvos(17.0)) API_UNAVAILABLE(watchos);",
+            "",
+            "@end",
+            "",
+            "@interface UIViewController ()",
+            "",
+            "/// A child view controller to query for the interface orientation lock preference."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 764,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "@end",
+            "",
+            "@protocol UIPreviewActionItem;",
+            "",
+            "@interface UIViewController ()",
+            "",
+            "@property(nonatomic, readonly) NSArray <id <UIPreviewActionItem>> *previewActionItems API_DEPRECATED(\"UIViewControllerPreviewing is deprecated. Please use UIContextMenuInteraction.\", ios(9.0, 13.0)) API_UNAVAILABLE(visionos, watchos);"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 771,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "",
+            "@end",
+            "",
+            "API_AVAILABLE(ios(17.0), tvos(17.0)) API_UNAVAILABLE(watchos)",
+            "@interface UIViewController () <UITraitChangeObservable>",
+            "",
+            "@property (nonatomic, readonly) id<UITraitOverrides> traitOverrides API_AVAILABLE(ios(17.0), tvos(17.0)) API_UNAVAILABLE(watchos);"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h",
+          "line": 787,
+          "sha256": "4a23979d56cc8c87beda39a9f3a330d71cd94323d17bc4ec19b475aaa63f599d",
+          "context": [
+            "    UIContainerBackgroundStyleGlass,",
+            "    UIContainerBackgroundStyleHidden",
+            "} API_AVAILABLE(visionos(1.0)) API_UNAVAILABLE(ios, watchos, tvos);",
+            "",
+            "@interface UIViewController ()",
+            "",
+            "// Indicates the view controller's preference to be displayed on top of a background."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/NSTouchBar+UIKitAdditions.h",
+          "line": 34,
+          "sha256": "4c1be29e146b2ae0274f652969228bbbfff9a52efec149ab7ee68bff60ec0c14",
+          "context": [
+            " */",
+            "- (nullable NSTouchBar *)makeTouchBar API_AVAILABLE(macCatalyst(13.0));",
+            "@end",
+            "",
+            "@interface UIViewController (NSTouchBarProvider)",
+            "/*",
+            " Override to return a child view controller or nil. If non-nil, that view controller's touchBar will be used. If nil, self is used."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerViewController.h",
+          "line": 33,
+          "sha256": "654ccdaefa311c810efd04f1c17b0020c14a31d8ec0f8472827bd1d0c04ad485",
+          "context": [
+            "// UIViewController Additions",
+            "// Additions to present a fullscreen movie player as a modal view controller using the standard movie player transition.",
+            "",
+            "API_UNAVAILABLE(visionos)",
+            "@interface UIViewController (MPMoviePlayerViewController)",
+            "",
+            "- (void)presentMoviePlayerViewControllerAnimated:(MPMoviePlayerViewController *)moviePlayerViewController MP_DEPRECATED(\"Use AVPlayerViewController in AVKit.\", ios(3.2, 9.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIPopoverSupport.h",
+          "line": 20,
+          "sha256": "668ff2feb07ad09052ab7a1f9aa59279965e4733470b69312cce5b0e7d9b6fc5",
+          "context": [
+            "    UIPopoverArrowDirectionAny = UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown | UIPopoverArrowDirectionLeft | UIPopoverArrowDirectionRight,",
+            "    UIPopoverArrowDirectionUnknown = NSUIntegerMax",
+            "} API_UNAVAILABLE(watchos);",
+            "",
+            "@interface UIViewController (UIPopoverController)",
+            "",
+            "/* modalInPopover is set on the view controller when you wish to force the popover hosting the view controller into modal behavior. When this is active, the popover will ignore events outside of its bounds until this is set to NO."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "CMTime",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-media-inspection-v1/Sources/MediaInspection.swift",
+          "sha256": "ffb3809b618e0df4616e25acfee9f67120aab40827188d68064d10145082b03e"
+        },
+        {
+          "path": "code-examples/pilots/uikit-media-metadata-v1/Sources/MediaMetadata.swift",
+          "sha256": "1a2b02faa406d9334d96b3d94cc52d9e503778538acb73766e930f267aaf5b09"
+        }
+      ],
+      "declarations": [],
+      "status": "explicit-unresolved-or-function-namespace",
+      "independentReview": "pending"
+    },
+    {
+      "name": "CMTimeRange",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-media-inspection-v1/Sources/MediaInspection.swift",
+          "sha256": "ffb3809b618e0df4616e25acfee9f67120aab40827188d68064d10145082b03e"
+        }
+      ],
+      "declarations": [],
+      "status": "explicit-unresolved-or-function-namespace",
+      "independentReview": "pending"
+    },
+    {
+      "name": "AVPlayer",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-media-inspection-v1/Sources/MediaInspection.swift",
+          "sha256": "ffb3809b618e0df4616e25acfee9f67120aab40827188d68064d10145082b03e"
+        },
+        {
+          "path": "code-examples/pilots/uikit-media-v1/Sources/MediaUIKit.swift",
+          "sha256": "7fd55e418c7253dadb42c1917471513ef75cb5af4a20e47c90b8c3968b0ed3f6"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerInterstitialEventController.h",
+          "line": 518,
+          "sha256": "64086d04d78f45f63d6cfbec297bcfd26da44bae26bbb8b8148060e6a9e4f6b5",
+          "context": [
+            "@property (nullable, copy) NSString *localizedStringsTableName API_AVAILABLE(macos(26.0), ios(26.0), tvos(26.0), watchos(26.0), visionos(26.0));",
+            "",
+            "@end",
+            "",
+            "@interface AVPlayer (AVPlayerInterstitialSupport)",
+            "",
+            "/// Indicates that the player is waiting for the completion of an interstitial event."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 52,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "/// To allow clients to add and remove their objects as key-value observers safely, AVPlayer serializes notifications of",
+            "/// changes that occur dynamically during playback on a dispatch queue. By default, this queue is the main queue. See dispatch_get_main_queue().",
+            "NS_SWIFT_UI_ACTOR",
+            "API_AVAILABLE(macos(10.7), ios(4.0), tvos(9.0), watchos(1.0), visionos(1.0))",
+            "@interface AVPlayer : NSObject",
+            "{",
+            "@private"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 145,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "AVF_EXPORT AVPlayerRateDidChangeReason const AVPlayerRateDidChangeReasonPlayheadReachedLiveEdge API_AVAILABLE(macos(26.4), ios(26.4), tvos(26.4), watchos(26.4), visionos(26.4));",
+            "/// Indicates that the player automatically switched rate to 1.0 when the reverse playback reached start of seekable range. only for live.",
+            "AVF_EXPORT AVPlayerRateDidChangeReason const AVPlayerRateDidChangeReasonReversePlaybackReachedStartOfSeekableRange API_AVAILABLE(macos(26.4), ios(26.4), tvos(26.4), watchos(26.4), visionos(26.4));",
+            "",
+            "@interface AVPlayer (AVPlayerPlaybackControl)",
+            "",
+            "/// Indicates the desired rate of playback; 0.0 means \"paused\", 1.0 indicates a desire to play at the natural rate of the current item."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 257,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface AVPlayer (AVPlayerItemControl)",
+            "",
+            "/// Indicates the current item of the player"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 289,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface AVPlayer (AVPlayerTimeControl)",
+            "",
+            "/// Returns the current time of the current item."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 368,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface AVPlayer (AVPlayerAdvancedRateControl)",
+            "",
+            "/// Indicates that the player is allowed to delay playback at the specified rate in order to minimize stalling"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 436,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface AVPlayer (AVPlayerTimeObservation)",
+            "",
+            "/// Requests invocation of a block during playback to report changing time."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 489,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface AVPlayer (AVPlayerMediaControl)",
+            "",
+            "/// Indicates the current audio volume of the player; 0.0 means \"silence all audio\", 1.0 means \"play at the full volume of the current item\"."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 503,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface AVPlayer (AVPlayerAudioSessionParticipation)",
+            "",
+            "/// Indicates whether the player is disconnected from system audio."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 543,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "",
+            "",
+            "@class AVPlayerMediaSelectionCriteria;",
+            "",
+            "@interface AVPlayer (AVPlayerAutomaticMediaSelection)",
+            "",
+            "/// Indicates whether the receiver should apply the current selection criteria automatically to AVPlayerItems."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 583,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface AVPlayer (AVPlayerAudioDeviceSupport)",
+            "",
+            "/// Specifies the unique ID of the Core Audio output device used to play audio."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 608,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "/// deprecated AVPlayerAirPlaySupport properties.",
+            "/// ",
+            "/// Additional note for iOS: AVPlayerExternalPlaybackSupport properties apply to the Lightning-based",
+            "/// video adapters but do not apply to 30-pin-connector-based video output cables and adapters.",
+            "@interface AVPlayer (AVPlayerExternalPlaybackSupport)",
+            "",
+            "/// Indicates whether the player allows switching to \"external playback\" mode. The default value is YES."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 626,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "@end",
+            "",
+            "#if TARGET_OS_IPHONE",
+            "",
+            "@interface AVPlayer (AVPlayerAirPlaySupport)",
+            "",
+            "/// Indicates whether the player allows AirPlay Video playback. The default value is YES.  This property is deprecated. Use AVPlayer's -allowsExternalPlayback instead."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 645,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "",
+            "#endif // TARGET_OS_IPHONE",
+            "",
+            "/// Methods supporting protected content.",
+            "@interface AVPlayer (AVPlayerProtectedContent)",
+            "",
+            "/// Whether or not decoded output is being obscured due to insufficient external protection."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 672,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "\t/// Indicates that Dolby Vision HDR mode is available.",
+            "\tAVPlayerHDRModeDolbyVision\t\t= 0x4,",
+            "} API_DEPRECATED(\"The deprecated availableHDRModes uses this enum. Use eligibleForHDRPlayback instead\", ios(11.2, 26.0), tvos(11.2, 26.0), visionos(1.0, 26.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos);",
+            "",
+            "@interface AVPlayer (AVPlayerPlaybackCapabilities)",
+            "",
+            "/// An AVPlayerHDRMode value that indicates the HDR modes the device can play to an appropriate display. A value of 0 indicates that no HDR modes are supported."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 698,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "AVF_EXPORT NSNotificationName const AVPlayerEligibleForHDRPlaybackDidChangeNotification;",
+            "",
+            "@end",
+            "",
+            "@interface AVPlayer (AVPlayerVideoDecoderGPUSupport)",
+            "",
+            "/// Specifies a registryID associated with a GPU that should be used for video decode."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 709,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "@property (nonatomic) uint64_t preferredVideoDecoderGPURegistryID NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.13)) API_UNAVAILABLE(ios, tvos, watchos, visionos);",
+            "",
+            "@end",
+            "",
+            "@interface AVPlayer (AVPlayerVideoDisplaySleepPrevention)",
+            "",
+            "/// Indicates whether video playback prevents display and device sleep."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 725,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "API_AVAILABLE(macos(10.14), ios(12.0), tvos(12.0)) API_UNAVAILABLE(watchos, visionos);",
+            "",
+            "@end",
+            "",
+            "@interface AVPlayer (AVPlayerAutomaticBackgroundPrevention)",
+            "",
+            "/// Indicates whether video playback prevents the app from automatically getting backgrounded."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 734,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "/// Setting this property to YES prevents an application that is playing video from automatically getting backgrounded. This property does not prevent the user from backgrounding the application.",
+            "@property (nonatomic) BOOL preventsAutomaticBackgroundingDuringVideoPlayback NS_SWIFT_NONISOLATED API_AVAILABLE(visionos(1.0)) API_UNAVAILABLE(macos, ios, tvos, watchos);",
+            "@end",
+            "",
+            "@interface AVPlayer (AVPlayerBackgroundSupport)",
+            "",
+            "/// This policy describes how AVPlayer behaves when the application transitions to UIApplicationStateBackground while playing video."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 755,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "@property (nonatomic) AVPlayerAudiovisualBackgroundPlaybackPolicy audiovisualBackgroundPlaybackPolicy NS_SWIFT_NONISOLATED API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0), visionos(1.0));",
+            "",
+            "@end",
+            "",
+            "@interface AVPlayer (PlaybackCoordination)",
+            "",
+            "/// The playback coordinator for this player."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 775,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "",
+            "@end",
+            "",
+            "API_AVAILABLE(macos(14.2), ios(17.2), tvos(17.2), watchos(10.2), visionos(1.1))",
+            "@interface AVPlayer (AVPlayerOutputSupport)",
+            "",
+            "/// The video output for this player, if one was set."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 798,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "\tAVPlayerNetworkResourcePriorityHigh = 2,",
+            "} NS_SWIFT_NAME(AVPlayer.NetworkResourcePriority) API_AVAILABLE(macos(26.0), ios(26.0), tvos(26.0), watchos(26.0), visionos(26.0));",
+            "",
+            "API_AVAILABLE(macos(26.0), ios(26.0), tvos(26.0), watchos(26.0), visionos(26.0))",
+            "@interface AVPlayer (AVPlayerResourceArbitrationSupport)",
+            "",
+            "/// Indicates the priority of this player for network bandwidth resource distribution."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 808,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "",
+            "@end",
+            "",
+            "API_AVAILABLE(visionos(26.0)) API_UNAVAILABLE(macos, ios, tvos, watchos)",
+            "@interface AVPlayer (AVPlayerSpatialAudioExperience)",
+            "",
+            "/// The AVPlayer's intended spatial audio experience."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 823,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "/// AVPlayer conforms to the AVRoutingPlaybackParticipant protocol",
+            "/// ",
+            "/// An AVPlayer can be used as a participant in an AVRoutingPlaybackArbiter. Participants to the AVRoutingPlaybackArbiter must conform to the AVRoutingPlaybackParticipant protocol.",
+            "API_AVAILABLE(ios(26.0), tvos(26.0)) API_UNAVAILABLE(macos, watchos, visionos)",
+            "@interface AVPlayer (AVRoutingPlaybackArbitrationEligibility) <AVRoutingPlaybackParticipant>",
+            "",
+            "@end"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 828,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "",
+            "@end",
+            "#endif",
+            "",
+            "@interface AVPlayer (AVPlayerRoutingPlaybackArbitrationSupport)",
+            "",
+            "/// Whether the player's audio output is suppressed due to being on a non-mixable audio route."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 839,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "@property (nonatomic, readonly) BOOL audioOutputSuppressedDueToNonMixableAudioRoute API_AVAILABLE(ios(26.0), tvos(26.0)) API_UNAVAILABLE(macos, watchos, visionos);",
+            "",
+            "@end",
+            "",
+            "@interface AVPlayer (AVPlayerObservation)",
+            "",
+            "/// AVPlayer and other AVFoundation types can optionally be observed using Swift Observation."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 849,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "/// For more information regarding management of class objects in SwiftUI, please refer to https://developer.apple.com/documentation/swiftui/state.",
+            "@property (class, readwrite, getter=isObservationEnabled) BOOL observationEnabled NS_SWIFT_NONISOLATED API_AVAILABLE(macos(26.0), ios(26.0), tvos(26.0), watchos(26.0), visionos(26.0));",
+            "@end",
+            "",
+            "@interface AVPlayer (AVPlayerAllowsCaptureOfClearKeyVideo)",
+            "",
+            "/// Indicates whether the video output of ClearKey Encrypted Video can be captured"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayer.h",
+          "line": 860,
+          "sha256": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+          "context": [
+            "@property (nonatomic) BOOL allowsCaptureOfClearKeyVideo NS_SWIFT_NONISOLATED API_AVAILABLE(macos(26.4), ios(26.4), tvos(26.4), watchos(26.4), visionos(26.4));",
+            "",
+            "@end",
+            "",
+            "@interface AVPlayer (AVPlayerDeprecated)",
+            "",
+            "/// Indicates whether display of closed captions is enabled."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "CMTimeRangeContainsTime",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-media-inspection-v1/Sources/MediaInspection.swift",
+          "sha256": "ffb3809b618e0df4616e25acfee9f67120aab40827188d68064d10145082b03e"
+        }
+      ],
+      "declarations": [],
+      "status": "explicit-unresolved-or-function-namespace",
+      "independentReview": "pending"
+    },
+    {
+      "name": "AVMediaCharacteristic",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-media-metadata-v1/Sources/MediaMetadata.swift",
+          "sha256": "1a2b02faa406d9334d96b3d94cc52d9e503778538acb73766e930f267aaf5b09"
+        }
+      ],
+      "declarations": [],
+      "status": "explicit-unresolved-or-function-namespace",
+      "independentReview": "pending"
+    },
+    {
+      "name": "AVPlayerItem",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-media-metadata-v1/Sources/MediaMetadata.swift",
+          "sha256": "1a2b02faa406d9334d96b3d94cc52d9e503778538acb73766e930f267aaf5b09"
+        },
+        {
+          "path": "code-examples/pilots/uikit-media-v1/Sources/MediaUIKit.swift",
+          "sha256": "7fd55e418c7253dadb42c1917471513ef75cb5af4a20e47c90b8c3968b0ed3f6"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 79,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "/// changes that occur dynamically during playback on the same dispatch queue on which notifications of playback state changes",
+            "/// are serialized by its associated AVPlayer. By default, this queue is the main queue. See dispatch_get_main_queue().",
+            "NS_SWIFT_UI_ACTOR",
+            "API_AVAILABLE(macos(10.7), ios(4.0), tvos(9.0), watchos(1.0), visionos(1.0))",
+            "@interface AVPlayerItem : NSObject <NSCopying>",
+            "{",
+            "@private"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 183,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "@class AVPlayerItemTrack;",
+            "@class AVMetadataItem;",
+            "",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemInspection)",
+            "",
+            "/// Accessor for underlying AVAsset."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 235,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemRateAndSteppingSupport)",
+            "",
+            "/// For releases of macOS prior to 10.9 and releases of iOS prior to 7.0, indicates whether the item can be played at rates greater than 1.0."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 282,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "@property (nonatomic) BOOL automaticallyPreservesTimeOffsetFromLive NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.15), ios(13.0), tvos(13.0),watchos(6.0), visionos(1.0));",
+            "",
+            "@end",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemTimeControl)",
+            "",
+            "/// Returns the current time of the item."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 403,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "",
+            "",
+            "@class AVTextStyleRule;",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemVisualPresentation)",
+            "",
+            "/// Indicates the video composition settings to be applied during playback."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 461,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemAudioProcessing)",
+            "",
+            "/// Indicates the processing algorithm used to manage audio pitch at varying rates and for scaled audio edits."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 488,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemPlayability)",
+            "",
+            "/// This property provides a collection of time ranges for which the player has the media data readily available. The ranges provided might be discontinuous."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 532,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemVariantControl)",
+            "",
+            "/// Indicates the desired limit of network bandwidth consumption for this item."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 599,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemMediaSelection)",
+            "",
+            "/// Selects the media option described by the specified instance of AVMediaSelectionOption in the specified AVMediaSelectionGroup and deselects all other options in that group."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 646,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemCustomMediaSelectionScheme)",
+            "",
+            "/// Indicates the AVCustomMediaSelectionSchemes of AVMediaSelectionGroups of the receiver's asset with which an associated UI implementation should configure its interface for media selection."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 704,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "@class AVPlayerItemErrorLogInternal;",
+            "@class AVPlayerItemAccessLogEventInternal;",
+            "@class AVPlayerItemErrorLogEventInternal;",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemLogging)",
+            "",
+            "/// Returns an object that represents a snapshot of the network access log. Can be nil."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 750,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "@end",
+            "",
+            "@class AVPlayerItemOutput;",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemOutputs)",
+            "",
+            "/// Adds the specified instance of AVPlayerItemOutput to the receiver's collection of outputs."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 773,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "@end",
+            "",
+            "@class AVPlayerItemMediaDataCollector;",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemMediaDataCollectors)",
+            "",
+            "/// Adds the specified instance of AVPlayerItemMediaDataCollector to the receiver's collection of mediaDataCollectors."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 792,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "@property (nonatomic, readonly) NSArray<AVPlayerItemMediaDataCollector *> *mediaDataCollectors NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.11.3), ios(9.3), tvos(9.2), watchos(2.3), visionos(1.0));",
+            "",
+            "@end",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemDeprecated)",
+            "",
+            "/// Moves the playback cursor."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+          "line": 1168,
+          "sha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+          "context": [
+            "@property (nonatomic, readonly, nullable) NSDictionary <NSString *, NSString *> *allHTTPResponseHeaderFields API_AVAILABLE(macos(14.5), ios(17.5), tvos(17.5), watchos(10.5), visionos(1.2));",
+            "",
+            "@end",
+            "",
+            "@interface AVPlayerItem (AVMetricEventStreamPublisher) <AVMetricEventStreamPublisher>",
+            "@end",
+            ""
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerInterstitialEventController.h",
+          "line": 527,
+          "sha256": "64086d04d78f45f63d6cfbec297bcfd26da44bae26bbb8b8148060e6a9e4f6b5",
+          "context": [
+            "AVF_EXPORT AVPlayerWaitingReason const AVPlayerWaitingDuringInterstitialEventReason API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0), visionos(1.0));",
+            "",
+            "@end",
+            "",
+            "@interface AVPlayerItem (AVPlayerInterstitialSupport)",
+            "",
+            "/// Allows interstitials to be played according to a schedule that's specified by server-side directives. The default value is YES. A value of NO prevents automatic scheduling of future server-side interstitial events. Events specified by an AVPlayerInterstitialEventController override server-side events, regardless of the value of this property."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/MediaPlayer.framework/Headers/AVPlayerItem+MediaPlayerAdditions.h",
+          "line": 15,
+          "sha256": "28150085ab419940ffa959ed823115bafc5bc9a334f83b52e753b77e015358c1",
+          "context": [
+            "NS_ASSUME_NONNULL_BEGIN",
+            "",
+            "MP_UNAVAILABLE_BEGIN(watchos, macos)",
+            "",
+            "@interface AVPlayerItem (MPAdditions)",
+            "",
+            "/// The current now playing info for the player item."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItemIntegratedTimeline.h",
+          "line": 295,
+          "sha256": "44bb904735c26aaa11269e5d61605383175ddafb52092a3d7f85fb05d6a479ea",
+          "context": [
+            "AVF_EXPORT AVPlayerIntegratedTimelineSnapshotsOutOfSyncReason const AVPlayerIntegratedTimelineSnapshotsOutOfSyncReasonSegmentsChanged API_AVAILABLE(macos(15.0), ios(18.0), tvos(18.0), watchos(11.0), visionos(2.0));",
+            "AVF_EXPORT AVPlayerIntegratedTimelineSnapshotsOutOfSyncReason const AVPlayerIntegratedTimelineSnapshotsOutOfSyncReasonCurrentSegmentChanged API_AVAILABLE(macos(15.0), ios(18.0), tvos(18.0), watchos(11.0), visionos(2.0));",
+            "AVF_EXPORT AVPlayerIntegratedTimelineSnapshotsOutOfSyncReason const AVPlayerIntegratedTimelineSnapshotsOutOfSyncReasonLoadedTimeRangesChanged API_AVAILABLE(macos(15.0), ios(18.0), tvos(18.0), watchos(11.0), visionos(2.0));",
+            "",
+            "@interface AVPlayerItem (AVPlayerItemIntegratedTimelineSupport)",
+            "",
+            "/*!"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVKit.framework/Headers/AVPlayerItem+AVKitAdditions.h",
+          "line": 20,
+          "sha256": "420f609cddaa28d96826a906b17e98aa679c00393d365b8381f023706c4c1194",
+          "context": [
+            "// MARK: -",
+            "",
+            "NS_ASSUME_NONNULL_BEGIN",
+            "",
+            "@interface AVPlayerItem (AVKitAdditions)",
+            "",
+            "/*!"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "AVPlayerViewController",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-media-v1/Sources/MediaUIKit.swift",
+          "sha256": "7fd55e418c7253dadb42c1917471513ef75cb5af4a20e47c90b8c3968b0ed3f6"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/AVKit.framework/Headers/AVPlayerViewController.h",
+          "line": 52,
+          "sha256": "5e393decc5bc3c4f8991b12642110529357bdd63352940547682401b3223af5f",
+          "context": [
+            "\t@class\t\tAVPlayerViewController",
+            "\t@abstract\tAVPlayerViewController is a subclass of UIViewController that can be used to display the visual content of an AVPlayer object and the standard playback controls.",
+            " */",
+            "API_AVAILABLE(ios(8.0), tvos(9.0), visionos(1.0)) API_UNAVAILABLE(watchos) API_UNAVAILABLE(macos)",
+            "@interface AVPlayerViewController : UIViewController",
+            "",
+            "/*!"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVKit.framework/Headers/AVPlayerViewController.h",
+          "line": 693,
+          "sha256": "5e393decc5bc3c4f8991b12642110529357bdd63352940547682401b3223af5f",
+          "context": [
+            "",
+            "",
+            "// MARK: - Deprecated APIs",
+            "",
+            "@interface AVPlayerViewController (Deprecated)",
+            "",
+            "/*!"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UISlider",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-media-v1/Sources/MediaUIKit.swift",
+          "sha256": "7fd55e418c7253dadb42c1917471513ef75cb5af4a20e47c90b8c3968b0ed3f6"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UISlider.h",
+          "line": 26,
+          "sha256": "b3284133b6c16cf9bab046ed0de4e9330d5fe53ac2682c14e955ced376cfd9f1",
+          "context": [
+            "",
+            "@class UIImageView, UIImage;",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(tvos, watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UISlider : UIControl <NSCoding>",
+            "",
+            "@property(nonatomic) float value;                                 // default 0.0. this value will be pinned to min/max"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIBehavioralStyle.h",
+          "line": 39,
+          "sha256": "7805f15bc50777e5d37354acc4865df008291ed4dc0bae884f589b0d4781c2ec",
+          "context": [
+            "",
+            "@end",
+            "",
+            "API_AVAILABLE(ios(15.0), macCatalyst(15.0)) API_UNAVAILABLE(watchos, tvos)",
+            "@interface UISlider (UIBehavioralStyle)",
+            "",
+            "/// The slider's behavioral style. This property always returns a concrete, resolved style (never UIBehavioralStyleAutomatic)."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "AVMediaSelectionGroup",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-media-v1/Sources/MediaUIKit.swift",
+          "sha256": "7fd55e418c7253dadb42c1917471513ef75cb5af4a20e47c90b8c3968b0ed3f6"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/MediaPlayer.framework/Headers/AVFoundation+MPNowPlayingInfoLanguageOptionAdditions.h",
+          "line": 30,
+          "sha256": "45cd8d3de637c12048ea5a7a3664838bb92488d99bd41fa86e421a425e7307e9",
+          "context": [
+            "@end",
+            "",
+            "// -----------------------------------------------------------------------------",
+            "",
+            "@interface AVMediaSelectionGroup (MPNowPlayingInfoLanguageOptionAdditions)",
+            "",
+            "/// Will create a language option group from the AVMediaSelectionGroup"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVMediaSelectionGroup.h",
+          "line": 25,
+          "sha256": "ae5c280e4d1d342bba4b3eebf40487818e87753bdb79793333c4942b1b8cdb59",
+          "context": [
+            "@class AVMediaPresentationSetting;",
+            "",
+            "/// AVMediaSelectionGroup provides a collection of mutually exclusive options for the presentation of media within an asset.",
+            "API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0))",
+            "@interface AVMediaSelectionGroup : NSObject <NSCopying> {",
+            "@private",
+            "\tAVMediaSelectionGroupInternal\t*_mediaSelectionGroup;"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVMediaSelectionGroup.h",
+          "line": 60,
+          "sha256": "ae5c280e4d1d342bba4b3eebf40487818e87753bdb79793333c4942b1b8cdb59",
+          "context": [
+            "/// ",
+            "/// The AVMediaSelectionOptionFiltering category is provided for convenience in filtering the media selection options in a group",
+            "/// according to playability, locale, and media characteristics.",
+            "/// Note that it's possible to implement additional filtering behaviors by using -[NSArray indexesOfObjectsPassingTest:].",
+            "@interface AVMediaSelectionGroup (AVMediaSelectionOptionFiltering)",
+            "",
+            "/// Filters an array of AVMediaSelectionOptions according to whether they are playable."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/AVFoundation.framework/Headers/AVMediaSelectionGroup.h",
+          "line": 214,
+          "sha256": "ae5c280e4d1d342bba4b3eebf40487818e87753bdb79793333c4942b1b8cdb59",
+          "context": [
+            "@property (nonatomic, readonly) NSString *displayName API_AVAILABLE(macos(10.9), ios(7.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+            "",
+            "@end",
+            "",
+            "@interface AVMediaSelectionGroup (AVMediaSelectionGroupCustomMediaSelectionScheme)",
+            "",
+            "/// For content that has been authored with the express intent of offering an alternative selection interface for AVMediaSelectionOptions, AVCustomMediaSelectionScheme provides a collection of custom settings for controlling the presentation of the media."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UICollectionViewCell",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-reuse-v1/Sources/ReuseUIKit.swift",
+          "sha256": "4dfd9e59adafda3abca189c95aa885ce1cd31704e4a25cad61be455539fd1bbb"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UICollectionViewCell.h",
+          "line": 65,
+          "sha256": "2c16e66c4ac00341cf2ae651e678de497725992d683f3db7432c0fe2094f5646",
+          "context": [
+            "",
+            "typedef void (^UICollectionViewCellConfigurationUpdateHandler)(__kindof UICollectionViewCell *cell, UICellConfigurationState *state) API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(6.0)) API_UNAVAILABLE(watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UICollectionViewCell : UICollectionReusableView",
+            "",
+            "/// Returns the current configuration state for the cell."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "NSAttributedString",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-reuse-v1/Sources/ReuseUIKit.swift",
+          "sha256": "4dfd9e59adafda3abca189c95aa885ce1cd31704e4a25cad61be455539fd1bbb"
+        },
+        {
+          "path": "code-examples/pilots/uikit-text-v1/Sources/TextUIKit.swift",
+          "sha256": "442b81a50096a5ec516e160485c22c90cc2ed0418b237534422c8906bf2b3479"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/NSTextAttachment.h",
+          "line": 227,
+          "sha256": "ee605c7af716729771921525cb6ad4fd2a05f7a14d8a346e2097ec2aa29d9b0e",
+          "context": [
+            "/// ``textAttachmentViewProviderClassForFileType:``, and ``contents``.",
+            "@property (readonly) BOOL usesTextAttachmentView API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), visionos(1.0)) API_UNAVAILABLE(watchos);",
+            "@end",
+            "",
+            "@interface NSAttributedString (NSAttributedStringAttachmentConveniences)",
+            "/// Returns an attributed string containing the specified attachment using `NSAttachmentCharacter` as the base character.",
+            "+ (NSAttributedString *)attributedStringWithAttachment:(NSTextAttachment *)attachment API_AVAILABLE(macos(10.0), ios(7.0), tvos(9.0), watchos(2.0), visionos(1.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/NSAttributedString.h",
+          "line": 185,
+          "sha256": "e1d44b98dc49cca4e1f93e5d363fa1c821b238fcb016386f12f9fbcff55d2310",
+          "context": [
+            "// NSAttributedString uses two representations for the text list. With TextKit2, the paragraph representing a text list item only contains the content. For example, \" - text list A\" is represented as \"test list A\" with a .hyphen NSTextList. TextKit1 requires the entire resolved text list content including the marker format string.",
+            "UIKIT_EXTERN NSAttributedStringDocumentReadingOptionKey const NSTextKit1ListMarkerFormatDocumentOption API_AVAILABLE(macos(15.0), ios(18.0), tvos(18.0), watchos(11.0), visionos(2.0));",
+            "",
+            "",
+            "@interface NSAttributedString (NSAttributedStringDocumentFormats)",
+            "// Methods initializing the receiver contents with an external document data.  options specify document attributes for interpreting the document contents.  NSDocumentTypeDocumentAttribute, NSCharacterEncodingDocumentAttribute, and NSDefaultAttributesDocumentAttribute are supported options key.  When they are not specified, these methods will examine the data and do their best to detect the appropriate attributes.  If dict is non-NULL, it will return a dictionary with various document-wide attributes accessible via NS...DocumentAttribute keys.",
+            "- (nullable instancetype)initWithURL:(NSURL *)url options:(NSDictionary<NSAttributedStringDocumentReadingOptionKey, id> *)options documentAttributes:(NSDictionary<NSAttributedStringDocumentAttributeKey, id> * __nullable * __nullable)dict error:(NSError **)error API_AVAILABLE(macos(10.4), ios(9.0), tvos(9.0), watchos(2.0), visionos(1.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/NSAttributedString.h",
+          "line": 206,
+          "sha256": "e1d44b98dc49cca4e1f93e5d363fa1c821b238fcb016386f12f9fbcff55d2310",
+          "context": [
+            "@end",
+            "",
+            "",
+            "/************************ Misc methods ************************/",
+            "@interface NSAttributedString (NSAttributedStringKitAdditions)",
+            "// Returns YES if the receiver contains a property configured (NSAttachmentAttributeName with NSAttachmentCharacter) in range",
+            "- (BOOL)containsAttachmentsInRange:(NSRange)range API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0), watchos(2.0), visionos(1.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/NSAttributedString.h",
+          "line": 217,
+          "sha256": "e1d44b98dc49cca4e1f93e5d363fa1c821b238fcb016386f12f9fbcff55d2310",
+          "context": [
+            "",
+            "UIKIT_EXTERN NSAttributedStringDocumentAttributeKey const NSPaperMarginDocumentAttribute API_AVAILABLE(ios(6.0), tvos(9.0), watchos(2.0), visionos(1.0));  // @\"PaperMargin\", NSValue containing UIEdgeInsets",
+            "",
+            "API_AVAILABLE(ios(12.0), tvos(12.0), watchos(5.0), visionos(1.0), macCatalyst(12.0))",
+            "@interface NSAttributedString (NSAttributedString_ItemProvider) <NSItemProviderReading, NSItemProviderWriting>",
+            "@end",
+            ""
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/NSStringDrawing.h",
+          "line": 69,
+          "sha256": "1c195c6e6b67f0fb3a925f59fe44889ccdd5a1368e6a99076f18d3f91bb177c7",
+          "context": [
+            "- (void)drawWithRect:(CGRect)rect options:(NSStringDrawingOptions)options attributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attributes context:(nullable NSStringDrawingContext *)context API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0), watchos(2.0), visionos(1.0));",
+            "- (CGRect)boundingRectWithSize:(CGSize)size options:(NSStringDrawingOptions)options attributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attributes context:(nullable NSStringDrawingContext *)context API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0), watchos(2.0), visionos(1.0));",
+            "@end",
+            "",
+            "@interface NSAttributedString (NSExtendedStringDrawing)",
+            "- (void)drawWithRect:(CGRect)rect options:(NSStringDrawingOptions)options context:(nullable NSStringDrawingContext *)context API_AVAILABLE(macos(10.11), ios(6.0), tvos(9.0), watchos(2.0), visionos(1.0));",
+            "- (CGRect)boundingRectWithSize:(CGSize)size options:(NSStringDrawingOptions)options context:(nullable NSStringDrawingContext *)context API_AVAILABLE(macos(10.11), ios(6.0), tvos(9.0), watchos(2.0), visionos(1.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/NSAdaptiveImageGlyph.h",
+          "line": 38,
+          "sha256": "c8e9737c1f6d5a942c0ad4ca8919e145bad8d96a63a2cc331162208fdaa2895a",
+          "context": [
+            "",
+            "@property (class, readonly) UTType *contentType; // A UTType identifying the image data format",
+            "@end",
+            "",
+            "@interface NSAttributedString (NSAttributedStringAdaptiveImageGlyphConveniences)",
+            "// A convenience method for creating an attributed string containing an NSAdaptiveImageGlyph with attributes using NSAttachmentCharacter as the base character.",
+            "+ (instancetype)attributedStringWithAdaptiveImageGlyph:(NSAdaptiveImageGlyph *)adaptiveImageGlyph attributes:(NSDictionary<NSAttributedStringKey, id> *)attributes API_AVAILABLE(macos(15.0), ios(18.0), tvos(18.0), watchos(11.0), visionos(2.0));"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSAttributedString.h",
+          "line": 71,
+          "sha256": "6156134f573a465beada3cd3246c3379de4413011b7e4cfc18a3169d09b8e998",
+          "context": [
+            "/// <doc://com.apple.documentation/documentation/appkit> and <doc://com.apple.documentation/documentation/uikit> also support attributed strings in several ways. Some views and controls in these frameworks have APIs that accept attributed strings, and render the string with its style information. The frameworks also add methods to the ``NSAttributedString`` class that let you draw a styled string directly in one of your custom views. Because these methods use TextKit to draw the string, they recognize the same rendering-related attributes as that technology.",
+            "///",
+            "/// The ``NSAttributedString`` class and its Core Foundation counterpart, <doc://com.apple.documentation/documentation/corefoundation/cfattributedstring>, are toll-free bridged, which means you can use the two types interchangeably in your code without losing any text or attribute information.",
+            "API_AVAILABLE(macos(10.0), ios(3.2), watchos(2.0), tvos(9.0))",
+            "@interface NSAttributedString : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>",
+            "",
+            "// Override these two APIs when subclassing NSAttributedString"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSAttributedString.h",
+          "line": 90,
+          "sha256": "6156134f573a465beada3cd3246c3379de4413011b7e4cfc18a3169d09b8e998",
+          "context": [
+            "- (NSDictionary<NSAttributedStringKey, id> *)attributesAtIndex:(NSUInteger)location effectiveRange:(nullable NSRangePointer)range;",
+            "",
+            "@end",
+            "",
+            "@interface NSAttributedString (NSExtendedAttributedString)",
+            "",
+            "/// The length of the attributed string."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSAttributedString.h",
+          "line": 459,
+          "sha256": "6156134f573a465beada3cd3246c3379de4413011b7e4cfc18a3169d09b8e998",
+          "context": [
+            "",
+            "@end",
+            "",
+            "",
+            "@interface NSAttributedString (NSAttributedStringCreateFromMarkdown)",
+            "",
+            "// These constructors have a 'baseURL' parameter. If specified, links in the document will be relative to this URL, and images in the document will be looked for relative to this URL (if the other options allow image loading)."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSAttributedString.h",
+          "line": 524,
+          "sha256": "6156134f573a465beada3cd3246c3379de4413011b7e4cfc18a3169d09b8e998",
+          "context": [
+            "    NSAttributedStringFormattingApplyReplacementIndexAttribute",
+            "      API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0)) = 1 << 1,",
+            "} NS_REFINED_FOR_SWIFT;",
+            "",
+            "@interface NSAttributedString (NSAttributedStringFormatting)",
+            "",
+            "/// Formats the string using the specified locale (or the canonical one, if nil)."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/Foundation.framework/Headers/NSAttributedString.h",
+          "line": 602,
+          "sha256": "6156134f573a465beada3cd3246c3379de4413011b7e4cfc18a3169d09b8e998",
+          "context": [
+            "",
+            "",
+            "// -----",
+            "",
+            "@interface NSAttributedString (NSMorphology)",
+            "",
+            "/// If the string has portions tagged with NSInflectionRuleAttributeName"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UIFont",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-reuse-v1/Sources/ReuseUIKit.swift",
+          "sha256": "4dfd9e59adafda3abca189c95aa885ce1cd31704e4a25cad61be455539fd1bbb"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIFont.h",
+          "line": 20,
+          "sha256": "d4d0c8872d56da3e8fce6bcbbb9fbb1b8a1039ff957bfa8127380d77d74f09c7",
+          "context": [
+            "",
+            "NS_HEADER_AUDIT_BEGIN(nullability, sendability)",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(2.0), watchos(2.0)) NS_SWIFT_SENDABLE",
+            "@interface UIFont : NSObject <NSCopying, NSSecureCoding>",
+            "",
+            "// Returns an instance of the font associated with the text style and scaled appropriately for the user's selected content size category. See UIFontDescriptor.h for the complete list."
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        },
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UIInterface.h",
+          "line": 267,
+          "sha256": "13fb2855e52b783db0a9b834997c777c49e40d34dc2fe66d37fdff54209f5f67",
+          "context": [
+            "",
+            "",
+            "// System fonts",
+            "",
+            "@interface UIFont (UIFontSystemFonts)",
+            "@property(class, nonatomic, readonly) CGFloat labelFontSize API_UNAVAILABLE(tvos, watchos);",
+            "@property(class, nonatomic, readonly) CGFloat buttonFontSize API_UNAVAILABLE(tvos, watchos);"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    },
+    {
+      "name": "UISwitch",
+      "usages": [
+        {
+          "path": "code-examples/pilots/uikit-v1/Sources/SettingsRow.swift",
+          "sha256": "5f1a2b75f9c19aa569cb8423e8ffe56532d0b5af39040c6303c42cf418337c0f"
+        }
+      ],
+      "declarations": [
+        {
+          "path": "System/Library/Frameworks/UIKit.framework/Headers/UISwitch.h",
+          "line": 23,
+          "sha256": "9ce71cfc7014255a33e6f971056c36a2353bd77b231b4a9f6436b019da27966c",
+          "context": [
+            "    UISwitchStyleSliding         // The on/off sliding style switch — classic iOS appearance.",
+            "} API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(tvos, watchos);",
+            "",
+            "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(tvos, watchos) NS_SWIFT_UI_ACTOR",
+            "@interface UISwitch : UIControl <NSCoding>",
+            "",
+            "@property(nullable, nonatomic, strong) UIColor *onTintColor API_AVAILABLE(ios(5.0)) UI_APPEARANCE_SELECTOR;"
+          ],
+          "scope": "Type/protocol declaration context only; do not apply adjacent annotations to individual members."
+        }
+      ],
+      "status": "type-declaration-located",
+      "independentReview": "pending"
+    }
+  ]
+}
