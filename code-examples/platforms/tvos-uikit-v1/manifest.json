@@ -1,0 +1,236 @@
+{
+  "schema": 1,
+  "id": "tvos-uikit-v1",
+  "revision": "2",
+  "platform": "tvOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Unit configuration, callbacks, preferred candidates and notification requests only. No UI tests, actual assistive technology navigation, visual layout or usability claims. macOS host27 does not establish macOS26 runtime behavior.",
+  "claims": [
+    {
+      "id": "actions",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycustomaction",
+      "section": "Custom action handlers and explicit accessible metadata; ordinary action/reuse rules are application policy",
+      "statement": "Expose independent ordinary actions and optional shortcuts; reject stale callbacks after reconfiguration.",
+      "availability": "Compile against installed SDK with deployment target26.0; runtime evidence separately recorded. Full member declaration audit pending; no inferred introduction or deprecation dates.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "focus",
+      "url": "https://developer.apple.com/documentation/uikit/uifocusenvironment",
+      "section": "Preferred focus environments; eligibility filter is application policy",
+      "statement": "Return eligible, owned preferred focus candidates without claiming delivered focus.",
+      "availability": "Compile against installed SDK with deployment target26.0; runtime evidence separately recorded. Full member declaration audit pending; no inferred introduction or deprecation dates.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "traits",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitytraits",
+      "section": "OptionSet traits; preservation is application policy",
+      "statement": "Change selected trait without replacing unrelated traits.",
+      "availability": "Compile against installed SDK with deployment target26.0; runtime evidence separately recorded. Full member declaration audit pending; no inferred introduction or deprecation dates.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/TelevisionActions.swift",
+      "sha256": "9a3b5c68173a5493ab1dcc16914491cc66c66536ae1500643f1b91b99f14cc67"
+    },
+    {
+      "path": "Tests/TelevisionActionsTests.swift",
+      "sha256": "7f2c64255614273ce5ecd6eb462d22b5b237c9ab44e0abeaf4f246d5cf5baebb"
+    },
+    {
+      "path": "NegativeFixtures/LostOrdinaryDetails.swift",
+      "sha256": "eef59a5c25f821765933fef812d9ca0d7c886cd51c61f789a2c99de332c69872"
+    },
+    {
+      "path": "NegativeFixtures/StaleShortcut.swift",
+      "sha256": "4b53a3f6d6f4cac1461d862ddb6fe1c968bac1ccf11ca58a5bcd2e84c44dd8fd"
+    },
+    {
+      "path": "NegativeFixtures/HiddenControls.swift",
+      "sha256": "64a89a324df73e29fed33bd19e28f85ee8a2a640d60093ff65190283380a14cf"
+    },
+    {
+      "path": "NegativeFixtures/InvalidFocusTarget.swift",
+      "sha256": "5e50f3e66f21f15cf8299a50973324a32b28bdce9f9a0e38114ecb924acefbc2"
+    },
+    {
+      "path": "NegativeFixtures/ClobberedTraits.swift",
+      "sha256": "8ce15ee10590095864bbe0a506d1282a9f628905a1c99d8446a5498473a7a6fd"
+    },
+    {
+      "path": "NegativeFixtures/OriginalMissingTitles.swift",
+      "sha256": "0fb661a572b2d98725304db4af5792aa7fc6bc7e88af59a2bd165d70924f8532"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "actions",
+        "focus",
+        "traits"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "actions",
+        "focus",
+        "traits"
+      ],
+      "testIds": [
+        "TelevisionActionsTests/testVisibleActionNames",
+        "TelevisionActionsTests/testVisibleNamesRefresh",
+        "TelevisionActionsTests/testContextualNames",
+        "TelevisionActionsTests/testContainerPreservesControls",
+        "TelevisionActionsTests/testOrdinaryPlay",
+        "TelevisionActionsTests/testOrdinaryDetails",
+        "TelevisionActionsTests/testCustomDetails",
+        "TelevisionActionsTests/testStaleActionRejected",
+        "TelevisionActionsTests/testReuseReplacesHandler",
+        "TelevisionActionsTests/testReuseNames",
+        "TelevisionActionsTests/testReuseClearsValue",
+        "TelevisionActionsTests/testDisabledOrdinaryAction",
+        "TelevisionActionsTests/testDisabledCustomAction",
+        "TelevisionActionsTests/testActionDoesNotRetainRow",
+        "TelevisionActionsTests/testSingleShortcutAfterReuse",
+        "TelevisionActionsTests/testPreferredOrder",
+        "TelevisionActionsTests/testDisabledPreferredTargetExcluded",
+        "TelevisionActionsTests/testRemovedPreferredTargetExcluded",
+        "TelevisionActionsTests/testHiddenPreferredTargetExcluded",
+        "TelevisionActionsTests/testNoEligibleTarget",
+        "TelevisionActionsTests/testSelectedPreservesOtherTraits",
+        "TelevisionActionsTests/testDeselectedPreservesOtherTraits"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "lostordinarydetails",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions",
+        "focus",
+        "traits"
+      ],
+      "testIds": [
+        "TelevisionActionsTests/testOrdinaryDetails"
+      ],
+      "failureIds": [
+        "TelevisionActionsTests/testOrdinaryDetails"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionActions.swift",
+        "source": "NegativeFixtures/LostOrdinaryDetails.swift"
+      }
+    },
+    {
+      "id": "staleshortcut",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions",
+        "focus",
+        "traits"
+      ],
+      "testIds": [
+        "TelevisionActionsTests/testStaleActionRejected"
+      ],
+      "failureIds": [
+        "TelevisionActionsTests/testStaleActionRejected"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionActions.swift",
+        "source": "NegativeFixtures/StaleShortcut.swift"
+      }
+    },
+    {
+      "id": "hiddencontrols",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions",
+        "focus",
+        "traits"
+      ],
+      "testIds": [
+        "TelevisionActionsTests/testContainerPreservesControls"
+      ],
+      "failureIds": [
+        "TelevisionActionsTests/testContainerPreservesControls"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionActions.swift",
+        "source": "NegativeFixtures/HiddenControls.swift"
+      }
+    },
+    {
+      "id": "invalidfocustarget",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions",
+        "focus",
+        "traits"
+      ],
+      "testIds": [
+        "TelevisionActionsTests/testDisabledPreferredTargetExcluded"
+      ],
+      "failureIds": [
+        "TelevisionActionsTests/testDisabledPreferredTargetExcluded"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionActions.swift",
+        "source": "NegativeFixtures/InvalidFocusTarget.swift"
+      }
+    },
+    {
+      "id": "clobberedtraits",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions",
+        "focus",
+        "traits"
+      ],
+      "testIds": [
+        "TelevisionActionsTests/testSelectedPreservesOtherTraits"
+      ],
+      "failureIds": [
+        "TelevisionActionsTests/testSelectedPreservesOtherTraits"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionActions.swift",
+        "source": "NegativeFixtures/ClobberedTraits.swift"
+      }
+    },
+    {
+      "id": "original-missing-titles",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions"
+      ],
+      "testIds": [
+        "TelevisionActionsTests/testVisibleActionNames"
+      ],
+      "failureIds": [
+        "TelevisionActionsTests/testVisibleActionNames"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionActions.swift",
+        "source": "NegativeFixtures/OriginalMissingTitles.swift"
+      }
+    }
+  ]
+}

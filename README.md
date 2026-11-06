@@ -30,24 +30,35 @@ its own evidence. Keeping those conclusions separate is central to this project.
 
 ## Capabilities at a Glance
 
-Status reflects the November 6, 2026 checkpoint. **Available guidance, executed
-tests, independent review and measured model improvement are separate milestones.**
+**The installed skill provides guidance. The repository companion provides code,
+unit tests and recorded results.** Here is what you can use each for:
 
-| Area | Available now | Evidence and next gate |
+| What you want to do | What the project provides | Where to use it |
 | --- | --- | --- |
-| Apple-platform skill | Source-backed review, implementation and triage guidance for UIKit, SwiftUI, AppKit/macOS, tvOS and visionOS | Released `0.2.2`; new evidence has not been promoted into the frozen skill |
-| UIKit companion | Naming, traits, native controls, grouping, actions, reuse, rotors, text scaling, preferences, modal restoration requests, media and form state | 19 packages; 202 distinct positive unit methods passed on the recorded iOS26 anchor; independent campaign review pending |
-| Coverage accounting | All 15 UIKit guidelines and 209 inventoried clauses have dispositions | 22 covered, 123 partial, 33 documentation-supported/outside unit scope, 31 SwiftUI-deferred clauses; [inspect the ledger](research/evaluation/failure-driven/uikit-closure-v1/COVERAGE.md) |
-| Regression sensitivity | Deliberately broken examples test whether assertions detect the intended defect | 66 negative controls rejected for their specified reasons; not 66 observed model mistakes |
-| API/version evidence | SDK declaration context, source hashes, deployment targets and runtime receipts | 202 external member references inventoried; unresolved introduction dates remain explicit |
-| Agent evaluation | Frozen inputs, framework-separated questions, controller rubrics, protocol and quality scoring | Existing frontier/local diagnostics inform development; new companion cases await independent review and baseline qualification |
-| Progressive disclosure | Focused guidance today; source/test/evidence packages available on demand in this repository | Companion retrieval remains offline/repository-based, not yet integrated into released skill routing or an MCP endpoint |
-| Next platform work | Existing SwiftUI and other-platform guidance remains available | New SwiftUI unit-library expansion is deferred; UIKit is the active validation lane |
+| Review or implement accessible Swift UI | Source-backed guidance for UIKit, SwiftUI, AppKit/macOS, tvOS and visionOS | Installed skill |
+| Get focused help without loading the entire library | Platform- and topic-specific guidance selected for the task | Installed skill; optional companion retrieval is available as a repository tool |
+| Find an executable example | Swift source paired with unit tests and Apple source references | Repository companion: UIKit/iOS, AppKit/macOS and UIKit/tvOS |
+| Check an example against your toolchain | Command-line compile/unit checks, with recorded SDK, deployment target and runtime for comparison | Repository companion; requires the relevant installed Apple tooling |
 
-The [completed campaign](research/evaluation/failure-driven/uikit-closure-v1/RESULTS.md)
-ran **104 native checks** with expected outcomes and **246 offline checks** passed.
-Compile checks and negative controls overlap; method counts are not independent
-behavior counts. This is coverage accounting, not a claim of universal accessibility.
+### Tested Companion Examples
+
+These results describe the companion code, not the full breadth of the installed
+skill. Each linked report explains exactly what its assertions establish.
+
+| Framework / platform | Examples currently tested | Recorded runtime | Positive unit methods passed |
+| --- | --- | --- | ---: |
+| [UIKit / iOS](research/evaluation/failure-driven/uikit-closure-v1/RESULTS.md) | Naming, traits, controls, grouping, actions, reuse, rotors, text scaling, preferences, modal restoration requests, media and form state | iOS 26.5 | 202 |
+| [AppKit / macOS](research/evaluation/platform-expansion-v1/RESULTS.md) | Names, ordinary actions, optional accessibility shortcuts, reuse and state-change notification requests | macOS 27.0 | 20 |
+| [UIKit / Apple TV](research/evaluation/platform-expansion-v1/RESULTS.md) | Card names and actions, reuse, preferred focus candidates and selected-state traits | tvOS 26.5 | 22 |
+
+Checkpoint: November 6, 2026. Method counts are not coverage percentages or proof of
+real-world assistive-tool behavior. SwiftUI and visionOS guidance is available in
+the skill; the tested companion currently covers the three lanes above.
+
+**Development status:** the companion's new findings and retrieval changes await
+review and evaluation before inclusion in a future skill release. The installed
+skill remains version `0.2.2`. Test results establish example behavior; paired model
+evaluations establish whether a skill change improves agent answers.
 
 ## How We Find and Close Gaps
 
@@ -86,6 +97,12 @@ This is progressive disclosure: small, relevant guidance first; executable detai
 when requested. The incident archive and entire example library do not belong in
 every model prompt. **The companion is available in the repository; connecting it
 to installed skill routing is a separately gated update.**
+
+The [platform retrieval candidate](research/evaluation/platform-expansion-v1/README.md#candidate-progressive-disclosure)
+selects AppKit/macOS or UIKit/tvOS explicitly. It reads one or two guidelines by
+default, adds source only with `example`, and tests/manifest only with `contract`.
+It records actual file hashes and bytes; it does not silently load iOS examples,
+research archives or grading answers. This candidate is not yet released routing.
 
 The latest UIKit campaign used **SDK 27.0, deployment target 26.0, and iOS 26.5
 (23F77)**. Compilation and runtime evidence are recorded separately. SDK27 use does

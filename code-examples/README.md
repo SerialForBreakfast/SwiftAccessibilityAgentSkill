@@ -9,6 +9,12 @@ that approval does not promote these library examples.
 
 ## Available now
 
+[AppKit and tvOS expansion](../research/evaluation/platform-expansion-v1/README.md)
+adds separate platform packages, a native adapter and opt-in retrieval candidate.
+These live under `platforms/`, outside the frozen iOS pilot/campaign selection.
+The Mac host anchor is27; tvOS uses the existing26.5 simulator. This does not imply
+Mac26 runtime coverage or promote OS27 skill guidance. SwiftUI expansion stays deferred.
+
 [Ordinary playback-speed choices](pilots/uikit-speed-v1/README.md) supplies the
 speed-control gap identified by the media clause audit: eight positive unit methods,
 three rejected mutants, ordinary button events and explicit selected-state metadata.

@@ -154,3 +154,21 @@ The questions below are authoring seeds, not frozen gold cases.
 This definition does not require UI tests, manual device verification or a model run
 to preserve a draft. It does require the relevant execution evidence before claiming
 an evaluated improvement.
+
+## Platform companion expansion (2026-11-06)
+
+Owner authorized AppKit/macOS and UIKit/tvOS next; SwiftUI companion expansion stays
+explicitly deferred. This extends the unit-library scope, not the frozen skill or
+baseline. See [platform batch](../platform-expansion-v1/README.md).
+
+- Platform adapter: separate from pinned iOS adapter; verify actual host/simulator,
+  immutable inputs, complete test selection and exact expected failures.
+- Initial families: Mac actions/reuse and notification requests; TV actions/reuse,
+  preferred focus candidates and selected-trait preservation.
+- Preserve first Mac preflight/oracle failures and TV visible-title coverage gap.
+- Pair all five families with draft subject questions and separate rubrics.
+- Candidate routing: explicit platform/framework, one/two guidelines by default,
+  source and contracts opt-in, actual read-byte/hash traces. No runtime promotion.
+- Remaining gates: full member availability audit, independent rubric/oracle review,
+  approved frontier baselines and measured candidate comparison. Native test success
+  does not mark those gates complete. No review submission or acceptance implied.
