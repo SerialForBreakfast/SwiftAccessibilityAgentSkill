@@ -38,6 +38,11 @@ assumed assignment, before scheduling work. There is no estimated completion dat
 
 ## Remaining UIKit Feature Pairs
 
+UPAIR-08 now has an [exact clause inventory and first media review](../../../code-examples/audits/requirements-v1/README.md).
+All15 guideline sources are pinned;209 selected clauses are inventoried, not counted
+as passing tests. Media review identifies UPAIR-06C speed-control semantics as an
+open unit contract. Remaining clause reviews and independent acceptance are pending.
+
 UPAIR-07 now has a [sixteen-pilot compile sweep](../../../code-examples/audits/availability-v1/README.md)
 with source/manifest hashes, recorded diagnostics and a separate draft prompt/rubric.
 All selected source sets compile at deployment26.0; the full public-member

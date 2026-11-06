@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "status": "partial-member-review",
+  "sdkVersion": "27.0",
+  "scope": "Selected media declarations and locale repair; not a complete public API matrix.",
+  "rows": [
+    {
+      "id": "async-group",
+      "path": "AVFoundation.framework/Headers/AVAsset.h",
+      "headerHash": "78f593df2b6bcaa0103a0b3f4f53e5ddd61edde1b83d69267298a0370a43e742",
+      "line": 412,
+      "declaration": "- (void)loadMediaSelectionGroupForMediaCharacteristic:(AVMediaCharacteristic)mediaCharacteristic completionHandler:(void (^ NS_SWIFT_SENDABLE)(AVMediaSelectionGroup * _Nullable_result, NSError * _Nullable))completionHandler API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0), visionos(1.0));",
+      "contextStart": 407,
+      "context": [
+        "/// - Parameter mediaCharacteristic: A media characteristic for which you wish to obtain the available media selection options. AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, and AVMediaCharacteristicVisual are currently supported.",
+        "/// Pass AVMediaCharacteristicAudible to obtain the group of available options for audio media in various languages and for various purposes, such as descriptive audio.",
+        "/// Pass AVMediaCharacteristicLegible to obtain the group of available options for subtitles in various languages and for various purposes",
+        "/// Pass AVMediaCharacteristicVisual to obtain the group of available options for video media.",
+        "/// - Parameter completionHandler: A block that is invoked when loading is complete, vending an instance of AVMediaSelectionGroup (which may be nil) or an error.",
+        "- (void)loadMediaSelectionGroupForMediaCharacteristic:(AVMediaCharacteristic)mediaCharacteristic completionHandler:(void (^ NS_SWIFT_SENDABLE)(AVMediaSelectionGroup * _Nullable_result, NSError * _Nullable))completionHandler API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0), visionos(1.0));"
+      ],
+      "disposition": "iOS15+ explicitly annotated; valid at deployment26.0"
+    },
+    {
+      "id": "selection",
+      "path": "AVFoundation.framework/Headers/AVPlayerItem.h",
+      "headerHash": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+      "line": 632,
+      "declaration": "@property (readonly) AVMediaSelection *currentMediaSelection NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0), watchos(2.0), visionos(1.0));",
+      "contextStart": 627,
+      "context": [
+        "NS_SWIFT_NONISOLATED",
+        "#endif",
+        "API_AVAILABLE(macos(10.9), ios(7.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+        "",
+        "/// Provides an instance of AVMediaSelection carrying current selections for each of the receiver's media selection groups.",
+        "@property (readonly) AVMediaSelection *currentMediaSelection NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0), watchos(2.0), visionos(1.0));"
+      ],
+      "disposition": "iOS9+ explicitly annotated; valid at deployment26.0"
+    },
+    {
+      "id": "description-tag",
+      "path": "AVFoundation.framework/Headers/AVMediaFormat.h",
+      "headerHash": "5a85f66c94ff9425ea7848f9230ef15d2b1f8e597ea89ed36e8ac69ce92d8c2d",
+      "line": 216,
+      "declaration": "AVF_EXPORT AVMediaCharacteristic const AVMediaCharacteristicDescribesVideoForAccessibility API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+      "contextStart": 211,
+      "context": [
+        "/// The value of this characteristic is @\"public.accessibility.describes-video\".",
+        "/// Note for content authors: for QuickTime movie and .m4v files a media option is considered to have the characteristic AVMediaCharacteristicDescribesVideoForAccessibility only if it's explicitly tagged with that characteristic.",
+        "/// See the discussion of the tagging of tracks with media characteristics below.",
+        "/// ",
+        "/// Also see -[AVAssetTrack hasMediaCharacteristic:] and -[AVMediaSelectionOption hasMediaCharacteristic:].",
+        "AVF_EXPORT AVMediaCharacteristic const AVMediaCharacteristicDescribesVideoForAccessibility API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));"
+      ],
+      "disposition": "iOS5+ explicitly annotated; valid at deployment26.0"
+    },
+    {
+      "id": "seekable",
+      "path": "AVFoundation.framework/Headers/AVPlayerItem.h",
+      "headerHash": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+      "line": 318,
+      "declaration": "@property (readonly) NSArray<NSValue *> *seekableTimeRanges NS_SWIFT_NONISOLATED;",
+      "contextStart": 313,
+      "context": [
+        "@property CMTime reversePlaybackEndTime NS_SWIFT_NONISOLATED;",
+        "",
+        "/// This property provides a collection of time ranges that the player item can seek to. The ranges provided might be discontinous.",
+        "/// ",
+        "/// Returns an NSArray of NSValues containing CMTimeRanges.",
+        "@property (readonly) NSArray<NSValue *> *seekableTimeRanges NS_SWIFT_NONISOLATED;"
+      ],
+      "disposition": "Member has no inline introduction annotation; enclosing availability still requires review. Exact selected use passes deployment26 compile."
+    },
+    {
+      "id": "loaded",
+      "path": "AVFoundation.framework/Headers/AVPlayerItem.h",
+      "headerHash": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+      "line": 493,
+      "declaration": "@property (readonly) NSArray<NSValue *> *loadedTimeRanges NS_SWIFT_NONISOLATED;",
+      "contextStart": 488,
+      "context": [
+        "@interface AVPlayerItem (AVPlayerItemPlayability)",
+        "",
+        "/// This property provides a collection of time ranges for which the player has the media data readily available. The ranges provided might be discontinuous.",
+        "/// ",
+        "/// Returns an NSArray of NSValues containing CMTimeRanges.",
+        "@property (readonly) NSArray<NSValue *> *loadedTimeRanges NS_SWIFT_NONISOLATED;"
+      ],
+      "disposition": "Member has no inline introduction annotation; enclosing availability still requires review. Exact selected use passes deployment26 compile."
+    },
+    {
+      "id": "buffer-likely",
+      "path": "AVFoundation.framework/Headers/AVPlayerItem.h",
+      "headerHash": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+      "line": 503,
+      "declaration": "@property (readonly, getter=isPlaybackLikelyToKeepUp) BOOL playbackLikelyToKeepUp NS_SWIFT_NONISOLATED;",
+      "contextStart": 498,
+      "context": [
+        "/// include I/O throughput and media decode performance. It is possible for playbackLikelyToKeepUp to",
+        "/// indicate NO while the property playbackBufferFull indicates YES. In this event the playback buffer has",
+        "/// reached capacity but there isn't the statistical data to support a prediction that playback is likely to ",
+        "/// keep up. It is left to the application programmer to decide to continue media playback or not. ",
+        "/// See playbackBufferFull below.",
+        "@property (readonly, getter=isPlaybackLikelyToKeepUp) BOOL playbackLikelyToKeepUp NS_SWIFT_NONISOLATED;"
+      ],
+      "disposition": "Member has no inline introduction annotation; enclosing availability still requires review."
+    },
+    {
+      "id": "buffer-full",
+      "path": "AVFoundation.framework/Headers/AVPlayerItem.h",
+      "headerHash": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+      "line": 510,
+      "declaration": "@property (readonly, getter=isPlaybackBufferFull) BOOL playbackBufferFull NS_SWIFT_NONISOLATED;",
+      "contextStart": 505,
+      "context": [
+        "/// Indicates that the internal media buffer is full and that further I/O is suspended.",
+        "/// ",
+        "/// This property reports that the data buffer used for playback has reach capacity.",
+        "/// Despite the playback buffer reaching capacity there might not exist sufficient statistical ",
+        "/// data to support a playbackLikelyToKeepUp prediction of YES. See playbackLikelyToKeepUp above.",
+        "@property (readonly, getter=isPlaybackBufferFull) BOOL playbackBufferFull NS_SWIFT_NONISOLATED;"
+      ],
+      "disposition": "Member has no inline introduction annotation; enclosing availability still requires review."
+    },
+    {
+      "id": "buffer-empty",
+      "path": "AVFoundation.framework/Headers/AVPlayerItem.h",
+      "headerHash": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+      "line": 513,
+      "declaration": "@property (readonly, getter=isPlaybackBufferEmpty) BOOL playbackBufferEmpty NS_SWIFT_NONISOLATED;",
+      "contextStart": 508,
+      "context": [
+        "/// Despite the playback buffer reaching capacity there might not exist sufficient statistical ",
+        "/// data to support a playbackLikelyToKeepUp prediction of YES. See playbackLikelyToKeepUp above.",
+        "@property (readonly, getter=isPlaybackBufferFull) BOOL playbackBufferFull NS_SWIFT_NONISOLATED;",
+        "",
+        "/* indicates that playback has consumed all buffered media and that playback will stall or end */",
+        "@property (readonly, getter=isPlaybackBufferEmpty) BOOL playbackBufferEmpty NS_SWIFT_NONISOLATED;"
+      ],
+      "disposition": "Member has no inline introduction annotation; enclosing availability still requires review."
+    },
+    {
+      "id": "time-control",
+      "path": "AVFoundation.framework/Headers/AVPlayer.h",
+      "headerHash": "153eb75e3202dbfb26c8eb161fd885f24c028970a833736054fa917bc6aa73c9",
+      "line": 207,
+      "declaration": "@property (readonly) AVPlayerTimeControlStatus timeControlStatus NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.12), ios(10.0), tvos(10.0), watchos(3.0), visionos(1.0));",
+      "contextStart": 202,
+      "context": [
+        "/// Indicates whether playback is currently paused indefinitely, suspended while waiting for appropriate conditions, or in progress.",
+        "/// ",
+        "/// For possible values and discussion, see AVPlayerTimeControlStatus.",
+        "/// ",
+        "/// When automaticallyWaitsToMinimizeStalling is YES, absent intervention in the form of invocations of -setRate: or -pause or, on iOS, an interruption that requires user intervention before playback can resume, the value of the property timeControlStatus automatically changes between AVPlayerTimeControlStatusPlaying and AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate depending on whether sufficient media data is available to continue playback. This property is key value observable.",
+        "@property (readonly) AVPlayerTimeControlStatus timeControlStatus NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.12), ios(10.0), tvos(10.0), watchos(3.0), visionos(1.0));"
+      ],
+      "disposition": "iOS10+ explicitly annotated; valid at deployment26.0"
+    },
+    {
+      "id": "legacy-locale",
+      "path": "Foundation.framework/Modules/Foundation.swiftmodule/arm64-apple-ios-simulator.swiftinterface",
+      "headerHash": "29b8d1c5538b4d1b4c75319595766deef1edfbd5794fb93fffb60fc01a5b3194",
+      "line": 8687,
+      "declaration": "  public var languageCode: Swift::String? {",
+      "contextStart": 8682,
+      "context": [
+        "  }",
+        "  @available(macOS, deprecated: 13, renamed: \"language.languageCode.identifier\")",
+        "  @available(iOS, deprecated: 16, renamed: \"language.languageCode.identifier\")",
+        "  @available(tvOS, deprecated: 16, renamed: \"language.languageCode.identifier\")",
+        "  @available(watchOS, deprecated: 9, renamed: \"language.languageCode.identifier\")",
+        "  public var languageCode: Swift::String? {"
+      ],
+      "disposition": "iOS16 deprecation is explicit in preceding annotations; retained historical media warning."
+    },
+    {
+      "id": "locale-language",
+      "path": "Foundation.framework/Modules/Foundation.swiftmodule/arm64-apple-ios-simulator.swiftinterface",
+      "headerHash": "29b8d1c5538b4d1b4c75319595766deef1edfbd5794fb93fffb60fc01a5b3194",
+      "line": 8783,
+      "declaration": "  public var language: Foundation::Locale.Foundation::Language {",
+      "contextStart": 8778,
+      "context": [
+        "  @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)",
+        "  public var firstDayOfWeek: Foundation::Locale.Foundation::Weekday {",
+        "    get",
+        "  }",
+        "  @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)",
+        "  public var language: Foundation::Locale.Foundation::Language {"
+      ],
+      "disposition": "iOS16+ preceding annotation; supported at26.0, no fallback needed."
+    }
+  ]
+}

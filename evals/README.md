@@ -32,7 +32,7 @@ eight positive unit tests, one compile check and three intended mutant rejection
 Its separate developer question and rubric are development drafts pending independent
 review, not additions to the six qualified gold prompts below. See the
 [failure-driven work plan](../research/evaluation/failure-driven/TASKS.md) for the
-test-to-prompt workflow and remaining gates. The combined offline suite passes 195
+test-to-prompt workflow and remaining gates. The combined offline suite passes 197
 tests; the115 count below describes the historical gold-closeout checkpoint.
 
 [Long-text/non-color selection tranche](../code-examples/pilots/uikit-choice-v1/README.md)

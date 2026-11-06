@@ -13,3 +13,8 @@
 The compile report retains every warning/error line emitted in the sweep with
 private paths sanitized. Raw source snapshots and diagnostics stay in immutable
 private run directories; report hashes identify the originals.
+
+- The clause review exposed a coverage mismatch: requested-rate diagnostics do not
+  test a user-facing speed control. Preserve it as an open unit contract.
+- A documentation patch used a stale heading context and was rejected atomically;
+  retried using existing headings. No code or evidence was changed by the rejection.

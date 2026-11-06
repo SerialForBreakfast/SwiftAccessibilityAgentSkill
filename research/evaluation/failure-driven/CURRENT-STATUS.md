@@ -49,7 +49,7 @@ The modal history preserves an actual retained-but-removed target failure and it
 repair after an earlier green suite. Media revision 1 had no unexpected native
 failure. Both are useful evidence, but must not be conflated.
 
-Current offline checks: **195 passing tests**, **210 frozen baseline files verified**,
+Current offline checks: **197 passing tests**, **210 frozen baseline files verified**,
 and **87 historical evidence pins verified**. Native method counts and offline
 test counts measure different layers and are not added together. Skill version
 remains `0.2.2`; verified candidate content hash:
@@ -193,3 +193,11 @@ Verify 188 offline tests, 210 frozen baseline files and 87 historical pins.
 Leave audio-description metadata, loaded-item extraction, availability and final
 inventory closure explicitly open. Exclude private coordinator onboarding.
 ```
+
+## Subsequent Local Audit Checkpoint
+
+Commit4d925e2 records the availability compile sweep; it is not pushed. Current
+uncommitted work adds eleven partial media declaration records and an exact209-clause
+inventory across15 guidelines. The first media review exposes a speed-control unit
+gap (UPAIR-06C); rate diagnostics do not establish user-facing control semantics.
+Remaining declaration and clause reviews stay open.

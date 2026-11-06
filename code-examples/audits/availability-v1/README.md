@@ -20,6 +20,12 @@ Warnings are retained rather than silently equated with failure or ignored.
 
 ## Remaining Declaration Audit
 
+[Selected media declarations](media-declarations.json) now record eleven located
+declarations with header hashes and surrounding annotations. Explicit iOS15 async
+loading, iOS9 selection, iOS5 description-tag and iOS16 locale-language declarations
+fit deployment26. Members without inline annotations remain marked for enclosing
+declaration review; no introduction date is guessed. This is a partial matrix.
+
 - Enumerate each selected public API/member and its defining declaration.
 - Record applicable platform availability, deprecation and any conditional branch.
 - Connect diagnostics to source decisions; preserve historical source when proposing repairs.
