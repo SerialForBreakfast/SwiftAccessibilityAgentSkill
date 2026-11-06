@@ -1,5 +1,11 @@
 # Evidence-Backed Evaluation
 
+[November 6 local released-versus-compact-B comparison](reports/local-compact-b-20261106/README.md):
+36 Ollama generations across three installed models. Compact B used 29.9–34.7%
+fewer reported tokens, with mixed source outcomes and new compiler regressions.
+This owner-authorized local diagnostic leaves runtime promotion and subscription
+execution gates unchanged.
+
 [November6 BigDog alignment](../research/evaluation/failure-driven/BIGDOG-ALIGNMENT-2026-11-06.md)
 records the latest inbox, candidate-B draft, verified private review packet and
 separate UIKit/SwiftUI review lanes. Further model calls and runtime promotion remain held.

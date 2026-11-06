@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "scope": "Six known OS26 development families; released entrypoint versus draft B with identical current references",
+  "review": "One unblinded maintainer review; descriptive findings, no release threshold or independence claim",
+  "coreCriteria": {
+    "GP26-01": "Expose independently operable switch and Help, preserve existing wiring, remove parent grouping/hiding, provide meaningful switch name. Complete replacement code may omit the original hiding assignment; an incremental patch must undo it.",
+    "GP26-02": "Update the exposed customer/priority label and current status on every configure call, including both orderings on the same cell without requiring prepareForReuse. Equivalent labels are accepted.",
+    "GP26-03": "Provide scalable font configuration with live updates, multiline label and flexible enclosing height/width policy for long totals; preserve existing Pay appearance/action. Accept a vertical layout or another justified resilient alternative. Missing ownership/lifecycle integration is a distinct finding.",
+    "GP26-04": "Provide a visible named deletion control and retain swipe deletion. Each deliberate activation targets the chosen message once, without confirmation/undo or deletion on focus. Keyboard/VoiceOver compatibility is source-reviewed only.",
+    "GP26-05": "Use a native focusable/selectable control or a justified equivalent for each movie, with a meaningful title and the correct movie callback. Preserve first/middle/last items; actual remote navigation remains unassessed.",
+    "GP26-06": "Recognize the existing native Toggle and binding as valid under supplied assumptions. A no-change answer is valid without code. A qualified optional refinement is review burden; inventing a required defect is a core finding."
+  },
+  "classification": ["core_met_by_source_review", "core_gap", "inconclusive", "truncated_or_incomplete"],
+  "compilePolicy": [
+    "Review all relevant fences/prose. Do not assume the first code block is the entire answer.",
+    "Only imports, prompt-supplied declarations and explicit unchanged context may be scaffold. Record exact scaffold and source hashes.",
+    "Record extraction/integration ambiguity, compiler rejection and infrastructure error separately.",
+    "A no-code no-change response has compilation not_applicable, never compile_failed.",
+    "Do not silently repair generated APIs, ownership, callbacks or missing lifecycle integration.",
+    "Treat static control-pattern matches as review hints rather than a semantic pass/fail oracle.",
+    "Do not equate type-check success with successful runtime behavior or full task completion."
+  ],
+  "comparisonPolicy": [
+    "Compare matched F and BR cells from this run. Historical 900-token results are context only.",
+    "Score instruction-specific transparency separately; compact B deliberately changes identity/routing/footer expectations.",
+    "Supplied references establish no autonomous retrieval. Preserve actual token counts, finish reasons and model digests.",
+    "Show UIKit and SwiftUI/tvOS separately. One sample per family does not establish statistical superiority."
+  ]
+}
