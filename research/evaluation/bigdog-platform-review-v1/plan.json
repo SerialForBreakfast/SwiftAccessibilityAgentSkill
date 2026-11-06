@@ -1,0 +1,427 @@
+{
+  "schema": 1,
+  "reviewTarget": "ae4461b80d9a478c861ca6877c9cb2669a78f7b0",
+  "status": "prepared-pending-independent-review-and-execution-approval",
+  "providerExecutionAuthorized": false,
+  "scope": "New Mac/TV development baseline extension; not a rerun or replacement of prior Gemini reports",
+  "model": {
+    "preferredPreviouslyReportedId": "gemini-3.8-flash-low",
+    "confirmedId": null,
+    "route": "supported existing subscription client only",
+    "revision": null,
+    "effort": "low if qualified; no silent change"
+  },
+  "budget": {
+    "additionalSpendUSD": 0,
+    "maxConversations": 18,
+    "maxVisibleGenerationRequests": 18,
+    "repetitions": 1,
+    "concurrency": 1,
+    "chunks": 3,
+    "maxConversationsPerChunk": 6,
+    "maxMinutesPerChunk": 30,
+    "maxTotalMinutes": 90,
+    "maxOutputTokensPerRequest": 4096,
+    "subjectTools": false,
+    "retries": 0,
+    "modelJudgeCalls": 0
+  },
+  "baselineManifestHash": "659621827deae57b931ea236003248d40bac4db4a93fbeec6a15f3b5264b5c4c",
+  "cases": [
+    {
+      "id": "macos-appkit-v1/desktop-actions",
+      "framework": "AppKit",
+      "platform": "macOS",
+      "questionPath": "code-examples/platforms/macos-appkit-v1/evaluation/desktop-actions.prompt.md",
+      "questionHash": "3f811eea610d0c323c31211d12f76fe7ff45b4d0e6812d634a90ac83af12a645",
+      "userHash": "f74081552140e31d7ed0dffbc2291f884faf5460497212a4495bb328cb7915b1",
+      "rubric": {
+        "kind": "controller-rubric-not-answer-analysis",
+        "path": "code-examples/platforms/macos-appkit-v1/evaluation/desktop-actions.rubric.md",
+        "sha256": "90a74e9a00487b50b300c145478c325971c6d40950a6e3f99d1d2b7e510494c1",
+        "answerAnalysis": null
+      },
+      "reviewStatus": "pending",
+      "references": [
+        {
+          "path": "references/macos/guidelines/m-001-nsaccessibility-roles-labels-values-actions.md",
+          "sha256": "0aecee6094e8f1486a2496bb06759f88c8f7a875da166cb0c7e599a35cae9076",
+          "bytes": 2707
+        },
+        {
+          "path": "references/macos/guidelines/m-003-grouping-hierarchy-desktop-layouts.md",
+          "sha256": "13acfe965e5ed63d08e91d5183e2925c35b2cf034e4d4898dd21957dc9257953",
+          "bytes": 2288
+        }
+      ]
+    },
+    {
+      "id": "macos-appkit-v1/desktop-status",
+      "framework": "AppKit",
+      "platform": "macOS",
+      "questionPath": "code-examples/platforms/macos-appkit-v1/evaluation/desktop-status.prompt.md",
+      "questionHash": "692732b239ef6267d1680c301221fabf2582715f09f38d819f2475e688ec2ffe",
+      "userHash": "b753113db60b31d02d89a02076106c27794bfbf8d9ca487f01e53a0af90c521f",
+      "rubric": {
+        "kind": "controller-rubric-not-answer-analysis",
+        "path": "code-examples/platforms/macos-appkit-v1/evaluation/desktop-status.rubric.md",
+        "sha256": "1e7bb73f33777171e20dc169ce1b5fae05603dfc95a1798f4a87cb00e9e818c5",
+        "answerAnalysis": null
+      },
+      "reviewStatus": "pending",
+      "references": [
+        {
+          "path": "references/macos/guidelines/m-004-announcements-state-change-notifications.md",
+          "sha256": "70b6a7483c5a9c5b312934f3740e14715d3c55fb08bd8caec5ab69a2e9665da1",
+          "bytes": 2460
+        }
+      ]
+    },
+    {
+      "id": "macos-navigation-v1/key-order",
+      "framework": "AppKit",
+      "platform": "macOS",
+      "questionPath": "code-examples/platforms/macos-navigation-v1/evaluation/key-order.prompt.md",
+      "questionHash": "afd24ea695f71b87dbd4a1b62f87a94ff99531a5fb44f0a05f43cd961914444f",
+      "userHash": "20d026f20c8b9c75649b4146d8ee8c766f8e3025ba2d91e748948b8e4dece617",
+      "rubric": {
+        "kind": "controller-rubric-not-answer-analysis",
+        "path": "code-examples/platforms/macos-navigation-v1/evaluation/key-order.rubric.md",
+        "sha256": "a77356ea6f0a05c40f13ff8fb88d3a8ffd52563d33c91fa6a1058f3eb497dc4e",
+        "answerAnalysis": null
+      },
+      "reviewStatus": "pending",
+      "references": [
+        {
+          "path": "references/macos/guidelines/m-002-keyboard-focus-order.md",
+          "sha256": "6b73213a56810d28777ace275ea227b1467a836a989278b4a46c2943e133838f",
+          "bytes": 2780
+        }
+      ]
+    },
+    {
+      "id": "macos-navigation-v1/table-selection",
+      "framework": "AppKit",
+      "platform": "macOS",
+      "questionPath": "code-examples/platforms/macos-navigation-v1/evaluation/table-selection.prompt.md",
+      "questionHash": "1f4849817863a7e5424ec21e65a9c72c73c06a394993992b8d2406b4267bac9b",
+      "userHash": "4bc93e6d54c0eb182cd8937cb1ef6a89c82f14e9ace33b7874d4e0080d43b773",
+      "rubric": {
+        "kind": "controller-rubric-not-answer-analysis",
+        "path": "code-examples/platforms/macos-navigation-v1/evaluation/table-selection.rubric.md",
+        "sha256": "5d51145aa161a290f146f3ca7cae44ed7336f400eb5be1bd3e71d4e0609883c1",
+        "answerAnalysis": null
+      },
+      "reviewStatus": "pending",
+      "references": [
+        {
+          "path": "references/macos/guidelines/m-006-table-outline-list-semantics.md",
+          "sha256": "76d8dc697adb4eeae97de2714c9f29739b47e2ac96cb6413422071684a4c6fbf",
+          "bytes": 2687
+        }
+      ]
+    },
+    {
+      "id": "tvos-results-v1/filtered-results",
+      "framework": "UIKit",
+      "platform": "tvOS",
+      "questionPath": "code-examples/platforms/tvos-results-v1/evaluation/filtered-results.prompt.md",
+      "questionHash": "aa46615d2f4cd80e7f05fe183d3cb5a13856f4366649c200e74673e0b557e20d",
+      "userHash": "bff44ee126246108b48e55e629d1ff34760cce37c3c53d292411dc25dd10a274",
+      "rubric": {
+        "kind": "controller-rubric-not-answer-analysis",
+        "path": "code-examples/platforms/tvos-results-v1/evaluation/filtered-results.rubric.md",
+        "sha256": "e7c9be4382d8de7438c8cef224cda83ad6d6baae07c4970f06f6791d54d5cde0",
+        "answerAnalysis": null
+      },
+      "reviewStatus": "pending",
+      "references": [
+        {
+          "path": "references/tvos/guidelines/t-006-search-filter-collection-semantics.md",
+          "sha256": "693780275de47d20d936e7d202ce5bd886bb68fe7ba0c75f5f70d96490d0ccc1",
+          "bytes": 2377
+        }
+      ]
+    },
+    {
+      "id": "tvos-results-v1/motion-status",
+      "framework": "UIKit",
+      "platform": "tvOS",
+      "questionPath": "code-examples/platforms/tvos-results-v1/evaluation/motion-status.prompt.md",
+      "questionHash": "f180f315211c362585336b52b467f334568f2d6bd3d9b86d4ed71a8083716fe6",
+      "userHash": "f515de4c777022d9a6ec46f6fd87ab19c4c0777dcbb8e9c8a344c9ea3d03130d",
+      "rubric": {
+        "kind": "controller-rubric-not-answer-analysis",
+        "path": "code-examples/platforms/tvos-results-v1/evaluation/motion-status.rubric.md",
+        "sha256": "9e103ef16b9e1eaebd3da15155c465595dfa5e843dcd254b29b7d3be275cc702",
+        "answerAnalysis": null
+      },
+      "reviewStatus": "pending",
+      "references": [
+        {
+          "path": "references/tvos/guidelines/t-008-reduce-motion-focus-animations.md",
+          "sha256": "3a4e1df06c23d0083b2ef2cb3f9d1949388406152687c3591aef0bb4a4585048",
+          "bytes": 2603
+        }
+      ]
+    },
+    {
+      "id": "tvos-uikit-v1/television-actions",
+      "framework": "UIKit",
+      "platform": "tvOS",
+      "questionPath": "code-examples/platforms/tvos-uikit-v1/evaluation/television-actions.prompt.md",
+      "questionHash": "1ae8568fe43fd69b44527a43cfd2035e12c0a8324cfad8a86e5cc36726871ea3",
+      "userHash": "f1a269f369f689c9dce3d4819ee2d3a616d1e5a31de70bc1bb28d56827b40a51",
+      "rubric": {
+        "kind": "controller-rubric-not-answer-analysis",
+        "path": "code-examples/platforms/tvos-uikit-v1/evaluation/television-actions.rubric.md",
+        "sha256": "229c7449ddaf5bb9d7480bf65078927cbe032be750a1d876e5efa825f6a0ea1a",
+        "answerAnalysis": null
+      },
+      "reviewStatus": "pending",
+      "references": [
+        {
+          "path": "references/tvos/guidelines/t-005-custom-actions-remote-first.md",
+          "sha256": "33d98bc9172b56d5fa5fc97df68daa4bbba56b3ebb0e8c8ff459dedd3e7a9ce7",
+          "bytes": 2269
+        },
+        {
+          "path": "references/tvos/guidelines/t-003-labels-values-traits-focused-controls.md",
+          "sha256": "dbb50ac919c1db9338fd64a5c22717cee202ed232fd5ee2c4120e56a9f3eb41b",
+          "bytes": 2543
+        }
+      ]
+    },
+    {
+      "id": "tvos-uikit-v1/television-focus",
+      "framework": "UIKit",
+      "platform": "tvOS",
+      "questionPath": "code-examples/platforms/tvos-uikit-v1/evaluation/television-focus.prompt.md",
+      "questionHash": "41dc4d2f1594ddb8361044726af992b75f5e3513389848bfe33d6aea1286a369",
+      "userHash": "557bd100d51631a83cb639ab0a9767fc7024b7b6dc1d21c54966acb8fa97279d",
+      "rubric": {
+        "kind": "controller-rubric-not-answer-analysis",
+        "path": "code-examples/platforms/tvos-uikit-v1/evaluation/television-focus.rubric.md",
+        "sha256": "8df925e059c9a4e273116167a946f5e9db3136e91a07ecf9c12ab89f37e040d9",
+        "answerAnalysis": null
+      },
+      "reviewStatus": "pending",
+      "references": [
+        {
+          "path": "references/tvos/guidelines/t-001-focus-order-directional-navigation.md",
+          "sha256": "6fe90ea0b7df2964dbfcadf24dc18367a38098a4db301c5d3b5a769901a9d250",
+          "bytes": 2764
+        },
+        {
+          "path": "references/tvos/guidelines/t-002-initial-focus-modal-restoration.md",
+          "sha256": "7e0cd4af9fa89e320ffdb069c24973827a3ba5e702edd8ddb4bea569c68c0804",
+          "bytes": 2914
+        }
+      ]
+    },
+    {
+      "id": "tvos-uikit-v1/television-traits",
+      "framework": "UIKit",
+      "platform": "tvOS",
+      "questionPath": "code-examples/platforms/tvos-uikit-v1/evaluation/television-traits.prompt.md",
+      "questionHash": "8786cf0f8c1bca8d8389a12a9655d3e9a754296a87cf2182e190d176f38f60f7",
+      "userHash": "ef1b69347244dc873cef8f5454ccbe1cd218cac279127d837d9cc6b469b8422d",
+      "rubric": {
+        "kind": "controller-rubric-not-answer-analysis",
+        "path": "code-examples/platforms/tvos-uikit-v1/evaluation/television-traits.rubric.md",
+        "sha256": "ef3a34234f19c20f43c85f4bde59060e594dde06ca0742bee0e56dad4ed1ebbb",
+        "answerAnalysis": null
+      },
+      "reviewStatus": "pending",
+      "references": [
+        {
+          "path": "references/tvos/guidelines/t-003-labels-values-traits-focused-controls.md",
+          "sha256": "dbb50ac919c1db9338fd64a5c22717cee202ed232fd5ee2c4120e56a9f3eb41b",
+          "bytes": 2543
+        }
+      ]
+    }
+  ],
+  "cells": [
+    {
+      "id": "cell-1",
+      "caseId": "macos-appkit-v1/desktop-actions",
+      "condition": "C0",
+      "repetition": 1,
+      "chunk": 1,
+      "path": "subjects/01.json",
+      "sha256": "26f11f737c7eb7a7adfccfa810e0fcc17f429139526ccbc42c7d5b28b915487f",
+      "inputBytes": 697
+    },
+    {
+      "id": "cell-2",
+      "caseId": "macos-appkit-v1/desktop-actions",
+      "condition": "C2",
+      "repetition": 1,
+      "chunk": 1,
+      "path": "subjects/02.json",
+      "sha256": "5c5241634315896320ea01bc960808eb85f94c527cda2d0652e01356416fd099",
+      "inputBytes": 13848
+    },
+    {
+      "id": "cell-3",
+      "caseId": "macos-appkit-v1/desktop-status",
+      "condition": "C2",
+      "repetition": 1,
+      "chunk": 1,
+      "path": "subjects/03.json",
+      "sha256": "a1cc7978218470c48b38615dd9dd096acaf234dc3a0680a8c4638a8fc7251cd5",
+      "inputBytes": 11014
+    },
+    {
+      "id": "cell-4",
+      "caseId": "macos-appkit-v1/desktop-status",
+      "condition": "C0",
+      "repetition": 1,
+      "chunk": 1,
+      "path": "subjects/04.json",
+      "sha256": "66306c5d37f67037ddac1797e7559e2f33c33a041b3c0bf97fb4157ace0d4bc6",
+      "inputBytes": 584
+    },
+    {
+      "id": "cell-5",
+      "caseId": "macos-navigation-v1/key-order",
+      "condition": "C0",
+      "repetition": 1,
+      "chunk": 1,
+      "path": "subjects/05.json",
+      "sha256": "86336dbeecc68a3af822f27eaa81e3fd5aea2345745938c5a4579d0a7221fe1d",
+      "inputBytes": 690
+    },
+    {
+      "id": "cell-6",
+      "caseId": "macos-navigation-v1/key-order",
+      "condition": "C2",
+      "repetition": 1,
+      "chunk": 1,
+      "path": "subjects/06.json",
+      "sha256": "f8a5380d88e6f796e68bce6a9f9f645ea041c884641d291bd30e317e51fdcd8d",
+      "inputBytes": 11427
+    },
+    {
+      "id": "cell-7",
+      "caseId": "macos-navigation-v1/table-selection",
+      "condition": "C2",
+      "repetition": 1,
+      "chunk": 2,
+      "path": "subjects/07.json",
+      "sha256": "f677d6731675c0741025ecce1d9376f0de749b81fa0abbcca4d9c29ab9541649",
+      "inputBytes": 11308
+    },
+    {
+      "id": "cell-8",
+      "caseId": "macos-navigation-v1/table-selection",
+      "condition": "C0",
+      "repetition": 1,
+      "chunk": 2,
+      "path": "subjects/08.json",
+      "sha256": "dd7ae21548e60848c55dc97377bb0a342bd84ff6e1c283ecb760d241694947a1",
+      "inputBytes": 657
+    },
+    {
+      "id": "cell-9",
+      "caseId": "tvos-results-v1/filtered-results",
+      "condition": "C0",
+      "repetition": 1,
+      "chunk": 2,
+      "path": "subjects/09.json",
+      "sha256": "c5fc822123ec38fba4f01027b3a338399a4c2e3e2507003a2d74428c9b38e50b",
+      "inputBytes": 751
+    },
+    {
+      "id": "cell-10",
+      "caseId": "tvos-results-v1/filtered-results",
+      "condition": "C2",
+      "repetition": 1,
+      "chunk": 2,
+      "path": "subjects/10.json",
+      "sha256": "e58318370b528772ccbf190aa914e228b3e79feccbf50a20701f94d9ad9930ff",
+      "inputBytes": 11091
+    },
+    {
+      "id": "cell-11",
+      "caseId": "tvos-results-v1/motion-status",
+      "condition": "C2",
+      "repetition": 1,
+      "chunk": 2,
+      "path": "subjects/11.json",
+      "sha256": "88947a7b46ac5c29ded68f39ed7dedde9e9af32fb7ed03e7c155abff4d5c5341",
+      "inputBytes": 11230
+    },
+    {
+      "id": "cell-12",
+      "caseId": "tvos-results-v1/motion-status",
+      "condition": "C0",
+      "repetition": 1,
+      "chunk": 2,
+      "path": "subjects/12.json",
+      "sha256": "29aec64212ed224a5012d4dad3a61bf1c08a80b067d48468a7feb41980a8c21b",
+      "inputBytes": 667
+    },
+    {
+      "id": "cell-13",
+      "caseId": "tvos-uikit-v1/television-actions",
+      "condition": "C0",
+      "repetition": 1,
+      "chunk": 3,
+      "path": "subjects/13.json",
+      "sha256": "e45f473d9129a3832ae78185a6cca863d8cefdd2f3d53bfda3ef519dcbb83e32",
+      "inputBytes": 642
+    },
+    {
+      "id": "cell-14",
+      "caseId": "tvos-uikit-v1/television-actions",
+      "condition": "C2",
+      "repetition": 1,
+      "chunk": 3,
+      "path": "subjects/14.json",
+      "sha256": "a3f0be09c305621538e935eefb4d5d82b3c84dd97c99125d9a4d55ab85ccbe1c",
+      "inputBytes": 13596
+    },
+    {
+      "id": "cell-15",
+      "caseId": "tvos-uikit-v1/television-focus",
+      "condition": "C2",
+      "repetition": 1,
+      "chunk": 3,
+      "path": "subjects/15.json",
+      "sha256": "a3cbefaaaa28df2ac70c24174e00d73ca53b1975f73390e6185d0c9daaaacb5c",
+      "inputBytes": 14464
+    },
+    {
+      "id": "cell-16",
+      "caseId": "tvos-uikit-v1/television-focus",
+      "condition": "C0",
+      "repetition": 1,
+      "chunk": 3,
+      "path": "subjects/16.json",
+      "sha256": "87e3adee7228ed0133b6541f86110d527a21e8b840d6b9ded78b416307d114c1",
+      "inputBytes": 631
+    },
+    {
+      "id": "cell-17",
+      "caseId": "tvos-uikit-v1/television-traits",
+      "condition": "C0",
+      "repetition": 1,
+      "chunk": 3,
+      "path": "subjects/17.json",
+      "sha256": "21ec48defd6ebeade30fde92ebef17145f3d5a8644d2ee9093071b370453386b",
+      "inputBytes": 526
+    },
+    {
+      "id": "cell-18",
+      "caseId": "tvos-uikit-v1/television-traits",
+      "condition": "C2",
+      "repetition": 1,
+      "chunk": 3,
+      "path": "subjects/18.json",
+      "sha256": "10b91c6e4ae313ccdbff0d17d842108a1f2a0eff55072a2f70b37c5cd4390658",
+      "inputBytes": 11037
+    }
+  ]
+}

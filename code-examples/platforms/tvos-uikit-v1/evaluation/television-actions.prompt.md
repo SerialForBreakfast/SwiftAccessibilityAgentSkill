@@ -1,0 +1,1 @@
+For our tvOS UIKit app, build a reusable episode card with a title, Play and Details buttons. Each button needs its own callback and complete localized accessible name. Offer Details as an optional accessibility action on Play as well. The same card can display another episode, and Details can be disabled. Show an implementation and explain what you would unit test.

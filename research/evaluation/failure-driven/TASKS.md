@@ -182,3 +182,55 @@ This is a bounded development screen, not fresh confirmation or gold promotion.
 Wider FD-05/06/08 gates remain open. Released skill 0.2.2, historical evidence and
 frozen baselines are unchanged. Initial planning and blocked preflight observations
 are preserved in the linked reconciliation/validation records and private receipts.
+
+## Platform companion expansion (2026-11-06)
+
+Owner authorized AppKit/macOS and UIKit/tvOS next; SwiftUI companion expansion stays
+explicitly deferred. This extends the unit-library scope, not the frozen skill or
+baseline. See [platform batch](../platform-expansion-v1/README.md).
+
+- Platform adapter: separate from pinned iOS adapter; verify actual host/simulator,
+  immutable inputs, complete test selection and exact expected failures.
+- Initial families: Mac actions/reuse and notification requests; TV actions/reuse,
+  preferred focus candidates and selected-trait preservation.
+- Preserve first Mac preflight/oracle failures and TV visible-title coverage gap.
+- Pair all five families with draft subject questions and separate rubrics.
+- Candidate routing: explicit platform/framework, one/two guidelines by default,
+  source and contracts opt-in, actual read-byte/hash traces. No runtime promotion.
+- Remaining gates: full member availability audit, independent rubric/oracle review,
+  approved frontier baselines and measured candidate comparison. Native test success
+  does not mark those gates complete. No review submission or acceptance implied.
+
+## Complete prompt/input/output records (owner requirement, 2026-11-06)
+
+Contract: [prompt records](../prompt-records-v1/README.md).
+
+- [x] Define complete capture for authoring, subjects, repairs, reviewers and judges.
+- [x] Index the nine platform draft questions with exact text/hashes and explicit not-run outputs.
+- [ ] Inventory all earlier UIKit/OS26/scenario/worker prompts and map every actual attempt.
+- [ ] Link complete captured requests, attachments, tool exchanges, original answers and analysis.
+- [ ] Recover available authoring/reviewer transcripts through approved exports; label gaps instead of reconstructing them.
+- [ ] Audit runner/worker exports against this contract before claiming capture completeness.
+- [ ] Independently review isolation, artifact hashes, accepted alternatives and analysis.
+
+Acceptance: every used prompt is accounted for; each executed attempt has complete
+captured inputs/outputs and separate analysis, or explicit field-level gaps. Drafts
+remain not-run. First failures, repairs and judge inputs remain recoverable. No
+controller answer material enters subject context; no frozen fixtures are rewritten.
+
+## Mac navigation / Apple TV results closeout (2026-11-06)
+
+- Executed: 34 new positive methods, eight mutants and one original-defect regression;
+  all 13 current checks have matching receipts. See [report](../platform-navigation-v1/RESULTS.md).
+- Preserved: first key-view ownership failure, unchanged failing assertion, exact
+  sources/diagnostics, and both repeated-animation executions. No count inflation.
+- Paired: four independent subject questions and separate accepted-alternative
+  rubrics, all draft. No subject-model runs or independent review claimed.
+- Corrected: historical Finder metadata pin through an [additive amendment](../platform-expansion-v1-amendment/README.md);
+  original index/collector/receipts remain unchanged; original verifier archived.
+- Captured: 25 local project sessions and 5,644 available input/output/context records
+  privately, with hashes and [capture analysis](../prompt-records-v1/CAPTURE-ANALYSIS.md).
+  Full provider context, attachments and remote-worker exports remain explicit gaps.
+- Remaining: case-by-case transcript mapping/grading, full availability audit,
+  independent review, approved frontier baselines; modal/preference/media contracts
+  continue in the next coordinated batch. SwiftUI and runtime skill changes deferred.

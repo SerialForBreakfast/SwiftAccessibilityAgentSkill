@@ -1,0 +1,1 @@
+In a UIKit Apple TV app, a Play button already has accessibility traits configured by another part of the app. Add and remove its selected state without losing the other traits. Give a small implementation and unit tests that exercise both transitions.

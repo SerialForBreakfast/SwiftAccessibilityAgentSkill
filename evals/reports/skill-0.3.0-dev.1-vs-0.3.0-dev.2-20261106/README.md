@@ -102,6 +102,14 @@ checked separately with the private mapping. Native answer checks were not run.
 The controller accepts alternative implementations and separates quality, protocol,
 critical flags and not-assessable criteria. No known incident was relabeled a holdout.
 
+Capture limits: exact supplied CLI prompt strings, candidate/reference bytes,
+settings, original JSON responses, first-attempt receipts and separate grading are
+retained privately. Provider-internal instructions and the complete effective author/
+judge conversation are not exported as a full request record. Judge packet/order and
+final grades are retained, but missing system/context messages are explicit gaps;
+this is not a claim of complete historical prompt capture. See the
+[prompt-record contract](../../../research/evaluation/prompt-records-v1/README.md).
+
 [Controller review](../../../research/evaluation/failure-driven/candidates/CONTROLLER-REVIEW.md) ·
 [Version registry](../../../research/evaluation/failure-driven/candidates/README.md) ·
 [Machine-readable summary](summary.json)

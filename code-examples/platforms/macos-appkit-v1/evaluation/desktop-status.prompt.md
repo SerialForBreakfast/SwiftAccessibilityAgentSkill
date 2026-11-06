@@ -1,0 +1,1 @@
+In an AppKit utility, an NSTextField displays the latest save status. Write a small update component that informs accessibility clients when that value changes. Repeating the same status should do nothing. I want to unit test the update and notification request without relying on assistive software running.

@@ -25,11 +25,18 @@ Load its task list, audit or worker handoff only when relevant.
   model, harness and context separately; do not infer model rankings from anecdotes.
 - Record first attempts and any authorized repair attempts separately. A named
   reference is not evidence of a read; retain actual retrieval traces when available.
+- Retain every prompt used for authoring, evaluation, repairs and judging, with
+  complete captured inputs, original outputs and separate analysis. Follow the
+  [prompt-record contract](research/evaluation/prompt-records-v1/README.md).
+  Mark unavailable history explicitly; never reconstruct it as an exact transcript.
+  The full audit record is controller-only, not additional subject context.
 
 ## Boundaries
 
-- UIKit first. Compile checks and unit tests only; no UI tests or mandatory manual
-  accessibility verification. Tests establish only their directly asserted behavior.
+- Preserve the UIKit baseline. AppKit/macOS and UIKit/tvOS companion development
+  is now authorized; SwiftUI expansion remains deferred. Compile checks and unit
+  tests only; no UI tests or mandatory manual accessibility verification. Tests
+  establish only their directly asserted behavior.
 - Preserve source tiers. Use annual current/previous tested anchors and exact run
   environments, not a continuous minor-version support commitment.
 - Keep examples on demand. Do not load the incident archive or all examples by default.

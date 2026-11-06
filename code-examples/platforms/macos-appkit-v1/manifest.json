@@ -1,0 +1,197 @@
+{
+  "schema": 1,
+  "id": "macos-appkit-v1",
+  "revision": "2",
+  "platform": "macOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 27,
+  "limitations": "Unit configuration, callbacks, preferred candidates and notification requests only. No UI tests, actual assistive technology navigation, visual layout or usability claims. macOS host27 does not establish macOS26 runtime behavior.",
+  "claims": [
+    {
+      "id": "actions",
+      "url": "https://developer.apple.com/documentation/appkit/nsaccessibilitycustomaction",
+      "section": "Custom action handlers and explicit accessible metadata; ordinary action/reuse rules are application policy",
+      "statement": "Expose independent ordinary actions and optional shortcuts; reject stale callbacks after reconfiguration.",
+      "availability": "Compile against installed SDK with deployment target26.0; runtime evidence separately recorded. Full member declaration audit pending; no inferred introduction or deprecation dates.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "status",
+      "url": "https://developer.apple.com/documentation/appkit/nsaccessibility-swift.struct",
+      "section": "Posting notifications; injected sink observes request only",
+      "statement": "Update status before requesting valueChanged; suppress repeated identical requests.",
+      "availability": "Compile against installed SDK with deployment target26.0; runtime evidence separately recorded. Full member declaration audit pending; no inferred introduction or deprecation dates.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/DesktopActions.swift",
+      "sha256": "1cd99e299d978005951ffce544e3644ca471e0d413ffa67d6febccaf3080c39e"
+    },
+    {
+      "path": "Tests/DesktopActionsTests.swift",
+      "sha256": "9be73e2baa61bfd0eb87050f7e2621fd0eeb27acc0ee7d4d19a6f3e93b38ebc8"
+    },
+    {
+      "path": "NegativeFixtures/LostOrdinarySave.swift",
+      "sha256": "0fc6a0bff26c844a2717281e434c68a604b8381203c53826b0b35bb6a64fa525"
+    },
+    {
+      "path": "NegativeFixtures/StaleShortcut.swift",
+      "sha256": "35014080c20b535422db4cd21ac2a9742739c0e25043c5c92e4f49b3e3c722b7"
+    },
+    {
+      "path": "NegativeFixtures/LostName.swift",
+      "sha256": "f6607663b0fe38c9a834e32c107ad7a18d1474fbf661208efe9d65b932355bee"
+    },
+    {
+      "path": "NegativeFixtures/DisabledShortcut.swift",
+      "sha256": "48241cc399e7ef85c5619f0ae521dcacf19d9b97fbbd880778e275222d7aaecb"
+    },
+    {
+      "path": "NegativeFixtures/DuplicateNotice.swift",
+      "sha256": "e152117be2960495dd2c9588181f890fb529a2a2d89563f8a0f7e14ffe38abc7"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "actions",
+        "status"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "actions",
+        "status"
+      ],
+      "testIds": [
+        "DesktopActionsTests/testVisibleTitle",
+        "DesktopActionsTests/testContextualNames",
+        "DesktopActionsTests/testContainerDoesNotReplaceControls",
+        "DesktopActionsTests/testControlsRemainInHierarchy",
+        "DesktopActionsTests/testOrdinaryOpenOnly",
+        "DesktopActionsTests/testOrdinarySaveOnly",
+        "DesktopActionsTests/testShortcutDispatch",
+        "DesktopActionsTests/testShortcutLocalizedName",
+        "DesktopActionsTests/testStaleShortcutRejected",
+        "DesktopActionsTests/testReuseReplacesOrdinaryHandler",
+        "DesktopActionsTests/testReuseReplacesNames",
+        "DesktopActionsTests/testReuseClearsOwnedValue",
+        "DesktopActionsTests/testDisabledOrdinarySave",
+        "DesktopActionsTests/testDisabledShortcut",
+        "DesktopActionsTests/testReenabledShortcut",
+        "DesktopActionsTests/testShortcutDoesNotRetainRow",
+        "DesktopActionsTests/testRepeatedConfigurationDoesNotDuplicateActions",
+        "DesktopActionsTests/testStatusRequestsValueChanged",
+        "DesktopActionsTests/testStatusUpdatesBeforeRequest",
+        "DesktopActionsTests/testUnchangedStatusDoesNotRepeatRequest"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "lostordinarysave",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions",
+        "status"
+      ],
+      "testIds": [
+        "DesktopActionsTests/testOrdinarySaveOnly"
+      ],
+      "failureIds": [
+        "DesktopActionsTests/testOrdinarySaveOnly"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopActions.swift",
+        "source": "NegativeFixtures/LostOrdinarySave.swift"
+      }
+    },
+    {
+      "id": "staleshortcut",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions",
+        "status"
+      ],
+      "testIds": [
+        "DesktopActionsTests/testStaleShortcutRejected"
+      ],
+      "failureIds": [
+        "DesktopActionsTests/testStaleShortcutRejected"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopActions.swift",
+        "source": "NegativeFixtures/StaleShortcut.swift"
+      }
+    },
+    {
+      "id": "lostname",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions",
+        "status"
+      ],
+      "testIds": [
+        "DesktopActionsTests/testContextualNames"
+      ],
+      "failureIds": [
+        "DesktopActionsTests/testContextualNames"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopActions.swift",
+        "source": "NegativeFixtures/LostName.swift"
+      }
+    },
+    {
+      "id": "disabledshortcut",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions",
+        "status"
+      ],
+      "testIds": [
+        "DesktopActionsTests/testDisabledShortcut"
+      ],
+      "failureIds": [
+        "DesktopActionsTests/testDisabledShortcut"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopActions.swift",
+        "source": "NegativeFixtures/DisabledShortcut.swift"
+      }
+    },
+    {
+      "id": "duplicatenotice",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "actions",
+        "status"
+      ],
+      "testIds": [
+        "DesktopActionsTests/testUnchangedStatusDoesNotRepeatRequest"
+      ],
+      "failureIds": [
+        "DesktopActionsTests/testUnchangedStatusDoesNotRepeatRequest"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopActions.swift",
+        "source": "NegativeFixtures/DuplicateNotice.swift"
+      }
+    }
+  ]
+}

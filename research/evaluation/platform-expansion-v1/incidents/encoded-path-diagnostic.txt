@@ -1,0 +1,61 @@
+✖ macos-appkit-v1: every manifest check resolves pinned inputs (0.533417ms)
+✖ tvos-uikit-v1: every manifest check resolves pinned inputs (0.053458ms)
+✔ platform package and target validation (0.264083ms)
+✔ tvOS selection rejects iOS and wrong major (0.490208ms)
+✔ Mac runtime must match real host and exact destination (0.1355ms)
+✔ unit outcome requires exact platform and complete tests (0.730291ms)
+✔ macOS/actions: progressive reads are bounded and traced (2.114167ms)
+✔ macOS/notifications: progressive reads are bounded and traced (0.921291ms)
+✔ tvOS/actions: progressive reads are bounded and traced (1.400375ms)
+✔ tvOS/focus: progressive reads are bounded and traced (1.287208ms)
+✔ tvOS/traits: progressive reads are bounded and traced (1.268084ms)
+✔ macOS/UIKit: never silently fallback (0.111042ms)
+✔ macOS/SwiftUI: never silently fallback (0.032958ms)
+✔ tvOS/SwiftUI: never silently fallback (0.024959ms)
+✔ iOS/UIKit: never silently fallback (0.0375ms)
+✔ unknown/unknown: never silently fallback (0.025375ms)
+✔ unsupported topics and invalid detail do not load context (0.085417ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 15
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 65.497584
+
+✖ failing tests:
+
+test at code-examples/tools/platform-core.test.mjs:9:3
+✖ macos-appkit-v1: every manifest check resolves pinned inputs (0.533417ms)
+  Error: ENOENT: no such file or directory, open '<repo-url>/code-examples/platforms/macos-appkit-v1/manifest.json'
+      at Object.openSync (node:fs:563:18)
+      at Object.readFileSync (node:fs:447:35)
+      at TestContext.<anonymous> (file://<repo-url>/code-examples/tools/platform-core.test.mjs:10:29)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Test.start (node:internal/test_runner/test:944:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:297:17) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '<repo-url>/code-examples/platforms/macos-appkit-v1/manifest.json'
+  }
+
+test at code-examples/tools/platform-core.test.mjs:9:3
+✖ tvos-uikit-v1: every manifest check resolves pinned inputs (0.053458ms)
+  Error: ENOENT: no such file or directory, open '<repo-url>/code-examples/platforms/tvos-uikit-v1/manifest.json'
+      at Object.openSync (node:fs:563:18)
+      at Object.readFileSync (node:fs:447:35)
+      at TestContext.<anonymous> (file://<repo-url>/code-examples/tools/platform-core.test.mjs:10:29)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:297:3) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '<repo-url>/code-examples/platforms/tvos-uikit-v1/manifest.json'
+  }

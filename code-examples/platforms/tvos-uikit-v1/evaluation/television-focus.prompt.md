@@ -1,0 +1,1 @@
+Our tvOS UIView owns Play and Details buttons. We prefer Play, then Details, when focus enters the card. Either button may be disabled, hidden, transparent or removed during an update. Implement preferred focus candidates for that policy and unit tests. If neither is eligible, return no candidate. Can the unit result tell us which view actually got focus?

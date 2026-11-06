@@ -1,0 +1,37 @@
+import XCTest
+import AppKit
+@testable import AccessibilityExamples
+
+@MainActor
+final class DesktopActionsTests: XCTestCase {
+    private func row(_ text: String = "Invoice A", open: @escaping () -> Void = {}, save: @escaping () -> Void = {}) -> DesktopActions {
+        _ = NSApplication.shared
+        let row = DesktopActions()
+        configure(row, text, open: open, save: save)
+        return row
+    }
+    private func configure(_ row: DesktopActions, _ text: String = "Invoice A", open: @escaping () -> Void = {}, save: @escaping () -> Void = {}) {
+        row.configure(title: text, openName: "Open \(text)", saveName: "Save \(text)", onOpen: open, onSave: save)
+    }
+    private func press(_ button: NSButton) { _ = button.sendAction(button.action, to: button.target) }
+    func testVisibleTitle() { XCTAssertEqual(row().title.stringValue, "Invoice A") }
+    func testContextualNames() { let r = row(); XCTAssertEqual(r.open.accessibilityLabel(), "Open Invoice A"); XCTAssertEqual(r.save.accessibilityLabel(), "Save Invoice A") }
+    func testContainerDoesNotReplaceControls() { let r = row(); XCTAssertFalse(r.isAccessibilityElement()); XCTAssertTrue(r.open.isAccessibilityElement()); XCTAssertTrue(r.save.isAccessibilityElement()) }
+    func testControlsRemainInHierarchy() { let r = row(); XCTAssertTrue(r.open.superview === r); XCTAssertTrue(r.save.superview === r) }
+    func testOrdinaryOpenOnly() { var o = 0, s = 0; let r = row(open: {o += 1}, save: {s += 1}); press(r.open); XCTAssertEqual(o, 1); XCTAssertEqual(s, 0) }
+    func testOrdinarySaveOnly() { var o = 0, s = 0; let r = row(open: {o += 1}, save: {s += 1}); press(r.save); XCTAssertEqual(o, 0); XCTAssertEqual(s, 1) }
+    func testShortcutDispatch() { var s = 0; let r = row(save: {s += 1}); XCTAssertEqual(r.open.accessibilityCustomActions()?.first?.handler?(), true); XCTAssertEqual(s, 1) }
+    func testShortcutLocalizedName() { XCTAssertEqual(row("Facture été").open.accessibilityCustomActions()?.first?.name, "Save Facture été") }
+    func testStaleShortcutRejected() { let r = row(); let old = r.open.accessibilityCustomActions()?.first; var s = 0; configure(r, "B", save: {s += 1}); XCTAssertEqual(old?.handler?(), false); XCTAssertEqual(s, 0) }
+    func testReuseReplacesOrdinaryHandler() { var a = 0, b = 0; let r = row(save: {a += 1}); configure(r, "B", save: {b += 1}); press(r.save); XCTAssertEqual(a, 0); XCTAssertEqual(b, 1) }
+    func testReuseReplacesNames() { let r = row(); configure(r, "B"); XCTAssertEqual(r.open.accessibilityLabel(), "Open B"); XCTAssertEqual(r.save.accessibilityLabel(), "Save B") }
+    func testReuseClearsOwnedValue() { let r = row(); r.open.setAccessibilityValue("old"); configure(r); XCTAssertNil(r.open.accessibilityValue()) }
+    func testDisabledOrdinarySave() { var s = 0; let r = row(save: {s += 1}); r.save.isEnabled = false; press(r.save); XCTAssertEqual(s, 0) }
+    func testDisabledShortcut() { let r = row(); r.save.isEnabled = false; XCTAssertEqual(r.open.accessibilityCustomActions()?.first?.handler?(), false) }
+    func testReenabledShortcut() { var s = 0; let r = row(save: {s += 1}); r.save.isEnabled = false; r.save.isEnabled = true; XCTAssertEqual(r.open.accessibilityCustomActions()?.first?.handler?(), true); XCTAssertEqual(s, 1) }
+    func testShortcutDoesNotRetainRow() { var r: DesktopActions? = row(); weak var weakRow = r; let action = r?.open.accessibilityCustomActions()?.first; r = nil; XCTAssertNil(weakRow); XCTAssertEqual(action?.handler?(), false) }
+    func testRepeatedConfigurationDoesNotDuplicateActions() { let r = row(); configure(r); configure(r); XCTAssertEqual(r.open.accessibilityCustomActions()?.count, 1) }
+    func testStatusRequestsValueChanged() { _ = NSApplication.shared; var notices: [NSAccessibility.Notification] = []; let s = DesktopStatus { _, n in notices.append(n) }; s.update("Saved"); XCTAssertEqual(notices, [.valueChanged]) }
+    func testStatusUpdatesBeforeRequest() { _ = NSApplication.shared; var seen: String?; let s = DesktopStatus { element, _ in seen = (element as? NSTextField)?.stringValue }; s.update("Saved"); XCTAssertEqual(seen, "Saved") }
+    func testUnchangedStatusDoesNotRepeatRequest() { _ = NSApplication.shared; var n = 0; let s = DesktopStatus { _, _ in n += 1 }; s.update("Saved"); s.update("Saved"); XCTAssertEqual(n, 1) }
+}
