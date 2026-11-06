@@ -1,0 +1,392 @@
+{
+  "schema": 1,
+  "revision": "os26-expansion-1-draft-1",
+  "validationScope": "compile-unit-source-review",
+  "unassessedOutcomes": [
+    "VoiceOver speech and traversal",
+    "Keyboard and remote interaction",
+    "Rendered layout and animation",
+    "Generated-model-answer correctness"
+  ],
+  "cases": [
+    {
+      "id": "GP26-07",
+      "control": false,
+      "sourceCandidates": [
+        "https://developer.apple.com/documentation/uikit/uiviewcontroller/dismiss(animated:completion:)",
+        "https://developer.apple.com/documentation/uikit/uiaccessibility/notification/layoutchanged"
+      ],
+      "sourceReviewStatus": "pending-independent-review",
+      "alternatives": "Accept an equivalent documented notification/lifecycle approach with the same explicit target and completion semantics. Do not require a helper name, exact notification choice without source justification, or observed VoiceOver movement.",
+      "gates": [
+        {
+          "id": "source-review",
+          "kind": "review",
+          "expected": "pass",
+          "assertion": "Independent reviewer checks exact Apple API sections, target availability, valid alternatives and production wiring; no sole-author approval."
+        },
+        {
+          "id": "compile-host",
+          "kind": "compile",
+          "expected": "pass",
+          "assertion": "Build minimal host and focused test target with pinned SDK/build, runtime/build and deployment26.0; preserve supplied surrounding context."
+        },
+        {
+          "id": "known-good",
+          "kind": "oracle",
+          "expected": "pass",
+          "evidenceMethod": "unit",
+          "assertion": "Reviewed correct implementation passes the focused suite, including all per-case unit gates. Existing-correct controls may retain original code unchanged."
+        },
+        {
+          "id": "mutation-1",
+          "kind": "oracle",
+          "expected": "fail",
+          "evidenceMethod": "unit",
+          "assertion": "Capture the original button instance rather than resolving the current stable ID at completion. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+        },
+        {
+          "id": "mutation-2",
+          "kind": "oracle",
+          "expected": "fail",
+          "evidenceMethod": "unit",
+          "assertion": "When the origin is absent, notify nil instead of the declared fallback. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+        },
+        {
+          "id": "current-origin",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Open from B, replace B with a new attached button and reorder other rows before dismissal completes. Invoke actual Done/dismiss-completion paths; assert one notification targets the current B instance, not the captured old button or first row."
+        },
+        {
+          "id": "missing-origin",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Remove B before dismissal completes; assert one notification targets the persistent payButton. Test initially missing origin too; no nil or unrelated row target."
+        },
+        {
+          "id": "completion-boundary",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Use an injected UIKit dismissal/notification boundary whose default calls the real APIs. Assert zero restoration notifications before completion and exactly one after completion. Source review confirms real Done invokes this path; no arbitrary timer."
+        }
+      ]
+    },
+    {
+      "id": "GP26-08",
+      "control": false,
+      "sourceCandidates": [
+        "https://developer.apple.com/documentation/objectivec/nsobject-swift.class/accessibilityviewismodal",
+        "https://developer.apple.com/documentation/objectivec/nsobject-swift.class/accessibilityelementshidden"
+      ],
+      "sourceReviewStatus": "pending-independent-review",
+      "alternatives": "Accept documented modal-container configuration or an equivalent background-isolation strategy if descendants remain actionable and exact prior flags are preserved. Tests must not force unnecessary mutations of background state when modal containment alone suffices; mutate the chosen candidate\u2019s actual policy.",
+      "gates": [
+        {
+          "id": "source-review",
+          "kind": "review",
+          "expected": "pass",
+          "assertion": "Independent reviewer checks exact Apple API sections, target availability, valid alternatives and production wiring; no sole-author approval."
+        },
+        {
+          "id": "compile-host",
+          "kind": "compile",
+          "expected": "pass",
+          "assertion": "Build minimal host and focused test target with pinned SDK/build, runtime/build and deployment26.0; preserve supplied surrounding context."
+        },
+        {
+          "id": "known-good",
+          "kind": "oracle",
+          "expected": "pass",
+          "evidenceMethod": "unit",
+          "assertion": "Reviewed correct implementation passes the focused suite, including all per-case unit gates. Existing-correct controls may retain original code unchanged."
+        },
+        {
+          "id": "mutation-1",
+          "kind": "oracle",
+          "expected": "fail",
+          "evidenceMethod": "unit",
+          "assertion": "Remove the candidate\u2019s effective containment policy so background siblings remain exposed. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+        },
+        {
+          "id": "mutation-2",
+          "kind": "oracle",
+          "expected": "fail",
+          "evidenceMethod": "unit",
+          "assertion": "Always restore background hidden=false instead of its saved pre-open value. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+        },
+        {
+          "id": "open-configuration",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Invoke production show; inspect sibling hierarchy and documented containment configuration, popup descendants not hidden/collapsed, Close callback preserved. Assert repeated show does not overwrite the saved original background flag."
+        },
+        {
+          "id": "restore-original",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "For pre-open false and true separately, run show/show/close/close and a second cycle; verify exact original content flag restored and popup detached. Calls to close before show leave background untouched."
+        },
+        {
+          "id": "close-action",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Dispatch the real wired Close UIControl action through the host; verify it reaches production close once and does not change unrelated control callbacks. This is direct dispatch, not a VoiceOver traversal test."
+        }
+      ]
+    },
+    {
+      "id": "GP26-09",
+      "control": false,
+      "sourceCandidates": [
+        "https://developer.apple.com/documentation/uikit/uiaccessibilitytraits/adjustable",
+        "https://developer.apple.com/documentation/objectivec/nsobject-swift.class/accessibilityincrement()",
+        "https://developer.apple.com/documentation/objectivec/nsobject-swift.class/accessibilitydecrement()"
+      ],
+      "sourceReviewStatus": "pending-independent-review",
+      "alternatives": "Accept equivalent shared-update implementations, localized labels/values and documented accessible representations preserving both input paths. No preferred exact source shape or wording.",
+      "gates": [
+        {
+          "id": "source-review",
+          "kind": "review",
+          "expected": "pass",
+          "assertion": "Independent reviewer checks exact Apple API sections, target availability, valid alternatives and production wiring; no sole-author approval."
+        },
+        {
+          "id": "compile-host",
+          "kind": "compile",
+          "expected": "pass",
+          "assertion": "Build minimal host and focused test target with pinned SDK/build, runtime/build and deployment26.0; preserve supplied surrounding context."
+        },
+        {
+          "id": "known-good",
+          "kind": "oracle",
+          "expected": "pass",
+          "evidenceMethod": "unit",
+          "assertion": "Reviewed correct implementation passes the focused suite, including all per-case unit gates. Existing-correct controls may retain original code unchanged."
+        },
+        {
+          "id": "mutation-1",
+          "kind": "oracle",
+          "expected": "fail",
+          "evidenceMethod": "unit",
+          "assertion": "Remove upper bound clamping in the shared update path. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+        },
+        {
+          "id": "mutation-2",
+          "kind": "oracle",
+          "expected": "fail",
+          "evidenceMethod": "unit",
+          "assertion": "Drop the onChange callback for the accessibility adjustment path while value still changes. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+        },
+        {
+          "id": "adjustable-hooks",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Instantiate real knob and directly invoke its accessibilityIncrement/accessibilityDecrement methods. Verify adjustable trait, meaningful Volume label, current numeric meaning in value, 50\u219255\u219250 and one callback per change; no exact localized string requirement."
+        },
+        {
+          "id": "bounds-and-noop",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Exercise both hooks at0 and100 and near bounds using the declared step. Assert bounded value, correct displayed/accessibility state and no callback on unchanged clamp requests."
+        },
+        {
+          "id": "shared-update",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Call actual dragChanged then an accessibility hook, checking both consume the same current state and callback path. Spies show no per-change announcement posts; do not validate an unattached policy helper instead of the knob."
+        }
+      ]
+    },
+    {
+      "id": "GP26-10",
+      "control": false,
+      "sourceCandidates": [
+        "https://developer.apple.com/documentation/uikit/uiaccessibility/notification/announcement",
+        "https://developer.apple.com/documentation/uikit/uiaccessibility/post(notification:argument:)"
+      ],
+      "sourceReviewStatus": "pending-independent-review",
+      "alternatives": "Accept equivalent per-operation state machines and injectable post boundaries defaulting to UIKit. App-level deduplication is tested, not speech queue behavior. Clamp requirement must remain visible in the final prompt or be removed from acceptance before freeze.",
+      "gates": [
+        {
+          "id": "source-review",
+          "kind": "review",
+          "expected": "pass",
+          "assertion": "Independent reviewer checks exact Apple API sections, target availability, valid alternatives and production wiring; no sole-author approval."
+        },
+        {
+          "id": "compile-host",
+          "kind": "compile",
+          "expected": "pass",
+          "assertion": "Build minimal host and focused test target with pinned SDK/build, runtime/build and deployment26.0; preserve supplied surrounding context."
+        },
+        {
+          "id": "known-good",
+          "kind": "oracle",
+          "expected": "pass",
+          "evidenceMethod": "unit",
+          "assertion": "Reviewed correct implementation passes the focused suite, including all per-case unit gates. Existing-correct controls may retain original code unchanged."
+        },
+        {
+          "id": "mutation-1",
+          "kind": "oracle",
+          "expected": "fail",
+          "evidenceMethod": "unit",
+          "assertion": "Emit an announcement for each progress callback. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+        },
+        {
+          "id": "mutation-2",
+          "kind": "oracle",
+          "expected": "fail",
+          "evidenceMethod": "unit",
+          "assertion": "Do not guard duplicate terminal events; emit again for repeated completion. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+        },
+        {
+          "id": "progress-without-speech",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Send valid current-ID progress including0/50/100 and out-of-range values; assert percentage clamped0\u2026100 and accessible value updates, with zero announcement posts. Progress100 alone is not terminal unless a terminal event arrives."
+        },
+        {
+          "id": "terminal-once",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Current-ID completion then duplicate completion, failure and late progress: assert exactly one completion announcement and terminal value preserved. Separately start a failure-first sequence and assert one failure announcement with supplied reason preserved; no forced exact localization."
+        },
+        {
+          "id": "operation-isolation",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Begin A, then B. Ignore late A events without changing B label or emitting announcements. B can report its own terminal outcome after A previously completed. Verify actual receive path uses the tested notification boundary."
+        }
+      ]
+    },
+    {
+      "id": "GP26-11",
+      "control": true,
+      "sourceCandidates": [
+        "https://developer.apple.com/documentation/swiftui/slider",
+        "https://developer.apple.com/documentation/swiftui/binding"
+      ],
+      "sourceReviewStatus": "pending-independent-review",
+      "alternatives": "An unchanged implementation with a justified explanation earns full credit. Lack of a code block is not a compile failure. Optional extra context must not invent a product defect or claim unsupported OS behavior.",
+      "gates": [
+        {
+          "id": "source-review",
+          "kind": "review",
+          "expected": "pass",
+          "assertion": "Independent reviewer checks exact Apple API sections, target availability, valid alternatives and production wiring; no sole-author approval."
+        },
+        {
+          "id": "compile-host",
+          "kind": "compile",
+          "expected": "pass",
+          "assertion": "Build minimal host and focused test target with pinned SDK/build, runtime/build and deployment26.0; preserve supplied surrounding context."
+        },
+        {
+          "id": "known-good",
+          "kind": "oracle",
+          "expected": "pass",
+          "evidenceMethod": "unit",
+          "assertion": "Reviewed correct implementation passes the focused suite, including all per-case unit gates. Existing-correct controls may retain original code unchanged."
+        },
+        {
+          "id": "mutation-1",
+          "kind": "oracle",
+          "expected": "fail",
+          "evidenceMethod": "unit",
+          "assertion": "Replace the actual Slider binding with a constant. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+        },
+        {
+          "id": "mutation-2",
+          "kind": "oracle",
+          "expected": "fail",
+          "evidenceMethod": "unit",
+          "assertion": "Change the actual Slider range to0\u20261 while parent volume remains0\u2026100. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+        },
+        {
+          "id": "native-configuration",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Build actual native Slider with label Volume, range0\u2026100 and step1. Review that no replacement hides native action/value semantics; equivalent meaningful wording allowed. Do not claim runtime speech."
+        },
+        {
+          "id": "binding-roundtrip",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Exercise the actual binding supplied to the Slider, backed by a captured parent value: multiple valid writes and external parent changes propagate both ways with no substitute detached binding or newly invented constant."
+        },
+        {
+          "id": "range-and-state",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Use a source-linked host configuration seam to assert the same range/step used in the real Slider construction. Preserve state on redraw/reconfiguration. Native SwiftUI behavior itself is not established by an invented surrogate slider."
+        }
+      ]
+    },
+    {
+      "id": "GP26-12",
+      "control": true,
+      "sourceCandidates": [
+        "https://developer.apple.com/documentation/swiftui/environmentvalues/accessibilityreducemotion",
+        "https://developer.apple.com/documentation/swiftui/view/animation(_:value:)"
+      ],
+      "sourceReviewStatus": "pending-independent-review",
+      "alternatives": "An unchanged implementation is valid if independently reviewed and the scoped tests pass. Do not require alternate transition styles or invent a need to cancel an already-running transition; prompt concerns the next page change.",
+      "gates": [
+        {
+          "id": "source-review",
+          "kind": "review",
+          "expected": "pass",
+          "assertion": "Independent reviewer checks exact Apple API sections, target availability, valid alternatives and production wiring; no sole-author approval."
+        },
+        {
+          "id": "compile-host",
+          "kind": "compile",
+          "expected": "pass",
+          "assertion": "Build minimal host and focused test target with pinned SDK/build, runtime/build and deployment26.0; preserve supplied surrounding context."
+        },
+        {
+          "id": "known-good",
+          "kind": "oracle",
+          "expected": "pass",
+          "evidenceMethod": "unit",
+          "assertion": "Reviewed correct implementation passes the focused suite, including all per-case unit gates. Existing-correct controls may retain original code unchanged."
+        },
+        {
+          "id": "mutation-1",
+          "kind": "oracle",
+          "expected": "fail",
+          "evidenceMethod": "unit",
+          "assertion": "Return true unconditionally from the animation policy used by the view. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+        },
+        {
+          "id": "mutation-2",
+          "kind": "oracle",
+          "expected": "fail",
+          "evidenceMethod": "unit",
+          "assertion": "Reset production selected-page state to0 whenever Reduce Motion changes. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+        },
+        {
+          "id": "motion-policy",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Check production PageMotionPolicy for false/true/false preference transitions. Source review verifies the actual animation modifier uses it with current accessibilityReduceMotion and nil for reduced motion."
+        },
+        {
+          "id": "selection-preserved",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Drive the production view state through a source-linked host/state seam; verify changing motion preference does not reset selection or alter page content; Next still cycles0\u21921\u21922\u21920. No disconnected test-only state machine."
+        },
+        {
+          "id": "next-change-policy",
+          "kind": "unit",
+          "expected": "pass",
+          "assertion": "Compile actual view and review current environment input is read for subsequent page changes, with no unconditional or second animation. Test the linked policy and state boundary; rendered motion and cancellation of an already-running transition are not measured."
+        }
+      ]
+    }
+  ]
+}
