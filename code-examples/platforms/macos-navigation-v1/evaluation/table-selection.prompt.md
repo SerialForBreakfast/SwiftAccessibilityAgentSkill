@@ -1,0 +1,1 @@
+Our AppKit invoice table refreshes and reorders rows while someone is using it. Rows have stable string IDs and titles; titles can repeat or change. Keep the selected invoice if it remains, otherwise clear selection. Reject duplicate IDs without changing the existing table. Provide a small NSTableView implementation and unit tests, including selection made directly on the table.

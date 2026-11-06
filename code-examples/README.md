@@ -9,6 +9,11 @@ that approval does not promote these library examples.
 
 ## Available now
 
+[Mac navigation and Apple TV results](../research/evaluation/platform-navigation-v1/README.md)
+adds 34 positive methods across table selection, key-view ownership, filtered result
+actions and motion-independent status. Four question/rubric pairs are draft; the
+native batch is executed. Prior example packages and results remain unchanged.
+
 [AppKit and tvOS expansion](../research/evaluation/platform-expansion-v1/README.md)
 adds separate platform packages, a native adapter and opt-in retrieval candidate.
 These live under `platforms/`, outside the frozen iOS pilot/campaign selection.

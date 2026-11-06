@@ -1,0 +1,172 @@
+{
+  "schema": 1,
+  "id": "macos-navigation-v1",
+  "revision": "1",
+  "platform": "macOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 27,
+  "limitations": "Unit configuration and application policy only; no UI automation, delivered focus/speech, rendered-layout or universal usability claim. macOS27 host is not macOS26 runtime evidence.",
+  "claims": [
+    {
+      "id": "selection",
+      "url": "https://developer.apple.com/documentation/appkit/nstableview/selectrowindexes(_:byextendingselection:)",
+      "section": "NSTableView.h row selection and data source; stable-ID reconciliation is application policy",
+      "statement": "NSTableView.h row selection and data source; stable-ID reconciliation is application policy",
+      "availability": "Inspected installed SDK27 declarations; target26 compile and exact runtime recorded separately. Unannotated introductions and full member audit remain unresolved.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "key-order",
+      "url": "https://developer.apple.com/documentation/appkit/nsview/nextkeyview",
+      "section": "NSView.h nextKeyView; owned-cycle filtering and teardown are application policy",
+      "statement": "NSView.h nextKeyView; owned-cycle filtering and teardown are application policy",
+      "availability": "Inspected installed SDK27 declarations; target26 compile and exact runtime recorded separately. Unannotated introductions and full member audit remain unresolved.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/DesktopNavigation.swift",
+      "sha256": "9b0f044f9062549ce7ccedd99469411a3eaabf8c89840b3cdb3b1a4e9aeb59c8"
+    },
+    {
+      "path": "Tests/DesktopNavigationTests.swift",
+      "sha256": "ba693160f294d947dafd405aa16e7c0ae21859bb95aae86460b43306420cd914"
+    },
+    {
+      "path": "NegativeFixtures/LostSelection.swift",
+      "sha256": "4e7f603b115d55dcbb5235d2a74d0364f550fe20d541324e89f02c296be0efe6"
+    },
+    {
+      "path": "NegativeFixtures/DuplicateIDs.swift",
+      "sha256": "602389ae74a87b3149ef10f8c4015235406acc4ca5b60bf2e5baeee69dece79c"
+    },
+    {
+      "path": "NegativeFixtures/DisabledKeyView.swift",
+      "sha256": "61bf012e3c276e1c60a3713669248372bdacb555e2ea884ff46dd13ad8ad569b"
+    },
+    {
+      "path": "NegativeFixtures/LeakedKeyLinks.swift",
+      "sha256": "55bfde29ed7806009e05b1906ea1bb2efcc2b589c08296339245643465f79b5f"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "selection",
+        "key-order"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "selection",
+        "key-order"
+      ],
+      "testIds": [
+        "DesktopNavigationTests/testRowsAndVisibleValues",
+        "DesktopNavigationTests/testSelectByIdentity",
+        "DesktopNavigationTests/testReorderPreservesIdentity",
+        "DesktopNavigationTests/testRemovedSelectionClears",
+        "DesktopNavigationTests/testUnknownSelectionClears",
+        "DesktopNavigationTests/testDuplicateIDsRejectedAtomically",
+        "DesktopNavigationTests/testEmptyResultsClearSelection",
+        "DesktopNavigationTests/testNoSelectionIsNotInvented",
+        "DesktopNavigationTests/testExternalTableSelectionIsPreserved",
+        "DesktopNavigationTests/testRenamedItemKeepsIdentity",
+        "DesktopNavigationTests/testKeyCycleFollowsInputOrder",
+        "DesktopNavigationTests/testDisabledKeyViewExcluded",
+        "DesktopNavigationTests/testHiddenKeyViewExcluded",
+        "DesktopNavigationTests/testRemovedKeyLinksCleared",
+        "DesktopNavigationTests/testDuplicateKeyInputDoesNotBreakCycle",
+        "DesktopNavigationTests/testStopClearsOwnedLinks",
+        "DesktopNavigationTests/testIncomingDisabledLinkCleared",
+        "DesktopNavigationTests/testEmptyKeyOrderClearsPriorLinks"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "lostselection",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "selection",
+        "key-order"
+      ],
+      "testIds": [
+        "DesktopNavigationTests/testReorderPreservesIdentity"
+      ],
+      "failureIds": [
+        "DesktopNavigationTests/testReorderPreservesIdentity"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopNavigation.swift",
+        "source": "NegativeFixtures/LostSelection.swift"
+      }
+    },
+    {
+      "id": "duplicateids",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "selection",
+        "key-order"
+      ],
+      "testIds": [
+        "DesktopNavigationTests/testDuplicateIDsRejectedAtomically"
+      ],
+      "failureIds": [
+        "DesktopNavigationTests/testDuplicateIDsRejectedAtomically"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopNavigation.swift",
+        "source": "NegativeFixtures/DuplicateIDs.swift"
+      }
+    },
+    {
+      "id": "disabledkeyview",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "selection",
+        "key-order"
+      ],
+      "testIds": [
+        "DesktopNavigationTests/testDisabledKeyViewExcluded"
+      ],
+      "failureIds": [
+        "DesktopNavigationTests/testDisabledKeyViewExcluded"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopNavigation.swift",
+        "source": "NegativeFixtures/DisabledKeyView.swift"
+      }
+    },
+    {
+      "id": "leakedkeylinks",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "selection",
+        "key-order"
+      ],
+      "testIds": [
+        "DesktopNavigationTests/testRemovedKeyLinksCleared"
+      ],
+      "failureIds": [
+        "DesktopNavigationTests/testRemovedKeyLinksCleared"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopNavigation.swift",
+        "source": "NegativeFixtures/LeakedKeyLinks.swift"
+      }
+    }
+  ]
+}

@@ -37,7 +37,7 @@ row.accessibilityElementsHidden = true
 | switch-state | unit | pass | Unit test public row/child accessibility configuration and directly dispatch switch value-change events; assert current switch state and only the setting callback changes. This does not assert VoiceOver traversal. |
 | help-action | unit | pass | Directly dispatch Help activation and assert one Help callback with no switch-state or setting-callback change. |
 
-Status: evidence pending. Code-contract acceptance is not complete interaction validation.
+Status: gold-ready for compile/unit/source-review evaluation. See the [reviewed closeout](evals/os26/reports/2026-11-05-gold-closeout/REVIEW.md).
 
 ## GP26-02
 
@@ -72,7 +72,7 @@ final class OrderCell: UITableViewCell {
 | mutation-2 | unit oracle | fail | The oracle rejects this single-error mutation: Leave status from previous order Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill. |
 | reconfiguration | unit | pass | Configure priority Alice/shipped, then nonpriority Bob/processing on the SAME instance without prepareForReuse: label names Bob without stale priority and value reports processing; reverse ordering also works. |
 
-Status: evidence pending. Code-contract acceptance is not complete interaction validation.
+Status: gold-ready for compile/unit/source-review evaluation. See the [reviewed closeout](evals/os26/reports/2026-11-05-gold-closeout/REVIEW.md).
 
 ## GP26-03
 
@@ -105,7 +105,7 @@ summary.heightAnchor.constraint(equalToConstant: 44).isActive = true
 | live-resize | unit | pass | Assert text-scaling configuration and layout-policy prerequisites for long localized totals, including multiline text and absence of a fixed enclosing height. This does not assert rendered layout or readability. |
 | payment-action | unit | pass | Directly dispatch payment activation and assert one existing callback and the Pay now title. Independent source review checks that the fixture patch leaves the existing system button configuration and callback wiring unchanged; no before/after runtime configuration or visual comparison is claimed. |
 
-Status: evidence pending. Code-contract acceptance is not complete interaction validation.
+Status: gold-ready for compile/unit/source-review evaluation. See the [reviewed closeout](evals/os26/reports/2026-11-05-gold-closeout/REVIEW.md).
 
 ## GP26-04
 
@@ -143,7 +143,7 @@ struct MessageRow: View {
 | voiceover-delete | review | pass | Review supplied source against Apple native-control documentation: visible named deletion control and subject content remain present. Do not claim observed VoiceOver interaction. |
 | keyboard-delete | review | pass | Review native-control and handler wiring for keyboard-compatible activation without deletion on focus. Actual Full Keyboard Access navigation is outside this endpoint. |
 
-Status: evidence pending. Code-contract acceptance is not complete interaction validation.
+Status: gold-ready for compile/unit/source-review evaluation. See the [reviewed closeout](evals/os26/reports/2026-11-05-gold-closeout/REVIEW.md).
 
 ## GP26-05
 
@@ -180,7 +180,7 @@ ScrollView(.horizontal) {
 | remote-activation | unit | pass | Directly invoke the production activation path for first/middle/last movie IDs and assert one correct callback per invocation. No remote focus or Select delivery claim follows. |
 | voiceover-name | review | pass | Review source for meaningful movie titles and native control semantics against documented contracts; no spoken output assertion. |
 
-Status: evidence pending. Code-contract acceptance is not complete interaction validation.
+Status: gold-ready for compile/unit/source-review evaluation. See the [reviewed closeout](evals/os26/reports/2026-11-05-gold-closeout/REVIEW.md).
 
 ## GP26-06
 
@@ -213,4 +213,4 @@ struct NotificationSettings: View {
 | native-toggle | unit | pass | Exercise the production binding/state path in both directions and assert backing state changes correctly. Source review separately checks native Toggle wiring; unit state checks do not prove VoiceOver activation. |
 | scope-control | review | pass | No demonstrated defect is fabricated; valid equivalent implementations are allowed but unnecessary semantic overrides count as review burden, not automatic critical errors. |
 
-Status: evidence pending. Code-contract acceptance is not complete interaction validation.
+Status: gold-ready for compile/unit/source-review evaluation. See the [reviewed closeout](evals/os26/reports/2026-11-05-gold-closeout/REVIEW.md).

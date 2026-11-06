@@ -1,0 +1,170 @@
+{
+  "schema": 1,
+  "id": "tvos-results-v1",
+  "revision": "1",
+  "platform": "tvOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Unit configuration and application policy only; no UI automation, delivered focus/speech, rendered-layout or universal usability claim. macOS27 host is not macOS26 runtime evidence.",
+  "claims": [
+    {
+      "id": "results",
+      "url": "https://developer.apple.com/documentation/uikit/uicontrol/sendactions(for:)",
+      "section": "UIControl.h ordinary primary action dispatch; filtering, stable IDs and stale callback rejection are application policy",
+      "statement": "UIControl.h ordinary primary action dispatch; filtering, stable IDs and stale callback rejection are application policy",
+      "availability": "Inspected installed SDK27 declarations; target26 compile and exact runtime recorded separately. Unannotated introductions and full member audit remain unresolved.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "motion",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibility/isreducemotionenabled",
+      "section": "UIAccessibility.h reduce motion query; final content independent of animation is example policy",
+      "statement": "UIAccessibility.h reduce motion query; final content independent of animation is example policy",
+      "availability": "Inspected installed SDK27 declarations; target26 compile and exact runtime recorded separately. Unannotated introductions and full member audit remain unresolved.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/TelevisionResults.swift",
+      "sha256": "609186885aad0f09ee9585c0c280b60ec7d9875022579e6d1b1e281e095f983d"
+    },
+    {
+      "path": "Tests/TelevisionResultsTests.swift",
+      "sha256": "c1241ddd4ee100a0f75ccd7a770afca85e58ad88e0db29879b6f93f1a1aac999"
+    },
+    {
+      "path": "NegativeFixtures/StaleButton.swift",
+      "sha256": "8318327f49a71abf401c1ac54cacfc7a667ed11708c46f668372fec6a16bc5bd"
+    },
+    {
+      "path": "NegativeFixtures/ClobberedTraits.swift",
+      "sha256": "a381f3f37e8d956d47c040cfacc452f5b1029c6a985e163bf2fd26053c6353ec"
+    },
+    {
+      "path": "NegativeFixtures/MotionHidesContent.swift",
+      "sha256": "cd3931ab2db1bd0d10c0e78910de415578ffe496ad547ec1dd7911e8b29293df"
+    },
+    {
+      "path": "NegativeFixtures/RepeatedAnimation.swift",
+      "sha256": "9581dc8b80c7a1cd90c0e0d9144b53cfa185d9dddb24f3e30725ab371ee29279"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "results",
+        "motion"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "results",
+        "motion"
+      ],
+      "testIds": [
+        "TelevisionResultsTests/testVisibleAndAccessibleNames",
+        "TelevisionResultsTests/testPrimaryActionSelectsItem",
+        "TelevisionResultsTests/testReorderPreservesSelection",
+        "TelevisionResultsTests/testFilterPreservesVisibleSelection",
+        "TelevisionResultsTests/testFilteredSelectionClears",
+        "TelevisionResultsTests/testStaleButtonDoesNotSelectReboundItem",
+        "TelevisionResultsTests/testDuplicateIDsRejectedAtomically",
+        "TelevisionResultsTests/testEmptyResultsRemoveOldButtons",
+        "TelevisionResultsTests/testDisabledButtonCannotSelect",
+        "TelevisionResultsTests/testSelectionPreservesUnrelatedTraits",
+        "TelevisionResultsTests/testReducedMotionStillUpdatesContent",
+        "TelevisionResultsTests/testNormalMotionAnimatesAfterContent",
+        "TelevisionResultsTests/testPreferenceReadOnEachChange",
+        "TelevisionResultsTests/testRepeatedStatusIsQuiet",
+        "TelevisionResultsTests/testStatusRemainsAccessible",
+        "TelevisionResultsTests/testLocalizedStatusPreserved"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "stalebutton",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "results",
+        "motion"
+      ],
+      "testIds": [
+        "TelevisionResultsTests/testStaleButtonDoesNotSelectReboundItem"
+      ],
+      "failureIds": [
+        "TelevisionResultsTests/testStaleButtonDoesNotSelectReboundItem"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionResults.swift",
+        "source": "NegativeFixtures/StaleButton.swift"
+      }
+    },
+    {
+      "id": "clobberedtraits",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "results",
+        "motion"
+      ],
+      "testIds": [
+        "TelevisionResultsTests/testSelectionPreservesUnrelatedTraits"
+      ],
+      "failureIds": [
+        "TelevisionResultsTests/testSelectionPreservesUnrelatedTraits"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionResults.swift",
+        "source": "NegativeFixtures/ClobberedTraits.swift"
+      }
+    },
+    {
+      "id": "motionhidescontent",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "results",
+        "motion"
+      ],
+      "testIds": [
+        "TelevisionResultsTests/testReducedMotionStillUpdatesContent"
+      ],
+      "failureIds": [
+        "TelevisionResultsTests/testReducedMotionStillUpdatesContent"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionResults.swift",
+        "source": "NegativeFixtures/MotionHidesContent.swift"
+      }
+    },
+    {
+      "id": "repeatedanimation",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "results",
+        "motion"
+      ],
+      "testIds": [
+        "TelevisionResultsTests/testRepeatedStatusIsQuiet"
+      ],
+      "failureIds": [
+        "TelevisionResultsTests/testRepeatedStatusIsQuiet"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionResults.swift",
+        "source": "NegativeFixtures/RepeatedAnimation.swift"
+      }
+    }
+  ]
+}

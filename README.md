@@ -48,8 +48,8 @@ skill. Each linked report explains exactly what its assertions establish.
 | Framework / platform | Examples currently tested | Recorded runtime | Positive unit methods passed |
 | --- | --- | --- | ---: |
 | [UIKit / iOS](research/evaluation/failure-driven/uikit-closure-v1/RESULTS.md) | Naming, traits, controls, grouping, actions, reuse, rotors, text scaling, preferences, modal restoration requests, media and form state | iOS 26.5 | 202 |
-| [AppKit / macOS](research/evaluation/platform-expansion-v1/RESULTS.md) | Names, ordinary actions, optional accessibility shortcuts, reuse and state-change notification requests | macOS 27.0 | 20 |
-| [UIKit / Apple TV](research/evaluation/platform-expansion-v1/RESULTS.md) | Card names and actions, reuse, preferred focus candidates and selected-state traits | tvOS 26.5 | 22 |
+| [AppKit / macOS](research/evaluation/platform-navigation-v1/RESULTS.md) | Names, actions, reuse, notification requests, table selection and key-view configuration | macOS 27.0 | 38 |
+| [UIKit / Apple TV](research/evaluation/platform-navigation-v1/RESULTS.md) | Card actions, reuse, focus candidates, filtered results, selected traits and motion-independent status | tvOS 26.5 | 38 |
 
 Checkpoint: November 6, 2026. Method counts are not coverage percentages or proof of
 real-world assistive-tool behavior. SwiftUI and visionOS guidance is available in
@@ -59,6 +59,10 @@ the skill; the tested companion currently covers the three lanes above.
 review and evaluation before inclusion in a future skill release. The installed
 skill remains version `0.2.2`. Test results establish example behavior; paired model
 evaluations establish whether a skill change improves agent answers.
+
+[Production-readiness plan](research/evaluation/PRODUCTION-READINESS.md): agents own
+technical review and evaluation; the project owner approves quota, disputed product
+decisions and the release.
 
 ## How We Find and Close Gaps
 
@@ -103,6 +107,9 @@ selects AppKit/macOS or UIKit/tvOS explicitly. It reads one or two guidelines by
 default, adds source only with `example`, and tests/manifest only with `contract`.
 It records actual file hashes and bytes; it does not silently load iOS examples,
 research archives or grading answers. This candidate is not yet released routing.
+The [navigation/results extension](research/evaluation/platform-navigation-v1/README.md#on-demand-retrieval-candidate)
+adds table selection, key-view order, filtered results and motion-status examples
+without altering the earlier route outputs.
 
 The latest UIKit campaign used **SDK 27.0, deployment target 26.0, and iOS 26.5
 (23F77)**. Compilation and runtime evidence are recorded separately. SDK27 use does
@@ -142,6 +149,11 @@ We track unsupported claims, API-availability errors, preservation of existing
 behavior, input/output tokens, reference bytes, tool calls, latency and available
 cost data. Paired comparisons use the same scenarios and report uncertainty. Known
 incidents stay development cases rather than becoming artificial fresh holdouts.
+
+The [prompt-record contract](research/evaluation/prompt-records-v1/README.md) requires
+every authoring, evaluation, repair and judging prompt to link its complete captured
+inputs, original outputs and separate analysis. Missing historical captures stay
+explicit. The audit record is kept separate from the clean question sent to a model.
 
 **Frontier Swift coding agents are the primary target.** Small local models provide
 diagnostic data, not the optimization target. Existing model pilots are useful

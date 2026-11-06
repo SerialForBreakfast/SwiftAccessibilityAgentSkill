@@ -6,6 +6,7 @@ import {hash} from './contracts.mjs';
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const read = p=>fs.readFileSync(root+p);
 const report = JSON.parse(read('research/evaluation/platform-expansion-v1/results-index.json'));
+const amendment = JSON.parse(read('research/evaluation/platform-expansion-v1-amendment/amendment.json'));
 for(const folder of ['macos-appkit-v1','tvos-uikit-v1']) {
   test(`${folder}: every current check has an exact successful validation receipt`,()=>{
     const bytes=read(`code-examples/platforms/${folder}/manifest.json`),m=JSON.parse(bytes);
@@ -25,7 +26,16 @@ for(const folder of ['macos-appkit-v1','tvos-uikit-v1']) {
 test('first failures and source pins remain explicit',()=>{
   assert.ok(report.attempts.some(r=>r.status==='blocked'&&r.reason==='Ambiguous or unavailable native Mac destination'));
   assert.ok(report.attempts.some(r=>r.status==='failed'&&r.execution?.failedTestIds.includes('DesktopActionsTests/testShortcutDoesNotRetainRow')));
-  for(const pin of report.pins)assert.equal(hash(read(pin.path)),pin.sha256,pin.path);
+  assert.equal(hash(read(amendment.originalIndex.path)),amendment.originalIndex.sha256);
+  assert.deepEqual(amendment.excludedNonEvidence.map(p=>p.path),['code-examples/platforms/.DS_Store']);
+  assert.deepEqual(amendment.supersededVerifiers.map(p=>p.path),['code-examples/tools/platform-evidence.test.mjs']);
+  for(const pin of report.pins) {
+    const excluded=amendment.excludedNonEvidence.find(p=>p.path===pin.path);
+    if(excluded) { assert.equal(excluded.sha256,pin.sha256); continue; }
+    const original=amendment.supersededVerifiers.find(p=>p.path===pin.path);
+    if(original) assert.equal(original.sha256,pin.sha256);
+    assert.equal(hash(read(original?.preservedPath??pin.path)),pin.sha256,pin.path);
+  }
 });
 test('all new positive methods have paired controller rubrics and isolated questions',()=>{
   for(const folder of ['macos-appkit-v1','tvos-uikit-v1']) {
