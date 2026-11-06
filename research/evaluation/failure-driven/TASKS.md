@@ -7,6 +7,18 @@ evaluation work. This file augments, rather than rewrites, the pinned
 
 ## Work Packages
 
+The [eight-answer UIKit checkout review](checkout-review-20261106/README.md)
+records first type-check outcomes and provisional source assessments for existing
+GP26-03 outputs. Exact first failures are preserved privately; BigDog adjudication
+is requested, not accepted yet. This is FD-04 calibration evidence, not completion
+of the unit-test or baseline gates. GP26-04 SwiftUI remains deferred.
+
+The [focused checkout units](checkout-review-20261106/UNIT-REVIEW.md) subsequently
+ran eight configuration methods on the four compiling answers: seven passed,
+one original-answer typography-preservation test failed. Missing-member answers
+were not repaired. This supplements the first compiler record; BigDog has not
+yet acknowledged either return packet. No gold prompt or frozen rubric changed.
+
 | ID | Story and owner role | Dependencies | Acceptance criteria |
 | --- | --- | --- | --- |
 | FD-01 | As a maintainer, I need adjudicated incidents so faulty tests do not become gold answers. Author + independent reviewer | None | Classify all F01-F08 and C01/C02; retain exact archive links/hashes; identify claim and oracle limits; record disputed interpretations. FR-01/02/06 |

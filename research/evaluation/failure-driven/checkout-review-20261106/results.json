@@ -1,0 +1,222 @@
+{
+  "schema": 1,
+  "status": "executed-first-typechecks-provisional-source-assessment",
+  "framework": "UIKit",
+  "case": "GP26-03",
+  "review_not_blinded": true,
+  "mapping_opened": false,
+  "environment": {
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+    "sdk_version": "27.0",
+    "sdk_build": "24A430",
+    "target": "arm64-apple-ios26.0-simulator",
+    "runtime": "not executed; compile only"
+  },
+  "cases": [
+    {
+      "review_id": "R04",
+      "attempt": 1,
+      "exit_code": 1,
+      "status": "compile-failure",
+      "elapsed_seconds": 3.461,
+      "source_sha256": "997974a332621f792e298303ee3b69f3922d3204725afe3ab828c495abe5c176",
+      "stderr_sha256": "475b04d94821d84d875facb0ae83a10efb3dd1d6dd3027cf4d476947b0af94ca",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unit_tests_run": 0,
+      "repair_attempts": 0,
+      "case": "GP26-03",
+      "answer_sha256": "c9379b17f74fa3f3482987dab8112f202f212b5354e7700168fb67af36b2d650",
+      "prompt_sha256": "3a752fc805d1a2108aae546ee0f6731b7a242bec7b22f061286aad86a206dcb2",
+      "user_sha256": "baa71d2443b41a260020c67a89cb4294c5d81a27d7e860d27bedc5d3bbfd17d0",
+      "fences": [
+        {
+          "file": "fences/R04/01.swift",
+          "sha256": "99af19d8b5f5fdcc6d4c0d52dfdd60475d5f1d692f29b1c5231b97839a5f60ef"
+        }
+      ],
+      "scaffold_diff_sha256": "803ce4fdd06f4682c96c9940ba5ca80fd5c3d6fb9e2a446bc13267294907db51",
+      "assessment": "Integration incomplete: single fence interleaves setup statements and controller methods; split at private func without altering source bytes. summary remains local. Initial call and pinning remain prose instructions, not synthesized."
+    },
+    {
+      "review_id": "R08",
+      "attempt": 1,
+      "exit_code": 1,
+      "status": "compile-failure",
+      "elapsed_seconds": 0.22,
+      "source_sha256": "8737b325f009299228f95eba314ec773224708b038f4621f9b8224055aa731ab",
+      "stderr_sha256": "41a112f4729b0adeb9940504b33a14001b09c81f8fa5122dba3cd5a07a46ed45",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unit_tests_run": 0,
+      "repair_attempts": 0,
+      "case": "GP26-03",
+      "answer_sha256": "d473ce8439794e11028884f55c81eb7678184507c384b6518626ae021610ce75",
+      "prompt_sha256": "b63a1ba7148fd3197e0b199debc0308cbce3d4bd5dc08baccd4064cf15499851",
+      "user_sha256": "baa71d2443b41a260020c67a89cb4294c5d81a27d7e860d27bedc5d3bbfd17d0",
+      "fences": [
+        {
+          "file": "fences/R08/01.swift",
+          "sha256": "5d32862beb214aebbaaccf9d5cb770decdf0bed950555d49fb0e94b79de5e592"
+        }
+      ],
+      "scaffold_diff_sha256": "12efe5810d05028f602767c19fbc141974fb1a4b9dc8300a6fa3b17889813513",
+      "assessment": "Setup fence preserved in one method. updateSummaryAxis is local, yet trait closure calls self.updateSummaryAxis. No member synthesized."
+    },
+    {
+      "review_id": "R09",
+      "attempt": 1,
+      "exit_code": 1,
+      "status": "compile-failure",
+      "elapsed_seconds": 0.22,
+      "source_sha256": "88046223a8a87354e42e11160767fd360a3fc7618c7ca938152ee2dbaf160040",
+      "stderr_sha256": "b2cce1b2c97df6377c9b82bdf8e8bb850796c716fbcd7b2dff8332ac46895484",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unit_tests_run": 0,
+      "repair_attempts": 0,
+      "case": "GP26-03",
+      "answer_sha256": "161cbe9335da58a0dea7922d21541982bb578dd5fecebc2a5eb22d71760c387a",
+      "prompt_sha256": "28fd19317b73c6000e07286c7d909146efd39cd262323765573e0a223aa2487a",
+      "user_sha256": "baa71d2443b41a260020c67a89cb4294c5d81a27d7e860d27bedc5d3bbfd17d0",
+      "fences": [
+        {
+          "file": "fences/R09/01.swift",
+          "sha256": "eb613754806c25648a62c70bfbc01dd2cfd016d2c825523f3a085bd6b3639d35"
+        },
+        {
+          "file": "fences/R09/02.swift",
+          "sha256": "8205e15b99d340eed69b41a2ec0243a9124b16b1bda22d1e19ab646221c3800c"
+        }
+      ],
+      "scaffold_diff_sha256": "0a160d6246b20b1705f701a98d680cd64946908fc5113f6a33f67197c0e42825",
+      "assessment": "First fence setup; second override at controller scope as requested. summary remains local; no member synthesized."
+    },
+    {
+      "review_id": "R10",
+      "attempt": 1,
+      "exit_code": 1,
+      "status": "compile-failure",
+      "elapsed_seconds": 0.225,
+      "source_sha256": "382e706c058aa7d71a94c893a209c956dbc5707affb66ea8e37101f6b4e7fe20",
+      "stderr_sha256": "ab678f6f4e09edd44483f58d788d2a52cdbb7d21845f78df9a93d66e0252899d",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unit_tests_run": 0,
+      "repair_attempts": 0,
+      "case": "GP26-03",
+      "answer_sha256": "8900c284c1ce2d640499e6c60c561d507e7949e11d32a6f4fd13cf84dca9013b",
+      "prompt_sha256": "246b7c776713deaffdbc8beb0e235719cffedbfb5215283cb282b4aefb24f8d6",
+      "user_sha256": "baa71d2443b41a260020c67a89cb4294c5d81a27d7e860d27bedc5d3bbfd17d0",
+      "fences": [
+        {
+          "file": "fences/R10/01.swift",
+          "sha256": "c5ed276f9bf0b4cd48df1a70e1ddb2d49ab94d6e934590a15011b51d76a88a9c"
+        },
+        {
+          "file": "fences/R10/02.swift",
+          "sha256": "d81fc0eac2b2e6345c25b9d3c4de3c0794ee7036adbd275bd2c9b8402a5143d2"
+        }
+      ],
+      "scaffold_diff_sha256": "6d8d78775b2ed8f1e1611d1211b9f5651d3b052044479258f0066bccc782fa2e",
+      "assessment": "First fence setup; second override at controller scope as requested. Initial axis update is prose only; not added. summary remains local."
+    },
+    {
+      "review_id": "R12",
+      "attempt": 1,
+      "exit_code": 0,
+      "status": "pass",
+      "elapsed_seconds": 0.226,
+      "source_sha256": "d19042ff26df77fb8acde1c07cf0f8bc7124ce9c3ae08ae553253c21f44104bb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unit_tests_run": 0,
+      "repair_attempts": 0,
+      "case": "GP26-03",
+      "answer_sha256": "4bde03d5c5bd2dbb5d9526f974b7c2b76d3326335149b658a1c0568fbf0621b9",
+      "prompt_sha256": "28fd19317b73c6000e07286c7d909146efd39cd262323765573e0a223aa2487a",
+      "user_sha256": "baa71d2443b41a260020c67a89cb4294c5d81a27d7e860d27bedc5d3bbfd17d0",
+      "fences": [
+        {
+          "file": "fences/R12/01.swift",
+          "sha256": "26cfd3a6e765fef9b726103c0581d9998bae0965128119ae3681e2e863a5533b"
+        },
+        {
+          "file": "fences/R12/02.swift",
+          "sha256": "e7472098c14a2ca5f8dd7b1291b3832fad91be1403d869d12621f08f23951a4e"
+        }
+      ],
+      "scaffold_diff_sha256": "ad235f7959adb74bf28d0d4169c4eb2ed32ab1113ae720cf5711be75a48a5fd2",
+      "assessment": "Both fences concatenated inside setup so closure captures local summary. No lifecycle or hierarchy attachment added. Autoshrinking and unattached initial trait read require contract review."
+    },
+    {
+      "review_id": "R13",
+      "attempt": 1,
+      "exit_code": 0,
+      "status": "pass",
+      "elapsed_seconds": 0.22,
+      "source_sha256": "fd82dd2fd17503a59a51684ab7e473c357b96d26bfa7c6a4521b4710386dc07c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unit_tests_run": 0,
+      "repair_attempts": 0,
+      "case": "GP26-03",
+      "answer_sha256": "07398ea8ac9a3d1e3a2c7bcd37f40681702679f126e41c73e0085d754d21f751",
+      "prompt_sha256": "246b7c776713deaffdbc8beb0e235719cffedbfb5215283cb282b4aefb24f8d6",
+      "user_sha256": "baa71d2443b41a260020c67a89cb4294c5d81a27d7e860d27bedc5d3bbfd17d0",
+      "fences": [
+        {
+          "file": "fences/R13/01.swift",
+          "sha256": "b40bce2768ad2e78d4110ed1620d3b14d352772be3d8042fbd3d2bbc593914a7"
+        }
+      ],
+      "scaffold_diff_sha256": "f461f12dee7237383f16a734679bf90571a9c306a32b64146a228034ca0fcb36",
+      "assessment": "Single setup fence; permanent vertical layout is a valid alternative to conditional axis changes. Optional prose alternative not fabricated."
+    },
+    {
+      "review_id": "R14",
+      "attempt": 1,
+      "exit_code": 0,
+      "status": "pass",
+      "elapsed_seconds": 0.223,
+      "source_sha256": "02b2b04f7ab7a4d374e8fd07e9d528bd5cd0c9f121bfc93e64265fe16947e3ee",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unit_tests_run": 0,
+      "repair_attempts": 0,
+      "case": "GP26-03",
+      "answer_sha256": "2f8c327bd34d5f79b127fd6b772e46b26746a3315a9743f2570ee0e97d3da449",
+      "prompt_sha256": "b63a1ba7148fd3197e0b199debc0308cbce3d4bd5dc08baccd4064cf15499851",
+      "user_sha256": "baa71d2443b41a260020c67a89cb4294c5d81a27d7e860d27bedc5d3bbfd17d0",
+      "fences": [
+        {
+          "file": "fences/R14/01.swift",
+          "sha256": "7a44bde8431fa2a434e6356e3050fff92b789fb60fb30b31841b53bd20e8eae8"
+        }
+      ],
+      "scaffold_diff_sha256": "bb21e29a634ad2ce3371e9be603758c174c259620b322343cec3b1504414b845",
+      "assessment": "Single setup fence; retain original totalLabel.text assignment from prompt because minimal patch does not replace it. Conditional-axis callback is prose only; not synthesized."
+    },
+    {
+      "review_id": "R16",
+      "attempt": 1,
+      "exit_code": 0,
+      "status": "pass",
+      "elapsed_seconds": 0.224,
+      "source_sha256": "56c9882692f1223e825d6df6cc2636870ddddaa16cd2faac7f1c2599a114e8a6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unit_tests_run": 0,
+      "repair_attempts": 0,
+      "case": "GP26-03",
+      "answer_sha256": "9743ba4d355dcc4e772f8ce91f655868f59bf5b999eb653575f16ae2624bd8b8",
+      "prompt_sha256": "3a752fc805d1a2108aae546ee0f6731b7a242bec7b22f061286aad86a206dcb2",
+      "user_sha256": "baa71d2443b41a260020c67a89cb4294c5d81a27d7e860d27bedc5d3bbfd17d0",
+      "fences": [
+        {
+          "file": "fences/R16/01.swift",
+          "sha256": "9fd8de4f0f9cd340b06a0f2907cc9585e0648913c3a7df94e1d28012908f9854"
+        }
+      ],
+      "scaffold_diff_sha256": "08441f2bc448a1edfda911e54eb3bd1d2dbc607b7ab44f5516765fc937b21af2",
+      "assessment": "Single setup fence; button font mutation violates explicit preservation request. Trait-change handling delegated to prose/assumption; not synthesized."
+    }
+  ]
+}
