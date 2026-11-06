@@ -1,5 +1,11 @@
 # Independent review closeout
 
+Historical local note. Superseded for gold readiness by the upstream
+[reviewed closeout](reports/2026-11-05-gold-closeout/REVIEW.md), merged after this
+note was written. That review narrows the payment criterion to source preservation;
+it does not claim a runtime before/after appearance comparison. The stricter local
+catalog/snapshot guards remain required for newly assembled native receipts.
+
 BigDog reviewed published revision `5ddca1d80d405308b826c8aad96f0bc13022c5d7`.
 The response was received through the approved project channel at cursor1398,
 message `1ff5330e-8aa9-4eff-9a04-0459e4a1cf4c`. This note summarizes the received

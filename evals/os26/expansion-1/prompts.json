@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "revision": "os26-expansion-1-draft-1",
+  "status": "draft-not-gold",
+  "cases": [
+    {
+      "id": "GP26-07",
+      "title": "Return to the current payment origin",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "target": "26.0",
+      "minimumDeployment": "iOS 26.0",
+      "provenance": "synthetic-new-development",
+      "prompt": "iOS 26.0, UIKit.\n\nRows may be refreshed or removed while this payment panel is open. `rowButtons` always maps stable IDs to the current attached, visible, enabled buttons; `payButton` is a persistent fallback. All calls happen on the main thread, and only one panel is open at a time. After dismissal, attention should return to the originating row if it still exists, otherwise to `payButton`. The current code sometimes targets an old row before the panel has closed. Fix the code without adding a guessed delay or changing the payment operation.\n\n```swift\nimport UIKit\n\nfinal class PaymentPresenter {\n    let host: UIViewController\n    let payButton: UIButton\n    var rowButtons: [UUID: UIButton] = [:]\n\n    init(host: UIViewController, payButton: UIButton) {\n        self.host = host\n        self.payButton = payButton\n    }\n\n    func open(from id: UUID, panel: UIViewController) {\n        let originalButton = rowButtons[id]\n        host.present(panel, animated: true)\n        // The panel's existing Done action calls this closure once.\n        onDone = {\n            UIAccessibility.post(notification: .layoutChanged,\n                                 argument: originalButton)\n            panel.dismiss(animated: true)\n        }\n    }\n\n    var onDone: (() -> Void)?\n}\n```"
+    },
+    {
+      "id": "GP26-08",
+      "title": "Contain a custom popup and restore background state",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "target": "26.0",
+      "minimumDeployment": "iOS 26.0",
+      "provenance": "synthetic-new-development",
+      "prompt": "iOS 26.0, UIKit.\n\nThis custom popup and `content` are siblings under `root`. `popup` is a container, not a single accessibility element; it contains a labeled Close button with its callback already wired. Both views already have valid layout. VoiceOver can reach background controls while the popup is open, and some screens remain inaccessible after closing it. Fix show/close behavior, preserving the value of `content.accessibilityElementsHidden` that existed before each opening. Repeated show or close calls must be harmless; assume no other component changes that flag while this popup is open. Do not replace the Close action or turn the whole popup into one leaf element.\n\n```swift\nimport UIKit\n\nfinal class PopupPresenter {\n    let root: UIView\n    let content: UIView\n    let popup: UIView\n\n    init(root: UIView, content: UIView, popup: UIView) {\n        self.root = root\n        self.content = content\n        self.popup = popup\n    }\n\n    func show() {\n        root.addSubview(popup)\n        popup.accessibilityViewIsModal = false\n    }\n\n    func close() {\n        popup.removeFromSuperview()\n        content.accessibilityElementsHidden = true\n    }\n}\n```"
+    },
+    {
+      "id": "GP26-09",
+      "title": "Make a custom volume knob adjustable",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "target": "26.0",
+      "minimumDeployment": "iOS 26.0",
+      "provenance": "synthetic-new-development",
+      "prompt": "iOS 26.0, UIKit.\n\nThis knob is drawn elsewhere and the existing drag recognizer calls `dragChanged(to:)` with an integer percentage. It currently has no usable accessibility adjustment. Make its purpose, current value and adjustments accessible. The product step is 5 percentage points, the range is 0\u2026100, and one real value change must call `onChange` exactly once. Clamped requests that leave the value unchanged must not call it. Preserve the drag path and do not add automatic announcements for every change.\n\n```swift\nimport UIKit\n\nfinal class VolumeKnob: UIView {\n    private(set) var volume = 50\n    var onChange: ((Int) -> Void)?\n\n    func dragChanged(to requested: Int) {\n        setVolume(requested)\n    }\n\n    private func setVolume(_ requested: Int) {\n        let next = min(100, max(0, requested))\n        guard next != volume else { return }\n        volume = next\n        onChange?(next)\n        setNeedsDisplay()\n    }\n}\n```"
+    },
+    {
+      "id": "GP26-10",
+      "title": "Report download progress without repeated announcements",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "target": "26.0",
+      "minimumDeployment": "iOS 26.0",
+      "provenance": "synthetic-new-development",
+      "prompt": "iOS 26.0, UIKit.\n\nThe main-thread download callback reports integer percentages (display clamped to 0\u2026100) and may repeat its terminal event. Only one download is active; `begin(id:)` starts a fresh unique ID. Late callbacks from an older ID and progress callbacks after the current operation has finished must be ignored. Keep the current percentage available as the label\u2019s accessibility value without announcing every tick. Announce the first completion or failure once per ID; preserve its terminal state on duplicates. A later download must be able to announce its own outcome. Fix this implementation; no network code needs changing.\n\n```swift\nimport UIKit\n\nenum DownloadUpdate {\n    case progress(Int)\n    case completed\n    case failed(String)\n}\n\nfinal class DownloadStatus {\n    let label: UILabel\n    private var activeID: UUID?\n\n    init(label: UILabel) {\n        self.label = label\n        label.isAccessibilityElement = true\n        label.accessibilityLabel = \"Download\"\n    }\n\n    func begin(id: UUID) {\n        activeID = id\n        label.text = \"0%\"\n        label.accessibilityValue = \"0%\"\n    }\n\n    func receive(id: UUID, update: DownloadUpdate) {\n        let text: String\n        switch update {\n        case .progress(let value): text = \"\\(value)%\"\n        case .completed: text = \"Download complete\"\n        case .failed(let reason): text = \"Download failed: \\(reason)\"\n        }\n        label.text = text\n        label.accessibilityValue = text\n        UIAccessibility.post(notification: .announcement, argument: text)\n    }\n}\n```"
+    },
+    {
+      "id": "GP26-11",
+      "title": "Review a native volume slider",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "target": "26.0",
+      "minimumDeployment": "iOS 26.0",
+      "provenance": "synthetic-new-development",
+      "prompt": "iOS 26.0, SwiftUI.\n\nReview this volume setting for a concrete accessibility problem. Its parent owns a persisted volume value in 0\u2026100 and supplies a working two-way binding. Keep that binding, the allowed range and one-point increments. Explain any change you recommend; do not change unrelated settings.\n\n```swift\nimport SwiftUI\n\nstruct VolumeSettings: View {\n    @Binding var volume: Double\n\n    var body: some View {\n        Form {\n            Slider(value: $volume, in: 0...100, step: 1) {\n                Text(\"Volume\")\n            }\n        }\n    }\n}\n```"
+    },
+    {
+      "id": "GP26-12",
+      "title": "Review a reduced-motion transition",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "target": "26.0",
+      "minimumDeployment": "iOS 26.0",
+      "provenance": "synthetic-new-development",
+      "prompt": "iOS 26.0, SwiftUI.\n\nReview this three-page view for a concrete accessibility problem. The user can change Reduce Motion while it is open; the next page change should follow the current preference without resetting the selected page. Content and next-page behavior must stay the same. No other animations or parent transactions are applied. Explain any change you recommend.\n\n```swift\nimport SwiftUI\n\nenum PageMotionPolicy {\n    static func shouldAnimate(reduceMotion: Bool) -> Bool {\n        !reduceMotion\n    }\n}\n\nstruct PageView: View {\n    @Environment(\\.accessibilityReduceMotion) private var reduceMotion\n    @State private var page = 0\n    private let pages = [\"Account\", \"Playback\", \"Downloads\"]\n\n    var body: some View {\n        VStack {\n            Text(pages[page])\n                .id(page)\n                .transition(.slide)\n            Button(\"Next page\") {\n                page = (page + 1) % pages.count\n            }\n        }\n        .animation(\n            PageMotionPolicy.shouldAnimate(reduceMotion: reduceMotion)\n                ? .easeInOut(duration: 0.2) : nil,\n            value: page\n        )\n    }\n}\n```"
+    }
+  ]
+}

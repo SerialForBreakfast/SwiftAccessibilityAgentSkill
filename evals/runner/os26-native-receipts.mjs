@@ -20,6 +20,9 @@ const suiteHash=directory=>{
 const currentSuiteHash=suiteHash(path.join(base,'fixtures/Tests/OS26FixturesTests'));
 if(suiteHash(path.join(root,'workspace/Tests/OS26FixturesTests'))!==currentSuiteHash)throw Error('Stale snapshotted test suite');
 const manifest=JSON.parse(manifestBytes);
+for(const fixture of manifest.cases)for(const variant of [fixture.candidate,...fixture.mutations]) {
+  if(sha(fs.readFileSync(path.join(base,'fixtures',variant.path)))!==variant.sha256)throw Error('Current source differs from fixture manifest');
+}
 const records=JSON.parse(fs.readFileSync(path.join(root,'results.json')));
 if(records.length!==manifest.cases.length*3 || new Set(records.map(r=>r.case+'/'+r.variant)).size!==records.length)throw Error('Incomplete or duplicate native matrix');
 const xcode=fs.readFileSync(path.join(root,'xcode.txt'),'utf8').trim();
@@ -39,6 +42,12 @@ for(const fixture of manifest.cases) {
     const variant=gate.id.startsWith('mutation-')?gate.id:'candidate';
     const record=records.find(r=>r.case===fixture.id && r.variant===variant);
     if(!record || record.observed!==gate.expected)throw Error('Unexpected native outcome');
+    const passing=record.observed==='pass';
+    if(record.exitCode!==(passing?0:65) || record.signal!==null || record.error!==null ||
+       record.summary?.passedTests!==(passing?1:0) || record.summary?.failedTests!==(passing?0:1) ||
+       JSON.stringify(record.failedTestIds)!==JSON.stringify(passing?[]:[fixture.testId]) ||
+       JSON.stringify(record.expectedFailureTestIds)!==JSON.stringify(passing?[]:[fixture.testId]))throw Error('Invalid native execution outcome');
+    if(record.testSuiteHash!==currentSuiteHash)throw Error('Stale test suite');
     if(record.summary?.totalTestCount!==1 || record.summary?.skippedTests!==0 ||
        record.testSuiteHash!==currentSuiteHash ||
        JSON.stringify(record.executedTestIds)!==JSON.stringify([fixture.testId]))throw Error('Native test selection mismatch');

@@ -47,6 +47,14 @@ test('assembler keeps all six cases blocked without independent review',t=>{
   assert.ok(status.cases.every(c=>c.gates.some(g=>g.reason==='independent_review_pending')));
 });
 for(const [name,change] of [
+  ['stale manifest',f=>{const p=path.join(f.root,'fixture-manifest.json'),m=JSON.parse(fs.readFileSync(p));m.revision='stale';fs.writeFileSync(p,JSON.stringify(m));}],
+  ['wrong exit',f=>f.records[1].exitCode=0],
+  ['crash signal',f=>f.records[1].signal='SIGKILL'],
+  ['transport error',f=>f.records[1].error='ETIMEDOUT'],
+  ['wrong failure count',f=>f.records[1].summary.failedTests=0],
+  ['wrong pass count',f=>f.records[0].summary.passedTests=0],
+  ['wrong failed assertion identity',f=>f.records[1].failedTestIds=['Other/test']],
+  ['uniform stale suite',f=>{for(const row of f.records){row.testSuiteHash='b'.repeat(64);const p=path.join(f.root,row.case+'-'+row.variant+'-intent.json'),x=JSON.parse(fs.readFileSync(p));x.testSuiteHash=row.testSuiteHash;fs.writeFileSync(p,JSON.stringify(x));}}],
   ['incomplete matrix',f=>f.records.pop()],
   ['duplicate matrix',f=>f.records[1]=f.records[0]],
   ['infrastructure failure',f=>f.records[1].observed='error'],

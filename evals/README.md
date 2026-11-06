@@ -1,14 +1,15 @@
 # Evidence-Backed Evaluation
 
-Current readiness review: [gold-prompt audit](GOLD-AUDIT-2026-11-05.md).
-The newer OS26-first methodology takes priority over the older broad Gemini spike;
-its promotion gates now use compile/unit evidence and source review only. Native
-evidence is recorded in the [complete OS26 unit matrix](os26/reports/2026-11-05-r4/README.md).
-Independent review and grading calibration remain pending before baseline execution.
-[Coordinator enrollment](COORDINATOR-ONBOARDING.md) is now requested for messaging
-only. The public client packet is reviewed; host-bound enrollment remains pending.
+**Gold readiness: 6/6 prompts · 42/42 gates · 6 passing reference fixes · 12/12 detected defects · 115 offline tests passed.**
 
-[Methodology decisions](METHODOLOGY-DECISIONS-2026-11-05.md) · [OS26 promotion protocol and offline gate](os26/README.md). Six revised cases have native evidence; independent promotion review is pending.
+[Closeout review and frozen grading rules](os26/reports/2026-11-05-gold-closeout/REVIEW.md) · [Machine-readable readiness](os26/reports/2026-11-05-gold-closeout/readiness.json).
+Ready for a bounded agy development comparison; no new inference was performed.
+Sillycon executed the Apple tests; BigDog reviewed the published evidence and production paths.
+Execution used SDK27 with deployment target26 and iOS/tvOS26.5, not a 26.0 runtime.
+VoiceOver input, rendered layout and usability remain outside this qualification.
+Dedicated coordinator messaging is qualified; enrollment is no longer a blocker.
+
+[Methodology decisions](METHODOLOGY-DECISIONS-2026-11-05.md) · [OS26 promotion protocol](os26/README.md) · [Prior gold audit](GOLD-AUDIT-2026-11-05.md).
 
 **OS 26 first:** [Gold prompts at a glance](../GoldPrompts.md) · [Optimization work packages](NEXT-SKILL-VERSION.md#os-26-first-optimization-proposal). OS 27 integration follows an accepted OS 26 baseline.
 
