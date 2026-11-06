@@ -1,0 +1,201 @@
+{
+  "schema": 1,
+  "id": "tvos-lifecycle-v1",
+  "revision": "2",
+  "platform": "tvOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Compile/unit request, state and observer ownership only. Injected scheduling makes lifecycle assertions deterministic; no UI automation, delivered focus/speech, actual system preference changes or appearance claim. Mac27 host does not prove Mac26 runtime behavior.",
+  "claims": [
+    {
+      "id": "restoration",
+      "url": "https://developer.apple.com/documentation/uikit/uifocusenvironment/setneedsfocusupdate()",
+      "section": "Requesting first responder or focus update; ownership, fallback and token policy are example-specific",
+      "statement": "After current dismissal completion, request a currently eligible owned target once; reject stale/cancelled completions.",
+      "availability": "SDK27 declarations and target26 compilation; full member introduction/deprecation audit remains separate.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "preferences",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibility/reducemotionstatusdidchangenotification",
+      "section": "Platform preference change notification and current setting queries",
+      "statement": "Read fresh motion/transparency/contrast settings on start and observed changes; own observer cleanup and ignore stopped or stale queued delivery.",
+      "availability": "UIAccessibility.h declarations compiled for tvOS26; do not infer tvOS introduction dates from iOS-only annotations.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/TelevisionLifecycle.swift",
+      "sha256": "00b12e1ea1d684850457bb76b1c9f81bf1108dd8ac08216608631ec840a5f275"
+    },
+    {
+      "path": "Tests/TelevisionLifecycleTests.swift",
+      "sha256": "c446ffbd8872c440e67b71e8d3390d51aabc7799a5835da2a035f117ca3ad7e9"
+    },
+    {
+      "path": "NegativeFixtures/ForeignTarget.swift",
+      "sha256": "768e9e7c75aa3d250cde2359a0c95952cf3d4a319e821bdaa02ef4ba98bc32e5"
+    },
+    {
+      "path": "NegativeFixtures/StaleCompletion.swift",
+      "sha256": "75d50ff231e03ab143e4c602f350b94588f8404b373ce986a9153f1f5e73a669"
+    },
+    {
+      "path": "NegativeFixtures/StoppedDelivery.swift",
+      "sha256": "943fb5824689978b771419105256eb2006c235da929f8074a2ff2b9203c45cf2"
+    },
+    {
+      "path": "NegativeFixtures/OldGeneration.swift",
+      "sha256": "2359db2b585540f06c157ece388a3cbf05c99c833e3476fe8f285575ff800ec2"
+    },
+    {
+      "path": "NegativeFixtures/RepeatedPreference.swift",
+      "sha256": "291fac6ac9751909c636c6d7d2bc20a5e288622f37bf0d87ebd27759f81dd7b1"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "restoration",
+        "preferences"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "restoration",
+        "preferences"
+      ],
+      "testIds": [
+        "TelevisionLifecycleTests/testBeginDoesNotRequestFocus",
+        "TelevisionLifecycleTests/testCompletedModalRequestsOriginal",
+        "TelevisionLifecycleTests/testRemovedOriginalUsesFallback",
+        "TelevisionLifecycleTests/testHiddenAncestorUsesFallback",
+        "TelevisionLifecycleTests/testDisabledOriginalUsesFallback",
+        "TelevisionLifecycleTests/testForeignOriginalUsesFallback",
+        "TelevisionLifecycleTests/testOldCompletionCannotConsumeNewSession",
+        "TelevisionLifecycleTests/testDuplicateCompletionIsQuiet",
+        "TelevisionLifecycleTests/testCancellationRejectsLateCompletion",
+        "TelevisionLifecycleTests/testOldCancellationPreservesCurrentSession",
+        "TelevisionLifecycleTests/testNoEligibleTargetDoesNotRequest",
+        "TelevisionLifecycleTests/testRequestRejectionIsReturned",
+        "TelevisionLifecycleTests/testReentrantRequestPreservesNewSession",
+        "TelevisionLifecycleTests/testHiddenRootPreventsRequest",
+        "TelevisionLifecycleTests/testPreferenceInitialSnapshot",
+        "TelevisionLifecycleTests/testPreferenceStartIsIdempotent",
+        "TelevisionLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated",
+        "TelevisionLifecycleTests/testPreferenceMotionChange",
+        "TelevisionLifecycleTests/testPreferenceTransparencyChange",
+        "TelevisionLifecycleTests/testPreferenceContrastChange",
+        "TelevisionLifecycleTests/testPreferenceStoppedQueuedWorkIgnored",
+        "TelevisionLifecycleTests/testPreferenceStopRemovesObservers",
+        "TelevisionLifecycleTests/testPreferenceRestartRefreshesSnapshot",
+        "TelevisionLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart",
+        "TelevisionLifecycleTests/testPreferenceOtherCenterIgnored",
+        "TelevisionLifecycleTests/testPreferenceDeinitRemovesObservers",
+        "TelevisionLifecycleTests/testTransparentAncestorUsesFallback",
+        "TelevisionLifecycleTests/testDefaultRequestUpdatesPreferredTarget",
+        "TelevisionLifecycleTests/testPreferredTargetRevalidatedAfterRemoval"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "foreigntarget",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "restoration"
+      ],
+      "testIds": [
+        "TelevisionLifecycleTests/testForeignOriginalUsesFallback"
+      ],
+      "failureIds": [
+        "TelevisionLifecycleTests/testForeignOriginalUsesFallback"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionLifecycle.swift",
+        "source": "NegativeFixtures/ForeignTarget.swift"
+      }
+    },
+    {
+      "id": "stalecompletion",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "restoration"
+      ],
+      "testIds": [
+        "TelevisionLifecycleTests/testOldCompletionCannotConsumeNewSession"
+      ],
+      "failureIds": [
+        "TelevisionLifecycleTests/testOldCompletionCannotConsumeNewSession"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionLifecycle.swift",
+        "source": "NegativeFixtures/StaleCompletion.swift"
+      }
+    },
+    {
+      "id": "stoppeddelivery",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "preferences"
+      ],
+      "testIds": [
+        "TelevisionLifecycleTests/testPreferenceStoppedQueuedWorkIgnored"
+      ],
+      "failureIds": [
+        "TelevisionLifecycleTests/testPreferenceStoppedQueuedWorkIgnored"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionLifecycle.swift",
+        "source": "NegativeFixtures/StoppedDelivery.swift"
+      }
+    },
+    {
+      "id": "oldgeneration",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "preferences"
+      ],
+      "testIds": [
+        "TelevisionLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart"
+      ],
+      "failureIds": [
+        "TelevisionLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionLifecycle.swift",
+        "source": "NegativeFixtures/OldGeneration.swift"
+      }
+    },
+    {
+      "id": "repeatedpreference",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "preferences"
+      ],
+      "testIds": [
+        "TelevisionLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated"
+      ],
+      "failureIds": [
+        "TelevisionLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionLifecycle.swift",
+        "source": "NegativeFixtures/RepeatedPreference.swift"
+      }
+    }
+  ]
+}

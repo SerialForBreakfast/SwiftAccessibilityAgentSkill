@@ -1,0 +1,72 @@
+import XCTest
+import AVFoundation
+@testable import AccessibilityExamples
+
+@MainActor
+final class MediaChoiceTests: XCTestCase {
+    private func fixture(tagged: Bool = true, _ body: (AVPlayerItem, AVMediaSelectionGroup, AVMediaSelectionGroup) throws -> Void) async throws {
+        let url = try DescriptionFixture.write(tagged: tagged)
+        defer { try? FileManager.default.removeItem(at: url) }
+        let item = AVPlayerItem(url: url)
+        let a = try await item.asset.loadMediaSelectionGroup(for: .audible)
+        let t = try await item.asset.loadMediaSelectionGroup(for: .legible)
+        try body(item, XCTUnwrap(a), XCTUnwrap(t))
+    }
+    func testSelectFullEnglishSubtitle() async throws {
+        try await fixture { item, _, text in
+            XCTAssertTrue(text.options.contains { $0.hasMediaCharacteristic(.containsOnlyForcedSubtitles) })
+            XCTAssertTrue(MediaChoice.select(language: "en", in: text, item: item))
+            let selected = try XCTUnwrap(item.currentMediaSelection.selectedMediaOption(in: text))
+            XCTAssertEqual(selected.locale?.language.languageCode?.identifier, "en")
+            XCTAssertFalse(selected.hasMediaCharacteristic(.containsOnlyForcedSubtitles))
+        }
+    }
+    func testMissingLanguagePreservesChoice() async throws {
+        try await fixture { item, _, text in
+            let chosen = try XCTUnwrap(text.options.first { !$0.hasMediaCharacteristic(.containsOnlyForcedSubtitles) })
+            item.select(chosen, in: text)
+            XCTAssertFalse(MediaChoice.select(language: "zz", in: text, item: item))
+            XCTAssertEqual(item.currentMediaSelection.selectedMediaOption(in: text), chosen)
+        }
+    }
+    func testDescriptionSelectsTaggedAudio() async throws {
+        try await fixture { item, audio, _ in
+            XCTAssertTrue(MediaChoice.select(language: "es", requiresDescription: true, in: audio, item: item))
+            let selected = try XCTUnwrap(item.currentMediaSelection.selectedMediaOption(in: audio))
+            XCTAssertTrue(selected.hasMediaCharacteristic(.describesVideoForAccessibility))
+        }
+    }
+    func testDescriptionUnavailablePreservesChoice() async throws {
+        try await fixture(tagged: false) { item, audio, _ in
+            let chosen = try XCTUnwrap(audio.options.first { $0.locale?.language.languageCode?.identifier == "en" })
+            item.select(chosen, in: audio)
+            XCTAssertFalse(MediaChoice.select(language: "es", requiresDescription: true, in: audio, item: item))
+            XCTAssertEqual(item.currentMediaSelection.selectedMediaOption(in: audio), chosen)
+        }
+    }
+    func testSubtitleOffWhenAllowed() async throws {
+        try await fixture { item, _, text in
+            XCTAssertTrue(text.allowsEmptySelection)
+            item.select(try XCTUnwrap(text.options.first), in: text)
+            XCTAssertTrue(MediaChoice.turnOff(in: text, item: item))
+            XCTAssertNil(item.currentMediaSelection.selectedMediaOption(in: text))
+        }
+    }
+    func testRequiredAudioGroupRefusesOff() async throws {
+        try await fixture { item, audio, _ in
+            XCTAssertFalse(audio.allowsEmptySelection)
+            let chosen = try XCTUnwrap(audio.options.first)
+            item.select(chosen, in: audio)
+            XCTAssertFalse(MediaChoice.turnOff(in: audio, item: item))
+            XCTAssertEqual(item.currentMediaSelection.selectedMediaOption(in: audio), chosen)
+        }
+    }
+    func testSubtitleChoiceLeavesAudioUntouched() async throws {
+        try await fixture { item, audio, text in
+            let chosen = try XCTUnwrap(audio.options.first { $0.hasMediaCharacteristic(.describesVideoForAccessibility) })
+            item.select(chosen, in: audio)
+            XCTAssertTrue(MediaChoice.select(language: "en", in: text, item: item))
+            XCTAssertEqual(item.currentMediaSelection.selectedMediaOption(in: audio), chosen)
+        }
+    }
+}

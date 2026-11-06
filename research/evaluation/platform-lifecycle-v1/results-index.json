@@ -1,0 +1,2956 @@
+{
+  "schema": 1,
+  "recordedAt": "2026-11-06T21:11:36.131Z",
+  "scope": "Bounded AppKit/macOS and UIKit/tvOS development evidence; no released skill or frozen baseline changes",
+  "attempts": [
+    {
+      "attempt": "lifecycle-mac-compile-r1",
+      "originalResultHash": "ff60708a13ed886e47348dc63d33d1a3c4c6b58bae9db175f8bf8bc1a8b3a095",
+      "manifestHash": "133e0a0e431371becc71f90af634fa7967f0a8dd7fc2210aa36e5335b1f50529",
+      "package": "macos-lifecycle-v1",
+      "revision": "1",
+      "checkId": "compile",
+      "recordedAt": "2026-11-06T21:04:24.764Z",
+      "status": "passed",
+      "observed": "success",
+      "reason": null,
+      "environment": {
+        "platform": "macOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "26A425",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "failures": [],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "133e0a0e431371becc71f90af634fa7967f0a8dd7fc2210aa36e5335b1f50529"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/DesktopLifecycle.swift",
+          "sha256": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+        },
+        {
+          "path": "inputs/Tests/DesktopLifecycleTests.swift",
+          "sha256": "7449c5b5560e6275a3450b3a7da48b8f041d0836ac7ae7d665c9442d1b6e693d"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "4da0522f960bfddc64d7bd5cf2e155bdebe9dc05c84dea41f7153a3567137f78"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "70f05079f317efd69d72c18265c19f9e3888562ff8d0d55b8b1684df1ef8695b"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "6698cd45e28a44d6e26013f43d8990d26d0e809b69588b5dbe35d7f9330258ea"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "2172f59c6dba6c046355f044fcaee26494dee1b4825c79ba97a78b489f05eba5"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "9b742568ee5fe9533234df670ffe1d6cbbe80ae4566b85c381862e181616388f"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "1fde8fb16c303a5f6edeaf6e2713eabe8f3859a9f795c666d4aeffd5ff39579e"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "7da0fd6d11521838939c36a6c45bfaeb893ecd0f8db281f9093f2c93af465ed1"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "8e78a5c0c20fa1f07a154dbd8319d52d2bc1c38974a5b30047e300e8d0ec8a23"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "1788bcbb37635afa92ffdd20ce0430b3db11cf1efffbb7bd76637a420c6de804"
+        },
+        {
+          "path": "native.log",
+          "sha256": "296172ddb1f626b3d132532772aa957f07584faa8113b61471420a0f6d78ffca"
+        },
+        {
+          "path": "process.json",
+          "sha256": "d0ef1793fc13add34dd1610335fe38247d701426d50c61fbb9215cc13d1b3de1"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-mac-compile-r2",
+      "originalResultHash": "a880e5b47aa026b45513de293c2bbd639700591af8dac6bc38e67215e40d0bcd",
+      "manifestHash": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0",
+      "package": "macos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "compile",
+      "recordedAt": "2026-11-06T21:06:27.259Z",
+      "status": "passed",
+      "observed": "success",
+      "reason": null,
+      "environment": {
+        "platform": "macOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "26A425",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "failures": [],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/DesktopLifecycle.swift",
+          "sha256": "1d79aece2dae160d39b3c7fa274d19bccbaf72213de8f45cc2c07b3d7a5e4193"
+        },
+        {
+          "path": "inputs/Tests/DesktopLifecycleTests.swift",
+          "sha256": "7aee737b5a3d3edf1390c8ee4b14910a5733cfea8bbdf2622135a0b4b00b1338"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "e7f8d2fd6c9aef05ef71cabe20a456c71fcbf810fde7564a693944c582f50e25"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "15ca25f2c324982a02fbc7b12c06e102670e775ee38c706947a710859584c036"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "80845229f37030c478773b49761ccc5d4eb03fe35145a9c172e61a0c6566d68a"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "03925fcc00328b1c49c72094501be3f647e55ee898abce2dde40a8922c880ce6"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "e8b18798874b98d628f4d91c8a49b2982df6dc96296b63f190eda3d06a12b573"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OriginalNoResponderCheck.swift",
+          "sha256": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "1fde8fb16c303a5f6edeaf6e2713eabe8f3859a9f795c666d4aeffd5ff39579e"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "7da0fd6d11521838939c36a6c45bfaeb893ecd0f8db281f9093f2c93af465ed1"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "8e78a5c0c20fa1f07a154dbd8319d52d2bc1c38974a5b30047e300e8d0ec8a23"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "9bd7b8b75bc63428c1e222bd632e9bdbbd496401972cdb6bede28841e3cd0898"
+        },
+        {
+          "path": "native.log",
+          "sha256": "54b1f0cb0faabd42e7b272152f6545e8b6b9d883537d9b8455b6de1c49cfe2e5"
+        },
+        {
+          "path": "process.json",
+          "sha256": "d0ef1793fc13add34dd1610335fe38247d701426d50c61fbb9215cc13d1b3de1"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-mac-foreigntarget-r1",
+      "originalResultHash": "cb1e00334973c06827f7dcb77dd1dc9aab4700654e0a8f401fe627b82dbdf9f5",
+      "manifestHash": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0",
+      "package": "macos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "foreigntarget",
+      "recordedAt": "2026-11-06T21:06:51.414Z",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "environment": {
+        "platform": "macOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "26A425",
+        "architecture": "arm64",
+        "destinationType": "host",
+        "runtimeVersion": "27.0",
+        "runtimeBuild": "26A428"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "DesktopLifecycleTests/testForeignOriginalUsesFallback"
+        ],
+        "failedTestIds": [
+          "DesktopLifecycleTests/testForeignOriginalUsesFallback"
+        ],
+        "diagnosticIds": []
+      },
+      "failures": [
+        {
+          "test": "DesktopLifecycleTests/testForeignOriginalUsesFallback()",
+          "diagnostic": "XCTAssertTrue failed"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/DesktopLifecycle.swift",
+          "sha256": "1d79aece2dae160d39b3c7fa274d19bccbaf72213de8f45cc2c07b3d7a5e4193"
+        },
+        {
+          "path": "inputs/Tests/DesktopLifecycleTests.swift",
+          "sha256": "7aee737b5a3d3edf1390c8ee4b14910a5733cfea8bbdf2622135a0b4b00b1338"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "e7f8d2fd6c9aef05ef71cabe20a456c71fcbf810fde7564a693944c582f50e25"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "15ca25f2c324982a02fbc7b12c06e102670e775ee38c706947a710859584c036"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "80845229f37030c478773b49761ccc5d4eb03fe35145a9c172e61a0c6566d68a"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "03925fcc00328b1c49c72094501be3f647e55ee898abce2dde40a8922c880ce6"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "e8b18798874b98d628f4d91c8a49b2982df6dc96296b63f190eda3d06a12b573"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OriginalNoResponderCheck.swift",
+          "sha256": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "1fde8fb16c303a5f6edeaf6e2713eabe8f3859a9f795c666d4aeffd5ff39579e"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "7da0fd6d11521838939c36a6c45bfaeb893ecd0f8db281f9093f2c93af465ed1"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "8e78a5c0c20fa1f07a154dbd8319d52d2bc1c38974a5b30047e300e8d0ec8a23"
+        },
+        {
+          "path": "host-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "host-build.txt",
+          "sha256": "2f3fe74bb2be369e9002e7baf4bf3c01d89bc0577b03fd44c98c5c3de5fb60aa"
+        },
+        {
+          "path": "host-devices.json",
+          "sha256": "01b0381f5718c80144bd0cc1dd08912cae88cb6591a3e61c679940cc4d126c06"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "faa82106b0708220eaf5dd7473f46ca4dc2987312bc5d8f4fea9a107b872556c"
+        },
+        {
+          "path": "native.log",
+          "sha256": "1f935fea26e56e764fd2c06ade33b3c77f93211e2d33309420161a9282ac025f"
+        },
+        {
+          "path": "process.json",
+          "sha256": "3b3d5470ef1e4f87a89d31616a0e727cd25f187fbca134053b38a084f50e9da3"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "7984df6b98b19c1d10e5e3005991cf3716a55905d3f63b47d19ccbe90135d0de"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "603d758b959fff38393ce215a499eddb5016f5bd28cad3b9aa8f2cbf544420e3"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-mac-oldgeneration-r1",
+      "originalResultHash": "ce7b7508b7112c2d0a9a138005fece59768f5d54f3297e581b662fc630cfdad0",
+      "manifestHash": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0",
+      "package": "macos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "oldgeneration",
+      "recordedAt": "2026-11-06T21:07:46.147Z",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "environment": {
+        "platform": "macOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "26A425",
+        "architecture": "arm64",
+        "destinationType": "host",
+        "runtimeVersion": "27.0",
+        "runtimeBuild": "26A428"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "DesktopLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart"
+        ],
+        "failedTestIds": [
+          "DesktopLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart"
+        ],
+        "diagnosticIds": []
+      },
+      "failures": [
+        {
+          "test": "DesktopLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart()",
+          "diagnostic": "XCTAssertEqual failed: (\"3\") is not equal to (\"2\")"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/DesktopLifecycle.swift",
+          "sha256": "1d79aece2dae160d39b3c7fa274d19bccbaf72213de8f45cc2c07b3d7a5e4193"
+        },
+        {
+          "path": "inputs/Tests/DesktopLifecycleTests.swift",
+          "sha256": "7aee737b5a3d3edf1390c8ee4b14910a5733cfea8bbdf2622135a0b4b00b1338"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "e7f8d2fd6c9aef05ef71cabe20a456c71fcbf810fde7564a693944c582f50e25"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "15ca25f2c324982a02fbc7b12c06e102670e775ee38c706947a710859584c036"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "80845229f37030c478773b49761ccc5d4eb03fe35145a9c172e61a0c6566d68a"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "03925fcc00328b1c49c72094501be3f647e55ee898abce2dde40a8922c880ce6"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "e8b18798874b98d628f4d91c8a49b2982df6dc96296b63f190eda3d06a12b573"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OriginalNoResponderCheck.swift",
+          "sha256": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "1fde8fb16c303a5f6edeaf6e2713eabe8f3859a9f795c666d4aeffd5ff39579e"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "7da0fd6d11521838939c36a6c45bfaeb893ecd0f8db281f9093f2c93af465ed1"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "8e78a5c0c20fa1f07a154dbd8319d52d2bc1c38974a5b30047e300e8d0ec8a23"
+        },
+        {
+          "path": "host-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "host-build.txt",
+          "sha256": "2f3fe74bb2be369e9002e7baf4bf3c01d89bc0577b03fd44c98c5c3de5fb60aa"
+        },
+        {
+          "path": "host-devices.json",
+          "sha256": "01b0381f5718c80144bd0cc1dd08912cae88cb6591a3e61c679940cc4d126c06"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "c3e6199a8b42c2fe8f499f1117305b54dfd44847e50b789f138a4651d20ff9c8"
+        },
+        {
+          "path": "native.log",
+          "sha256": "ce083bafa753d0b7f0ee14da192537ccb0998cffc58b8a3b25938b833a91b5e5"
+        },
+        {
+          "path": "process.json",
+          "sha256": "3b3d5470ef1e4f87a89d31616a0e727cd25f187fbca134053b38a084f50e9da3"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "d8d749e3cae92577d5b15513624ecfa15f00c7f656ae5bb189350874138ae6b2"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "ec586bb39fa81620df2ef7bae21bb888d2bcbe59aec9f26cd2d0bf1f342fab4d"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-mac-original-responder-check-r1",
+      "originalResultHash": "aaa21ffdcf81f821047b125654c8ee58437086f338a49fd4a8eaa5f619eaa633",
+      "manifestHash": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0",
+      "package": "macos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "original-responder-check",
+      "recordedAt": "2026-11-06T21:08:19.910Z",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "environment": {
+        "platform": "macOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "26A425",
+        "architecture": "arm64",
+        "destinationType": "host",
+        "runtimeVersion": "27.0",
+        "runtimeBuild": "26A428"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "DesktopLifecycleTests/testRefusingOriginalUsesFallback"
+        ],
+        "failedTestIds": [
+          "DesktopLifecycleTests/testRefusingOriginalUsesFallback"
+        ],
+        "diagnosticIds": []
+      },
+      "failures": [
+        {
+          "test": "DesktopLifecycleTests/testRefusingOriginalUsesFallback()",
+          "diagnostic": "XCTAssertTrue failed"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/DesktopLifecycle.swift",
+          "sha256": "1d79aece2dae160d39b3c7fa274d19bccbaf72213de8f45cc2c07b3d7a5e4193"
+        },
+        {
+          "path": "inputs/Tests/DesktopLifecycleTests.swift",
+          "sha256": "7aee737b5a3d3edf1390c8ee4b14910a5733cfea8bbdf2622135a0b4b00b1338"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "e7f8d2fd6c9aef05ef71cabe20a456c71fcbf810fde7564a693944c582f50e25"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "15ca25f2c324982a02fbc7b12c06e102670e775ee38c706947a710859584c036"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "80845229f37030c478773b49761ccc5d4eb03fe35145a9c172e61a0c6566d68a"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "03925fcc00328b1c49c72094501be3f647e55ee898abce2dde40a8922c880ce6"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "e8b18798874b98d628f4d91c8a49b2982df6dc96296b63f190eda3d06a12b573"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OriginalNoResponderCheck.swift",
+          "sha256": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "1fde8fb16c303a5f6edeaf6e2713eabe8f3859a9f795c666d4aeffd5ff39579e"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "7da0fd6d11521838939c36a6c45bfaeb893ecd0f8db281f9093f2c93af465ed1"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "8e78a5c0c20fa1f07a154dbd8319d52d2bc1c38974a5b30047e300e8d0ec8a23"
+        },
+        {
+          "path": "host-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "host-build.txt",
+          "sha256": "2f3fe74bb2be369e9002e7baf4bf3c01d89bc0577b03fd44c98c5c3de5fb60aa"
+        },
+        {
+          "path": "host-devices.json",
+          "sha256": "01b0381f5718c80144bd0cc1dd08912cae88cb6591a3e61c679940cc4d126c06"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "c515647c91ea5171373df7cb07c7b1171c98eb2b7f941e03c3f55644e2734173"
+        },
+        {
+          "path": "native.log",
+          "sha256": "628c3eb5b61ee787e487e41c9e9eaa870aed2bf2667d8ea1491f1bd1d8e8a8e4"
+        },
+        {
+          "path": "process.json",
+          "sha256": "3b3d5470ef1e4f87a89d31616a0e727cd25f187fbca134053b38a084f50e9da3"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "4b872a8902f39dcd637fdea2d55a02ed3691bbbd5840f41c20d094f65f12a0b7"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "22c17b4945b3ea0572e7fc231835e52828e73023b6a7dab79bc0ebdb308e5327"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-mac-positive-r1",
+      "originalResultHash": "fd8e57360f5c38a83d95a2b0ca0b5ce5245428970e4429e97b75e26ab53d2596",
+      "manifestHash": "133e0a0e431371becc71f90af634fa7967f0a8dd7fc2210aa36e5335b1f50529",
+      "package": "macos-lifecycle-v1",
+      "revision": "1",
+      "checkId": "positive",
+      "recordedAt": "2026-11-06T21:04:29.891Z",
+      "status": "passed",
+      "observed": "success",
+      "reason": null,
+      "environment": {
+        "platform": "macOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "26A425",
+        "architecture": "arm64",
+        "destinationType": "host",
+        "runtimeVersion": "27.0",
+        "runtimeBuild": "26A428"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "DesktopLifecycleTests/testBeginDoesNotRequestFocus",
+          "DesktopLifecycleTests/testCancellationRejectsLateCompletion",
+          "DesktopLifecycleTests/testCompletedModalRequestsOriginal",
+          "DesktopLifecycleTests/testDefaultRequestWithoutWindowReturnsFalse",
+          "DesktopLifecycleTests/testDisabledOriginalUsesFallback",
+          "DesktopLifecycleTests/testDuplicateCompletionIsQuiet",
+          "DesktopLifecycleTests/testForeignOriginalUsesFallback",
+          "DesktopLifecycleTests/testHiddenAncestorUsesFallback",
+          "DesktopLifecycleTests/testHiddenRootPreventsRequest",
+          "DesktopLifecycleTests/testNoEligibleTargetDoesNotRequest",
+          "DesktopLifecycleTests/testOldCancellationPreservesCurrentSession",
+          "DesktopLifecycleTests/testOldCompletionCannotConsumeNewSession",
+          "DesktopLifecycleTests/testPreferenceContrastChange",
+          "DesktopLifecycleTests/testPreferenceDeinitRemovesObservers",
+          "DesktopLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated",
+          "DesktopLifecycleTests/testPreferenceInitialSnapshot",
+          "DesktopLifecycleTests/testPreferenceMotionChange",
+          "DesktopLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart",
+          "DesktopLifecycleTests/testPreferenceOtherCenterIgnored",
+          "DesktopLifecycleTests/testPreferenceRestartRefreshesSnapshot",
+          "DesktopLifecycleTests/testPreferenceStartIsIdempotent",
+          "DesktopLifecycleTests/testPreferenceStoppedQueuedWorkIgnored",
+          "DesktopLifecycleTests/testPreferenceStopRemovesObservers",
+          "DesktopLifecycleTests/testPreferenceTransparencyChange",
+          "DesktopLifecycleTests/testReentrantRequestPreservesNewSession",
+          "DesktopLifecycleTests/testRemovedOriginalUsesFallback",
+          "DesktopLifecycleTests/testRequestRejectionIsReturned"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "failures": [],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "133e0a0e431371becc71f90af634fa7967f0a8dd7fc2210aa36e5335b1f50529"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/DesktopLifecycle.swift",
+          "sha256": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+        },
+        {
+          "path": "inputs/Tests/DesktopLifecycleTests.swift",
+          "sha256": "7449c5b5560e6275a3450b3a7da48b8f041d0836ac7ae7d665c9442d1b6e693d"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "4da0522f960bfddc64d7bd5cf2e155bdebe9dc05c84dea41f7153a3567137f78"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "70f05079f317efd69d72c18265c19f9e3888562ff8d0d55b8b1684df1ef8695b"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "6698cd45e28a44d6e26013f43d8990d26d0e809b69588b5dbe35d7f9330258ea"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "2172f59c6dba6c046355f044fcaee26494dee1b4825c79ba97a78b489f05eba5"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "9b742568ee5fe9533234df670ffe1d6cbbe80ae4566b85c381862e181616388f"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "1fde8fb16c303a5f6edeaf6e2713eabe8f3859a9f795c666d4aeffd5ff39579e"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "7da0fd6d11521838939c36a6c45bfaeb893ecd0f8db281f9093f2c93af465ed1"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "8e78a5c0c20fa1f07a154dbd8319d52d2bc1c38974a5b30047e300e8d0ec8a23"
+        },
+        {
+          "path": "host-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "host-build.txt",
+          "sha256": "2f3fe74bb2be369e9002e7baf4bf3c01d89bc0577b03fd44c98c5c3de5fb60aa"
+        },
+        {
+          "path": "host-devices.json",
+          "sha256": "01b0381f5718c80144bd0cc1dd08912cae88cb6591a3e61c679940cc4d126c06"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "aaa9ef9336e23d3e7e9498963a7bf53f336db58ef9daeb963689eede7a733054"
+        },
+        {
+          "path": "native.log",
+          "sha256": "d80bb4a1f3860af0f2b44034e9ccb3a46e1b82887ed554434719052a7610c8e9"
+        },
+        {
+          "path": "process.json",
+          "sha256": "d0ef1793fc13add34dd1610335fe38247d701426d50c61fbb9215cc13d1b3de1"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "5b54a5e15e589ef2c7dad9432b99e35ab55c5202e837cd66800d2559523a0b9e"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "dbfc1a48cd7a84ff52f11234496147dd24e36906c610f54bfd81f8d493338f1a"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-mac-positive-r2",
+      "originalResultHash": "993cb1c4c964d105789a730f48e96963583cf640fe71819c8dedb5151ab69024",
+      "manifestHash": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0",
+      "package": "macos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "positive",
+      "recordedAt": "2026-11-06T21:06:32.233Z",
+      "status": "passed",
+      "observed": "success",
+      "reason": null,
+      "environment": {
+        "platform": "macOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "26A425",
+        "architecture": "arm64",
+        "destinationType": "host",
+        "runtimeVersion": "27.0",
+        "runtimeBuild": "26A428"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "DesktopLifecycleTests/testBeginDoesNotRequestFocus",
+          "DesktopLifecycleTests/testCancellationRejectsLateCompletion",
+          "DesktopLifecycleTests/testCompletedModalRequestsOriginal",
+          "DesktopLifecycleTests/testDefaultRequestWithoutWindowReturnsFalse",
+          "DesktopLifecycleTests/testDisabledOriginalUsesFallback",
+          "DesktopLifecycleTests/testDuplicateCompletionIsQuiet",
+          "DesktopLifecycleTests/testForeignOriginalUsesFallback",
+          "DesktopLifecycleTests/testHiddenAncestorUsesFallback",
+          "DesktopLifecycleTests/testHiddenRootPreventsRequest",
+          "DesktopLifecycleTests/testNoEligibleTargetDoesNotRequest",
+          "DesktopLifecycleTests/testOldCancellationPreservesCurrentSession",
+          "DesktopLifecycleTests/testOldCompletionCannotConsumeNewSession",
+          "DesktopLifecycleTests/testPreferenceContrastChange",
+          "DesktopLifecycleTests/testPreferenceDeinitRemovesObservers",
+          "DesktopLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated",
+          "DesktopLifecycleTests/testPreferenceInitialSnapshot",
+          "DesktopLifecycleTests/testPreferenceMotionChange",
+          "DesktopLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart",
+          "DesktopLifecycleTests/testPreferenceOtherCenterIgnored",
+          "DesktopLifecycleTests/testPreferenceRestartRefreshesSnapshot",
+          "DesktopLifecycleTests/testPreferenceStartIsIdempotent",
+          "DesktopLifecycleTests/testPreferenceStoppedQueuedWorkIgnored",
+          "DesktopLifecycleTests/testPreferenceStopRemovesObservers",
+          "DesktopLifecycleTests/testPreferenceTransparencyChange",
+          "DesktopLifecycleTests/testReentrantRequestPreservesNewSession",
+          "DesktopLifecycleTests/testRefusingOriginalUsesFallback",
+          "DesktopLifecycleTests/testRemovedOriginalUsesFallback",
+          "DesktopLifecycleTests/testRequestRejectionIsReturned"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "failures": [],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/DesktopLifecycle.swift",
+          "sha256": "1d79aece2dae160d39b3c7fa274d19bccbaf72213de8f45cc2c07b3d7a5e4193"
+        },
+        {
+          "path": "inputs/Tests/DesktopLifecycleTests.swift",
+          "sha256": "7aee737b5a3d3edf1390c8ee4b14910a5733cfea8bbdf2622135a0b4b00b1338"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "e7f8d2fd6c9aef05ef71cabe20a456c71fcbf810fde7564a693944c582f50e25"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "15ca25f2c324982a02fbc7b12c06e102670e775ee38c706947a710859584c036"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "80845229f37030c478773b49761ccc5d4eb03fe35145a9c172e61a0c6566d68a"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "03925fcc00328b1c49c72094501be3f647e55ee898abce2dde40a8922c880ce6"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "e8b18798874b98d628f4d91c8a49b2982df6dc96296b63f190eda3d06a12b573"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OriginalNoResponderCheck.swift",
+          "sha256": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "1fde8fb16c303a5f6edeaf6e2713eabe8f3859a9f795c666d4aeffd5ff39579e"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "7da0fd6d11521838939c36a6c45bfaeb893ecd0f8db281f9093f2c93af465ed1"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "8e78a5c0c20fa1f07a154dbd8319d52d2bc1c38974a5b30047e300e8d0ec8a23"
+        },
+        {
+          "path": "host-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "host-build.txt",
+          "sha256": "2f3fe74bb2be369e9002e7baf4bf3c01d89bc0577b03fd44c98c5c3de5fb60aa"
+        },
+        {
+          "path": "host-devices.json",
+          "sha256": "01b0381f5718c80144bd0cc1dd08912cae88cb6591a3e61c679940cc4d126c06"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "98edc5f062edbde2167b449297c59bf93d8b9d3e36535eb86426ce6956e3a9ad"
+        },
+        {
+          "path": "native.log",
+          "sha256": "6541ac9c356b8e25f646fdd3fd02022e9fce68c92922c6878e3498a85fc56378"
+        },
+        {
+          "path": "process.json",
+          "sha256": "d0ef1793fc13add34dd1610335fe38247d701426d50c61fbb9215cc13d1b3de1"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "207a34cca39cf7eff9c61e772050e52609f8ee862d89972b191f42e57818c524"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "716756781947091087cd1d8d5c7497ac562d8f07e5d709836bc0adde58433a7e"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-mac-repeatedpreference-r1",
+      "originalResultHash": "16e45f7bbd03065bf9e3e0c8999cd065e8c026074ec547adfa29e1ae028f09c0",
+      "manifestHash": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0",
+      "package": "macos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "repeatedpreference",
+      "recordedAt": "2026-11-06T21:08:03.048Z",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "environment": {
+        "platform": "macOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "26A425",
+        "architecture": "arm64",
+        "destinationType": "host",
+        "runtimeVersion": "27.0",
+        "runtimeBuild": "26A428"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "DesktopLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated"
+        ],
+        "failedTestIds": [
+          "DesktopLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated"
+        ],
+        "diagnosticIds": []
+      },
+      "failures": [
+        {
+          "test": "DesktopLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated()",
+          "diagnostic": "XCTAssertEqual failed: (\"2\") is not equal to (\"1\")"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/DesktopLifecycle.swift",
+          "sha256": "1d79aece2dae160d39b3c7fa274d19bccbaf72213de8f45cc2c07b3d7a5e4193"
+        },
+        {
+          "path": "inputs/Tests/DesktopLifecycleTests.swift",
+          "sha256": "7aee737b5a3d3edf1390c8ee4b14910a5733cfea8bbdf2622135a0b4b00b1338"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "e7f8d2fd6c9aef05ef71cabe20a456c71fcbf810fde7564a693944c582f50e25"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "15ca25f2c324982a02fbc7b12c06e102670e775ee38c706947a710859584c036"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "80845229f37030c478773b49761ccc5d4eb03fe35145a9c172e61a0c6566d68a"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "03925fcc00328b1c49c72094501be3f647e55ee898abce2dde40a8922c880ce6"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "e8b18798874b98d628f4d91c8a49b2982df6dc96296b63f190eda3d06a12b573"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OriginalNoResponderCheck.swift",
+          "sha256": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "1fde8fb16c303a5f6edeaf6e2713eabe8f3859a9f795c666d4aeffd5ff39579e"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "7da0fd6d11521838939c36a6c45bfaeb893ecd0f8db281f9093f2c93af465ed1"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "8e78a5c0c20fa1f07a154dbd8319d52d2bc1c38974a5b30047e300e8d0ec8a23"
+        },
+        {
+          "path": "host-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "host-build.txt",
+          "sha256": "2f3fe74bb2be369e9002e7baf4bf3c01d89bc0577b03fd44c98c5c3de5fb60aa"
+        },
+        {
+          "path": "host-devices.json",
+          "sha256": "01b0381f5718c80144bd0cc1dd08912cae88cb6591a3e61c679940cc4d126c06"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "922bd188555ebe2050cbc7cbfe207a30dcc6a82ddce0fb95b457e00e2a987d5d"
+        },
+        {
+          "path": "native.log",
+          "sha256": "4eb5f9139597e398dadb5ab1cd7288105ff2de034256b95833fe4af0add9e835"
+        },
+        {
+          "path": "process.json",
+          "sha256": "3b3d5470ef1e4f87a89d31616a0e727cd25f187fbca134053b38a084f50e9da3"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "8ea7b9cca275d6a6020046a22f4d9c0e3d407e225081d8f53bb0ebc11a551dde"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "b62fcf09fdc01188d7fca7fe1d1e18b8aca6ac33afd9fd759e1bfce54fac884c"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-mac-stalecompletion-r1",
+      "originalResultHash": "0899e2d6f07d74252f4e7168e35780405bc6eac77e55bbd5287c86421f8728da",
+      "manifestHash": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0",
+      "package": "macos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "stalecompletion",
+      "recordedAt": "2026-11-06T21:07:11.956Z",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "environment": {
+        "platform": "macOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "26A425",
+        "architecture": "arm64",
+        "destinationType": "host",
+        "runtimeVersion": "27.0",
+        "runtimeBuild": "26A428"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "DesktopLifecycleTests/testOldCompletionCannotConsumeNewSession"
+        ],
+        "failedTestIds": [
+          "DesktopLifecycleTests/testOldCompletionCannotConsumeNewSession"
+        ],
+        "diagnosticIds": []
+      },
+      "failures": [
+        {
+          "test": "DesktopLifecycleTests/testOldCompletionCannotConsumeNewSession()",
+          "diagnostic": "XCTAssertFalse failed"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/DesktopLifecycle.swift",
+          "sha256": "1d79aece2dae160d39b3c7fa274d19bccbaf72213de8f45cc2c07b3d7a5e4193"
+        },
+        {
+          "path": "inputs/Tests/DesktopLifecycleTests.swift",
+          "sha256": "7aee737b5a3d3edf1390c8ee4b14910a5733cfea8bbdf2622135a0b4b00b1338"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "e7f8d2fd6c9aef05ef71cabe20a456c71fcbf810fde7564a693944c582f50e25"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "15ca25f2c324982a02fbc7b12c06e102670e775ee38c706947a710859584c036"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "80845229f37030c478773b49761ccc5d4eb03fe35145a9c172e61a0c6566d68a"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "03925fcc00328b1c49c72094501be3f647e55ee898abce2dde40a8922c880ce6"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "e8b18798874b98d628f4d91c8a49b2982df6dc96296b63f190eda3d06a12b573"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OriginalNoResponderCheck.swift",
+          "sha256": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "1fde8fb16c303a5f6edeaf6e2713eabe8f3859a9f795c666d4aeffd5ff39579e"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "7da0fd6d11521838939c36a6c45bfaeb893ecd0f8db281f9093f2c93af465ed1"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "8e78a5c0c20fa1f07a154dbd8319d52d2bc1c38974a5b30047e300e8d0ec8a23"
+        },
+        {
+          "path": "host-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "host-build.txt",
+          "sha256": "2f3fe74bb2be369e9002e7baf4bf3c01d89bc0577b03fd44c98c5c3de5fb60aa"
+        },
+        {
+          "path": "host-devices.json",
+          "sha256": "01b0381f5718c80144bd0cc1dd08912cae88cb6591a3e61c679940cc4d126c06"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "5f7c5c305f77857c918b71be1f86b6b5c3fc267b481415857c272169a59337d2"
+        },
+        {
+          "path": "native.log",
+          "sha256": "326a954137cfb3b862f5f349e6bbe31b57fda0d8c9aaa1b7ed0996d63dd4eb9d"
+        },
+        {
+          "path": "process.json",
+          "sha256": "3b3d5470ef1e4f87a89d31616a0e727cd25f187fbca134053b38a084f50e9da3"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "e90c8807403ef34f4da93c5307faa4a5fcc4302554d2818f8281c14820f94306"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "776e2db204f6f09957e455bfb6e19375c31b194b25a65dc6027e350e69693810"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-mac-stoppeddelivery-r1",
+      "originalResultHash": "92cef43a80aab0e9dfd9de94c0baaabff94df0cd7200325e2c389a9e679b18b3",
+      "manifestHash": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0",
+      "package": "macos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "stoppeddelivery",
+      "recordedAt": "2026-11-06T21:07:29.005Z",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "environment": {
+        "platform": "macOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "26A425",
+        "architecture": "arm64",
+        "destinationType": "host",
+        "runtimeVersion": "27.0",
+        "runtimeBuild": "26A428"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "DesktopLifecycleTests/testPreferenceStoppedQueuedWorkIgnored"
+        ],
+        "failedTestIds": [
+          "DesktopLifecycleTests/testPreferenceStoppedQueuedWorkIgnored"
+        ],
+        "diagnosticIds": []
+      },
+      "failures": [
+        {
+          "test": "DesktopLifecycleTests/testPreferenceStoppedQueuedWorkIgnored()",
+          "diagnostic": "XCTAssertEqual failed: (\"2\") is not equal to (\"1\")"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/DesktopLifecycle.swift",
+          "sha256": "1d79aece2dae160d39b3c7fa274d19bccbaf72213de8f45cc2c07b3d7a5e4193"
+        },
+        {
+          "path": "inputs/Tests/DesktopLifecycleTests.swift",
+          "sha256": "7aee737b5a3d3edf1390c8ee4b14910a5733cfea8bbdf2622135a0b4b00b1338"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "e7f8d2fd6c9aef05ef71cabe20a456c71fcbf810fde7564a693944c582f50e25"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "15ca25f2c324982a02fbc7b12c06e102670e775ee38c706947a710859584c036"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "80845229f37030c478773b49761ccc5d4eb03fe35145a9c172e61a0c6566d68a"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "03925fcc00328b1c49c72094501be3f647e55ee898abce2dde40a8922c880ce6"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "e8b18798874b98d628f4d91c8a49b2982df6dc96296b63f190eda3d06a12b573"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OriginalNoResponderCheck.swift",
+          "sha256": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "1fde8fb16c303a5f6edeaf6e2713eabe8f3859a9f795c666d4aeffd5ff39579e"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "7da0fd6d11521838939c36a6c45bfaeb893ecd0f8db281f9093f2c93af465ed1"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "8e78a5c0c20fa1f07a154dbd8319d52d2bc1c38974a5b30047e300e8d0ec8a23"
+        },
+        {
+          "path": "host-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "host-build.txt",
+          "sha256": "2f3fe74bb2be369e9002e7baf4bf3c01d89bc0577b03fd44c98c5c3de5fb60aa"
+        },
+        {
+          "path": "host-devices.json",
+          "sha256": "01b0381f5718c80144bd0cc1dd08912cae88cb6591a3e61c679940cc4d126c06"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "fd8b7bb8fb4d280c8fc481a1a6170ca4f8cbffcc647eca2dbcd7c52bd4d02037"
+        },
+        {
+          "path": "native.log",
+          "sha256": "f28ede70521631e108b575780452ba3475d645353e0120dc88d645e51ac6a680"
+        },
+        {
+          "path": "process.json",
+          "sha256": "3b3d5470ef1e4f87a89d31616a0e727cd25f187fbca134053b38a084f50e9da3"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "c06c6ec3f45ba3a21dbcee3183b838efdad4f0ccd6d42bc8fc32315bc5cbdb9d"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "31c3302b7492b6bcf6d437d53ba6bb861b3d09e8a911dbf026d4e69ea3752460"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-tv-compile-r1",
+      "originalResultHash": "5b79441c01cd1c48f03296fd35fd03ac6a14c753aefc3a09d88e026b1c47726a",
+      "manifestHash": "825718c2f297a9b9b609430b6c32358e1d578b0d5b36ff29872f14fa9abd94bd",
+      "package": "tvos-lifecycle-v1",
+      "revision": "1",
+      "checkId": "compile",
+      "recordedAt": "2026-11-06T21:04:49.839Z",
+      "status": "passed",
+      "observed": "success",
+      "reason": null,
+      "environment": {
+        "platform": "tvOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24J360",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "failures": [],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "825718c2f297a9b9b609430b6c32358e1d578b0d5b36ff29872f14fa9abd94bd"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/TelevisionLifecycle.swift",
+          "sha256": "00b12e1ea1d684850457bb76b1c9f81bf1108dd8ac08216608631ec840a5f275"
+        },
+        {
+          "path": "inputs/Tests/TelevisionLifecycleTests.swift",
+          "sha256": "c446ffbd8872c440e67b71e8d3390d51aabc7799a5835da2a035f117ca3ad7e9"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "ab0d2bfd1aa5ffcf4bfdac07a6f63120ec4dff0714513c90584f71f001d6db0c"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "75d50ff231e03ab143e4c602f350b94588f8404b373ce986a9153f1f5e73a669"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "943fb5824689978b771419105256eb2006c235da929f8074a2ff2b9203c45cf2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "2359db2b585540f06c157ece388a3cbf05c99c833e3476fe8f285575ff800ec2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "291fac6ac9751909c636c6d7d2bc20a5e288622f37bf0d87ebd27759f81dd7b1"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "04a9583bac01ca03abeac21ff3c4efdab1a389f7a66c2494c350bc76a7f12bb3"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "e205c04e5f9f9574e9c7e9b2dbd7b785fcee71efc6e999cf486eb03d119524cd"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "dfa89468ffecf97c09fd0ced7121f0870f0e571ddc69ef3a389b88385081b6d9"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "276a3c72576f42670f17d46a7ff1c403c0c3a3bd9e4a76c5f439bbca47df8e21"
+        },
+        {
+          "path": "native.log",
+          "sha256": "c83a249fc9f90ba15c636bcd70b7c644b3a19be2aeae912e0fdc3c1e54fa95d7"
+        },
+        {
+          "path": "process.json",
+          "sha256": "d0ef1793fc13add34dd1610335fe38247d701426d50c61fbb9215cc13d1b3de1"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-tv-compile-r2",
+      "originalResultHash": "17da485a775f159d93d0c80b9897acd36cf63997a0bb62c7fe84cccafb32c94d",
+      "manifestHash": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494",
+      "package": "tvos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "compile",
+      "recordedAt": "2026-11-06T21:08:37.005Z",
+      "status": "passed",
+      "observed": "success",
+      "reason": null,
+      "environment": {
+        "platform": "tvOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24J360",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "failures": [],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/TelevisionLifecycle.swift",
+          "sha256": "00b12e1ea1d684850457bb76b1c9f81bf1108dd8ac08216608631ec840a5f275"
+        },
+        {
+          "path": "inputs/Tests/TelevisionLifecycleTests.swift",
+          "sha256": "c446ffbd8872c440e67b71e8d3390d51aabc7799a5835da2a035f117ca3ad7e9"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "768e9e7c75aa3d250cde2359a0c95952cf3d4a319e821bdaa02ef4ba98bc32e5"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "75d50ff231e03ab143e4c602f350b94588f8404b373ce986a9153f1f5e73a669"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "943fb5824689978b771419105256eb2006c235da929f8074a2ff2b9203c45cf2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "2359db2b585540f06c157ece388a3cbf05c99c833e3476fe8f285575ff800ec2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "291fac6ac9751909c636c6d7d2bc20a5e288622f37bf0d87ebd27759f81dd7b1"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "04a9583bac01ca03abeac21ff3c4efdab1a389f7a66c2494c350bc76a7f12bb3"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "e205c04e5f9f9574e9c7e9b2dbd7b785fcee71efc6e999cf486eb03d119524cd"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "dfa89468ffecf97c09fd0ced7121f0870f0e571ddc69ef3a389b88385081b6d9"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "ad17804bb11122a8cd556fe947bd8b81fbafaa5495c2815181138c4c08198d25"
+        },
+        {
+          "path": "native.log",
+          "sha256": "8e5baf27dc3c96c6127878a08dec869c6b89545be5e8b455c175e9d319a90ba3"
+        },
+        {
+          "path": "process.json",
+          "sha256": "d0ef1793fc13add34dd1610335fe38247d701426d50c61fbb9215cc13d1b3de1"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-tv-foreigntarget-r1",
+      "originalResultHash": "bca5777602cf812f3238887044b623c28bcf78322eb1e02c674080e3935b386e",
+      "manifestHash": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494",
+      "package": "tvos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "foreigntarget",
+      "recordedAt": "2026-11-06T21:09:02.624Z",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "environment": {
+        "platform": "tvOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24J360",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23L470"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "TelevisionLifecycleTests/testForeignOriginalUsesFallback"
+        ],
+        "failedTestIds": [
+          "TelevisionLifecycleTests/testForeignOriginalUsesFallback"
+        ],
+        "diagnosticIds": []
+      },
+      "failures": [
+        {
+          "test": "TelevisionLifecycleTests/testForeignOriginalUsesFallback()",
+          "diagnostic": "XCTAssertTrue failed"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/TelevisionLifecycle.swift",
+          "sha256": "00b12e1ea1d684850457bb76b1c9f81bf1108dd8ac08216608631ec840a5f275"
+        },
+        {
+          "path": "inputs/Tests/TelevisionLifecycleTests.swift",
+          "sha256": "c446ffbd8872c440e67b71e8d3390d51aabc7799a5835da2a035f117ca3ad7e9"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "768e9e7c75aa3d250cde2359a0c95952cf3d4a319e821bdaa02ef4ba98bc32e5"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "75d50ff231e03ab143e4c602f350b94588f8404b373ce986a9153f1f5e73a669"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "943fb5824689978b771419105256eb2006c235da929f8074a2ff2b9203c45cf2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "2359db2b585540f06c157ece388a3cbf05c99c833e3476fe8f285575ff800ec2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "291fac6ac9751909c636c6d7d2bc20a5e288622f37bf0d87ebd27759f81dd7b1"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "04a9583bac01ca03abeac21ff3c4efdab1a389f7a66c2494c350bc76a7f12bb3"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "e205c04e5f9f9574e9c7e9b2dbd7b785fcee71efc6e999cf486eb03d119524cd"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "dfa89468ffecf97c09fd0ced7121f0870f0e571ddc69ef3a389b88385081b6d9"
+        },
+        {
+          "path": "devices.json",
+          "sha256": "da8b9fb712d8f16ae29ad15049a9b4d39decceee6e5ada6a4a830ea0747304c5"
+        },
+        {
+          "path": "runtimes.json",
+          "sha256": "2a2cabaa68b040abeee3fcf2c5157451bfded0035989fdae519258db59d0e72f"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "8a5d00d1bd0895b837be82955f34cfd51ee1f320e30651d1c19ecfc8c7cd7389"
+        },
+        {
+          "path": "native.log",
+          "sha256": "7e3354e7276e01f3cc0197359eb52347dbad3138c45a4b38819e235b40d14e67"
+        },
+        {
+          "path": "process.json",
+          "sha256": "3b3d5470ef1e4f87a89d31616a0e727cd25f187fbca134053b38a084f50e9da3"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "9d5746b6628d31a5db5e7bb40f7d85d4a86c4e2c00bc705576fd9db41cc8cddc"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "3429fabd2740d0ed7622b298c15510d4c8ffababaccb7c1ddd511ff4e06303bb"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-tv-oldgeneration-r1",
+      "originalResultHash": "2e77a445e0fb69865482a655eab00a0013464dec38e7474f1ae09160bb8afc24",
+      "manifestHash": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494",
+      "package": "tvos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "oldgeneration",
+      "recordedAt": "2026-11-06T21:10:05.732Z",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "environment": {
+        "platform": "tvOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24J360",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23L470"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "TelevisionLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart"
+        ],
+        "failedTestIds": [
+          "TelevisionLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart"
+        ],
+        "diagnosticIds": []
+      },
+      "failures": [
+        {
+          "test": "TelevisionLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart()",
+          "diagnostic": "XCTAssertEqual failed: (\"3\") is not equal to (\"2\")"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/TelevisionLifecycle.swift",
+          "sha256": "00b12e1ea1d684850457bb76b1c9f81bf1108dd8ac08216608631ec840a5f275"
+        },
+        {
+          "path": "inputs/Tests/TelevisionLifecycleTests.swift",
+          "sha256": "c446ffbd8872c440e67b71e8d3390d51aabc7799a5835da2a035f117ca3ad7e9"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "768e9e7c75aa3d250cde2359a0c95952cf3d4a319e821bdaa02ef4ba98bc32e5"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "75d50ff231e03ab143e4c602f350b94588f8404b373ce986a9153f1f5e73a669"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "943fb5824689978b771419105256eb2006c235da929f8074a2ff2b9203c45cf2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "2359db2b585540f06c157ece388a3cbf05c99c833e3476fe8f285575ff800ec2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "291fac6ac9751909c636c6d7d2bc20a5e288622f37bf0d87ebd27759f81dd7b1"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "04a9583bac01ca03abeac21ff3c4efdab1a389f7a66c2494c350bc76a7f12bb3"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "e205c04e5f9f9574e9c7e9b2dbd7b785fcee71efc6e999cf486eb03d119524cd"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "dfa89468ffecf97c09fd0ced7121f0870f0e571ddc69ef3a389b88385081b6d9"
+        },
+        {
+          "path": "devices.json",
+          "sha256": "b954b86e35a6f9e4b28ca56aed2145a7adf771f583196c1594b7b72cbca555e2"
+        },
+        {
+          "path": "runtimes.json",
+          "sha256": "5388744691a69b54df273710522547386b2ad86e992736bebc788a9978e5d83c"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "1fe078d419d1ef4d5df5626fd5624725cebfcda31fa7ec0cc5246444e5b708a8"
+        },
+        {
+          "path": "native.log",
+          "sha256": "dc5674452dc7b29fc0a6b9b4e77ee627504c42ad10ab6accf152632a0295e50b"
+        },
+        {
+          "path": "process.json",
+          "sha256": "3b3d5470ef1e4f87a89d31616a0e727cd25f187fbca134053b38a084f50e9da3"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "04bb65fa724fe66736944d3e2de17e1c9ee436aff460ddb17d328624d56a132c"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "acff1ceb240768b6e8a55f1504f1818ec72efadafc08f3c1a8c5d0d66c7e451b"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-tv-positive-r1",
+      "originalResultHash": "e9457564262380bdc8e1464fa4b5fc0609d143e5b8b0fc45d149ff50a4adad0d",
+      "manifestHash": "825718c2f297a9b9b609430b6c32358e1d578b0d5b36ff29872f14fa9abd94bd",
+      "package": "tvos-lifecycle-v1",
+      "revision": "1",
+      "checkId": "positive",
+      "recordedAt": "2026-11-06T21:04:53.283Z",
+      "status": "passed",
+      "observed": "success",
+      "reason": null,
+      "environment": {
+        "platform": "tvOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24J360",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23L470"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "TelevisionLifecycleTests/testBeginDoesNotRequestFocus",
+          "TelevisionLifecycleTests/testCancellationRejectsLateCompletion",
+          "TelevisionLifecycleTests/testCompletedModalRequestsOriginal",
+          "TelevisionLifecycleTests/testDefaultRequestUpdatesPreferredTarget",
+          "TelevisionLifecycleTests/testDisabledOriginalUsesFallback",
+          "TelevisionLifecycleTests/testDuplicateCompletionIsQuiet",
+          "TelevisionLifecycleTests/testForeignOriginalUsesFallback",
+          "TelevisionLifecycleTests/testHiddenAncestorUsesFallback",
+          "TelevisionLifecycleTests/testHiddenRootPreventsRequest",
+          "TelevisionLifecycleTests/testNoEligibleTargetDoesNotRequest",
+          "TelevisionLifecycleTests/testOldCancellationPreservesCurrentSession",
+          "TelevisionLifecycleTests/testOldCompletionCannotConsumeNewSession",
+          "TelevisionLifecycleTests/testPreferenceContrastChange",
+          "TelevisionLifecycleTests/testPreferenceDeinitRemovesObservers",
+          "TelevisionLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated",
+          "TelevisionLifecycleTests/testPreferenceInitialSnapshot",
+          "TelevisionLifecycleTests/testPreferenceMotionChange",
+          "TelevisionLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart",
+          "TelevisionLifecycleTests/testPreferenceOtherCenterIgnored",
+          "TelevisionLifecycleTests/testPreferenceRestartRefreshesSnapshot",
+          "TelevisionLifecycleTests/testPreferenceStartIsIdempotent",
+          "TelevisionLifecycleTests/testPreferenceStoppedQueuedWorkIgnored",
+          "TelevisionLifecycleTests/testPreferenceStopRemovesObservers",
+          "TelevisionLifecycleTests/testPreferenceTransparencyChange",
+          "TelevisionLifecycleTests/testPreferredTargetRevalidatedAfterRemoval",
+          "TelevisionLifecycleTests/testReentrantRequestPreservesNewSession",
+          "TelevisionLifecycleTests/testRemovedOriginalUsesFallback",
+          "TelevisionLifecycleTests/testRequestRejectionIsReturned",
+          "TelevisionLifecycleTests/testTransparentAncestorUsesFallback"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "failures": [],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "825718c2f297a9b9b609430b6c32358e1d578b0d5b36ff29872f14fa9abd94bd"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/TelevisionLifecycle.swift",
+          "sha256": "00b12e1ea1d684850457bb76b1c9f81bf1108dd8ac08216608631ec840a5f275"
+        },
+        {
+          "path": "inputs/Tests/TelevisionLifecycleTests.swift",
+          "sha256": "c446ffbd8872c440e67b71e8d3390d51aabc7799a5835da2a035f117ca3ad7e9"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "ab0d2bfd1aa5ffcf4bfdac07a6f63120ec4dff0714513c90584f71f001d6db0c"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "75d50ff231e03ab143e4c602f350b94588f8404b373ce986a9153f1f5e73a669"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "943fb5824689978b771419105256eb2006c235da929f8074a2ff2b9203c45cf2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "2359db2b585540f06c157ece388a3cbf05c99c833e3476fe8f285575ff800ec2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "291fac6ac9751909c636c6d7d2bc20a5e288622f37bf0d87ebd27759f81dd7b1"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "04a9583bac01ca03abeac21ff3c4efdab1a389f7a66c2494c350bc76a7f12bb3"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "e205c04e5f9f9574e9c7e9b2dbd7b785fcee71efc6e999cf486eb03d119524cd"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "dfa89468ffecf97c09fd0ced7121f0870f0e571ddc69ef3a389b88385081b6d9"
+        },
+        {
+          "path": "devices.json",
+          "sha256": "18bad9b59ef1b689f064d06b31f74bab0c7aa2838a3bf8eae013e4d642750fa9"
+        },
+        {
+          "path": "runtimes.json",
+          "sha256": "fa0752355801f879f06897fe4f0d0618ebe063e16d5fa380a53f80f83e7672ee"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "c0ffa77b6c63ed352a0fd208e7f20fbba324a8aff5976a7273aab71c8850dc3e"
+        },
+        {
+          "path": "native.log",
+          "sha256": "9d506b58675d1a16405fc3ba6fea7cdb71aed868495f5333045f119561d457da"
+        },
+        {
+          "path": "process.json",
+          "sha256": "d0ef1793fc13add34dd1610335fe38247d701426d50c61fbb9215cc13d1b3de1"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "6fba02f9d1fd77d19f3817a436b1819b3af9f49658c8069f860dbccb3a11d17a"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "83bf43a80e61b58578f45b2abff04dee6d4256bf417e865a06c8526861db8500"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-tv-positive-r2",
+      "originalResultHash": "3c1743eea31230f4bb66497c812ae0620fa853f6a8017a392253261a425fc83c",
+      "manifestHash": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494",
+      "package": "tvos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "positive",
+      "recordedAt": "2026-11-06T21:08:40.298Z",
+      "status": "passed",
+      "observed": "success",
+      "reason": null,
+      "environment": {
+        "platform": "tvOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24J360",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23L470"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "TelevisionLifecycleTests/testBeginDoesNotRequestFocus",
+          "TelevisionLifecycleTests/testCancellationRejectsLateCompletion",
+          "TelevisionLifecycleTests/testCompletedModalRequestsOriginal",
+          "TelevisionLifecycleTests/testDefaultRequestUpdatesPreferredTarget",
+          "TelevisionLifecycleTests/testDisabledOriginalUsesFallback",
+          "TelevisionLifecycleTests/testDuplicateCompletionIsQuiet",
+          "TelevisionLifecycleTests/testForeignOriginalUsesFallback",
+          "TelevisionLifecycleTests/testHiddenAncestorUsesFallback",
+          "TelevisionLifecycleTests/testHiddenRootPreventsRequest",
+          "TelevisionLifecycleTests/testNoEligibleTargetDoesNotRequest",
+          "TelevisionLifecycleTests/testOldCancellationPreservesCurrentSession",
+          "TelevisionLifecycleTests/testOldCompletionCannotConsumeNewSession",
+          "TelevisionLifecycleTests/testPreferenceContrastChange",
+          "TelevisionLifecycleTests/testPreferenceDeinitRemovesObservers",
+          "TelevisionLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated",
+          "TelevisionLifecycleTests/testPreferenceInitialSnapshot",
+          "TelevisionLifecycleTests/testPreferenceMotionChange",
+          "TelevisionLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart",
+          "TelevisionLifecycleTests/testPreferenceOtherCenterIgnored",
+          "TelevisionLifecycleTests/testPreferenceRestartRefreshesSnapshot",
+          "TelevisionLifecycleTests/testPreferenceStartIsIdempotent",
+          "TelevisionLifecycleTests/testPreferenceStoppedQueuedWorkIgnored",
+          "TelevisionLifecycleTests/testPreferenceStopRemovesObservers",
+          "TelevisionLifecycleTests/testPreferenceTransparencyChange",
+          "TelevisionLifecycleTests/testPreferredTargetRevalidatedAfterRemoval",
+          "TelevisionLifecycleTests/testReentrantRequestPreservesNewSession",
+          "TelevisionLifecycleTests/testRemovedOriginalUsesFallback",
+          "TelevisionLifecycleTests/testRequestRejectionIsReturned",
+          "TelevisionLifecycleTests/testTransparentAncestorUsesFallback"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "failures": [],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/TelevisionLifecycle.swift",
+          "sha256": "00b12e1ea1d684850457bb76b1c9f81bf1108dd8ac08216608631ec840a5f275"
+        },
+        {
+          "path": "inputs/Tests/TelevisionLifecycleTests.swift",
+          "sha256": "c446ffbd8872c440e67b71e8d3390d51aabc7799a5835da2a035f117ca3ad7e9"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "768e9e7c75aa3d250cde2359a0c95952cf3d4a319e821bdaa02ef4ba98bc32e5"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "75d50ff231e03ab143e4c602f350b94588f8404b373ce986a9153f1f5e73a669"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "943fb5824689978b771419105256eb2006c235da929f8074a2ff2b9203c45cf2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "2359db2b585540f06c157ece388a3cbf05c99c833e3476fe8f285575ff800ec2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "291fac6ac9751909c636c6d7d2bc20a5e288622f37bf0d87ebd27759f81dd7b1"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "04a9583bac01ca03abeac21ff3c4efdab1a389f7a66c2494c350bc76a7f12bb3"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "e205c04e5f9f9574e9c7e9b2dbd7b785fcee71efc6e999cf486eb03d119524cd"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "dfa89468ffecf97c09fd0ced7121f0870f0e571ddc69ef3a389b88385081b6d9"
+        },
+        {
+          "path": "devices.json",
+          "sha256": "5f8b3a6769c49251a475cc5f913013bf802f531605aebc5c5098fb659d6cd74c"
+        },
+        {
+          "path": "runtimes.json",
+          "sha256": "9c049e6e20890314e9cf2c38cdfd1d56b9a45745397a55bec1cd888c46bd8735"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "7f856930a36eeee79e1d20fa9867acf188d4b257164180dce5f0f596466a40b6"
+        },
+        {
+          "path": "native.log",
+          "sha256": "cecfdc99e75885a4767fcde64183c5088f6a75e8bde8813addaf0d5e43d6f927"
+        },
+        {
+          "path": "process.json",
+          "sha256": "d0ef1793fc13add34dd1610335fe38247d701426d50c61fbb9215cc13d1b3de1"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "20505c4fbcbe24dfe32c5397c9cee07ab950afab5fe3f151f1f066100d0a10a1"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "f3fda8f8af6ed83fe55410cf02d6d2c1c0cd1395692b4cd3af2a7aefab102920"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-tv-repeatedpreference-r1",
+      "originalResultHash": "b24b4d1560cd0d952c2ccfb289b8ae88aaef545d8ac2e9b1fca6994bd915d39f",
+      "manifestHash": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494",
+      "package": "tvos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "repeatedpreference",
+      "recordedAt": "2026-11-06T21:10:23.407Z",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "environment": {
+        "platform": "tvOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24J360",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23L470"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "TelevisionLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated"
+        ],
+        "failedTestIds": [
+          "TelevisionLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated"
+        ],
+        "diagnosticIds": []
+      },
+      "failures": [
+        {
+          "test": "TelevisionLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated()",
+          "diagnostic": "XCTAssertEqual failed: (\"2\") is not equal to (\"1\")"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/TelevisionLifecycle.swift",
+          "sha256": "00b12e1ea1d684850457bb76b1c9f81bf1108dd8ac08216608631ec840a5f275"
+        },
+        {
+          "path": "inputs/Tests/TelevisionLifecycleTests.swift",
+          "sha256": "c446ffbd8872c440e67b71e8d3390d51aabc7799a5835da2a035f117ca3ad7e9"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "768e9e7c75aa3d250cde2359a0c95952cf3d4a319e821bdaa02ef4ba98bc32e5"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "75d50ff231e03ab143e4c602f350b94588f8404b373ce986a9153f1f5e73a669"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "943fb5824689978b771419105256eb2006c235da929f8074a2ff2b9203c45cf2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "2359db2b585540f06c157ece388a3cbf05c99c833e3476fe8f285575ff800ec2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "291fac6ac9751909c636c6d7d2bc20a5e288622f37bf0d87ebd27759f81dd7b1"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "04a9583bac01ca03abeac21ff3c4efdab1a389f7a66c2494c350bc76a7f12bb3"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "e205c04e5f9f9574e9c7e9b2dbd7b785fcee71efc6e999cf486eb03d119524cd"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "dfa89468ffecf97c09fd0ced7121f0870f0e571ddc69ef3a389b88385081b6d9"
+        },
+        {
+          "path": "devices.json",
+          "sha256": "6acec98cf02acef9d9c17061675097887c64092367433f7798368464da25a1c4"
+        },
+        {
+          "path": "runtimes.json",
+          "sha256": "3fec836fc7f37121781ac93ec613bcaa20df5aba9d073309593e2a51c5dd26a1"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "97474c50d58eedd73b1e8659001cb8706e4fc239b05cf55d3810d530694ead7a"
+        },
+        {
+          "path": "native.log",
+          "sha256": "df598a8e5c3afcaa517f45d8251ef9202c5318dc5742e545cbd965d21777ce5e"
+        },
+        {
+          "path": "process.json",
+          "sha256": "3b3d5470ef1e4f87a89d31616a0e727cd25f187fbca134053b38a084f50e9da3"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "4c6b9587ccf33043df3c0cbe46893e51b1b1e280537e93bf7af0dbe419cd8073"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "560414ddf6ddca99eff859f54c3e227707e1d8af4615f26f718acd52b9e59197"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-tv-stalecompletion-r1",
+      "originalResultHash": "9390d8358adb212f3f08ceb3ac4d5b0347b31615b745c748f8118bca9deee007",
+      "manifestHash": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494",
+      "package": "tvos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "stalecompletion",
+      "recordedAt": "2026-11-06T21:09:26.479Z",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "environment": {
+        "platform": "tvOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24J360",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23L470"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "TelevisionLifecycleTests/testOldCompletionCannotConsumeNewSession"
+        ],
+        "failedTestIds": [
+          "TelevisionLifecycleTests/testOldCompletionCannotConsumeNewSession"
+        ],
+        "diagnosticIds": []
+      },
+      "failures": [
+        {
+          "test": "TelevisionLifecycleTests/testOldCompletionCannotConsumeNewSession()",
+          "diagnostic": "XCTAssertFalse failed"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/TelevisionLifecycle.swift",
+          "sha256": "00b12e1ea1d684850457bb76b1c9f81bf1108dd8ac08216608631ec840a5f275"
+        },
+        {
+          "path": "inputs/Tests/TelevisionLifecycleTests.swift",
+          "sha256": "c446ffbd8872c440e67b71e8d3390d51aabc7799a5835da2a035f117ca3ad7e9"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "768e9e7c75aa3d250cde2359a0c95952cf3d4a319e821bdaa02ef4ba98bc32e5"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "75d50ff231e03ab143e4c602f350b94588f8404b373ce986a9153f1f5e73a669"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "943fb5824689978b771419105256eb2006c235da929f8074a2ff2b9203c45cf2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "2359db2b585540f06c157ece388a3cbf05c99c833e3476fe8f285575ff800ec2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "291fac6ac9751909c636c6d7d2bc20a5e288622f37bf0d87ebd27759f81dd7b1"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "04a9583bac01ca03abeac21ff3c4efdab1a389f7a66c2494c350bc76a7f12bb3"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "e205c04e5f9f9574e9c7e9b2dbd7b785fcee71efc6e999cf486eb03d119524cd"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "dfa89468ffecf97c09fd0ced7121f0870f0e571ddc69ef3a389b88385081b6d9"
+        },
+        {
+          "path": "devices.json",
+          "sha256": "266d3b5eec11b196bf55dfe11e867818fde5c6e6e069e32e5d16251b65007282"
+        },
+        {
+          "path": "runtimes.json",
+          "sha256": "f7b40038a939ae455208d63748a95226e043af511b08605ec2d90e0521c57255"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "fe9e6487b3d6a6a225578037f8ea0e042b580918007ad6ea96843e63153665a9"
+        },
+        {
+          "path": "native.log",
+          "sha256": "a132f9288c25eb1d2f765c94074a4c66b72c944bae706c8c939546e0a6a84a1f"
+        },
+        {
+          "path": "process.json",
+          "sha256": "3b3d5470ef1e4f87a89d31616a0e727cd25f187fbca134053b38a084f50e9da3"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "021a9d4dbdfeb95925300bc1abb85b40270d5d5a73c4b73f4f4baf4062f04151"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "e8701a7ee75ab673f355e7f32ae79497b1c0d10846cfce999428ae37d5aa4bb0"
+        }
+      ]
+    },
+    {
+      "attempt": "lifecycle-tv-stoppeddelivery-r1",
+      "originalResultHash": "5cbdd829bb7d6e5b43556b28d9824266668fb09bbc3e383643a84db43fb9d70b",
+      "manifestHash": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494",
+      "package": "tvos-lifecycle-v1",
+      "revision": "2",
+      "checkId": "stoppeddelivery",
+      "recordedAt": "2026-11-06T21:09:49.530Z",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "environment": {
+        "platform": "tvOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24J360",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23L470"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "TelevisionLifecycleTests/testPreferenceStoppedQueuedWorkIgnored"
+        ],
+        "failedTestIds": [
+          "TelevisionLifecycleTests/testPreferenceStoppedQueuedWorkIgnored"
+        ],
+        "diagnosticIds": []
+      },
+      "failures": [
+        {
+          "test": "TelevisionLifecycleTests/testPreferenceStoppedQueuedWorkIgnored()",
+          "diagnostic": "XCTAssertEqual failed: (\"2\") is not equal to (\"1\")"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "manifest.json",
+          "sha256": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494"
+        },
+        {
+          "path": "adapter-platform-native.mjs",
+          "sha256": "781b1c799e1319f8abd92b0c83a7ff45eca7ff5cc9ab26dc6fb7b10c59db2bc5"
+        },
+        {
+          "path": "adapter-platform-core.mjs",
+          "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5"
+        },
+        {
+          "path": "adapter-native-core.mjs",
+          "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346"
+        },
+        {
+          "path": "adapter-contracts.mjs",
+          "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130"
+        },
+        {
+          "path": "inputs/Sources/TelevisionLifecycle.swift",
+          "sha256": "00b12e1ea1d684850457bb76b1c9f81bf1108dd8ac08216608631ec840a5f275"
+        },
+        {
+          "path": "inputs/Tests/TelevisionLifecycleTests.swift",
+          "sha256": "c446ffbd8872c440e67b71e8d3390d51aabc7799a5835da2a035f117ca3ad7e9"
+        },
+        {
+          "path": "inputs/NegativeFixtures/ForeignTarget.swift",
+          "sha256": "768e9e7c75aa3d250cde2359a0c95952cf3d4a319e821bdaa02ef4ba98bc32e5"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StaleCompletion.swift",
+          "sha256": "75d50ff231e03ab143e4c602f350b94588f8404b373ce986a9153f1f5e73a669"
+        },
+        {
+          "path": "inputs/NegativeFixtures/StoppedDelivery.swift",
+          "sha256": "943fb5824689978b771419105256eb2006c235da929f8074a2ff2b9203c45cf2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/OldGeneration.swift",
+          "sha256": "2359db2b585540f06c157ece388a3cbf05c99c833e3476fe8f285575ff800ec2"
+        },
+        {
+          "path": "inputs/NegativeFixtures/RepeatedPreference.swift",
+          "sha256": "291fac6ac9751909c636c6d7d2bc20a5e288622f37bf0d87ebd27759f81dd7b1"
+        },
+        {
+          "path": "generated-package.swift",
+          "sha256": "04a9583bac01ca03abeac21ff3c4efdab1a389f7a66c2494c350bc76a7f12bb3"
+        },
+        {
+          "path": "xcode.txt",
+          "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77"
+        },
+        {
+          "path": "compiler.txt",
+          "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908"
+        },
+        {
+          "path": "sdk-path.txt",
+          "sha256": "e205c04e5f9f9574e9c7e9b2dbd7b785fcee71efc6e999cf486eb03d119524cd"
+        },
+        {
+          "path": "sdk-version.txt",
+          "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a"
+        },
+        {
+          "path": "sdk-build.txt",
+          "sha256": "dfa89468ffecf97c09fd0ced7121f0870f0e571ddc69ef3a389b88385081b6d9"
+        },
+        {
+          "path": "devices.json",
+          "sha256": "19f75785f33a52f7cf69dee34b40bed770abce3ccbdba19074d8a39680dce485"
+        },
+        {
+          "path": "runtimes.json",
+          "sha256": "71f1e8f380239b7df0c6ea31f5c44808f5a4931a9724982c1933f42bdd651210"
+        },
+        {
+          "path": "intent.json",
+          "sha256": "b298e8819b0df26db22c5034675d4c0e148f06008fb4fb02e355ed066aec9b83"
+        },
+        {
+          "path": "native.log",
+          "sha256": "3c4df3ae8feaf2602d19cb8374f1d4623904d1c6f27c9327548196faba0b5b68"
+        },
+        {
+          "path": "process.json",
+          "sha256": "3b3d5470ef1e4f87a89d31616a0e727cd25f187fbca134053b38a084f50e9da3"
+        },
+        {
+          "path": "summary-process.txt",
+          "sha256": "dae475c2a29af652723f80068befedd3c588d54179131ac08bedcf0672e762df"
+        },
+        {
+          "path": "summary.json",
+          "sha256": "10e5064ec5c7d99c592fdd46759c60a88fe091cc945b496d906a67ac57db8cbe"
+        }
+      ]
+    }
+  ],
+  "pins": [
+    {
+      "path": "code-examples/platforms/macos-lifecycle-v1/NegativeFixtures/ForeignTarget.swift",
+      "sha256": "e7f8d2fd6c9aef05ef71cabe20a456c71fcbf810fde7564a693944c582f50e25"
+    },
+    {
+      "path": "code-examples/platforms/macos-lifecycle-v1/NegativeFixtures/OldGeneration.swift",
+      "sha256": "03925fcc00328b1c49c72094501be3f647e55ee898abce2dde40a8922c880ce6"
+    },
+    {
+      "path": "code-examples/platforms/macos-lifecycle-v1/NegativeFixtures/OriginalNoResponderCheck.swift",
+      "sha256": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+    },
+    {
+      "path": "code-examples/platforms/macos-lifecycle-v1/NegativeFixtures/RepeatedPreference.swift",
+      "sha256": "e8b18798874b98d628f4d91c8a49b2982df6dc96296b63f190eda3d06a12b573"
+    },
+    {
+      "path": "code-examples/platforms/macos-lifecycle-v1/NegativeFixtures/StaleCompletion.swift",
+      "sha256": "15ca25f2c324982a02fbc7b12c06e102670e775ee38c706947a710859584c036"
+    },
+    {
+      "path": "code-examples/platforms/macos-lifecycle-v1/NegativeFixtures/StoppedDelivery.swift",
+      "sha256": "80845229f37030c478773b49761ccc5d4eb03fe35145a9c172e61a0c6566d68a"
+    },
+    {
+      "path": "code-examples/platforms/macos-lifecycle-v1/Sources/DesktopLifecycle.swift",
+      "sha256": "1d79aece2dae160d39b3c7fa274d19bccbaf72213de8f45cc2c07b3d7a5e4193"
+    },
+    {
+      "path": "code-examples/platforms/macos-lifecycle-v1/Tests/DesktopLifecycleTests.swift",
+      "sha256": "7aee737b5a3d3edf1390c8ee4b14910a5733cfea8bbdf2622135a0b4b00b1338"
+    },
+    {
+      "path": "code-examples/platforms/macos-lifecycle-v1/evaluation/display-preferences.prompt.md",
+      "sha256": "7b07f9df8d9fb489a1d95ffaf640518f70b8d33135f58d3b560e5090a151979d"
+    },
+    {
+      "path": "code-examples/platforms/macos-lifecycle-v1/evaluation/display-preferences.rubric.md",
+      "sha256": "9c0073f5578f72174bb9c7b3911cdfb4b1564dda367234dd2034ef60f179f97b"
+    },
+    {
+      "path": "code-examples/platforms/macos-lifecycle-v1/evaluation/modal-restoration.prompt.md",
+      "sha256": "59ae696cc325925c28d586ae2f699ea46a99c9c132988ae3fedbf68b53d8a774"
+    },
+    {
+      "path": "code-examples/platforms/macos-lifecycle-v1/evaluation/modal-restoration.rubric.md",
+      "sha256": "a0ee4eb51906a0fe5d0e8eba91de39161934c6fa3fb01ea2378f8b4d476f3f47"
+    },
+    {
+      "path": "code-examples/platforms/macos-lifecycle-v1/manifest.json",
+      "sha256": "27173d15d86e41a19963961d9c200d559817a172e894432817ade6f22880bdf0"
+    },
+    {
+      "path": "code-examples/platforms/tvos-lifecycle-v1/NegativeFixtures/ForeignTarget.swift",
+      "sha256": "768e9e7c75aa3d250cde2359a0c95952cf3d4a319e821bdaa02ef4ba98bc32e5"
+    },
+    {
+      "path": "code-examples/platforms/tvos-lifecycle-v1/NegativeFixtures/OldGeneration.swift",
+      "sha256": "2359db2b585540f06c157ece388a3cbf05c99c833e3476fe8f285575ff800ec2"
+    },
+    {
+      "path": "code-examples/platforms/tvos-lifecycle-v1/NegativeFixtures/RepeatedPreference.swift",
+      "sha256": "291fac6ac9751909c636c6d7d2bc20a5e288622f37bf0d87ebd27759f81dd7b1"
+    },
+    {
+      "path": "code-examples/platforms/tvos-lifecycle-v1/NegativeFixtures/StaleCompletion.swift",
+      "sha256": "75d50ff231e03ab143e4c602f350b94588f8404b373ce986a9153f1f5e73a669"
+    },
+    {
+      "path": "code-examples/platforms/tvos-lifecycle-v1/NegativeFixtures/StoppedDelivery.swift",
+      "sha256": "943fb5824689978b771419105256eb2006c235da929f8074a2ff2b9203c45cf2"
+    },
+    {
+      "path": "code-examples/platforms/tvos-lifecycle-v1/Sources/TelevisionLifecycle.swift",
+      "sha256": "00b12e1ea1d684850457bb76b1c9f81bf1108dd8ac08216608631ec840a5f275"
+    },
+    {
+      "path": "code-examples/platforms/tvos-lifecycle-v1/Tests/TelevisionLifecycleTests.swift",
+      "sha256": "c446ffbd8872c440e67b71e8d3390d51aabc7799a5835da2a035f117ca3ad7e9"
+    },
+    {
+      "path": "code-examples/platforms/tvos-lifecycle-v1/evaluation/display-preferences.prompt.md",
+      "sha256": "c60353787b2df04bd1b0838d9a19ef84354fbb33a894e5154afc76b498bd3221"
+    },
+    {
+      "path": "code-examples/platforms/tvos-lifecycle-v1/evaluation/display-preferences.rubric.md",
+      "sha256": "4cd5f54214254262d2e5f8f685a05701be466fed21a9f21031113f5d1f56c0db"
+    },
+    {
+      "path": "code-examples/platforms/tvos-lifecycle-v1/evaluation/modal-restoration.prompt.md",
+      "sha256": "568f3cf50e437f15cdb86ca69d554a43e25d572587cc60924f40948d99d207d2"
+    },
+    {
+      "path": "code-examples/platforms/tvos-lifecycle-v1/evaluation/modal-restoration.rubric.md",
+      "sha256": "3386d3afd58d28608243c42a1313cb677b2a9e531b8e7806620f9d5027a1e2ef"
+    },
+    {
+      "path": "code-examples/platforms/tvos-lifecycle-v1/manifest.json",
+      "sha256": "de17cd95cfd6f355aa23e1adfee74f7a9ad26f16ba0ca3dde24dded8c9820494"
+    },
+    {
+      "path": "code-examples/tools/lifecycle-retrieval.mjs",
+      "sha256": "2b6fa11f976a2cb621b054166769fd8e3fa37db60b3a1324ab8016bf83de553f"
+    },
+    {
+      "path": "code-examples/tools/lifecycle.test.mjs",
+      "sha256": "3a13682363d7b0b0d65999f0b7ed1a0064daa3878a262a31ac7e5bc122b2e034"
+    },
+    {
+      "path": "research/evaluation/platform-lifecycle-v1/incidents/mac-first-manifest.json.txt",
+      "sha256": "133e0a0e431371becc71f90af634fa7967f0a8dd7fc2210aa36e5335b1f50529"
+    },
+    {
+      "path": "research/evaluation/platform-lifecycle-v1/incidents/mac-first-tests.swift.txt",
+      "sha256": "7449c5b5560e6275a3450b3a7da48b8f041d0836ac7ae7d665c9442d1b6e693d"
+    },
+    {
+      "path": "research/evaluation/platform-lifecycle-v1/incidents/mac-original-no-responder-check.swift.txt",
+      "sha256": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+    },
+    {
+      "path": "research/evaluation/platform-lifecycle-v1/incidents/tv-first-manifest.json.txt",
+      "sha256": "825718c2f297a9b9b609430b6c32358e1d578b0d5b36ff29872f14fa9abd94bd"
+    },
+    {
+      "path": "research/evaluation/platform-lifecycle-v1/incidents/tv-first-ownership-mutant.swift.txt",
+      "sha256": "ab0d2bfd1aa5ffcf4bfdac07a6f63120ec4dff0714513c90584f71f001d6db0c"
+    }
+  ]
+}

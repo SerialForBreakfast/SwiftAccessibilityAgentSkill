@@ -203,3 +203,30 @@ execution is distinct from prior evaluation-fixture evidence and does not promot
 an anchor. Independent review of this adapter/library remains the next gate.
 No UI tests, mandatory manual verification, automatic minor-version matrix or
 runtime skill changes are part of this infrastructure.
+
+## Mac and Apple TV lifecycle extension
+
+[Lifecycle evidence](../research/evaluation/platform-lifecycle-v1/README.md) adds57
+positive methods (28 AppKit/macOS,29 UIKit/tvOS), ten deliberate mutants and one
+preserved original implementation regression. Modal completion/restoration requests
+and display-preference observer lifecycles now have native evidence and four
+separate draft prompt/rubric pairs. The cumulative platform totals are66 Mac and67 TV.
+
+Use `tools/lifecycle-retrieval.mjs` for opt-in `modal-restoration` or
+`display-preferences` detail. Existing candidate routes delegate unchanged.
+[Remaining parity work](../research/evaluation/platform-lifecycle-v1/COVERAGE.md)
+is tracked by capability. Released routing, frozen baselines, the nine-case Gemini
+plan and SwiftUI deferral remain unchanged.
+
+## Platform media extension
+
+[Media evidence](../research/evaluation/platform-media-v1/README.md) qualifies shared
+AVFoundation metadata, selection and inspection contracts separately on macOS and
+tvOS. Each has 25 positive methods: 16 requalified metadata/inspection methods and 9
+selection/policy methods. These supplement AppKit/UIKit examples, not UI interaction
+claims. The first invalid audio-group permission oracle is preserved and corrected.
+
+`tools/media-retrieval.mjs` loads a short platform companion summary by default,
+then only the requested source or contract. Six new draft question/rubric pairs
+are outside the existing nine-case Gemini plan. Released skill and frozen inputs
+remain unchanged. See the [remaining queue](../research/evaluation/platform-media-v1/COVERAGE.md).

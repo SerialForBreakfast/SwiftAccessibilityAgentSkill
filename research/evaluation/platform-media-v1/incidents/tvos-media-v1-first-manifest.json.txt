@@ -1,0 +1,247 @@
+{
+  "schema": 1,
+  "id": "tvos-media-v1",
+  "revision": "1",
+  "platform": "tvOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "AVFoundation code contracts on each platform, not AppKit/UIKit UI behavior. Silent local fixtures establish metadata/selection, not narration quality, streaming, playback readiness or delivered accessibility. No UI tests.",
+  "claims": [
+    {
+      "id": "metadata",
+      "url": "https://developer.apple.com/documentation/avfoundation/avmediacharacteristic/describesvideoforaccessibility",
+      "section": "Explicit tags; AVAsset.h async group/duration loading",
+      "statement": "Extract actual option tags and selection; keep missing item, absent group and load error distinct.",
+      "reviewedOn": "2026-11-06",
+      "availability": "SDK27 headers inspected for macOS/tvOS separately; async group loader macOS12/tvOS15; target26 compile and exact runtime receipts recorded independently. Full API matrix remains scoped."
+    },
+    {
+      "id": "selection",
+      "url": "https://developer.apple.com/documentation/avfoundation/avplayeritem/select(_:in:)",
+      "section": "Parameters and Discussion; AVMediaSelectionGroup.allowsEmptySelection",
+      "statement": "Explicit selection preserves other groups; full-subtitle and description-only filtering and no-match preservation are example policies.",
+      "reviewedOn": "2026-11-06",
+      "availability": "SDK27 headers inspected for macOS/tvOS separately; async group loader macOS12/tvOS15; target26 compile and exact runtime receipts recorded independently. Full API matrix remains scoped."
+    },
+    {
+      "id": "inspection",
+      "url": "https://developer.apple.com/documentation/avfoundation/avplayeritem/seekabletimeranges",
+      "section": "AVPlayerItem and CoreMedia time/range declarations",
+      "statement": "Report loaded and seekable ranges separately, preserve missing values, duration categories and independent playback state.",
+      "reviewedOn": "2026-11-06",
+      "availability": "SDK27 headers inspected for macOS/tvOS separately; async group loader macOS12/tvOS15; target26 compile and exact runtime receipts recorded independently. Full API matrix remains scoped."
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/MediaChoice.swift",
+      "sha256": "4115257c4e5d75238eff77df7001582f98b49e962780c63b828f8990ce15c714"
+    },
+    {
+      "path": "Sources/MediaInspection.swift",
+      "sha256": "b5c69f1a731ff077a294d92d8ad81f23d073938c9f6ca72f7798813030a26cf8"
+    },
+    {
+      "path": "Sources/MediaMetadata.swift",
+      "sha256": "1a2b02faa406d9334d96b3d94cc52d9e503778538acb73766e930f267aaf5b09"
+    },
+    {
+      "path": "Tests/DescriptionFixture.swift",
+      "sha256": "b65a164d2ea9121fa058094c177116405c31904789e300872aea15cae7ad0a2e"
+    },
+    {
+      "path": "Tests/MediaChoiceTests.swift",
+      "sha256": "6db2de7957fe8a503d27f1a03f4dc47587400ada42c1b27c36a1373fb04f6a48"
+    },
+    {
+      "path": "Tests/MediaInspectionTests.swift",
+      "sha256": "e72bd25a8cceb0a2bb6deb12eb4d967bc724ffcd19c96cf52bac722d1b58d545"
+    },
+    {
+      "path": "Tests/MediaMetadataTests.swift",
+      "sha256": "74829d251128f976de384de4bfaf761880cdf92492b54623e54a5826fdd8d658"
+    },
+    {
+      "path": "NegativeFixtures/AllAudioDescribed.swift",
+      "sha256": "d449e70f693a3cfe1e4c860039c768384a8371b81cc0477ac4c4e5e262d6ae36"
+    },
+    {
+      "path": "NegativeFixtures/DescriptionIgnored.swift",
+      "sha256": "19729a539f977047bede7e3ba046827074f390cc7f3ff576812a647d8df3a3a4"
+    },
+    {
+      "path": "NegativeFixtures/ForcedChoice.swift",
+      "sha256": "2b59749b856962ca80954425df749f9beafd9e9dc2431330b3f82d6076712217"
+    },
+    {
+      "path": "NegativeFixtures/LoadedIsSeekable.swift",
+      "sha256": "221e0d74fe6b9e21aa152c417ae60bcf25ef4b3e9f3cb6b784aa1243963e0804"
+    },
+    {
+      "path": "NegativeFixtures/MissingClears.swift",
+      "sha256": "c514feea8b0cacd292f1e768b842504406ad81668c2b80eb5669f19d45ea88c0"
+    },
+    {
+      "path": "NegativeFixtures/NoItemAbsent.swift",
+      "sha256": "1a8b332c418062e765de4639f8c1c6faab48dc10e4c504b637edda3d2093c559"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "metadata",
+        "selection",
+        "inspection"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "metadata",
+        "selection",
+        "inspection"
+      ],
+      "testIds": [
+        "MediaChoiceTests/testSelectFullEnglishSubtitle",
+        "MediaChoiceTests/testMissingLanguagePreservesChoice",
+        "MediaChoiceTests/testDescriptionSelectsTaggedAudio",
+        "MediaChoiceTests/testDescriptionUnavailablePreservesChoice",
+        "MediaChoiceTests/testSubtitleOffWhenAllowed",
+        "MediaChoiceTests/testRequiredAudioGroupRefusesOff",
+        "MediaChoiceTests/testSubtitleChoiceLeavesAudioUntouched",
+        "MediaInspectionTests/testDurationCategoriesRemainDistinct",
+        "MediaInspectionTests/testIndefiniteDoesNotInventLiveClassification",
+        "MediaInspectionTests/testLoadedRangesDoNotAuthorizeSeeking",
+        "MediaInspectionTests/testDiscontinuousRangesPreserveGapsAndHalfOpenEnds",
+        "MediaInspectionTests/testUnavailableAndEmptyRangesDiffer",
+        "MediaInspectionTests/testFullBufferDoesNotImplyLikelyToKeepUp",
+        "MediaInspectionTests/testWaitingStatusDoesNotBecomePlayingFromRate",
+        "MediaInspectionTests/testWaitingReasonAndIndependentFlagsArePreserved",
+        "MediaInspectionTests/testEmptyNativePlayerCaptureRemainsUnavailable",
+        "MediaMetadataTests/testTaggedOptionIsRecognizedWithoutInferringOtherAudio",
+        "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription",
+        "MediaMetadataTests/testInspectionPreservesChosenAudioAndSubtitleOff",
+        "MediaMetadataTests/testLoadedItemDurationAndSubtitleVariants",
+        "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent",
+        "MediaMetadataTests/testKnownMissingGroupIsAbsent",
+        "MediaMetadataTests/testUnreadableLocalAssetPropagatesError"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "described",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "metadata"
+      ],
+      "testIds": [
+        "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription"
+      ],
+      "failureIds": [
+        "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription"
+      ],
+      "replacement": {
+        "target": "Sources/MediaMetadata.swift",
+        "source": "NegativeFixtures/AllAudioDescribed.swift"
+      }
+    },
+    {
+      "id": "unavailable",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "metadata"
+      ],
+      "testIds": [
+        "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent"
+      ],
+      "failureIds": [
+        "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent"
+      ],
+      "replacement": {
+        "target": "Sources/MediaMetadata.swift",
+        "source": "NegativeFixtures/NoItemAbsent.swift"
+      }
+    },
+    {
+      "id": "forced",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "selection"
+      ],
+      "testIds": [
+        "MediaChoiceTests/testSelectFullEnglishSubtitle"
+      ],
+      "failureIds": [
+        "MediaChoiceTests/testSelectFullEnglishSubtitle"
+      ],
+      "replacement": {
+        "target": "Sources/MediaChoice.swift",
+        "source": "NegativeFixtures/ForcedChoice.swift"
+      }
+    },
+    {
+      "id": "missing",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "selection"
+      ],
+      "testIds": [
+        "MediaChoiceTests/testMissingLanguagePreservesChoice"
+      ],
+      "failureIds": [
+        "MediaChoiceTests/testMissingLanguagePreservesChoice"
+      ],
+      "replacement": {
+        "target": "Sources/MediaChoice.swift",
+        "source": "NegativeFixtures/MissingClears.swift"
+      }
+    },
+    {
+      "id": "description",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "selection"
+      ],
+      "testIds": [
+        "MediaChoiceTests/testDescriptionUnavailablePreservesChoice"
+      ],
+      "failureIds": [
+        "MediaChoiceTests/testDescriptionUnavailablePreservesChoice"
+      ],
+      "replacement": {
+        "target": "Sources/MediaChoice.swift",
+        "source": "NegativeFixtures/DescriptionIgnored.swift"
+      }
+    },
+    {
+      "id": "ranges",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "inspection"
+      ],
+      "testIds": [
+        "MediaInspectionTests/testLoadedRangesDoNotAuthorizeSeeking"
+      ],
+      "failureIds": [
+        "MediaInspectionTests/testLoadedRangesDoNotAuthorizeSeeking"
+      ],
+      "replacement": {
+        "target": "Sources/MediaInspection.swift",
+        "source": "NegativeFixtures/LoadedIsSeekable.swift"
+      }
+    }
+  ]
+}

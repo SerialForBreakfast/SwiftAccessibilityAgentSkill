@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "scope": "Six development cases; separate from the nine-case Gemini plan and four lifecycle cases",
+  "cases": [
+    {
+      "id": "macos-media-v1/media-selection",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/macos-media-v1/evaluation/media-selection.prompt.md",
+        "sha256": "48da1d05620cd22fe3732cbae3448283b484bc6669a7c40f8fb9ab4fcd64a3c4",
+        "text": "Our macOS app uses AVPlayerItem. Add helpers for explicit language selection, optionally requiring audio description, and for turning a group off when allowed. A subtitle language choice should pick a full subtitle option, not a forced-only variant. If a requested choice is missing, leave the existing choice alone. Changing subtitles must preserve the audio selection. Groups come from the current item asset. Target macOS26; keep system automatic selection policy alone until the user explicitly chooses. Show unit tests without playback or UI automation.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/macos-media-v1/evaluation/media-selection.rubric.md",
+        "sha256": "6b4ffb95c05d57ddcfb68d7c55a23dbda6e829f72461b470d9f4215e96d3779a",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/macos-media-v1/manifest.json",
+      "authoringCapture": "AUTHORING.md; exact visible request, authoring source and native artifacts; full provider context unavailable"
+    },
+    {
+      "id": "macos-media-v1/media-metadata",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/macos-media-v1/evaluation/media-metadata.prompt.md",
+        "sha256": "2dc66d0d40cac26fe0bddbc02aad1e60445413ee96f818d0c55ca3bffe3016af",
+        "text": "For a macOS player inspector, extract audio/subtitle option names, languages, audio-description and forced-only flags, and which options are selected. Load asset metadata asynchronously. Distinguish no current item, a successfully loaded but absent group, and a load error. Inspecting must not change the chosen audio or subtitle-off state. Show a testable implementation targeting macOS26 and explain what a tagged silent local test asset can establish.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/macos-media-v1/evaluation/media-metadata.rubric.md",
+        "sha256": "2ef7f19b874b7adc757d0fc2fbf49adef3e385d5a4279c1f70b7929853105719",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/macos-media-v1/manifest.json",
+      "authoringCapture": "AUTHORING.md; exact visible request, authoring source and native artifacts; full provider context unavailable"
+    },
+    {
+      "id": "macos-media-v1/media-inspection",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/macos-media-v1/evaluation/media-inspection.prompt.md",
+        "sha256": "79423f3b98d55c2a87860c60e06d1b48e7043abe08ce13fdb00306911c39ce9c",
+        "text": "We are adding a diagnostic snapshot to our macOS AVPlayer app. Capture duration, loaded and seekable ranges, buffer flags, rate, time-control status and waiting reason without modifying playback. Missing item data must stay distinguishable from empty data. We also need a helper telling whether a time is inside the captured seekable ranges. How would you implement and unit-test this for macOS26 without a network stream?\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/macos-media-v1/evaluation/media-inspection.rubric.md",
+        "sha256": "bfa6c13c9829edf33801cb134911b94e00e1deb1f55069219fc3ca96effc5bdb",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/macos-media-v1/manifest.json",
+      "authoringCapture": "AUTHORING.md; exact visible request, authoring source and native artifacts; full provider context unavailable"
+    },
+    {
+      "id": "tvos-media-v1/media-selection",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/tvos-media-v1/evaluation/media-selection.prompt.md",
+        "sha256": "fb3f74a9ac66414edfb375c95a3f75f7525c4adcac471de21979c795cba32325",
+        "text": "Our tvOS app uses AVPlayerItem. Add helpers for explicit language selection, optionally requiring audio description, and for turning a group off when allowed. A subtitle language choice should pick a full subtitle option, not a forced-only variant. If a requested choice is missing, leave the existing choice alone. Changing subtitles must preserve the audio selection. Groups come from the current item asset. Target tvOS26; keep system automatic selection policy alone until the user explicitly chooses. Show unit tests without playback or UI automation.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/tvos-media-v1/evaluation/media-selection.rubric.md",
+        "sha256": "29bc79da3e5048de3a5c8e7ee0d149e17bdfd4beb517481d5da5cff561aec502",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/tvos-media-v1/manifest.json",
+      "authoringCapture": "AUTHORING.md; exact visible request, authoring source and native artifacts; full provider context unavailable"
+    },
+    {
+      "id": "tvos-media-v1/media-metadata",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/tvos-media-v1/evaluation/media-metadata.prompt.md",
+        "sha256": "3f40dc5a5d6e80596e7ef4703fe16e1bdbeacb6185119dc28265d903884a9f4e",
+        "text": "For a tvOS player inspector, extract audio/subtitle option names, languages, audio-description and forced-only flags, and which options are selected. Load asset metadata asynchronously. Distinguish no current item, a successfully loaded but absent group, and a load error. Inspecting must not change the chosen audio or subtitle-off state. Show a testable implementation targeting tvOS26 and explain what a tagged silent local test asset can establish.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/tvos-media-v1/evaluation/media-metadata.rubric.md",
+        "sha256": "53275f92484f41ab3829e4156ef989efd34fbb47f529031affc543115323042b",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/tvos-media-v1/manifest.json",
+      "authoringCapture": "AUTHORING.md; exact visible request, authoring source and native artifacts; full provider context unavailable"
+    },
+    {
+      "id": "tvos-media-v1/media-inspection",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/tvos-media-v1/evaluation/media-inspection.prompt.md",
+        "sha256": "758be0954385e01e19673c813e24765c3c9f2ac797e1317735eb2b15282c2931",
+        "text": "We are adding a diagnostic snapshot to our tvOS AVPlayer app. Capture duration, loaded and seekable ranges, buffer flags, rate, time-control status and waiting reason without modifying playback. Missing item data must stay distinguishable from empty data. We also need a helper telling whether a time is inside the captured seekable ranges. How would you implement and unit-test this for tvOS26 without a network stream?\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/tvos-media-v1/evaluation/media-inspection.rubric.md",
+        "sha256": "685457082714605c778c50c241791e0fbd40664d14bda0a59f1bba6ff1bf543c",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/tvos-media-v1/manifest.json",
+      "authoringCapture": "AUTHORING.md; exact visible request, authoring source and native artifacts; full provider context unavailable"
+    }
+  ]
+}

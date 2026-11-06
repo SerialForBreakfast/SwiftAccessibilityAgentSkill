@@ -206,3 +206,36 @@ controller answer material enters subject context; no frozen fixtures are rewrit
 - Remaining: case-by-case transcript mapping/grading, full availability audit,
   independent review, approved frontier baselines; modal/preference/media contracts
   continue in the next coordinated batch. SwiftUI and runtime skill changes deferred.
+
+## Mac / Apple TV lifecycle parity (2026-11-06)
+
+- Executed: 57 new positive methods, ten deliberate mutant rejections and one
+  preserved original Mac implementation regression; 15 current checks have
+  matching receipts. Nineteen attempts retain the first green versions.
+- Paired: four new independent developer questions and controller rubrics, exact
+  inputs/hashes, not-run answer fields and explicit authoring capture limitations.
+- Preserved: source-audit eligibility gap and pre-execution negative-control defect,
+  classified separately from independent model failures.
+- Candidate routing: additive lifecycle layer; guidelines by default, source/tests
+  only on request. Historical routers and released skill remain unchanged.
+- Pending: independent review of these four pairs. Packet is prepared, not sent;
+  the existing nine-case BigDog/Gemini scope remains unchanged.
+- Next: platform-qualified media selection and loaded metadata, followed by forms
+  and richer collections; SwiftUI stays deferred. See
+  [parity matrix](../platform-lifecycle-v1/COVERAGE.md) and
+  [results](../platform-lifecycle-v1/RESULTS.md).
+
+## Platform media qualification (2026-11-06)
+
+- Added: shared AVFoundation metadata, explicit selection and diagnostic snapshot
+  families on Mac and TV, separately qualified; exact execution receipts are in
+  [media results](../platform-media-v1/RESULTS.md).
+- Paired: six draft platform questions/rubrics, separate input/output/analysis
+  records, and opt-in platform-qualified source retrieval. No model runs.
+- Preserved: first Mac failing audio-group permission oracle and original code;
+  corrected using native permission plus a separately asserted policy seam.
+  Local prompt-generator parse error is a tooling issue, not skill guidance.
+- Pending: independent review of six media pairs, four lifecycle pairs and the
+  existing nine-case queue as distinct scopes. No automatic expansion of Gemini.
+- Next: native forms/recovery and richer collection relationships. Shared media
+  evidence does not finish AppKit/UIKit UI coverage; SwiftUI remains deferred.

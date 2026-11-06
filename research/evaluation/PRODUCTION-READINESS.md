@@ -10,7 +10,7 @@ permission or a relaxation of the frozen release criteria.
 | Released skill 0.2.2 | Available; preserved as comparison baseline | Maintainer agent preserves it while preparing a candidate |
 | Six OS26 code-contract questions | Qualified by the [reviewed closeout](../../evals/os26/reports/2026-11-05-gold-closeout/REVIEW.md) | Evaluation worker can run an approved bounded comparison after client/quota preflight |
 | UIKit companion campaign | Native tests executed; independent campaign review remains outstanding | Independent reviewer audits claims, assertions and rubrics |
-| Mac/TV companion batches | 38 Mac and 38 TV positive methods passed at recorded anchors; nine draft question/rubric pairs | Independent reviewer qualifies pairs and source/availability claims |
+| Mac/TV companion batches | 91 Mac and 92 TV positive methods passed at recorded anchors, including shared AVFoundation contracts; 19 draft pairs across the original nine, four lifecycle and six media cases | Independent reviewer qualifies pairs and source/availability claims |
 | Companion retrieval candidate | Offline selection/read-trace checks pass | Worker measures actual installed-agent retrieval and answer quality before promotion |
 | Prompt records | Available local records archived with gaps disclosed; new drafts have no subject outputs | Maintainer maps cases; workers capture exact new requests/answers/analysis |
 | Candidate skill improvement | Not yet established by paired frontier results | Author applies focused fixes after baseline; independent grader compares outcomes |

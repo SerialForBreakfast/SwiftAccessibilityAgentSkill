@@ -48,12 +48,17 @@ skill. Each linked report explains exactly what its assertions establish.
 | Framework / platform | Examples currently tested | Recorded runtime | Positive unit methods passed |
 | --- | --- | --- | ---: |
 | [UIKit / iOS](research/evaluation/failure-driven/uikit-closure-v1/RESULTS.md) | Naming, traits, controls, grouping, actions, reuse, rotors, text scaling, preferences, modal restoration requests, media and form state | iOS 26.5 | 202 |
-| [AppKit / macOS](research/evaluation/platform-navigation-v1/RESULTS.md) | Names, actions, reuse, notification requests, table selection and key-view configuration | macOS 27.0 | 38 |
-| [UIKit / Apple TV](research/evaluation/platform-navigation-v1/RESULTS.md) | Card actions, reuse, focus candidates, filtered results, selected traits and motion-independent status | tvOS 26.5 | 38 |
+| [AppKit + AVFoundation / macOS](research/evaluation/platform-media-v1/RESULTS.md) | Names, actions, reuse, notification requests, table selection, key-view configuration, modal restoration requests and preference observation; media metadata, selection and inspection | macOS 27.0 | 91 |
+| [UIKit + AVFoundation / Apple TV](research/evaluation/platform-media-v1/RESULTS.md) | Card actions, reuse, focus candidates, filtered results, selected traits, motion-independent status, modal restoration requests and preference observation; media metadata, selection and inspection | tvOS 26.5 | 92 |
 
 Checkpoint: November 6, 2026. Method counts are not coverage percentages or proof of
 real-world assistive-tool behavior. SwiftUI and visionOS guidance is available in
 the skill; the tested companion currently covers the three lanes above.
+
+The [platform parity matrix](research/evaluation/platform-media-v1/COVERAGE.md)
+shows validated behavioral subsets and the remaining forms, collections and media-lifecycle
+work. Matching test counts is not the goal. New platform prompt/rubric pairs remain
+drafts until independent review; the existing Gemini plan is unchanged.
 
 **Development status:** the companion's new findings and retrieval changes await
 review and evaluation before inclusion in a future skill release. The installed
