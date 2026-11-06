@@ -9,6 +9,12 @@ that approval does not promote these library examples.
 
 ## Available now
 
+Completed native tranche: [long text and non-color choice state](pilots/uikit-choice-v1/README.md),
+with nine unit contracts, four deliberate defects and a separately pinned developer
+prompt/controller rubric. It supplements the historical index without changing the
+skill or frozen evaluation inputs. Native results are recorded in its validation
+packet; independent gold review and model evaluation remain separate gates.
+
 New paired tranche: [decorative content and independent named controls](pilots/uikit-naming-v1/README.md),
 with a separate draft developer prompt/rubric and difficulty ledger. It is linked
 here rather than altering the index pinned by the historical evidence packet.
@@ -16,18 +22,19 @@ It remains outside runtime skill routing and frozen model-evaluation inputs.
 
 ### Latest validation and next gate
 
-The naming tranche passed one compile check and eight positive unit tests on
-iOS26.5, and rejected three deliberate defects at their intended assertions.
-[Native evidence](pilots/uikit-naming-v1/validation/README.md),
-[difficulty ledger](pilots/uikit-naming-v1/DIFFICULTIES.md), and
-[exact mutation diffs](pilots/uikit-naming-v1/MUTATIONS.md) preserve the results.
+The long-text/selection tranche passed one compile check and nine positive unit
+tests on iOS26.5, and rejected four deliberate defects at their intended assertions.
+[Native evidence](pilots/uikit-choice-v1/validation/README.md),
+[difficulty ledger](pilots/uikit-choice-v1/DIFFICULTIES.md), and
+[exact mutation diffs](pilots/uikit-choice-v1/MUTATIONS.md) preserve the results.
 No unexpected Swift failure occurred in this tranche.
 
-The [draft developer question](pilots/uikit-naming-v1/evaluation/prompt.json) and
-[controller rubric](pilots/uikit-naming-v1/evaluation/controller.md) need independent
+The [draft developer question](pilots/uikit-choice-v1/evaluation/prompt.json) and
+[controller rubric](pilots/uikit-choice-v1/evaluation/controller.md) need independent
 review before gold promotion. Keep the controller material out of model inputs.
 Model execution and skill improvement claims remain separate, uncompleted gates.
-The combined offline library/evaluation suite currently passes172 tests; this count
+The combined offline library/evaluation suite currently passes175 tests, including
+the long-text/selection evidence-contract checks; this count
 does not include native XCTest methods or imply additional gold readiness.
 
 - Manifest/result contracts with source and evidence hashes, Apple claim links,

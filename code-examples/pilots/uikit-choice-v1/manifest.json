@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "id": "uikit-choice",
+  "revision": "1",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Configuration/metadata unit evidence only. No rendered size, clipping, speech, focus or actual selection interaction assertion. Caller supplies localized strings and chosen state.",
+  "claims": [
+    {
+      "id": "multiline",
+      "url": "https://developer.apple.com/documentation/uikit/uilabel/numberoflines",
+      "section": "UILabel.h numberOfLines, lineBreakMode, adjustsFontSizeToFitWidth",
+      "statement": "Unlimited multiline configuration and disabling shrink-to-fit are explicit policies for this long-text example.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Installed UIKit SDK27 declarations; deployment26.0. Trait overrides used in tests require iOS17+; compatible font selection iOS10+."
+    },
+    {
+      "id": "typography",
+      "url": "https://developer.apple.com/documentation/uikit/uifont/preferredfont(forTextStyle:compatibleWith:)",
+      "section": "UIFont.h preferredFontForTextStyle:compatibleWithTraitCollection:; UIContentSizeCategoryAdjusting.h",
+      "statement": "Use the effective label trait environment to select the preferred body font; configure automatic content-size adjustment.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Installed UIKit SDK27 declarations; deployment26.0. Trait overrides used in tests require iOS17+; compatible font selection iOS10+."
+    },
+    {
+      "id": "selection",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitytraits/selected",
+      "section": "UIAccessibilityConstants.h selected trait; UIAccessibility.h value; UITableViewCell.h accessoryType",
+      "statement": "Project policy supplies localized text and a checkmark alongside the selected trait; configuration removes owned selection cues and preserves unrelated traits.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Installed UIKit SDK27 declarations; deployment26.0. Trait overrides used in tests require iOS17+; compatible font selection iOS10+."
+    },
+    {
+      "id": "sizing",
+      "url": "https://developer.apple.com/documentation/uikit/uitableview/automaticdimension",
+      "section": "UITableView.h rowHeight/estimatedRowHeight/automaticDimension; UIView.h anchors",
+      "statement": "Configure automatic row height with a positive estimate and a vertical content constraint chain, without fixed heights in the authored fixture.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Installed UIKit SDK27 declarations; deployment26.0. Trait overrides used in tests require iOS17+; compatible font selection iOS10+."
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/ChoiceUIKit.swift",
+      "sha256": "376acadcfba854b9dd04e5e9245bb9ead1144e1ffb4f714ac00ee83f859d1ec2"
+    },
+    {
+      "path": "Tests/ChoiceUIKitTests.swift",
+      "sha256": "a774cd152c0c04df699762ad1b0d6483da55b3f5d531538e8bfc7b2115721760"
+    },
+    {
+      "path": "NegativeFixtures/SingleLine.swift",
+      "sha256": "c22052285ad152383fb6724d3a7f21522acf85194e36d170ecf6523acfd4901f"
+    },
+    {
+      "path": "NegativeFixtures/FixedFont.swift",
+      "sha256": "d636424ea9185ac8d94cb1738e7f66e3460b9dbc4e3886e3c256298344ca2e53"
+    },
+    {
+      "path": "NegativeFixtures/StaleSelection.swift",
+      "sha256": "3a637e8ec2a6108c43aef926ddd7cc698e1a88328e087fb78244e5f9dec4e9b4"
+    },
+    {
+      "path": "NegativeFixtures/ClobberedTraits.swift",
+      "sha256": "dcb17908f2b8d348432ac8e61986755fbb76550284b995460e5ec03a60f739d4"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-choice",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "multiline",
+        "typography",
+        "selection",
+        "sizing"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "choice-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "multiline",
+        "typography",
+        "selection",
+        "sizing"
+      ],
+      "testIds": [
+        "ChoiceUIKitTests/testLongLocalizedContentRemainsVerbatim",
+        "ChoiceUIKitTests/testMultilinePolicyReplacesShrinkToFit",
+        "ChoiceUIKitTests/testFontsMatchEffectiveLargeTextEnvironment",
+        "ChoiceUIKitTests/testRepeatedSizeTransitionsDoNotAccumulateScaling",
+        "ChoiceUIKitTests/testSelectedStateHasTextSymbolAndMetadata",
+        "ChoiceUIKitTests/testDeselectionClearsEveryOwnedSelectionCue",
+        "ChoiceUIKitTests/testSelectionUpdatesPreserveUnrelatedTraits",
+        "ChoiceUIKitTests/testSameInstanceCanChangeNameAndSelectionWithoutReuse",
+        "ChoiceUIKitTests/testSelfSizingConfigurationAndVerticalConstraintChain"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "singleline-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "multiline"
+      ],
+      "testIds": [
+        "ChoiceUIKitTests/testMultilinePolicyReplacesShrinkToFit"
+      ],
+      "failureIds": [
+        "ChoiceUIKitTests/testMultilinePolicyReplacesShrinkToFit"
+      ],
+      "replacement": {
+        "target": "Sources/ChoiceUIKit.swift",
+        "source": "NegativeFixtures/SingleLine.swift"
+      }
+    },
+    {
+      "id": "fixedfont-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "typography"
+      ],
+      "testIds": [
+        "ChoiceUIKitTests/testFontsMatchEffectiveLargeTextEnvironment"
+      ],
+      "failureIds": [
+        "ChoiceUIKitTests/testFontsMatchEffectiveLargeTextEnvironment"
+      ],
+      "replacement": {
+        "target": "Sources/ChoiceUIKit.swift",
+        "source": "NegativeFixtures/FixedFont.swift"
+      }
+    },
+    {
+      "id": "staleselection-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "selection"
+      ],
+      "testIds": [
+        "ChoiceUIKitTests/testDeselectionClearsEveryOwnedSelectionCue"
+      ],
+      "failureIds": [
+        "ChoiceUIKitTests/testDeselectionClearsEveryOwnedSelectionCue"
+      ],
+      "replacement": {
+        "target": "Sources/ChoiceUIKit.swift",
+        "source": "NegativeFixtures/StaleSelection.swift"
+      }
+    },
+    {
+      "id": "clobberedtraits-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "selection"
+      ],
+      "testIds": [
+        "ChoiceUIKitTests/testSelectionUpdatesPreserveUnrelatedTraits"
+      ],
+      "failureIds": [
+        "ChoiceUIKitTests/testSelectionUpdatesPreserveUnrelatedTraits"
+      ],
+      "replacement": {
+        "target": "Sources/ChoiceUIKit.swift",
+        "source": "NegativeFixtures/ClobberedTraits.swift"
+      }
+    }
+  ]
+}

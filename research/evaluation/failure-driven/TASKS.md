@@ -40,7 +40,12 @@ assumed assignment, before scheduling work. There is no estimated completion dat
 
 UPAIR-01 now has [native evidence and a draft paired case](../../../code-examples/pilots/uikit-naming-v1/README.md):
 eight positive methods and three intended mutant rejections. Independent case review
-and model execution remain pending. Other rows below retain their pending status.
+and model execution remain pending.
+
+UPAIR-02 now has [long-text/selection evidence and a draft paired case](../../../code-examples/pilots/uikit-choice-v1/README.md):
+nine positive methods and four intended mutant rejections. Its native contracts
+passed; independent case review and model evaluation remain pending. Other rows
+below retain their pending status.
 
 Each row requires a source claim, exact test IDs, recorded environment/result, natural
 prompt, atomic rubric, accepted alternatives and a link to baseline eligibility.

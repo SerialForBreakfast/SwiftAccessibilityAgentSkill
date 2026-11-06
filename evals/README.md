@@ -7,8 +7,13 @@ eight positive unit tests, one compile check and three intended mutant rejection
 Its separate developer question and rubric are development drafts pending independent
 review, not additions to the six qualified gold prompts below. See the
 [failure-driven work plan](../research/evaluation/failure-driven/TASKS.md) for the
-test-to-prompt workflow and remaining gates. The combined offline suite passes172
+test-to-prompt workflow and remaining gates. The combined offline suite passes175
 tests; the115 count below describes the historical gold-closeout checkpoint.
+
+[Long-text/non-color selection tranche](../code-examples/pilots/uikit-choice-v1/README.md)
+adds nine positive unit methods and four intended mutant rejections, plus a separate
+draft prompt/rubric. Independent case review and model evaluation remain pending;
+these native passes do not expand the frozen gold catalog.
 
 The [closeout supersession record](os26/CLOSEOUT-SUPERSESSION.md) explains why the
 earlier local note remains unchanged for provenance while newer review governs readiness.
