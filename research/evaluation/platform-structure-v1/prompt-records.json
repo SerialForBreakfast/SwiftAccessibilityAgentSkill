@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "scope": "Four new platform structure/form development cases; prior indices and Gemini plan remain separate",
+  "cases": [
+    {
+      "id": "macos-structure-v1/form-recovery",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/macos-structure-v1/evaluation/form-recovery.prompt.md",
+        "sha256": "6f910d6a75031d49a0f54a989dcfa095347a1dc5e3e3a840cc5ef433044b681d",
+        "text": "In our AppKit macOS app, an editable email field has an ordinary Save button and optional help text. A supplied synchronous, side-effect-free validator returns either a nonempty localized error or nil. On invalid Save, show the error without losing the typed text or saving it. When editing resumes, clear the old error and restore the help; editing itself should not save. Preserve the existing controls and handle disabled Save and a save callback that reenters submission. Implement this for macOS 26 with unit-testable state and native action wiring.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/macos-structure-v1/evaluation/form-recovery.rubric.md",
+        "sha256": "2a046861e3423244f901224ac18ea4b952676ec5e5fb6fb3c34badd3fb1a9b07",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/macos-structure-v1/manifest.json",
+      "authoringCapture": "AUTHORING.md; visible request and exact native/file artifacts; full provider context unavailable"
+    },
+    {
+      "id": "macos-structure-v1/outline-structure",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/macos-structure-v1/evaluation/outline-structure.prompt.md",
+        "sha256": "dd7ee77a4e81a08eafcfde90c16e27860592baffa3d934777f5615ee0a9ada3e",
+        "text": "We use a programmatic AppKit NSOutlineView for a nested library. Entries have stable IDs, titles and child arrays. Show Name and Kind columns. Updates can rename, reorder or remove entries; keep surviving item identity, expansion and visible selection where possible. Reject duplicate IDs anywhere in an update without partly changing the current tree. Removed entries should not continue supplying stale child data. Implement the data source for macOS 26 and unit tests; do not drive the UI.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/macos-structure-v1/evaluation/outline-structure.rubric.md",
+        "sha256": "d496eae24ea516f1d77df828f2713f0cc5fdb18680591e3242759f7cc90e34fa",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/macos-structure-v1/manifest.json",
+      "authoringCapture": "AUTHORING.md; visible request and exact native/file artifacts; full provider context unavailable"
+    },
+    {
+      "id": "tvos-structure-v1/form-recovery",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/tvos-structure-v1/evaluation/form-recovery.prompt.md",
+        "sha256": "7b7cd43b77e209c4c04bc063c77282d73153722a9166e30a140a3b67594012ec",
+        "text": "In our UIKit tvOS app, an editable email field has an ordinary Save button and optional help text. A supplied synchronous, side-effect-free validator returns either a nonempty localized error or nil. On invalid Save, show the error without losing the typed text or saving it. When editing resumes, clear the old error and restore the help; editing itself should not save. Preserve the existing controls and handle disabled Save and a save callback that reenters submission. Implement this for tvOS 26 with unit-testable state and native action wiring.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/tvos-structure-v1/evaluation/form-recovery.rubric.md",
+        "sha256": "82c37a9eecb4e3cb21406ed10e0f45f48cba2dcf179b7867f28ee39cd72f209e",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/tvos-structure-v1/manifest.json",
+      "authoringCapture": "AUTHORING.md; visible request and exact native/file artifacts; full provider context unavailable"
+    },
+    {
+      "id": "tvos-structure-v1/shelf-structure",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/tvos-structure-v1/evaluation/shelf-structure.prompt.md",
+        "sha256": "19d3be9a5d1d73542d42b67fe1d368598b124621e2a4af14a202df8beb90e6e3",
+        "text": "Our UIKit tvOS screen has ordered shelves, each with a heading and ordinary item buttons. Section IDs are unique, and item IDs are unique within a section, but an item ID can repeat across sections. Updates may reorder, rename or remove shelves. Keep independent headings/buttons and section-qualified selection. Reject ambiguous duplicate IDs without changing the current screen. Previously retained, disabled or detached buttons must not trigger a wrong current selection. Implement the configuration and actions for tvOS 26 with unit tests, without UI automation.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/tvos-structure-v1/evaluation/shelf-structure.rubric.md",
+        "sha256": "c774b4318bd54a024102c05d494b20eb51f70f5ec0871a8a7004bedee849879a",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/tvos-structure-v1/manifest.json",
+      "authoringCapture": "AUTHORING.md; visible request and exact native/file artifacts; full provider context unavailable"
+    }
+  ]
+}

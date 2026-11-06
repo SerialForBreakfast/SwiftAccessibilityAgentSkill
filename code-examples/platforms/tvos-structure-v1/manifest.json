@@ -1,0 +1,253 @@
+{
+  "schema": 1,
+  "id": "tvos-structure-v1",
+  "revision": "1",
+  "platform": "tvOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Native unit configuration, data-source topology, identity, action and validation contracts only. No layout, spoken output, UI automation or directional/keyboard interaction proof. Validator and error strings are application-provided.",
+  "claims": [
+    {
+      "id": "forms",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycontainer",
+      "section": "Native help/hint metadata and ordinary control action APIs; SDK declarations",
+      "statement": "Application policy keeps entered text and ordinary save control, exposes visible validation error and resets transient help on edit.",
+      "reviewedOn": "2026-11-06",
+      "availability": "Installed SDK27 declarations audited; target26 compile and actual runtime evidence are separate. No inferred earliest availability for unannotated members."
+    },
+    {
+      "id": "collections",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycontainer",
+      "section": "Explicit accessibility elements and independent native child controls",
+      "statement": "Keep shelf headings and ordinary buttons independently represented; application policy uses section-qualified identity, callback generations and current ownership.",
+      "reviewedOn": "2026-11-06",
+      "availability": "Installed SDK27 declarations audited; target26 compile and actual runtime evidence are separate. No inferred earliest availability for unannotated members."
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/TelevisionForm.swift",
+      "sha256": "c9b8e2cdc3ea1103fd27350bb33aa4250fc1026a7a17ee8d7398d40566895c8e"
+    },
+    {
+      "path": "Sources/TelevisionShelves.swift",
+      "sha256": "a643af2e801d742dc2e0dc5a9c39bdb923e67d3ef38630672bdff5ab4cd9ebc8"
+    },
+    {
+      "path": "Tests/TelevisionFormTests.swift",
+      "sha256": "1e3ad4ff43411c55a35703e61caa8da069156cbd9a541e48a0da40e133c28840"
+    },
+    {
+      "path": "Tests/TelevisionShelvesTests.swift",
+      "sha256": "4ce4385918d2cec513872ea90e56ed049ba02853c353545bc789809ee124fe4d"
+    },
+    {
+      "path": "NegativeFixtures/CombinedShelf.swift",
+      "sha256": "9913fbcc709c8baa9fc17b5bbf84ec5759accd1f9250f5d53177106186f4cdb8"
+    },
+    {
+      "path": "NegativeFixtures/DetachedAction.swift",
+      "sha256": "50e7bd657fe311f53b1fa657f071c4f21db78727226e6634a410d19c2945fc9a"
+    },
+    {
+      "path": "NegativeFixtures/DuplicateSections.swift",
+      "sha256": "72cf8e4fca2eb93c076c0a0c0368a5abb1a7fe0870ca483074f9dbd014c21c39"
+    },
+    {
+      "path": "NegativeFixtures/InvalidSaves.swift",
+      "sha256": "6f0a61b4287e721afbbf36251bd980f8c4dc1eb24cf016014ec56f714fc9325e"
+    },
+    {
+      "path": "NegativeFixtures/ReentrantSave.swift",
+      "sha256": "f76d18d75c83a7947ab236db6a5f6b120a462e89e113407dea3425f0472e0e41"
+    },
+    {
+      "path": "NegativeFixtures/StaleGeneration.swift",
+      "sha256": "be53b08360351be2030ae7129dabe7b8d00ef39060d4d0d1a9b38056c36c18fc"
+    },
+    {
+      "path": "NegativeFixtures/StaleMessage.swift",
+      "sha256": "d8600aec7584798aa30ccc05793e0b1f7daa6ea4e2ef4987697782b493c2db51"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "forms",
+        "collections"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "forms",
+        "collections"
+      ],
+      "testIds": [
+        "TelevisionFormTests/testInitialIndependentControlsAndQuietError",
+        "TelevisionFormTests/testInvalidInputShowsErrorWithoutSavingOrErasing",
+        "TelevisionFormTests/testRepeatedErrorPreservesOriginalHelpWithoutAppending",
+        "TelevisionFormTests/testEditingClearsErrorRestoresHelpAndPreservesInput",
+        "TelevisionFormTests/testCorrectionRecoversAndAllowsOrdinarySubmission",
+        "TelevisionFormTests/testValidInputIsNotSilentlyTrimmed",
+        "TelevisionFormTests/testDisabledSubmissionDoesNotValidateOrSave",
+        "TelevisionFormTests/testReentrantSaveDoesNotSubmitTwice",
+        "TelevisionFormTests/testAbsentHelpReturnsToNilAfterEditing",
+        "TelevisionFormTests/testValidationKeepsExistingControlIdentity",
+        "TelevisionFormTests/testEditingDoesNotValidateOrSave",
+        "TelevisionFormTests/testSubmissionPassesInputSnapshotToCallback",
+        "TelevisionShelvesTests/testShelvesPreserveIndependentHeadingAndButtons",
+        "TelevisionShelvesTests/testExplicitContainerOrderMatchesHierarchy",
+        "TelevisionShelvesTests/testSameItemIDInDifferentSectionsRemainsDistinct",
+        "TelevisionShelvesTests/testDuplicateSectionIDsRejectedAtomically",
+        "TelevisionShelvesTests/testDuplicateItemIDsWithinSectionRejected",
+        "TelevisionShelvesTests/testOrdinaryButtonSelectsAndCallsCurrentAction",
+        "TelevisionShelvesTests/testDisabledButtonDoesNotChoose",
+        "TelevisionShelvesTests/testOldGenerationRejectedEvenWhenButtonReattached",
+        "TelevisionShelvesTests/testDetachedCurrentButtonCannotChoose",
+        "TelevisionShelvesTests/testReplacingSectionsDetachesOldShelves",
+        "TelevisionShelvesTests/testSelectionSurvivesSectionReorder",
+        "TelevisionShelvesTests/testRemovedSelectionClears",
+        "TelevisionShelvesTests/testSameItemMovedToOtherSectionDoesNotStealSelection",
+        "TelevisionShelvesTests/testSelectionPreservesUnrelatedTraits",
+        "TelevisionShelvesTests/testEmptySectionKeepsHeadingAndNoActions",
+        "TelevisionShelvesTests/testRepeatedConfigurationDoesNotAccumulateChildren",
+        "TelevisionShelvesTests/testRetainedButtonDoesNotRetainOwner"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "invalidsave",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "forms"
+      ],
+      "testIds": [
+        "TelevisionFormTests/testInvalidInputShowsErrorWithoutSavingOrErasing"
+      ],
+      "failureIds": [
+        "TelevisionFormTests/testInvalidInputShowsErrorWithoutSavingOrErasing"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionForm.swift",
+        "source": "NegativeFixtures/InvalidSaves.swift"
+      }
+    },
+    {
+      "id": "stalemessage",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "forms"
+      ],
+      "testIds": [
+        "TelevisionFormTests/testEditingClearsErrorRestoresHelpAndPreservesInput"
+      ],
+      "failureIds": [
+        "TelevisionFormTests/testEditingClearsErrorRestoresHelpAndPreservesInput"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionForm.swift",
+        "source": "NegativeFixtures/StaleMessage.swift"
+      }
+    },
+    {
+      "id": "reentrant",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "forms"
+      ],
+      "testIds": [
+        "TelevisionFormTests/testReentrantSaveDoesNotSubmitTwice"
+      ],
+      "failureIds": [
+        "TelevisionFormTests/testReentrantSaveDoesNotSubmitTwice"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionForm.swift",
+        "source": "NegativeFixtures/ReentrantSave.swift"
+      }
+    },
+    {
+      "id": "duplicates",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "collections"
+      ],
+      "testIds": [
+        "TelevisionShelvesTests/testDuplicateSectionIDsRejectedAtomically"
+      ],
+      "failureIds": [
+        "TelevisionShelvesTests/testDuplicateSectionIDsRejectedAtomically"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionShelves.swift",
+        "source": "NegativeFixtures/DuplicateSections.swift"
+      }
+    },
+    {
+      "id": "grouping",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "collections"
+      ],
+      "testIds": [
+        "TelevisionShelvesTests/testShelvesPreserveIndependentHeadingAndButtons"
+      ],
+      "failureIds": [
+        "TelevisionShelvesTests/testShelvesPreserveIndependentHeadingAndButtons"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionShelves.swift",
+        "source": "NegativeFixtures/CombinedShelf.swift"
+      }
+    },
+    {
+      "id": "generation",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "collections"
+      ],
+      "testIds": [
+        "TelevisionShelvesTests/testOldGenerationRejectedEvenWhenButtonReattached"
+      ],
+      "failureIds": [
+        "TelevisionShelvesTests/testOldGenerationRejectedEvenWhenButtonReattached"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionShelves.swift",
+        "source": "NegativeFixtures/StaleGeneration.swift"
+      }
+    },
+    {
+      "id": "detached",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "collections"
+      ],
+      "testIds": [
+        "TelevisionShelvesTests/testDetachedCurrentButtonCannotChoose"
+      ],
+      "failureIds": [
+        "TelevisionShelvesTests/testDetachedCurrentButtonCannotChoose"
+      ],
+      "replacement": {
+        "target": "Sources/TelevisionShelves.swift",
+        "source": "NegativeFixtures/DetachedAction.swift"
+      }
+    }
+  ]
+}

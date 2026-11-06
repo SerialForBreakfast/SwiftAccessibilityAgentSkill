@@ -14,12 +14,12 @@ test('first failed oracle, substantive pins and reuse remain intact',()=>{
  for(const folder of ['macos-media-v1','tvos-media-v1']){const original=JSON.parse(read(base+'incidents/'+folder+'-first-manifest.json.txt'));for(const p of ['Sources/MediaChoice.swift','Tests/MediaChoiceTests.swift'])assert.equal(hash(read(base+'incidents/'+folder+'-first-'+p.replaceAll('/','-')+'.txt')),original.files.find(f=>f.path===p).sha256);}
  for(const p of JSON.parse(read(base+'reuse-provenance.json'))){assert.equal(hash(read(p.original)),p.sha256);assert.equal(hash(read(p.copy)),p.sha256);}
 });
-test('nineteen indexed platform prompts have exact inputs and separate unanswered rubrics',()=>{
+test('nineteen historical platform prompts have exact inputs within their declared packages',()=>{
  const previous=JSON.parse(read('research/evaluation/prompt-records-v1/platform-prompts.json')).cases;
  const lifecycle=JSON.parse(read('research/evaluation/platform-lifecycle-v1/prompt-records.json')).cases;
  const current=JSON.parse(read(base+'prompt-records.json')).cases;
  assert.equal(previous.length,9);assert.equal(lifecycle.length,4);assert.equal(current.length,6);
- const all=[...previous,...lifecycle,...current];const found=fs.readdirSync(root+'code-examples/platforms').filter(n=>!n.startsWith('.')).flatMap(n=>{const d=`code-examples/platforms/${n}/evaluation`;return fs.existsSync(root+d)?fs.readdirSync(root+d).filter(f=>f.endsWith('.prompt.md')).map(f=>d+'/'+f):[];});
+ const all=[...previous,...lifecycle,...current];const found=[...new Set(all.map(c=>path.dirname(c.subject.path)))].flatMap(d=>{return fs.existsSync(root+d)?fs.readdirSync(root+d).filter(f=>f.endsWith('.prompt.md')).map(f=>d+'/'+f):[];});
  assert.deepEqual(all.map(c=>c.subject.path).sort(),found.sort());assert.equal(new Set(all.map(c=>c.id)).size,19);
  for(const c of current){assert.equal(c.subject.text,read(c.subject.path).toString());assert.equal(c.subject.sha256,hash(read(c.subject.path)));assert.equal(c.analysis.sha256,hash(read(c.analysis.path)));assert.equal(c.outputs.status,'not-run');assert.deepEqual(c.outputs.attempts,[]);assert.equal(c.analysis.answerAnalysis,null);assert.ok(fs.existsSync(root+c.nativeManifest));}
 });

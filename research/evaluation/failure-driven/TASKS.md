@@ -239,3 +239,18 @@ controller answer material enters subject context; no frozen fixtures are rewrit
   existing nine-case queue as distinct scopes. No automatic expansion of Gemini.
 - Next: native forms/recovery and richer collection relationships. Shared media
   evidence does not finish AppKit/UIKit UI coverage; SwiftUI remains deferred.
+
+## Native forms and structure (2026-11-06)
+
+- Executed positive suites: 28 AppKit/macOS and 29 UIKit/tvOS methods. Exact
+  native negative outcomes are recorded in [results](../platform-structure-v1/RESULTS.md).
+- Paired: four new draft questions/rubrics for platform form recovery, Mac outline
+  structure and TV shelf structure; exact input hashes and explicit not-run outputs.
+- Source-backed policy distinctions: globally unique Mac tree IDs versus
+  section-qualified TV item IDs, and independent generation/hierarchy guards.
+- Preserved historical prompt inventory checker before scoping it to its declared
+  packages; new union check covers all23 platform prompts. No old prompt bytes changed.
+- Pending: independent review and later authorized baseline scope. The original
+  nine-case BigDog/Gemini plan remains unchanged; no live model runs or UI tests.
+- Next: multi-field/async validation ownership, native text/rotor audit, deeper
+  collection reuse and media-item replacement. SwiftUI remains deferred.

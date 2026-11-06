@@ -230,3 +230,18 @@ claims. The first invalid audio-group permission oracle is preserved and correct
 then only the requested source or contract. Six new draft question/rubric pairs
 are outside the existing nine-case Gemini plan. Released skill and frozen inputs
 remain unchanged. See the [remaining queue](../research/evaluation/platform-media-v1/COVERAGE.md).
+
+## Native forms and collection structure
+
+[Structure evidence](../research/evaluation/platform-structure-v1/README.md) adds
+28 AppKit/macOS and 29 UIKit/tvOS positive methods. Form recovery preserves typed
+input, visible error/help state and ordinary controls. AppKit adds native outline
+hierarchy, stable identity and per-column data; TV adds custom shelf hierarchy,
+section-qualified selection and ownership-aware callbacks.
+
+`tools/structure-retrieval.mjs` adds form-recovery, outline-structure and
+shelf-structure routes with source/tests loaded only on request. Four draft pairs
+stay separate from existing indices and the nine-case Gemini plan. The cumulative
+native companion totals are 119 Mac and 121 TV, including prior shared AVFoundation
+contracts. Unit scope and [remaining gaps](../research/evaluation/platform-structure-v1/COVERAGE.md)
+are explicit; released skill and SwiftUI deferral remain unchanged.
