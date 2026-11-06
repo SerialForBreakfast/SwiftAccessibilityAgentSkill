@@ -8,6 +8,14 @@ and four question families, not all models or the skill's overall effectiveness.
 [Read the full v2 review](v2/README.md) · [Review the method](../GRADING.md) ·
 [Next worker pilots](../PILOT-REQUESTS.md) · [New report template](TEMPLATE.md)
 
+## Latest frontier development screen
+
+[Skill 0.3.0-dev.1 versus 0.3.0-dev.2 · AGY](skill-0.3.0-dev.1-vs-0.3.0-dev.2-20261106/README.md):
+14 approved calls completed. Source-contract grades: six met plus one inconclusive
+versus seven met; 65,400 tokens total. No efficiency improvement or release
+qualification established. Claude deferred. The small-model report below remains
+historical diagnostic evidence with its original limits.
+
 ## Evidence at a glance
 
 | What we have | What it establishes |

@@ -26,10 +26,10 @@ OS27 integration or default incident-archive loading.
 | Task | State / owner | Scope and acceptance |
 |---|---|---|
 | B1 Package exact answer review | Prepared / BigDog | Two existing cases × four conditions × two models =16 exact answers. Stable neutral review IDs, exact user tasks, frozen criteria, hashes and separate context. Prior grades and model mapping withheld for initial review. |
-| B2 Review and compile | Requested / Sillycon | Review all16; capture first compile result against the intended iOS26 deployment contract on available Apple host. Pin SDK/compiler/runtime separately. No silent repair; missing capability or incomplete integration is explicit. Focused unit checks only where source wiring permits. |
-| B3 Adjudicate findings | Waiting on B2 / BigDog + Sillycon | Separate answer defect, necessary scaffold, oracle defect, ambiguous task and capability blocker. Compare independent findings to original immutable grades; amendments use a separate version. |
-| B4 Freeze candidate and reference variants | Draft / BigDog | Incorporate adjudicated general rules only; validate links/size/metadata, review proposed G-003/G-012 text, publish exact hashes before any run. |
-| B5 Propose next bounded comparison | Held / owner approval required | Isolate entrypoint and reference edits; same prompts/model settings and separate no-reference controls. New independent semantic families required for confirmation; no relabeling these known cases as holdout. |
+| B2 Review and compile | Executed; scoped checkout evidence accepted | Eight UIKit GP26-03 answers only. Four first compile failures, four compile successes; eight narrow methods, seven pass and one R16 typography failure. GP26-04 SwiftUI deletion remains deferred. No more builds or repairs required for this bounded review. |
+| B3 Adjudicate findings | Closed for eight UIKit answers | Message1426 confirms no disagreement with1425; preserve R04 scaffold ambiguity, R14 inconclusive layout and valid R13 permanent vertical layout. Broader grading calibration and campaign review remain separate. |
+| B4 Freeze candidate and reference variants | Executed for versioned development comparison | Frozen 0.3.0-dev.1 and 0.3.0-dev.2 with identical reporting defaults and historical reference bytes. G-003/G-012 edits remain proposals, outside this run. |
+| B5 Bounded development comparison | AGY executed and source-graded; Claude deferred | Owner approved the 28-cell plan, then selected 14 AGY cells. Six met plus one inconclusive versus seven met; no efficiency or promotion claim. No-reference controls and fresh independent families remain future work. |
 
 Sillycon owns its local compile host and checks. Use a new ignored review directory
 and, if needed, a separate new generated-answer validation subtree; preserve active
@@ -59,7 +59,29 @@ may be described, but no repaired compile or extra model attempt belongs to this
 
 ## Gate before further model testing
 
-Receive Sillycon's explicit acceptance and all16 independent dispositions (or precise
-blockers); resolve critical disagreements and oracle gaps; freeze B and any reference
-snapshot; prepare an exact bounded batch; obtain owner approval. No runtime promotion
+The eight-answer UIKit checkout dependency is closed; do not wait for the deferred
+eight SwiftUI deletion answers or request further checkout builds. Resolve relevant
+oracle gaps and the identity/routing contract; freeze exact candidate, payloads and
+reference snapshots; obtain approval for the bounded batch. Campaign review is a
+separate pending gate for new library cases, not a reason to repeat checkout work. No runtime promotion
 follows from this preparation. Existing PRD release gates remain unchanged.
+
+
+## November 6 reconciliation
+
+See [review summary](REVIEW-SUMMARY.md) and [next comparison proposal](CONFIRMATION-PLAN.md).
+Live messages1426–1428 were read and acknowledged; acknowledgment is not campaign
+acceptance. The historical candidate body and reference proposals remain unchanged. This was
+the pre-approval checkpoint; the versioned AGY comparison subsequently ran as below.
+
+
+## Semantic-version candidate snapshots
+
+Owner approved default-on first-response identity/version and consulted-file ROUTING,
+with separate explicit opt-outs. New comparison labels are **0.3.0-dev.1** and
+**0.3.0-dev.2**; see [registry](../candidates/README.md) and
+[comparison preparation](../candidates/COMPARISON-PLAN.md). Letter names below/above
+remain historical provenance only. The 28 private inputs were frozen, controller calibration completed with disclosed
+reviewer exposure, and seven executor checks passed. AGY 1.5.2 was requalified for
+the bounded run. Its 14 cells completed; Claude remains owner-deferred. See the
+[current execution status](../candidates/PREPARATION-STATUS.md).
