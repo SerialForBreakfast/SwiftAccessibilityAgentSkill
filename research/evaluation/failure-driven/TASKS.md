@@ -19,6 +19,13 @@ one original-answer typography-preservation test failed. Missing-member answers
 were not repaired. This supplements the first compiler record; BigDog has not
 yet acknowledged either return packet. No gold prompt or frozen rubric changed.
 
+Subsequent [BigDog adjudication](checkout-review-20261106/ADJUDICATION.md), cursor
+1425, accepts the scoped first-compile/unit evidence and closes that dependency.
+Earlier pending labels above describe delivery-time status. Full answer correctness,
+broader FD-04 calibration and promotion remain separate. R14 is inconclusive;
+R16's preservation defect is confirmed; no further builds or repairs are needed
+for this bounded eight-answer review.
+
 | ID | Story and owner role | Dependencies | Acceptance criteria |
 | --- | --- | --- | --- |
 | FD-01 | As a maintainer, I need adjudicated incidents so faulty tests do not become gold answers. Author + independent reviewer | None | Classify all F01-F08 and C01/C02; retain exact archive links/hashes; identify claim and oracle limits; record disputed interpretations. FR-01/02/06 |

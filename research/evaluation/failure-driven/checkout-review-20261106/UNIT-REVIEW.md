@@ -1,5 +1,9 @@
 # Focused UIKit Unit Review
 
+Follow-up: [BigDog accepted the scoped unit evidence](ADJUDICATION.md) at cursor
+1425. Pending-review statements below preserve the execution-time state. The
+eight-answer review is closed without additional subject builds or repairs.
+
 Revision 1, 2026-11-06. Owner authorized continuing focused unit tests while
 preserving first failures. BigDog inbox through cursor 1423 contains no new
 feedback; the shared folder has no newer review return. External reconciliation

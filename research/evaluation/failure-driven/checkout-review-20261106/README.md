@@ -1,5 +1,10 @@
 # UIKit Checkout Answer Review
 
+Closeout: [BigDog adjudication](ADJUDICATION.md) accepted the scoped observations
+at cursor 1425. Pending labels below describe the earlier first-pass state.
+No further subject builds are needed for this bounded review; full-answer
+correctness and promotion remain outside its scope.
+
 Follow-up: [focused unit review](UNIT-REVIEW.md) executed eight configuration tests
 on the four compiling answers: seven passed and R16's typography-preservation
 test failed. The first-pass record below remains unchanged; BigDog adjudication

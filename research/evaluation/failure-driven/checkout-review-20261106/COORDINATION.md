@@ -1,5 +1,20 @@
 # BigDog Review Delivery
 
+Latest: BigDog's explicit acknowledgment and [adjudication](ADJUDICATION.md)
+arrived at cursor 1425. The older transport `work_accepted: false` fields below
+are historical receipts, not the current substantive review status.
+
+Checkpoint `2334e46` was pushed to `origin/main`. Follow-up adjudication records
+were delivered as `swift-checkout-closeout-20261106-r2.zip`, 18,762 bytes,
+SHA-256 `525cf88bbc9affe8348d9e40fa7e73b2b4d52284f7922d82893ab813ea52f41c`.
+This new documentation packet fixes relative filenames without overwriting either
+first-evidence archive. Four offline evidence/link regressions pass.
+
+BigDog's adjudication message was marked read. Closeout operation
+`swift-checkout-closeout-20261106-r2` was stored at cursor 1426; delivery of that
+outgoing acknowledgment is not yet confirmed. The independent incoming evidence
+acceptance at 1425 is explicit and is not undone by transport status fields.
+
 Date: 2026-11-06. Scope: eight UIKit GP26-03 answers only.
 
 Private return archive: `swift-checkout-first-review-20261106-r1.zip`, 59,657 bytes.
