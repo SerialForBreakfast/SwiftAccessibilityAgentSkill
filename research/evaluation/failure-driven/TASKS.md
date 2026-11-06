@@ -44,8 +44,21 @@ and model execution remain pending.
 
 UPAIR-02 now has [long-text/selection evidence and a draft paired case](../../../code-examples/pilots/uikit-choice-v1/README.md):
 nine positive methods and four intended mutant rejections. Its native contracts
-passed; independent case review and model evaluation remain pending. Other rows
-below retain their pending status.
+passed; independent case review and model evaluation remain pending.
+
+UPAIR-03 now has [configured-color evidence and a draft paired case](../../../code-examples/pilots/uikit-contrast-v1/README.md):
+nine positive methods, four intended mutant rejections, and separately sourced W3C
+numerical oracles. Native validation is complete; independent review and model
+evaluation remain pending.
+
+UPAIR-04 now has [modal lifecycle evidence and a draft paired case](../../../code-examples/pilots/uikit-modal-v1/README.md):
+thirteen positive methods and five intended mutant rejections. A new retained-removal
+test first failed against unchanged source; that revision and the repair are preserved.
+Native validation is complete; independent case review/model evaluation remain pending.
+UPAIR-05 now has [edited-rotor evidence and a draft paired case](../../../code-examples/pilots/uikit-edited-rotor-v1/README.md):
+twelve positive methods and five intended mutant rejections, including Unicode,
+overlap policy and stale callbacks. Native validation is complete; independent
+review/model evaluation remain pending. UPAIR-06 through UPAIR-08 remain pending.
 
 Each row requires a source claim, exact test IDs, recorded environment/result, natural
 prompt, atomic rubric, accepted alternatives and a link to baseline eligibility.

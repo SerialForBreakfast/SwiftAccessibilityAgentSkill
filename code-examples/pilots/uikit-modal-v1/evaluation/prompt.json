@@ -1,0 +1,5 @@
+{
+  "id": "UPAIR-04-D1",
+  "revision": "1",
+  "prompt": "Our UIKit app has a custom panel with a heading, Apply and Cancel buttons. Cancel animates the panel away asynchronously. Sometimes closing it leaves the background unavailable, or a late callback from an earlier opening affects the reopened panel. The background might already have been hidden for another reason, and the button we want to return attention to can be replaced or removed during dismissal. Show a focused lifecycle implementation and unit tests for iOS 26 and later. Keep ordinary buttons usable, support accessibility escape, and include explicit teardown. We can inject the dismissal completion and notification sender. Explain what the tests prove without using UI tests."
+}

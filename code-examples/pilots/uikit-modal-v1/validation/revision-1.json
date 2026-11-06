@@ -1,0 +1,277 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "revision": "1",
+  "manifestHash": "7f9818f8f6d4eb2ff70f87b8d4a3a0618cd016467da9048b18d77f778af2141d",
+  "redaction": "Private run paths and addresses replaced; original logs retained privately.",
+  "rows": [
+    {
+      "check": "compile-modal",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "reason": null,
+      "manifestHash": "7f9818f8f6d4eb2ff70f87b8d4a3a0618cd016467da9048b18d77f778af2141d",
+      "recordedAt": "2026-11-06T04:37:49.859Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "d3782fb42a4ca85ec83255819fc27a3a606b85d74008d01802357d5059c85c7d",
+      "nativeLogHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "excerpts": []
+    },
+    {
+      "check": "modal-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "reason": null,
+      "manifestHash": "7f9818f8f6d4eb2ff70f87b8d4a3a0618cd016467da9048b18d77f778af2141d",
+      "recordedAt": "2026-11-06T04:37:53.373Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "ModalUIKitTests/testBackgroundRestoresBothOriginalValues",
+          "ModalUIKitTests/testEscapeCanInitiateDismissal",
+          "ModalUIKitTests/testNotificationWaitsForCompletionAndUsesCurrentTarget",
+          "ModalUIKitTests/testOldCompletionCannotCloseReopenedPanel",
+          "ModalUIKitTests/testOpenExposesHeadingAndIndependentButtons",
+          "ModalUIKitTests/testOpenWhileActiveDoesNotOverwriteSnapshot",
+          "ModalUIKitTests/testOrdinaryCloseAndEscapeShareDismissalGuard",
+          "ModalUIKitTests/testPrimaryActionDoesNotDismissAndIsSuppressedWhileClosing",
+          "ModalUIKitTests/testRejectsBackgroundContainingPanel",
+          "ModalUIKitTests/testReleasedTargetIsNotRetainedAndPostsNil",
+          "ModalUIKitTests/testTeardownIsIdempotentAndAllowsNewContent"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "58bf7de3f714307bd5ef2f7d406648e8a159b3e4da22cc836dd53169e2c87772",
+      "nativeLogHash": "703341d0db53fc2806e37f453712564151c4f82746250e48b41423f07ae6e849",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testBackgroundRestoresBothOriginalValues]' passed (0.077 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testEscapeCanInitiateDismissal]' passed (0.004 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testNotificationWaitsForCompletionAndUsesCurrentTarget]' passed (0.003 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testOldCompletionCannotCloseReopenedPanel]' passed (0.003 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testOpenExposesHeadingAndIndependentButtons]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testOpenWhileActiveDoesNotOverwriteSnapshot]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testOrdinaryCloseAndEscapeShareDismissalGuard]' passed (0.003 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testPrimaryActionDoesNotDismissAndIsSuppressedWhileClosing]' passed (0.004 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testRejectsBackgroundContainingPanel]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testReleasedTargetIsNotRetainedAndPostsNil]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testTeardownIsIdempotentAndAllowsNewContent]' passed (0.001 seconds)."
+      ]
+    },
+    {
+      "check": "lostbackground-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "manifestHash": "7f9818f8f6d4eb2ff70f87b8d4a3a0618cd016467da9048b18d77f778af2141d",
+      "recordedAt": "2026-11-06T04:39:59.957Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "ModalUIKitTests/testBackgroundRestoresBothOriginalValues"
+        ],
+        "failedTestIds": [
+          "ModalUIKitTests/testBackgroundRestoresBothOriginalValues"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "27ab38900bfb84d8c6301f686850a288f132a7a3d78e413a2351c52563bd5e84",
+      "nativeLogHash": "8db78a081aa24693021b1f0f6a0759ad875570344d8fba797a6be211f167462d",
+      "excerpts": [
+        "<private-run>/workspace/Tests/AccessibilityExamplesTests/ModalUIKitTests.swift:41: error: -[AccessibilityExamplesTests.ModalUIKitTests testBackgroundRestoresBothOriginalValues] : XCTAssertEqual failed: (\"false\") is not equal to (\"true\")",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testBackgroundRestoresBothOriginalValues]' failed (0.539 seconds)."
+      ]
+    },
+    {
+      "check": "earlynotification-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "manifestHash": "7f9818f8f6d4eb2ff70f87b8d4a3a0618cd016467da9048b18d77f778af2141d",
+      "recordedAt": "2026-11-06T04:40:25.550Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "ModalUIKitTests/testNotificationWaitsForCompletionAndUsesCurrentTarget"
+        ],
+        "failedTestIds": [
+          "ModalUIKitTests/testNotificationWaitsForCompletionAndUsesCurrentTarget"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "b4214de4d65ee51b641fe6b19b32239e2593485658ce6b9658cf33d7cd46b4da",
+      "nativeLogHash": "07d3a3bb361b4e0022abbf5829c4fbd098dfe84e2c1f1a232c10b8607ec865cd",
+      "excerpts": [
+        "<private-run>/workspace/Tests/AccessibilityExamplesTests/ModalUIKitTests.swift:56: error: -[AccessibilityExamplesTests.ModalUIKitTests testNotificationWaitsForCompletionAndUsesCurrentTarget] : XCTAssertTrue failed",
+        "<private-run>/workspace/Tests/AccessibilityExamplesTests/ModalUIKitTests.swift:57: error: -[AccessibilityExamplesTests.ModalUIKitTests testNotificationWaitsForCompletionAndUsesCurrentTarget] : XCTAssertFalse failed",
+        "<private-run>/workspace/Tests/AccessibilityExamplesTests/ModalUIKitTests.swift:58: error: -[AccessibilityExamplesTests.ModalUIKitTests testNotificationWaitsForCompletionAndUsesCurrentTarget] : XCTAssertEqual failed: (\"closing\") is not equal to (\"closed\")",
+        "<private-run>/workspace/Tests/AccessibilityExamplesTests/ModalUIKitTests.swift:62: error: -[AccessibilityExamplesTests.ModalUIKitTests testNotificationWaitsForCompletionAndUsesCurrentTarget] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\")",
+        "<private-run>/workspace/Tests/AccessibilityExamplesTests/ModalUIKitTests.swift:67: error: -[AccessibilityExamplesTests.ModalUIKitTests testNotificationWaitsForCompletionAndUsesCurrentTarget] : XCTAssertEqual failed: (\"2\") is not equal to (\"1\")",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testNotificationWaitsForCompletionAndUsesCurrentTarget]' failed (0.877 seconds)."
+      ]
+    },
+    {
+      "check": "stalecompletion-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "manifestHash": "7f9818f8f6d4eb2ff70f87b8d4a3a0618cd016467da9048b18d77f778af2141d",
+      "recordedAt": "2026-11-06T04:40:52.237Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "ModalUIKitTests/testOldCompletionCannotCloseReopenedPanel"
+        ],
+        "failedTestIds": [
+          "ModalUIKitTests/testOldCompletionCannotCloseReopenedPanel"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "aa27d234a652ec8d1a8f78e0948159a2bdaf542ee7c181390e5049ae0a58c2e4",
+      "nativeLogHash": "4501f08fd9e9b9e0bb02d06d47ef2bbd39265af03f8ff9ef3e171cc894cb1ce5",
+      "excerpts": [
+        "<private-run>/workspace/Tests/AccessibilityExamplesTests/ModalUIKitTests.swift:146: error: -[AccessibilityExamplesTests.ModalUIKitTests testOldCompletionCannotCloseReopenedPanel] : XCTAssertEqual failed: (\"closed\") is not equal to (\"closing\")",
+        "<private-run>/workspace/Tests/AccessibilityExamplesTests/ModalUIKitTests.swift:147: error: -[AccessibilityExamplesTests.ModalUIKitTests testOldCompletionCannotCloseReopenedPanel] : XCTAssertTrue failed",
+        "<private-run>/workspace/Tests/AccessibilityExamplesTests/ModalUIKitTests.swift:148: error: -[AccessibilityExamplesTests.ModalUIKitTests testOldCompletionCannotCloseReopenedPanel] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\")",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testOldCompletionCannotCloseReopenedPanel]' failed (0.407 seconds)."
+      ]
+    },
+    {
+      "check": "ignoreddismissguard-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "manifestHash": "7f9818f8f6d4eb2ff70f87b8d4a3a0618cd016467da9048b18d77f778af2141d",
+      "recordedAt": "2026-11-06T04:41:15.273Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "ModalUIKitTests/testOrdinaryCloseAndEscapeShareDismissalGuard"
+        ],
+        "failedTestIds": [
+          "ModalUIKitTests/testOrdinaryCloseAndEscapeShareDismissalGuard"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "80b46a1d22e4768ab2ea390f7fd01f0b6020ebb4d1d9ccebafc55616466a48c0",
+      "nativeLogHash": "abe9974e87cfc30a3abcf6810cdc47b981cc7dbb759275559a157839fc688a41",
+      "excerpts": [
+        "<private-run>/workspace/Tests/AccessibilityExamplesTests/ModalUIKitTests.swift:81: error: -[AccessibilityExamplesTests.ModalUIKitTests testOrdinaryCloseAndEscapeShareDismissalGuard] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\")",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testOrdinaryCloseAndEscapeShareDismissalGuard]' failed (0.437 seconds)."
+      ]
+    }
+  ]
+}

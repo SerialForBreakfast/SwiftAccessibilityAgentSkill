@@ -1,0 +1,291 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "revision": "1",
+  "manifestHash": "2ce0764ac8633e2bbf1575367abb003c816553d3b812f93386d4577ec40e906c",
+  "redaction": "Private run paths and object addresses replaced; original logs retained privately.",
+  "rows": [
+    {
+      "check": "compile-contrast",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T04:27:46.653Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "d857e501f26c7be3a9785bb559994282664b836febf655039298adb46bc2a98a",
+      "nativeLogHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "excerpts": [],
+      "semanticMeasurements": []
+    },
+    {
+      "check": "contrast-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "recordedAt": "2026-11-06T04:27:50.800Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "ContrastUIKitTests/testBlackWhiteAndIdenticalRatios",
+          "ContrastUIKitTests/testConfiguredSemanticPairAcrossFourTraitContexts",
+          "ContrastUIKitTests/testDynamicColorsUseExplicitStyleAndContrast",
+          "ContrastUIKitTests/testInvalidComponentsAndThresholdsAreRejected",
+          "ContrastUIKitTests/testLinearColorSpaceIsConvertedBeforeFormula",
+          "ContrastUIKitTests/testNearThresholdIsNotRoundedToPassing",
+          "ContrastUIKitTests/testPublishedLuminanceWeightsAndTransferBranches",
+          "ContrastUIKitTests/testTranslucentForegroundAndBackgroundAreRejected",
+          "ContrastUIKitTests/testUIKitGrayConversionUsesLinearLuminance"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "4db2b0fca5018a9af366c8474c892aa2272adcb851279701126664125de314ca",
+      "nativeLogHash": "9a1f2b286feec406f57a9a461f88cf17b484b8c53e1f4529ade63c9d87803986",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.ContrastUIKitTests testBlackWhiteAndIdenticalRatios]' passed (0.007 seconds).",
+        "CONFIGURED_CONTRAST style=1 contrast=0 ratio=21.0",
+        "CONFIGURED_CONTRAST style=1 contrast=1 ratio=21.0",
+        "CONFIGURED_CONTRAST style=2 contrast=0 ratio=21.0",
+        "CONFIGURED_CONTRAST style=2 contrast=1 ratio=21.0",
+        "Test Case '-[AccessibilityExamplesTests.ContrastUIKitTests testConfiguredSemanticPairAcrossFourTraitContexts]' passed (0.020 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ContrastUIKitTests testDynamicColorsUseExplicitStyleAndContrast]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ContrastUIKitTests testInvalidComponentsAndThresholdsAreRejected]' passed (0.004 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ContrastUIKitTests testLinearColorSpaceIsConvertedBeforeFormula]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ContrastUIKitTests testNearThresholdIsNotRoundedToPassing]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ContrastUIKitTests testPublishedLuminanceWeightsAndTransferBranches]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ContrastUIKitTests testTranslucentForegroundAndBackgroundAreRejected]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ContrastUIKitTests testUIKitGrayConversionUsesLinearLuminance]' passed (0.002 seconds)."
+      ],
+      "semanticMeasurements": [
+        {
+          "style": 1,
+          "contrast": 0,
+          "ratio": 21
+        },
+        {
+          "style": 1,
+          "contrast": 1,
+          "ratio": 21
+        },
+        {
+          "style": 2,
+          "contrast": 0,
+          "ratio": 21
+        },
+        {
+          "style": 2,
+          "contrast": 1,
+          "ratio": 21
+        }
+      ]
+    },
+    {
+      "check": "nolinearization-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T04:29:26.629Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "ContrastUIKitTests/testUIKitGrayConversionUsesLinearLuminance"
+        ],
+        "failedTestIds": [
+          "ContrastUIKitTests/testUIKitGrayConversionUsesLinearLuminance"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "bca602ff120ecbf862ae0b14497dbbd93752cb72ba0d7689fbd9d4976401634c",
+      "nativeLogHash": "f86d3b13300df14a027188c785838c576d485d7744c4ba150354026332408fac",
+      "excerpts": [
+        "/tmp/adr003-contrast-r1-nolinearization/workspace/Tests/AccessibilityExamplesTests/ContrastUIKitTests.swift:54: error: -[AccessibilityExamplesTests.ContrastUIKitTests testUIKitGrayConversionUsesLinearLuminance] : XCTAssertEqualWithAccuracy failed: (\"0.5\") is not equal to (\"0.21404114048223255\") +/- (\"1e-05\")",
+        "/tmp/adr003-contrast-r1-nolinearization/workspace/Tests/AccessibilityExamplesTests/ContrastUIKitTests.swift:55: error: -[AccessibilityExamplesTests.ContrastUIKitTests testUIKitGrayConversionUsesLinearLuminance] : XCTAssertEqualWithAccuracy failed: (\"1.909090909090909\") is not equal to (\"3.976653024912438\") +/- (\"0.0001\")",
+        "Test Case '-[AccessibilityExamplesTests.ContrastUIKitTests testUIKitGrayConversionUsesLinearLuminance]' failed (2.644 seconds)."
+      ],
+      "semanticMeasurements": []
+    },
+    {
+      "check": "wrongcolorspace-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T04:30:07.545Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "ContrastUIKitTests/testLinearColorSpaceIsConvertedBeforeFormula"
+        ],
+        "failedTestIds": [
+          "ContrastUIKitTests/testLinearColorSpaceIsConvertedBeforeFormula"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "c14153614a806a3755848bd21ef615d0a6a89c9856872601392c4bf578565598",
+      "nativeLogHash": "041f289c5286fd890e7b4b97a2e59721e91278edcc9ca7e2d315d488ef29f34c",
+      "excerpts": [
+        "/tmp/adr003-contrast-r1-wrongcolorspace/workspace/Tests/AccessibilityExamplesTests/ContrastUIKitTests.swift:63: error: -[AccessibilityExamplesTests.ContrastUIKitTests testLinearColorSpaceIsConvertedBeforeFormula] : XCTAssertEqualWithAccuracy failed: (\"0.21404114048223255\") is not equal to (\"0.5\") +/- (\"0.0001\")",
+        "/tmp/adr003-contrast-r1-wrongcolorspace/workspace/Tests/AccessibilityExamplesTests/ContrastUIKitTests.swift:64: error: -[AccessibilityExamplesTests.ContrastUIKitTests testLinearColorSpaceIsConvertedBeforeFormula] : XCTAssertEqualWithAccuracy failed: (\"0.037649478557151395\") is not equal to (\"0.21404114048223255\") +/- (\"0.0001\")",
+        "Test Case '-[AccessibilityExamplesTests.ContrastUIKitTests testLinearColorSpaceIsConvertedBeforeFormula]' failed (2.211 seconds)."
+      ],
+      "semanticMeasurements": []
+    },
+    {
+      "check": "ignoredtraits-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T04:31:01.719Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "ContrastUIKitTests/testDynamicColorsUseExplicitStyleAndContrast"
+        ],
+        "failedTestIds": [
+          "ContrastUIKitTests/testDynamicColorsUseExplicitStyleAndContrast"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "58fe255467652ec443b20ac29fbc48844e444c05174daa8fa21a258abd39b3e8",
+      "nativeLogHash": "fc4fb5269bcff9eb010232bb369a1eb8da0049a957f50b495176e1260fd759e6",
+      "excerpts": [
+        "/tmp/adr003-contrast-r1-ignoredtraits/workspace/Tests/AccessibilityExamplesTests/ContrastUIKitTests.swift:76: error: -[AccessibilityExamplesTests.ContrastUIKitTests testDynamicColorsUseExplicitStyleAndContrast] : XCTAssertEqualWithAccuracy failed: (\"0.19999998807907104\") is not equal to (\"0.0\") +/- (\"0.0001\")",
+        "/tmp/adr003-contrast-r1-ignoredtraits/workspace/Tests/AccessibilityExamplesTests/ContrastUIKitTests.swift:76: error: -[AccessibilityExamplesTests.ContrastUIKitTests testDynamicColorsUseExplicitStyleAndContrast] : XCTAssertEqualWithAccuracy failed: (\"0.19999998807907104\") is not equal to (\"0.8\") +/- (\"0.0001\")",
+        "/tmp/adr003-contrast-r1-ignoredtraits/workspace/Tests/AccessibilityExamplesTests/ContrastUIKitTests.swift:76: error: -[AccessibilityExamplesTests.ContrastUIKitTests testDynamicColorsUseExplicitStyleAndContrast] : XCTAssertEqualWithAccuracy failed: (\"0.19999998807907104\") is not equal to (\"1.0\") +/- (\"0.0001\")",
+        "Test Case '-[AccessibilityExamplesTests.ContrastUIKitTests testDynamicColorsUseExplicitStyleAndContrast]' failed (1.504 seconds)."
+      ],
+      "semanticMeasurements": []
+    },
+    {
+      "check": "ignoredalpha-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "recordedAt": "2026-11-06T04:31:49.303Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "ContrastUIKitTests/testTranslucentForegroundAndBackgroundAreRejected"
+        ],
+        "failedTestIds": [
+          "ContrastUIKitTests/testTranslucentForegroundAndBackgroundAreRejected"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "cea0fe260333292fc24777282d9db86813508e5bc6911c73b349e66400b5a18e",
+      "nativeLogHash": "4088e05188adbc6cc52e7acc816f92899081909b70ca48a31449d32af1f0b973",
+      "excerpts": [
+        "/tmp/adr003-contrast-r1-ignoredalpha/workspace/Tests/AccessibilityExamplesTests/ContrastUIKitTests.swift:96: error: -[AccessibilityExamplesTests.ContrastUIKitTests testTranslucentForegroundAndBackgroundAreRejected] : XCTAssertThrowsError failed: did not throw an error",
+        "/tmp/adr003-contrast-r1-ignoredalpha/workspace/Tests/AccessibilityExamplesTests/ContrastUIKitTests.swift:99: error: -[AccessibilityExamplesTests.ContrastUIKitTests testTranslucentForegroundAndBackgroundAreRejected] : XCTAssertThrowsError failed: did not throw an error",
+        "Test Case '-[AccessibilityExamplesTests.ContrastUIKitTests testTranslucentForegroundAndBackgroundAreRejected]' failed (2.063 seconds)."
+      ],
+      "semanticMeasurements": []
+    }
+  ]
+}

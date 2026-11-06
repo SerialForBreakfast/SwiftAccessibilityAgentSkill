@@ -1,0 +1,159 @@
+{
+  "schema": 1,
+  "id": "uikit-contrast",
+  "revision": "1",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Opaque configured-color unit calculation in explicit traits. W3C formula sources are supplemental-sources.json, not Apple claims. No compositing, pixels, HDR, materials, rendering, UI automation or universal accessibility claim.",
+  "claims": [
+    {
+      "id": "resolution",
+      "url": "https://developer.apple.com/documentation/uikit/uicolor/resolvedcolor(with:)",
+      "section": "UIColor.h resolvedColorWithTraitCollection and dynamic provider",
+      "statement": "Resolve UIColor for explicit appearance and accessibility-contrast traits before numerical inspection. The semantic pair threshold is project validation, not an Apple guarantee for every color or version.",
+      "availability": "Color resolution iOS13+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "conversion",
+      "url": "https://developer.apple.com/documentation/coregraphics/cgcolor/converted(to:intent:options:)",
+      "section": "CGColor.h color-space matching and CGColorSpace.h sRGB/linearSRGB",
+      "statement": "Convert resolved configured colors to a specified sRGB space before component interpretation. Opaque-only rejection is project scope; formula and numerical oracles are separately sourced to W3C, not Apple.",
+      "availability": "Color-space matching iOS9+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/ContrastUIKit.swift",
+      "sha256": "33d167795b0e57ea4aeb47d7709797bb102456e7b788e5879a3638a7afeb2308"
+    },
+    {
+      "path": "Tests/ContrastUIKitTests.swift",
+      "sha256": "bcbc67fff4278a659c9625809b84254320ebd467e2e38f4c84e8b91fb3bd0668"
+    },
+    {
+      "path": "NegativeFixtures/NoLinearization.swift",
+      "sha256": "39249286e84446624e0aba9e2b8d1ed18cbcff545a8c7584758d188d7f7a89c3"
+    },
+    {
+      "path": "NegativeFixtures/WrongColorSpace.swift",
+      "sha256": "c725fe87379b678e076166ffaf12a4fdb5bbac50040d5bf7d3b1ba13fadd766e"
+    },
+    {
+      "path": "NegativeFixtures/IgnoredTraits.swift",
+      "sha256": "c0a1d74cfb22acb2d79bf7059cf3c9557b7e4d6ed085881592703898f0b3c622"
+    },
+    {
+      "path": "NegativeFixtures/IgnoredAlpha.swift",
+      "sha256": "641b7dcef396f0de3a7129d928e19def9fbeecb5046c27d1e049a6ff99840b72"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-contrast",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "resolution",
+        "conversion"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "contrast-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "resolution",
+        "conversion"
+      ],
+      "testIds": [
+        "ContrastUIKitTests/testBlackWhiteAndIdenticalRatios",
+        "ContrastUIKitTests/testPublishedLuminanceWeightsAndTransferBranches",
+        "ContrastUIKitTests/testNearThresholdIsNotRoundedToPassing",
+        "ContrastUIKitTests/testInvalidComponentsAndThresholdsAreRejected",
+        "ContrastUIKitTests/testUIKitGrayConversionUsesLinearLuminance",
+        "ContrastUIKitTests/testLinearColorSpaceIsConvertedBeforeFormula",
+        "ContrastUIKitTests/testDynamicColorsUseExplicitStyleAndContrast",
+        "ContrastUIKitTests/testConfiguredSemanticPairAcrossFourTraitContexts",
+        "ContrastUIKitTests/testTranslucentForegroundAndBackgroundAreRejected"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "nolinearization-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "conversion"
+      ],
+      "testIds": [
+        "ContrastUIKitTests/testUIKitGrayConversionUsesLinearLuminance"
+      ],
+      "failureIds": [
+        "ContrastUIKitTests/testUIKitGrayConversionUsesLinearLuminance"
+      ],
+      "replacement": {
+        "target": "Sources/ContrastUIKit.swift",
+        "source": "NegativeFixtures/NoLinearization.swift"
+      }
+    },
+    {
+      "id": "wrongcolorspace-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "conversion"
+      ],
+      "testIds": [
+        "ContrastUIKitTests/testLinearColorSpaceIsConvertedBeforeFormula"
+      ],
+      "failureIds": [
+        "ContrastUIKitTests/testLinearColorSpaceIsConvertedBeforeFormula"
+      ],
+      "replacement": {
+        "target": "Sources/ContrastUIKit.swift",
+        "source": "NegativeFixtures/WrongColorSpace.swift"
+      }
+    },
+    {
+      "id": "ignoredtraits-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "resolution"
+      ],
+      "testIds": [
+        "ContrastUIKitTests/testDynamicColorsUseExplicitStyleAndContrast"
+      ],
+      "failureIds": [
+        "ContrastUIKitTests/testDynamicColorsUseExplicitStyleAndContrast"
+      ],
+      "replacement": {
+        "target": "Sources/ContrastUIKit.swift",
+        "source": "NegativeFixtures/IgnoredTraits.swift"
+      }
+    },
+    {
+      "id": "ignoredalpha-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "conversion"
+      ],
+      "testIds": [
+        "ContrastUIKitTests/testTranslucentForegroundAndBackgroundAreRejected"
+      ],
+      "failureIds": [
+        "ContrastUIKitTests/testTranslucentForegroundAndBackgroundAreRejected"
+      ],
+      "replacement": {
+        "target": "Sources/ContrastUIKit.swift",
+        "source": "NegativeFixtures/IgnoredAlpha.swift"
+      }
+    }
+  ]
+}

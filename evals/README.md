@@ -7,7 +7,7 @@ eight positive unit tests, one compile check and three intended mutant rejection
 Its separate developer question and rubric are development drafts pending independent
 review, not additions to the six qualified gold prompts below. See the
 [failure-driven work plan](../research/evaluation/failure-driven/TASKS.md) for the
-test-to-prompt workflow and remaining gates. The combined offline suite passes175
+test-to-prompt workflow and remaining gates. The combined offline suite passes185
 tests; the115 count below describes the historical gold-closeout checkpoint.
 
 [Long-text/non-color selection tranche](../code-examples/pilots/uikit-choice-v1/README.md)
@@ -15,8 +15,24 @@ adds nine positive unit methods and four intended mutant rejections, plus a sepa
 draft prompt/rubric. Independent case review and model evaluation remain pending;
 these native passes do not expand the frozen gold catalog.
 
+[Configured-color contrast tranche](../code-examples/pilots/uikit-contrast-v1/README.md)
+adds nine positive methods, four intended mutant rejections and explicit semantic-pair
+measurements. Apple API evidence and W3C numerical provenance remain distinct. Its
+separate draft question/rubric also awaits independent review and model evaluation.
+
+[Modal/restoration tranche](../code-examples/pilots/uikit-modal-v1/README.md) adds
+thirteen positive methods and five intended mutant rejections. It preserves a real
+retained-but-removed target regression found after a green suite, its failing
+revision and its repair. This is development evidence, not a cross-model score;
+the separate prompt/rubric awaits independent review.
+
 The [closeout supersession record](os26/CLOSEOUT-SUPERSESSION.md) explains why the
 earlier local note remains unchanged for provenance while newer review governs readiness.
+
+[Edited-rotor tranche](../code-examples/pilots/uikit-edited-rotor-v1/README.md) adds
+twelve positive methods and five intended mutant rejections for changing documents,
+Unicode ranges and callback invalidation. Its independent question/rubric is a
+development draft, not a frozen baseline or an evaluated skill improvement.
 
 ## Qualified OS26 fixtures
 

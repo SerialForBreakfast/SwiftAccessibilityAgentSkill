@@ -1,7 +1,10 @@
 # PRD: Failure-Driven Accessibility Skill Evaluation
 
-Status: planning draft for review, 2026-11-05. No model runs or skill promotion
-authorized. Current native implementation remains paused.
+Status: planning draft for review, 2026-11-05. This document itself authorizes no
+model runs, native execution or skill promotion. Native work was paused when this
+plan was written; subsequent explicit owner instructions resumed bounded UIKit
+tranches under the active "finish the uikit tests" goal. Executed scope and evidence
+are recorded in Tasks.txt and each tranche, not inferred from this planning document.
 
 ## 1. Summary
 

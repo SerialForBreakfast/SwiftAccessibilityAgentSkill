@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "id": "uikit-modal",
+  "revision": "3",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Configuration/callback unit tests only; injected completion and notification capture. No UI presentation, gesture delivery, layout, focus or speech evidence. Owner must call tearDown before discard.",
+  "claims": [
+    {
+      "id": "modal",
+      "url": "https://developer.apple.com/documentation/objectivec/nsobject-swift.class/accessibilityviewismodal",
+      "section": "UIAccessibility.h modal/descendant-hidden flags; heading and button properties",
+      "statement": "Configure modal contents and hide the separate background subtree; snapshot/restore and hierarchy guards are project lifecycle policy.",
+      "availability": "Established UIKit APIs; UIAction registration iOS14+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "notification",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibility/post(notification:argument:)",
+      "section": "UIAccessibilityConstants.h screen-changed notification; UIAccessibility.h post",
+      "statement": "A notification can carry a target argument. Tests capture a request after injected completion, not actual focus delivery; generation/ownership behavior is project policy.",
+      "availability": "Established UIKit APIs; UIAction registration iOS14+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    },
+    {
+      "id": "escape",
+      "url": "https://developer.apple.com/documentation/objectivec/nsobject-swift.class/accessibilityperformescape()",
+      "section": "UIAccessibility.h escape; UIControl.h ordinary action dispatch",
+      "statement": "Provide a direct escape handler and ordinary Close action sharing dismissal policy. Direct calls do not prove actual gesture delivery.",
+      "availability": "Established UIKit APIs; UIAction registration iOS14+; deployment26.0.",
+      "reviewedOn": "2026-11-05"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/ModalUIKit.swift",
+      "sha256": "0a1b2fa1fa420044467fd4024b030831e6d8fee4d0074d0de5f2c921402a29b3"
+    },
+    {
+      "path": "Tests/ModalUIKitTests.swift",
+      "sha256": "d120ea930bc285c09215da08f2acf18ad7f562ebfcaf95bc0c618c6be91d0319"
+    },
+    {
+      "path": "NegativeFixtures/LostBackground.swift",
+      "sha256": "f04314a53643e726920fe344f76cf34247151fbc56719358fd76e0ea71f46753"
+    },
+    {
+      "path": "NegativeFixtures/EarlyNotification.swift",
+      "sha256": "54cdd1ec3ddfffa78d21927501bbec734a577ab85eea7478328a347587d727cd"
+    },
+    {
+      "path": "NegativeFixtures/StaleCompletion.swift",
+      "sha256": "a5aa722e892b79bc194ed9dabca6f1b935422b26c480c133ebc709b06b4806f6"
+    },
+    {
+      "path": "NegativeFixtures/IgnoredDismissGuard.swift",
+      "sha256": "52223dc174b570da9e92592d9a8d8e94c24fc0571c635e38bf4b206b5ddb4680"
+    },
+    {
+      "path": "NegativeFixtures/DetachedTarget.swift",
+      "sha256": "c84419ec080d187e1c2dee61b2aff3d3f6a07b6da65d9272a79a1743c9c019b7"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-modal",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "modal",
+        "notification",
+        "escape"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "modal-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "modal",
+        "notification",
+        "escape"
+      ],
+      "testIds": [
+        "ModalUIKitTests/testOpenExposesHeadingAndIndependentButtons",
+        "ModalUIKitTests/testBackgroundRestoresBothOriginalValues",
+        "ModalUIKitTests/testNotificationWaitsForCompletionAndUsesCurrentTarget",
+        "ModalUIKitTests/testOrdinaryCloseAndEscapeShareDismissalGuard",
+        "ModalUIKitTests/testEscapeCanInitiateDismissal",
+        "ModalUIKitTests/testPrimaryActionDoesNotDismissAndIsSuppressedWhileClosing",
+        "ModalUIKitTests/testOpenWhileActiveDoesNotOverwriteSnapshot",
+        "ModalUIKitTests/testOldCompletionCannotCloseReopenedPanel",
+        "ModalUIKitTests/testReleasedTargetIsNotRetainedAndPostsNil",
+        "ModalUIKitTests/testRetainedButRemovedTargetPostsNil",
+        "ModalUIKitTests/testPreviouslyHiddenBackgroundDoesNotReceiveTargetRequest",
+        "ModalUIKitTests/testTeardownIsIdempotentAndAllowsNewContent",
+        "ModalUIKitTests/testRejectsBackgroundContainingPanel"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "lostbackground-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "modal"
+      ],
+      "testIds": [
+        "ModalUIKitTests/testBackgroundRestoresBothOriginalValues"
+      ],
+      "failureIds": [
+        "ModalUIKitTests/testBackgroundRestoresBothOriginalValues"
+      ],
+      "replacement": {
+        "target": "Sources/ModalUIKit.swift",
+        "source": "NegativeFixtures/LostBackground.swift"
+      }
+    },
+    {
+      "id": "earlynotification-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "notification"
+      ],
+      "testIds": [
+        "ModalUIKitTests/testNotificationWaitsForCompletionAndUsesCurrentTarget"
+      ],
+      "failureIds": [
+        "ModalUIKitTests/testNotificationWaitsForCompletionAndUsesCurrentTarget"
+      ],
+      "replacement": {
+        "target": "Sources/ModalUIKit.swift",
+        "source": "NegativeFixtures/EarlyNotification.swift"
+      }
+    },
+    {
+      "id": "stalecompletion-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "notification"
+      ],
+      "testIds": [
+        "ModalUIKitTests/testOldCompletionCannotCloseReopenedPanel"
+      ],
+      "failureIds": [
+        "ModalUIKitTests/testOldCompletionCannotCloseReopenedPanel"
+      ],
+      "replacement": {
+        "target": "Sources/ModalUIKit.swift",
+        "source": "NegativeFixtures/StaleCompletion.swift"
+      }
+    },
+    {
+      "id": "ignoreddismissguard-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "escape"
+      ],
+      "testIds": [
+        "ModalUIKitTests/testOrdinaryCloseAndEscapeShareDismissalGuard"
+      ],
+      "failureIds": [
+        "ModalUIKitTests/testOrdinaryCloseAndEscapeShareDismissalGuard"
+      ],
+      "replacement": {
+        "target": "Sources/ModalUIKit.swift",
+        "source": "NegativeFixtures/IgnoredDismissGuard.swift"
+      }
+    },
+    {
+      "id": "detachedtarget-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "notification"
+      ],
+      "testIds": [
+        "ModalUIKitTests/testRetainedButRemovedTargetPostsNil"
+      ],
+      "failureIds": [
+        "ModalUIKitTests/testRetainedButRemovedTargetPostsNil"
+      ],
+      "replacement": {
+        "target": "Sources/ModalUIKit.swift",
+        "source": "NegativeFixtures/DetachedTarget.swift"
+      }
+    }
+  ]
+}

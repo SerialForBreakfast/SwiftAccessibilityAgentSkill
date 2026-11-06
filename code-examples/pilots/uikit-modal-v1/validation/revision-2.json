@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "revision": "2",
+  "manifestHash": "95f447253f2e3fe7700a161ac260b85371d85cd96ee45c9e51dc5a66307929f0",
+  "redaction": "Private run paths and addresses replaced; original logs retained privately.",
+  "rows": [
+    {
+      "check": "modal-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "failed",
+      "observed": "failure",
+      "reason": null,
+      "manifestHash": "95f447253f2e3fe7700a161ac260b85371d85cd96ee45c9e51dc5a66307929f0",
+      "recordedAt": "2026-11-06T04:42:33.436Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "ModalUIKitTests/testBackgroundRestoresBothOriginalValues",
+          "ModalUIKitTests/testEscapeCanInitiateDismissal",
+          "ModalUIKitTests/testNotificationWaitsForCompletionAndUsesCurrentTarget",
+          "ModalUIKitTests/testOldCompletionCannotCloseReopenedPanel",
+          "ModalUIKitTests/testOpenExposesHeadingAndIndependentButtons",
+          "ModalUIKitTests/testOpenWhileActiveDoesNotOverwriteSnapshot",
+          "ModalUIKitTests/testOrdinaryCloseAndEscapeShareDismissalGuard",
+          "ModalUIKitTests/testPrimaryActionDoesNotDismissAndIsSuppressedWhileClosing",
+          "ModalUIKitTests/testRejectsBackgroundContainingPanel",
+          "ModalUIKitTests/testReleasedTargetIsNotRetainedAndPostsNil",
+          "ModalUIKitTests/testRetainedButRemovedTargetPostsNil",
+          "ModalUIKitTests/testTeardownIsIdempotentAndAllowsNewContent"
+        ],
+        "failedTestIds": [
+          "ModalUIKitTests/testRetainedButRemovedTargetPostsNil"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "4e6a121b984f4e8af3749a5ff874f93b9440d5020eb7b2410690997c96ea3513",
+      "nativeLogHash": "f01e44cd0d77bc351949c89927641678d0bbb948f00e241ca87841d9369d9134",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testBackgroundRestoresBothOriginalValues]' passed (0.154 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testEscapeCanInitiateDismissal]' passed (0.004 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testNotificationWaitsForCompletionAndUsesCurrentTarget]' passed (0.005 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testOldCompletionCannotCloseReopenedPanel]' passed (0.003 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testOpenExposesHeadingAndIndependentButtons]' passed (0.003 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testOpenWhileActiveDoesNotOverwriteSnapshot]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testOrdinaryCloseAndEscapeShareDismissalGuard]' passed (0.005 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testPrimaryActionDoesNotDismissAndIsSuppressedWhileClosing]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testRejectsBackgroundContainingPanel]' passed (0.002 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testReleasedTargetIsNotRetainedAndPostsNil]' passed (0.002 seconds).",
+        "<private-run>/workspace/Tests/AccessibilityExamplesTests/ModalUIKitTests.swift:178: error: -[AccessibilityExamplesTests.ModalUIKitTests testRetainedButRemovedTargetPostsNil] : XCTAssertNil failed: \"<UIButton: <address>; frame = (0 0; 0 0); opaque = NO; gestureRecognizers = <NSArray: <address>>; layer = <CALayer: <address>>>\"",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testRetainedButRemovedTargetPostsNil]' failed (2.991 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.ModalUIKitTests testTeardownIsIdempotentAndAllowsNewContent]' passed (0.002 seconds)."
+      ]
+    }
+  ]
+}

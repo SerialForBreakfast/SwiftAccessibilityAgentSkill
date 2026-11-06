@@ -9,6 +9,22 @@ that approval does not promote these library examples.
 
 ## Available now
 
+[Edited documents and rotor ranges](pilots/uikit-edited-rotor-v1/README.md) adds
+UTF16/whole-grapheme matching, explicit overlap policy, revision-safe callbacks
+and ordinary text-access checks. Its prompt and rubric remain separate drafts;
+the native report records what was executed without changing frozen skill inputs.
+
+[Modal contents and restoration requests](pilots/uikit-modal-v1/README.md) adds
+completion ordering, exact prior-state restoration and stale-callback controls.
+Its history preserves a real retained-but-removed target regression discovered
+after a green suite, alongside the repair and a separate developer question/rubric.
+
+[Configured color contrast](pilots/uikit-contrast-v1/README.md) adds a bounded
+opaque-color calculator with explicit trait resolution, color-space conversion,
+separate W3C numerical provenance and a draft independent question/rubric. Its
+validation packet records native outcomes; it remains outside skill routing and
+frozen model-evaluation inputs.
+
 Completed native tranche: [long text and non-color choice state](pilots/uikit-choice-v1/README.md),
 with nine unit contracts, four deliberate defects and a separately pinned developer
 prompt/controller rubric. It supplements the historical index without changing the
@@ -33,8 +49,8 @@ The [draft developer question](pilots/uikit-choice-v1/evaluation/prompt.json) an
 [controller rubric](pilots/uikit-choice-v1/evaluation/controller.md) need independent
 review before gold promotion. Keep the controller material out of model inputs.
 Model execution and skill improvement claims remain separate, uncompleted gates.
-The combined offline library/evaluation suite currently passes175 tests, including
-the long-text/selection evidence-contract checks; this count
+The combined offline library/evaluation suite currently passes185 tests, including
+long-text/selection, contrast and modal history/evidence-contract checks; this count
 does not include native XCTest methods or imply additional gold readiness.
 
 - Manifest/result contracts with source and evidence hashes, Apple claim links,

@@ -1,0 +1,194 @@
+{
+  "schema": 1,
+  "id": "uikit-edited-rotor",
+  "revision": "1",
+  "platform": "iOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 26,
+  "limitations": "Unit-only literal text search and direct native rotor callbacks. No actual VoiceOver navigation, speech or edit delivery. Caller refreshes after document updates; first new-epoch search restarts. Canonical equivalence and fuzzy matching are not implemented.",
+  "claims": [
+    {
+      "id": "rotor",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycustomrotor",
+      "section": "UIAccessibilityCustomRotor.h itemSearchBlock/currentItem/direction",
+      "statement": "Native rotor search receives current result and direction. Revision invalidation and first-search restart are explicit application policy, not UIKit guarantees.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Custom rotors iOS10+; established UITextInput/Foundation APIs; deployment26.0."
+    },
+    {
+      "id": "ranges",
+      "url": "https://developer.apple.com/documentation/uikit/uiaccessibilitycustomrotoritemresult/targetrange",
+      "section": "UIAccessibilityCustomRotor.h targetRange; UITextInput.h positions/offset/range methods",
+      "statement": "Return ranges belonging to the text input, using UTF16 offsets; unit tests inspect text/ranges without claiming assistive-technology navigation.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Custom rotors iOS10+; established UITextInput/Foundation APIs; deployment26.0."
+    },
+    {
+      "id": "matching",
+      "url": "https://developer.apple.com/documentation/foundation/nsstring/range(of:options:range:)",
+      "section": "NSString.h literal search; Swift.String UTF16 and Character views",
+      "statement": "Foundation performs literal matching. Whole-grapheme filtering, optional overlap and empty-query behavior are project matching policy.",
+      "reviewedOn": "2026-11-05",
+      "availability": "Custom rotors iOS10+; established UITextInput/Foundation APIs; deployment26.0."
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/EditedRotorUIKit.swift",
+      "sha256": "b5f5572d6a20714b7e151261f75d84c69c66162242eac9637472e1e921c11b64"
+    },
+    {
+      "path": "Tests/EditedRotorUIKitTests.swift",
+      "sha256": "23be1b9cb803d7305952be07fb9395811c0423f72878d1c57357a6410eac094f"
+    },
+    {
+      "path": "NegativeFixtures/CharacterOffsets.swift",
+      "sha256": "4011cf93337650cef127226277841b86080c935d70a96a0c27a571bd11211323"
+    },
+    {
+      "path": "NegativeFixtures/IgnoredOverlap.swift",
+      "sha256": "65358ea116750a260468c89a7a643f0b247460a618fec16bab1d2ba755170e01"
+    },
+    {
+      "path": "NegativeFixtures/MissingRestart.swift",
+      "sha256": "6290f1687700cce1f7623c154448ae30cf9fb4f93d793a205abf2a14095b2164"
+    },
+    {
+      "path": "NegativeFixtures/OldRotor.swift",
+      "sha256": "e84edce24921a341456103d3a2ca7d0e9a36adbbe5ddfff15333af96ab88ef02"
+    },
+    {
+      "path": "NegativeFixtures/StaleText.swift",
+      "sha256": "6d4a41126fdd14b016f14f203f0d5244cd57452d5e9cf558e10bd7d64937cbde"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile-edited-rotor",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "rotor",
+        "ranges",
+        "matching"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "edited-rotor-unit",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "rotor",
+        "ranges",
+        "matching"
+      ],
+      "testIds": [
+        "EditedRotorUIKitTests/testInitialDirectionAndBothBoundaries",
+        "EditedRotorUIKitTests/testForwardAndBackwardUseFullCurrentRange",
+        "EditedRotorUIKitTests/testUnicodePrefixProducesCorrectNativeRange",
+        "EditedRotorUIKitTests/testPartialGraphemeMatchesAreExcluded",
+        "EditedRotorUIKitTests/testOverlapPolicyIsExplicit",
+        "EditedRotorUIKitTests/testNewRevisionRestartsRetainedResult",
+        "EditedRotorUIKitTests/testRetainedOldRotorIsInvalidAfterQueryChange",
+        "EditedRotorUIKitTests/testInsertionAndDeletionRebuildRanges",
+        "EditedRotorUIKitTests/testEmptyQueryUpdatesOrdinaryDocumentWithoutRotor",
+        "EditedRotorUIKitTests/testUnannouncedTextChangeRejectsCachedSearch",
+        "EditedRotorUIKitTests/testForeignTextInputPositionsRestartSafely",
+        "EditedRotorUIKitTests/testNativeRangeCanBeUsedForOrdinaryTextSelection"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "characteroffsets-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "ranges"
+      ],
+      "testIds": [
+        "EditedRotorUIKitTests/testUnicodePrefixProducesCorrectNativeRange"
+      ],
+      "failureIds": [
+        "EditedRotorUIKitTests/testUnicodePrefixProducesCorrectNativeRange"
+      ],
+      "replacement": {
+        "target": "Sources/EditedRotorUIKit.swift",
+        "source": "NegativeFixtures/CharacterOffsets.swift"
+      }
+    },
+    {
+      "id": "ignoredoverlap-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "matching"
+      ],
+      "testIds": [
+        "EditedRotorUIKitTests/testOverlapPolicyIsExplicit"
+      ],
+      "failureIds": [
+        "EditedRotorUIKitTests/testOverlapPolicyIsExplicit"
+      ],
+      "replacement": {
+        "target": "Sources/EditedRotorUIKit.swift",
+        "source": "NegativeFixtures/IgnoredOverlap.swift"
+      }
+    },
+    {
+      "id": "missingrestart-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "rotor"
+      ],
+      "testIds": [
+        "EditedRotorUIKitTests/testNewRevisionRestartsRetainedResult"
+      ],
+      "failureIds": [
+        "EditedRotorUIKitTests/testNewRevisionRestartsRetainedResult"
+      ],
+      "replacement": {
+        "target": "Sources/EditedRotorUIKit.swift",
+        "source": "NegativeFixtures/MissingRestart.swift"
+      }
+    },
+    {
+      "id": "oldrotor-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "rotor"
+      ],
+      "testIds": [
+        "EditedRotorUIKitTests/testRetainedOldRotorIsInvalidAfterQueryChange"
+      ],
+      "failureIds": [
+        "EditedRotorUIKitTests/testRetainedOldRotorIsInvalidAfterQueryChange"
+      ],
+      "replacement": {
+        "target": "Sources/EditedRotorUIKit.swift",
+        "source": "NegativeFixtures/OldRotor.swift"
+      }
+    },
+    {
+      "id": "staletext-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "rotor"
+      ],
+      "testIds": [
+        "EditedRotorUIKitTests/testUnannouncedTextChangeRejectsCachedSearch"
+      ],
+      "failureIds": [
+        "EditedRotorUIKitTests/testUnannouncedTextChangeRejectsCachedSearch"
+      ],
+      "replacement": {
+        "target": "Sources/EditedRotorUIKit.swift",
+        "source": "NegativeFixtures/StaleText.swift"
+      }
+    }
+  ]
+}

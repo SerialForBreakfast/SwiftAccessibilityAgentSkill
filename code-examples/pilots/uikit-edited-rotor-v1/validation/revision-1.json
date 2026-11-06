@@ -1,0 +1,316 @@
+{
+  "schema": 1,
+  "kind": "sanitized-native-evidence-not-anchor-approval",
+  "revision": "1",
+  "manifestHash": "c130f6e77b32b9b4ff425f18edafb6f8015fef21a19fb55bf2eab0515cc42975",
+  "redaction": "Private run paths and addresses replaced; original logs retained privately.",
+  "rows": [
+    {
+      "check": "compile-edited-rotor",
+      "lane": "compile",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "reason": null,
+      "manifestHash": "c130f6e77b32b9b4ff425f18edafb6f8015fef21a19fb55bf2eab0515cc42975",
+      "recordedAt": "2026-11-06T04:55:00.586Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "compile-only",
+        "runtimeVersion": null,
+        "runtimeBuild": null
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "a6891d24bfbc08cb6c8fb7d7aa97bdb0a03f2f26eab4f94be39ceabb0475d8af",
+      "nativeLogHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "excerpts": []
+    },
+    {
+      "check": "edited-rotor-unit",
+      "lane": "unit",
+      "expected": "success",
+      "status": "passed",
+      "observed": "success",
+      "reason": null,
+      "manifestHash": "c130f6e77b32b9b4ff425f18edafb6f8015fef21a19fb55bf2eab0515cc42975",
+      "recordedAt": "2026-11-06T04:55:08.175Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 0,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "EditedRotorUIKitTests/testEmptyQueryUpdatesOrdinaryDocumentWithoutRotor",
+          "EditedRotorUIKitTests/testForeignTextInputPositionsRestartSafely",
+          "EditedRotorUIKitTests/testForwardAndBackwardUseFullCurrentRange",
+          "EditedRotorUIKitTests/testInitialDirectionAndBothBoundaries",
+          "EditedRotorUIKitTests/testInsertionAndDeletionRebuildRanges",
+          "EditedRotorUIKitTests/testNativeRangeCanBeUsedForOrdinaryTextSelection",
+          "EditedRotorUIKitTests/testNewRevisionRestartsRetainedResult",
+          "EditedRotorUIKitTests/testOverlapPolicyIsExplicit",
+          "EditedRotorUIKitTests/testPartialGraphemeMatchesAreExcluded",
+          "EditedRotorUIKitTests/testRetainedOldRotorIsInvalidAfterQueryChange",
+          "EditedRotorUIKitTests/testUnannouncedTextChangeRejectsCachedSearch",
+          "EditedRotorUIKitTests/testUnicodePrefixProducesCorrectNativeRange"
+        ],
+        "failedTestIds": [],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "c545d3d213e29af10c037d8ce09256886ea22746471c9cd8fc1b19a42d347f5a",
+      "nativeLogHash": "481fa35cc5f452d39bcf6554bbda538d263cc94b2f0149710cc40024a96e4de3",
+      "excerpts": [
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testEmptyQueryUpdatesOrdinaryDocumentWithoutRotor]' passed (0.596 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testForeignTextInputPositionsRestartSafely]' passed (0.013 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testForwardAndBackwardUseFullCurrentRange]' passed (0.007 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testInitialDirectionAndBothBoundaries]' passed (0.023 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testInsertionAndDeletionRebuildRanges]' passed (0.050 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testNativeRangeCanBeUsedForOrdinaryTextSelection]' passed (0.007 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testNewRevisionRestartsRetainedResult]' passed (0.008 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testOverlapPolicyIsExplicit]' passed (0.004 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testPartialGraphemeMatchesAreExcluded]' passed (0.001 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testRetainedOldRotorIsInvalidAfterQueryChange]' passed (0.197 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testUnannouncedTextChangeRejectsCachedSearch]' passed (0.098 seconds).",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testUnicodePrefixProducesCorrectNativeRange]' passed (0.083 seconds)."
+      ]
+    },
+    {
+      "check": "characteroffsets-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "manifestHash": "c130f6e77b32b9b4ff425f18edafb6f8015fef21a19fb55bf2eab0515cc42975",
+      "recordedAt": "2026-11-06T04:57:32.809Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "EditedRotorUIKitTests/testUnicodePrefixProducesCorrectNativeRange"
+        ],
+        "failedTestIds": [
+          "EditedRotorUIKitTests/testUnicodePrefixProducesCorrectNativeRange"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "7b682a058689b787668f3f145f2efb7c1dd9f56e90cbe55fb2e52b6023e37562",
+      "nativeLogHash": "54392f8d84edc41bc63ee67f1c2b37debd6690297f99d65f5cf7dd0d12e4f8fb",
+      "excerpts": [
+        "<private-run-file>:47: error: -[AccessibilityExamplesTests.EditedRotorUIKitTests testUnicodePrefixProducesCorrectNativeRange] : XCTAssertNotNil failed",
+        "<private-run-file>:48: error: -[AccessibilityExamplesTests.EditedRotorUIKitTests testUnicodePrefixProducesCorrectNativeRange] : XCTAssertEqual failed: (\"nil\") is not equal to (\"Optional(6)\")",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testUnicodePrefixProducesCorrectNativeRange]' failed (2.409 seconds)."
+      ]
+    },
+    {
+      "check": "ignoredoverlap-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "manifestHash": "c130f6e77b32b9b4ff425f18edafb6f8015fef21a19fb55bf2eab0515cc42975",
+      "recordedAt": "2026-11-06T04:58:36.186Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "EditedRotorUIKitTests/testOverlapPolicyIsExplicit"
+        ],
+        "failedTestIds": [
+          "EditedRotorUIKitTests/testOverlapPolicyIsExplicit"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "34ee713a46a34f3ddbc8b0067565730a969fe75068b15d27852242faad168b47",
+      "nativeLogHash": "438a81cec759189a539e002fc2b80a431c0490bc4c8c6dbc8574683bc7298870",
+      "excerpts": [
+        "<private-run-file>:63: error: -[AccessibilityExamplesTests.EditedRotorUIKitTests testOverlapPolicyIsExplicit] : XCTAssertEqual failed: (\"[{1, 3}]\") is not equal to (\"[{1, 3}, {3, 3}]\")",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testOverlapPolicyIsExplicit]' failed (0.886 seconds)."
+      ]
+    },
+    {
+      "check": "missingrestart-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "manifestHash": "c130f6e77b32b9b4ff425f18edafb6f8015fef21a19fb55bf2eab0515cc42975",
+      "recordedAt": "2026-11-06T04:59:11.022Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "EditedRotorUIKitTests/testNewRevisionRestartsRetainedResult"
+        ],
+        "failedTestIds": [
+          "EditedRotorUIKitTests/testNewRevisionRestartsRetainedResult"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "cedccaa7f4be6a7bd54bdabcd235f8cc227e91b4a2ccd9ba8403a889eb9435a1",
+      "nativeLogHash": "b9346926fcc58d5179988f0b1f7970796f9e69ec97ca95573a783199d2abf926",
+      "excerpts": [
+        "<private-run-file>:72: error: -[AccessibilityExamplesTests.EditedRotorUIKitTests testNewRevisionRestartsRetainedResult] : XCTAssertEqual failed: (\"nil\") is not equal to (\"Optional(0)\")",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testNewRevisionRestartsRetainedResult]' failed (1.081 seconds)."
+      ]
+    },
+    {
+      "check": "oldrotor-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "manifestHash": "c130f6e77b32b9b4ff425f18edafb6f8015fef21a19fb55bf2eab0515cc42975",
+      "recordedAt": "2026-11-06T04:59:46.066Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "EditedRotorUIKitTests/testRetainedOldRotorIsInvalidAfterQueryChange"
+        ],
+        "failedTestIds": [
+          "EditedRotorUIKitTests/testRetainedOldRotorIsInvalidAfterQueryChange"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "8987eec1d417a2b4a861160b109873ff7aa97cc81ba34ad48bd456bbd906bd92",
+      "nativeLogHash": "02e48113bc2038aca1c34fe126351a79f94ef6ca9712b537d506e514ae170bba",
+      "excerpts": [
+        "<private-run-file>:80: error: -[AccessibilityExamplesTests.EditedRotorUIKitTests testRetainedOldRotorIsInvalidAfterQueryChange] : XCTAssertNil failed: \"<UIAccessibilityCustomRotorItemResult: <address>>\"",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testRetainedOldRotorIsInvalidAfterQueryChange]' failed (0.990 seconds)."
+      ]
+    },
+    {
+      "check": "staletext-negative",
+      "lane": "unit",
+      "expected": "failure",
+      "status": "passed",
+      "observed": "failure",
+      "reason": null,
+      "manifestHash": "c130f6e77b32b9b4ff425f18edafb6f8015fef21a19fb55bf2eab0515cc42975",
+      "recordedAt": "2026-11-06T05:00:12.836Z",
+      "environment": {
+        "platform": "iOS",
+        "deploymentTarget": "26.0",
+        "xcode": "Xcode 27.0\nBuild version 27A266a",
+        "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+        "sdkVersion": "27.0",
+        "sdkBuild": "24A430",
+        "architecture": "arm64",
+        "destinationType": "simulator",
+        "runtimeVersion": "26.5",
+        "runtimeBuild": "23F77"
+      },
+      "execution": {
+        "exitCode": 65,
+        "signal": null,
+        "infrastructureError": null,
+        "build": "passed",
+        "skippedTests": 0,
+        "executedTestIds": [
+          "EditedRotorUIKitTests/testUnannouncedTextChangeRejectsCachedSearch"
+        ],
+        "failedTestIds": [
+          "EditedRotorUIKitTests/testUnannouncedTextChangeRejectsCachedSearch"
+        ],
+        "diagnosticIds": []
+      },
+      "originalRecordHash": "3219d6c79b581371d1ea092256fa483de738c18a00bc4bca09bdf01d41cebbb2",
+      "nativeLogHash": "afd6562e61ae1c1e7d1805aa12407a02a537e6f459b4f112be2fd897cc0f367e",
+      "excerpts": [
+        "<private-run-file>:113: error: -[AccessibilityExamplesTests.EditedRotorUIKitTests testUnannouncedTextChangeRejectsCachedSearch] : XCTAssertNil failed: \"<UIAccessibilityCustomRotorItemResult: <address>>\"",
+        "Test Case '-[AccessibilityExamplesTests.EditedRotorUIKitTests testUnannouncedTextChangeRejectsCachedSearch]' failed (0.633 seconds)."
+      ]
+    }
+  ]
+}
