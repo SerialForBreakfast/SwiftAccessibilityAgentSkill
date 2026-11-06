@@ -15,7 +15,7 @@ if(args[0]!=='--execute') {
 const [output,ios,tvos]=args.slice(1);
 if(args.length!==4 || !output || !path.isAbsolute(output) || fs.existsSync(output) || !ios || !tvos)throw Error('Use --execute NEW_ABSOLUTE_OUTPUT IOS26_UUID TVOS26_UUID');
 function run(command,argv,options={}) {
-  return spawnSync(command,argv,{encoding:'utf8',timeout:600000,maxBuffer:32*1024*1024,...options});
+  return spawnSync(command,argv,{encoding:'utf8',timeout:600000,killSignal:'SIGKILL',maxBuffer:32*1024*1024,...options});
 }
 const inventory=run('xcrun',['simctl','list','devices','available','--json']);
 if(inventory.status!==0)throw Error('Cannot verify destinations');
@@ -42,7 +42,8 @@ for(const c of manifest.cases) {
     const bundle=path.join(output,stem+'.xcresult');
     const command=['test','-scheme','OS26Fixtures','-destination',`platform=${c.platform} Simulator,id=${c.platform==='iOS'?ios:tvos}`,
       '-derivedDataPath',path.join(output,'DerivedData'),'-resultBundlePath',bundle,
-      '-parallel-testing-enabled','NO','-only-testing:OS26FixturesTests/'+c.testId,'CODE_SIGNING_ALLOWED=NO'];
+      '-parallel-testing-enabled','NO','-collect-test-diagnostics','never',
+      '-only-testing:OS26FixturesTests/'+c.testId,'CODE_SIGNING_ALLOWED=NO'];
     fs.writeFileSync(path.join(output,stem+'-intent.json'),JSON.stringify({case:c.id,variant:id,variantHash:variant.sha256,testSuiteHash,command,expectedFailureTestIds:id==='candidate'?[]:[c.testId]},null,2),{flag:'wx'});
     const result=run('xcodebuild',command,{cwd:workspace});
     const log=(result.stdout??'')+(result.stderr??'');

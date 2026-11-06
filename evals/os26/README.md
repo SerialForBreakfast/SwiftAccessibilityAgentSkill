@@ -135,7 +135,13 @@ reference, trigger and input-mode changes are proposals, not deployed skill chan
 
 ## Fixture preparation
 
-[Six candidate implementations and twelve mutations](fixtures/README.md) are now
-prepared with a dependency-free Swift package, Apple app entry point and three
-initial UIKit tests. SDK compilation, app project wiring, SwiftUI interaction tests,
-independent review and all actual oracle receipts remain pending. No case is promoted.
+Latest [native validation report](reports/2026-11-05-r4/README.md): all six candidates
+passed and twelve mutations failed as intended on recorded OS26.5 runtimes.
+Independent review is pending; zero cases are promoted and Gemini has not run.
+
+[Six candidate implementations and twelve mutations](fixtures/README.md) are
+prepared with a dependency-free Swift package and six focused UIKit/SwiftUI unit
+tests. The native runner uses the package scheme; no separate app project or UI
+tests are required. See dated validation reports for actual execution outcomes.
+Independent review remains a separate promotion requirement. The receipt assembler
+keeps that gate pending rather than inferring approval from passing tests.

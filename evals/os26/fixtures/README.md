@@ -1,68 +1,70 @@
-# OS26 fixture preparation — not gold-ready
+# OS26 unit fixture preparation: not gold-ready
 
-**6 candidate fixes · 12 single-error variants · 3 UIKit tests authored · Apple execution not run.**
+**6 candidates, 12 single-error variants, 6 focused unit tests.**
 
-These are proposed known-good implementations, not established oracles. No native
-pass, mutation kill or independent review is claimed. Historical reports are unchanged.
-The package has no external dependencies. `Host/FixtureApp.swift` is an application
-entry point kept outside the package library. An Xcode app/test project has **not**
-been generated or qualified on BigDog; Swift on Linux cannot compile UIKit/SwiftUI.
+Revision `os26-fixtures-unit-2` implements code-contract revision4. Promotion
+requires recorded native outcomes and independent source/assertion review. The
+manifest records expected outcomes, not results. Read the dated validation reports
+in the parent directory for actual execution status.
 
-## Apple validation setup
+## Native validation
 
-1. Create separate iOS and tvOS SwiftUI App targets in Xcode, deployment **26.0**.
-   Add this directory as a local Swift package and link `OS26Fixtures`. Replace the
-   template App source with `Host/FixtureApp.swift`. Record SDK and runtime builds.
-2. Add a local `Poster` image asset to the tvOS target (any synthetic placeholder;
-   record its hash). The screen shows eight independently identified movie tiles.
-   Do not substitute a missing-image rendering when reviewing visual behavior.
-3. Run package XCTest on an approved iOS26 runtime using Xcode's package scheme.
-   Build required test hosts; do not add or run UI-test targets. Native execution
-   and Apple tooling are peer-owned gates.
-4. Test the unmodified candidate first. Then, in a disposable copy, replace exactly
-   one same-named `Sources/OS26Fixtures/` file with the corresponding `Mutations/`
-   file. Rebuild and run the SAME relevant unit tests. Restore before the
-   next variant. No mutation is applied to this checkout by the offline runner.
-5. Capture source hashes, exact commands, exit statuses and unit evidence
-   privately. Never convert this manifest's expected outcomes into observed results.
+Run from the repository root using installed Xcode and installed iOS26/tvOS26
+Simulator runtimes. No model inference, downloads or UI-test targets are involved.
+The Swift package has no external dependencies and declares deployment target26.0.
 
-`manifest.json` binds each source and mutation. Mutations are outside SwiftPM source
-roots, so only the selected candidate compiles by default. Patch markers identify
-fix regions. The host callbacks log effects rather than deleting rows, navigating,
-charging or persisting preferences; this deliberately keeps IDs observable for
-repeated activation. It is a test instrument, not production behavior.
+```sh
+# Inspect the 18-job plan without executing anything.
+node evals/runner/os26-native.mjs
 
-## Historical interaction checklist (not promotion gates)
+# Select installed destinations and a NEW private output directory.
+xcrun simctl list devices available
+node evals/runner/os26-native.mjs --execute \
+  /private/tmp/os26-unit-run IOS26_DEVICE_UUID TVOS26_DEVICE_UUID
 
-The following draft-2 checklist is retained for provenance only. The owner has
-excluded mandatory manual verification and UI tests. These interaction outcomes
-are outside the code-contract baseline and are not asserted by unit-test passes.
+# Assemble a complete matrix; independent review remains pending.
+node evals/runner/os26-native-receipts.mjs /private/tmp/os26-unit-run
+node evals/runner/os26.mjs status \
+  /private/tmp/os26-unit-run/native-evidence-pending-review.json
+```
 
-| Case | Exercise | Expected observation / mutation detection |
-|---|---|---|
-| 01 | VoiceOver traverse and activate Downloads and Help; switch both ways | Both controls exposed, current state, one callback per activation. Hide-controls fails traversal; drop-help fails callback. |
-| 02 | Refresh same cell Alice → Bob → Alice → Bob, no prepareForReuse | Current label/status every time. Unit test rejects stale label and stale status. Verify actual VoiceOver announcement separately. |
-| 03 | Container widths 320/375pt; change live from normal to largest accessibility text; long localized total | Full total readable, no overlap/constraint errors, Pay callback once, appearance unchanged. Fixed-height and no-live-scaling must fail. Unit prerequisites alone do not establish layout. |
-| 04 | iPad: focus Alpha/Bravo without activating, then visible Delete using VoiceOver and FKA+hardware keyboard; separately swipe subject | Focus causes zero events; each explicit activation/swipe emits exactly one correct ID. Delete-on-focus fails zero-event focus check; hidden-button fails ordinary/FKA discoverability. Record settings and actual key sequence. |
-| 05 | tvOS: remote first/middle/last tiles, Select, repeated state updates; separately VoiceOver | Reach all tiles, correct one open event, stable focus and correct movie name. No-activation fails callback; reset-focus-on-update fails focus stability. |
-| 06 | Native Toggle with VoiceOver and ordinary interaction, both directions | Label/state correct, backing binding changes. Broken-binding fails persistence; hidden-toggle fails VoiceOver traversal. No fix needed in candidate. |
+The runner uses Xcode's package test scheme and its required test host. It does
+not require a separately authored app, poster asset or interaction walkthrough.
+`Host/FixtureApp.swift` remains an optional demonstration outside the package.
 
-SwiftUI callback/state unit tests remain to be implemented on an approved Apple
-host. No XCUITest targets are planned. Do not count the three UIKit tests as coverage for cases 04–06. The two
-mutations per case sample defects, not all acceptance conditions. Focus/input traps
-that cannot be exercised by unit tests need separately versioned unit-observable
-variants or remain blocked. Source inspection is not a mutation kill.
-Package compilation does not satisfy `compile-host`; both platform app targets must
-build. No receipt is emitted until source review and independent oracle review are
-complete. Use `../acceptance.json` as the authority, allowing alternative valid fixes.
+Jobs run serially in a disposable copy. Each candidate runs before its two
+mutations, using the same selected test. The runner restores the candidate after
+each variant and never mutates this checkout. A job is bounded to ten minutes;
+crashes, build errors, timeouts, skipped tests and unclassified failures stop the
+run. Expected assertion failures are retained in logs and xcresult bundles;
+automatic extended diagnostic collection is disabled to avoid blocking on those
+intentional failures. All outputs contain local paths and remain private.
 
-## Source review starting points
+## Evidence scope
 
-The candidate uses native controls rather than an invented named-action overload.
-[Apple's named accessibility action](https://developer.apple.com/documentation/swiftui/view/accessibilityaction%28named%3A_%3A%29)
-and [automatic font updates](https://developer.apple.com/documentation/uikit/uicontentsizecategoryadjusting/adjustsfontforcontentsizecategory)
-were consulted during preparation (2026-11-05). This is not independent review,
-SDK availability verification or proof of runtime behavior. Other per-case primary
-source candidates remain in `../acceptance.json`.
+Three UIKit tests cover exposed-control configuration, callback independence,
+same-instance reuse and font/layout prerequisites. Three SwiftUI tests exercise
+the exact production action handlers and binding used by the controls. They check
+correct IDs, action counts and state updates. They do not simulate focus, gestures,
+VoiceOver or visual layout. Source review checks that the controls remain wired to
+the tested production paths. Equivalent implementations remain acceptable; helper
+names and reference implementation structure are not answer requirements.
 
-Offline integrity: `node --test evals/runner/os26-fixtures-test.mjs` from repo root.
+The receipt assembler verifies matrix completeness, variant/log/intent identity
+and consistent test selection. It derives Xcode/SDK identity from captured files
+and deliberately leaves review gates pending. Independent reviewer approval must
+name the exact revision and evidence examined. A passing unit matrix alone does
+not promote the prompts or authorize Gemini execution.
+
+See [source/assertion review](../SOURCE-REVIEW-R4.md) and
+[acceptance gates](../acceptance.json). The earlier preparation instructions and
+interaction checklist are preserved in
+[the draft3 archive](../archive/os26-code-contract-3/FIXTURE-PREPARATION.md);
+they are historical, not current requirements.
+
+Offline checks:
+
+```sh
+node --test evals/runner/os26-fixtures-test.mjs \
+  evals/runner/os26-native-receipts-test.mjs evals/runner/os26-test.mjs
+```
