@@ -4,6 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {execFileSync} from 'node:child_process';
+import {projectOutputPath} from './workspace-paths.mjs';
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const hash = x => crypto.createHash('sha256').update(x).digest('hex');
@@ -52,6 +53,7 @@ const manifest = {
   schema: 1, experiment: 'local-os26-released-vs-compact-b-20261106',
   sourceCommit: execFileSync('git', ['rev-parse', 'HEAD'], {cwd: repo, encoding: 'utf8'}).trim(),
   runnerHash: hash(fs.readFileSync(fileURLToPath(import.meta.url))), catalogRevision: catalog.revision,
+  workspacePolicyHash: hash(fs.readFileSync(new URL('./workspace-paths.mjs', import.meta.url))),
   models, conditions: {F: 'released skill + current references', BR: 'compact B subject body + identical metadata/references'},
   pins: uniquePins, jobs: jobs.map(({messages, ...rest}) => ({...rest, inputBytes: Buffer.byteLength(JSON.stringify(messages))})),
   settings: {num_ctx: 16384, num_predict: 1024, temperature: 0, seed: 42, top_p: 1, top_k: 0},
@@ -66,9 +68,9 @@ if (process.argv[2] !== '--execute') {
   await new Promise(resolve => process.stdout.write(JSON.stringify(manifest, null, 2) + '\n', resolve));
   process.exit(0);
 }
-const out = process.argv[3];
-if (!out || !path.isAbsolute(out) || fs.existsSync(out)) throw Error('New absolute output directory required');
-fs.mkdirSync(out, {mode: 0o700});
+const out = projectOutputPath(process.argv[3] || `evals/results/local-os26-${Date.now()}`);
+if (fs.existsSync(out)) throw Error('New project-local output directory required');
+fs.mkdirSync(out, {recursive: true, mode: 0o700});
 fs.writeFileSync(path.join(out, 'manifest.json'), JSON.stringify(manifest, null, 2), {mode: 0o600});
 fs.writeFileSync(path.join(out, 'payloads.json'), JSON.stringify(jobs, null, 2), {mode: 0o600});
 const base = 'http://127.0.0.1:11434';

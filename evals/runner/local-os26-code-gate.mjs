@@ -1,9 +1,9 @@
 // Compile/API gate for locally generated answers to the six OS26 development prompts.
 // This is diagnostic evidence, not a quality grade or gold-promotion receipt.
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
+import {projectOutputPath, runEnvironment} from './workspace-paths.mjs';
 
 const args = process.argv.slice(2);
 const records = [];
@@ -13,9 +13,11 @@ for (let i = 0; i < args.length; i++) {
   else if (args[i] === '--out') output = args[++i];
   else throw Error(`Unknown argument: ${args[i]}`);
 }
-if (!records.length || !output || !path.isAbsolute(output)) {
-  throw Error('Usage: node evals/runner/local-os26-code-gate.mjs --records FILE [--records FILE...] --out ABSOLUTE_JSON');
+if (!records.length) {
+  throw Error('Usage: node evals/runner/local-os26-code-gate.mjs --records FILE [--records FILE...] [--out PROJECT_JSON]');
 }
+output = projectOutputPath(output || `evals/results/local-os26-code-gate-${Date.now()}.json`);
+if (fs.existsSync(output)) throw Error('New project-local output file required');
 
 const repo = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..');
 const sdk = {
@@ -23,7 +25,9 @@ const sdk = {
   tvOS: '/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk'
 };
 const target = {iOS: 'arm64-apple-ios26.0-simulator', tvOS: 'arm64-apple-tvos26.0-simulator'};
-const sourceDir = fs.mkdtempSync(path.join(os.tmpdir(), 'swift-accessibility-code-gate-'));
+fs.mkdirSync(path.dirname(output), {recursive: true, mode: 0o700});
+const sourceDir = fs.mkdtempSync(path.join(path.dirname(output), 'swift-accessibility-code-gate-'));
+const env = runEnvironment(sourceDir);
 
 function codeBlock(text) {
   return text.match(/```swift\n([\s\S]*?)```/)?.[1]?.trim() ?? '';
@@ -53,7 +57,7 @@ function hazards(id, code) {
   return flags;
 }
 function compile(source, platform, file) {
-  const result = spawnSync('xcrun', ['swiftc', '-sdk', sdk[platform], '-target', target[platform], '-typecheck', '-parse-as-library', '-module-name', 'GeneratedProbe', file], {encoding: 'utf8', timeout: 120000, maxBuffer: 8 * 1024 * 1024});
+  const result = spawnSync('xcrun', ['swiftc', '-sdk', sdk[platform], '-target', target[platform], '-typecheck', '-parse-as-library', '-module-cache-path', env.SWIFT_MODULECACHE_PATH, '-module-name', 'GeneratedProbe', file], {encoding: 'utf8', timeout: 120000, env, maxBuffer: 8 * 1024 * 1024});
   return {ok: result.status === 0, exitCode: result.status, signal: result.signal ?? null, error: result.error?.code ?? null, diagnostics: `${result.stdout ?? ''}${result.stderr ?? ''}`.trim()};
 }
 

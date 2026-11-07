@@ -4,7 +4,9 @@ All notable changes to this documentation project are tracked here.
 
 ## [Unreleased]
 
-- No unreleased changes recorded yet.
+- Recorded the owner's project-only working-file rule. Local comparison and Swift
+  probe tools now confine outputs, scratch files and compiler caches to the project;
+  private artifacts default to `evals/results/`. Released skill behavior is unchanged.
 
 ## [0.2.2] - 2026-03-21
 
