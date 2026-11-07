@@ -6,8 +6,8 @@
 |---|---|
 | Can a user install the RC without switching the default release? | Yes: [archive and local install instructions](evals/rc1/README.md). Project-local copy installed with the existing skills CLI; compared to all archive files. No model session used. |
 | Can we grade code without an LLM reviewer? | [Twelve bounded development tasks](evals/rc1/RUBRIC.md) check executable Swift contracts across six cells. The [fixture scorecard](evals/rc1/scorecard.json) separates compilation from the expected runtime verdict. One qualified target per task is not a platform support matrix. |
-| Does the installed RC activate or improve answers? | Unknown. Offline qualification covers neither. No model calls, quota grants, paid runs or release promotion. |
+| Does the installed RC activate or improve answers? | [Measured on Haiku 5.5 low; partial](evals/rc1-comparison/RESULT.md). Quality is unchanged: 12/12 automatic pairs both pass, but these 12 tasks have no headroom. Automatic invocation is 1/12 for each version; explicit invocation is 3/3 for both, and only rc.1 then reads its references. The sealed run stopped at 9/36; the complete cohort used rewritten prompts. No unaided arm. Native grading on this Mac (reviewed local lane): 33/36 pass. checkout-font fails 3/3 for both versions, because the auto-adjust flag overrides the supplied size; the source review had missed it. |
 
 **Preserved-answer check:** the [original local checkout harness](research/evaluation/checkout-local-replay/README.md) reproduced all eight first type-check outcomes and all eight unit-method outcomes, without changing any answer. This is not qualification for arbitrary new submissions.
 
-**Next decision:** separately authorize one bounded comparison with released 0.2.2, including repeated baseline observations and explicit versus automatic native invocation. Keep known development cases separate from holdouts.
+**Next decision:** don't promote rc.1. Follow [ROADMAP-0.3.md](ROADMAP-0.3.md): fix invocation, build a suite with headroom from historical failures, then target content. Keep known development cases separate from holdouts.

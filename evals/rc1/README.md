@@ -30,7 +30,18 @@ The grader passes a case only when the Swift file compiles and the hidden unit e
 
 `python3 -B evals/rc1/grader/grade.py --export checkout-font` emits just a natural request and its starter file. Export before handing a task to a subject; do **not** expose this repo, grader, fixtures, oracle, results or source package to the subject. Each task takes a single Swift implementation with a stable signature, not a generated project. No subject-controlled build phases, dependencies or shell commands. Submit unchanged Swift bytes; an answer that needs prose or partitioning must be handled separately, not silently repaired.
 
-The ordinary developer-host command runs **only maintained fixtures**. For a future authorized external submission, provision a disposable macOS VM, no credentials, no mounted host repo or shared directories, no network adapter, throwaway checkout and user, with trusted toolchain/runtimes pre-installed. Transfer a single sanitized file and runner before isolation, and retrieve results after shutdown. Only there use `RC1_ISOLATED_WORKER=1 python3 -B evals/rc1/grader/grade.py --task TASK --submission Submission.swift`. VM detection and an operator flag are interlocks, not proof the VM was provisioned safely. If the platform lane cannot run securely in that environment, leave it ungraded. No external-submission worker or model transport is qualified by this fixture run.
+**Reviewed local lane for model answers.** The owner approved this on November 7, 2026 and declined a VM or a separate user account. A submitted answer runs on this developer host, as the current user. It is not sandboxed. The safeguards are a human read plus an automatic screen:
+
+1. **Extract** the first fenced `swift` block from the answer, unchanged. Record output format separately.
+2. **Read** each extracted file before it runs. In `review.json`, record its SHA-256 with `"task"` and `"decision": "run"`. Never approve a file you haven't read.
+3. **Run** `RC1_REVIEWED_LOCAL=review.json RC1_RESULTS_BASE=evals/results/<run>/native python3 -B evals/rc1/grader/grade.py --task TASK --submission Submission.swift`.
+   - `grade.py` refuses any hash not in the record.
+   - It also refuses any file that imports anything but the task framework, or that mentions process, file, network, environment, print, exit or unsafe APIs (`FORBIDDEN` in grade.py).
+   - Results must stay under `evals/results/`.
+
+[native_lane.py](../rc1-comparison/native_lane.py) applies this to a whole return. The screen backs up the read; it doesn't replace it. For long answers, read more carefully or leave them ungraded.
+
+**First launch after a boot:** an iOS process that loads fonts can exceed the 40-second unit timeout. That shows up as an infrastructure error, which stops the run. Repeat the run on the warm simulator. Don't raise the timeout.
 
 See [the controller rubric](RUBRIC.md) for the 12 development cases and evidence boundaries. These cases grade specific contracts, not complete apps, platform usability or universal accessibility. Do not use their 36 executions as independent model answers or as a noise-floor estimate.
 

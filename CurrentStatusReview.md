@@ -167,6 +167,8 @@ Every figure below was measured on 2026-11-07 with read-only commands.
 
 ## 8. Recommendations
 
+> **Superseded for planning (November 7, after the rc.1 return).** [ROADMAP-0.3.md](ROADMAP-0.3.md) re-orders this section's recommendations using the [rc.1 result](evals/rc1-comparison/RESULT.md): invocation first, then a suite with headroom, then content. The text below is kept as written.
+
 Each recommendation lists its evidence, its expected effect and a done-when condition. They are recommendations only. None changes current policy until the owner approves it.
 
 ### R1. Grade generated code automatically against the existing unit contracts
@@ -268,6 +270,8 @@ Each recommendation lists its evidence, its expected effect and a done-when cond
 - **Done when.** The owner records a decision, either way.
 
 ## 9. Four-week plan
+
+> **Superseded by [ROADMAP-0.3.md](ROADMAP-0.3.md).**
 
 | Week | Deliverables | Exit metric |
 | --- | --- | --- |

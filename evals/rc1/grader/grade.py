@@ -1,4 +1,4 @@
-"""Run maintained fixtures; arbitrary submissions require a disposable offline macOS VM."""
+"""Run maintained fixtures, or controller-reviewed submissions through the reviewed local lane."""
 import argparse
 from collections import Counter
 from datetime import datetime, timezone
@@ -16,6 +16,31 @@ from tasks import TASKS
 ROOT = Path(__file__).resolve().parents[3]
 SDK = {"ios": ("iphonesimulator","ios26.0-simulator"), "tvos": ("appletvsimulator","tvos26.0-simulator"), "macos": ("macosx","macosx26.0")}
 digest = lambda b: hashlib.sha256(b).hexdigest()
+# Reviewed local lane. The owner approved it on 2026-11-07 and declined a VM or a separate user.
+# A submission runs on this host only if (1) the controller read it and recorded its hash
+# with decision "run" in the RC1_REVIEWED_LOCAL record, and (2) it passes this screen.
+# The screen supports the human read. It is not a sandbox.
+FORBIDDEN = ("Process", "NSTask", "FileManager", "FileHandle", "URLSession", "URL(", "Socket", "dlopen", "dlsym",
+             "@_silgen_name", "@_cdecl", "posix_spawn", "system(", "popen", "fork(", "execv", "getenv", "setenv",
+             "exit(", "abort(", "print(", "fwrite", "fputs", "write(", "Unsafe", "unsafeBitCast", "#if", "@main",
+             "CommandLine", "Darwin", "Glibc", "Foundation")
+
+
+def screen(task, source):
+    text = source.decode("utf-8")
+    imports = {l.split()[1] for l in text.splitlines() if l.strip().startswith("import ") and len(l.split()) > 1}
+    return [t for t in FORBIDDEN if t in text] + [f"import {i}" for i in sorted(imports - {task.framework})]
+
+
+def reviewed(task, source):
+    path = os.getenv("RC1_REVIEWED_LOCAL")
+    if not path:
+        return "set RC1_REVIEWED_LOCAL to the controller review record"
+    entry = json.loads(Path(path).read_bytes()).get(digest(source))
+    if not entry or entry.get("task") != task.id or entry.get("decision") != "run":
+        return "submission hash is not approved for this task in the review record"
+    problems = screen(task, source)
+    return "refused by screen: " + ", ".join(problems) if problems else None
 
 
 def read(*args):
@@ -91,12 +116,16 @@ def main():
         print(task.question+"\n\nReturn only Submission.swift, preserving this interface. Keep correct code as-is.\n\n"+task.solution(starter))
         return
     if args.submission:
-        # Fixture qualification on a developer machine never executes a supplied file.
-        if not args.task or os.getenv("RC1_ISOLATED_WORKER") != "1" or read("sysctl","-n","kern.hv_vmm_present") != "1":
-            parser.error("external submissions require --task and the isolated disposable VM worker (see README)")
+        if not args.task:
+            parser.error("a submission requires --task")
         if args.submission.stat().st_size > 64000:
             parser.error("submission exceeds 64 KB")
-    base = ROOT/"evals/results/rc1-grader"
+        refusal = reviewed(next(t for t in TASKS if t.id == args.task), args.submission.read_bytes())
+        if refusal:
+            parser.error(refusal)
+    base = Path(os.getenv("RC1_RESULTS_BASE") or ROOT/"evals/results/rc1-grader")
+    if not base.resolve().is_relative_to((ROOT/"evals/results").resolve()):
+        parser.error("results must stay under evals/results/")
     base.mkdir(parents=True,exist_ok=True)
     runroot = Path(tempfile.mkdtemp(prefix="attempt-",dir=base))
     cache = base/"modules"; cache.mkdir(exist_ok=True)
