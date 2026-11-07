@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "observedOn": "2026-11-07",
+  "hostScope": "local macOS, not BigDog",
+  "executable": "installed agy command",
+  "version": "not established by help output",
+  "help": {
+    "path": "research/evaluation/gemini-preflight-v1/local-cli-help.txt",
+    "sha256": "8fcf40227fe84704f7f8155b3b5ebcee79dfdc5208fde6e8b07569c24425f976"
+  },
+  "invocation": [
+    "--help"
+  ],
+  "exitCode": 0,
+  "inferenceCalls": 0,
+  "findings": [
+    "stream-json documents a new turn per input line; do not serialize system and user as two CLI turns",
+    "help exposes agent/workspace modes and sandbox terminal restrictions, not proof of tool-free operation",
+    "help does not document an exact system-role injection or complete global-rule/tool-disabling interface"
+  ],
+  "qualification": "not established; BigDog must supply supported transport/configuration evidence",
+  "noUndocumentedFlagsAssumed": true
+}

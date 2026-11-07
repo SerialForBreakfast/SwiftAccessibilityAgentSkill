@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "id": "gemini-v2-48-cell-proposal-r1",
+  "status": "conditional-draft-not-approved",
+  "comparisonIdentity": {
+    "path": "research/evaluation/gemini-preflight-v1/comparison-identity.json",
+    "controllerSha256": "c100eaac885ab3de1d4638097978a23ab4c88d0a94c31cb5887aaa01a21d4bed"
+  },
+  "provider": {
+    "transport": "AGY subscription, exact text-only transport not yet qualified",
+    "expectedClientVersion": "1.5.3",
+    "proposedRequestedModel": "gemini-4-argon-high",
+    "modelChoiceApproved": false,
+    "reason": "Proposed by upstream frontier-feasibility report; new experiment, not a replacement in historical Flash results",
+    "returnedServingIdentity": "must capture actual available identifiers; requested alias is not immutable weight revision"
+  },
+  "budget": {
+    "additionalSpend": 0,
+    "subscriptionOnly": true,
+    "extraUsageMustBeOff": true,
+    "quotaAllowanceProposedPercentagePoints": {
+      "geminiFiveHour": 5,
+      "geminiWeekly": 1,
+      "argonWeekly": 1
+    },
+    "quotaAllowanceApproved": false,
+    "forecast": "No defensible exact debit forecast. Thresholds are proposed policy, not an estimate or a promise to complete 48 cells.",
+    "observations": "Fresh readings before each subject and after each result; account-wide usage counts conservatively; stop on missing/stale/reset/nonmonotonic data.",
+    "overshoot": "One subject may cross an observed allowance; rounding, delay, concurrent use and provider-side work prevent a hard subscription cap."
+  },
+  "bounds": {
+    "maximumVisibleSubjectAttempts": 48,
+    "pairedScenarios": 24,
+    "relatedFamilies": 12,
+    "repetitions": 1,
+    "concurrency": 1,
+    "retries": 0,
+    "repairs": 0,
+    "fallbacks": 0,
+    "additionalProbes": 0,
+    "batchWallClockSeconds": 3600,
+    "perSubjectTimeoutSeconds": 180,
+    "captureBytesPerSubject": 2097152,
+    "providerHardOutputTokenCap": null,
+    "providerHardInternalRequestCap": null,
+    "unsupportedCapsRequireExplicitAcknowledgment": true
+  },
+  "stopPolicy": [
+    "Any observable identity/client/source/payload drift",
+    "Any tool, repository, ancestor-rule, global-skill, session-reuse or controller leakage",
+    "Observed quota threshold, quota reset, unavailable reading or stale reading",
+    "First timeout, partial/truncated transport capture, unknown remote outcome or infrastructure error",
+    "Whole-batch deadline; retain partial pairs and every unattempted cell"
+  ],
+  "scoring": {
+    "primary": "Source-backed correctness and critical accessibility errors by paired scenario/family and platform",
+    "separate": [
+      "first-turn identity",
+      "routing and honest supplied-versus-read disclosure",
+      "tokens/reasoning/cost where exposed",
+      "latency and bytes"
+    ],
+    "c0BrandingPenalty": false,
+    "claim": "Bundled dev.5 plus scoped reference usefulness versus generic baseline; not installed activation, dev.6 lift or pure prompt isolation",
+    "calibration": "96 authored exemplar slots (four types for 24 scenarios), 312 criterion judgments; not executed or accepted"
+  },
+  "approval": {
+    "ownerApproved": false,
+    "liveRunsAuthorized": false,
+    "callsAuthorized": 0,
+    "required": [
+      "Exact qualified provider/client/requested model and actual supported isolation",
+      "Independent transport/source evidence review and completed controller calibration",
+      "Fresh quota observations plus approved percentage-point allowances",
+      "Explicit acknowledgment of unsupported hard token/internal-request caps and one-subject overshoot",
+      "Separate owner execution approval for this comparison identity"
+    ]
+  }
+}

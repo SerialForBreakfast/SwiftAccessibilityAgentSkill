@@ -3,6 +3,15 @@
 Working files and private evidence stay inside this project under `evals/results/`.
 See the [local output index](LOCAL-OUTPUTS.md) for their locations.
 
+[November 7 local development-skill comparison](reports/local-dev5-20261107/README.md):
+Gemma4:12b and Qwen3.5 compared generic, released and dev.5 supplied-context arms.
+The 90-minute allocation produced 32 answers from 34 attempted cells, with two
+unattempted cells. Median paired input tokens fell about 43%, but no full
+implementation contract was met in the provisional source review. Truncation,
+compiler/environment limitations and oracle ambiguities are explicit. Dev.6
+arrived during the run and passed 16 offline checks; its new media guidance was not
+model-tested here.
+
 [November 6 local released-versus-compact-B comparison](reports/local-compact-b-20261106/README.md):
 36 Ollama generations across three installed models. Compact B used 29.9–34.7%
 fewer reported tokens, with mixed source outcomes and new compiler regressions.

@@ -1,0 +1,1966 @@
+{
+  "schema": 1,
+  "status": "bounded_partial",
+  "qualification": "Known development cases; one unblinded provisional reviewer; not independently accepted",
+  "reviewBasis": {
+    "packageReview": "research/evaluation/independent-v2-review-20261107/REVIEW.md",
+    "continuation": "research/evaluation/NEXT-EXPERIMENT-20261107.md",
+    "upstreamComposite": "research/evaluation/v2-controller-resolution-20261107/composite-controller.json",
+    "status": "Initial IR01/IR02 issues preserved; upstream later reports grading-interpretation resolution. Local grades remain provisional; native/baseline/release gates are separate.",
+    "boundary": "Local observations accept stable current-owner dispatch and rely on independent API/integration/preservation evidence. The upstream composite is a separate grading identity; this local run retains its own provisional calibration."
+  },
+  "integrity": {
+    "checks": "Frozen pins, expanded requests, provider receipts, outputs, model identities, settings, call uniqueness and review hashes",
+    "planned": 36,
+    "dispatched": 34,
+    "answers": 32,
+    "failures": 2,
+    "reviews": 32,
+    "missingAnswers": [
+      "gemma4_12b-tvos-uikit-state-R",
+      "qwen3_5_latest-tvos-uikit-state-C0",
+      "qwen3_5_latest-tvos-uikit-state-R",
+      "qwen3_5_latest-tvos-swiftui-actions-C0"
+    ],
+    "unattempted": [
+      "qwen3_5_latest-tvos-uikit-state-C0",
+      "qwen3_5_latest-tvos-uikit-state-R"
+    ]
+  },
+  "phases": [
+    {
+      "directory": "evals/results/local-dev5-20261107-r1",
+      "state": "stopped"
+    },
+    {
+      "directory": "evals/results/local-dev5-20261107-r2",
+      "state": "stopped"
+    },
+    {
+      "directory": "evals/results/local-dev5-20261107-r3",
+      "state": "stopped"
+    },
+    {
+      "directory": "evals/results/local-dev5-20261107-r4",
+      "state": "stopped"
+    }
+  ],
+  "sourceCommit": "ec389c5111ff181b1d4da6b2aa134f0ff2363db5",
+  "settings": {
+    "num_ctx": 16384,
+    "num_predict": 1536,
+    "temperature": 0,
+    "seed": 42,
+    "top_p": 1,
+    "top_k": 0
+  },
+  "limits": {
+    "calls": 36,
+    "outputTokens": 55296,
+    "aggregateSeconds": 5400
+  },
+  "usage": {
+    "inputTokens": 47774,
+    "outputTokens": 33445,
+    "basis": "Reported successful-response usage only; failures have unavailable usage, not zero",
+    "unreportedUsageAttempts": 2,
+    "responseSeconds": 4916.095,
+    "failureSeconds": 242.83100000000002
+  },
+  "groups": [
+    {
+      "model": "gemma4:12b",
+      "condition": "C0",
+      "attempts": 6,
+      "answers": 6,
+      "failures": [],
+      "stop": 6,
+      "length": 0,
+      "inputTokens": 1179,
+      "outputTokens": 6498,
+      "seconds": 1079.742,
+      "reviews": [
+        {
+          "id": "gemma4_12b-ios-uikit-state-C0",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_pass"
+          ]
+        },
+        {
+          "id": "gemma4_12b-ios-swiftui-no-change-C0",
+          "contract": "met_with_caveat",
+          "probes": []
+        },
+        {
+          "id": "gemma4_12b-macos-appkit-actions-C0",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_failed"
+          ]
+        },
+        {
+          "id": "gemma4_12b-macos-swiftui-text-C0",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_failed"
+          ]
+        },
+        {
+          "id": "gemma4_12b-tvos-uikit-state-C0",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_failed"
+          ]
+        },
+        {
+          "id": "gemma4_12b-tvos-swiftui-actions-C0",
+          "contract": "not_met",
+          "probes": [
+            "type_errors_with_macro_infrastructure_failure"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "gemma4:12b",
+      "condition": "R",
+      "attempts": 6,
+      "answers": 5,
+      "failures": [
+        "gemma4_12b-tvos-uikit-state-R"
+      ],
+      "stop": 5,
+      "length": 0,
+      "inputTokens": 14097,
+      "outputTokens": 4783,
+      "seconds": 890.498,
+      "reviews": [
+        {
+          "id": "gemma4_12b-ios-uikit-state-R",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_pass"
+          ]
+        },
+        {
+          "id": "gemma4_12b-ios-swiftui-no-change-R",
+          "contract": "met_with_caveat",
+          "probes": []
+        },
+        {
+          "id": "gemma4_12b-macos-appkit-actions-R",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_failed",
+            "typecheck_failed"
+          ]
+        },
+        {
+          "id": "gemma4_12b-macos-swiftui-text-R",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_failed"
+          ]
+        },
+        {
+          "id": "gemma4_12b-tvos-swiftui-actions-R",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_failed",
+            "typecheck_pass"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "gemma4:12b",
+      "condition": "D5",
+      "attempts": 6,
+      "answers": 6,
+      "failures": [],
+      "stop": 6,
+      "length": 0,
+      "inputTokens": 9345,
+      "outputTokens": 5094,
+      "seconds": 877.6669999999999,
+      "reviews": [
+        {
+          "id": "gemma4_12b-ios-uikit-state-D5",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_pass"
+          ]
+        },
+        {
+          "id": "gemma4_12b-ios-swiftui-no-change-D5",
+          "contract": "met_with_caveat",
+          "probes": []
+        },
+        {
+          "id": "gemma4_12b-macos-appkit-actions-D5",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_failed"
+          ]
+        },
+        {
+          "id": "gemma4_12b-macos-swiftui-text-D5",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_failed"
+          ]
+        },
+        {
+          "id": "gemma4_12b-tvos-uikit-state-D5",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_pass"
+          ]
+        },
+        {
+          "id": "gemma4_12b-tvos-swiftui-actions-D5",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_pass"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "qwen3.5:latest",
+      "condition": "C0",
+      "attempts": 5,
+      "answers": 4,
+      "failures": [
+        "qwen3_5_latest-tvos-swiftui-actions-C0"
+      ],
+      "stop": 1,
+      "length": 3,
+      "inputTokens": 739,
+      "outputTokens": 4835,
+      "seconds": 539.74,
+      "reviews": [
+        {
+          "id": "qwen3_5_latest-ios-uikit-state-C0",
+          "contract": "not_met_with_truncation",
+          "probes": [
+            "compiler_diagnostic_failure",
+            "compiler_diagnostic_failure"
+          ]
+        },
+        {
+          "id": "qwen3_5_latest-ios-swiftui-no-change-C0",
+          "contract": "met_with_caveat",
+          "probes": []
+        },
+        {
+          "id": "qwen3_5_latest-macos-appkit-actions-C0",
+          "contract": "not_met_with_truncation",
+          "probes": [
+            "typecheck_failed",
+            "typecheck_failed"
+          ]
+        },
+        {
+          "id": "qwen3_5_latest-macos-swiftui-text-C0",
+          "contract": "not_met_with_truncation",
+          "probes": [
+            "typecheck_pass"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "qwen3.5:latest",
+      "condition": "R",
+      "attempts": 5,
+      "answers": 5,
+      "failures": [],
+      "stop": 1,
+      "length": 4,
+      "inputTokens": 13502,
+      "outputTokens": 6724,
+      "seconds": 839.271,
+      "reviews": [
+        {
+          "id": "qwen3_5_latest-ios-uikit-state-R",
+          "contract": "inconclusive_truncated",
+          "probes": [
+            "not_assessable"
+          ]
+        },
+        {
+          "id": "qwen3_5_latest-ios-swiftui-no-change-R",
+          "contract": "met_with_caveat",
+          "probes": []
+        },
+        {
+          "id": "qwen3_5_latest-macos-appkit-actions-R",
+          "contract": "not_met_with_truncation",
+          "probes": [
+            "typecheck_failed",
+            "typecheck_failed"
+          ]
+        },
+        {
+          "id": "qwen3_5_latest-macos-swiftui-text-R",
+          "contract": "not_met_with_truncation",
+          "probes": [
+            "typecheck_pass"
+          ]
+        },
+        {
+          "id": "qwen3_5_latest-tvos-swiftui-actions-R",
+          "contract": "not_met_with_truncation",
+          "probes": [
+            "type_errors_with_macro_infrastructure_failure"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "qwen3.5:latest",
+      "condition": "D5",
+      "attempts": 6,
+      "answers": 6,
+      "failures": [],
+      "stop": 4,
+      "length": 2,
+      "inputTokens": 8912,
+      "outputTokens": 5511,
+      "seconds": 689.1769999999999,
+      "reviews": [
+        {
+          "id": "qwen3_5_latest-ios-uikit-state-D5",
+          "contract": "not_met_with_truncation",
+          "probes": [
+            "typecheck_failed"
+          ]
+        },
+        {
+          "id": "qwen3_5_latest-ios-swiftui-no-change-D5",
+          "contract": "met",
+          "probes": []
+        },
+        {
+          "id": "qwen3_5_latest-macos-appkit-actions-D5",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_failed"
+          ]
+        },
+        {
+          "id": "qwen3_5_latest-macos-swiftui-text-D5",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_failed"
+          ]
+        },
+        {
+          "id": "qwen3_5_latest-tvos-uikit-state-D5",
+          "contract": "not_met_with_truncation",
+          "probes": [
+            "not_assessable"
+          ]
+        },
+        {
+          "id": "qwen3_5_latest-tvos-swiftui-actions-D5",
+          "contract": "not_met",
+          "probes": [
+            "typecheck_failed",
+            "typecheck_failed"
+          ]
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "model": "gemma4:12b",
+      "caseId": "ios-uikit-state",
+      "inputReductionPct": 43.33002317113539,
+      "totalReductionPct": 36.550632911392405,
+      "releaseFinish": "stop",
+      "candidateFinish": "stop"
+    },
+    {
+      "model": "gemma4:12b",
+      "caseId": "ios-swiftui-no-change",
+      "inputReductionPct": 61.979166666666664,
+      "totalReductionPct": 56.586126266562744,
+      "releaseFinish": "stop",
+      "candidateFinish": "stop"
+    },
+    {
+      "model": "gemma4:12b",
+      "caseId": "macos-appkit-actions",
+      "inputReductionPct": 42.34875444839858,
+      "totalReductionPct": 32.01271704573245,
+      "releaseFinish": "stop",
+      "candidateFinish": "stop"
+    },
+    {
+      "model": "gemma4:12b",
+      "caseId": "macos-swiftui-text",
+      "inputReductionPct": 42.444876783398186,
+      "totalReductionPct": 36.14788908318761,
+      "releaseFinish": "stop",
+      "candidateFinish": "stop"
+    },
+    {
+      "model": "gemma4:12b",
+      "caseId": "tvos-swiftui-actions",
+      "inputReductionPct": 46.93438508425959,
+      "totalReductionPct": 39.942074776198,
+      "releaseFinish": "stop",
+      "candidateFinish": "stop"
+    },
+    {
+      "model": "qwen3.5:latest",
+      "caseId": "ios-uikit-state",
+      "inputReductionPct": 43.824145150034894,
+      "totalReductionPct": 28.532485233984552,
+      "releaseFinish": "length",
+      "candidateFinish": "length"
+    },
+    {
+      "model": "qwen3.5:latest",
+      "caseId": "ios-swiftui-no-change",
+      "inputReductionPct": 61.47821830641214,
+      "totalReductionPct": 60.960731986275256,
+      "releaseFinish": "stop",
+      "candidateFinish": "stop"
+    },
+    {
+      "model": "qwen3.5:latest",
+      "caseId": "macos-appkit-actions",
+      "inputReductionPct": 42.77929155313352,
+      "totalReductionPct": 43.40339892665474,
+      "releaseFinish": "length",
+      "candidateFinish": "stop"
+    },
+    {
+      "model": "qwen3.5:latest",
+      "caseId": "macos-swiftui-text",
+      "inputReductionPct": 42.261103633916555,
+      "totalReductionPct": 47.20496894409938,
+      "releaseFinish": "length",
+      "candidateFinish": "stop"
+    },
+    {
+      "model": "qwen3.5:latest",
+      "caseId": "tvos-swiftui-actions",
+      "inputReductionPct": 46.778398510242084,
+      "totalReductionPct": 49.869699123430465,
+      "releaseFinish": "length",
+      "candidateFinish": "stop"
+    }
+  ],
+  "tokenComparisons": [
+    {
+      "model": "gemma4:12b",
+      "pairedCases": 5,
+      "medianInputReductionPct": 43.33002317113539,
+      "medianTotalReductionPct": 36.550632911392405
+    },
+    {
+      "model": "qwen3.5:latest",
+      "pairedCases": 5,
+      "medianInputReductionPct": 43.824145150034894,
+      "medianTotalReductionPct": 47.20496894409938
+    }
+  ],
+  "failures": [
+    {
+      "id": "gemma4_12b-tvos-uikit-state-R",
+      "model": "gemma4:12b",
+      "condition": "R",
+      "caseId": "tvos-uikit-state",
+      "error": "The operation was aborted due to timeout",
+      "inputTokens": null,
+      "outputTokens": null,
+      "output": null,
+      "elapsedSeconds": 240.001,
+      "failureKind": "request_failure",
+      "reason": "Retained stopped attempt; original output/usage unavailable; not retried"
+    },
+    {
+      "id": "qwen3_5_latest-tvos-swiftui-actions-C0",
+      "model": "qwen3.5:latest",
+      "condition": "C0",
+      "caseId": "tvos-swiftui-actions",
+      "error": "The operation was aborted due to timeout",
+      "inputTokens": null,
+      "outputTokens": null,
+      "output": null,
+      "elapsedSeconds": 2.83,
+      "failureKind": "campaign_time_limit",
+      "reason": "Retained stopped attempt; original output/usage unavailable; not retried"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "gemma4_12b-ios-uikit-state-C0",
+      "answerHash": "fc14e9cec6451f8461212891cb52d75e88e882ef68f64d415922eda27819cfc2",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "met_for_owned_optional_fields",
+          "evidence": "statusLabel.text = state.status ?? \"\"; helpLabel.text = state.helpText",
+          "finding": "render replaces optional native label text. Absence of a custom accessibility override is not itself a defect. Missing view subscription and Open integration remain independently recorded failures."
+        },
+        {
+          "index": 1,
+          "status": "not_met",
+          "evidence": "func updateMetadata(status: String?, help: String?)",
+          "finding": "A per-item registry is proposed in prose, which could be a valid identity-isolation alternative. The actual view never subscribes to onStateChange, so later updates do not render. Missing same-item generations alone are not scored as a defect: that scenario is not explicit in this question."
+        },
+        {
+          "index": 2,
+          "status": "not_met",
+          "evidence": "print(\"Opening file: \\(id)\")",
+          "finding": "Open has no target/action registration and no application callback. Subviews are never installed; selected-state updates are absent. A minimal self-contained example was requested, so these omissions are observable integration defects."
+        }
+      ],
+      "attribution": "subject integration omissions, not compiler or accessibility API spelling alone",
+      "limits": "Proposed unit checks are not tests run. No generated UI, focus, speech or layout was observed. The inherited generation criterion is broader than the explicit A-to-B late-response scenario; distinguish that oracle gap from observed integration failures.",
+      "calibrationCorrections": [
+        {
+          "index": 0,
+          "previous": {
+            "index": 0,
+            "status": "partial",
+            "evidence": "statusLabel.text = state.status ?? \"\"; helpLabel.text = state.helpText",
+            "finding": "Visible optional fields are replaced, but no accessible value/help update or selected-state integration is supplied."
+          },
+          "replacement": {
+            "status": "met_for_owned_optional_fields",
+            "finding": "render replaces optional native label text. Absence of a custom accessibility override is not itself a defect. Missing view subscription and Open integration remain independently recorded failures."
+          }
+        }
+      ]
+    },
+    {
+      "id": "gemma4_12b-ios-uikit-state-R",
+      "answerHash": "f2d2e6da36ca8f0015f6832dbfe932cc905ee3a5ac67e8fdbaed12eac102c039",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "met",
+          "evidence": "statusLabel.text = status; helpLabel.text = help; self.accessibilityValue = combinedValue",
+          "finding": "Explicitly replaces optional fields and clears the combined value for B on the same instance."
+        },
+        {
+          "index": 1,
+          "status": "met_for_stated_scenario",
+          "evidence": "guard id == self.currentItemID else { return }",
+          "finding": "Rejects A after B. No generation guard for repeated requests for one file; that broader inherited criterion is inconclusive unless the request states that scenario."
+        },
+        {
+          "index": 2,
+          "status": "not_met",
+          "evidence": "private let openButton = UIButton(); openButton.isEnabled = true",
+          "finding": "No subview installation, target registration or application Open callback. Selected-state configuration is absent from code, and configure resets enabled state unconditionally. Self-contained minimal integration is incomplete."
+        }
+      ],
+      "protocol": "Identity present. ROUTING/Sources include core:state.md, which was not supplied. No actual retrieval occurred. Manual verification is proposed, not executed.",
+      "attribution": "subject integration omissions; separately an overbroad generation rubric and unsupported reference naming",
+      "limits": "No native behavior, speech or runtime layout observation."
+    },
+    {
+      "id": "gemma4_12b-ios-uikit-state-D5",
+      "answerHash": "7a5f4b257692ef816b20e6170f8b1ac932afcb377f4069a707014019d42e5b00",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "met_for_owned_optional_fields",
+          "evidence": "self.statusValue = status; self.helpLabel.text = help",
+          "finding": "Synchronous update clears the owned status value and native help-label text. A separate custom help override is not required. Stale-result/ordinary-action/selection defects remain separate."
+        },
+        {
+          "index": 1,
+          "status": "not_met",
+          "evidence": "self.currentID = item.id; let capturedID = item.id",
+          "finding": "The method installs the incoming item before checking it; the later asynchronous closure only reports completion, not application of a returned metadata result. Calling update with late A would overwrite B. The guard is also evaluated on a background queue before a main-queue hop. Same-item generation is not the sole basis for failure."
+        },
+        {
+          "index": 2,
+          "status": "not_met",
+          "evidence": "private let openButton = UIButton()",
+          "finding": "Open is never installed, labeled, wired or connected to an application callback. Selected-state configuration is prose only."
+        }
+      ],
+      "protocol": "Identity present. Both ROUTING entries say read: although these documents were supplied and no model reads occurred.",
+      "attribution": "subject integration and concurrency defects; separately incorrect provenance reporting",
+      "limits": "No runtime behavior or unit execution. Compiler result is a separate record.",
+      "calibrationCorrections": [
+        {
+          "index": 0,
+          "previous": {
+            "index": 0,
+            "status": "partial",
+            "evidence": "self.statusValue = status; self.helpLabel.text = help",
+            "finding": "Synchronous updates clear optional visual fields and status value, but do not configure an accessible help field or selected state."
+          },
+          "replacement": {
+            "status": "met_for_owned_optional_fields",
+            "finding": "Synchronous update clears the owned status value and native help-label text. A separate custom help override is not required. Stale-result/ordinary-action/selection defects remain separate."
+          }
+        }
+      ]
+    },
+    {
+      "id": "gemma4_12b-ios-swiftui-no-change-R",
+      "answerHash": "a48b4972102ac90512b3c397a747ff01a3abfd8bc9129a2e6644e1fa7a8a9f47",
+      "contract": "met_with_caveat",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "met_for_core_recommendation",
+          "evidence": "The Toggle component already provides the correct ... role",
+          "finding": "Uses the standard SwiftUI control semantics for the supplied native Toggle. Its isSelected discussion is imprecise; adding isSelected alone does not establish a custom switch role."
+        },
+        {
+          "index": 1,
+          "status": "met",
+          "evidence": "you do not need to add a custom role or a custom label",
+          "finding": "Preserves the supplied working control and binding."
+        },
+        {
+          "index": 2,
+          "status": "met",
+          "evidence": "No source citations or claims of consulted files.",
+          "finding": "No references were supplied; none is claimed read."
+        }
+      ],
+      "protocol": "Identity present; ROUTING absent. No actual retrieval.",
+      "limits": "Correct no-change advice needs no compile probe. Expected speech is proposed verification, not an observed result. Technical caveat is retained separately from the preservation conclusion."
+    },
+    {
+      "id": "gemma4_12b-ios-swiftui-no-change-D5",
+      "answerHash": "7479abcf2854ea294ce9b089c56dd3d31f0ea434a96a02259747057483ad2d2b",
+      "contract": "met_with_caveat",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "met_for_core_recommendation",
+          "evidence": "The Toggle view in SwiftUI automatically maps to the appropriate accessibility traits for the platform",
+          "finding": "Correct native-control conclusion. Optional advice names accessibility_role and accessibility_label, which are not SwiftUI modifier spellings; this remains a technical defect."
+        },
+        {
+          "index": 1,
+          "status": "met",
+          "evidence": "Keep the current implementation",
+          "finding": "Preserves the valid control and binding."
+        },
+        {
+          "index": 2,
+          "status": "met",
+          "evidence": "ROUTING: none",
+          "finding": "Correctly reports no supplied/read references."
+        }
+      ],
+      "protocol": "Identity and ROUTING present; no false file-read claim.",
+      "limits": "No-change recommendation is correct, but this is not an unqualified technical pass. No code fence needs compiling."
+    },
+    {
+      "id": "gemma4_12b-ios-swiftui-no-change-C0",
+      "answerHash": "e9ab870ba42367c1a3d5948331506d9881332445ada2152785d268499e1b6325",
+      "contract": "met_with_caveat",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "met_for_core_recommendation",
+          "evidence": "the Toggle view automatically maps to a UIButton or UISwitch under the hood",
+          "finding": "Native-control conclusion is appropriate, but the exact implementation-class claim is not established. Optional advice invents .accessibility_value()."
+        },
+        {
+          "index": 1,
+          "status": "met",
+          "evidence": "No additional code is required",
+          "finding": "Preserves the standard control and its binding."
+        },
+        {
+          "index": 2,
+          "status": "met",
+          "evidence": "No document-read claim.",
+          "finding": "No supplied reference or retrieval is misreported."
+        }
+      ],
+      "protocol": "Skill protocol not applicable to generic arm.",
+      "limits": "Correct core preservation is separate from unsupported native-class detail and incorrect optional API spelling. No compile probe is applicable."
+    },
+    {
+      "id": "gemma4_12b-macos-appkit-actions-D5",
+      "answerHash": "fcb3e9e3e0557be61b6cbfd9335ff68bff020390c0a4b20ab18034548558a640",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "partial",
+          "evidence": "Do not remove the Delete button",
+          "finding": "Prose correctly retains ordinary controls, but the code supplies neither button nor callback integration despite the self-contained request."
+        },
+        {
+          "index": 1,
+          "status": "not_met",
+          "evidence": "override func accessibilityPerformAction(_ action: NSAccessibilityAction) -> Bool",
+          "finding": "Uses nonexistent generic AppKit action APIs and NSView isEnabled. The claimed activation path has no enabled guard and performDelete has an empty implementation."
+        },
+        {
+          "index": 2,
+          "status": "not_established",
+          "evidence": "var fileModel: FileModel?",
+          "finding": "Current-property lookup could be a valid ownership alternative with a real API, but no functioning action registration or replaceable handler is supplied. FileModel is undeclared."
+        }
+      ],
+      "protocol": "Identity present; read: is falsely used for both supplied documents. No retrieval occurred.",
+      "attribution": "subject AppKit API invention and incomplete integration; not a target-SDK-card or compiler-harness failure",
+      "limits": "Manual Inspector and VoiceOver steps are proposals only, outside the compile/unit diagnostic. Compiler diagnostics are retained separately."
+    },
+    {
+      "id": "gemma4_12b-macos-appkit-actions-C0",
+      "answerHash": "b0ec37a3c0b2ec3e02d491c0798a88243dc9e4b3f84b8ba371064a77870e7b9e",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "partial",
+          "evidence": "The button is still there for mouse users",
+          "finding": "Prose preserves a Delete button, but the example has no Open/Delete controls, wiring or installed view. No actual integration demonstrates preservation."
+        },
+        {
+          "index": 1,
+          "status": "not_met",
+          "evidence": "let deleteCommand = UICommand(...); if let tableView = self.view as? NSTableView",
+          "finding": "Mixes UIKit command APIs into AppKit and refers to a view property absent from NSObject. Does not implement disabled-state rejection or actual file deletion; current selected row is not established as the current VoiceOver row."
+        },
+        {
+          "index": 2,
+          "status": "not_established",
+          "evidence": "NotificationCenter.default.post(name: .deleteSelectedFile, object: nil)",
+          "finding": "Notification name and observer registration are missing. No callback or ownership policy is integrated. A real keyboard shortcut could be an alternative; failure is based on this code, not on requiring one particular action API."
+        }
+      ],
+      "protocol": "Skill protocol not applicable. No read trace exists.",
+      "attribution": "subject cross-framework API borrowing and incomplete action implementation",
+      "limits": "Suggested tests and rotor claims are not executed/observed evidence."
+    },
+    {
+      "id": "gemma4_12b-macos-appkit-actions-R",
+      "answerHash": "ba15d13d58ae7beb8005c87ae2021ce838abfd6d1b4df91645d31b40a15d07ac",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "partial",
+          "evidence": "Maintain Existing Controls",
+          "finding": "Correct preservation advice, but no ordinary button or callback integration in the supplied example."
+        },
+        {
+          "index": 1,
+          "status": "not_met",
+          "evidence": "override func accessibilityPerformAction(_ action: NSAccessibilityAction) -> Bool",
+          "finding": "Invents an AppKit generic action type/method family. The activation method also omits enabled-state rejection, relying only on advertised action availability. Deletion is a print statement."
+        },
+        {
+          "index": 2,
+          "status": "not_established",
+          "evidence": "guard let id = fileID else { return }",
+          "finding": "Current-property lookup could be valid without accumulating closures; no functioning native action registration is shown, so the complete contract is not established. No leak is inferred just from absence of weak capture."
+        }
+      ],
+      "protocol": "Identity and ROUTING present; cited source paths correspond to supplied content. Actual file reads did not occur.",
+      "attribution": "subject AppKit API invention and incomplete integration; missing import is recorded separately from API-only probe",
+      "limits": "Manual and XCUITest instructions are proposed only. No UI tests or generated code are executed."
+    },
+    {
+      "id": "gemma4_12b-macos-swiftui-text-C0",
+      "answerHash": "f6cded16b089d985ff089bd186a9af980ffc308cb4d895cc9ebe8e71af13af89",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "not_met",
+          "evidence": "By using standard .font(.body), the view automatically responds to macOS system settings",
+          "finding": "Flexible wrapping is proposed but no live settings integration for the design font is supplied. Blanket macOS propagation is not established by the offered code."
+        },
+        {
+          "index": 1,
+          "status": "not_met",
+          "evidence": ".font(.system(size: 32, weight: .bold, design: .rounded)); print(\"Payment logic executed.\")",
+          "finding": "Chooses replacement typography and a print-only payment operation rather than preserving an injected design-font/payment interface. No hidden project styling is assumed."
+        },
+        {
+          "index": 2,
+          "status": "not_met",
+          "evidence": ".fixedSize(horizontal__true: false, vertical_true: true); static var previews: some_preview_provider",
+          "finding": "Invented Swift spellings and unsupported cross-target text assumptions. Compiler independently checks declarations at macOS deployment26."
+        },
+        {
+          "index": 3,
+          "status": "not_met",
+          "evidence": "Giving the button a higher priority ensures it remains clickable",
+          "finding": "Overstates layoutPriority as an interaction/layout guarantee; proposed unit checks of visibility/hit-testability are not configuration or callback proof."
+        }
+      ],
+      "protocol": "Generic arm has no skill protocol. No retrieval occurred.",
+      "attribution": "subject API spelling, preservation and evidence-scope errors",
+      "limits": "Preview and UI-test suggestions are not execution. No native UI is rendered or exercised."
+    },
+    {
+      "id": "gemma4_12b-macos-swiftui-text-R",
+      "answerHash": "00ec1af81552a01d4ab77fe536d926b11eb99d697ae23d2523451f928c897e0f",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "not_met",
+          "evidence": "This ensures the text responds to system-wide size changes",
+          "finding": "Provides a flexible vertical layout but no design-font settings owner/update integration. Supplied SDK card explicitly limits automatic macOS settings-propagation claims."
+        },
+        {
+          "index": 1,
+          "status": "not_met",
+          "evidence": ".font(.body); Button(action: { // Payment callback logic })",
+          "finding": "Supplies default replacement typography and an empty callback while claiming preservation. No declared interface carries the existing font or payment action."
+        },
+        {
+          "index": 2,
+          "status": "not_met",
+          "evidence": ".fixedSize(horizontal__true: false, vertical: true)",
+          "finding": "Invents an argument label despite correct spelling in explanatory prose. Makes automatic system-setting claims beyond the supplied target SDK declaration evidence."
+        },
+        {
+          "index": 3,
+          "status": "not_established",
+          "evidence": "Unit/UI Test (Optional) ... Use an XCUITest",
+          "finding": "Offers UI/manual validation rather than explaining focused configuration/callback unit bounds. This is proposed verification, not a claim that UI tests were run."
+        }
+      ],
+      "protocol": "Identity/ROUTING present. core:text.md is not a supplied path; final Sources name the actual supplied files. No retrieval occurred.",
+      "attribution": "subject API spelling, preservation omissions and overreading source scope",
+      "limits": "No UI layout, focus, speech or manual validation was performed."
+    },
+    {
+      "id": "gemma4_12b-macos-swiftui-text-D5",
+      "answerHash": "5fb702cbc51e6fc6e7aaca0282df176a52cc11ae09f81c4209e69d80a2a62e5d",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "partial",
+          "evidence": "SwiftUI automatically updates the layout when dynamicTypeSize changes in the environment",
+          "finding": "Correctly distinguishes an environment-triggered update in this sentence, but supplies no app settings source/injection or design-font integration and separately overstates automatic system propagation."
+        },
+        {
+          "index": 1,
+          "status": "not_met",
+          "evidence": ".font(.body); Button(action: { // Payment callback logic })",
+          "finding": "Does not carry an existing design font or payment closure through a declared preservation interface. Claim that both are maintained is unsupported by the example."
+        },
+        {
+          "index": 2,
+          "status": "partial",
+          "evidence": "On macOS 26, DynamicTypeSize and ScaledMetric are available",
+          "finding": "Correct availability conclusion from the supplied card, but .fixedSize(horizontal__true:) is invalid. Availability is not proof of a settings bridge."
+        },
+        {
+          "index": 3,
+          "status": "partial",
+          "evidence": "layout and rendering are not guaranteed by API declarations alone",
+          "finding": "Useful scope acknowledgment; remaining checks are manual/rendered observations rather than focused configuration/callback unit checks. No such tests are claimed run."
+        }
+      ],
+      "protocol": "Identity present; both supplied references are falsely labeled read: in ROUTING.",
+      "attribution": "persistent subject spelling/preservation omissions, with a narrower positive acknowledgment of declaration evidence limits",
+      "limits": "No UI rendering, simulator interaction or runtime behavior was observed."
+    },
+    {
+      "id": "gemma4_12b-tvos-uikit-state-D5",
+      "answerHash": "2b3bc36ebe49f33ff06719c18a26822d312457e98a49ca47bfe7c9ffcc2f5fac",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "not_met",
+          "evidence": "configure ... self.status = nil; self.helpText = nil",
+          "finding": "Clears private model fields but not statusLabel.text or accessibilityValue on reconfiguration. A's Ready value can remain visible/accessibly configured after B is installed. Optional help is never integrated into an accessible field."
+        },
+        {
+          "index": 1,
+          "status": "met_for_stated_scenario",
+          "evidence": "guard id == self.currentItemID else { return }",
+          "finding": "Rejects the explicitly described late A result after B. Broader same-item generation is an oracle gap, not the basis for this failure."
+        },
+        {
+          "index": 2,
+          "status": "not_met",
+          "evidence": "func setupButton() ... openButton.accessibilityLabel = ...",
+          "finding": "No ordinary Open callback or target is registered, setupButton is never called, and selected-state handling is absent. The integration is incomplete."
+        }
+      ],
+      "protocol": "Identity present; both supplied references are falsely labeled read:.",
+      "technicalCaveat": "Claims VoiceOver will announce a value update if focused. Neither this code nor compile/configuration checks establish delivered speech. Inspector wording is a proposed method, not retained observation.",
+      "attribution": "subject stale accessible/visual metadata and missing ordinary-action integration; execution timeout in R remains a separate inconclusive cell",
+      "limits": "No runtime accessibility behavior or UI/Inspector verification was performed."
+    },
+    {
+      "id": "gemma4_12b-tvos-uikit-state-C0",
+      "answerHash": "23bd970b92fd4bd17aba15315eaa179bb98b14e743d15d097820c7f1a2feb6c7",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "met_in_native_field_algorithm",
+          "evidence": "self.status = nil; self.helpText = nil; self.onUpdate?()",
+          "finding": "Intended model-to-label update clears optional text, which is a valid native-control strategy without extra overrides. The source is syntactically invalid; hiding Open remains a separate preservation defect."
+        },
+        {
+          "index": 1,
+          "status": "met_in_algorithm",
+          "evidence": "guard id == currentFileId else { return }",
+          "finding": "Intended algorithm handles the stated A-after-B scenario. This is source review, not executed proof; missing generation guards alone are not penalized."
+        },
+        {
+          "index": 2,
+          "status": "not_met",
+          "evidence": "openButton.isHidden = (viewModel.status == nil)",
+          "finding": "Explicitly removes Open when optional status is absent, contrary to the question. No ordinary callback is registered. Proposed Button Integrity test incorrectly blesses hidden/disabled Open for no status."
+        }
+      ],
+      "protocol": "Generic arm; no skill protocol or retrieval.",
+      "technicalCaveat": "private(_ currentFileId): String? is not Swift property syntax; the UIView subclass also omits its required coder initializer after defining init(frame:).",
+      "attribution": "general Swift syntax failure plus ordinary-action preservation defect; the model-authored test expectation is not adopted as an oracle",
+      "limits": "No proposed unit is run. Compiler diagnostics are retained separately.",
+      "calibrationCorrections": [
+        {
+          "index": 0,
+          "previous": {
+            "index": 0,
+            "status": "partial",
+            "evidence": "self.status = nil; self.helpText = nil; self.onUpdate?()",
+            "finding": "Proposed model-to-visible-label path clears optional fields, but accessible value/help and selected-state integration are absent. The example is syntactically invalid."
+          },
+          "replacement": {
+            "status": "met_in_native_field_algorithm",
+            "finding": "Intended model-to-label update clears optional text, which is a valid native-control strategy without extra overrides. The source is syntactically invalid; hiding Open remains a separate preservation defect."
+          }
+        }
+      ]
+    },
+    {
+      "id": "gemma4_12b-tvos-swiftui-actions-D5",
+      "answerHash": "9b34beda5ec4b09b35a91d76c561f7ad3bebf8434d069b9d79ac3c122c5c4c27",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "partial",
+          "evidence": "Button(\"Open\") { /* Open logic */ }",
+          "finding": "Both buttons remain structurally visible, but Open has no actual callback or declared preservation interface. This is a completeness gap, not observed native traversal loss."
+        },
+        {
+          "index": 1,
+          "status": "met_for_declared_delete_policy",
+          "evidence": "if file.is_deletable { onDelete(file) }",
+          "finding": "Both Delete paths use the current declarative file value and guard the same stated enabled policy. Open's enabled/callback behavior is unspecified. Compiler checks the exact action overload separately."
+        },
+        {
+          "index": 2,
+          "status": "met_by_declarative_design",
+          "evidence": "let file: File; var onDelete: (File) -> Void",
+          "finding": "A coherent value-based row/body replacement is accepted without requiring the fixture's generation box or weak spelling. No accumulating registration or obsolete reference owner is demonstrated."
+        }
+      ],
+      "protocol": "Identity present; both supplied documents are falsely labeled read: in ROUTING.",
+      "coverageGap": "Testing onDelete alone would not exercise the guard located inside the row's action closure. Source-level proposed checks are not actual unit execution.",
+      "attribution": "incomplete ordinary Open integration, with positive current-file/disabled Delete design; API validity remains a separate compiler result",
+      "compilerObservation": "Original source typechecks at tvOS deployment26, including accessibilityAction(named: \"Delete\"). The String overload is accepted even though the supplied SDK card excerpts the Text overload; the card is not an exhaustive allowed-spelling list.",
+      "limits": "Generated accessibility hierarchy/action delivery was not observed. No leak or stale-callback failure is inferred merely from value capture."
+    },
+    {
+      "id": "gemma4_12b-tvos-swiftui-actions-C0",
+      "answerHash": "2172f1c213ad8fb6088afff4efebeecf46d358dad85f92804e61665fa6b82eae",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "partial",
+          "evidence": "Button(\"Open\") { /* Open Logic */ }; .accessibilityElement(children: ... .ignore)",
+          "finding": "Keeps visible buttons in code but leaves Open unwired and changes child accessibility semantics to address disabled state. No actual generated traversal is inferred."
+        },
+        {
+          "index": 1,
+          "status": "not_met",
+          "evidence": "Button(\"Delete\") { onDelete(file) }",
+          "finding": "Ordinary Delete is neither disabled nor guarded, while the shortcut guards isDeletable. The supplied parent deletion callback also lacks this policy. Ignoring accessibility children cannot establish a disabled business-action guard."
+        },
+        {
+          "index": 2,
+          "status": "met_in_declarative_algorithm",
+          "evidence": "List(files) { file in ... files.firstIndex(where: { $0.id == deletedFile.id })",
+          "finding": "Current value/ID mapping and declarative reconstruction are valid design choices; no accumulating handlers or reference-owner leak is inferred."
+        }
+      ],
+      "protocol": "Generic arm; no skill protocol. No actual reads.",
+      "technicalCaveat": "Invents AccessibilityChildBehavior.containEverythingIncludingLabels; actual API validity is checked by compiler. Chirp/gesture claims are unsupported here and not observed.",
+      "attribution": "subject API invention, inconsistent disabled policy and incomplete Open integration",
+      "limits": "No generated tree, native action delivery or proposed unit execution was observed."
+    },
+    {
+      "id": "gemma4_12b-tvos-swiftui-actions-R",
+      "answerHash": "eb52cee611b43999ab6ba975943948da00a5149ddde1f1d9f5a94ace775ef2da",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "partial",
+          "evidence": "Button(\"Open\") { /* Open logic */ }",
+          "finding": "Ordinary controls remain structurally visible, but Open's application callback is absent from the minimal example."
+        },
+        {
+          "index": 1,
+          "status": "met_in_declared_native_design",
+          "evidence": ".accessibilityAction(named: \"Delete\") { onDelete(file) }; .disabled(file.isLocked)",
+          "finding": "Uses current file value and explicitly disables the row. Whether native custom-action dispatch honors that modifier is not observed here; missing an extra closure guard alone is not treated as a proven bypass. D5's explicit guard is easier to audit, but no native execution comparison is claimed."
+        },
+        {
+          "index": 2,
+          "status": "met_by_declarative_design",
+          "evidence": "let file: FileRow; let onDelete: (FileRow) -> Void",
+          "finding": "Accepts current value-based body reconstruction without requiring a generation box or weak capture. No accumulating registration is shown."
+        }
+      ],
+      "protocol": "Identity/ROUTING present; final citations match supplied references. Actual reads did not occur.",
+      "technicalCaveat": "Original fence omits imports. Optional XCUITest advice names forceTouchAction(), unsupported by the supplied sources; it is not run or accepted as an established API.",
+      "attribution": "incomplete ordinary Open integration and standalone imports; native disabled-dispatch coverage remains explicitly unresolved",
+      "limits": "No generated accessibility tree, custom-action dispatch, focus or speech is observed."
+    },
+    {
+      "id": "qwen3_5_latest-ios-uikit-state-R",
+      "answerHash": "86d7f3af493705c49a63518e8f67d226ad783ac271920f2d84775430cd1f4bea",
+      "contract": "inconclusive_truncated",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "incomplete",
+          "evidence": "statusLabel.text = item.status.rawValue",
+          "finding": "Captured code handles help clearing but accesses rawValue on an optional status without visible unwrapping. No complete source is available to determine all declarations or implementation."
+        },
+        {
+          "index": 1,
+          "status": "not_assessable",
+          "evidence": "Response stops in configure before showing complete async handling.",
+          "finding": "Do not infer stale-result protection from absent truncated material."
+        },
+        {
+          "index": 2,
+          "status": "incomplete_with_observed_concern",
+          "evidence": "if item.isSelected { openButton.isEnabled = false; openButton.accessibilityLabel = \"Already opened\" }",
+          "finding": "Captured prefix conflates selected with completed/opened and disables Open. The question did not supply that meaning. Complete callback integration remains unavailable after truncation."
+        }
+      ],
+      "protocol": "ROUTING present; requested skill identity absent. core:known-os-issues-workflow.md was not supplied. No actual retrieval occurred.",
+      "technicalCaveat": "Uses accessibilityTraits.insert(.disabled) and optional-status rawValue without a visible supporting declaration. These are unresolved captured-prefix concerns, not a claimed full-answer compiler result. Updating a value is not retained evidence of delivered speech.",
+      "attribution": "output-budget/harness truncation prevents complete grading; preserve observed prefix concerns without ranking the model from this cell",
+      "limits": "Original provider finish_reason is length. No compile, unit execution, repair or retry."
+    },
+    {
+      "id": "qwen3_5_latest-ios-uikit-state-D5",
+      "answerHash": "5e2b00165e775aab71ae3ff5fcd00a0cbf1e1da3bf5ad3b1f318157a947d5ce2",
+      "contract": "not_met_with_truncation",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "met_for_owned_optional_fields",
+          "evidence": "statusLabel.text = nil; accessibilityValue = nil; helpLabel.text = nil",
+          "finding": "Same-instance update explicitly clears owned optional fields. Native UILabel text can carry help semantics; a custom accessibilityHint is not required merely to satisfy a particular implementation."
+        },
+        {
+          "index": 1,
+          "status": "not_met_observed",
+          "evidence": "currentItemId = item.id; card.update(with: updatedItemA)",
+          "finding": "The complete captured controller installs B then explicitly applies late A to the same card, replacing its identity with A. No active-item/result guard rejects the stated stale result. This is independent of missing post-code discussion."
+        },
+        {
+          "index": 2,
+          "status": "partial",
+          "evidence": "openButton.addTarget(self, action: #selector(openTapped), for: .touchUpInside)",
+          "finding": "Registers a current-ID action, a positive integration step. The action remains print-only without an application callback interface, selected state is absent, and repeated identical addTarget is not assumed to duplicate callbacks without evidence."
+        }
+      ],
+      "protocol": "Correct supplied: provenance for both documents; required skill identity absent. No retrieval occurred.",
+      "technicalCaveat": "Uses UIKit UIView.accessibilityRole = .button, which is checked without repair. Unlike R's incomplete Swift source, the captured D5 declarations are all closed; only Markdown fence/later discussion are cut.",
+      "attribution": "observed stale-result integration defect plus output-budget truncation. Compiler probe is valid for retained complete source, not an invented completion.",
+      "limits": "Length stop prevents complete unit-check discussion. No UI, unit execution or answer repair."
+    },
+    {
+      "id": "qwen3_5_latest-ios-uikit-state-C0",
+      "answerHash": "d07ae5db3b4a6d5f91ba285fba81a033ceec0ba1320123409ec4e30de8daaacb",
+      "contract": "not_met_with_truncation",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "partial",
+          "evidence": "self.currentFile = metadata",
+          "finding": "Replacing optional model fields is a valid clearing design, but the promised complete UIKit binding is not supplied. Do not require custom accessibility overrides if native text already expresses the state."
+        },
+        {
+          "index": 1,
+          "status": "not_met_observed",
+          "evidence": "Test Case 2 ... Call viewModel.update(with: fileAReadyMetadata) ... Assert ... UI immediately reflects File A's data",
+          "finding": "Explicitly blesses overwriting active B with late A, the opposite of the requested stale-result contract. This complete proposed test is available before truncation."
+        },
+        {
+          "index": 2,
+          "status": "not_met_observed",
+          "evidence": "The Open button is disabled unless ... status of Ready",
+          "finding": "Invents readiness gating for an optional status and leaves application Open logic unspecified. Replaces the requested UIKit answer with a proposed SwiftUI approach based on an unsupported assumption."
+        }
+      ],
+      "protocol": "Generic arm; no skill protocol. No actual reads. Calls supplied iOS26 target hypothetical instead of treating it as given.",
+      "technicalCaveat": "The complete first fence returns DownloadStatus? from a String? property and imports Foundation without Combine for ObservableObject/@Published. These intact bytes can be typechecked separately; no missing tail is fabricated.",
+      "attribution": "observed stale-result oracle/preservation defects plus budget truncation and missing UIKit integration",
+      "compilerObservation": "Both original/import-only retained-block probes exit with failed to produce diagnostic for expression. Preserve this as a compiler diagnostic limitation, not a confirmed model syntax diagnostic. The independent stale-A test/preservation defects remain source-observable.",
+      "limits": "Later SwiftUI example is cut. No complete-answer compiler result, unit execution or repair is claimed."
+    },
+    {
+      "id": "qwen3_5_latest-ios-swiftui-no-change-D5",
+      "answerHash": "e51e02034b40dd78b5821a2ecddd475b5f19d345621a2e89de8904dd667eefaf",
+      "contract": "met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "met",
+          "evidence": "Toggle is a native control ... uses its label parameter",
+          "finding": "Uses appropriate standard-control semantics without an invented replacement API."
+        },
+        {
+          "index": 1,
+          "status": "met",
+          "evidence": "No changes are needed",
+          "finding": "Preserves the working Toggle and binding."
+        },
+        {
+          "index": 2,
+          "status": "met",
+          "evidence": "ROUTING: none",
+          "finding": "No supplied references or actual reads are claimed. Mentioning known HIG guidance is not relabeled as an actual document read."
+        }
+      ],
+      "protocol": "ROUTING correct; required skill identity absent.",
+      "limits": "Core no-change answer is complete and needs no compile probe. Guideline alignment is scoped to supplied control semantics, not whole-app compliance."
+    },
+    {
+      "id": "qwen3_5_latest-ios-swiftui-no-change-C0",
+      "answerHash": "0a4c70e2ab962c90d3d83ba47426079c4dad4b211f78b9e18710d73da7a7922a",
+      "contract": "met_with_caveat",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "met_for_core_recommendation",
+          "evidence": "Toggle ... correct accessibility role (UIAccessibilityRoleSwitch)",
+          "finding": "Correct preservation conclusion; UIAccessibilityRoleSwitch is an unsupported named role/API detail here and is not accepted as verified Swift/UIKit spelling."
+        },
+        {
+          "index": 1,
+          "status": "met",
+          "evidence": "you do not need to add a custom role or label",
+          "finding": "Keeps the valid native control and binding."
+        },
+        {
+          "index": 2,
+          "status": "met",
+          "evidence": "No document-read claim.",
+          "finding": "Known-guideline mention does not establish or falsely claim an actual retrieval."
+        }
+      ],
+      "protocol": "Generic arm has no skill protocol.",
+      "limits": "No code is needed; no speech or tree result is observed."
+    },
+    {
+      "id": "qwen3_5_latest-ios-swiftui-no-change-R",
+      "answerHash": "234ffc1b01acb3e315a582def73b614c4f12c25e7e04f1be708ec2c5dc577800",
+      "contract": "met_with_caveat",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "met_for_core_recommendation",
+          "evidence": "No ... custom role or manually set the label if ... passed to the Toggle initializer",
+          "finding": "Appropriate standard SwiftUI-control semantics for the supplied implementation."
+        },
+        {
+          "index": 1,
+          "status": "met",
+          "evidence": "The control is accessible as-is",
+          "finding": "Preserves the valid control/binding; whole-app accessibility compliance is not inferred."
+        },
+        {
+          "index": 2,
+          "status": "not_met_for_supported_provenance",
+          "evidence": "ROUTING ... g-015-media-captions-audio-descriptions.md; Sources ... semantics-checklist.md",
+          "finding": "No references were supplied or read, but unrelated/unavailable files appear as unqualified routing/sources with HIGH freshness. This is unsupported source attribution, not evidence of retrieval."
+        }
+      ],
+      "protocol": "Identity present; routing is unrelated to this no-change control and unsupported by any read/supply trace.",
+      "technicalCaveat": "Optional claims about a built-in VoiceOver inspector are not supported by the supplied context or observed here.",
+      "limits": "Core preservation is correct; technical/provenance caveats prevent a clean overall pass. No compile needed."
+    },
+    {
+      "id": "qwen3_5_latest-macos-appkit-actions-C0",
+      "answerHash": "f0341fb616e727e8b40f6dbbcc1296d03593e54219e73e9004f52c25a68b9ec8",
+      "contract": "not_met_with_truncation",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "not_established",
+          "evidence": "Do not use NSButton for the delete action if you need complex reuse logic",
+          "finding": "Does not integrate or preserve both ordinary controls. A keyboard shortcut can be valid, but changing control classes is not necessary to meet the request."
+        },
+        {
+          "index": 1,
+          "status": "not_met_observed",
+          "evidence": "NSEvent.KeyEquivalent; guard let selectedRow = tableView.selectedRow; NSWorkspace.shared.registerServiceWithName",
+          "finding": "Offered complete code uses nonexistent/incorrect native API/type shapes and does not install a functioning key handler. Current-selection lookup and an isDisabled check are useful intentions, not a working shortcut."
+        },
+        {
+          "index": 2,
+          "status": "not_established",
+          "evidence": "attach the action ... global shortcut ... current selection",
+          "finding": "No actual registration/callback lifecycle is implemented. No leak is inferred solely from use of row references or absence of weak capture."
+        }
+      ],
+      "protocol": "Generic arm; no read trace or skill protocol.",
+      "attribution": "observed AppKit API/type and integration defects in complete retained blocks, plus truncation of later alternative/discussion",
+      "limits": "Complete blocks can be typechecked separately. No full-answer completeness, unit execution, keyboard delivery or VoiceOver navigation is claimed."
+    },
+    {
+      "id": "qwen3_5_latest-macos-appkit-actions-R",
+      "answerHash": "ad443770d05518034438f1bde9a2913299434afdbbb673b1238d692c3a080584",
+      "contract": "not_met_with_truncation",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "partial",
+          "evidence": "Do not remove visible buttons",
+          "finding": "Correct preservation prose, but neither ordinary control/callback is integrated. A keyboard shortcut is accepted as a possible alternative, not rejected because it differs from a custom-action fixture."
+        },
+        {
+          "index": 1,
+          "status": "not_met_observed",
+          "evidence": "override func keyEquivalent(with modifiers: NSEvent.ModifierFlags); guard isEnabled",
+          "finding": "Invents an NSView override and NSView properties and uses an undefined event. No functioning native shortcut entry point is implemented."
+        },
+        {
+          "index": 2,
+          "status": "not_met_in_proposed_ownership",
+          "evidence": "row.onDeleteAction = { [weak self] in ... row.isEnabled ... }",
+          "finding": "The closure stored on row strongly captures row itself, an explicit ownership cycle in the proposed design. This is a reference-graph concern, not a leak inferred merely from missing weak spelling; no lifetime test was run."
+        }
+      ],
+      "protocol": "Required identity absent. Routing includes an unprovided keyboard guide; final sources include supplied files. No actual retrieval occurred.",
+      "oracleDefect": "testCallbackReplacementOnReuse sets firstCall true in the first invocation, then asserts it is false after the second without resetting it. A correct replacement implementation would still fail that assertion. Preserve as a model-authored test defect, not an accepted oracle.",
+      "attribution": "observed AppKit API/integration and ownership concerns plus a separate generated-test oracle defect. Later prose truncation is not the cause of these complete-block defects.",
+      "limits": "No generated source or tests are executed. Source compilation is a separate probe; no native input, speech or focus is observed."
+    },
+    {
+      "id": "qwen3_5_latest-macos-appkit-actions-D5",
+      "answerHash": "8ee76576a5d2b655d982872b45186101c62641573a119d574dbd4a9090412093",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "not_met",
+          "evidence": "struct FileRowView: View ... Button(\"Delete\")",
+          "finding": "Rewrites the AppKit task as SwiftUI without actual hosting integration and omits Open entirely. Deletion is print-only rather than an application callback."
+        },
+        {
+          "index": 1,
+          "status": "not_met_observed",
+          "evidence": "@Action var deleteCurrentFile: () -> Void { guard rowModel.isRowEnabled else { return } ... }",
+          "finding": "Supplies an invalid action-property implementation. Current-state/disabled checks are good intentions, but no functioning shortcut or deletion callback results."
+        },
+        {
+          "index": 2,
+          "status": "not_established",
+          "evidence": "@StateObject private var rowModel = RowModel()",
+          "finding": "No caller supplies a current file or invokes updateCurrentFile on the private row-owned model. No reconfiguration interface connects the reused row to current data; no leak is inferred solely from the wrapper."
+        }
+      ],
+      "protocol": "Correct supplied: provenance; required identity absent. No retrieval.",
+      "oracleDefect": "Proposed test says press Command-D, but code configures .keyboardShortcut(.delete, modifiers: [.command]). Preserve the configuration/test mismatch rather than accepting the generated test as an oracle.",
+      "attribution": "subject Swift/property-wrapper and framework/integration defects. This answer ended normally, so the defects are not explained by truncation.",
+      "limits": "Compile-only probe; no generated code, native key action, focus or speech is executed/observed."
+    },
+    {
+      "id": "qwen3_5_latest-macos-swiftui-text-R",
+      "answerHash": "ef6479042ca8cb6e8d9c776c231a2206dd83b0f62754070fef2478b2b9a80c04",
+      "contract": "not_met_with_truncation",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "not_established",
+          "evidence": "Automatic Propagation ... dynamicTypeSize updates immediately",
+          "finding": "Initially correctly states the SDK card's propagation limit, then contradicts it with a blanket automatic system-update guarantee. No settings source/injection is supplied."
+        },
+        {
+          "index": 1,
+          "status": "not_met",
+          "evidence": ".font(.body) // Preserves design font family/weight; print(\"Payment triggered...\")",
+          "finding": "No design-font or existing payment-callback input is preserved. amount is declared but not displayed; no hidden project integration is assumed."
+        },
+        {
+          "index": 2,
+          "status": "partial",
+          "evidence": "dynamicTypeSize macOS12; ScaledMetric macOS11",
+          "finding": "Correct supplied availability facts and a complete body suitable for compilation. Optional verification borrows UIKit and invents UIAccessibility.setSystemFontScale(2.0)."
+        },
+        {
+          "index": 3,
+          "status": "not_met",
+          "evidence": "Unit ... UIAccessibility.setSystemFontScale(2.0)",
+          "finding": "Proposed unit procedure lacks a valid AppKit setting API and does not establish the requested font/callback contract. No test is claimed run, and layout hosting assertions are not rejected merely because they involve frames."
+        }
+      ],
+      "protocol": "Identity absent; routing names unrelated media/known-issues files. Actual final citations match supplied files; no reads occurred.",
+      "attribution": "preservation/integration and verification-API defects independent of later footer truncation",
+      "limits": "Only complete retained source is typechecked. No UI, unit execution, system text setting, focus or speech observation."
+    },
+    {
+      "id": "qwen3_5_latest-macos-swiftui-text-D5",
+      "answerHash": "b50a485547a52eccb8baf32ac397296cdc0af8af8fef22f55a121c1643e9fd39",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "not_met",
+          "evidence": ".dynamicTypeSize(.accessibility) // Explicitly bind to environment",
+          "finding": "Confuses setting a constant environment override with observing/integrating live settings. No source/injection path or design-font scaling is supplied."
+        },
+        {
+          "index": 1,
+          "status": "not_met",
+          "evidence": ".font(.body); Button(\"Pay\") { // Payment callback }",
+          "finding": "No design-font/payment interface carries existing behavior; only placeholders are offered."
+        },
+        {
+          "index": 2,
+          "status": "not_met_observed",
+          "evidence": "dynamicTypeSize(.accessibility)",
+          "finding": "Uses an unsupported DynamicTypeSize case, verified separately by compiler. Availability of the type/property does not establish that spelling or a settings bridge."
+        },
+        {
+          "index": 3,
+          "status": "not_met",
+          "evidence": "Unit ... Verify that VoiceOver reads the full description",
+          "finding": "A compile/configuration unit does not prove delivered speech. No bounded callback/settings unit contract is supplied."
+        }
+      ],
+      "protocol": "Identity absent. Task note correctly labeled supplied:, SDK card falsely labeled read:.",
+      "attribution": "normal-stop subject API, live-settings and preservation defects; not truncation",
+      "limits": "No generated source/test execution, native layout or speech observation."
+    },
+    {
+      "id": "qwen3_5_latest-macos-swiftui-text-C0",
+      "answerHash": "32ea58f0d87b226d03ab1db235b2375243bfff76488c219bfb233ab2bc5934ff",
+      "contract": "not_met_with_truncation",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "partial",
+          "evidence": ".lineLimit(2); SwiftUI automatically ... system font changes",
+          "finding": "Offers a layout approach but no explicit settings source or preserved design-font scaling. The HStack choice is not itself rejected; automatic macOS propagation remains unsupported."
+        },
+        {
+          "index": 1,
+          "status": "partial",
+          "evidence": "let payCallback: () -> Void; Button(action: payCallback)",
+          "finding": "Positive: preserves a declared payment closure and displays total. Design font remains a hard-coded default/comment rather than a carried input; no particular hidden font is invented."
+        },
+        {
+          "index": 2,
+          "status": "not_met_for_given_target",
+          "evidence": "macOS versions26 and27 do not currently exist",
+          "finding": "Overrides the user-supplied target/validation premise with stale knowledge. Installed SDK evidence and target compilation independently establish those anchors for this run. Body API validity is checked separately."
+        },
+        {
+          "index": 3,
+          "status": "partial",
+          "evidence": "You CANNOT verify ... looks ... without a rendering engine",
+          "finding": "Correctly distinguishes logic from rendered observations, but proposes UIKit UIHostingController for macOS and conflates checking a modifier with layout-constraint proof. No UI-test requirement is imposed on this project."
+        }
+      ],
+      "protocol": "Generic arm; no read trace.",
+      "attribution": "provided-context rejection and missing live font integration, with a positive callback interface. Later prose truncation does not erase the complete code/claims already captured.",
+      "limits": "No rendering, actual units or host settings changes."
+    },
+    {
+      "id": "qwen3_5_latest-tvos-uikit-state-D5",
+      "answerHash": "1efe9311139976ca129c8601951c0142d19dd748318fe26c1d620017b6aa40a7",
+      "contract": "not_met_with_truncation",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "partial",
+          "evidence": "statusLabel.text = nil; helpLabel.text = nil",
+          "finding": "Visible native optional-field clearing is a valid intended path; missing updateSemantics implementation prevents complete assessment of owned overrides."
+        },
+        {
+          "index": 1,
+          "status": "not_met_observed",
+          "evidence": "Late Metadata Reconciliation ... File B ... Assert ... File A's title/help",
+          "finding": "Complete proposed oracle explicitly blesses replacing active B with late A, opposite the stated task. No generation-token requirement is needed for this finding."
+        },
+        {
+          "index": 2,
+          "status": "not_met_in_stated_policy",
+          "evidence": "openButton.isEnabled = (file.status == \"Ready\")",
+          "finding": "Prose/code impose readiness gating on optional status instead of preserving Open for B with no status. Complete callback and selected-state integration are unavailable after truncation."
+        }
+      ],
+      "protocol": "Correct supplied: labels; required identity absent.",
+      "technicalCaveat": "Proposed Focus Continuity unit asserts delivered VoiceOver speech/focus from metadata mutation; no such observation is retained.",
+      "attribution": "observed stale-result oracle/preservation policy defects plus incomplete source due output cap",
+      "limits": "No compile of missing declarations, unit execution, focus or speech proof."
+    },
+    {
+      "id": "qwen3_5_latest-tvos-swiftui-actions-D5",
+      "answerHash": "a0bf2319647a9008d1c7ffe192e079d532590f2f2a74c9760c0f816a47f1c1f3",
+      "contract": "not_met",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "not_met",
+          "evidence": "HStack ... Text(file.name) ... Button(\"Delete\")",
+          "finding": "The self-contained row omits Open entirely and leaves deletion empty, despite prose promising preservation. FileModel is also undeclared."
+        },
+        {
+          "index": 1,
+          "status": "met_in_declared_delete_algorithm",
+          "evidence": "guard file.isEnabled else { return }; deleteFile(file)",
+          "finding": "Both Delete paths correctly intend current-file and disabled guards. Actual API label spelling is checked separately, and deleteFile has no application callback."
+        },
+        {
+          "index": 2,
+          "status": "met_in_declarative_intent",
+          "evidence": "let file: FileModel",
+          "finding": "Current parameter/body reconstruction is an accepted pattern; no accumulating registration or leak is inferred from this unknown model type."
+        }
+      ],
+      "protocol": "Correct supplied: provenance for both references; required identity absent.",
+      "technicalCaveat": "Uses accessibilityAction(named:handler:) with an explicit handler label. A minimal model scaffold permits a separate native API check without treating FileModel absence as the only failure.",
+      "attribution": "normal-stop integration and API-spelling concerns, with positive declared disabled/current-item guards",
+      "limits": "Proposed VoiceOver activation is not unit-proven or observed. No generated code, UI tests, native action, focus or speech execution."
+    },
+    {
+      "id": "qwen3_5_latest-tvos-swiftui-actions-R",
+      "answerHash": "93a1841bde9dcf5dcbe592f1da0de67861a384660950252cd0cb6aa907d192ed",
+      "contract": "not_met_with_truncation",
+      "criteria": [
+        {
+          "index": 0,
+          "status": "not_met",
+          "evidence": "HStack ... deleteButton ... deleteShortcut; .accessibilityElement(children: .ignore)",
+          "finding": "Open is absent and ordinary child semantics are ignored despite the preservation requirement. No generated navigation loss is claimed observed; the missing Open and incomplete operation are visible in source."
+        },
+        {
+          "index": 1,
+          "status": "not_met_observed",
+          "evidence": ".disabled(item.isDisabled); private var deleteShortcut: some View { .accessibilityAction ... }",
+          "finding": "FileItem has no isDisabled property and the shortcut modifier has no base view. handleDelete is print-only with no disabled guard even though prose says it should check one."
+        },
+        {
+          "index": 2,
+          "status": "met_in_declarative_intent",
+          "evidence": "ForEach(items) { item in FileRowView(item: item) }",
+          "finding": "Current item-value/ID binding is an accepted pattern; no generation box or weak capture is required solely to copy a fixture."
+        }
+      ],
+      "protocol": "Identity present. Duplicate unrelated media routing is unsupported; supplied references are discussed in prose. No actual reads occurred.",
+      "attribution": "observed complete-block API/structural and preservation defects, separate from the later truncated unit-test fragment",
+      "limits": "No incomplete test body is compiled or executed. No native actions, generated hierarchy, focus or speech proof."
+    }
+  ],
+  "probes": [
+    {
+      "recordId": "gemma4_12b-ios-uikit-state-C0",
+      "status": "typecheck_pass",
+      "assessment": "typecheck_pass",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": false
+      },
+      "sourceHash": "095af0e3cfd83605aa146f0a7c315e5a836c81c52386606f576fcbdbd2cb2306",
+      "reviewNote": "Complete top-level UIKit declarations supplied by the answer. No scaffold or source repair. Compile-only result cannot establish callback registration, live updates, selection or metadata correctness.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-ios-uikit-state-R",
+      "status": "typecheck_pass",
+      "assessment": "typecheck_pass",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": false
+      },
+      "sourceHash": "65d45e43c8f38437422e201ca6ce4517050f1257f127aa0e191e098009610f04",
+      "reviewNote": "Complete top-level UIKit declarations; no scaffold or repair. Compile checks spelling/types only, not Open registration or selected-state integration.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-ios-uikit-state-D5",
+      "status": "typecheck_pass",
+      "assessment": "typecheck_pass",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": false
+      },
+      "sourceHash": "0316e11b463d77b365c027a1796f4c91f574ad2848d81cff8f5657cfe96f6e3e",
+      "reviewNote": "Complete top-level UIKit declarations including supplied asyncAfter closure. No scaffold, added isolation or source repair. Compiler may diagnose cross-actor access; the original is retained.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-macos-appkit-actions-D5",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "35974ec799a8130713a161e08d8c4f3fcb874c2782145ebd6d8c9796952a968b",
+      "reviewNote": "Original complete fence, no scaffolding or fixes. FileModel is undeclared in the purported self-contained example; preserve that diagnostic alongside independent AppKit API/override diagnostics. Generated code is not executed.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-macos-appkit-actions-C0",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "ece41b12e1d844357ba2e628b2d54e3f0491e8b047c085ebed4dab60efa5ccdd",
+      "reviewNote": "Original AppKit-labeled fence contains undeclared notification name, NSObject.view, UICommand and invented menu call. Preserve every diagnostic; no scaffold or repair.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-macos-appkit-actions-R",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "185206c093d7beb9a1aee69ec19d2cdc2484050caa1fb2cac6da4eabda90be2b",
+      "reviewNote": "Original top-level fence; no import or source repair. Missing AppKit import is a standalone completeness omission.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-macos-appkit-actions-R",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "408f6e2f8ac7db2c8c5ee057dd75e3c200a7f699a43002e4b188d62491b5d8e7",
+      "reviewNote": "Additional API-only probe with explicitly supplied framework import. Original answer block is unchanged. This does not repair action API spelling or behavior and is not reported as an unadapted first-compile result.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-macos-swiftui-text-C0",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "3a4ee716630dd6d595b794bd5722d61212552919e411e1d06f9beffb1fab2269",
+      "reviewNote": "Original full declaration fence, including preview. Invalid fixedSize argument labels and some_preview_provider are not repaired. No macros or generated code are executed.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-macos-swiftui-text-R",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "1a5edb7a71d071a22fcb074ccd3c53f6c5c6acf5335bb6dbf5c581ca88c85a4c",
+      "reviewNote": "Original full SwiftUI declaration, no scaffold or repair. Preserve fixedSize(horizontal__true:) exactly as emitted.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-macos-swiftui-text-D5",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "31996d7f71457202441b6230c38d99ffaa599bad5b2b4aa2c79b5551a3a6dc15",
+      "reviewNote": "Original complete SwiftUI declaration with invalid horizontal__true label retained. No scaffold, API spelling correction or callback replacement.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-tvos-uikit-state-D5",
+      "status": "typecheck_pass",
+      "assessment": "typecheck_pass",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": false
+      },
+      "sourceHash": "41b0a2578ed9d31ac5b8864dbd041d8d64405ab280d3e996fd8668e19c27f963",
+      "reviewNote": "Original full UIKit declaration. No callback registration, state clearing, accessibility fields or selection logic is added. Typecheck only.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-tvos-uikit-state-C0",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "9c60104d45be8577bf49ec6efcc1afd91fbddb4a5e90635ff8c28dffdc05a15a",
+      "reviewNote": "Original full fence. Preserve malformed private(_ currentFileId) declaration and missing required UIView coder initializer. No repairs or execution.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-tvos-swiftui-actions-D5",
+      "status": "typecheck_pass",
+      "assessment": "typecheck_pass",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": false
+      },
+      "sourceHash": "2d1c636089c3ea7eedcb555e2345ed3953d6a1235b3b331fd6bb4e12fbc2e7bb",
+      "reviewNote": "Original full SwiftUI declarations. Check actual accessibilityAction(named:) overload at tvOS deployment26 without changing its String argument to Text. Open placeholder is not filled in.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-tvos-swiftui-actions-C0",
+      "status": "typecheck_failed",
+      "assessment": "type_errors_with_macro_infrastructure_failure",
+      "compilerFlags": {
+        "macro": true,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "ab6467ee2db19e77f918d14b94e15cec152ac67821825ee50342194622f198d1",
+      "reviewNote": "Original complete SwiftUI declarations including parent List. Preserve invented containEverythingIncludingLabels case and inconsistent enabled logic; no fixes or execution.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-tvos-swiftui-actions-R",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "eefaf1e6ccb1c0ae4a67117ab2df6739cbd0018753ab8dc801fd96591904ee69",
+      "reviewNote": "Original top-level fence without imports. Preserve the standalone completeness omission.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "gemma4_12b-tvos-swiftui-actions-R",
+      "status": "typecheck_pass",
+      "assessment": "typecheck_pass",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": false
+      },
+      "sourceHash": "5f9de072ed040e18ae5e85358a1a2c94c1fce07f20e937dd335c8b0afdbe58e6",
+      "reviewNote": "Additional API-only check with declared SwiftUI import. No generated code body or Open callback is repaired. Disabled modifier compilation does not establish actual native callback rejection.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "qwen3_5_latest-ios-uikit-state-R",
+      "status": "not_assessable",
+      "assessment": "not_assessable",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": false
+      },
+      "reviewNote": "Original incomplete response remains intact; no compile attempt or answer repair."
+    },
+    {
+      "recordId": "qwen3_5_latest-ios-uikit-state-D5",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "1d912c999be37a26dbe7c5c0776ecdbab101954f21f9c36aef86a18650bea1e2",
+      "reviewNote": "Explicit UTF16 range selects every original Swift byte after its unclosed Markdown fence. Review confirms all declarations end with their original closing braces; none is manufactured. The answer still has a provider length stop and missing later discussion. Preserve accessibilityRole and controller late-A update exactly.",
+      "sourceRange": {
+        "start": 1604,
+        "end": 7080
+      }
+    },
+    {
+      "recordId": "qwen3_5_latest-ios-uikit-state-C0",
+      "status": "typecheck_failed",
+      "assessment": "compiler_diagnostic_failure",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": true,
+        "ordinary": false
+      },
+      "sourceHash": "a04f98dd9871189d69fc887887084660e01e241623393509fa1121ac4e11de80",
+      "reviewNote": "First closed, complete model/ViewModel fence only. The overall response is truncated later, but this source block is intact. Do not treat the later cut as a syntax error in this block.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "qwen3_5_latest-ios-uikit-state-C0",
+      "status": "typecheck_failed",
+      "assessment": "compiler_diagnostic_failure",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": true,
+        "ordinary": false
+      },
+      "sourceHash": "78219fc89443b12c616b4129da9ec2c9f17d2296275eb01bd7d1ce631b7da3d7",
+      "reviewNote": "Additional type/API check after declared Combine import; no model fields or return expression repaired. Whole answer remains truncated and UIKit integration remains unavailable.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "qwen3_5_latest-macos-appkit-actions-C0",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "9d919ce5c871d0438b653aed790bff517322095dd27f80bbedb59350dfae1888",
+      "reviewNote": "Both complete closed source fences before the later truncated prose. Original omissions/imports and invented event/delegate/workspace API spellings are retained.",
+      "blocks": [
+        0,
+        1
+      ]
+    },
+    {
+      "recordId": "qwen3_5_latest-macos-appkit-actions-C0",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "5e3604865fbb03a0422be8274a73b3332e91eac7a39ef5c5424d5f09d61bd310",
+      "reviewNote": "Additional API/type check with declared framework import only. No delegate method, optional binding, undefined event or datasource/workspace call is repaired.",
+      "blocks": [
+        0,
+        1
+      ]
+    },
+    {
+      "recordId": "qwen3_5_latest-macos-appkit-actions-R",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "b30b3f5650d6fbf6c7ab96c40d0bec7b424d2305ac6f73775e9a00bc9d7f31ad",
+      "reviewNote": "First complete source fence only. Original missing import/FileModel/controller scope and invented NSView override/properties are retained. The later test fence is reviewed as an oracle, not executed.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "qwen3_5_latest-macos-appkit-actions-R",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "c45754a5019159aea5f625f003911fe7506e3128e14f20bd7892597a7e483b68",
+      "reviewNote": "Additional import-only API check. No model/controller wrappers, event binding, isEnabled property or key-equivalent override are invented to make this code compile.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "qwen3_5_latest-macos-appkit-actions-D5",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "c6c32e75cfc9db93e5b6caef5f98c238bc0ee8fcea34b068bfb6178b0c87c914",
+      "reviewNote": "Original complete normal-stop example. Preserve @Action computed closure property and framework rewrite; no wrappers, imports, callbacks or state integration are repaired.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "qwen3_5_latest-macos-swiftui-text-R",
+      "status": "typecheck_pass",
+      "assessment": "typecheck_pass",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": false
+      },
+      "sourceHash": "aeba836830f2662e097720f47dc014100b8de8e1916dc2297a353859a06690a3",
+      "reviewNote": "Complete closed source fence, including preview. Overall response is cut later; no source bytes or callbacks are repaired.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "qwen3_5_latest-macos-swiftui-text-D5",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "cce673cf40b674a076de54ff7bdf9dbca76bd10f9efb2aa590bf0597e1ecd6c9",
+      "reviewNote": "Original normal-stop source. Preserve dynamicTypeSize(.accessibility), fixed override intent and empty payment callback.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "qwen3_5_latest-macos-swiftui-text-C0",
+      "status": "typecheck_pass",
+      "assessment": "typecheck_pass",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": false
+      },
+      "sourceHash": "31fed2297f3efdb9149f45fc10998a68203c7eaffdf1d78cb42064ed9b74dc81",
+      "reviewNote": "Complete original code fence, including its comment block. Later prose is cut. Preserve the valid callback interface and all original font/layout choices.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "qwen3_5_latest-tvos-uikit-state-D5",
+      "status": "not_assessable",
+      "assessment": "not_assessable",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": false
+      },
+      "reviewNote": "No compiler attempt. Prose/test expectations before truncation can still be reviewed independently."
+    },
+    {
+      "recordId": "qwen3_5_latest-tvos-swiftui-actions-D5",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "622ea305f73319d50430e5c9795ff2699564c2c2d8dfe1c0c3d9299dc581478b",
+      "reviewNote": "Original closed source fence; FileModel is missing. No model or API call is repaired.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "qwen3_5_latest-tvos-swiftui-actions-D5",
+      "status": "typecheck_failed",
+      "assessment": "typecheck_failed",
+      "compilerFlags": {
+        "macro": false,
+        "diagnostic": false,
+        "ordinary": true
+      },
+      "sourceHash": "98989b8ab3c08d48f9ecc6fdcede69c5ae49f798a9f9956c2cd08af57f92ff7a",
+      "reviewNote": "Additional API-only probe with explicit minimal model-type scaffold. This isolates the exact named:handler: argument-label spelling without changing the answer's calls, empty deletion method or missing Open.",
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "recordId": "qwen3_5_latest-tvos-swiftui-actions-R",
+      "status": "typecheck_failed",
+      "assessment": "type_errors_with_macro_infrastructure_failure",
+      "compilerFlags": {
+        "macro": true,
+        "diagnostic": true,
+        "ordinary": true
+      },
+      "sourceHash": "00cb8336e804c68223073fa07da94950d7168a322f8b674984a2dc2e3250c7ff",
+      "reviewNote": "Complete first source fence only. Preserve undefined item.isDisabled and standalone modifier as a some View property. Later test fence is cut and is not compiled or repaired.",
+      "blocks": [
+        0
+      ]
+    }
+  ]
+}
