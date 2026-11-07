@@ -121,9 +121,12 @@ retained separately; generated code and model-authored tests are never executed.
 
 Review uses the existing operational rubric and accepted alternatives, with one
 unblinded Codex controller. Local grades are not independently accepted. The
-[incoming independent v2 review](../../../research/evaluation/independent-v2-review-20261107/REVIEW.md)
-holds full-package eligibility, including an action-owner oracle ambiguity and
-stale source bindings. This report does not close those holds. Stable handlers
+[initial independent v2 review](../../../research/evaluation/independent-v2-review-20261107/REVIEW.md)
+identified an action-owner oracle ambiguity and stale source bindings. The later
+[upstream continuation](../../../research/evaluation/NEXT-EXPERIMENT-20261107.md)
+reports additive IR-01/IR-02 grading-interpretation resolutions; native, baseline
+and release qualification remain separate. This local diagnostic does not claim
+independent acceptance or adoption of the upstream composite controller. Stable handlers
 resolving the current owner are accepted; action observations rely on independent
 API, ordinary-control and integration defects rather than a fixture-specific
 stale-generation rule. Additive case/source mappings and qualifications are
@@ -250,3 +253,12 @@ The refreshed fetch initially failed on an invalid local cached ref
 `evals/results/local-dev5-preflight/git-ref-quarantine/`; removing that invalid
 duplicate from Git's ref directory restored fetching. All raw evidence, scratch,
 caches and reconciliation artifacts stay inside this project.
+
+Another update, `3e8bad4`, arrived before publication and was merged. Its
+[separate BigDog Gemini comparison](../../../research/evaluation/gemini-controlled-run-20261107/README.md)
+reports 13/24 candidate task-meets versus9/24 generic, with six paired gains,
+three regressions and four inconclusive pairs. Those are independently
+source-graded supplied-bundle results, without compilation/runtime verification,
+released-skill comparison or immutable returned model identity. They are not
+pooled with this local run. The referenced composite-controller files are not
+present in this checkout; their contents were not independently audited here.
