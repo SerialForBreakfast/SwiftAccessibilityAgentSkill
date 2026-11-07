@@ -123,8 +123,8 @@ Review uses the existing operational rubric and accepted alternatives, with one
 unblinded Codex controller. Local grades are not independently accepted. The
 [initial independent v2 review](../../../research/evaluation/independent-v2-review-20261107/REVIEW.md)
 identified an action-owner oracle ambiguity and stale source bindings. The later
-[upstream continuation](../../../research/evaluation/NEXT-EXPERIMENT-20261107.md)
-reports additive IR-01/IR-02 grading-interpretation resolutions; native, baseline
+[controller-overlay review](../../../research/evaluation/v2-controller-resolution-20261107/REVIEW.md)
+records additive IR-01/IR-02 grading-interpretation resolutions; native, baseline
 and release qualification remain separate. This local diagnostic does not claim
 independent acceptance or adoption of the upstream composite controller. Stable handlers
 resolving the current owner are accepted; action observations rely on independent
@@ -260,5 +260,7 @@ reports 13/24 candidate task-meets versus9/24 generic, with six paired gains,
 three regressions and four inconclusive pairs. Those are independently
 source-graded supplied-bundle results, without compilation/runtime verification,
 released-skill comparison or immutable returned model identity. They are not
-pooled with this local run. The referenced composite-controller files are not
-present in this checkout; their contents were not independently audited here.
+pooled with this local run. Its
+[composite controller](../../../research/evaluation/v2-controller-resolution-20261107/composite-controller.json)
+is a separate grading identity; this local run retains its own provisional
+calibration rather than being retrospectively relabeled as using that controller.
