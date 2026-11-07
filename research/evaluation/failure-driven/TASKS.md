@@ -489,3 +489,48 @@ snapshots, released skill, native receipts and frozen baselines remain unchanged
 
 See research/evaluation/skill-lift-v1/README.md. No skill edits, baseline changes,
 model calls, new native runs, installations, worker messages or spend.
+
+## Controlled milestone preparation
+
+- [x] Commit the operational-rubric/skill-lift checkpoint locally as fd31933;
+  no push requested in this continuation.
+- [x] Propose one 24-case/48-cell paired package: three domain applications in each
+  of six platform/framework lanes, all eight topics, plus six controls. Twelve
+  related families, not 48 independent questions. Approved calls remain zero.
+- [x] Preserve equal task bytes and shared host boundaries, keep rubrics/grades out
+  of subject payloads, distinguish C0, C2 supplied-reference domain tasks and C1
+  reference-free controls. No C3/installed-discovery or released-version claim.
+- [x] Account for all 60 original drafts: 24 selected, four quarantined, 32 deferred
+  development cases. Existing held-outs remain untouched.
+- [x] Quarantine ambiguous tvOS UIKit switch premise against the actual public SDK
+  declaration; retain original prompt/hash, source evidence and a separate unselected
+  UIButton-based repair draft. Do not score the bad premise as a model failure.
+- [x] Seal payload hashes and add drift, overwrite, isolation and authorization
+  preflight checks. No provider/client/execute path exists in the offline package.
+- [ ] Independent review, source applicability, actual isolated harness and exact
+  model/provider plus bounded quota/output/total-token/time authorization remain
+  prerequisites for a separately approved live milestone.
+
+See research/evaluation/milestone-package-v1/README.md. No model calls, new native
+example execution, spend, released-skill edits or frozen-baseline changes.
+
+## Local adversarial milestone pre-review
+
+- [x] Audit all 24 selected scenarios and supplied references as author work, without
+  claiming independent review or invoking another model.
+- [x] Record two required reference repairs (manual-gate conflict and wrong-topic
+  list/form guidance), six platform-metadata warnings and two OS27 context flags.
+- [x] Prepare two separate reference-only payload proposals; preserve original
+  candidate body, paired request, all sealed v1 files and prior grades.
+- [x] Link existing target compile receipts/declaration leads for all six scope
+  warnings, explicitly without treating metadata mismatch as API unavailability.
+- [x] Preserve original/guarded deterministic counterexamples for malformed nested
+  preflight data and explicitly unverified model identity. Add forward-use guards;
+  historical modules/results remain unchanged.
+- [x] Add an author-readiness gate that distinguishes passing integrity from pending
+  source review. Its nonzero result is expected while eight findings remain open.
+- [ ] Incorporate reviewed reference corrections in a new package revision; qualify
+  remaining target-specific source claims, then independent review before live quota.
+
+See research/evaluation/milestone-audit-v1/README.md. No model runs, spend, new native
+example execution, installs, worker messages or released-skill/baseline changes.
