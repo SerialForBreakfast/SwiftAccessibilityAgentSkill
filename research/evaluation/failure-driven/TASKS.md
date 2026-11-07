@@ -13,6 +13,12 @@ later explicitly approved native gaps. It includes source/review reuse, independ
 readiness decisions and an additive promotion proposal. Planning does not promote
 cases, resume native implementation or allocate another model comparison.
 
+The [first-pass parity audit](../gold-parity-v1/audit-v1/README.md) now records an
+executed author review of all 24 cases / 78 criteria, 73 linked assertion methods
+and 94 existing receipt rows. It includes per-criterion limits, evidence reuse and
+a consolidated closure backlog. Independent qualification and the Mac packet are
+pending; no new gold decisions, native runs or model calls are inferred.
+
 The [UIKit coverage-closure campaign](uikit-closure-v1/README.md) now replaces small
 delivery tranches for UPAIR-07/08. It accounts for all 209 clauses and 15 rules,
 reuses completed packages, and pairs three newly identified behavioral families

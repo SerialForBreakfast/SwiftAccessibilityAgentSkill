@@ -13,7 +13,11 @@ in parallel. This is not a request for new implementation or evaluation.
 1. Read the checkout's `AGENTS.md`, `AGENT.md` and
    `research/evaluation/failure-driven/PRD.md`.
 2. Read `research/evaluation/gold-parity-v1/TASKS.md` and
-   `research/evaluation/gold-parity-v1/case-inventory.json`.
+   `research/evaluation/gold-parity-v1/case-inventory.json`. The portable first-pass
+   audit is now available: read `research/evaluation/gold-parity-v1/audit-v1/README.md`
+   and its `NEXT-TRANCHE.md` section "Specific questions for the existing Mac pass".
+   Use the matrix and exact evidence links to focus collection; the findings are
+   author judgments pending reconciliation, not new gold qualifications.
 3. Record the pulled Git revision and acceptance of **GPAR-M01 only** in the
    packet. The inventory's `planningBaseCommit` identifies its input snapshot;
    it is not the later publication commit. Do not reset to it.
