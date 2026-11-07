@@ -1,0 +1,2398 @@
+{
+  "schema": "gold-parity-planning-inventory-v1",
+  "status": "planning-checked-not-qualified",
+  "visibility": "controller-only",
+  "planningBaseCommit": "feb1697813888cd51f7f49eb3132d1a4bf0e74d8",
+  "inputs": [
+    {
+      "path": "research/evaluation/milestone-package-v2/manifest.json",
+      "sha256": "7e06c8a7aec68b075db219fd064994e64be84b17da8db9376dc7f9f589183158"
+    },
+    {
+      "path": "research/evaluation/gemini-preflight-v1/controller.json",
+      "sha256": "c100eaac885ab3de1d4638097978a23ab4c88d0a94c31cb5887aaa01a21d4bed"
+    },
+    {
+      "path": "research/evaluation/local-qualification-v1/evidence-ledger.json",
+      "sha256": "84ee3065e3990b6697883d097a64e94193635e2ed8511243ef73d78b9a47d51e"
+    },
+    {
+      "path": "evals/os26/reports/2026-11-05-gold-closeout/readiness.json",
+      "sha256": "2593c6493c89363fb35067b5fbff8308b841d7afbdef0f93a2965ccbd91e55c6"
+    },
+    {
+      "path": "research/evaluation/v2-controller-resolution-20261107/composite-controller.json",
+      "sha256": "bccb8887df9c9f3dca24f0881671c744dce9db8d9274d57dd12982f36f00afde"
+    },
+    {
+      "path": "research/evaluation/gemini-controlled-run-20261107/README.md",
+      "sha256": "b523444b7f04c32f569629cf60bc9fc99e3a3551ddf9271ef3d651c7277ddc7d"
+    },
+    {
+      "path": "research/evaluation/gemini-preflight-v1/PUBLICATION-UPDATE.md",
+      "sha256": "263e6624ff5511cee3d4a11d92492177c2c82e8a22aae58eb127b2382e059b79"
+    }
+  ],
+  "summary": {
+    "selectedCases": 24,
+    "criteria": 78,
+    "families": 12,
+    "originalGoldReady": 6,
+    "newQualifications": 0,
+    "modelCalls": 0,
+    "nativeRuns": 0
+  },
+  "originalGoldSet": {
+    "path": "evals/os26/reports/2026-11-05-gold-closeout/readiness.json",
+    "ids": [
+      "GP26-01",
+      "GP26-02",
+      "GP26-03",
+      "GP26-04",
+      "GP26-05",
+      "GP26-06"
+    ],
+    "crosswalkStatus": "not_audited_do_not_add_counts"
+  },
+  "families": [
+    {
+      "id": "control/ownership",
+      "cases": [
+        "mixed-macos-owner"
+      ],
+      "auditStatus": "not_started"
+    },
+    {
+      "id": "control/preservation",
+      "cases": [
+        "ios-uikit-no-change",
+        "ios-swiftui-no-change",
+        "macos-appkit-no-change"
+      ],
+      "auditStatus": "not_started"
+    },
+    {
+      "id": "control/unavailable-reference",
+      "cases": [
+        "ios-missing-reference"
+      ],
+      "auditStatus": "not_started"
+    },
+    {
+      "id": "control/version-boundary",
+      "cases": [
+        "tvos-version-boundary"
+      ],
+      "auditStatus": "not_started"
+    },
+    {
+      "id": "topic/actions",
+      "cases": [
+        "ios-uikit-actions",
+        "macos-appkit-actions",
+        "tvos-swiftui-actions"
+      ],
+      "auditStatus": "not_started"
+    },
+    {
+      "id": "topic/lifecycle",
+      "cases": [
+        "ios-swiftui-lifecycle",
+        "macos-swiftui-lifecycle",
+        "tvos-uikit-lifecycle"
+      ],
+      "auditStatus": "not_started"
+    },
+    {
+      "id": "topic/media",
+      "cases": [
+        "ios-swiftui-media",
+        "tvos-uikit-media"
+      ],
+      "auditStatus": "not_started"
+    },
+    {
+      "id": "topic/semantics",
+      "cases": [
+        "ios-swiftui-semantics"
+      ],
+      "auditStatus": "not_started"
+    },
+    {
+      "id": "topic/state",
+      "cases": [
+        "ios-uikit-state",
+        "macos-swiftui-state",
+        "tvos-uikit-state"
+      ],
+      "auditStatus": "not_started"
+    },
+    {
+      "id": "topic/structure",
+      "cases": [
+        "macos-appkit-structure",
+        "tvos-swiftui-structure"
+      ],
+      "auditStatus": "not_started"
+    },
+    {
+      "id": "topic/testing",
+      "cases": [
+        "macos-appkit-testing",
+        "tvos-swiftui-testing"
+      ],
+      "auditStatus": "not_started"
+    },
+    {
+      "id": "topic/text",
+      "cases": [
+        "ios-uikit-text",
+        "macos-swiftui-text"
+      ],
+      "auditStatus": "not_started"
+    }
+  ],
+  "cases": [
+    {
+      "id": "ios-uikit-actions",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "family": "topic/actions",
+      "topic": "actions",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-actions.md",
+        "sha256": "ddf8bad3cbd8d08785f91dfcdb1ed4f6d44a36a2a09d793554ddfe9fb820c882"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/0",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/26",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "ios-uikit-actions/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/pilots/uikit-dynamic-v1/manifest.json#DynamicUIKitTests/testOrdinaryButtonsUseCurrentItemAfterReuse"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-uikit-actions/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/pilots/uikit-dynamic-v1/manifest.json#DynamicUIKitTests/testRetainedOldActionCannotAffectReusedView",
+            "code-examples/pilots/uikit-dynamic-v1/manifest.json#DynamicUIKitTests/testDisableAndReenableRefreshesBothActionPaths"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-uikit-actions/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/pilots/uikit-dynamic-v1/manifest.json#DynamicUIKitTests/testRetainedCustomActionDoesNotKeepViewAlive",
+            "code-examples/pilots/uikit-dynamic-v1/manifest.json#DynamicUIKitTests/testNativeActionIdentifierReplacesPreviousHandler"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "ios-uikit-state",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "family": "topic/state",
+      "topic": "state",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-state.md",
+        "sha256": "01d940885a29d8915fe75196935ebc5a3d444e111c01f00dad2436dab8b73e3c"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/1",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/25",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "ios-uikit-state/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/pilots/uikit-semantics-v1/manifest.json#UIKitSemanticsTests/testReconfigurationClearsStaleHintAndValue"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-uikit-state/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/ios-closure-v1/manifest.json#MediaLoadOwnerTests/testReplacementRejectsOldItemCompletion",
+            "code-examples/platforms/ios-closure-v1/manifest.json#MediaLoadOwnerTests/testSameItemNewRequestRejectsOldGeneration",
+            "code-examples/platforms/ios-closure-v1/manifest.json#MediaLoadOwnerTests/testExternalReplacementRejectsOldResult"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-uikit-state/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/pilots/uikit-dynamic-v1/manifest.json#DynamicUIKitTests/testOrdinaryButtonsUseCurrentItemAfterReuse"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "ios-uikit-text",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "family": "topic/text",
+      "topic": "text",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-text.md",
+        "sha256": "9afcc6a91cfcbb0e11cb21dfd972280bc2d49b1f18a798771c1937e538a150fc"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/2",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/28",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "ios-uikit-text/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/pilots/uikit-choice-v1/manifest.json#ChoiceUIKitTests/testFontsMatchEffectiveLargeTextEnvironment",
+            "code-examples/pilots/uikit-choice-v1/manifest.json#ChoiceUIKitTests/testRepeatedSizeTransitionsDoNotAccumulateScaling"
+          ],
+          "supplementalContractIds": [
+            "research/evaluation/failure-driven/checkout-contract-v1/manifest.json#CheckoutSummaryTests/testFlexibleTextConfigurationAndNoFixedEnclosingHeight"
+          ],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-uikit-text/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/pilots/uikit-choice-v1/manifest.json#ChoiceUIKitTests/testLongLocalizedContentRemainsVerbatim",
+            "code-examples/pilots/uikit-choice-v1/manifest.json#ChoiceUIKitTests/testSelfSizingConfigurationAndVerticalConstraintChain"
+          ],
+          "supplementalContractIds": [
+            "research/evaluation/failure-driven/checkout-contract-v1/manifest.json#CheckoutSummaryTests/testPreservesExistingButtonIdentityTypographyAndTitle",
+            "research/evaluation/failure-driven/checkout-contract-v1/manifest.json#CheckoutSummaryTests/testRepeatedUpdatesPreserveExistingActionExactlyOnce"
+          ],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-uikit-text/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-uikit-text/criterion-3",
+          "index": 3,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "ios-swiftui-semantics",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "family": "topic/semantics",
+      "topic": "semantics",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-swiftui-semantics.md",
+        "sha256": "63e10b06dd993c30d5d7ff8814eb13eb239dfed5b19c40046aac9d957fa89797"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/3",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/0",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "ios-swiftui-semantics/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-swiftui-semantics/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/ios-v1/manifest.json#SemanticsTests/testBindingReadsCurrentNativeToggleState",
+            "code-examples/swiftui/ios-v1/manifest.json#SemanticsTests/testBothToggleTransitionsRefreshValue"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-swiftui-semantics/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "ios-swiftui-lifecycle",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "family": "topic/lifecycle",
+      "topic": "lifecycle",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-swiftui-lifecycle.md",
+        "sha256": "f29fcfe6ec64e75b7dcf5c692aa04d5b4133ae72bf12d5c07f2c3a415353caf9"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/4",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/5",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "ios-swiftui-lifecycle/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/ios-v1/manifest.json#LifecycleTests/testDismissResolvesCurrentOrigin",
+            "code-examples/swiftui/ios-v1/manifest.json#LifecycleTests/testEligibleListIsEvaluatedAtCompletion",
+            "code-examples/swiftui/ios-v1/manifest.json#LifecycleTests/testRemovedOriginUsesFallback"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-swiftui-lifecycle/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/ios-v1/manifest.json#LifecycleTests/testOldDismissalCannotConsumeNewSession",
+            "code-examples/swiftui/ios-v1/manifest.json#LifecycleTests/testRepeatedDismissIsQuiet",
+            "code-examples/swiftui/ios-v1/manifest.json#LifecycleTests/testReentrantRequestPreservesNewPresentation"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-swiftui-lifecycle/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "ios-swiftui-media",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "family": "topic/media",
+      "topic": "media",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-swiftui-media.md",
+        "sha256": "b12c69f62639d32d35bf72db851861a484dd1aa2436623787a47968be965c948"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/5",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/6",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "ios-swiftui-media/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/ios-v1/manifest.json#FormsMediaTests/testMissingAndEmptyMediaAreDifferentStates"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-swiftui-media/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/ios-v1/manifest.json#FormsMediaTests/testStaleTrackLoadIsIgnored"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-swiftui-media/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/ios-v1/manifest.json#FormsMediaTests/testMediaSelectionSurvivesReorder",
+            "code-examples/swiftui/ios-v1/manifest.json#FormsMediaTests/testMetadataChoiceDoesNotMutatePlayerPreferences"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-swiftui-media/criterion-3",
+          "index": 3,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "macos-appkit-actions",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "family": "topic/actions",
+      "topic": "actions",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-actions.md",
+        "sha256": "a3221645549ddf2c66f04db5b3d20952a7a1d01607d64463344ea58fc3fb6eee"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/6",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/42",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "macos-appkit-actions/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testOrdinaryOpenOnly",
+            "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testOrdinarySaveOnly"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-appkit-actions/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testStaleShortcutRejected",
+            "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testDisabledOrdinarySave",
+            "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testDisabledShortcut"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-appkit-actions/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testRepeatedConfigurationDoesNotDuplicateActions",
+            "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testShortcutDoesNotRetainRow"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "macos-appkit-structure",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "family": "topic/structure",
+      "topic": "structure",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-structure.md",
+        "sha256": "7f59da93d717eae764f0baedbd29bead108fefbb158ed0132c1fc8f870b9fc5e"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/7",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/43",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "macos-appkit-structure/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testContainerDoesNotReplaceControls"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-appkit-structure/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/macos-structure-v1/manifest.json#DesktopOutlineTests/testSelectedChildSurvivesSiblingReorder",
+            "code-examples/platforms/macos-structure-v1/manifest.json#DesktopOutlineTests/testRemovedSelectionClears"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-appkit-structure/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "macos-appkit-testing",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "family": "topic/testing",
+      "topic": "testing",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-testing.md",
+        "sha256": "f853b3b93cb6865771bf542f68da79adeae1d8866607d56103a409848dc1fdd3"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/8",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/47",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "macos-appkit-testing/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-appkit-testing/criterion-0",
+            "case": "macos-appkit-testing",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-testing.md",
+                "sha256": "f853b3b93cb6865771bf542f68da79adeae1d8866607d56103a409848dc1fdd3",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              },
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+                "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+                "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+              }
+            ],
+            "separate_declaration_context": null,
+            "declaration_freshness": "not applicable; policy-only testing context",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/macos/guidelines/m-010-testing-workflow.md",
+                "sha256": "6c734ed535da20cc7c51f11e28e55e5c5cdf81d78ec99b2a5762dcbbd35baaf7",
+                "startUTF16": 410,
+                "endUTF16": 619,
+                "quote": "## Rule\n\nEvery significant macOS UI change must pass a three-part accessibility workflow: Accessibility Inspector audit, VoiceOver interaction walkthrough, and keyboard-only task traversal for critical flows.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-appkit-testing/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-appkit-testing/criterion-1",
+            "case": "macos-appkit-testing",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-testing.md",
+                "sha256": "f853b3b93cb6865771bf542f68da79adeae1d8866607d56103a409848dc1fdd3",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              },
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+                "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+                "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+              }
+            ],
+            "separate_declaration_context": null,
+            "declaration_freshness": "not applicable; policy-only testing context",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/macos/guidelines/m-010-testing-workflow.md",
+                "sha256": "6c734ed535da20cc7c51f11e28e55e5c5cdf81d78ec99b2a5762dcbbd35baaf7",
+                "startUTF16": 410,
+                "endUTF16": 619,
+                "quote": "## Rule\n\nEvery significant macOS UI change must pass a three-part accessibility workflow: Accessibility Inspector audit, VoiceOver interaction walkthrough, and keyboard-only task traversal for critical flows.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-appkit-testing/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-appkit-testing/criterion-2",
+            "case": "macos-appkit-testing",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-testing.md",
+                "sha256": "f853b3b93cb6865771bf542f68da79adeae1d8866607d56103a409848dc1fdd3",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              },
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+                "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+                "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+              }
+            ],
+            "separate_declaration_context": null,
+            "declaration_freshness": "not applicable; policy-only testing context",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/macos/guidelines/m-010-testing-workflow.md",
+                "sha256": "6c734ed535da20cc7c51f11e28e55e5c5cdf81d78ec99b2a5762dcbbd35baaf7",
+                "startUTF16": 410,
+                "endUTF16": 619,
+                "quote": "## Rule\n\nEvery significant macOS UI change must pass a three-part accessibility workflow: Accessibility Inspector audit, VoiceOver interaction walkthrough, and keyboard-only task traversal for critical flows.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-appkit-testing/criterion-3",
+          "index": 3,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-appkit-testing/criterion-3",
+            "case": "macos-appkit-testing",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-testing.md",
+                "sha256": "f853b3b93cb6865771bf542f68da79adeae1d8866607d56103a409848dc1fdd3",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              },
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+                "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+                "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+              }
+            ],
+            "separate_declaration_context": null,
+            "declaration_freshness": "not applicable; policy-only testing context",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/macos/guidelines/m-010-testing-workflow.md",
+                "sha256": "6c734ed535da20cc7c51f11e28e55e5c5cdf81d78ec99b2a5762dcbbd35baaf7",
+                "startUTF16": 410,
+                "endUTF16": 619,
+                "quote": "## Rule\n\nEvery significant macOS UI change must pass a three-part accessibility workflow: Accessibility Inspector audit, VoiceOver interaction walkthrough, and keyboard-only task traversal for critical flows.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "macos-swiftui-state",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "family": "topic/state",
+      "topic": "state",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-state.md",
+        "sha256": "93fed5f76679b0f230e01516424aa8dbee8bb46bbc6262b489c8033a7b652400"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/9",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/9",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "macos-swiftui-state/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/macos-v1/manifest.json#SemanticsTests/testConfigureClearsPriorStatusAndPriorityWithoutReuse",
+            "code-examples/swiftui/macos-v1/manifest.json#SemanticsTests/testHintTracksCurrentAvailability"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-swiftui-state/criterion-0",
+            "case": "macos-swiftui-state",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-state.md",
+                "sha256": "93fed5f76679b0f230e01516424aa8dbee8bb46bbc6262b489c8033a7b652400",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/macos-values.md",
+              "sha256": "148504970dfd2b0f28a72b4818e08483b750937678e6b8ef842f1049ab1a4301",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-003-values-stateful-controls.md",
+                "sha256": "ca95e1a5de1856dc676f90e2e84952707b4ae75a58a8275a761b60dc9ae64c28",
+                "startUTF16": 308,
+                "endUTF16": 432,
+                "quote": "## Rule\n\nAny UI element with meaningful state must provide an accurate accessibility value that updates with state changes.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-swiftui-state/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/macos-v1/manifest.json#FormsMediaTests/testStaleTrackLoadIsIgnored",
+            "code-examples/swiftui/macos-v1/manifest.json#FormsMediaTests/testDirectEditRejectsOldSnapshot"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-swiftui-state/criterion-1",
+            "case": "macos-swiftui-state",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-state.md",
+                "sha256": "93fed5f76679b0f230e01516424aa8dbee8bb46bbc6262b489c8033a7b652400",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/macos-values.md",
+              "sha256": "148504970dfd2b0f28a72b4818e08483b750937678e6b8ef842f1049ab1a4301",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-003-values-stateful-controls.md",
+                "sha256": "ca95e1a5de1856dc676f90e2e84952707b4ae75a58a8275a761b60dc9ae64c28",
+                "startUTF16": 308,
+                "endUTF16": 432,
+                "quote": "## Rule\n\nAny UI element with meaningful state must provide an accurate accessibility value that updates with state changes.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-swiftui-state/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/macos-v1/manifest.json#DocumentTests/testOrdinarySelectionUsesCurrentItem"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-swiftui-state/criterion-2",
+            "case": "macos-swiftui-state",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-state.md",
+                "sha256": "93fed5f76679b0f230e01516424aa8dbee8bb46bbc6262b489c8033a7b652400",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              },
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+                "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+                "scope": "Controller-side project testing policy, not supplied to this subject and not a subject read.",
+                "subjectCitationRequired": false
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/macos-values.md",
+              "sha256": "148504970dfd2b0f28a72b4818e08483b750937678e6b8ef842f1049ab1a4301",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-003-values-stateful-controls.md",
+                "sha256": "ca95e1a5de1856dc676f90e2e84952707b4ae75a58a8275a761b60dc9ae64c28",
+                "startUTF16": 308,
+                "endUTF16": 432,
+                "quote": "## Rule\n\nAny UI element with meaningful state must provide an accurate accessibility value that updates with state changes.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow.",
+            "provenanceCorrection": "OR-01"
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "macos-swiftui-text",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "family": "topic/text",
+      "topic": "text",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-text.md",
+        "sha256": "f4d1432a0aa93e63b243dc8b17ee8ac13e621297b7834d530ad3f47d62805b60"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/10",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/12",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "macos-swiftui-text/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-swiftui-text/criterion-0",
+            "case": "macos-swiftui-text",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-text.md",
+                "sha256": "f4d1432a0aa93e63b243dc8b17ee8ac13e621297b7834d530ad3f47d62805b60",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/macos-text-sizing.md",
+              "sha256": "d62331b86c8f5e03a7713bc5dc5176386276b33c94858ef73a2bb8de89d30f3e",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md",
+                "sha256": "4d75696847519c5911efb9536498d314f493dc02809a3b631b54f6b75bae6e14",
+                "startUTF16": 289,
+                "endUTF16": 450,
+                "quote": "## Rule\n\nAll user-facing text and interactive layouts must remain readable and operable across supported Dynamic Type sizes, including accessibility categories.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-swiftui-text/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-swiftui-text/criterion-1",
+            "case": "macos-swiftui-text",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-text.md",
+                "sha256": "f4d1432a0aa93e63b243dc8b17ee8ac13e621297b7834d530ad3f47d62805b60",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/macos-text-sizing.md",
+              "sha256": "d62331b86c8f5e03a7713bc5dc5176386276b33c94858ef73a2bb8de89d30f3e",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md",
+                "sha256": "4d75696847519c5911efb9536498d314f493dc02809a3b631b54f6b75bae6e14",
+                "startUTF16": 289,
+                "endUTF16": 450,
+                "quote": "## Rule\n\nAll user-facing text and interactive layouts must remain readable and operable across supported Dynamic Type sizes, including accessibility categories.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-swiftui-text/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-swiftui-text/criterion-2",
+            "case": "macos-swiftui-text",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-text.md",
+                "sha256": "f4d1432a0aa93e63b243dc8b17ee8ac13e621297b7834d530ad3f47d62805b60",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/macos-text-sizing.md",
+              "sha256": "d62331b86c8f5e03a7713bc5dc5176386276b33c94858ef73a2bb8de89d30f3e",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md",
+                "sha256": "4d75696847519c5911efb9536498d314f493dc02809a3b631b54f6b75bae6e14",
+                "startUTF16": 289,
+                "endUTF16": 450,
+                "quote": "## Rule\n\nAll user-facing text and interactive layouts must remain readable and operable across supported Dynamic Type sizes, including accessibility categories.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-swiftui-text/criterion-3",
+          "index": 3,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-swiftui-text/criterion-3",
+            "case": "macos-swiftui-text",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-text.md",
+                "sha256": "f4d1432a0aa93e63b243dc8b17ee8ac13e621297b7834d530ad3f47d62805b60",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              },
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+                "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+                "scope": "Controller-side project testing policy, not supplied to this subject and not a subject read.",
+                "subjectCitationRequired": false
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/macos-text-sizing.md",
+              "sha256": "d62331b86c8f5e03a7713bc5dc5176386276b33c94858ef73a2bb8de89d30f3e",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md",
+                "sha256": "4d75696847519c5911efb9536498d314f493dc02809a3b631b54f6b75bae6e14",
+                "startUTF16": 289,
+                "endUTF16": 450,
+                "quote": "## Rule\n\nAll user-facing text and interactive layouts must remain readable and operable across supported Dynamic Type sizes, including accessibility categories.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow.",
+            "provenanceCorrection": "OR-01"
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "macos-swiftui-lifecycle",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "family": "topic/lifecycle",
+      "topic": "lifecycle",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-lifecycle.md",
+        "sha256": "829faec4b038b7d3be389073df491880ff66dfd1db1eba02eb11eb66fb23bacd"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/11",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/13",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "macos-swiftui-lifecycle/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/macos-v1/manifest.json#LifecycleTests/testDismissResolvesCurrentOrigin",
+            "code-examples/swiftui/macos-v1/manifest.json#LifecycleTests/testEligibleListIsEvaluatedAtCompletion",
+            "code-examples/swiftui/macos-v1/manifest.json#LifecycleTests/testRemovedOriginUsesFallback"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-swiftui-lifecycle/criterion-0",
+            "case": "macos-swiftui-lifecycle",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-lifecycle.md",
+                "sha256": "829faec4b038b7d3be389073df491880ff66dfd1db1eba02eb11eb66fb23bacd",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/macos-focus-requests.md",
+              "sha256": "ed3e9f490d21da74b172759e6d4df6b14d7aa4596de743cefb126325b1a51970",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md",
+                "sha256": "fd64c7e97f8fb5b6262dc0e5dc0b04621213611b14f4847caa2e32bcba4fdf15",
+                "startUTF16": 292,
+                "endUTF16": 481,
+                "quote": "## Rule\n\nWhen presenting sheets, alerts, or full-screen overlays, focus must move into the presented context, stay within relevant elements, and return to a logical anchor after dismissal.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-swiftui-lifecycle/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/macos-v1/manifest.json#LifecycleTests/testOldDismissalCannotConsumeNewSession",
+            "code-examples/swiftui/macos-v1/manifest.json#LifecycleTests/testRepeatedDismissIsQuiet",
+            "code-examples/swiftui/macos-v1/manifest.json#LifecycleTests/testReentrantRequestPreservesNewPresentation"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-swiftui-lifecycle/criterion-1",
+            "case": "macos-swiftui-lifecycle",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-lifecycle.md",
+                "sha256": "829faec4b038b7d3be389073df491880ff66dfd1db1eba02eb11eb66fb23bacd",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/macos-focus-requests.md",
+              "sha256": "ed3e9f490d21da74b172759e6d4df6b14d7aa4596de743cefb126325b1a51970",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md",
+                "sha256": "fd64c7e97f8fb5b6262dc0e5dc0b04621213611b14f4847caa2e32bcba4fdf15",
+                "startUTF16": 292,
+                "endUTF16": 481,
+                "quote": "## Rule\n\nWhen presenting sheets, alerts, or full-screen overlays, focus must move into the presented context, stay within relevant elements, and return to a logical anchor after dismissal.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-swiftui-lifecycle/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "macos-swiftui-lifecycle/criterion-2",
+            "case": "macos-swiftui-lifecycle",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-lifecycle.md",
+                "sha256": "829faec4b038b7d3be389073df491880ff66dfd1db1eba02eb11eb66fb23bacd",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              },
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+                "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+                "scope": "Controller-side project testing policy, not supplied to this subject and not a subject read.",
+                "subjectCitationRequired": false
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/macos-focus-requests.md",
+              "sha256": "ed3e9f490d21da74b172759e6d4df6b14d7aa4596de743cefb126325b1a51970",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md",
+                "sha256": "fd64c7e97f8fb5b6262dc0e5dc0b04621213611b14f4847caa2e32bcba4fdf15",
+                "startUTF16": 292,
+                "endUTF16": 481,
+                "quote": "## Rule\n\nWhen presenting sheets, alerts, or full-screen overlays, focus must move into the presented context, stay within relevant elements, and return to a logical anchor after dismissal.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow.",
+            "provenanceCorrection": "OR-01"
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "tvos-uikit-state",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "family": "topic/state",
+      "topic": "state",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-uikit-state.md",
+        "sha256": "5f3c8c25e44c4bf4221a9955a44edc50da7fbdf0bad70e933cb752e5440e488d"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/12",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/33",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "tvos-uikit-state/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/tvos-state-recovery-v1/manifest.json#StateContractTests/testReconfigureClearsStaleSelectionText"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-uikit-state/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testReplacementRejectsOldItemCompletion",
+            "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testSameItemNewRequestRejectsOldGeneration",
+            "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testExternalReplacementRejectsOldResult"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-uikit-state/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/tvos-uikit-v1/manifest.json#TelevisionActionsTests/testOrdinaryPlay",
+            "code-examples/platforms/tvos-uikit-v1/manifest.json#TelevisionActionsTests/testOrdinaryDetails"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "tvos-uikit-media",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "family": "topic/media",
+      "topic": "media",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-uikit-media.md",
+        "sha256": "1584405193ce1b13dc1ee1f6fd32a9b1cbd4c81bd7b3622cc585b00753d2a25e"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/13",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/38",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "tvos-uikit-media/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testNilItemDoesNotInvokeLoader",
+            "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testErrorIsNotMissingOrSuccessfulMetadata",
+            "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testSameItemNewRequestRejectsOldGeneration",
+            "code-examples/platforms/tvos-media-v1/manifest.json#MediaMetadataTests/testKnownMissingGroupIsAbsent",
+            "code-examples/platforms/tvos-media-v1/manifest.json#MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-uikit-media/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testReplacementRejectsOldItemCompletion",
+            "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testExternalReplacementRejectsOldResult"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-uikit-media/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/tvos-media-v1/manifest.json#MediaMetadataTests/testInspectionPreservesChosenAudioAndSubtitleOff"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-uikit-media/criterion-3",
+          "index": 3,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "tvos-uikit-lifecycle",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "family": "topic/lifecycle",
+      "topic": "lifecycle",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-uikit-lifecycle.md",
+        "sha256": "148da9164533198057a53307c42a0d679db502a19160515b42646074c65f1a03"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/14",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/37",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "tvos-uikit-lifecycle/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/tvos-lifecycle-v1/manifest.json#TelevisionLifecycleTests/testCompletedModalRequestsOriginal",
+            "code-examples/platforms/tvos-lifecycle-v1/manifest.json#TelevisionLifecycleTests/testRemovedOriginalUsesFallback"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-uikit-lifecycle/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/platforms/tvos-lifecycle-v1/manifest.json#TelevisionLifecycleTests/testOldCompletionCannotConsumeNewSession",
+            "code-examples/platforms/tvos-lifecycle-v1/manifest.json#TelevisionLifecycleTests/testDuplicateCompletionIsQuiet",
+            "code-examples/platforms/tvos-lifecycle-v1/manifest.json#TelevisionLifecycleTests/testReentrantRequestPreservesNewSession"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-uikit-lifecycle/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "tvos-swiftui-actions",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "family": "topic/actions",
+      "topic": "actions",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-actions.md",
+        "sha256": "5e241a2f3c435f9eeb42a9c03d5f261df0735616692dc88b3d409d825b88cc5a"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/15",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/18",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "tvos-swiftui-actions/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/tvos-v1/manifest.json#DocumentTests/testOrdinarySelectionUsesCurrentItem",
+            "code-examples/swiftui/tvos-v1/manifest.json#DocumentTests/testDeleteCurrentItemOnceAndClearSelection"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "tvos-swiftui-actions/criterion-0",
+            "case": "tvos-swiftui-actions",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-actions.md",
+                "sha256": "5e241a2f3c435f9eeb42a9c03d5f261df0735616692dc88b3d409d825b88cc5a",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/tvos-actions.md",
+              "sha256": "ad122dbdb393d5b8c750ee15730f0063fffe23a2daee0611a0a0165b82765fbe",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-007-accessibility-actions.md",
+                "sha256": "04b1847ff5dd0750581c2cea81cd429a07c890d90d4a0f8cf5e3834739c08d9e",
+                "startUTF16": 300,
+                "endUTF16": 454,
+                "quote": "## Rule\n\nAny interaction that cannot be reliably discovered or performed through default semantic controls must provide an explicit accessibility action.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-swiftui-actions/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/tvos-v1/manifest.json#DocumentTests/testOldActionDoesNotTargetReboundRow"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "tvos-swiftui-actions/criterion-1",
+            "case": "tvos-swiftui-actions",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-actions.md",
+                "sha256": "5e241a2f3c435f9eeb42a9c03d5f261df0735616692dc88b3d409d825b88cc5a",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/tvos-actions.md",
+              "sha256": "ad122dbdb393d5b8c750ee15730f0063fffe23a2daee0611a0a0165b82765fbe",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-007-accessibility-actions.md",
+                "sha256": "04b1847ff5dd0750581c2cea81cd429a07c890d90d4a0f8cf5e3834739c08d9e",
+                "startUTF16": 300,
+                "endUTF16": 454,
+                "quote": "## Rule\n\nAny interaction that cannot be reliably discovered or performed through default semantic controls must provide an explicit accessibility action.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-swiftui-actions/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/tvos-v1/manifest.json#InteropTests/testCoordinatorReplacesOldCallback",
+            "code-examples/swiftui/tvos-v1/manifest.json#InteropTests/testOldNativeViewCannotDispatchAfterRebind"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "tvos-swiftui-actions/criterion-2",
+            "case": "tvos-swiftui-actions",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-actions.md",
+                "sha256": "5e241a2f3c435f9eeb42a9c03d5f261df0735616692dc88b3d409d825b88cc5a",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              },
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+                "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+                "scope": "Controller-side project testing policy, not supplied to this subject and not a subject read.",
+                "subjectCitationRequired": false
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/tvos-actions.md",
+              "sha256": "ad122dbdb393d5b8c750ee15730f0063fffe23a2daee0611a0a0165b82765fbe",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-007-accessibility-actions.md",
+                "sha256": "04b1847ff5dd0750581c2cea81cd429a07c890d90d4a0f8cf5e3834739c08d9e",
+                "startUTF16": 300,
+                "endUTF16": 454,
+                "quote": "## Rule\n\nAny interaction that cannot be reliably discovered or performed through default semantic controls must provide an explicit accessibility action.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow.",
+            "provenanceCorrection": "OR-01"
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "tvos-swiftui-structure",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "family": "topic/structure",
+      "topic": "structure",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-structure.md",
+        "sha256": "79d7d5bb05ed7deaf3510b7fb3429fdf9e11d6e651b6f989516e44a306877a3d"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/16",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/19",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "tvos-swiftui-structure/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "tvos-swiftui-structure/criterion-0",
+            "case": "tvos-swiftui-structure",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-structure.md",
+                "sha256": "79d7d5bb05ed7deaf3510b7fb3429fdf9e11d6e651b6f989516e44a306877a3d",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/tvos-children.md",
+              "sha256": "bc833f2c02e1e65aeafa6939b38dd0140c1e75bcf3874879a6ca1e2b4d7fcccf",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-005-grouping-containment.md",
+                "sha256": "a3f87952b3f93729bd577391e2e6c8f999428eee40b4afdf579ab86d7bae639d",
+                "startUTF16": 288,
+                "endUTF16": 489,
+                "quote": "## Rule\n\nChoose grouping behavior (`combine`, `contain`, `ignore`) based on user intent: combine elements that represent one concept, contain related interactive children, and ignore decorative noise.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-swiftui-structure/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [
+            "code-examples/swiftui/tvos-v1/manifest.json#DocumentTests/testLandmarksAreSubsetNotEveryRow",
+            "code-examples/swiftui/tvos-v1/manifest.json#DocumentTests/testSelectionSurvivesReorder",
+            "code-examples/swiftui/tvos-v1/manifest.json#DocumentTests/testRemovedSelectionClears"
+          ],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "tvos-swiftui-structure/criterion-1",
+            "case": "tvos-swiftui-structure",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-structure.md",
+                "sha256": "79d7d5bb05ed7deaf3510b7fb3429fdf9e11d6e651b6f989516e44a306877a3d",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/tvos-children.md",
+              "sha256": "bc833f2c02e1e65aeafa6939b38dd0140c1e75bcf3874879a6ca1e2b4d7fcccf",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-005-grouping-containment.md",
+                "sha256": "a3f87952b3f93729bd577391e2e6c8f999428eee40b4afdf579ab86d7bae639d",
+                "startUTF16": 288,
+                "endUTF16": 489,
+                "quote": "## Rule\n\nChoose grouping behavior (`combine`, `contain`, `ignore`) based on user intent: combine elements that represent one concept, contain related interactive children, and ignore decorative noise.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-swiftui-structure/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "tvos-swiftui-structure/criterion-2",
+            "case": "tvos-swiftui-structure",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-structure.md",
+                "sha256": "79d7d5bb05ed7deaf3510b7fb3429fdf9e11d6e651b6f989516e44a306877a3d",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              },
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+                "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+                "scope": "Controller-side project testing policy, not supplied to this subject and not a subject read.",
+                "subjectCitationRequired": false
+              }
+            ],
+            "separate_declaration_context": {
+              "path": "research/evaluation/milestone-package-v2/reference-cards/tvos-children.md",
+              "sha256": "bc833f2c02e1e65aeafa6939b38dd0140c1e75bcf3874879a6ca1e2b4d7fcccf",
+              "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+            },
+            "declaration_freshness": "not independently refreshed on Linux host",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-005-grouping-containment.md",
+                "sha256": "a3f87952b3f93729bd577391e2e6c8f999428eee40b4afdf579ab86d7bae639d",
+                "startUTF16": 288,
+                "endUTF16": 489,
+                "quote": "## Rule\n\nChoose grouping behavior (`combine`, `contain`, `ignore`) based on user intent: combine elements that represent one concept, contain related interactive children, and ignore decorative noise.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow.",
+            "provenanceCorrection": "OR-01"
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "tvos-swiftui-testing",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "family": "topic/testing",
+      "topic": "testing",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-testing.md",
+        "sha256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/17",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/23",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "tvos-swiftui-testing/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "tvos-swiftui-testing/criterion-0",
+            "case": "tvos-swiftui-testing",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-testing.md",
+                "sha256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              },
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+                "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+                "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+              }
+            ],
+            "separate_declaration_context": null,
+            "declaration_freshness": "not applicable; policy-only testing context",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md",
+                "sha256": "bdbf044aef5a596fa142b983823f527d9f0be676267328239d20a0ba6d498c0a",
+                "startUTF16": 290,
+                "endUTF16": 437,
+                "quote": "## Rule\n\nIn lists and forms, prefer native controls and explicit row semantics so each item exposes clear label, value, role, and action behavior.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-swiftui-testing/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "tvos-swiftui-testing/criterion-1",
+            "case": "tvos-swiftui-testing",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-testing.md",
+                "sha256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              },
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+                "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+                "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+              }
+            ],
+            "separate_declaration_context": null,
+            "declaration_freshness": "not applicable; policy-only testing context",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md",
+                "sha256": "bdbf044aef5a596fa142b983823f527d9f0be676267328239d20a0ba6d498c0a",
+                "startUTF16": 290,
+                "endUTF16": 437,
+                "quote": "## Rule\n\nIn lists and forms, prefer native controls and explicit row semantics so each item exposes clear label, value, role, and action behavior.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-swiftui-testing/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "tvos-swiftui-testing/criterion-2",
+            "case": "tvos-swiftui-testing",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-testing.md",
+                "sha256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              },
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+                "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+                "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+              }
+            ],
+            "separate_declaration_context": null,
+            "declaration_freshness": "not applicable; policy-only testing context",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md",
+                "sha256": "bdbf044aef5a596fa142b983823f527d9f0be676267328239d20a0ba6d498c0a",
+                "startUTF16": 290,
+                "endUTF16": 437,
+                "quote": "## Rule\n\nIn lists and forms, prefer native controls and explicit row semantics so each item exposes clear label, value, role, and action behavior.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-swiftui-testing/criterion-3",
+          "index": 3,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": {
+            "criterion_id": "tvos-swiftui-testing/criterion-3",
+            "case": "tvos-swiftui-testing",
+            "application_acceptance_sources": [
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-testing.md",
+                "sha256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461",
+                "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+              },
+              {
+                "path": "research/evaluation/failure-driven/PRD.md",
+                "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+                "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+              },
+              {
+                "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+                "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+                "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+              }
+            ],
+            "separate_declaration_context": null,
+            "declaration_freshness": "not applicable; policy-only testing context",
+            "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+            "prior_nonpolicy_anchors": [
+              {
+                "path": "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md",
+                "sha256": "bdbf044aef5a596fa142b983823f527d9f0be676267328239d20a0ba6d498c0a",
+                "startUTF16": 290,
+                "endUTF16": 437,
+                "quote": "## Rule\n\nIn lists and forms, prefer native controls and explicit row semantics so each item exposes clear label, value, role, and action behavior.\n",
+                "line": 11,
+                "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+              }
+            ],
+            "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+          },
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "ios-uikit-no-change",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "family": "control/preservation",
+      "topic": "semantics",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-no-change.md",
+        "sha256": "2a184c4680bf73ceae8b229cba3401e82a249515023b04d8eb76130584ff6113"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/18",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/48",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "ios-uikit-no-change/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-uikit-no-change/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-uikit-no-change/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "ios-swiftui-no-change",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "family": "control/preservation",
+      "topic": "semantics",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-swiftui-no-change.md",
+        "sha256": "702058f370f81716a175faa26c5f206edcbcf95941684f9eacec8f1042277de6"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/19",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/49",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "ios-swiftui-no-change/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-swiftui-no-change/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-swiftui-no-change/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "macos-appkit-no-change",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "family": "control/preservation",
+      "topic": "semantics",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-no-change.md",
+        "sha256": "5ce9c8f199aeffdf70c26b545910183a41c4878da3f629c27d61099f46cd965e"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/20",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/50",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "macos-appkit-no-change/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-appkit-no-change/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "macos-appkit-no-change/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "mixed-macos-owner",
+      "platform": "macOS",
+      "framework": "mixed",
+      "family": "control/ownership",
+      "topic": "structure",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/mixed-macos-owner.md",
+        "sha256": "5c3d5710d5060f260e752be193c34c0ea11efb7270875478383a014a7ce52ef2"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/21",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/53",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "mixed-macos-owner/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "mixed-macos-owner/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "mixed-macos-owner/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "ios-missing-reference",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "family": "control/unavailable-reference",
+      "topic": "testing",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-missing-reference.md",
+        "sha256": "7c78d80e047b9239cf16cb276d1a9437491ecf7d57dfdb86d86057a9ef4f0446"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/22",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/57",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "ios-missing-reference/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-missing-reference/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "ios-missing-reference/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    },
+    {
+      "id": "tvos-version-boundary",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "family": "control/version-boundary",
+      "topic": "text",
+      "cohort": "known-development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-version-boundary.md",
+        "sha256": "92cd811da55d55b64373a71eea9ddec21922d305bdef119b51564a58414dec2c"
+      },
+      "controllerPointer": "research/evaluation/gemini-preflight-v1/controller.json#/rows/23",
+      "existingLedgerPointer": "research/evaluation/local-qualification-v1/evidence-ledger.json#/rows/59",
+      "existingEvidenceStatus": "draft-not-independently-qualified",
+      "evidenceCoverage": "not_audited",
+      "qualificationStatus": "not_started",
+      "evidenceLane": "unassigned_pending_audit",
+      "criteria": [
+        {
+          "id": "tvos-version-boundary/criterion-0",
+          "index": 0,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-version-boundary/criterion-1",
+          "index": 1,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        },
+        {
+          "id": "tvos-version-boundary/criterion-2",
+          "index": 2,
+          "coverage": "not_audited",
+          "reviewStatus": "not_started",
+          "priorContractIds": [],
+          "supplementalContractIds": [],
+          "currentSourceBinding": null,
+          "limitation": "Pointers are discovery leads; semantic assertion coverage has not been audited in this plan."
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "This inventory records existing source identities, not independent acceptance.",
+    "Reviewed grading interpretations do not establish native evidence or promotion.",
+    "All 78 criterion-coverage decisions remain not_audited.",
+    "The nine corrected dev.6 media pairs remain a separate later tranche.",
+    "No new model calls, builds, tests, worker acceptance or promotion is recorded."
+  ]
+}

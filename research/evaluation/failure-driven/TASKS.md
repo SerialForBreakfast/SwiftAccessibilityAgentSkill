@@ -7,6 +7,12 @@ evaluation work. This file augments, rather than rewrites, the pinned
 
 ## Work Packages
 
+The [gold-parity task plan](../gold-parity-v1/TASKS.md) separates a capped portable
+24-case criterion audit from a parallel, existing-evidence Mac packet and any
+later explicitly approved native gaps. It includes source/review reuse, independent
+readiness decisions and an additive promotion proposal. Planning does not promote
+cases, resume native implementation or allocate another model comparison.
+
 The [UIKit coverage-closure campaign](uikit-closure-v1/README.md) now replaces small
 delivery tranches for UPAIR-07/08. It accounts for all 209 clauses and 15 rules,
 reuses completed packages, and pairs three newly identified behavioral families
