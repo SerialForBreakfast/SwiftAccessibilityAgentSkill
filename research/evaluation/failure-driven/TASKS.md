@@ -611,3 +611,13 @@ Git publication remains separately authorized.
 See [review results](../swiftui-review-v1/RESULTS.md) and
 [candidate dev.6](candidates/0.3.0-dev.6/README.md). Live stream observer lifecycle
 remains outside this extension and explicitly unresolved; no UI/manual gate added.
+
+## Owner-authorized Gemini controlled-context comparison — 2026-11-07
+
+- [x] Execute all 48 sealed v2 first attempts under the owner’s continuation approval, with no retry, repair, fallback or extra probe.
+- [x] Reconcile 48 independent source-calibration fixtures before grading; grade all 48 answers with arm mappings withheld and retain integration uncertainty separately from narrow frozen criteria.
+- [x] Verify input/receipt/grade hashes, 22 harness tests, 210 baseline files and sealed package integrity; close the 48-reservation grant.
+- [x] Reconcile remote ff846ac after generation, preserving its separate SwiftUI evidence/dev.6 and this unchanged dev.5 cohort.
+- [ ] Review source regressions/persistent gaps against dev.6 before preparing a future candidate comparison; no release or gold acceptance.
+
+[Results](../gemini-controlled-run-20261107/README.md): candidate meets 13/24, generic 9/24; six gains, three regressions, six preserved successes, five persistent gaps and four inconclusive pairs. Displayed Argon weekly usage 0% to 17% is rounded account-wide telemetry. All 24 candidate answers announce dev.5; references were supplied inline, with no native discovery/read claim. No native tests of these generated answers ran; the earlier 12-session diagnostic remains held.
