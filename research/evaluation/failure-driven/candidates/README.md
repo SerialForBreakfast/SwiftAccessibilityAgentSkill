@@ -5,8 +5,8 @@ Released skill remains **0.2.2**. New development candidates use semantic versio
 
 | Skill version | Purpose | State |
 | --- | --- | --- |
-| 0.3.0-dev.1 | Compact baseline with owner-approved default introduction and consulted-file reporting | AGY evaluated: 6 contracts met, 1 inconclusive |
-| 0.3.0-dev.2 | Evidence-driven guidance revision with the same reporting defaults | AGY evaluated: 7 contracts met |
+| 0.3.0-dev.1 | Compact baseline with owner-approved default introduction and consulted-file reporting | AGY and Claude: each 6 contracts met, 1 inconclusive |
+| 0.3.0-dev.2 | Evidence-driven guidance revision with the same reporting defaults | AGY: 7 contracts met; Claude: 6 met, 1 inconclusive |
 | [0.3.0-dev.3](0.3.0-dev.3/README.md) | Smaller shared instructions with conditional native-boundary and validation guidance | Prepared; offline checks only; no inference |
 | [0.3.0-dev.4](0.3.0-dev.4/README.md) | Consolidated eight-topic guidance, explicit routing, opt-in examples and input audit | Milestone research bundle; no evaluation allocation |
 
@@ -28,7 +28,11 @@ Dev.3 uses its own additive `candidate.json`: the earlier `VERSIONS.json` bytes 
 pinned by historical reports and remain unchanged. No model or release result is
 inferred from the new candidate's byte reduction or static checks.
 
-See [execution status](PREPARATION-STATUS.md) for the completed AGY tranche and deferred Claude work.
+See [execution status](PREPARATION-STATUS.md) for the completed AGY and Claude comparison.
+
+The registry and EXECUTION-STATUS.json retain their historical AGY-checkpoint bytes
+because the reconciliation pins them. Current Claude completion is recorded
+additively in [completion status](CLAUDE-COMPLETION-STATUS-20261106.json).
 
 ## Target-complete draft matrix
 
