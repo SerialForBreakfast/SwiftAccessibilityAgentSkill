@@ -7,6 +7,13 @@ evaluation work. This file augments, rather than rewrites, the pinned
 
 ## Work Packages
 
+The [portable follow-up ledger](../portable-followup-20261107/TASKS.md) now
+reconciles the returned Mac public-evidence packet and dev.7 Flash / partial Haiku
+results. It accounts for all 24 cases / 78 criteria, preserves provider-specific
+denominators, and prepares eight controller-review proposals and six priority
+case reviews. Earlier pending-return labels remain historical; no new native or
+model execution, independent gold acceptance or sealed-input change is inferred.
+
 The [gold-parity task plan](../gold-parity-v1/TASKS.md) separates a capped portable
 24-case criterion audit from a parallel, existing-evidence Mac packet and any
 later explicitly approved native gaps. It includes source/review reuse, independent

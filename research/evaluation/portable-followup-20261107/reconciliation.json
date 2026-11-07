@@ -1,0 +1,3214 @@
+{
+  "schema": "portable-followup-reconciliation-v1",
+  "status": "executed-author-reconciliation; semantic proposals not independently accepted",
+  "visibility": "controller-only",
+  "inputPins": [
+    {
+      "path": "research/evaluation/gold-parity-v1/audit-v1/audit.json",
+      "sha256": "8d1e69454d51947444a444c9e23235f1e462bb813a08a34f880a22c1e70bc559"
+    },
+    {
+      "path": "research/evaluation/gold-parity-v1/mac-evidence-20261107/index.json",
+      "sha256": "54a2e013b7b5cfc27b9c868e57fdd6d8ee218bd057e6785598eedefaff356379"
+    },
+    {
+      "path": "research/evaluation/gold-parity-v1/mac-evidence-20261107/artifact-manifest.json",
+      "sha256": "6a0cf3e2a1e954ec095cc679ce96ceeb0419a562be0f96634eef2e51b77bc621"
+    },
+    {
+      "path": "research/evaluation/gold-parity-v1/mac-evidence-20261107/portable-reconciliation.json",
+      "sha256": "8b254236e53dcd42c065045ab1df385593a7648b04fbfd176d639b73099f1738"
+    },
+    {
+      "path": "research/evaluation/dev7-comparison/seal.json",
+      "sha256": "5fb06cc5cfacf6015103373c338d5dedbb953fdf7117c5b706bb4974b9410fca"
+    },
+    {
+      "path": "research/evaluation/dev7-comparison/controller/scoring.json",
+      "sha256": "5223a16789750ab3587880bf32ba4d6b0f887711218fd2cb25f01d66c34ade7d"
+    },
+    {
+      "path": "research/evaluation/dev7-comparison/jobs.json",
+      "sha256": "bebd3bb3635a1402792600e34bf460a22bdd6ce41085d94f2f192b0fc2380b19"
+    },
+    {
+      "path": "research/evaluation/dev7-flash-haiku-results-20261107/summary.json",
+      "sha256": "270b85c7e9d01ef6764555f02b6e192069e7ffd6785ce4efd6f5e60e0d98c053"
+    },
+    {
+      "path": "research/evaluation/dev7-flash-haiku-results-20261107/README.md",
+      "sha256": "18efd456f3b14bc7c4fa5d77d39d47d350679d44a8dd082aed2329f94e73217f"
+    },
+    {
+      "path": "research/evaluation/portable-followup-20261107/review-spec.json",
+      "sha256": "f2decd6cfb1bb3042cab67ae95c80b761a37e69ad2fdf1cff5839473548c642d"
+    },
+    {
+      "path": "research/evaluation/gold-parity-v1/audit-v1/audit.py",
+      "sha256": "9536364e33e420efb56ef489586a569583c3795e112b0a80e394de2785ae4842"
+    },
+    {
+      "path": "research/evaluation/gemini-preflight-v1/RETROSPECTIVE-TRANSPORT.md",
+      "sha256": "23bf1c65c2298e855bbca7b9836d2616676b5da90384bc4c85b8f5834e26fcc7"
+    },
+    {
+      "path": "research/evaluation/failure-driven/checkout-review-20261106/unit-results.json",
+      "sha256": "ff0c7db54f4fa2f08cdd49f81baf7a53add3f35479c97613a74336f54315be22"
+    },
+    {
+      "path": "research/evaluation/failure-driven/checkout-review-20261106/ADJUDICATION.md",
+      "sha256": "1783b0bb2252e46d97d5d6e5230d47e21f78a45c84695abb4f0146abbde1445d"
+    },
+    {
+      "path": "evals/os26/reports/2026-11-05-gold-closeout/readiness.json",
+      "sha256": "2593c6493c89363fb35067b5fbff8308b841d7afbdef0f93a2965ccbd91e55c6"
+    },
+    {
+      "path": "research/evaluation/portable-followup-20261107/reconcile.py",
+      "sha256": "efb16db7c45a6bb9f416f31aab7634eae80cf244135c05323f75d01bc5f293b0"
+    },
+    {
+      "path": "research/evaluation/portable-followup-20261107/test_reconcile.py",
+      "sha256": "c9a66d608ada4a9285554b7781f4ee90e94b51d3c9cdc8c82f29d0addb8f327b"
+    }
+  ],
+  "summary": {
+    "cases": 24,
+    "criteria": 78,
+    "families": 12,
+    "publishedPairs": 31,
+    "publishedAnswers": 62,
+    "publishedCriticalFindings": 10,
+    "currentCandidateCriticalFindings": 4,
+    "coverage": {
+      "partial_evidence": 35,
+      "review_only": 39,
+      "genuine_gap": 2,
+      "direct_evidence": 2
+    },
+    "newGoldQualifications": 0,
+    "newEvaluationCalls": 0,
+    "newNativeRuns": 0
+  },
+  "macReconciliation": {
+    "status": "GPAR-02-public-source-and-receipt-reconciliation-executed",
+    "workerReportedAcceptance": true,
+    "packages": 17,
+    "sourceArtifactsVerified": 146,
+    "receiptChecksVerified": 104,
+    "sharedMethodsVerified": 73,
+    "exactControllerReceiptChecks": 94,
+    "additionalDiscoveryChecks": 10,
+    "additionalDiscoveryPackages": [
+      "code-examples/pilots/uikit-containers-v1/manifest.json",
+      "code-examples/pilots/uikit-reuse-v1/manifest.json"
+    ],
+    "receipts": [
+      {
+        "manifest": "code-examples/pilots/uikit-containers-v1/manifest.json",
+        "check": "compile-containers",
+        "index": "code-examples/pilots/uikit-containers-v1/validation/revision-2.json",
+        "originalResultHash": "4d2e7e5a2b51293431d8ef109c7135075a8be222b255effbedc06445c87dd14b",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-containers-v1/manifest.json",
+        "check": "containers-unit",
+        "index": "code-examples/pilots/uikit-containers-v1/validation/revision-2.json",
+        "originalResultHash": "9b5a5a41d4666cac53f6ed3ac5fc0078ea4126ac590665c2b032623d6cc9b118",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-containers-v1/manifest.json",
+        "check": "wrongspan-negative",
+        "index": "code-examples/pilots/uikit-containers-v1/validation/revision-2.json",
+        "originalResultHash": "441fdba44e1d06c016d71b54e1f4ceb4cf34751dc75e326ea9ffc091e2abd8b4",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-containers-v1/manifest.json",
+        "check": "stalemodal-negative",
+        "index": "code-examples/pilots/uikit-containers-v1/validation/revision-2.json",
+        "originalResultHash": "f3234d5ed341bfd9c049c110eeca32d390afdc02cd6d26da9cb9a9bf33c379ac",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-containers-v1/manifest.json",
+        "check": "ignoredenabled-negative",
+        "index": "code-examples/pilots/uikit-containers-v1/validation/revision-2.json",
+        "originalResultHash": "04652e7191799c2839a736e0807785552ecf9665ac8bf1ebe75eef89a982d77a",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-dynamic-v1/manifest.json",
+        "check": "compile-dynamic",
+        "index": "code-examples/pilots/uikit-dynamic-v1/validation/revision-2.json",
+        "originalResultHash": "fa6d615c7ad83a3ae989cd11d047c4cdf171e0ccd165c748851c5167a66c5f15",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-dynamic-v1/manifest.json",
+        "check": "dynamic-unit",
+        "index": "code-examples/pilots/uikit-dynamic-v1/validation/revision-2.json",
+        "originalResultHash": "66ed72841b8710c532598e3d182afc82af7f87eedb7302ea7271e33672d8d92a",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-dynamic-v1/manifest.json",
+        "check": "staleaction-negative",
+        "index": "code-examples/pilots/uikit-dynamic-v1/validation/revision-2.json",
+        "originalResultHash": "4b225aac8e16a886b047337932132b9af449fd09c88a5097b7205538c24f2c2a",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-dynamic-v1/manifest.json",
+        "check": "duplicatecallback-negative",
+        "index": "code-examples/pilots/uikit-dynamic-v1/validation/revision-2.json",
+        "originalResultHash": "ffd68fb5606e4218c7b91ade56989a2bbed056da21e622a0e3d559a68718604d",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-dynamic-v1/manifest.json",
+        "check": "missingelements-negative",
+        "index": "code-examples/pilots/uikit-dynamic-v1/validation/revision-2.json",
+        "originalResultHash": "30bd78a0010872a13d502f9916962c3d2b1eb5c893c2a28ccac090dc577fd59c",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-dynamic-v1/manifest.json",
+        "check": "retainedremoved-negative",
+        "index": "code-examples/pilots/uikit-dynamic-v1/validation/revision-2.json",
+        "originalResultHash": "284ab388ee82856520186ad7f90779a82c27138189ae9773c05ed28cd94802b9",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-reuse-v1/manifest.json",
+        "check": "compile-reuse",
+        "index": "code-examples/pilots/uikit-reuse-v1/validation/revision-3.json",
+        "originalResultHash": "e79d5ca88e10b3542a02c017dca69a3ea7261c2a8c0f1293c2e788e1600b8c3d",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-reuse-v1/manifest.json",
+        "check": "reuse-unit",
+        "index": "code-examples/pilots/uikit-reuse-v1/validation/revision-3.json",
+        "originalResultHash": "209abe1ac06523c1935f83ed9046585b4fbec776c7b5a8d1733b1823c6527b64",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-reuse-v1/manifest.json",
+        "check": "staleselection-negative",
+        "index": "code-examples/pilots/uikit-reuse-v1/validation/revision-3.json",
+        "originalResultHash": "6032fef627cfc2e8477571258827db5ec429084ede0b77c3ecd028e0bca1e2fe",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-reuse-v1/manifest.json",
+        "check": "staleidentity-negative",
+        "index": "code-examples/pilots/uikit-reuse-v1/validation/revision-3.json",
+        "originalResultHash": "7fdc1b8f9bdcd8e8c1d7c96e1faaf8e90ca07fb9bde430b8d05642137d17eac4",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-reuse-v1/manifest.json",
+        "check": "wrongnotification-negative",
+        "index": "code-examples/pilots/uikit-reuse-v1/validation/revision-3.json",
+        "originalResultHash": "150c66715d27872302bf0fdf5c1a7a40efa3988452e76fe952c68493cf903c4c",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-semantics-v1/manifest.json",
+        "check": "compile-semantics",
+        "index": "code-examples/pilots/uikit-semantics-v1/validation/revision-2.json",
+        "originalResultHash": "65c86258ceba2cefa2e78c19ece35754aee5e8b99555896efe9bbf835a170bf6",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-semantics-v1/manifest.json",
+        "check": "semantics-unit",
+        "index": "code-examples/pilots/uikit-semantics-v1/validation/revision-2.json",
+        "originalResultHash": "8f6b2ad1fe8cc2f995b6c5406eb410854b73bb71aaa14eb2c396c8022f8a36e0",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-semantics-v1/manifest.json",
+        "check": "droppedaction-negative",
+        "index": "code-examples/pilots/uikit-semantics-v1/validation/revision-2.json",
+        "originalResultHash": "8d8a4df8a13e2ef1873be8c5081edce2c341dab5587efc05c28b9bb9ad8df2e2",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-semantics-v1/manifest.json",
+        "check": "wrongrotordirection-negative",
+        "index": "code-examples/pilots/uikit-semantics-v1/validation/revision-2.json",
+        "originalResultHash": "e060dfd10c5969668664a93750525955e5a04277cb5dac53709a2072e4859559",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-semantics-v1/manifest.json",
+        "check": "losttraits-negative",
+        "index": "code-examples/pilots/uikit-semantics-v1/validation/revision-2.json",
+        "originalResultHash": "9ffdb2e92915e8acedd9b4f30cc6d7856b9940753e7a6a7faee1e1b7a0edcc99",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/ios-closure-v1/manifest.json",
+        "check": "compile",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "12f4e5e9ec0b8d9d27bf67e9acea68f320f9570bf87c029591eb903772ddf7ae",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/ios-closure-v1/manifest.json",
+        "check": "positive",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "930a6592786d672e99764ece0a81cc8b20f9b61dd323f684395f599def07bae4",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/ios-closure-v1/manifest.json",
+        "check": "validation-generation",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "93c874134e4461c2169ce5ee3cd4249be56db72e75923b1c1ab80301de475e8c",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/ios-closure-v1/manifest.json",
+        "check": "validation-snapshot",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "638f059b3e6f0105be41cda7938f3ea6a59b46c5a95c5bfa2e32cd48a6cff1ad",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/ios-closure-v1/manifest.json",
+        "check": "media-identity",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "11ae91a4145ef7fec865036cbbc3a2a9d46b9b33cf70a6c7a0ec310c812930f3",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/ios-closure-v1/manifest.json",
+        "check": "media-duplicate",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "4cb600d8e31e53b69e672dcdffc1d9d60efc249d2ed2d74ed1d186a216d2f917",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-choice-v1/manifest.json",
+        "check": "compile-choice",
+        "index": "code-examples/pilots/uikit-choice-v1/validation/revision-1.json",
+        "originalResultHash": "1ba8efae9afd12f47cf47989b53cf41aeaac5f4cddd4e5467db99e5526bf99ba",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-choice-v1/manifest.json",
+        "check": "choice-unit",
+        "index": "code-examples/pilots/uikit-choice-v1/validation/revision-1.json",
+        "originalResultHash": "5e27d0ae2818a96827656cebde5933add02584c09ca53e4de28e68eef6e9ca08",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-choice-v1/manifest.json",
+        "check": "singleline-negative",
+        "index": "code-examples/pilots/uikit-choice-v1/validation/revision-1.json",
+        "originalResultHash": "fa1e6ef09199f41bb62706c1b2f091fb767e6098222d9822519f2caa08f1d340",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-choice-v1/manifest.json",
+        "check": "fixedfont-negative",
+        "index": "code-examples/pilots/uikit-choice-v1/validation/revision-1.json",
+        "originalResultHash": "15b9cf5e5fc273df8f2888f36a14b97f075d45fde8103d951125f573b9a84dcd",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-choice-v1/manifest.json",
+        "check": "staleselection-negative",
+        "index": "code-examples/pilots/uikit-choice-v1/validation/revision-1.json",
+        "originalResultHash": "dc55a8b00e8fc4eb75c78e040227867c15c331ae6adf5695b0c3c9ecf5db8f87",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/pilots/uikit-choice-v1/manifest.json",
+        "check": "clobberedtraits-negative",
+        "index": "code-examples/pilots/uikit-choice-v1/validation/revision-1.json",
+        "originalResultHash": "a916a639a8f57a4606a531353a8ee225e5189f56e1428499e875e31e784a2fc5",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "research/evaluation/failure-driven/checkout-contract-v1/manifest.json",
+        "check": "checkout-unit",
+        "index": "research/evaluation/failure-driven/checkout-contract-v1/validation.json",
+        "originalResultHash": "3ca840729fa1a8a98ada275053c67df21d3ea1a0bfd1cf29135f09d0ce068858",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "research/evaluation/failure-driven/checkout-contract-v1/manifest.json",
+        "check": "changed-font",
+        "index": "research/evaluation/failure-driven/checkout-contract-v1/validation.json",
+        "originalResultHash": "edd40787fa7052fd3dee8255358d57502e2a094a31884bbc2a840754a35346c5",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "research/evaluation/failure-driven/checkout-contract-v1/manifest.json",
+        "check": "fixed-height",
+        "index": "research/evaluation/failure-driven/checkout-contract-v1/validation.json",
+        "originalResultHash": "19beefbb56e7df858a7eba6399cddd2ff57c813113815d6c44a304fb8d7d57b2",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/swiftui/ios-v1/manifest.json",
+        "check": "compile",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "3188fd6e2d9fc5944d668c09426d7dd9ca86fccd878c5db0bbcf5c41b0f0e8db",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/swiftui/ios-v1/manifest.json",
+        "check": "positive",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "3228c6bd006f49752e6712a23fc1d2ad5c4c197e76d870ced2b29b8423bad2db",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/swiftui/ios-v1/manifest.json",
+        "check": "interop",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "035b50c79cda7b4032ccd56f2ce5378c58e5818168f5f6cc9f9b02fe024b9243",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-appkit-v1/manifest.json",
+        "check": "compile",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "99df2888eb767af83015c0708a1975a5e3c4e3d6f5d03a2424d8ac12deb6b624",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-appkit-v1/manifest.json",
+        "check": "positive",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "bde1ec9729bd875162f1d67732fbabe912775232bc4d634b86fba6f23f5c99f7",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-appkit-v1/manifest.json",
+        "check": "lostordinarysave",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "c5868bdc8dce29e85c0164870eb339a7340f98557660c173e8d3ef92578c4698",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-appkit-v1/manifest.json",
+        "check": "staleshortcut",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "df236d039ac8591a5a3874ca8d6ee162497f83234f1c9be28761a9fb5cc412f4",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-appkit-v1/manifest.json",
+        "check": "lostname",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "76459c4a92a44050aee613939bf1e37168f4e905543ab575505c4b88ecb5c87b",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-appkit-v1/manifest.json",
+        "check": "disabledshortcut",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "ed49fac5d8572b6ee81cf3fbb55cb8109f799d240fbd60a4d8faee8387c38afd",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-appkit-v1/manifest.json",
+        "check": "duplicatenotice",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "df72c8a0ac9bc4fcdf402f48f340c061b81b4afc20969403049c05e8f2cbf8dc",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-structure-v1/manifest.json",
+        "check": "compile",
+        "index": "research/evaluation/platform-structure-v1/results-index.json",
+        "originalResultHash": "57c91da72ddd2026a515a5037ada7702f0b8b6c427c95f7591f5b9317d07d106",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-structure-v1/manifest.json",
+        "check": "positive",
+        "index": "research/evaluation/platform-structure-v1/results-index.json",
+        "originalResultHash": "5599a6c0df640929aebbede752be58ff1eaa2a3c29ed2b43ac584b322246d2be",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-structure-v1/manifest.json",
+        "check": "invalidsave",
+        "index": "research/evaluation/platform-structure-v1/results-index.json",
+        "originalResultHash": "8ae79d559e7707215bf230385f1651a088498418363f619bedb3112fa42c41d6",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-structure-v1/manifest.json",
+        "check": "stalemessage",
+        "index": "research/evaluation/platform-structure-v1/results-index.json",
+        "originalResultHash": "5926277f0312965b1cf232a1c23f17d99bf57dd8802e005adff3698c6fc02e47",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-structure-v1/manifest.json",
+        "check": "reentrant",
+        "index": "research/evaluation/platform-structure-v1/results-index.json",
+        "originalResultHash": "5a11396f9f91da42d9657e53fb032f661dcd5a2c6963b2a07cfb8f72e9cfb7cc",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-structure-v1/manifest.json",
+        "check": "duplicates",
+        "index": "research/evaluation/platform-structure-v1/results-index.json",
+        "originalResultHash": "ef7552a1e6a9756ef7c3089967925812e2712b7aedc702805aaf9b1ea121e6bf",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-structure-v1/manifest.json",
+        "check": "identity",
+        "index": "research/evaluation/platform-structure-v1/results-index.json",
+        "originalResultHash": "7ab1198525fea62d89c13d732da9a522d087561c3a2889307d549def5b32dee7",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-structure-v1/manifest.json",
+        "check": "stalenode",
+        "index": "research/evaluation/platform-structure-v1/results-index.json",
+        "originalResultHash": "d01854d32ff7afc1b2aeebdee5e8d0fed4c117d7f8219fc5d99120dc2315a97b",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/macos-structure-v1/manifest.json",
+        "check": "selection",
+        "index": "research/evaluation/platform-structure-v1/results-index.json",
+        "originalResultHash": "24471f0d88751a79efdf466d9ccff46a4ebd455a58ca7ae86466e240e27045b1",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "check": "compile",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "5e82604095cc3cee2be2e95b2f7bbb0b0005c08b7b5252869cc4912a2ed93c48",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "check": "positive",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "97e0ee349d964b03a7cf4c5d135281410548d9b0acd03c37a271d26c5bf6bbc3",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "check": "interop",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "0264ed1cc4b9e56235067d1a6c1c15421acf89baa4549d82ed947778ad8b518e",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "check": "semantics",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "3ba4a5869d73c6d421d14536e3632f866f0d4be3aa8fd2819a0d349493f91dce",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "check": "documents",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "0166581b567facfdd9a955fc68625efdab1d13feec3969a6c1561d56a6325c85",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "check": "preferences",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "d1f81aa07aaad996668cc494f12616a5cf7137e33654bbfb29cdea2eb9d06743",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "check": "lifecycle",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "c9f8a1ddd42427c62202d45d4f72565d64f39eab4e0098df5e4d94559cd6c0f5",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "check": "forms",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "25738a4c3f5c2c1d2b14ce3b3c572e6cfaf7dce77426eec5ad12de836710af2f",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "check": "media",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "99ebc837fe42a5e6ab9dbdef6d519085e9b5472444d8e7ca6aa62e896200f3be",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-state-recovery-v1/manifest.json",
+        "check": "compile",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "34c902ff1afe5551c957d7c49b855e2747c1454d62f606677136724dca7cecbb",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-state-recovery-v1/manifest.json",
+        "check": "positive",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "5c0a0e7600e543758687010961222717860f95b5e2a8f0e74f0fc62799e4921e",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-state-recovery-v1/manifest.json",
+        "check": "stale-status",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "4683e24c3987ab2134baf5d31dcb0a4c2d7b89b2f9a8ab600b29e43bb560f7ab",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+        "check": "compile",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "9400059446458219f5e9df02f0159c8265eee03989a065b0f210d3e8f4657894",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+        "check": "positive",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "754a7dace62600287a4736902ae937e933773ac9b45c0776c52e37b0eac51711",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+        "check": "validation-generation",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "2ec2d1eec171f0a343f11864043fd830240c7cf6a843cbb0a31892030778ab95",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+        "check": "validation-snapshot",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "9d89286bad43828902f85f768d2b9974aac7c027d61cc4d989f9351a3145d754",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+        "check": "media-identity",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "0f5ac4cbdffc4749c27010d37bcd61e7513fa1d06b935e635f22555b49a84f91",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+        "check": "media-duplicate",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "937dc5a01a9e7762d16d08450fb1bef17d500825b5b174e24a955067c6cdb687",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+        "check": "text-boundary",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "1bdd97d8318c363b0e28f22e63b8f27a834225be20c000c087c59358400b93f5",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+        "check": "text-stale",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "cadc6462edc7564142b9abd4f1a4823123210f71fabffc002091ceed1e067a50",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+        "check": "state-text",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "b62bf177d249018458910c884da65420f6b069a63e87b7d43eeecb434f9ffe73",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+        "check": "modal-restore",
+        "index": "research/evaluation/cross-platform-closure-v1/results-index.json",
+        "originalResultHash": "2cf7542be7109aee2415269933ecd1b594a5c021cb3bcab8c2c40396f76f2a05",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+        "check": "compile",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "518dd968e3bc3c1d24a5bf5023316b1a6c98250a5b88f32cd619c1d56c9cc670",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+        "check": "positive",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "5b33879b9ed60c17f8f058f8c622d61b0e6df8da4a06e8bc54f61b1c24535a88",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+        "check": "lostordinarydetails",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "2080116575fca7a80dd12ec59f890eefa3d3fa6689d6d335add801b1aa91b9ea",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+        "check": "staleshortcut",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "8fe699a066e3e7595e1f3e5fc7f1b6c904e46d028ede90834fb78930bce511f3",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+        "check": "hiddencontrols",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "2d10300cae6ee2e1e06f1c17ab0bd64b7d253bbf9cecbf810d7b280c59f34ed0",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+        "check": "invalidfocustarget",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "f6eb2413ab0536eca39179558c1000aa1829ef2814d6ee630b1e7a3c92229fcf",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+        "check": "clobberedtraits",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "c7bdc5f68c78021295f0d49eccb5ea3835b16497d17bc791cba8d5c5b8e068a8",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+        "check": "original-missing-titles",
+        "index": "research/evaluation/platform-expansion-v1/results-index.json",
+        "originalResultHash": "2e16897108a4382c32c4721427828c1f88dc417f5b999cdae1bf271cf49c0539",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-media-v1/manifest.json",
+        "check": "compile",
+        "index": "research/evaluation/platform-media-v1/results-index.json",
+        "originalResultHash": "f81111635e97d72a479e8cf37ac83c9cd82d2f6c09be1790467249dacaf58fa6",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-media-v1/manifest.json",
+        "check": "positive",
+        "index": "research/evaluation/platform-media-v1/results-index.json",
+        "originalResultHash": "84c4bbc3328952b0729cff3863c5861ce08eb704f955f5fe0ec47834d1013a57",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-media-v1/manifest.json",
+        "check": "described",
+        "index": "research/evaluation/platform-media-v1/results-index.json",
+        "originalResultHash": "78879b30820bd1d2ae800edc5840cf3f4b0963d49b57804f0396e9c308d33e89",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-media-v1/manifest.json",
+        "check": "unavailable",
+        "index": "research/evaluation/platform-media-v1/results-index.json",
+        "originalResultHash": "51e93c9d410b2eaa4b61293650681b60659db725fe86fcff63da421a4e81d7c3",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-media-v1/manifest.json",
+        "check": "forced",
+        "index": "research/evaluation/platform-media-v1/results-index.json",
+        "originalResultHash": "b1369b1cc7e6213ece47e5f1bd43b9296016a6dd089d0be0bb44faff3df97508",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-media-v1/manifest.json",
+        "check": "missing",
+        "index": "research/evaluation/platform-media-v1/results-index.json",
+        "originalResultHash": "ca145857783f9a92da04a93b72cfe2bd108fcaff53396aa000668d42289ff69d",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-media-v1/manifest.json",
+        "check": "description",
+        "index": "research/evaluation/platform-media-v1/results-index.json",
+        "originalResultHash": "48b75b490f5ceec1cc22c18c54b648fdd18a4534773a07bff9d5c17f8ec2de6c",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-media-v1/manifest.json",
+        "check": "ranges",
+        "index": "research/evaluation/platform-media-v1/results-index.json",
+        "originalResultHash": "6a354c8d0f1bfae4e28ce3577d6a581a7089599392df6329a92b29788be9c740",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-media-v1/manifest.json",
+        "check": "offpermission",
+        "index": "research/evaluation/platform-media-v1/results-index.json",
+        "originalResultHash": "00c905dd168a1bcec9b05e557726d0a527b0ab85d6ff724df71193dc81640c4e",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-lifecycle-v1/manifest.json",
+        "check": "compile",
+        "index": "research/evaluation/platform-lifecycle-v1/results-index.json",
+        "originalResultHash": "17da485a775f159d93d0c80b9897acd36cf63997a0bb62c7fe84cccafb32c94d",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-lifecycle-v1/manifest.json",
+        "check": "positive",
+        "index": "research/evaluation/platform-lifecycle-v1/results-index.json",
+        "originalResultHash": "3c1743eea31230f4bb66497c812ae0620fa853f6a8017a392253261a425fc83c",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-lifecycle-v1/manifest.json",
+        "check": "foreigntarget",
+        "index": "research/evaluation/platform-lifecycle-v1/results-index.json",
+        "originalResultHash": "bca5777602cf812f3238887044b623c28bcf78322eb1e02c674080e3935b386e",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-lifecycle-v1/manifest.json",
+        "check": "stalecompletion",
+        "index": "research/evaluation/platform-lifecycle-v1/results-index.json",
+        "originalResultHash": "9390d8358adb212f3f08ceb3ac4d5b0347b31615b745c748f8118bca9deee007",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-lifecycle-v1/manifest.json",
+        "check": "stoppeddelivery",
+        "index": "research/evaluation/platform-lifecycle-v1/results-index.json",
+        "originalResultHash": "5cbdd829bb7d6e5b43556b28d9824266668fb09bbc3e383643a84db43fb9d70b",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-lifecycle-v1/manifest.json",
+        "check": "oldgeneration",
+        "index": "research/evaluation/platform-lifecycle-v1/results-index.json",
+        "originalResultHash": "2e77a445e0fb69865482a655eab00a0013464dec38e7474f1ae09160bb8afc24",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/platforms/tvos-lifecycle-v1/manifest.json",
+        "check": "repeatedpreference",
+        "index": "research/evaluation/platform-lifecycle-v1/results-index.json",
+        "originalResultHash": "b24b4d1560cd0d952c2ccfb289b8ae88aaef545d8ac2e9b1fca6994bd915d39f",
+        "lane": "unit",
+        "expected": "failure"
+      },
+      {
+        "manifest": "code-examples/swiftui/tvos-v1/manifest.json",
+        "check": "compile",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "e2ed0f8f882034773102c6e0c6052caaa087076be0c341568ece1001fec9d714",
+        "lane": "compile",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/swiftui/tvos-v1/manifest.json",
+        "check": "positive",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "f3802e904e8863a90f7caba89c89d27f91add0e758d06fd9d1b49eb1b98a2cdb",
+        "lane": "unit",
+        "expected": "success"
+      },
+      {
+        "manifest": "code-examples/swiftui/tvos-v1/manifest.json",
+        "check": "interop",
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "originalResultHash": "ab3bfc19b1c102de3c6f229fe15f5ee92f8a98bd8bcde653545cfdc30f54aa8e",
+        "lane": "unit",
+        "expected": "failure"
+      }
+    ],
+    "rawPrivateArchivesAuthenticated": false,
+    "environmentTransformation": "Normalize literal backslash-n to newline in xcode/compiler display strings only.",
+    "limits": "Public hash/selection agreement only; no new semantic acceptance, SDK freshness, native execution or gold promotion."
+  },
+  "providerCohorts": {
+    "gemini": {
+      "pairs": 24,
+      "answers": 48,
+      "unattemptedPairs": 0,
+      "transitions": {
+        "preserved success": 8,
+        "persistent gap": 9,
+        "regression": 3,
+        "inconclusive": 3,
+        "gain": 1
+      },
+      "completedArms": {
+        "dev5": {
+          "completed": 24,
+          "reported_tokens": 109300,
+          "version_in_opening": 24,
+          "routing_line_present": 24,
+          "source_grades": {
+            "meets": 11,
+            "material-gap": 10,
+            "not-assessable": 3
+          },
+          "critical_answers": 5
+        },
+        "dev7": {
+          "completed": 24,
+          "reported_tokens": 100829,
+          "version_in_opening": 24,
+          "routing_line_present": 24,
+          "source_grades": {
+            "meets": 9,
+            "material-gap": 14,
+            "not-assessable": 1
+          },
+          "critical_answers": 4
+        }
+      },
+      "remainingReservationsCancelled": 0,
+      "inferenceLimit": "One published source review per answer; no provider ranking or native outcome inferred."
+    },
+    "claude": {
+      "pairs": 7,
+      "answers": 14,
+      "unattemptedPairs": 17,
+      "transitions": {
+        "gain": 2,
+        "inconclusive": 3,
+        "preserved success": 1,
+        "persistent gap": 1
+      },
+      "completedArms": {
+        "dev5": {
+          "completed": 7,
+          "reported_tokens": 60446,
+          "version_in_opening": 7,
+          "routing_line_present": 7,
+          "source_grades": {
+            "material-gap": 5,
+            "meets": 2
+          },
+          "critical_answers": 1
+        },
+        "dev7": {
+          "completed": 7,
+          "reported_tokens": 50172,
+          "version_in_opening": 7,
+          "routing_line_present": 7,
+          "source_grades": {
+            "not-assessable": 3,
+            "meets": 3,
+            "material-gap": 1
+          },
+          "critical_answers": 0
+        }
+      },
+      "remainingReservationsCancelled": 34,
+      "inferenceLimit": "One published source review per answer; no provider ranking or native outcome inferred."
+    }
+  },
+  "cases": [
+    {
+      "case": "ios-uikit-actions",
+      "family": "topic/actions",
+      "priority": "P0",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "ddf8bad3cbd8d08785f91dfcdb1ed4f6d44a36a2a09d793554ddfe9fb820c882",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "ios-uikit-actions",
+          "dev5": "material-gap",
+          "dev7": "material-gap",
+          "transition": "persistent gap"
+        },
+        {
+          "provider": "claude",
+          "case": "ios-uikit-actions",
+          "dev5": "material-gap",
+          "dev7": "meets",
+          "transition": "gain"
+        }
+      ],
+      "publishedCriticalFindings": [
+        {
+          "provider": "gemini",
+          "modelAlias": "gemini-3.8-flash-low",
+          "arm": "dev7",
+          "case": "ios-uikit-actions",
+          "publishedReason": "Source configures a UIKit accessible leaf around independent ordinary child button(s) and supplies no forwarded Open activation/explicit child exposure. This contradicts task preservation; direct-handler tests are not ordinary accessibility navigation evidence.",
+          "source": "research/evaluation/dev7-flash-haiku-results-20261107/README.md",
+          "line": 53,
+          "originalAnswerSpan": null,
+          "evidenceLevel": "Published reviewer finding; original source span unavailable here."
+        },
+        {
+          "provider": "gemini",
+          "modelAlias": "gemini-3.8-flash-low",
+          "arm": "dev5",
+          "case": "ios-uikit-actions",
+          "publishedReason": "Provided Open button has no activation target/action/callback at all; ordinary Open operation is absent. This is necessary action wiring, not an omitted cosmetic helper.",
+          "source": "research/evaluation/dev7-flash-haiku-results-20261107/README.md",
+          "line": 54,
+          "originalAnswerSpan": null,
+          "evidenceLevel": "Published reviewer finding; original source span unavailable here."
+        }
+      ],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/actions.md",
+        "references/uikit/guidelines/u-007-accessibility-custom-actions.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": []
+    },
+    {
+      "case": "ios-uikit-state",
+      "family": "topic/state",
+      "priority": "P1",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "01d940885a29d8915fe75196935ebc5a3d444e111c01f00dad2436dab8b73e3c",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "ios-uikit-state",
+          "dev5": "material-gap",
+          "dev7": "material-gap",
+          "transition": "persistent gap"
+        },
+        {
+          "provider": "claude",
+          "case": "ios-uikit-state",
+          "dev5": "material-gap",
+          "dev7": "material-gap",
+          "transition": "persistent gap"
+        }
+      ],
+      "publishedCriticalFindings": [
+        {
+          "provider": "gemini",
+          "modelAlias": "gemini-3.8-flash-low",
+          "arm": "dev5",
+          "case": "ios-uikit-state",
+          "publishedReason": "Source configures a UIKit accessible leaf around independent ordinary child button(s) and supplies no forwarded Open activation/explicit child exposure. This contradicts task preservation; direct-handler tests are not ordinary accessibility navigation evidence.",
+          "source": "research/evaluation/dev7-flash-haiku-results-20261107/README.md",
+          "line": 52,
+          "originalAnswerSpan": null,
+          "evidenceLevel": "Published reviewer finding; original source span unavailable here."
+        },
+        {
+          "provider": "claude",
+          "modelAlias": "claude-haiku-5-5",
+          "arm": "dev5",
+          "case": "ios-uikit-state",
+          "publishedReason": "Existing independently accessible ordinary Open is deliberately hidden and made shortcut-only; visual tapping does not preserve the removed ordinary accessible path.",
+          "source": "research/evaluation/dev7-flash-haiku-results-20261107/README.md",
+          "line": 55,
+          "originalAnswerSpan": null,
+          "evidenceLevel": "Published reviewer finding; original source span unavailable here."
+        }
+      ],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.7/references/reuse.md",
+        "references/uikit/guidelines/u-003-values-stateful-controls.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": []
+    },
+    {
+      "case": "ios-uikit-text",
+      "family": "topic/text",
+      "priority": "P0",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "9afcc6a91cfcbb0e11cb21dfd972280bc2d49b1f18a798771c1937e538a150fc",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "ios-uikit-text",
+          "dev5": "meets",
+          "dev7": "material-gap",
+          "transition": "regression"
+        },
+        {
+          "provider": "claude",
+          "case": "ios-uikit-text",
+          "dev5": "material-gap",
+          "dev7": "not-assessable",
+          "transition": "inconclusive"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.7/references/checkout-uikit.md",
+        "references/uikit/guidelines/u-010-dynamic-type-layout-resilience.md"
+      ],
+      "caseLevelRegressionProviders": [
+        "gemini"
+      ],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": []
+    },
+    {
+      "case": "ios-swiftui-semantics",
+      "family": "topic/semantics",
+      "priority": "preservation-control",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "63e10b06dd993c30d5d7ff8814eb13eb239dfed5b19c40046aac9d957fa89797",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "ios-swiftui-semantics",
+          "dev5": "meets",
+          "dev7": "meets",
+          "transition": "preserved success"
+        },
+        {
+          "provider": "claude",
+          "case": "ios-swiftui-semantics",
+          "dev5": "meets",
+          "dev7": "meets",
+          "transition": "preserved success"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/semantics.md",
+        "references/swiftui/guidelines/g-001-labels-meaningful-names.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": []
+    },
+    {
+      "case": "ios-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "priority": "P0",
+      "questionChangedFromHistoricalV2": true,
+      "pairedQuestionSha256": "f981e62bcf7bd1b39dcf57e341e775c3facd5b33d39b2f3409e2ff286dbac1fe",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "ios-swiftui-lifecycle",
+          "dev5": "material-gap",
+          "dev7": "material-gap",
+          "transition": "persistent gap"
+        },
+        {
+          "provider": "claude",
+          "case": "ios-swiftui-lifecycle",
+          "dev5": "material-gap",
+          "dev7": "not-assessable",
+          "transition": "inconclusive"
+        }
+      ],
+      "publishedCriticalFindings": [
+        {
+          "provider": "gemini",
+          "modelAlias": "gemini-3.8-flash-low",
+          "arm": "dev5",
+          "case": "ios-swiftui-lifecycle",
+          "publishedReason": "Actual old sheet completion can use currentSessionID of new panel, consuming new ownership and requesting its focus while it is open.",
+          "source": "research/evaluation/dev7-flash-haiku-results-20261107/README.md",
+          "line": 56,
+          "originalAnswerSpan": null,
+          "evidenceLevel": "Published reviewer finding; original source span unavailable here."
+        },
+        {
+          "provider": "gemini",
+          "modelAlias": "gemini-3.8-flash-low",
+          "arm": "dev7",
+          "case": "ios-swiftui-lifecycle",
+          "publishedReason": "Requests attention before dismissal completes; interactive/non-button path has empty onDismiss and no restoration.",
+          "source": "research/evaluation/dev7-flash-haiku-results-20261107/README.md",
+          "line": 59,
+          "originalAnswerSpan": null,
+          "evidenceLevel": "Published reviewer finding; original source span unavailable here."
+        }
+      ],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.7/references/swiftui-dismissal.md",
+        "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": []
+    },
+    {
+      "case": "ios-swiftui-media",
+      "family": "topic/media",
+      "priority": "P1",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "b12c69f62639d32d35bf72db851861a484dd1aa2436623787a47968be965c948",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "ios-swiftui-media",
+          "dev5": "material-gap",
+          "dev7": "material-gap",
+          "transition": "persistent gap"
+        },
+        {
+          "provider": "claude",
+          "case": "ios-swiftui-media",
+          "dev5": "material-gap",
+          "dev7": "meets",
+          "transition": "gain"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.7/references/inspect-media.md",
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.6/references/sdk-ios.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": []
+    },
+    {
+      "case": "macos-appkit-actions",
+      "family": "topic/actions",
+      "priority": "P0",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "a3221645549ddf2c66f04db5b3d20952a7a1d01607d64463344ea58fc3fb6eee",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "macos-appkit-actions",
+          "dev5": "meets",
+          "dev7": "material-gap",
+          "transition": "regression"
+        },
+        {
+          "provider": "claude",
+          "case": "macos-appkit-actions",
+          "dev5": "meets",
+          "dev7": "not-assessable",
+          "transition": "inconclusive"
+        }
+      ],
+      "publishedCriticalFindings": [
+        {
+          "provider": "gemini",
+          "modelAlias": "gemini-3.8-flash-low",
+          "arm": "dev7",
+          "case": "macos-appkit-actions",
+          "publishedReason": "Complete example never connects Open or exposes an Open callback, losing one required independent task.",
+          "source": "research/evaluation/dev7-flash-haiku-results-20261107/README.md",
+          "line": 57,
+          "originalAnswerSpan": null,
+          "evidenceLevel": "Published reviewer finding; original source span unavailable here."
+        }
+      ],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/actions.md",
+        "references/macos/guidelines/m-001-nsaccessibility-roles-labels-values-actions.md"
+      ],
+      "caseLevelRegressionProviders": [
+        "gemini"
+      ],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": []
+    },
+    {
+      "case": "macos-appkit-structure",
+      "family": "topic/structure",
+      "priority": "P1",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "7f59da93d717eae764f0baedbd29bead108fefbb158ed0132c1fc8f870b9fc5e",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "macos-appkit-structure",
+          "dev5": "material-gap",
+          "dev7": "material-gap",
+          "transition": "persistent gap"
+        }
+      ],
+      "publishedCriticalFindings": [
+        {
+          "provider": "gemini",
+          "modelAlias": "gemini-3.8-flash-low",
+          "arm": "dev5",
+          "case": "macos-appkit-structure",
+          "publishedReason": "Both new buttons remain without targets/actions in advertised complete example; no ordinary Open/Details operation implemented.",
+          "source": "research/evaluation/dev7-flash-haiku-results-20261107/README.md",
+          "line": 58,
+          "originalAnswerSpan": null,
+          "evidenceLevel": "Published reviewer finding; original source span unavailable here."
+        }
+      ],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.7/references/appkit-grouping.md",
+        "references/macos/guidelines/m-003-grouping-hierarchy-desktop-layouts.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "macos-appkit-testing",
+      "family": "topic/testing",
+      "priority": "P1",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "f853b3b93cb6865771bf542f68da79adeae1d8866607d56103a409848dc1fdd3",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "macos-appkit-testing",
+          "dev5": "material-gap",
+          "dev7": "material-gap",
+          "transition": "persistent gap"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.7/references/testing.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "macos-swiftui-state",
+      "family": "topic/state",
+      "priority": "preservation-control",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "93fed5f76679b0f230e01516424aa8dbee8bb46bbc6262b489c8033a7b652400",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "macos-swiftui-state",
+          "dev5": "material-gap",
+          "dev7": "meets",
+          "transition": "gain"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.7/references/reuse.md",
+        "research/evaluation/milestone-package-v2/reference-cards/macos-values.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "macos-swiftui-text",
+      "family": "topic/text",
+      "priority": "P1",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "f4d1432a0aa93e63b243dc8b17ee8ac13e621297b7834d530ad3f47d62805b60",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "macos-swiftui-text",
+          "dev5": "not-assessable",
+          "dev7": "not-assessable",
+          "transition": "inconclusive"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.7/references/checkout-macos.md",
+        "research/evaluation/milestone-package-v2/reference-cards/macos-text-sizing.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "macos-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "priority": "P0",
+      "questionChangedFromHistoricalV2": true,
+      "pairedQuestionSha256": "370808352ca7dc1802e67f0aeaab1a2c0248ad6106decbce1fe338371369319e",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "macos-swiftui-lifecycle",
+          "dev5": "not-assessable",
+          "dev7": "material-gap",
+          "transition": "inconclusive"
+        }
+      ],
+      "publishedCriticalFindings": [
+        {
+          "provider": "gemini",
+          "modelAlias": "gemini-3.8-flash-low",
+          "arm": "dev7",
+          "case": "macos-swiftui-lifecycle",
+          "publishedReason": "The actual old sheet completion reads and consumes the latest presentation owner, so it can dismiss/clear the new panel. This violates the explicit overlapping-presentation preservation requirement.",
+          "source": "research/evaluation/dev7-flash-haiku-results-20261107/README.md",
+          "line": 60,
+          "originalAnswerSpan": null,
+          "evidenceLevel": "Published reviewer finding; original source span unavailable here."
+        }
+      ],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.7/references/swiftui-dismissal.md",
+        "research/evaluation/milestone-package-v2/reference-cards/macos-focus-requests.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "tvos-uikit-state",
+      "family": "topic/state",
+      "priority": "P1",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "5f3c8c25e44c4bf4221a9955a44edc50da7fbdf0bad70e933cb752e5440e488d",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "tvos-uikit-state",
+          "dev5": "material-gap",
+          "dev7": "material-gap",
+          "transition": "persistent gap"
+        }
+      ],
+      "publishedCriticalFindings": [
+        {
+          "provider": "gemini",
+          "modelAlias": "gemini-3.8-flash-low",
+          "arm": "dev5",
+          "case": "tvos-uikit-state",
+          "publishedReason": "Source configures a UIKit accessible leaf around independent ordinary child button(s) and supplies no forwarded Open activation/explicit child exposure. This contradicts task preservation; direct-handler tests are not ordinary accessibility navigation evidence.",
+          "source": "research/evaluation/dev7-flash-haiku-results-20261107/README.md",
+          "line": 61,
+          "originalAnswerSpan": null,
+          "evidenceLevel": "Published reviewer finding; original source span unavailable here."
+        }
+      ],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.7/references/reuse.md",
+        "references/tvos/guidelines/t-003-labels-values-traits-focused-controls.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "tvos-uikit-media",
+      "family": "topic/media",
+      "priority": "P1",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "1584405193ce1b13dc1ee1f6fd32a9b1cbd4c81bd7b3622cc585b00753d2a25e",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "tvos-uikit-media",
+          "dev5": "not-assessable",
+          "dev7": "material-gap",
+          "transition": "inconclusive"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.7/references/inspect-media.md",
+        "references/tvos/guidelines/t-007-media-playback-controls.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "tvos-uikit-lifecycle",
+      "family": "topic/lifecycle",
+      "priority": "P0",
+      "questionChangedFromHistoricalV2": true,
+      "pairedQuestionSha256": "9b4965749be4abff154ff82ea2d1442838c50dc19de96d7bf7570c663d41f07c",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "tvos-uikit-lifecycle",
+          "dev5": "meets",
+          "dev7": "material-gap",
+          "transition": "regression"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.7/references/uikit-dismissal.md",
+        "references/tvos/guidelines/t-002-initial-focus-modal-restoration.md"
+      ],
+      "caseLevelRegressionProviders": [
+        "gemini"
+      ],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "tvos-swiftui-actions",
+      "family": "topic/actions",
+      "priority": "preservation-control",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "5e241a2f3c435f9eeb42a9c03d5f261df0735616692dc88b3d409d825b88cc5a",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "tvos-swiftui-actions",
+          "dev5": "meets",
+          "dev7": "meets",
+          "transition": "preserved success"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/actions.md",
+        "research/evaluation/milestone-package-v2/reference-cards/tvos-actions.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "tvos-swiftui-structure",
+      "family": "topic/structure",
+      "priority": "preservation-control",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "79d7d5bb05ed7deaf3510b7fb3429fdf9e11d6e651b6f989516e44a306877a3d",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "tvos-swiftui-structure",
+          "dev5": "meets",
+          "dev7": "meets",
+          "transition": "preserved success"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/structure.md",
+        "research/evaluation/milestone-package-v2/reference-cards/tvos-children.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "tvos-swiftui-testing",
+      "family": "topic/testing",
+      "priority": "P1",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "tvos-swiftui-testing",
+          "dev5": "material-gap",
+          "dev7": "material-gap",
+          "transition": "persistent gap"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "research/evaluation/failure-driven/candidates/0.3.0-dev.7/references/testing.md"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "ios-uikit-no-change",
+      "family": "control/preservation",
+      "priority": "preservation-control",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "2a184c4680bf73ceae8b229cba3401e82a249515023b04d8eb76130584ff6113",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "ios-uikit-no-change",
+          "dev5": "meets",
+          "dev7": "meets",
+          "transition": "preserved success"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "ENTRYPOINT.md (reference-free control)"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "ios-swiftui-no-change",
+      "family": "control/preservation",
+      "priority": "preservation-control",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "702058f370f81716a175faa26c5f206edcbcf95941684f9eacec8f1042277de6",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "ios-swiftui-no-change",
+          "dev5": "meets",
+          "dev7": "meets",
+          "transition": "preserved success"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "ENTRYPOINT.md (reference-free control)"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "macos-appkit-no-change",
+      "family": "control/preservation",
+      "priority": "preservation-control",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "5ce9c8f199aeffdf70c26b545910183a41c4878da3f629c27d61099f46cd965e",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "macos-appkit-no-change",
+          "dev5": "meets",
+          "dev7": "meets",
+          "transition": "preserved success"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "ENTRYPOINT.md (reference-free control)"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "mixed-macos-owner",
+      "family": "control/ownership",
+      "priority": "P1",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "5c3d5710d5060f260e752be193c34c0ea11efb7270875478383a014a7ce52ef2",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "mixed-macos-owner",
+          "dev5": "material-gap",
+          "dev7": "material-gap",
+          "transition": "persistent gap"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "ENTRYPOINT.md (reference-free control)"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "ios-missing-reference",
+      "family": "control/unavailable-reference",
+      "priority": "preservation-control",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "7c78d80e047b9239cf16cb276d1a9437491ecf7d57dfdb86d86057a9ef4f0446",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "ios-missing-reference",
+          "dev5": "meets",
+          "dev7": "meets",
+          "transition": "preserved success"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "ENTRYPOINT.md (reference-free control)"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    },
+    {
+      "case": "tvos-version-boundary",
+      "family": "control/version-boundary",
+      "priority": "preservation-control",
+      "questionChangedFromHistoricalV2": false,
+      "pairedQuestionSha256": "92cd811da55d55b64373a71eea9ddec21922d305bdef119b51564a58414dec2c",
+      "publishedOutcomes": [
+        {
+          "provider": "gemini",
+          "case": "tvos-version-boundary",
+          "dev5": "meets",
+          "dev7": "meets",
+          "transition": "preserved success"
+        }
+      ],
+      "publishedCriticalFindings": [],
+      "guidanceAlreadySupplied": [
+        "ENTRYPOINT.md (reference-free control)"
+      ],
+      "caseLevelRegressionProviders": [],
+      "criterionGradeAvailability": "Unavailable: published summary gives whole-task outcomes only; grades not reconstructed.",
+      "missingProviderCases": [
+        "claude"
+      ]
+    }
+  ],
+  "criteria": [
+    {
+      "id": "ios-uikit-actions/criterion-0",
+      "case": "ios-uikit-actions",
+      "family": "topic/actions",
+      "evidenceClass": "partial_evidence",
+      "meets": "Keeps independently reachable ordinary controls while adding the requested shortcut.",
+      "macReferencesVerified": 1,
+      "nativeEvidenceScope": "Ordinary Archive/Delete dispatches use current B and leave the row/children unhidden. The fixture is an analogue, not the exact Open/Delete example or generated traversal.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Bind ordinary-path and exposed-control configuration to the proposed minimal example; accept equivalent native layouts without claiming traversal.",
+      "reviewProposals": [
+        "REV-ORDINARY-PATH"
+      ]
+    },
+    {
+      "id": "ios-uikit-actions/criterion-1",
+      "case": "ios-uikit-actions",
+      "family": "topic/actions",
+      "evidenceClass": "partial_evidence",
+      "meets": "Both ordinary and shortcut paths act once on the current owner/file and honor enabled state. Either refresh per-binding handlers with obsolete-binding rejection OR install a stable dispatcher that resolves current file/enabled state at activation. No particular token/helper/closure spelling required.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "Stale per-binding action is rejected and disabled ordinary/custom paths are quiet. The linked re-enable test executes only the ordinary path; stable current-owner dispatch is allowed by the resolved controller but not calibrated by these fixtures.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse current receipts; inspect current-item enabled shortcut tests and a valid stable-dispatcher grading witness before any additional native request.",
+      "reviewProposals": [
+        "REV-ORDINARY-PATH"
+      ]
+    },
+    {
+      "id": "ios-uikit-actions/criterion-2",
+      "case": "ios-uikit-actions",
+      "family": "topic/actions",
+      "evidenceClass": "partial_evidence",
+      "meets": "Repeated setup replaces obsolete handlers and avoids duplicate calls or unintended ownership.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "Weak-lifetime assertion and UIAction identifier replacement establish separate pieces. Identifier replacement on a bare UIControl is not repeated setup of the complete question's row.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Cross-link repeated row setup/callback-count evidence if available; calibrate ownership by behavior rather than requiring weak/token spelling.",
+      "reviewProposals": []
+    },
+    {
+      "id": "ios-uikit-state/criterion-0",
+      "case": "ios-uikit-state",
+      "family": "topic/state",
+      "evidenceClass": "partial_evidence",
+      "meets": "Repeated updates on the same instance explicitly replace or clear obsolete status/help/value overrides.",
+      "macReferencesVerified": 1,
+      "nativeEvidenceScope": "Button reconfiguration clears an old hint and changes value to Not saved. It does not assert clearing optional card status/help from A to absent B on the same composed card.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Locate a same-instance card contract with absent optional status/help and unrelated trait preservation; classify absence as a package gap until Mac return.",
+      "reviewProposals": [
+        "REV-STATE-PREMISE"
+      ]
+    },
+    {
+      "id": "ios-uikit-state/criterion-1",
+      "case": "ios-uikit-state",
+      "family": "topic/state",
+      "evidenceClass": "partial_evidence",
+      "meets": "Accepts replies only for the current request and relevant item/input; handles same-item replacement when material.",
+      "macReferencesVerified": 3,
+      "nativeEvidenceScope": "AVPlayer item owner tests reject old item, same-item generation and external replacement. They do not exercise the download card's request/update entry point. The question explicitly needs A/B rejection; same-item generation matters only when the proposed flow permits superseded requests.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse ownership evidence and bind it to the card contract; do not fail a valid A/B strategy solely for lacking a generation token or require AVPlayer in an unrelated implementation.",
+      "reviewProposals": [
+        "REV-STATE-SUPERSESSION"
+      ]
+    },
+    {
+      "id": "ios-uikit-state/criterion-2",
+      "case": "ios-uikit-state",
+      "family": "topic/state",
+      "evidenceClass": "partial_evidence",
+      "meets": "Preserves the existing Open behavior and unrelated state/traits while updating owned fields.",
+      "macReferencesVerified": 1,
+      "nativeEvidenceScope": "Archive/Delete callbacks use current B in another fixture. This does not assert the card's existing Open callback plus unrelated state/traits across async updates.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Map current Open identity/callback count and unrelated trait assertions to the same card; preserve this as integration coverage rather than a model failure.",
+      "reviewProposals": [
+        "REV-ORDINARY-PATH"
+      ]
+    },
+    {
+      "id": "ios-uikit-text/criterion-0",
+      "case": "ios-uikit-text",
+      "family": "topic/text",
+      "evidenceClass": "partial_evidence",
+      "meets": "Separates target-appropriate scalable font configuration, later updates and flexible layout; supplies integration when requested.",
+      "macReferencesVerified": 3,
+      "nativeEvidenceScope": "Choice-cell units assert effective font sizes and repeated explicit configuration; checkout units assert flexible total configuration and absence of a fixed enclosing height. Neither proves a live long-description/design-font update integration.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse typography and checkout evidence; specify the missing description, custom font and settings-update contract before asking for native work.",
+      "reviewProposals": [
+        "REV-TEXT-PRESERVATION"
+      ]
+    },
+    {
+      "id": "ios-uikit-text/criterion-1",
+      "case": "ios-uikit-text",
+      "family": "topic/text",
+      "evidenceClass": "partial_evidence",
+      "meets": "Preserves Pay identity, supplied styling/configuration and existing callback, accepting any justified flexible layout.",
+      "macReferencesVerified": 4,
+      "nativeEvidenceScope": "Checkout units preserve Pay object/font/title and exactly-once callback across updates. That example has two arranged subviews; the long localized description is in a separate choice-cell fixture.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Review a coherent total/description/existing-Pay composition; accept any justified flexible arrangement and keep rendering outside the unit claim.",
+      "reviewProposals": [
+        "REV-ORDINARY-PATH",
+        "REV-TEXT-PRESERVATION"
+      ]
+    },
+    {
+      "id": "ios-uikit-text/criterion-2",
+      "case": "ios-uikit-text",
+      "family": "topic/text",
+      "evidenceClass": "review_only",
+      "meets": "Separates SDK, deployment target and runtime, and checks the platform availability of each proposed API.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Availability and environment separation are source/provenance judgments. Font-unit success does not authenticate every proposed API or establish a runtime from deployment.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse exact SDK/deployment/runtime records and source declarations; request only missing declaration provenance from Mac, not an evaluation run.",
+      "reviewProposals": []
+    },
+    {
+      "id": "ios-uikit-text/criterion-3",
+      "case": "ios-uikit-text",
+      "family": "topic/text",
+      "evidenceClass": "review_only",
+      "meets": "Limits unit conclusions to configured fonts, constraints and callbacks; accepts focused compile/unit verification.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "The task explicitly requests what units establish. Constraint/font/callback observations do not prove rendered clipping or accessibility delivery.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Calibrate bounded conclusions and reject unsupported rendering claims while accepting compile/unit-only plans.",
+      "reviewProposals": []
+    },
+    {
+      "id": "ios-swiftui-semantics/criterion-0",
+      "case": "ios-swiftui-semantics",
+      "family": "topic/semantics",
+      "evidenceClass": "review_only",
+      "meets": "Identifies a supplied defect, or explains that no override/change is justified by the supplied evidence.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "No defect is supplied. The developer question and reviewed alternatives support leaving correct native semantics alone; an override is not an oracle requirement.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse preservation-family calibration and independently review source applicability; include a harmless optional explanation as a valid alternative.",
+      "reviewProposals": [
+        "REV-RESTRAINT-OWNER"
+      ]
+    },
+    {
+      "id": "ios-swiftui-semantics/criterion-1",
+      "case": "ios-swiftui-semantics",
+      "family": "topic/semantics",
+      "evidenceClass": "partial_evidence",
+      "meets": "Retains the native control, existing binding and ordinary behavior unless a demonstrated defect requires a change.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "Binding units exercise helper state in both directions. They do not inspect the question's Toggle composition or generated native semantics.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Keep Binding evidence as support; review the unchanged native Toggle/binding path rather than fabricating a custom-control implementation gate.",
+      "reviewProposals": [
+        "REV-RESTRAINT-OWNER"
+      ]
+    },
+    {
+      "id": "ios-swiftui-semantics/criterion-2",
+      "case": "ios-swiftui-semantics",
+      "family": "topic/semantics",
+      "evidenceClass": "review_only",
+      "meets": "Uses a user-facing contextual name where needed; distinguishes it from an automation identifier.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Contextual naming versus automation identifiers is a source/answer judgment. No naming assertion is bound, and no additional label is justified merely by the question.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Calibrate correctly retaining the visible label and rejecting identifier-as-user-name claims without demanding redundant overrides.",
+      "reviewProposals": []
+    },
+    {
+      "id": "ios-swiftui-lifecycle/criterion-0",
+      "case": "ios-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "evidenceClass": "partial_evidence",
+      "meets": "Resolves current eligibility at completion and uses the declared valid fallback if the origin disappears.",
+      "macReferencesVerified": 3,
+      "nativeEvidenceScope": "State tests resolve current eligible origin and removed-origin fallback. The helper always chooses constant open as fallback; fallback validity is an assumption rather than a checked general guarantee.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Review valid fallback/no-target alternatives and actual origin identity. Reuse helpers while separating any missing fallback eligibility check from delivered focus.",
+      "reviewProposals": [
+        "REV-DISMISSAL-PATH"
+      ]
+    },
+    {
+      "id": "ios-swiftui-lifecycle/criterion-1",
+      "case": "ios-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "evidenceClass": "partial_evidence",
+      "meets": "Rejects old/duplicate completion and consumes request ownership before external code can reenter.",
+      "macReferencesVerified": 3,
+      "nativeEvidenceScope": "Direct helper tests cover old/duplicate completion and reentrant begin. SheetExample reads mutable ticket in onDismiss; the tests do not establish which presentation owns an actual completion or that Close waits for completion.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Prioritize a completion-boundary and per-presentation wiring contract; retain first Gemini source finding and avoid counting helper passes as integration success.",
+      "reviewProposals": [
+        "REV-DISMISSAL-PATH"
+      ]
+    },
+    {
+      "id": "ios-swiftui-lifecycle/criterion-2",
+      "case": "ios-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "evidenceClass": "review_only",
+      "meets": "Calls the result a restoration request/state change unless stronger evidence actually exists.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "The observable is a restoration request/state change. Neither focus binding compilation nor helper focus strings establish delivery.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse evidence-boundary grading; accept explicit lack of delivery evidence without adding UI/manual gates.",
+      "reviewProposals": []
+    },
+    {
+      "id": "ios-swiftui-media/criterion-0",
+      "case": "ios-swiftui-media",
+      "family": "topic/media",
+      "evidenceClass": "partial_evidence",
+      "meets": "Models loading, no current item, successfully absent metadata, positive metadata and errors distinctly where relevant.",
+      "macReferencesVerified": 1,
+      "nativeEvidenceScope": "Old MediaState distinguishes not-loaded from empty only; it has no separate error/no-item/loading result model. New media-ios-v2 phase tests are relevant existing supplemental evidence.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Bind inspected media-v2 no-item/absent/failure/loading/ready assertions to this criterion in a new controller proposal; do not replace the frozen question.",
+      "reviewProposals": [
+        "REV-MEDIA-OBSERVABLE"
+      ]
+    },
+    {
+      "id": "ios-swiftui-media/criterion-1",
+      "case": "ios-swiftui-media",
+      "family": "topic/media",
+      "evidenceClass": "partial_evidence",
+      "meets": "Rejects a completion when request generation or actual current item no longer matches.",
+      "macReferencesVerified": 1,
+      "nativeEvidenceScope": "Old stale-track unit checks load generation only; its state model does not bind results to player.currentItem. New media-v2 has actual item replacement and generation tests.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse new item-owner receipts and map the actual current-item plus request guard; keep external reload/observer scope explicit.",
+      "reviewProposals": [
+        "REV-MEDIA-OBSERVABLE"
+      ]
+    },
+    {
+      "id": "ios-swiftui-media/criterion-2",
+      "case": "ios-swiftui-media",
+      "family": "topic/media",
+      "evidenceClass": "partial_evidence",
+      "meets": "Metadata inspection leaves actual selected audio/subtitle options unchanged unless explicitly requested.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "Old preference test asserts player identity, volume and mute, not selected audio/subtitle options. Synthetic track selected-ID preservation is also not AVMediaSelection preservation.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse native media-v2 loading-preserves-choice evidence and native metadata inspection fixtures; require actual selected-option assertions for this claim.",
+      "reviewProposals": [
+        "REV-MEDIA-OBSERVABLE"
+      ]
+    },
+    {
+      "id": "ios-swiftui-media/criterion-3",
+      "case": "ios-swiftui-media",
+      "family": "topic/media",
+      "evidenceClass": "review_only",
+      "meets": "Reports an audio-description/forced-caption flag as metadata, with conclusions limited to the available source.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Description/forced-caption characteristics are metadata. New tag/option tests do not establish descriptive content quality, availability in every asset or delivered playback.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Review metadata wording against the captured source/fixture; calibrate bounded positive/negative/unavailable conclusions.",
+      "reviewProposals": []
+    },
+    {
+      "id": "macos-appkit-actions/criterion-0",
+      "case": "macos-appkit-actions",
+      "family": "topic/actions",
+      "evidenceClass": "partial_evidence",
+      "meets": "Keeps independently reachable ordinary controls while adding the requested shortcut.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "Direct Open/Save dispatch tests preserve independent operations, but they do not alone assert the requested Delete path or the container's child exposure configuration.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Link existing native container/child and ordinary callback assertions together; treat operation names as example policy, not a required fixture spelling.",
+      "reviewProposals": [
+        "REV-ORDINARY-PATH"
+      ]
+    },
+    {
+      "id": "macos-appkit-actions/criterion-1",
+      "case": "macos-appkit-actions",
+      "family": "topic/actions",
+      "evidenceClass": "partial_evidence",
+      "meets": "Both ordinary and shortcut paths act once on the current owner/file and honor enabled state. Either refresh per-binding handlers with obsolete-binding rejection OR install a stable dispatcher that resolves current file/enabled state at activation. No particular token/helper/closure spelling required.",
+      "macReferencesVerified": 3,
+      "nativeEvidenceScope": "Stale shortcut and disabled Save/shortcut units are relevant. Stable current-owner dispatch remains a valid reviewed alternative, and the linked subset omits positive shortcut/re-enable/current ordinary rebinding assertions.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse additional existing DesktopActions tests and calibrate stable versus obsolete per-binding handlers; no token-shaped answer requirement.",
+      "reviewProposals": [
+        "REV-ORDINARY-PATH"
+      ]
+    },
+    {
+      "id": "macos-appkit-actions/criterion-2",
+      "case": "macos-appkit-actions",
+      "family": "topic/actions",
+      "evidenceClass": "partial_evidence",
+      "meets": "Repeated setup replaces obsolete handlers and avoids duplicate calls or unintended ownership.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "Repeated setup asserts one shortcut object; lifetime test rejects row retention. One shortcut count does not itself prove exactly-once ordinary and shortcut callbacks after repeated setup.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Inspect existing callback/rebind checks and map multiplicity separately from action-array cardinality.",
+      "reviewProposals": []
+    },
+    {
+      "id": "macos-appkit-structure/criterion-0",
+      "case": "macos-appkit-structure",
+      "family": "topic/structure",
+      "evidenceClass": "partial_evidence",
+      "meets": "Groups descriptive fragments without merging away the independent Open and Details tasks.",
+      "macReferencesVerified": 1,
+      "nativeEvidenceScope": "Container unit checks a non-element parent with Open/Save child flags. It does not assert grouped heading/balance with separate Open/Details, and AppKit parent role/children cannot be judged from one Boolean alone.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Review full AppKit role/children composition and valid parent-element alternatives; reuse metadata assertions at their limited scope.",
+      "reviewProposals": [
+        "REV-RESTRAINT-OWNER"
+      ]
+    },
+    {
+      "id": "macos-appkit-structure/criterion-1",
+      "case": "macos-appkit-structure",
+      "family": "topic/structure",
+      "evidenceClass": "partial_evidence",
+      "meets": "Preserves ordinary task completion and uses stable current identity across reorder/removal; landmarks are meaningful.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "Outline tests preserve selection across sibling reorder and clear removed selection. They are not the report row's ordinary action wiring or a meaningful heading/landmark policy.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Map stable report identity and independent task callbacks; optional rotors may be omitted if ordinary access and meaningful structure remain correct.",
+      "reviewProposals": [
+        "REV-ORDINARY-PATH"
+      ]
+    },
+    {
+      "id": "macos-appkit-structure/criterion-2",
+      "case": "macos-appkit-structure",
+      "family": "topic/structure",
+      "evidenceClass": "review_only",
+      "meets": "Describes only configured children, direct search results or compiled modifiers as those observations.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Configured children and direct search callbacks are narrower than generated navigation, spoken output or focus delivery.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Keep the distinction in grading and verify any claimed search result against exact asserted IDs; no new UI test requirement.",
+      "reviewProposals": []
+    },
+    {
+      "id": "macos-appkit-testing/criterion-0",
+      "case": "macos-appkit-testing",
+      "family": "topic/testing",
+      "evidenceClass": "review_only",
+      "meets": "Maps each claim to the actual compile/unit assertion and distinguishes application state from generated semantics.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Question and current testing-policy binding explicitly distinguish compile/helper behavior from spoken output and rotor traversal.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse testing-family calibration bytes when returned; accept a useful bounded plan rather than requiring unrequested runtime observations.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    },
+    {
+      "id": "macos-appkit-testing/criterion-1",
+      "case": "macos-appkit-testing",
+      "family": "topic/testing",
+      "evidenceClass": "review_only",
+      "meets": "Preserves first source, diagnostics and environment separately from repairs, oracle errors and deliberate mutants.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Failure preservation/classification is controller policy, not an accessibility API guarantee or a new native behavior test.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Check correct, deliberate-defect, oracle-error and infrastructure examples against preserved original records; keep repairs separate.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    },
+    {
+      "id": "macos-appkit-testing/criterion-2",
+      "case": "macos-appkit-testing",
+      "family": "topic/testing",
+      "evidenceClass": "review_only",
+      "meets": "Checks actual Swift imports/annotations and records SDK, deployment and actual runtime separately.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Actual Swift declarations and SDK/deployment/runtime fields need provenance review. Policy text alone cannot authenticate imports or SDK currency.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Use Mac's existing source/environment records; report missing declaration bytes honestly and avoid deriving runtime from deployment.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    },
+    {
+      "id": "macos-appkit-testing/criterion-3",
+      "case": "macos-appkit-testing",
+      "family": "topic/testing",
+      "evidenceClass": "review_only",
+      "meets": "Uses compile/unit checks only for this request and does not make manual/UI verification a release prerequisite.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Compile/unit-only scope is explicit in both task and project policy. Mandatory UI/manual validation would change the request.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Calibrate a correctly limited validation plan and an overclaiming plan without adding native runs.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    },
+    {
+      "id": "macos-swiftui-state/criterion-0",
+      "case": "macos-swiftui-state",
+      "family": "topic/state",
+      "evidenceClass": "partial_evidence",
+      "meets": "Repeated updates on the same instance explicitly replace or clear obsolete status/help/value overrides.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "SettingsState clears status and priority; a separate availability-derived hint toggles. This does not establish optional card status/help/value reset as a single update.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Cross-link same-instance composed card updates; preserve the macOS declaration card as declaration evidence only.",
+      "reviewProposals": [
+        "REV-STATE-PREMISE"
+      ]
+    },
+    {
+      "id": "macos-swiftui-state/criterion-1",
+      "case": "macos-swiftui-state",
+      "family": "topic/state",
+      "evidenceClass": "partial_evidence",
+      "meets": "Accepts replies only for the current request and relevant item/input; handles same-item replacement when material.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "Track load generation and form input-snapshot tests are separate helpers, not file-card identity and request ownership together. Same-item replacement is conditional on the proposed flow, not a hidden requirement to spell a generation token.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Bind a coherent A/B card contract; accept sufficient identity/snapshot strategies and add same-item checks only where material.",
+      "reviewProposals": [
+        "REV-STATE-SUPERSESSION"
+      ]
+    },
+    {
+      "id": "macos-swiftui-state/criterion-2",
+      "case": "macos-swiftui-state",
+      "family": "topic/state",
+      "evidenceClass": "partial_evidence",
+      "meets": "Preserves the existing Open behavior and unrelated state/traits while updating owned fields.",
+      "macReferencesVerified": 1,
+      "nativeEvidenceScope": "DocumentState selection callback for B is not the card's existing Open callback or preservation of its unrelated native state.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Locate exact Open/current-owner/trait preservation assertions. Treat the testing note as controller policy here, not supplied subject context.",
+      "reviewProposals": [
+        "REV-ORDINARY-PATH"
+      ]
+    },
+    {
+      "id": "macos-swiftui-text/criterion-0",
+      "case": "macos-swiftui-text",
+      "family": "topic/text",
+      "evidenceClass": "genuine_gap",
+      "meets": "Separates target-appropriate scalable font configuration, later updates and flexible layout; supplies integration when requested.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "No native contract is bound. Preferences.swift compiles semantic text and an environment-derived layout policy, but has no total/description/existing-Pay/design-font/settings-source integration.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "After the Mac packet, propose only an unresolved checkout composition and explicit settings-input contract; a permanently flexible layout is a valid alternative.",
+      "reviewProposals": [
+        "REV-TEXT-PRESERVATION"
+      ]
+    },
+    {
+      "id": "macos-swiftui-text/criterion-1",
+      "case": "macos-swiftui-text",
+      "family": "topic/text",
+      "evidenceClass": "genuine_gap",
+      "meets": "Preserves Pay identity, supplied styling/configuration and existing callback, accepting any justified flexible layout.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "No macOS checkout Pay identity/style/callback preservation assertion is bound or present in the inspected text preference example.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Seek an existing relevant receipt before authoring. If absent, specify narrowly testable Pay callback/configuration preservation with reviewed alternative layouts.",
+      "reviewProposals": [
+        "REV-ORDINARY-PATH",
+        "REV-TEXT-PRESERVATION"
+      ]
+    },
+    {
+      "id": "macos-swiftui-text/criterion-2",
+      "case": "macos-swiftui-text",
+      "family": "topic/text",
+      "evidenceClass": "review_only",
+      "meets": "Separates SDK, deployment target and runtime, and checks the platform availability of each proposed API.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Captured macOS DynamicTypeSize/ScaledMetric declarations support availability at that snapshot, not system-settings propagation or runtime execution.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Have Mac authenticate the existing declaration source/hash and exact environment; keep conditional app-driven settings integration valid.",
+      "reviewProposals": []
+    },
+    {
+      "id": "macos-swiftui-text/criterion-3",
+      "case": "macos-swiftui-text",
+      "family": "topic/text",
+      "evidenceClass": "review_only",
+      "meets": "Limits unit conclusions to configured fonts, constraints and callbacks; accepts focused compile/unit verification.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Units may establish configuration/callbacks or pure layout policy, not rendered scaling/clipping. The policy note is controller-only for this non-testing case.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Review conclusions at assertion scope; do not require a subject read of a note that was not supplied.",
+      "reviewProposals": []
+    },
+    {
+      "id": "macos-swiftui-lifecycle/criterion-0",
+      "case": "macos-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "evidenceClass": "partial_evidence",
+      "meets": "Resolves current eligibility at completion and uses the declared valid fallback if the origin disappears.",
+      "macReferencesVerified": 3,
+      "nativeEvidenceScope": "Helper tests mirror iOS eligibility/removal logic and constant fallback assumptions. Captured focus declarations do not establish that the fallback is currently usable.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Review origin/fallback/no-target contract and source integration; reuse current helper receipts without claiming delivered focus.",
+      "reviewProposals": [
+        "REV-DISMISSAL-PATH"
+      ]
+    },
+    {
+      "id": "macos-swiftui-lifecycle/criterion-1",
+      "case": "macos-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "evidenceClass": "partial_evidence",
+      "meets": "Rejects old/duplicate completion and consumes request ownership before external code can reenter.",
+      "macReferencesVerified": 3,
+      "nativeEvidenceScope": "Helper consumes state before callbacks and rejects old/duplicate tickets, but direct invocation does not prove actual sheet completion ownership or callback installation.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Share the lifecycle completion-wiring review with iOS; keep platform-specific focus binding and request boundaries explicit.",
+      "reviewProposals": [
+        "REV-DISMISSAL-PATH"
+      ]
+    },
+    {
+      "id": "macos-swiftui-lifecycle/criterion-2",
+      "case": "macos-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "evidenceClass": "review_only",
+      "meets": "Calls the result a restoration request/state change unless stronger evidence actually exists.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Focus strings/binding are request evidence. The testing note is controller policy for this row, not a subject-read requirement.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Accept explicitly bounded request/state conclusions and correct the provenance interpretation equally in both conditions.",
+      "reviewProposals": []
+    },
+    {
+      "id": "tvos-uikit-state/criterion-0",
+      "case": "tvos-uikit-state",
+      "family": "topic/state",
+      "evidenceClass": "partial_evidence",
+      "meets": "Repeated updates on the same instance explicitly replace or clear obsolete status/help/value overrides.",
+      "macReferencesVerified": 1,
+      "nativeEvidenceScope": "RegionState changes a selection label to Not selected. It does not cover clearing optional download status/help or value on the same card.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse any actual same-instance reset test returned by Mac; do not promote a nearby selection test into whole-card coverage.",
+      "reviewProposals": [
+        "REV-STATE-PREMISE"
+      ]
+    },
+    {
+      "id": "tvos-uikit-state/criterion-1",
+      "case": "tvos-uikit-state",
+      "family": "topic/state",
+      "evidenceClass": "partial_evidence",
+      "meets": "Accepts replies only for the current request and relevant item/input; handles same-item replacement when material.",
+      "macReferencesVerified": 3,
+      "nativeEvidenceScope": "Native media owner rejects old item, same-item generation and external replacement; the download-card update path is separate. The stated A/B failure must not become an unconditional generation-token requirement.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse ownership evidence, bind file/request identity and test same-item supersession only when the answer's proposed flow makes it material.",
+      "reviewProposals": [
+        "REV-STATE-SUPERSESSION"
+      ]
+    },
+    {
+      "id": "tvos-uikit-state/criterion-2",
+      "case": "tvos-uikit-state",
+      "family": "topic/state",
+      "evidenceClass": "partial_evidence",
+      "meets": "Preserves the existing Open behavior and unrelated state/traits while updating owned fields.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "Direct Play/Details callbacks show independent ordinary dispatch in another row; existing Open, unrelated traits and async card updates are not asserted together.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Map exact current Open behavior and state preservation; avoid asserting remote-input delivery from primary-action dispatch.",
+      "reviewProposals": [
+        "REV-ORDINARY-PATH"
+      ]
+    },
+    {
+      "id": "tvos-uikit-media/criterion-0",
+      "case": "tvos-uikit-media",
+      "family": "topic/media",
+      "evidenceClass": "partial_evidence",
+      "meets": "Models loading, no current item, successfully absent metadata, positive metadata and errors distinctly where relevant.",
+      "macReferencesVerified": 5,
+      "nativeEvidenceScope": "Closure owner covers unavailable/error/loading generation, while native metadata fixture covers unavailable versus absent. Together they are relevant but separate state/loader implementations.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse both existing packages, map loaded-positive and no-match phases explicitly, then review the composed metadata state contract.",
+      "reviewProposals": [
+        "REV-MEDIA-OBSERVABLE"
+      ]
+    },
+    {
+      "id": "tvos-uikit-media/criterion-1",
+      "case": "tvos-uikit-media",
+      "family": "topic/media",
+      "evidenceClass": "partial_evidence",
+      "meets": "Rejects a completion when request generation or actual current item no longer matches.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "Old-item/external-item and same-item-generation assertions exist in the linked owner package. Metadata.group itself has no request owner; integration remains the application's responsibility.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Bind owner plus actual metadata completion at one entry point; retain these receipts rather than rerunning them for a missing ledger association.",
+      "reviewProposals": [
+        "REV-MEDIA-OBSERVABLE"
+      ]
+    },
+    {
+      "id": "tvos-uikit-media/criterion-2",
+      "case": "tvos-uikit-media",
+      "family": "topic/media",
+      "evidenceClass": "partial_evidence",
+      "meets": "Metadata inspection leaves actual selected audio/subtitle options unchanged unless explicitly requested.",
+      "macReferencesVerified": 1,
+      "nativeEvidenceScope": "Native tagged fixture directly preserves chosen descriptive audio and subtitle Off while inspecting both groups. Other selected-caption configurations and the composed owner path are outside this selected witness.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse this strong native witness; locate non-Off caption preservation before deciding whether any additional assertion is needed.",
+      "reviewProposals": [
+        "REV-MEDIA-OBSERVABLE"
+      ]
+    },
+    {
+      "id": "tvos-uikit-media/criterion-3",
+      "case": "tvos-uikit-media",
+      "family": "topic/media",
+      "evidenceClass": "review_only",
+      "meets": "Reports an audio-description/forced-caption flag as metadata, with conclusions limited to the available source.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Metadata source reads public descriptive/forced characteristic flags. These are not guarantees about spoken narration quality, rendered captions or runtime playback delivery.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Calibrate metadata-only wording and verify exact source scope; do not invent a runtime accessibility outcome.",
+      "reviewProposals": []
+    },
+    {
+      "id": "tvos-uikit-lifecycle/criterion-0",
+      "case": "tvos-uikit-lifecycle",
+      "family": "topic/lifecycle",
+      "evidenceClass": "direct_evidence",
+      "meets": "Resolves current eligibility at completion and uses the declared valid fallback if the origin disappears.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "Native helper source rechecks current ancestry/enabled/visibility and selects eligible origin/fallback; linked completed/removed-origin units assert request target identity. This establishes the helper's bounded restoration decision, not actual completion wiring or focus delivery.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse existing helper receipts; map additional existing no-target/disabled/foreign-target assertions and separately review dismissal integration.",
+      "reviewProposals": [
+        "REV-DISMISSAL-PATH"
+      ]
+    },
+    {
+      "id": "tvos-uikit-lifecycle/criterion-1",
+      "case": "tvos-uikit-lifecycle",
+      "family": "topic/lifecycle",
+      "evidenceClass": "direct_evidence",
+      "meets": "Rejects old/duplicate completion and consumes request ownership before external code can reenter.",
+      "macReferencesVerified": 3,
+      "nativeEvidenceScope": "Direct helper units reject old completion and duplicate invocation and preserve a reentrantly started new session. Source consumes active ownership before invoking external request code.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse these assertions and the stale-completion negative witness; review any proposed coordinator for overlapping mutation without claiming the helper tested a generated answer.",
+      "reviewProposals": [
+        "REV-DISMISSAL-PATH"
+      ]
+    },
+    {
+      "id": "tvos-uikit-lifecycle/criterion-2",
+      "case": "tvos-uikit-lifecycle",
+      "family": "topic/lifecycle",
+      "evidenceClass": "review_only",
+      "meets": "Calls the result a restoration request/state change unless stronger evidence actually exists.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Observed effects are injected request/target configuration, not delivered remote or VoiceOver focus.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Preserve request-only claims and separately recorded SDK/runtime evidence; no UI/manual gate.",
+      "reviewProposals": []
+    },
+    {
+      "id": "tvos-swiftui-actions/criterion-0",
+      "case": "tvos-swiftui-actions",
+      "family": "topic/actions",
+      "evidenceClass": "partial_evidence",
+      "meets": "Keeps independently reachable ordinary controls while adding the requested shortcut.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "Document-state selection/deletion units preserve operation identity and once-only deletion. They do not execute the installed ordinary and accessibility Button closures in generated SwiftUI semantics.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Review compiled DocumentExample wiring for both paths and accept equivalent stable dispatch; do not inflate state tests into traversal evidence.",
+      "reviewProposals": [
+        "REV-ORDINARY-PATH"
+      ]
+    },
+    {
+      "id": "tvos-swiftui-actions/criterion-1",
+      "case": "tvos-swiftui-actions",
+      "family": "topic/actions",
+      "evidenceClass": "partial_evidence",
+      "meets": "Both ordinary and shortcut paths act once on the current owner/file and honor enabled state. Either refresh per-binding handlers with obsolete-binding rejection OR install a stable dispatcher that resolves current file/enabled state at activation. No particular token/helper/closure spelling required.",
+      "macReferencesVerified": 1,
+      "nativeEvidenceScope": "A retained model action is invalidated by revision change. This is one per-binding strategy, not proof of enabled-state behavior or a requirement to reject a valid permanent current-owner dispatcher.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse current tests, inspect enabled-state composition and calibrate the resolved stable-dispatcher alternative.",
+      "reviewProposals": [
+        "REV-ORDINARY-PATH"
+      ]
+    },
+    {
+      "id": "tvos-swiftui-actions/criterion-2",
+      "case": "tvos-swiftui-actions",
+      "family": "topic/actions",
+      "evidenceClass": "partial_evidence",
+      "meets": "Repeated setup replaces obsolete handlers and avoids duplicate calls or unintended ownership.",
+      "macReferencesVerified": 2,
+      "nativeEvidenceScope": "Native BridgeOwner replaces callbacks and prevents old native-view dispatch. That does not by itself establish repeated SwiftUI action installation or lifetime of the complete row.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Map source composition and direct callback multiplicity/lifetime separately; the testing note is controller policy here.",
+      "reviewProposals": []
+    },
+    {
+      "id": "tvos-swiftui-structure/criterion-0",
+      "case": "tvos-swiftui-structure",
+      "family": "topic/structure",
+      "evidenceClass": "partial_evidence",
+      "meets": "Groups descriptive fragments without merging away the independent Open and Details tasks.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "DocumentExample compiles .contain with separate article/Delete Buttons, but there is no bound assertion for the requested heading/balance/Open/Details composition. Compilation does not establish generated child navigation.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse compiled composition and tvOS declaration card; review an exact descriptive-subgroup/independent-control source contract, accepting optional rotor omission.",
+      "reviewProposals": [
+        "REV-RESTRAINT-OWNER"
+      ]
+    },
+    {
+      "id": "tvos-swiftui-structure/criterion-1",
+      "case": "tvos-swiftui-structure",
+      "family": "topic/structure",
+      "evidenceClass": "partial_evidence",
+      "meets": "Preserves ordinary task completion and uses stable current identity across reorder/removal; landmarks are meaningful.",
+      "macReferencesVerified": 3,
+      "nativeEvidenceScope": "Model units assert landmark subset, stable selection across reorder and clearing on removal. They do not exercise Open/Details handlers or prove a semantically useful generated landmark.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Cross-link ordinary-action source and stable report identities while keeping landmark meaningfulness an independent review judgment.",
+      "reviewProposals": [
+        "REV-ORDINARY-PATH"
+      ]
+    },
+    {
+      "id": "tvos-swiftui-structure/criterion-2",
+      "case": "tvos-swiftui-structure",
+      "family": "topic/structure",
+      "evidenceClass": "review_only",
+      "meets": "Describes only configured children, direct search results or compiled modifiers as those observations.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "State/compiled modifiers cannot prove generated traversal, speech or focus delivery; the non-testing row did not receive the testing note.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Apply controller evidence limits without requiring an unread note or new UI/manual validation.",
+      "reviewProposals": []
+    },
+    {
+      "id": "tvos-swiftui-testing/criterion-0",
+      "case": "tvos-swiftui-testing",
+      "family": "topic/testing",
+      "evidenceClass": "review_only",
+      "meets": "Maps each claim to the actual compile/unit assertion and distinguishes application state from generated semantics.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "The exact question asks whether compile/extracted-state passes establish speech/rotor behavior. They do not establish those unasserted outcomes under project policy.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse testing-family correct/overclaim/ungradable calibration and avoid a native run for this reasoning control.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    },
+    {
+      "id": "tvos-swiftui-testing/criterion-1",
+      "case": "tvos-swiftui-testing",
+      "family": "topic/testing",
+      "evidenceClass": "review_only",
+      "meets": "Preserves first source, diagnostics and environment separately from repairs, oracle errors and deliberate mutants.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Preserving first failures and distinguishing accidental/oracle/harness/mutant failures is controller policy with no required new accessibility unit.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Review historical first/repair records and grading examples; never count compiler or simulator failure as an intended mutant rejection.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    },
+    {
+      "id": "tvos-swiftui-testing/criterion-2",
+      "case": "tvos-swiftui-testing",
+      "family": "topic/testing",
+      "evidenceClass": "review_only",
+      "meets": "Checks actual Swift imports/annotations and records SDK, deployment and actual runtime separately.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Imports/annotations and exact environment provenance must be checked rather than inferred. Newer SDK compilation is not an observed tvOS deployment-target runtime.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Use existing Mac declaration and receipt environment captures; leave unavailable source/runtime evidence explicit.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    },
+    {
+      "id": "tvos-swiftui-testing/criterion-3",
+      "case": "tvos-swiftui-testing",
+      "family": "topic/testing",
+      "evidenceClass": "review_only",
+      "meets": "Uses compile/unit checks only for this request and does not make manual/UI verification a release prerequisite.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Compile/unit-only scope is part of the question, not a generic claim that all accessibility can be proven by units.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Calibrate a useful bounded plan and reject unsupported outcome claims without adding UI/manual prerequisites.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    },
+    {
+      "id": "ios-uikit-no-change/criterion-0",
+      "case": "ios-uikit-no-change",
+      "family": "control/preservation",
+      "evidenceClass": "review_only",
+      "meets": "Uses only applicable target/framework semantics when discussing the working control.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Working UISwitch naming/state is given as a task premise; default-behavior claims still require UIKit-specific source scope rather than another framework's rules.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse accepted control contract and preservation calibration; verify any added API claim separately.",
+      "reviewProposals": []
+    },
+    {
+      "id": "ios-uikit-no-change/criterion-1",
+      "case": "ios-uikit-no-change",
+      "family": "control/preservation",
+      "evidenceClass": "review_only",
+      "meets": "Leaves the valid standard control and ordinary action in place, explaining why a replacement is unnecessary.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "No defect is reported and ordinary behavior works. Replacing the native control is not required by the task.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Accept no-change and optional bounded advice; do not require a reference fix or mutation suite for a reasoning control.",
+      "reviewProposals": [
+        "REV-RESTRAINT-OWNER"
+      ]
+    },
+    {
+      "id": "ios-uikit-no-change/criterion-2",
+      "case": "ios-uikit-no-change",
+      "family": "control/preservation",
+      "evidenceClass": "review_only",
+      "meets": "Names only references supplied or actually read; planned lookup is described as planned.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Reference-free C1 supplies no reference-file reads. Naming a document or planning lookup is not evidence that it was read.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Audit actual captured context/read traces when available; accept an honest no-read statement.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    },
+    {
+      "id": "ios-swiftui-no-change/criterion-0",
+      "case": "ios-swiftui-no-change",
+      "family": "control/preservation",
+      "evidenceClass": "review_only",
+      "meets": "Uses only applicable target/framework semantics when discussing the working control.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "The question supplies a correctly bound standard Toggle. It does not demonstrate a need for custom role or label or justify universal spoken-output claims.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse framework-specific source review and preserve an explicit no-defect premise.",
+      "reviewProposals": []
+    },
+    {
+      "id": "ios-swiftui-no-change/criterion-1",
+      "case": "ios-swiftui-no-change",
+      "family": "control/preservation",
+      "evidenceClass": "review_only",
+      "meets": "Leaves the valid standard control and ordinary action in place, explaining why a replacement is unnecessary.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "The existing Toggle and binding should remain; no replacement is needed to satisfy this control.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse accepted control alternatives and distinguish optional comments from required changes.",
+      "reviewProposals": [
+        "REV-RESTRAINT-OWNER"
+      ]
+    },
+    {
+      "id": "ios-swiftui-no-change/criterion-2",
+      "case": "ios-swiftui-no-change",
+      "family": "control/preservation",
+      "evidenceClass": "review_only",
+      "meets": "Names only references supplied or actually read; planned lookup is described as planned.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "No source reads occurred merely because a candidate instruction named references. C1 provenance must stay separate from inline C2 material.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Use actual read/supplied-context evidence; do not penalize an answer for declining to claim an unavailable read.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    },
+    {
+      "id": "macos-appkit-no-change/criterion-0",
+      "case": "macos-appkit-no-change",
+      "family": "control/preservation",
+      "evidenceClass": "review_only",
+      "meets": "Uses only applicable target/framework semantics when discussing the working control.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Correct NSButton title/enabled/current target/action are task premises. AppKit roles/children require AppKit reasoning rather than a UIKit container flag shortcut.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Retain accepted control interpretation and calibrate platform-specific alternatives.",
+      "reviewProposals": []
+    },
+    {
+      "id": "macos-appkit-no-change/criterion-1",
+      "case": "macos-appkit-no-change",
+      "family": "control/preservation",
+      "evidenceClass": "review_only",
+      "meets": "Leaves the valid standard control and ordinary action in place, explaining why a replacement is unnecessary.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Replacing the correctly configured standard NSButton is unnecessary on the supplied evidence.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Accept preservation with bounded explanation and optional advice; do not create an invented defect.",
+      "reviewProposals": [
+        "REV-RESTRAINT-OWNER"
+      ]
+    },
+    {
+      "id": "macos-appkit-no-change/criterion-2",
+      "case": "macos-appkit-no-change",
+      "family": "control/preservation",
+      "evidenceClass": "review_only",
+      "meets": "Names only references supplied or actually read; planned lookup is described as planned.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Reference-free control does not establish a source read or current SDK verification.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Compare any read claim with actual context/retrieval records, not reference names.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    },
+    {
+      "id": "mixed-macos-owner/criterion-0",
+      "case": "mixed-macos-owner",
+      "family": "control/ownership",
+      "evidenceClass": "review_only",
+      "meets": "Asks for or explicitly conditions advice on the actual owning view/coordinator layer.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "The owner of grouping is explicitly unknown. Asking for the owning SwiftUI/AppKit/coordinator code or giving conditional advice satisfies the task.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Preserve accepted conditional alternatives; use the existing ownership-family calibration before any model comparison.",
+      "reviewProposals": [
+        "REV-RESTRAINT-OWNER"
+      ]
+    },
+    {
+      "id": "mixed-macos-owner/criterion-1",
+      "case": "mixed-macos-owner",
+      "family": "control/ownership",
+      "evidenceClass": "review_only",
+      "meets": "Explains the ownership-dependent boundary without inventing a cause.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Limited information does not establish which layer is defective. In particular an AppKit isAccessibilityElement Boolean alone does not settle role/child behavior.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Prioritize a valid AppKit parent-role/children counterexample in calibration; keep the observed Gemini overgeneralization as development evidence.",
+      "reviewProposals": [
+        "REV-RESTRAINT-OWNER"
+      ]
+    },
+    {
+      "id": "mixed-macos-owner/criterion-2",
+      "case": "mixed-macos-owner",
+      "family": "control/ownership",
+      "evidenceClass": "review_only",
+      "meets": "Names only references supplied or actually read; planned lookup is described as planned.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Asking for code/source differs from claiming it was read. The unavailable ownership layer cannot be treated as inspected evidence.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Accept honest conditional guidance and verify any read claim against retained inputs.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    },
+    {
+      "id": "ios-missing-reference/criterion-0",
+      "case": "ios-missing-reference",
+      "family": "control/unavailable-reference",
+      "evidenceClass": "review_only",
+      "meets": "Separates general advice from the unread reference’s exact contract.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "The file is explicitly unavailable. General advice must not be attributed to its exact unseen API contract.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse unavailable-reference calibration with a correctly bounded response and fabricated-attribution defect.",
+      "reviewProposals": []
+    },
+    {
+      "id": "ios-missing-reference/criterion-1",
+      "case": "ios-missing-reference",
+      "family": "control/unavailable-reference",
+      "evidenceClass": "review_only",
+      "meets": "States that the file was not read and identifies the needed file/source or declaration.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "No file contents were supplied or read. The answer can identify needed contents or a primary declaration without guessing the missing claim.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Retain accepted control and explicit missing-evidence disposition; no source retrieval or model run needed to preserve the test.",
+      "reviewProposals": []
+    },
+    {
+      "id": "ios-missing-reference/criterion-2",
+      "case": "ios-missing-reference",
+      "family": "control/unavailable-reference",
+      "evidenceClass": "review_only",
+      "meets": "Names only references supplied or actually read; planned lookup is described as planned.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "A planned lookup and a named local path do not prove retrieval. This criterion overlaps but is distinct from exact-claim attribution.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse captured context and calibrate the read-claim gate independently; avoid counting paraphrases as new independent scenarios.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    },
+    {
+      "id": "tvos-version-boundary/criterion-0",
+      "case": "tvos-version-boundary",
+      "family": "control/version-boundary",
+      "evidenceClass": "review_only",
+      "meets": "Separates SDK compilation, deployment configuration and actual runtime observations.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "Compiling on a newer SDK establishes neither execution on the deployment target nor a system-settings feature there.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Reuse accepted version-boundary contract and recorded compile/runtime distinctions.",
+      "reviewProposals": []
+    },
+    {
+      "id": "tvos-version-boundary/criterion-1",
+      "case": "tvos-version-boundary",
+      "family": "control/version-boundary",
+      "evidenceClass": "review_only",
+      "meets": "Identifies the exact missing environment record or API availability source.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "A source introduction/availability statement or actual runtime record is needed for the exact feature claim; test-anchor labels alone are insufficient.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Ask Mac only for missing existing availability/runtime source evidence; do not guess a version boundary or boot a new runtime.",
+      "reviewProposals": []
+    },
+    {
+      "id": "tvos-version-boundary/criterion-2",
+      "case": "tvos-version-boundary",
+      "family": "control/version-boundary",
+      "evidenceClass": "review_only",
+      "meets": "Names only references supplied or actually read; planned lookup is described as planned.",
+      "macReferencesVerified": 0,
+      "nativeEvidenceScope": "The answer must not claim a declaration/reference read from a named but unread path.",
+      "criterionVerdicts": null,
+      "criterionVerdictStatus": "Original grading records not in published packet; whole-case results do not establish this grade.",
+      "portableNextAction": "Audit retained reads/supplied bytes; preserve honest unknowns and conditional guidance.",
+      "reviewProposals": [
+        "REV-EVIDENCE-ATTRIBUTION"
+      ]
+    }
+  ],
+  "reviewProposals": [
+    {
+      "id": "REV-STATE-PREMISE",
+      "status": "draft-not-applied",
+      "criteria": [
+        "ios-uikit-state/criterion-0",
+        "macos-swiftui-state/criterion-0",
+        "tvos-uikit-state/criterion-0"
+      ],
+      "finding": "The questions already specify one reused card, A with optional status/help and B without them. The insufficient-evidence sentence says no same-instance transition is supplied, which can be misread as requiring omitted project code despite the explicit design-question boundary.",
+      "proposedClarification": "Use the supplied A-to-B transition as the task premise. Assess whether the proposed update assigns or clears the owned fields on that same owner. Do not require unavailable project files or an execution result before assessing a complete design answer. If the answer's own update path cannot be determined, state that specific uncertainty.",
+      "validAlternative": "A complete prose update strategy or a minimal example with declared material assumptions; either may preserve native defaults instead of adding redundant overrides.",
+      "defectBoundary": "Clearing only in prepareForReuse or leaving A's optional content on B is a source-level gap when that behavior is explicit, not merely unassessable because no host project was supplied.",
+      "guidanceDisposition": "The dev.7 reuse note already describes the transition. Draft controller clarification before adding more skill text.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-STATE-SUPERSESSION",
+      "status": "draft-not-applied",
+      "criteria": [
+        "ios-uikit-state/criterion-1",
+        "macos-swiftui-state/criterion-1",
+        "tvos-uikit-state/criterion-1"
+      ],
+      "finding": "The positive standard conditions same-item replacement on materiality; its insufficient-evidence text can imply that every item-only guard must fail. The published source summaries cannot show whether this affected a grade.",
+      "proposedClarification": "First test the stated late-A-after-B contract. Require additional request identity or equivalent ownership only if the proposed flow allows superseding work for the same item/input. Cancellation or a generation token is not a mandatory spelling or a substitute for a complete ownership path.",
+      "validAlternative": "Sufficient item/input ownership under an explicitly serialized single-request flow, or request generation/snapshot ownership when work can supersede itself.",
+      "defectBoundary": "An obsolete completion that can overwrite the actual current owner is faulty. Absence of a token variable alone is not evidence of that behavior.",
+      "guidanceDisposition": "Retain dev.7's existing conditional same-item rule; independently review the proposed controller wording.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-ORDINARY-PATH",
+      "status": "draft-not-applied",
+      "criteria": [
+        "ios-uikit-actions/criterion-0",
+        "ios-uikit-actions/criterion-1",
+        "macos-appkit-actions/criterion-0",
+        "macos-appkit-actions/criterion-1",
+        "tvos-swiftui-actions/criterion-0",
+        "tvos-swiftui-actions/criterion-1",
+        "ios-uikit-state/criterion-2",
+        "macos-swiftui-state/criterion-2",
+        "tvos-uikit-state/criterion-2",
+        "macos-appkit-structure/criterion-1",
+        "tvos-swiftui-structure/criterion-1",
+        "ios-uikit-text/criterion-1",
+        "macos-swiftui-text/criterion-1"
+      ],
+      "finding": "The new report identifies absent Open wiring and ordinary controls made shortcut-only. Visibility, a custom action, or a helper callback does not establish the independent ordinary operation requested by the task.",
+      "proposedClarification": "Follow each required operation from the proposed ordinary control through activation to the current owner, separately from its shortcut. For code advertised as a complete example, identify its actual callback connection or a clearly declared existing callback interface. A valid design explanation need not invent a full application or hidden payment logic.",
+      "validAlternative": "Correct refreshed per-binding callbacks or a stable current-owner dispatcher; an existing ordinary handler may be retained. Preserve framework-specific exposure semantics rather than requiring one container flag or fixture layout.",
+      "defectBoundary": "A complete example with no Open operation, or deliberate removal of the ordinary accessible path, is an integration/task defect. A proposed unit not proving traversal is an evidence limit, not automatic proof that traversal fails.",
+      "guidanceDisposition": "The dev.7 entry already says preserve ordinary controls and trace the actual path. Inspect raw failure spans before adding a repetitive action checklist or changing routing.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-DISMISSAL-PATH",
+      "status": "draft-not-applied",
+      "criteria": [
+        "ios-swiftui-lifecycle/criterion-0",
+        "ios-swiftui-lifecycle/criterion-1",
+        "macos-swiftui-lifecycle/criterion-0",
+        "macos-swiftui-lifecycle/criterion-1",
+        "tvos-uikit-lifecycle/criterion-0",
+        "tvos-uikit-lifecycle/criterion-1"
+      ],
+      "finding": "The report identifies early restoration and a late completion consuming the latest presentation in dev.7 SwiftUI answers. The tvOS UIKit regression has only a whole-task grade in the published packet; its specific cause is unknown here.",
+      "proposedClarification": "Review the installed completion-to-owner path, including non-button completion. A Close request alone is not completion. The callback must belong to its presentation or the design must serialize presentations so old completion cannot affect the new one. End the matching state transition before external dispatch, then resolve the final question's current eligible item/fallback or no target.",
+      "validAlternative": "Immutable per-presentation completion ownership, a correctly serialized presenter, or a returned restoration decision dispatched after mutation; no particular helper class or token spelling is required.",
+      "defectBoundary": "A correct helper does not repair an actual completion that reads currentSessionID for a different presentation. State writes prove a request, not delivered focus. Do not attribute the unknown tvOS regression to the earlier model's reentrancy finding without its own evidence.",
+      "guidanceDisposition": "Both dev.7 dismissal notes already state these distinctions. Preserve them and inspect answer/grade spans; do not claim the model never received the rule.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-MEDIA-OBSERVABLE",
+      "status": "draft-not-applied",
+      "criteria": [
+        "ios-swiftui-media/criterion-0",
+        "ios-swiftui-media/criterion-1",
+        "ios-swiftui-media/criterion-2",
+        "tvos-uikit-media/criterion-0",
+        "tvos-uikit-media/criterion-1",
+        "tvos-uikit-media/criterion-2"
+      ],
+      "finding": "The original synthetic media tests remain partial for actual selected audio/captions. Dev.7 already supplies the inspection rule. Haiku's one source-level gain does not make the native contract complete; Flash still has task gaps.",
+      "proposedClarification": "Assess the answer's no-item/loading/failure/absent/positive distinctions, actual current-item/request ownership and read-only inspection path. Where native selections are claimed, identify audible and legible selected options; volume/mute or a synthetic ID cannot substitute. Keep metadata inspection separate from an explicitly requested selection edit.",
+      "validAlternative": "Equivalent state representations and explicit reload/observation ownership; cancellation may be used with sufficient identity checks. Newer media-v2 assertions may support a new evidence binding after review without replacing the frozen question.",
+      "defectBoundary": "An inspection that silently changes selection or accepts obsolete results is a task defect. Missing native execution alone does not make a source-level design ungradable, and tagged silent fixtures do not prove content quality.",
+      "guidanceDisposition": "Reuse the existing inspect-media note and dev.6 corrections. Do not fold all media implementation examples into default context.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-TEXT-PRESERVATION",
+      "status": "draft-not-applied",
+      "criteria": [
+        "ios-uikit-text/criterion-0",
+        "ios-uikit-text/criterion-1",
+        "macos-swiftui-text/criterion-0",
+        "macos-swiftui-text/criterion-1"
+      ],
+      "finding": "Flash UIKit text regressed, but the published packet lacks its precise defect span. macOS text remains unassessable in both Flash arms and has two implementation-evidence gaps in the audited package. Neither fact establishes the answer's specific font/layout error.",
+      "proposedClarification": "Separate the stated size input, font configuration, update propagation and flexible total/description/Pay composition. Review the declared preservation interface and material assumptions. Preserve existing UIKit object/configuration where supplied; assess equivalent SwiftUI identity/ownership behavior without demanding a UIKit-style object identity assertion. Permanent flexible layouts are valid.",
+      "validAlternative": "A permanent vertical arrangement, another justified flexible layout or explicit app-driven macOS sizing input. R13 is a narrow available valid-alternative witness; no forced axis-switch idiom.",
+      "defectBoundary": "Changing the supplied existing button font/configuration is a preservation defect when shown, as in R16's accepted fixture observation. Passing compilation alone cannot establish preservation, callback delivery or rendered fit.",
+      "guidanceDisposition": "Keep the already supplied checkout notes. Obtain the exact UIKit regression and macOS uncertainty spans before diagnosing them or adding a new example.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-RESTRAINT-OWNER",
+      "status": "draft-not-applied",
+      "criteria": [
+        "ios-swiftui-semantics/criterion-0",
+        "ios-swiftui-semantics/criterion-1",
+        "ios-uikit-no-change/criterion-1",
+        "ios-swiftui-no-change/criterion-1",
+        "macos-appkit-no-change/criterion-1",
+        "mixed-macos-owner/criterion-0",
+        "mixed-macos-owner/criterion-1",
+        "macos-appkit-structure/criterion-0",
+        "tvos-swiftui-structure/criterion-0"
+      ],
+      "finding": "Flash preserved the three no-change controls and native-semantics task. Mixed ownership remains a task gap despite an explicit entry-point ownership rule; its specific new answer defect is not published.",
+      "proposedClarification": "Accept a concise no-change answer when no defect is supplied, and a targeted owner question or conditional explanation when ownership is unknown. Assess AppKit roles and children together; do not infer a cause from one parent flag. Preserve independent controls and keep optional navigation aids optional.",
+      "validAlternative": "Native controls left intact; valid parent group/children configurations; asking only for relevant wrapper/native configuration without writing a patch.",
+      "defectBoundary": "An invented defect, unnecessary replacement, or ungrounded ownership diagnosis is a gap when supported by the answer. A missing rotor or a different grouping spelling alone is not.",
+      "guidanceDisposition": "Carry these positive controls unchanged into any later review. The mixed-owner C1 control receives the entry point only, not the AppKit grouping note; preserve that exposure distinction.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-EVIDENCE-ATTRIBUTION",
+      "status": "draft-not-applied",
+      "criteria": [
+        "macos-appkit-testing/criterion-0",
+        "macos-appkit-testing/criterion-1",
+        "macos-appkit-testing/criterion-2",
+        "macos-appkit-testing/criterion-3",
+        "tvos-swiftui-testing/criterion-0",
+        "tvos-swiftui-testing/criterion-1",
+        "tvos-swiftui-testing/criterion-2",
+        "tvos-swiftui-testing/criterion-3",
+        "ios-uikit-no-change/criterion-2",
+        "ios-swiftui-no-change/criterion-2",
+        "macos-appkit-no-change/criterion-2",
+        "mixed-macos-owner/criterion-2",
+        "ios-missing-reference/criterion-2",
+        "tvos-version-boundary/criterion-2"
+      ],
+      "finding": "Correct identity/routing formatting is reported for all 62 answers, while source quality varies. Testing tasks still have gaps. Published summary counts do not expose each evidence-calibration grade.",
+      "proposedClarification": "Record supplied context, actual reads, declarations, exact executed assertions and proposed checks separately. Do not award correctness for branding/routing or turn unknown native behavior into a demonstrated failure. Preserve first failures and distinguish intentional mutants from oracle/build/infrastructure defects.",
+      "validAlternative": "A useful compile/unit-only plan with honest limits; an explicit unavailable reference/runtime; no mandatory UI/manual verification. A named path is not a retrieval trace.",
+      "defectBoundary": "Fabricated reads or claims that helper tests prove speech/focus/layout are evidence defects. A later closed quota or missing grade artifact is an accounting/availability limit, not a wrong subject answer.",
+      "guidanceDisposition": "Retain the existing testing note and reference-free controls; do not add reviewer/controller evidence to model context.",
+      "retrospectiveGradeChange": false
+    }
+  ],
+  "artifactRequests": [
+    {
+      "name": "grades-b01.json",
+      "expectedSha256": "04641a6317630a3f8c7402467fa88514837156d528f3280955da7ef043af2825",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "b01.json",
+      "expectedSha256": "7ab8ccd5a8c28ecc10ac960538460cdda843ccd6e5091ba49d02b29bca1712e7",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "grades-b02.json",
+      "expectedSha256": "7864ac0c36a71f6c77e5b3f22f160c769355f98e525046d002a9f612187ff926",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "b02.json",
+      "expectedSha256": "7464c2bb3447a8a2a5f5fc028298da8b1b674db10b90c7df1985e2f635d27eb4",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "grades-b03.json",
+      "expectedSha256": "77401494891868fad416a9511a0f54c49e3d6aaca44b28e4c50c33e991a62607",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "b03.json",
+      "expectedSha256": "8db6cced119a36a083142b77e17dfd9c54098566a07095a27531e699973c4948",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "grades-b04.json",
+      "expectedSha256": "db72a881395f2b3c6d4340443051eaa38c1492bf2d03d916d8a2ed6d5bcec88a",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "b04.json",
+      "expectedSha256": "e1699328df24507f4808a8357980b00644a1ac6cedb38007165b4de0e03be3ca",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "grades-b05.json",
+      "expectedSha256": "e8c4e65016f5a709bb3af77c5ba8aa55f7690ed62aac31b23e9b8c3a0b146757",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "b05.json",
+      "expectedSha256": "c6e231050f276380ffb65573a1a37a4449439ecffc781ae54cfd59b372f22731",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "grades-b07.json",
+      "expectedSha256": "59913a2ea85b6086afcbd8692fdae2a388629f04a1d9924cb96b048e49d08f02",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "b07.json",
+      "expectedSha256": "3bd7e82a15fee7f31b018fbfd5708d59e567d40a2584f3c09fa1f20bb7a16caa",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "grades-b09.json",
+      "expectedSha256": "6878a37efd8dcb8d606f0995838c670cf88ac261d3344b801b69f888008858fb",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "b09.json",
+      "expectedSha256": "e894000f028ce14fc593a46faa8bcf20ef6b2437d2377cb2b748d3f5c5d195d1",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "grades-b11.json",
+      "expectedSha256": "0d92afa7870efbf86800d439a0a8fbb6e86ac0bbb21473d5ae6b6946b7135270",
+      "availability": "Not in published result packet"
+    },
+    {
+      "name": "b11.json",
+      "expectedSha256": "933bd839e6edd7c5917abf245671d1c6d97d3aff49b82295ec014b8ed68a77b1",
+      "availability": "Not in published result packet"
+    }
+  ],
+  "calibrationReuse": [
+    {
+      "id": "R13",
+      "targetCriteria": [
+        "ios-uikit-text/criterion-1"
+      ],
+      "kind": "accepted narrow valid alternative",
+      "evidence": "CheckoutAnswerTests/testR13PreservesButtonTypography executed without failure; independent adjudication accepts permanent vertical layout.",
+      "limits": "Not a complete answer to the new description/design-font question; no payment dispatch or rendered fit established."
+    },
+    {
+      "id": "R16",
+      "targetCriteria": [
+        "ios-uikit-text/criterion-1"
+      ],
+      "kind": "accepted narrow defective example",
+      "evidence": "CheckoutAnswerTests/testR16PreservesButtonTypography is the one failed method; independent adjudication confirms changed existing-button typography.",
+      "limits": "Accidental observed preservation defect, not a newly executed deliberate mutant or general model ranking."
+    },
+    {
+      "id": "R14",
+      "targetCriteria": [
+        "ios-uikit-text/criterion-0"
+      ],
+      "kind": "retained inconclusive alternative",
+      "evidence": "Narrow configuration checks pass; proportional-layout adequacy remains explicitly unresolved in adjudication.",
+      "limits": "Do not turn a pass into proof of rendered adequacy or silently replace the historical grade."
+    },
+    {
+      "id": "historical-family-interpretations",
+      "targetCriteria": [],
+      "kind": "conceptual review support",
+      "evidence": "Twelve family-level reviewer interpretations remain available; later IR-01/IR-02 resolutions govern current action/source interpretation.",
+      "limits": "Not executed subject answers, not empirical coverage of 78 criteria and not the unavailable 48 design fixtures."
+    }
+  ],
+  "limits": [
+    "Current author analysis, not independent acceptance or regrading of published answers.",
+    "All 78 criterion contracts are accounted for; original per-answer criterion verdicts and answer spans are absent from the published result packet and are not inferred.",
+    "Flash's 24 pairs and Haiku's seven ordered pairs retain separate denominators. No model ranking or general candidate lift is established.",
+    "Three lifecycle questions changed from the earlier generic comparison; do not pool its scores with this dev.5/dev.7 comparison.",
+    "Mac public source/receipt reconciliation does not authenticate private XCTest archives, current SDK freshness or whole-question semantic behavior.",
+    "The older 48 calibration originals and new grade/answer bodies are separate missing artifact sets. No regeneration or live run is authorized.",
+    "All eight proposals remain draft and do not modify dev.7, its seal, questions, scoring guide, results, the original six gold decisions or released skill.",
+    "No new model/native execution, worker messaging, publication or extra agent is performed by this tool."
+  ]
+}

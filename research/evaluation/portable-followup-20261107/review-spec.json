@@ -1,0 +1,110 @@
+{
+  "schema": "portable-contract-review-proposals-v1",
+  "status": "author-drafts-not-applied-to-sealed-scoring-or-candidate",
+  "proposals": [
+    {
+      "id": "REV-STATE-PREMISE",
+      "status": "draft-not-applied",
+      "criteria": ["ios-uikit-state/criterion-0", "macos-swiftui-state/criterion-0", "tvos-uikit-state/criterion-0"],
+      "finding": "The questions already specify one reused card, A with optional status/help and B without them. The insufficient-evidence sentence says no same-instance transition is supplied, which can be misread as requiring omitted project code despite the explicit design-question boundary.",
+      "proposedClarification": "Use the supplied A-to-B transition as the task premise. Assess whether the proposed update assigns or clears the owned fields on that same owner. Do not require unavailable project files or an execution result before assessing a complete design answer. If the answer's own update path cannot be determined, state that specific uncertainty.",
+      "validAlternative": "A complete prose update strategy or a minimal example with declared material assumptions; either may preserve native defaults instead of adding redundant overrides.",
+      "defectBoundary": "Clearing only in prepareForReuse or leaving A's optional content on B is a source-level gap when that behavior is explicit, not merely unassessable because no host project was supplied.",
+      "guidanceDisposition": "The dev.7 reuse note already describes the transition. Draft controller clarification before adding more skill text.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-STATE-SUPERSESSION",
+      "status": "draft-not-applied",
+      "criteria": ["ios-uikit-state/criterion-1", "macos-swiftui-state/criterion-1", "tvos-uikit-state/criterion-1"],
+      "finding": "The positive standard conditions same-item replacement on materiality; its insufficient-evidence text can imply that every item-only guard must fail. The published source summaries cannot show whether this affected a grade.",
+      "proposedClarification": "First test the stated late-A-after-B contract. Require additional request identity or equivalent ownership only if the proposed flow allows superseding work for the same item/input. Cancellation or a generation token is not a mandatory spelling or a substitute for a complete ownership path.",
+      "validAlternative": "Sufficient item/input ownership under an explicitly serialized single-request flow, or request generation/snapshot ownership when work can supersede itself.",
+      "defectBoundary": "An obsolete completion that can overwrite the actual current owner is faulty. Absence of a token variable alone is not evidence of that behavior.",
+      "guidanceDisposition": "Retain dev.7's existing conditional same-item rule; independently review the proposed controller wording.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-ORDINARY-PATH",
+      "status": "draft-not-applied",
+      "criteria": ["ios-uikit-actions/criterion-0", "ios-uikit-actions/criterion-1", "macos-appkit-actions/criterion-0", "macos-appkit-actions/criterion-1", "tvos-swiftui-actions/criterion-0", "tvos-swiftui-actions/criterion-1", "ios-uikit-state/criterion-2", "macos-swiftui-state/criterion-2", "tvos-uikit-state/criterion-2", "macos-appkit-structure/criterion-1", "tvos-swiftui-structure/criterion-1", "ios-uikit-text/criterion-1", "macos-swiftui-text/criterion-1"],
+      "finding": "The new report identifies absent Open wiring and ordinary controls made shortcut-only. Visibility, a custom action, or a helper callback does not establish the independent ordinary operation requested by the task.",
+      "proposedClarification": "Follow each required operation from the proposed ordinary control through activation to the current owner, separately from its shortcut. For code advertised as a complete example, identify its actual callback connection or a clearly declared existing callback interface. A valid design explanation need not invent a full application or hidden payment logic.",
+      "validAlternative": "Correct refreshed per-binding callbacks or a stable current-owner dispatcher; an existing ordinary handler may be retained. Preserve framework-specific exposure semantics rather than requiring one container flag or fixture layout.",
+      "defectBoundary": "A complete example with no Open operation, or deliberate removal of the ordinary accessible path, is an integration/task defect. A proposed unit not proving traversal is an evidence limit, not automatic proof that traversal fails.",
+      "guidanceDisposition": "The dev.7 entry already says preserve ordinary controls and trace the actual path. Inspect raw failure spans before adding a repetitive action checklist or changing routing.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-DISMISSAL-PATH",
+      "status": "draft-not-applied",
+      "criteria": ["ios-swiftui-lifecycle/criterion-0", "ios-swiftui-lifecycle/criterion-1", "macos-swiftui-lifecycle/criterion-0", "macos-swiftui-lifecycle/criterion-1", "tvos-uikit-lifecycle/criterion-0", "tvos-uikit-lifecycle/criterion-1"],
+      "finding": "The report identifies early restoration and a late completion consuming the latest presentation in dev.7 SwiftUI answers. The tvOS UIKit regression has only a whole-task grade in the published packet; its specific cause is unknown here.",
+      "proposedClarification": "Review the installed completion-to-owner path, including non-button completion. A Close request alone is not completion. The callback must belong to its presentation or the design must serialize presentations so old completion cannot affect the new one. End the matching state transition before external dispatch, then resolve the final question's current eligible item/fallback or no target.",
+      "validAlternative": "Immutable per-presentation completion ownership, a correctly serialized presenter, or a returned restoration decision dispatched after mutation; no particular helper class or token spelling is required.",
+      "defectBoundary": "A correct helper does not repair an actual completion that reads currentSessionID for a different presentation. State writes prove a request, not delivered focus. Do not attribute the unknown tvOS regression to the earlier model's reentrancy finding without its own evidence.",
+      "guidanceDisposition": "Both dev.7 dismissal notes already state these distinctions. Preserve them and inspect answer/grade spans; do not claim the model never received the rule.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-MEDIA-OBSERVABLE",
+      "status": "draft-not-applied",
+      "criteria": ["ios-swiftui-media/criterion-0", "ios-swiftui-media/criterion-1", "ios-swiftui-media/criterion-2", "tvos-uikit-media/criterion-0", "tvos-uikit-media/criterion-1", "tvos-uikit-media/criterion-2"],
+      "finding": "The original synthetic media tests remain partial for actual selected audio/captions. Dev.7 already supplies the inspection rule. Haiku's one source-level gain does not make the native contract complete; Flash still has task gaps.",
+      "proposedClarification": "Assess the answer's no-item/loading/failure/absent/positive distinctions, actual current-item/request ownership and read-only inspection path. Where native selections are claimed, identify audible and legible selected options; volume/mute or a synthetic ID cannot substitute. Keep metadata inspection separate from an explicitly requested selection edit.",
+      "validAlternative": "Equivalent state representations and explicit reload/observation ownership; cancellation may be used with sufficient identity checks. Newer media-v2 assertions may support a new evidence binding after review without replacing the frozen question.",
+      "defectBoundary": "An inspection that silently changes selection or accepts obsolete results is a task defect. Missing native execution alone does not make a source-level design ungradable, and tagged silent fixtures do not prove content quality.",
+      "guidanceDisposition": "Reuse the existing inspect-media note and dev.6 corrections. Do not fold all media implementation examples into default context.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-TEXT-PRESERVATION",
+      "status": "draft-not-applied",
+      "criteria": ["ios-uikit-text/criterion-0", "ios-uikit-text/criterion-1", "macos-swiftui-text/criterion-0", "macos-swiftui-text/criterion-1"],
+      "finding": "Flash UIKit text regressed, but the published packet lacks its precise defect span. macOS text remains unassessable in both Flash arms and has two implementation-evidence gaps in the audited package. Neither fact establishes the answer's specific font/layout error.",
+      "proposedClarification": "Separate the stated size input, font configuration, update propagation and flexible total/description/Pay composition. Review the declared preservation interface and material assumptions. Preserve existing UIKit object/configuration where supplied; assess equivalent SwiftUI identity/ownership behavior without demanding a UIKit-style object identity assertion. Permanent flexible layouts are valid.",
+      "validAlternative": "A permanent vertical arrangement, another justified flexible layout or explicit app-driven macOS sizing input. R13 is a narrow available valid-alternative witness; no forced axis-switch idiom.",
+      "defectBoundary": "Changing the supplied existing button font/configuration is a preservation defect when shown, as in R16's accepted fixture observation. Passing compilation alone cannot establish preservation, callback delivery or rendered fit.",
+      "guidanceDisposition": "Keep the already supplied checkout notes. Obtain the exact UIKit regression and macOS uncertainty spans before diagnosing them or adding a new example.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-RESTRAINT-OWNER",
+      "status": "draft-not-applied",
+      "criteria": ["ios-swiftui-semantics/criterion-0", "ios-swiftui-semantics/criterion-1", "ios-uikit-no-change/criterion-1", "ios-swiftui-no-change/criterion-1", "macos-appkit-no-change/criterion-1", "mixed-macos-owner/criterion-0", "mixed-macos-owner/criterion-1", "macos-appkit-structure/criterion-0", "tvos-swiftui-structure/criterion-0"],
+      "finding": "Flash preserved the three no-change controls and native-semantics task. Mixed ownership remains a task gap despite an explicit entry-point ownership rule; its specific new answer defect is not published.",
+      "proposedClarification": "Accept a concise no-change answer when no defect is supplied, and a targeted owner question or conditional explanation when ownership is unknown. Assess AppKit roles and children together; do not infer a cause from one parent flag. Preserve independent controls and keep optional navigation aids optional.",
+      "validAlternative": "Native controls left intact; valid parent group/children configurations; asking only for relevant wrapper/native configuration without writing a patch.",
+      "defectBoundary": "An invented defect, unnecessary replacement, or ungrounded ownership diagnosis is a gap when supported by the answer. A missing rotor or a different grouping spelling alone is not.",
+      "guidanceDisposition": "Carry these positive controls unchanged into any later review. The mixed-owner C1 control receives the entry point only, not the AppKit grouping note; preserve that exposure distinction.",
+      "retrospectiveGradeChange": false
+    },
+    {
+      "id": "REV-EVIDENCE-ATTRIBUTION",
+      "status": "draft-not-applied",
+      "criteria": ["macos-appkit-testing/criterion-0", "macos-appkit-testing/criterion-1", "macos-appkit-testing/criterion-2", "macos-appkit-testing/criterion-3", "tvos-swiftui-testing/criterion-0", "tvos-swiftui-testing/criterion-1", "tvos-swiftui-testing/criterion-2", "tvos-swiftui-testing/criterion-3", "ios-uikit-no-change/criterion-2", "ios-swiftui-no-change/criterion-2", "macos-appkit-no-change/criterion-2", "mixed-macos-owner/criterion-2", "ios-missing-reference/criterion-2", "tvos-version-boundary/criterion-2"],
+      "finding": "Correct identity/routing formatting is reported for all 62 answers, while source quality varies. Testing tasks still have gaps. Published summary counts do not expose each evidence-calibration grade.",
+      "proposedClarification": "Record supplied context, actual reads, declarations, exact executed assertions and proposed checks separately. Do not award correctness for branding/routing or turn unknown native behavior into a demonstrated failure. Preserve first failures and distinguish intentional mutants from oracle/build/infrastructure defects.",
+      "validAlternative": "A useful compile/unit-only plan with honest limits; an explicit unavailable reference/runtime; no mandatory UI/manual verification. A named path is not a retrieval trace.",
+      "defectBoundary": "Fabricated reads or claims that helper tests prove speech/focus/layout are evidence defects. A later closed quota or missing grade artifact is an accounting/availability limit, not a wrong subject answer.",
+      "guidanceDisposition": "Retain the existing testing note and reference-free controls; do not add reviewer/controller evidence to model context.",
+      "retrospectiveGradeChange": false
+    }
+  ],
+  "calibrationReuse": [
+    {"id":"R13","targetCriteria":["ios-uikit-text/criterion-1"],"kind":"accepted narrow valid alternative","evidence":"CheckoutAnswerTests/testR13PreservesButtonTypography executed without failure; independent adjudication accepts permanent vertical layout.","limits":"Not a complete answer to the new description/design-font question; no payment dispatch or rendered fit established."},
+    {"id":"R16","targetCriteria":["ios-uikit-text/criterion-1"],"kind":"accepted narrow defective example","evidence":"CheckoutAnswerTests/testR16PreservesButtonTypography is the one failed method; independent adjudication confirms changed existing-button typography.","limits":"Accidental observed preservation defect, not a newly executed deliberate mutant or general model ranking."},
+    {"id":"R14","targetCriteria":["ios-uikit-text/criterion-0"],"kind":"retained inconclusive alternative","evidence":"Narrow configuration checks pass; proportional-layout adequacy remains explicitly unresolved in adjudication.","limits":"Do not turn a pass into proof of rendered adequacy or silently replace the historical grade."},
+    {"id":"historical-family-interpretations","targetCriteria":[],"kind":"conceptual review support","evidence":"Twelve family-level reviewer interpretations remain available; later IR-01/IR-02 resolutions govern current action/source interpretation.","limits":"Not executed subject answers, not empirical coverage of 78 criteria and not the unavailable 48 design fixtures."}
+  ],
+  "limits": [
+    "Current author analysis, not independent acceptance or regrading of published answers.",
+    "All 78 criterion contracts are accounted for; original per-answer criterion verdicts and answer spans are absent from the published result packet and are not inferred.",
+    "Flash's 24 pairs and Haiku's seven ordered pairs retain separate denominators. No model ranking or general candidate lift is established.",
+    "Three lifecycle questions changed from the earlier generic comparison; do not pool its scores with this dev.5/dev.7 comparison.",
+    "Mac public source/receipt reconciliation does not authenticate private XCTest archives, current SDK freshness or whole-question semantic behavior.",
+    "The older 48 calibration originals and new grade/answer bodies are separate missing artifact sets. No regeneration or live run is authorized.",
+    "All eight proposals remain draft and do not modify dev.7, its seal, questions, scoring guide, results, the original six gold decisions or released skill.",
+    "No new model/native execution, worker messaging, publication or extra agent is performed by this tool."
+  ]
+}
