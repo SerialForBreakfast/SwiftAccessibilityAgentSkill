@@ -1,0 +1,270 @@
+{
+  "schema": 1,
+  "retrievedOn": "2026-11-07",
+  "records": [
+    {
+      "platform": "macOS",
+      "api": "AVPlayerItem.select",
+      "selector": "- (void)selectMediaOption:",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+      "fileSha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+      "status": "declaration-located",
+      "line": 612,
+      "declaration": "- (void)selectMediaOption:(nullable AVMediaSelectionOption *)mediaSelectionOption inMediaSelectionGroup:(AVMediaSelectionGroup *)mediaSelectionGroup\n#if AVF_DEPLOYING_TO_2022_RELEASES_AND_LATER\nNS_SWIFT_NONISOLATED\n#endif\nAPI_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+      "excerpt": "/// Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this method must be invoked on the main thread/queue.\n/// \n/// - Parameter mediaSelectionOption: The option to select.\n/// - Parameter mediaSelectionGroup: The media selection group, obtained from the receiver's asset, that contains the specified option.\n- (void)selectMediaOption:(nullable AVMediaSelectionOption *)mediaSelectionOption inMediaSelectionGroup:(AVMediaSelectionGroup *)mediaSelectionGroup\n#if AVF_DEPLOYING_TO_2022_RELEASES_AND_LATER\nNS_SWIFT_NONISOLATED\n#endif\nAPI_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+      "annotations": [
+        "API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0))"
+      ],
+      "introduction": "Exact declaration annotations retained; no nearby-comment inference.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "macOS",
+      "api": "AVPlayerItem.currentMediaSelection",
+      "selector": "@property (readonly) AVMediaSelection *currentMediaSelection",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+      "fileSha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+      "status": "declaration-located",
+      "line": 632,
+      "declaration": "@property (readonly) AVMediaSelection *currentMediaSelection NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0), watchos(2.0), visionos(1.0));",
+      "excerpt": "#endif\nAPI_AVAILABLE(macos(10.9), ios(7.0), tvos(9.0), watchos(1.0), visionos(1.0));\n\n/// Provides an instance of AVMediaSelection carrying current selections for each of the receiver's media selection groups.\n@property (readonly) AVMediaSelection *currentMediaSelection NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0), watchos(2.0), visionos(1.0));",
+      "annotations": [
+        "API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0), watchos(2.0), visionos(1.0))"
+      ],
+      "introduction": "Exact declaration annotations retained; no nearby-comment inference.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "macOS",
+      "api": "AVAsset.loadMediaSelectionGroup",
+      "selector": "- (void)loadMediaSelectionGroupForMediaCharacteristic:",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVAsset.h",
+      "fileSha256": "78f593df2b6bcaa0103a0b3f4f53e5ddd61edde1b83d69267298a0370a43e742",
+      "status": "declaration-located",
+      "line": 412,
+      "declaration": "- (void)loadMediaSelectionGroupForMediaCharacteristic:(AVMediaCharacteristic)mediaCharacteristic completionHandler:(void (^ NS_SWIFT_SENDABLE)(AVMediaSelectionGroup * _Nullable_result, NSError * _Nullable))completionHandler API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0), visionos(1.0));",
+      "excerpt": "/// Pass AVMediaCharacteristicAudible to obtain the group of available options for audio media in various languages and for various purposes, such as descriptive audio.\n/// Pass AVMediaCharacteristicLegible to obtain the group of available options for subtitles in various languages and for various purposes\n/// Pass AVMediaCharacteristicVisual to obtain the group of available options for video media.\n/// - Parameter completionHandler: A block that is invoked when loading is complete, vending an instance of AVMediaSelectionGroup (which may be nil) or an error.\n- (void)loadMediaSelectionGroupForMediaCharacteristic:(AVMediaCharacteristic)mediaCharacteristic completionHandler:(void (^ NS_SWIFT_SENDABLE)(AVMediaSelectionGroup * _Nullable_result, NSError * _Nullable))completionHandler API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0), visionos(1.0));",
+      "annotations": [
+        "API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0), visionos(1.0))"
+      ],
+      "introduction": "Exact declaration annotations retained; no nearby-comment inference.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "macOS",
+      "api": "AVMediaSelectionGroup.allowsEmptySelection",
+      "selector": "@property (nonatomic, readonly) BOOL allowsEmptySelection;",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVMediaSelectionGroup.h",
+      "fileSha256": "ae5c280e4d1d342bba4b3eebf40487818e87753bdb79793333c4942b1b8cdb59",
+      "status": "declaration-located",
+      "line": 44,
+      "declaration": "@property (nonatomic, readonly) BOOL allowsEmptySelection;",
+      "excerpt": "/// Indicates whether it's possible to present none of the options in the group when an associated AVPlayerItem is played.\n/// \n/// If allowsEmptySelection is YES, all of the available media options in the group can be deselected by passing nil\n/// as the specified AVMediaSelectionOption to -[AVPlayerItem selectMediaOption:inMediaSelectionGroup:].\n@property (nonatomic, readonly) BOOL allowsEmptySelection;",
+      "annotations": [],
+      "introduction": "No member-level annotation; enclosing declaration introduction not resolved in this capture.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "macOS",
+      "api": "forced-only characteristic",
+      "selector": "AVF_EXPORT AVMediaCharacteristic const AVMediaCharacteristicContainsOnlyForcedSubtitles API_AVAILABLE",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVMediaFormat.h",
+      "fileSha256": "5a85f66c94ff9425ea7848f9230ef15d2b1f8e597ea89ed36e8ac69ce92d8c2d",
+      "status": "declaration-located",
+      "line": 152,
+      "declaration": "AVF_EXPORT AVMediaCharacteristic const AVMediaCharacteristicContainsOnlyForcedSubtitles API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+      "excerpt": "/// The value of this characteristic is @\"public.subtitles.forced-only\".\n/// Note for content authors: the presence of this characteristic for a legible media option may be inferred from the format description of the associated track that presents the subtitle media, if the format description carries sufficient information to indicate the presence or absence of forced and non-forced subtitles. If the format description does not carry this information, the legible media option can be explicitly tagged with the characteristic.\n/// \n/// Also see -[AVAssetTrack hasMediaCharacteristic:] and -[AVMediaSelectionOption hasMediaCharacteristic:].\nAVF_EXPORT AVMediaCharacteristic const AVMediaCharacteristicContainsOnlyForcedSubtitles API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+      "annotations": [
+        "API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0))"
+      ],
+      "introduction": "Exact declaration annotations retained; no nearby-comment inference.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "iOS",
+      "api": "AVPlayerItem.select",
+      "selector": "- (void)selectMediaOption:",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+      "fileSha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+      "status": "declaration-located",
+      "line": 612,
+      "declaration": "- (void)selectMediaOption:(nullable AVMediaSelectionOption *)mediaSelectionOption inMediaSelectionGroup:(AVMediaSelectionGroup *)mediaSelectionGroup\n#if AVF_DEPLOYING_TO_2022_RELEASES_AND_LATER\nNS_SWIFT_NONISOLATED\n#endif\nAPI_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+      "excerpt": "/// Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this method must be invoked on the main thread/queue.\n/// \n/// - Parameter mediaSelectionOption: The option to select.\n/// - Parameter mediaSelectionGroup: The media selection group, obtained from the receiver's asset, that contains the specified option.\n- (void)selectMediaOption:(nullable AVMediaSelectionOption *)mediaSelectionOption inMediaSelectionGroup:(AVMediaSelectionGroup *)mediaSelectionGroup\n#if AVF_DEPLOYING_TO_2022_RELEASES_AND_LATER\nNS_SWIFT_NONISOLATED\n#endif\nAPI_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+      "annotations": [
+        "API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0))"
+      ],
+      "introduction": "Exact declaration annotations retained; no nearby-comment inference.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "iOS",
+      "api": "AVPlayerItem.currentMediaSelection",
+      "selector": "@property (readonly) AVMediaSelection *currentMediaSelection",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+      "fileSha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+      "status": "declaration-located",
+      "line": 632,
+      "declaration": "@property (readonly) AVMediaSelection *currentMediaSelection NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0), watchos(2.0), visionos(1.0));",
+      "excerpt": "#endif\nAPI_AVAILABLE(macos(10.9), ios(7.0), tvos(9.0), watchos(1.0), visionos(1.0));\n\n/// Provides an instance of AVMediaSelection carrying current selections for each of the receiver's media selection groups.\n@property (readonly) AVMediaSelection *currentMediaSelection NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0), watchos(2.0), visionos(1.0));",
+      "annotations": [
+        "API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0), watchos(2.0), visionos(1.0))"
+      ],
+      "introduction": "Exact declaration annotations retained; no nearby-comment inference.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "iOS",
+      "api": "AVAsset.loadMediaSelectionGroup",
+      "selector": "- (void)loadMediaSelectionGroupForMediaCharacteristic:",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVAsset.h",
+      "fileSha256": "78f593df2b6bcaa0103a0b3f4f53e5ddd61edde1b83d69267298a0370a43e742",
+      "status": "declaration-located",
+      "line": 412,
+      "declaration": "- (void)loadMediaSelectionGroupForMediaCharacteristic:(AVMediaCharacteristic)mediaCharacteristic completionHandler:(void (^ NS_SWIFT_SENDABLE)(AVMediaSelectionGroup * _Nullable_result, NSError * _Nullable))completionHandler API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0), visionos(1.0));",
+      "excerpt": "/// Pass AVMediaCharacteristicAudible to obtain the group of available options for audio media in various languages and for various purposes, such as descriptive audio.\n/// Pass AVMediaCharacteristicLegible to obtain the group of available options for subtitles in various languages and for various purposes\n/// Pass AVMediaCharacteristicVisual to obtain the group of available options for video media.\n/// - Parameter completionHandler: A block that is invoked when loading is complete, vending an instance of AVMediaSelectionGroup (which may be nil) or an error.\n- (void)loadMediaSelectionGroupForMediaCharacteristic:(AVMediaCharacteristic)mediaCharacteristic completionHandler:(void (^ NS_SWIFT_SENDABLE)(AVMediaSelectionGroup * _Nullable_result, NSError * _Nullable))completionHandler API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0), visionos(1.0));",
+      "annotations": [
+        "API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0), visionos(1.0))"
+      ],
+      "introduction": "Exact declaration annotations retained; no nearby-comment inference.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "iOS",
+      "api": "AVMediaSelectionGroup.allowsEmptySelection",
+      "selector": "@property (nonatomic, readonly) BOOL allowsEmptySelection;",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVMediaSelectionGroup.h",
+      "fileSha256": "ae5c280e4d1d342bba4b3eebf40487818e87753bdb79793333c4942b1b8cdb59",
+      "status": "declaration-located",
+      "line": 44,
+      "declaration": "@property (nonatomic, readonly) BOOL allowsEmptySelection;",
+      "excerpt": "/// Indicates whether it's possible to present none of the options in the group when an associated AVPlayerItem is played.\n/// \n/// If allowsEmptySelection is YES, all of the available media options in the group can be deselected by passing nil\n/// as the specified AVMediaSelectionOption to -[AVPlayerItem selectMediaOption:inMediaSelectionGroup:].\n@property (nonatomic, readonly) BOOL allowsEmptySelection;",
+      "annotations": [],
+      "introduction": "No member-level annotation; enclosing declaration introduction not resolved in this capture.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "iOS",
+      "api": "forced-only characteristic",
+      "selector": "AVF_EXPORT AVMediaCharacteristic const AVMediaCharacteristicContainsOnlyForcedSubtitles API_AVAILABLE",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVMediaFormat.h",
+      "fileSha256": "5a85f66c94ff9425ea7848f9230ef15d2b1f8e597ea89ed36e8ac69ce92d8c2d",
+      "status": "declaration-located",
+      "line": 152,
+      "declaration": "AVF_EXPORT AVMediaCharacteristic const AVMediaCharacteristicContainsOnlyForcedSubtitles API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+      "excerpt": "/// The value of this characteristic is @\"public.subtitles.forced-only\".\n/// Note for content authors: the presence of this characteristic for a legible media option may be inferred from the format description of the associated track that presents the subtitle media, if the format description carries sufficient information to indicate the presence or absence of forced and non-forced subtitles. If the format description does not carry this information, the legible media option can be explicitly tagged with the characteristic.\n/// \n/// Also see -[AVAssetTrack hasMediaCharacteristic:] and -[AVMediaSelectionOption hasMediaCharacteristic:].\nAVF_EXPORT AVMediaCharacteristic const AVMediaCharacteristicContainsOnlyForcedSubtitles API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+      "annotations": [
+        "API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0))"
+      ],
+      "introduction": "Exact declaration annotations retained; no nearby-comment inference.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "tvOS",
+      "api": "AVPlayerItem.select",
+      "selector": "- (void)selectMediaOption:",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+      "fileSha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+      "status": "declaration-located",
+      "line": 612,
+      "declaration": "- (void)selectMediaOption:(nullable AVMediaSelectionOption *)mediaSelectionOption inMediaSelectionGroup:(AVMediaSelectionGroup *)mediaSelectionGroup\n#if AVF_DEPLOYING_TO_2022_RELEASES_AND_LATER\nNS_SWIFT_NONISOLATED\n#endif\nAPI_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+      "excerpt": "/// Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this method must be invoked on the main thread/queue.\n/// \n/// - Parameter mediaSelectionOption: The option to select.\n/// - Parameter mediaSelectionGroup: The media selection group, obtained from the receiver's asset, that contains the specified option.\n- (void)selectMediaOption:(nullable AVMediaSelectionOption *)mediaSelectionOption inMediaSelectionGroup:(AVMediaSelectionGroup *)mediaSelectionGroup\n#if AVF_DEPLOYING_TO_2022_RELEASES_AND_LATER\nNS_SWIFT_NONISOLATED\n#endif\nAPI_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+      "annotations": [
+        "API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0))"
+      ],
+      "introduction": "Exact declaration annotations retained; no nearby-comment inference.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "tvOS",
+      "api": "AVPlayerItem.currentMediaSelection",
+      "selector": "@property (readonly) AVMediaSelection *currentMediaSelection",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVPlayerItem.h",
+      "fileSha256": "002344cd17c89bf2127a61d229ac63e0c59792809f0dda0e4927e0d5939c89e6",
+      "status": "declaration-located",
+      "line": 632,
+      "declaration": "@property (readonly) AVMediaSelection *currentMediaSelection NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0), watchos(2.0), visionos(1.0));",
+      "excerpt": "#endif\nAPI_AVAILABLE(macos(10.9), ios(7.0), tvos(9.0), watchos(1.0), visionos(1.0));\n\n/// Provides an instance of AVMediaSelection carrying current selections for each of the receiver's media selection groups.\n@property (readonly) AVMediaSelection *currentMediaSelection NS_SWIFT_NONISOLATED API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0), watchos(2.0), visionos(1.0));",
+      "annotations": [
+        "API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0), watchos(2.0), visionos(1.0))"
+      ],
+      "introduction": "Exact declaration annotations retained; no nearby-comment inference.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "tvOS",
+      "api": "AVAsset.loadMediaSelectionGroup",
+      "selector": "- (void)loadMediaSelectionGroupForMediaCharacteristic:",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVAsset.h",
+      "fileSha256": "78f593df2b6bcaa0103a0b3f4f53e5ddd61edde1b83d69267298a0370a43e742",
+      "status": "declaration-located",
+      "line": 412,
+      "declaration": "- (void)loadMediaSelectionGroupForMediaCharacteristic:(AVMediaCharacteristic)mediaCharacteristic completionHandler:(void (^ NS_SWIFT_SENDABLE)(AVMediaSelectionGroup * _Nullable_result, NSError * _Nullable))completionHandler API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0), visionos(1.0));",
+      "excerpt": "/// Pass AVMediaCharacteristicAudible to obtain the group of available options for audio media in various languages and for various purposes, such as descriptive audio.\n/// Pass AVMediaCharacteristicLegible to obtain the group of available options for subtitles in various languages and for various purposes\n/// Pass AVMediaCharacteristicVisual to obtain the group of available options for video media.\n/// - Parameter completionHandler: A block that is invoked when loading is complete, vending an instance of AVMediaSelectionGroup (which may be nil) or an error.\n- (void)loadMediaSelectionGroupForMediaCharacteristic:(AVMediaCharacteristic)mediaCharacteristic completionHandler:(void (^ NS_SWIFT_SENDABLE)(AVMediaSelectionGroup * _Nullable_result, NSError * _Nullable))completionHandler API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0), visionos(1.0));",
+      "annotations": [
+        "API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0), visionos(1.0))"
+      ],
+      "introduction": "Exact declaration annotations retained; no nearby-comment inference.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "tvOS",
+      "api": "AVMediaSelectionGroup.allowsEmptySelection",
+      "selector": "@property (nonatomic, readonly) BOOL allowsEmptySelection;",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVMediaSelectionGroup.h",
+      "fileSha256": "ae5c280e4d1d342bba4b3eebf40487818e87753bdb79793333c4942b1b8cdb59",
+      "status": "declaration-located",
+      "line": 44,
+      "declaration": "@property (nonatomic, readonly) BOOL allowsEmptySelection;",
+      "excerpt": "/// Indicates whether it's possible to present none of the options in the group when an associated AVPlayerItem is played.\n/// \n/// If allowsEmptySelection is YES, all of the available media options in the group can be deselected by passing nil\n/// as the specified AVMediaSelectionOption to -[AVPlayerItem selectMediaOption:inMediaSelectionGroup:].\n@property (nonatomic, readonly) BOOL allowsEmptySelection;",
+      "annotations": [],
+      "introduction": "No member-level annotation; enclosing declaration introduction not resolved in this capture.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    },
+    {
+      "platform": "tvOS",
+      "api": "forced-only characteristic",
+      "selector": "AVF_EXPORT AVMediaCharacteristic const AVMediaCharacteristicContainsOnlyForcedSubtitles API_AVAILABLE",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVMediaFormat.h",
+      "fileSha256": "5a85f66c94ff9425ea7848f9230ef15d2b1f8e597ea89ed36e8ac69ce92d8c2d",
+      "status": "declaration-located",
+      "line": 152,
+      "declaration": "AVF_EXPORT AVMediaCharacteristic const AVMediaCharacteristicContainsOnlyForcedSubtitles API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+      "excerpt": "/// The value of this characteristic is @\"public.subtitles.forced-only\".\n/// Note for content authors: the presence of this characteristic for a legible media option may be inferred from the format description of the associated track that presents the subtitle media, if the format description carries sufficient information to indicate the presence or absence of forced and non-forced subtitles. If the format description does not carry this information, the legible media option can be explicitly tagged with the characteristic.\n/// \n/// Also see -[AVAssetTrack hasMediaCharacteristic:] and -[AVMediaSelectionOption hasMediaCharacteristic:].\nAVF_EXPORT AVMediaCharacteristic const AVMediaCharacteristicContainsOnlyForcedSubtitles API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0));",
+      "annotations": [
+        "API_AVAILABLE(macos(10.8), ios(5.0), tvos(9.0), watchos(1.0), visionos(1.0))"
+      ],
+      "introduction": "Exact declaration annotations retained; no nearby-comment inference.",
+      "deploymentTarget": "26.0",
+      "sdk": "27.0",
+      "evidenceScope": "Header declaration and separate compile receipt; not runtime behavioral introduction."
+    }
+  ]
+}

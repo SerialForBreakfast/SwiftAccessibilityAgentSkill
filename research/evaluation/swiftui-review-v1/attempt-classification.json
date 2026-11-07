@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "attempts": [
+    {
+      "attempt": "swiftui-review-first-repro/.",
+      "kind": "genuine-defect-reproduction",
+      "observed": "failure",
+      "failedTestIds": [
+        "ReviewRegressionTests/testForcedSelectionIsNotOff",
+        "ReviewRegressionTests/testStaleOffCannotClearReloadedSelection",
+        "ReviewRegressionTests/testStaleOffCannotClearReplacementSelection"
+      ]
+    },
+    {
+      "attempt": "swiftui-review-corrected-r1/sui-media-review-ios-compile-r1",
+      "kind": "compile",
+      "observed": "success",
+      "failedTestIds": []
+    },
+    {
+      "attempt": "swiftui-review-corrected-r1/sui-media-review-ios-positive-r1",
+      "kind": "positive-unit-suite",
+      "observed": "success",
+      "failedTestIds": []
+    },
+    {
+      "attempt": "swiftui-review-corrected-r1/sui-media-review-mac-compile-r1",
+      "kind": "compile",
+      "observed": "success",
+      "failedTestIds": []
+    },
+    {
+      "attempt": "swiftui-review-corrected-r1/sui-media-review-mac-positive-r1",
+      "kind": "positive-unit-suite",
+      "observed": "success",
+      "failedTestIds": []
+    },
+    {
+      "attempt": "swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1",
+      "kind": "deliberate-mutant",
+      "observed": "failure",
+      "failedTestIds": [
+        "ReviewRegressionTests/testStaleOffCannotClearReloadedSelection"
+      ]
+    },
+    {
+      "attempt": "swiftui-review-corrected-r1/sui-media-review-mac-unmappedoff-r1",
+      "kind": "deliberate-mutant",
+      "observed": "failure",
+      "failedTestIds": [
+        "ReviewRegressionTests/testForcedSelectionIsNotOff"
+      ]
+    },
+    {
+      "attempt": "swiftui-review-corrected-r1/sui-media-review-tv-compile-r1",
+      "kind": "compile",
+      "observed": "success",
+      "failedTestIds": []
+    },
+    {
+      "attempt": "swiftui-review-corrected-r1/sui-media-review-tv-positive-r1",
+      "kind": "positive-unit-suite",
+      "observed": "success",
+      "failedTestIds": []
+    }
+  ]
+}

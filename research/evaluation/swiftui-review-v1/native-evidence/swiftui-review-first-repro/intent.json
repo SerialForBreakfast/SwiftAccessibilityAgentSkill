@@ -1,0 +1,53 @@
+{
+  "manifestHash": "9ca1d53194e6cb538a85a5b9f978bf408324c09a14977f5836ab4bb87d7d99b0",
+  "check": {
+    "id": "review-repro",
+    "lane": "unit",
+    "expected": "failure",
+    "claimIds": [
+      "ownership"
+    ],
+    "testIds": [
+      "ReviewRegressionTests/testStaleOffCannotClearReloadedSelection",
+      "ReviewRegressionTests/testStaleOffCannotClearReplacementSelection",
+      "ReviewRegressionTests/testForcedSelectionIsNotOff"
+    ],
+    "failureIds": [
+      "ReviewRegressionTests/testStaleOffCannotClearReloadedSelection",
+      "ReviewRegressionTests/testStaleOffCannotClearReplacementSelection",
+      "ReviewRegressionTests/testForcedSelectionIsNotOff"
+    ]
+  },
+  "environment": {
+    "platform": "macOS",
+    "deploymentTarget": "26.0",
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+    "sdkVersion": "27.0",
+    "sdkBuild": "26A425",
+    "architecture": "arm64",
+    "destinationType": "host",
+    "runtimeVersion": "27.0",
+    "runtimeBuild": "26A428"
+  },
+  "command": [
+    "xcodebuild",
+    "test",
+    "-scheme",
+    "AccessibilityExamples",
+    "-destination",
+    "platform=macOS,id=<HOST_DEVICE_ID>",
+    "-derivedDataPath",
+    "<PRIVATE_TMP>/swiftui-review-first-repro/DerivedData",
+    "-resultBundlePath",
+    "<PRIVATE_TMP>/swiftui-review-first-repro/tests.xcresult",
+    "-parallel-testing-enabled",
+    "NO",
+    "-collect-test-diagnostics",
+    "never",
+    "-only-testing:AccessibilityExamplesTests/ReviewRegressionTests/testStaleOffCannotClearReloadedSelection",
+    "-only-testing:AccessibilityExamplesTests/ReviewRegressionTests/testStaleOffCannotClearReplacementSelection",
+    "-only-testing:AccessibilityExamplesTests/ReviewRegressionTests/testForcedSelectionIsNotOff",
+    "CODE_SIGNING_ALLOWED=NO"
+  ]
+}

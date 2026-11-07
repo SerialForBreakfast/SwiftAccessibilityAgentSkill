@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "id": "swiftui-media-tvos-v2",
+  "revision": "1",
+  "platform": "tvOS",
+  "runtimeMajor": 26,
+  "deploymentTarget": "26.0",
+  "limitations": "Silent local media fixtures and observable application state only. Compiled SwiftUI composition is not proof of delivered semantics, playback, layout or focus. No UI tests.",
+  "claims": [
+    {
+      "id": "selection",
+      "url": "https://developer.apple.com/documentation/avfoundation/avplayeritem/select(_:in:)",
+      "section": "Public SDK declaration and narrowly asserted application contract",
+      "statement": "Actual fixture-backed AVMediaSelection choice; forced-only filtering is example policy.",
+      "availability": "Deployment26, installed SDK27. Actual runtime recorded by native adapter; no speech, playback rendering or focus evidence.",
+      "reviewedOn": "2026-11-07"
+    },
+    {
+      "id": "ownership",
+      "url": "https://developer.apple.com/documentation/avfoundation/avasset/loadmediaselectiongroup(for:)",
+      "section": "Public SDK declaration and narrowly asserted application contract",
+      "statement": "Item identity, load generation and task cancellation ownership are application policy.",
+      "availability": "Deployment26, installed SDK27. Actual runtime recorded by native adapter; no speech, playback rendering or focus evidence.",
+      "reviewedOn": "2026-11-07"
+    },
+    {
+      "id": "wiring",
+      "url": "https://developer.apple.com/documentation/swiftui/binding",
+      "section": "Public SDK declaration and narrowly asserted application contract",
+      "statement": "Actual SwiftUI composition compiles; binding calls tested store. No generated-tree or automatic hosting claim.",
+      "availability": "Deployment26, installed SDK27. Actual runtime recorded by native adapter; no speech, playback rendering or focus evidence.",
+      "reviewedOn": "2026-11-07"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/MediaSelection.swift",
+      "sha256": "d79ef28146634bea46a34a54d1020c62ac837b8b8e7a4d36f05af5f7c92388bd"
+    },
+    {
+      "path": "Tests/MediaSelectionTests.swift",
+      "sha256": "fe40a666ae4d873b1ec751e3cf9fc0633aeb19bc43363c10047fa360472a9bbe"
+    },
+    {
+      "path": "Tests/ReviewRegressionTests.swift",
+      "sha256": "cea97f85ef31062124ee45edd18cac320e7e26738f4f9dca54a0c2af24f9c794"
+    },
+    {
+      "path": "Tests/DescriptionFixture.swift",
+      "sha256": "b65a164d2ea9121fa058094c177116405c31904789e300872aea15cae7ad0a2e"
+    },
+    {
+      "path": "NegativeFixtures/staleoff.swift",
+      "sha256": "b2ed4c508281b502b728179c061fa46933603e0594298a78403cdeda11bdd4e3"
+    },
+    {
+      "path": "NegativeFixtures/unmappedoff.swift",
+      "sha256": "e66489cbc2ce76694b16315a75d63943bdb593649bd0fb0632715ebba301fc5f"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "selection",
+        "ownership",
+        "wiring"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "selection",
+        "ownership",
+        "wiring"
+      ],
+      "testIds": [
+        "MediaSelectionTests/testNativeRefreshLoadsActualGroup",
+        "MediaSelectionTests/testFullSubtitleChoicesExcludeForcedOnly",
+        "MediaSelectionTests/testBindingWritesNativeSelection",
+        "MediaSelectionTests/testBindingReadsExternalSelection",
+        "MediaSelectionTests/testUnknownChoicePreservesSelection",
+        "MediaSelectionTests/testOffClearsOnlyPermittedGroup",
+        "MediaSelectionTests/testSubtitleChangePreservesDescriptiveAudio",
+        "MediaSelectionTests/testOffPreservesAudio",
+        "MediaSelectionTests/testAudioStoreReadsDescriptionTag",
+        "MediaSelectionTests/testAudioOffMatchesActualGroupPermission",
+        "MediaSelectionTests/testLoadingDoesNotChangeNativeChoice",
+        "MediaSelectionTests/testReloadRecoversNativeChoiceWithNewIDs",
+        "MediaSelectionTests/testOldOptionIDCannotSelectAfterReload",
+        "MediaSelectionTests/testDuplicateCompletionCannotOverwriteSuccess",
+        "MediaSelectionTests/testOldCompletionCannotOverwriteNewLoad",
+        "MediaSelectionTests/testOldErrorCannotOverwriteNewSuccess",
+        "MediaSelectionTests/testCancelRejectsLateCompletion",
+        "MediaSelectionTests/testCancelDoesNotClearNativeSelection",
+        "MediaSelectionTests/testReplacedItemRejectsOldChoice",
+        "MediaSelectionTests/testReplacedItemRejectsOldCompletion",
+        "MediaSelectionTests/testNoItemIsNotAbsentGroup",
+        "MediaSelectionTests/testAbsentGroupIsNotFailure",
+        "MediaSelectionTests/testLoadFailureIsNotEmptySuccess",
+        "MediaSelectionTests/testErrorThenReloadRecovers",
+        "MediaSelectionTests/testSelectionPreservesPlayerSettingsAndIdentity",
+        "MediaSelectionTests/testChoiceIDsUniqueWithinSnapshot",
+        "MediaSelectionTests/testViewRetainsSameStoreAndPlayer",
+        "MediaSelectionTests/testCapturedBindingRejectsAfterCancellation",
+        "MediaSelectionTests/testActualRefreshPassesItemAndCharacteristicToLoader",
+        "MediaSelectionTests/testActualRefreshErrorSetsFailedPhase",
+        "MediaSelectionTests/testActualRefreshAbsentSetsAbsentPhase",
+        "MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad",
+        "MediaSelectionTests/testCancelledCurrentTaskDoesNotPublishResult",
+        "MediaSelectionTests/testBindingWriteInvalidatesObservableSelection",
+        "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+        "MediaSelectionTests/testAlreadyCancelledTaskCannotStartLoad",
+        "ReviewRegressionTests/testStaleOffCannotClearReloadedSelection",
+        "ReviewRegressionTests/testStaleOffCannotClearReplacementSelection",
+        "ReviewRegressionTests/testForcedSelectionIsNotOff",
+        "ReviewRegressionTests/testUnlistedChoicePreservesNativeSelection",
+        "ReviewRegressionTests/testExplicitOffIsDistinctFromUnlistedSelection",
+        "ReviewRegressionTests/testOldCompletionLeavesLoadingOnItemChange",
+        "ReviewRegressionTests/testViewLoadKeyIncludesStoreIdentity",
+        "ReviewRegressionTests/testExplicitCancelInvalidatesWhileLoaderIsSuspended"
+      ],
+      "failureIds": []
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "attempt": "swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2",
+  "package": "swiftui-media-macos-v1",
+  "revision": "2",
+  "checkId": "positive",
+  "originalResultHash": "295e7f8676aac564b725c10e1c1aa2404eece2bc1290744f3ff826e24bf8b1e3",
+  "manifestHash": "a51747f0ae69e7909fbb700b638d830b2f2ea4a6380a4d0fd06d554e7eabe6c3",
+  "status": "error",
+  "observed": "not-assessed",
+  "reason": "test-source-compilation; zero credited tests",
+  "failureClassification": {
+    "kind": "test-source-compilation",
+    "creditedTests": 0,
+    "diagnostics": [
+      {
+        "file": "<PRIVATE_TMP>/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/workspace/Tests/AccessibilityExamplesTests/MediaSelectionTests.swift",
+        "line": 20,
+        "column": 19,
+        "message": "sending 'audio' risks causing data races [#RegionIsolation::SendingRisksDataRace]"
+      },
+      {
+        "file": "<PRIVATE_TMP>/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/workspace/Tests/AccessibilityExamplesTests/MediaSelectionTests.swift",
+        "line": 20,
+        "column": 19,
+        "message": "sending 'text' risks causing data races [#RegionIsolation::SendingRisksDataRace]"
+      },
+      {
+        "file": "<PRIVATE_TMP>/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/workspace/Tests/AccessibilityExamplesTests/MediaSelectionTests.swift",
+        "line": 280,
+        "column": 27,
+        "message": "sending 'group.some' risks causing data races [#RegionIsolation::SendingRisksDataRace]"
+      },
+      {
+        "file": "<PRIVATE_TMP>/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/workspace/Tests/AccessibilityExamplesTests/MediaSelectionTests.swift",
+        "line": 294,
+        "column": 27,
+        "message": "sending 'group.some' risks causing data races [#RegionIsolation::SendingRisksDataRace]"
+      }
+    ]
+  },
+  "recordedAt": "2026-11-07T16:28:24.496Z",
+  "environment": {
+    "platform": "macOS",
+    "deploymentTarget": "26.0",
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+    "sdkVersion": "27.0",
+    "sdkBuild": "26A425",
+    "architecture": "arm64",
+    "destinationType": "host",
+    "runtimeVersion": "27.0",
+    "runtimeBuild": "26A428"
+  },
+  "execution": null,
+  "command": [
+    "xcodebuild",
+    "test",
+    "-scheme",
+    "AccessibilityExamples",
+    "-destination",
+    "platform=macOS,id=<HOST_DEVICE_ID>",
+    "-derivedDataPath",
+    "<PRIVATE_TMP>/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/DerivedData",
+    "-resultBundlePath",
+    "<PRIVATE_TMP>/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/tests.xcresult",
+    "-parallel-testing-enabled",
+    "NO",
+    "-collect-test-diagnostics",
+    "never",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testNativeRefreshLoadsActualGroup",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testFullSubtitleChoicesExcludeForcedOnly",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testBindingWritesNativeSelection",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testBindingReadsExternalSelection",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testUnknownChoicePreservesSelection",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOffClearsOnlyPermittedGroup",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testSubtitleChangePreservesDescriptiveAudio",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOffPreservesAudio",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAudioStoreReadsDescriptionTag",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAudioOffMatchesActualGroupPermission",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testLoadingDoesNotChangeNativeChoice",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testReloadRecoversNativeChoiceWithNewIDs",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOldOptionIDCannotSelectAfterReload",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testDuplicateCompletionCannotOverwriteSuccess",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOldCompletionCannotOverwriteNewLoad",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOldErrorCannotOverwriteNewSuccess",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelRejectsLateCompletion",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelDoesNotClearNativeSelection",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testReplacedItemRejectsOldChoice",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testReplacedItemRejectsOldCompletion",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testNoItemIsNotAbsentGroup",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAbsentGroupIsNotFailure",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testLoadFailureIsNotEmptySuccess",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testErrorThenReloadRecovers",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testSelectionPreservesPlayerSettingsAndIdentity",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testChoiceIDsUniqueWithinSnapshot",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testViewRetainsSameStoreAndPlayer",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCapturedBindingRejectsAfterCancellation",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testActualRefreshPassesItemAndCharacteristicToLoader",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testActualRefreshErrorSetsFailedPhase",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testActualRefreshAbsentSetsAbsentPhase",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelledCurrentTaskDoesNotPublishResult",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testBindingWriteInvalidatesObservableSelection",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+    "CODE_SIGNING_ALLOWED=NO"
+  ],
+  "artifacts": [
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/manifest.json",
+      "sha256": "a51747f0ae69e7909fbb700b638d830b2f2ea4a6380a4d0fd06d554e7eabe6c3",
+      "originalSha256": "a51747f0ae69e7909fbb700b638d830b2f2ea4a6380a4d0fd06d554e7eabe6c3",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/adapter-swiftui-media-platform-native.mjs",
+      "sha256": "558a232346663f2200f7486db75896185e36fc66ba2336ff1e061b9284f84a2d",
+      "originalSha256": "558a232346663f2200f7486db75896185e36fc66ba2336ff1e061b9284f84a2d",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/adapter-platform-core.mjs",
+      "sha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5",
+      "originalSha256": "6854b1a6f8816cd11509b35ef76cd1092f674488f96ea6108ebfe94da18db2c5",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/adapter-native-core.mjs",
+      "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346",
+      "originalSha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/adapter-contracts.mjs",
+      "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130",
+      "originalSha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/adapter-swiftui-media-diagnostics.mjs",
+      "sha256": "60f946097023cc248d82ffee07c7d7286ae249ae610848c0913eba949a879431",
+      "originalSha256": "60f946097023cc248d82ffee07c7d7286ae249ae610848c0913eba949a879431",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/inputs/Sources/MediaSelection.swift",
+      "sha256": "103487ecb1e3a966e3c4988bd18cad1ee9f66a651ab76272be47f2ce1676a742",
+      "originalSha256": "103487ecb1e3a966e3c4988bd18cad1ee9f66a651ab76272be47f2ce1676a742",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/inputs/Tests/MediaSelectionTests.swift",
+      "sha256": "348773da4077f2a8ce963f993aaed7b1d29657e93f0282d632a667620090455b",
+      "originalSha256": "348773da4077f2a8ce963f993aaed7b1d29657e93f0282d632a667620090455b",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/inputs/Tests/DescriptionFixture.swift",
+      "sha256": "b65a164d2ea9121fa058094c177116405c31904789e300872aea15cae7ad0a2e",
+      "originalSha256": "b65a164d2ea9121fa058094c177116405c31904789e300872aea15cae7ad0a2e",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/inputs/NegativeFixtures/forced.swift",
+      "sha256": "d07004b3f276dc90dcf640a4d6c6df2babacdb8f58f66c26e8ea9768cec769e2",
+      "originalSha256": "d07004b3f276dc90dcf640a4d6c6df2babacdb8f58f66c26e8ea9768cec769e2",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/inputs/NegativeFixtures/stale.swift",
+      "sha256": "6c4ad96092c4310525cb909f7eadb6a19649d08f23b27dedf68c5a4aaffc72a4",
+      "originalSha256": "6c4ad96092c4310525cb909f7eadb6a19649d08f23b27dedf68c5a4aaffc72a4",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/inputs/NegativeFixtures/cancel.swift",
+      "sha256": "546de516c8d877d0bb60075218f539ad8f82da3d4c48f0e9008770ebe368f7ee",
+      "originalSha256": "546de516c8d877d0bb60075218f539ad8f82da3d4c48f0e9008770ebe368f7ee",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/inputs/NegativeFixtures/disconnect.swift",
+      "sha256": "0b64fc0eff5683fd648e0e984f4250e3a820065373baa19e6a07701817fa7267",
+      "originalSha256": "0b64fc0eff5683fd648e0e984f4250e3a820065373baa19e6a07701817fa7267",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/generated-package.swift",
+      "sha256": "1fde8fb16c303a5f6edeaf6e2713eabe8f3859a9f795c666d4aeffd5ff39579e",
+      "originalSha256": "1fde8fb16c303a5f6edeaf6e2713eabe8f3859a9f795c666d4aeffd5ff39579e",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/xcode.txt",
+      "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77",
+      "originalSha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/compiler.txt",
+      "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908",
+      "originalSha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/sdk-path.txt",
+      "sha256": "7da0fd6d11521838939c36a6c45bfaeb893ecd0f8db281f9093f2c93af465ed1",
+      "originalSha256": "7da0fd6d11521838939c36a6c45bfaeb893ecd0f8db281f9093f2c93af465ed1",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/sdk-version.txt",
+      "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a",
+      "originalSha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/sdk-build.txt",
+      "sha256": "8e78a5c0c20fa1f07a154dbd8319d52d2bc1c38974a5b30047e300e8d0ec8a23",
+      "originalSha256": "8e78a5c0c20fa1f07a154dbd8319d52d2bc1c38974a5b30047e300e8d0ec8a23",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/host-version.txt",
+      "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a",
+      "originalSha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/host-build.txt",
+      "sha256": "2f3fe74bb2be369e9002e7baf4bf3c01d89bc0577b03fd44c98c5c3de5fb60aa",
+      "originalSha256": "2f3fe74bb2be369e9002e7baf4bf3c01d89bc0577b03fd44c98c5c3de5fb60aa",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/host-devices.json",
+      "sha256": "1519d5bc4b3e1ba6ff8f96ee74b5c5e104af04fe1b5210932cfb11e7fe83739d",
+      "originalSha256": "8ff9fa0edb31d945c17a9e1bd6f7faf46b21476f32e45925d406eb2400614816",
+      "transformation": "path-and-device-identifier-redaction"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/intent.json",
+      "sha256": "6c362c6a11399cf1b04575bf0b5d15fef358220de9ffa4702bb89dd310fa89e5",
+      "originalSha256": "e685d1c388d1d01b9246fbe141144d2ce94cac66cc0bd107d2bfc43b1a9a815a",
+      "transformation": "path-and-device-identifier-redaction"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/native.log",
+      "sha256": "f6ac44fd77054840fd16c0947fb8109247e42f47f2de11fffb0211f8f7322256",
+      "originalSha256": "0e7b1fb54b7308f109702b0ce4532af9c0f26ae4b0c9bd9d006a4f530fc917b0",
+      "transformation": "path-and-device-identifier-redaction"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/process.json",
+      "sha256": "3b3d5470ef1e4f87a89d31616a0e727cd25f187fbca134053b38a084f50e9da3",
+      "originalSha256": "3b3d5470ef1e4f87a89d31616a0e727cd25f187fbca134053b38a084f50e9da3",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/summary-process.txt",
+      "sha256": "65fb2b79d89c85ebd725085563d46849bbc218129df9a27a4022d56ba011d699",
+      "originalSha256": "65fb2b79d89c85ebd725085563d46849bbc218129df9a27a4022d56ba011d699",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r2-h2/sui-media-mac-positive-r2/summary.json",
+      "sha256": "0d68d6e8e410cdc853080b4b5b71a24a4ed03b87654fe62b38f18d31f011261b",
+      "originalSha256": "0d68d6e8e410cdc853080b4b5b71a24a4ed03b87654fe62b38f18d31f011261b",
+      "transformation": "none"
+    }
+  ],
+  "provenance": "derived public record; original result in private archive; redaction is not fresh execution"
+}

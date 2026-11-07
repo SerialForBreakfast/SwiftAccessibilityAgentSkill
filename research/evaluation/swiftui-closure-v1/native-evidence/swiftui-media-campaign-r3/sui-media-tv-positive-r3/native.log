@@ -1,0 +1,722 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -scheme AccessibilityExamples -destination "platform=tvOS Simulator,id=<DEVICE_OR_RUN_UUID>" -derivedDataPath <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData -resultBundlePath <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/tests.xcresult -parallel-testing-enabled NO -collect-test-diagnostics never "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testNativeRefreshLoadsActualGroup" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testFullSubtitleChoicesExcludeForcedOnly" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testBindingWritesNativeSelection" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testBindingReadsExternalSelection" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testUnknownChoicePreservesSelection" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOffClearsOnlyPermittedGroup" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testSubtitleChangePreservesDescriptiveAudio" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOffPreservesAudio" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAudioStoreReadsDescriptionTag" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAudioOffMatchesActualGroupPermission" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testLoadingDoesNotChangeNativeChoice" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testReloadRecoversNativeChoiceWithNewIDs" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOldOptionIDCannotSelectAfterReload" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testDuplicateCompletionCannotOverwriteSuccess" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOldCompletionCannotOverwriteNewLoad" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOldErrorCannotOverwriteNewSuccess" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelRejectsLateCompletion" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelDoesNotClearNativeSelection" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testReplacedItemRejectsOldChoice" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testReplacedItemRejectsOldCompletion" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testNoItemIsNotAbsentGroup" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAbsentGroupIsNotFailure" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testLoadFailureIsNotEmptySuccess" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testErrorThenReloadRecovers" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testSelectionPreservesPlayerSettingsAndIdentity" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testChoiceIDsUniqueWithinSnapshot" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testViewRetainsSameStoreAndPlayer" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCapturedBindingRejectsAfterCancellation" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testActualRefreshPassesItemAndCharacteristicToLoader" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testActualRefreshErrorSetsFailedPhase" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testActualRefreshAbsentSetsAbsentPhase" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelledCurrentTaskDoesNotPublishResult" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testBindingWriteInvalidatesObservableSelection" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection" CODE_SIGNING_ALLOWED=NO
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  AccessibilityExamples: <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+
+Writing result bundle at path:
+	<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/tests.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (3 targets)
+    Target 'AccessibilityExamples-product' in project 'AccessibilityExamples'
+        ➜ Explicit dependency on target 'AccessibilityExamples' in project 'AccessibilityExamples'
+    Target 'AccessibilityExamplesTests-product' in project 'AccessibilityExamples'
+        ➜ Explicit dependency on target 'AccessibilityExamples' in project 'AccessibilityExamples'
+    Target 'AccessibilityExamples' in project 'AccessibilityExamples' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: c4d5452c5b6599dea66f3b83bee7fd21
+Build description path: <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/XCBuildData/c4d5452c5b6599dea66f3b83bee7fd21.xcbuilddata
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/CompilationCache.noindex
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/CompilationCache.noindex
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKStatCaches.noindex/appletvsimulator27.0-24J360-21f0701ac8d55f1e5a066df852c2cd87.sdkstatcache
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk -o <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKStatCaches.noindex/appletvsimulator27.0-24J360-21f0701ac8d55f1e5a066df852c2cd87.sdkstatcache
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/PrecompiledHeaders
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/PrecompiledHeaders
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-appletvsimulator
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-appletvsimulator
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/PackageFrameworks
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/PackageFrameworks
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/empty-AccessibilityExamplesTests.plist (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/empty-AccessibilityExamplesTests.plist
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftConstValuesFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftConstValuesFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.LinkFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.LinkFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyStaticMetadataFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyMetadataFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyMetadataFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftConstValuesFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftConstValuesFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.LinkFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.LinkFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/AccessibilityExamples.modulemap (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/AccessibilityExamples.modulemap
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/AccessibilityExamples.DependencyStaticMetadataFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/AccessibilityExamples.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/AccessibilityExamples.DependencyMetadataFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/AccessibilityExamples.DependencyMetadataFileList
+
+MkDir <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    /bin/mkdir -p <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps-appletvsimulator/AccessibilityExamples.modulemap <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/AccessibilityExamples.modulemap (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/AccessibilityExamples.modulemap <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps-appletvsimulator
+
+SwiftDriver AccessibilityExamples normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamples -Onone @<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk -target arm64-apple-tvos26.0-simulator -g -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKStatCaches.noindex/appletvsimulator27.0-24J360-21f0701ac8d55f1e5a066df852c2cd87.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/include -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h -working-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_AvailabilityInternal-8I42EOSKVV36C14EJFNF2LN93.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdarg-2O8AVNJ8WLU16TZ9TTAK1ND1P.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_Builtin_float-7DWQZQRK1HWHG57L1CGG1K7UQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdbool-6URDMPPQ7CSVODIIUD8OBQUG5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stddef-B8DCQXCRYD89F9SUBXWYGPJCD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/ptrcheck-4GJEINQNVS9FDJ18OEVEHT113.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/DeveloperToolsSupport-4S5TQF1DUNVDWK6ZYYKJR1WUS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_SwiftConcurrencyShims-A6WSZTGMO915E5CJ5CBJCYJAM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/SwiftShims-3G7QGSBR2ITTFL2ADHYVGXO6Q.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/ptrauth-6IDKU9NH0FFUHRTGVJN5EN8FV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_DarwinFoundation1-JQDM4A1Y07Y6XBYVKMJ6UOLY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_DarwinFoundation2-6GBJOIN4AVOJ0VUSSR2RL8K9I.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_Builtin_limits-EB24GDKACUGE6N37C0H8ZXRPV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_Builtin_tgmath-DFQ4BMW17V8KWGSZXWF607RHW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/sys_types-B3PPS1C460BUUAXZVP5X4CJCS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/string_h-DH7YDYXL2EM7DCUT99XZLX2IS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdint-8NUHVP0OZET836N90AK626I8K.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_DarwinFoundation3-CYU8VZQXEBE2MSGR8E9T65ZY0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_Builtin_intrinsics-8VK3C15SPQAWCY8KPCT0VVXLZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdatomic-6ZHFHFBJ00ISBJB3VV1NEH7EO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_Builtin_inttypes-4K4JB8VOYI3S9OOEUZ3INHCQ5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/Darwin-4R2W7SVGZK9ISUL6KPSBFKNKV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/simd-4796OXIY6BVCO7V2IS438TL6Q.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/MachO-2JOGR71PDYYOXDMI2KYURFU3C.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/ObjectiveC-5IJVN3XBUL3BIUG7TNEWLCIUG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/os_object-1LCCLEHCQSX5RNGB9IKVISYC3.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/os_workgroup-C54FMLNV0KXK5NWC2UBDPJW7Y.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/Spatial-72D5J5P6TNAQGVIJIMM2EALSE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/Dispatch-8ZZOXQB0OU6O3IYQHFS42Q6DA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/CoreFoundation-7P7P7UV5O2K8AAW2WBCPRRSB2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/dnssd-5P4J6IDD6OVRRFR3X9U6YEGAJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/XPC-DTLJSWIHA5XLDBBJ15Q0A7UBV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/os-932J4R7Y7VBV4SN0K2U3JV6LG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/Security-9MBQT35ERW4KE6FRCAMNPX2YY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/CoreAudioTypes-4H29CQ6L0OV83W54V6FA9IEH.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/CFNetwork-32J26CDF8DNQOUHTAF65EY7O.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/CoreGraphics-4COCAMA9Y01ARQEOQ095WU7AZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/CoreAudio-A5EWEP4BM862KU7PRJ7XFA1PT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/Foundation-6IH9EUKJG1FM2FRKUETJ8BX29.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/CoreText-604O1UGB0SOGXU2OA54MYKL0X.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/ImageIO-31JEORFP1R9L0IV8UKSKWXBS2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/CoreTransferable-535LO42PKW25RVLS00KEHO2BA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/UIUtilities-6S8Q3X5375JKLYM7LXXGSJWFA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/Accessibility-69P4B8030QUDD5L5UR80Z9NO2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/Network-4DFFMSMZFVU2VUDVRWAHE8ZNG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/OpenGLES-66ZG9WPGOHFSUN651EI7LU6JF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/Symbols-13H3LEZBDM6YD2UCFT613XR8X.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/OSLog-9M2ZMO877F6PGZYGPHIQ802UV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/UserNotifications-DJTMRT1A0WKITQDCTSCDLJ58T.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/DataDetection-C6VYQE1WIAEHRFSND567IL9XJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/CoreData-E67SG6K4Q3JW0SUWR34J5OT0V.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/_LocationEssentials-96OXCNJU469MFLOV15D4IM6A2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/IOSurface-600DVU6IKZOJPQLCLUN4LVF9O.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/CoreMIDI-7YVK06CIJETWJEFIET7V9P3ZZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/UniformTypeIdentifiers-9MD7Q526YRBU0J8XGCGHTGWV1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/AVRouting-BUDC4AIOVLT68UBCPWQ3YO726.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/CoreLocation-97ANZOWX5FAXYIGVPNR7IWURG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/Metal-1HZ7H3W0R9IMFONC1DKNW1NZ1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/AudioToolbox-93KC7WA1JRX6OQ2BIBQKYNUPI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/CoreVideo-CCWINJ8C13IZ9JB0KV6JSLE5X.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/QuartzCore-DELF6F7GTCIO9MNTNOTWJFSTU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/CoreImage-5MQESI8THEZEDM6FLGXM6IFN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/CoreMedia-64CDY88VRE5MB58SVPZZTSQF6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/SwiftUICore-B67SHJV8104HTXA0LRS006ZFF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/MediaToolbox-FB88K3EV8GXMWD3649F80ORU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/VideoToolbox-AO28XRUCD12US0R9JFP809WWD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/AVFAudio-1F15IQUW999NTBNUVZOYL59CW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/UIKit-F2ARJKLN9KKM2IE2WF8MHFRWN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/AVFoundation-5BNXQVRZP6VH8NAY6AH5CB08B.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/AVKit-4JNQ3H1606E848L5E3RHMDN9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules/SwiftUI-2JP2HGAYC9X763WMLTQPVAYCS.pcm
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ AccessibilityExamples (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ MediaSelection.swift <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/Sources/AccessibilityExamples/MediaSelection.swift (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/Sources/AccessibilityExamples/MediaSelection.swift (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-SwiftPerFileCompile MediaSelection.swift
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for AccessibilityExamples (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+
+SwiftDriver\ Compilation\ Requirements AccessibilityExamples normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamples -Onone @<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk -target arm64-apple-tvos26.0-simulator -g -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKStatCaches.noindex/appletvsimulator27.0-24J360-21f0701ac8d55f1e5a066df852c2cd87.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/include -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h -working-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftMergeGeneratedHeaders <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps-appletvsimulator/AccessibilityExamples-Swift.h <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    builtin-swiftHeaderTool -arch arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h -o <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps-appletvsimulator/AccessibilityExamples-Swift.h
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamples.swiftmodule/arm64-apple-tvos-simulator.swiftdoc <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftdoc (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftdoc <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamples.swiftmodule/arm64-apple-tvos-simulator.swiftdoc
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamples.swiftmodule/arm64-apple-tvos-simulator.swiftmodule <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamples.swiftmodule/arm64-apple-tvos-simulator.swiftmodule
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamples.swiftmodule/arm64-apple-tvos-simulator.abi.json <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.abi.json (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.abi.json <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamples.swiftmodule/arm64-apple-tvos-simulator.abi.json
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamples.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftsourceinfo (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftsourceinfo <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamples.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo
+
+SwiftDriver AccessibilityExamplesTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamplesTests -Onone @<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk -target arm64-apple-tvos26.0-simulator -g -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/PackageFrameworks -F <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKStatCaches.noindex/appletvsimulator27.0-24J360-21f0701ac8d55f1e5a066df852c2cd87.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/include -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-4S6YB5X56ARPZUQPLH8LH2C28.pcm
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-1PBA1ED965PFN.swiftmodule
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-7GYEFXL1D9JHKOKAV46SLCVDV.pcm
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-39NFB63BW8LM3.swiftmodule
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ AccessibilityExamplesTests (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ DescriptionFixture.swift <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/Tests/AccessibilityExamplesTests/DescriptionFixture.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/Tests/AccessibilityExamplesTests/DescriptionFixture.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-SwiftPerFileCompile DescriptionFixture.swift
+
+SwiftCompile normal arm64 Compiling\ MediaSelectionTests.swift <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/Tests/AccessibilityExamplesTests/MediaSelectionTests.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/Tests/AccessibilityExamplesTests/MediaSelectionTests.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-SwiftPerFileCompile MediaSelectionTests.swift
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for AccessibilityExamplesTests (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftDriver\ Compilation\ Requirements AccessibilityExamplesTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamplesTests -Onone @<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk -target arm64-apple-tvos26.0-simulator -g -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/PackageFrameworks -F <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKStatCaches.noindex/appletvsimulator27.0-24J360-21f0701ac8d55f1e5a066df852c2cd87.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/include -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftsourceinfo (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftsourceinfo <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.swiftmodule/arm64-apple-tvos-simulator.abi.json <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.abi.json (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.abi.json <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.swiftmodule/arm64-apple-tvos-simulator.abi.json
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.swiftmodule/arm64-apple-tvos-simulator.swiftdoc <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftdoc (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftdoc <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.swiftmodule/arm64-apple-tvos-simulator.swiftdoc
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.swiftmodule/arm64-apple-tvos-simulator.swiftmodule <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.swiftmodule/arm64-apple-tvos-simulator.swiftmodule
+
+SwiftDriverJobDiscovery normal arm64 Compiling DescriptionFixture.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftDriverJobDiscovery normal arm64 Compiling MediaSelection.swift (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+
+SwiftDriver\ Compilation AccessibilityExamples normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamples -Onone @<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk -target arm64-apple-tvos26.0-simulator -g -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKStatCaches.noindex/appletvsimulator27.0-24J360-21f0701ac8d55f1e5a066df852c2cd87.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/include -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h -working-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Ld <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamples.o normal (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-tvos26.0-simulator -r -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk -O0 -Xlinker -no_warn_duplicate_libraries -F<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-appletvsimulator -F<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -iframework /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/Developer/Library/Frameworks -filelist <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.LinkFileList -nostdlib -Xlinker -object_path_lto -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_lto.o -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/appletvsimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule -o <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamples.o
+
+ExtractAppIntentsMetadata (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name AccessibilityExamples --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk --xcode-version 27A266a --platform-family tvOS --deployment-target 26.0 --bundle-identifier workspace.AccessibilityExamples --output <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamples.appintents --target-triple arm64-apple-tvos26.0-simulator --binary-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamples.o --dependency-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_dependency_info.dat --stringsdata-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList --metadata-file-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/AccessibilityExamples.DependencyMetadataFileList --static-metadata-file-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/AccessibilityExamples.DependencyStaticMetadataFileList --swift-const-vals-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftConstValuesFileList --force --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-11-07 08:36:43.515 appintentsmetadataprocessor[93931:7703123] Starting appintentsmetadataprocessor export
+2026-11-07 08:36:43.621 appintentsmetadataprocessor[93931:7703123] Extracted no relevant App Intents symbols, skipping writing output
+
+ProcessInfoPlistFile <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest/Info.plist <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/empty-AccessibilityExamplesTests.plist (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    builtin-infoPlistUtility <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/empty-AccessibilityExamplesTests.plist -producttype com.apple.product-type.bundle.unit-test -expandbuildsettings -format binary -platform appletvsimulator -o <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest/Info.plist
+
+SwiftDriverJobDiscovery normal arm64 Compiling MediaSelectionTests.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftDriver\ Compilation AccessibilityExamplesTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamplesTests -Onone @<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk -target arm64-apple-tvos26.0-simulator -g -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/PackageFrameworks -F <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKStatCaches.noindex/appletvsimulator27.0-24J360-21f0701ac8d55f1e5a066df852c2cd87.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/include -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Ld <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest/AccessibilityExamplesTests normal (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -Xlinker -reproducible -target arm64-apple-tvos26.0-simulator -Xlinker -bundle -sdk /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk -Xlinker -no_warn_duplicate_libraries -L<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-appletvsimulator -L<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/lib -F<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-appletvsimulator -F<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/PackageFrameworks -F<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator -Fsystem /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/Library/Frameworks -Fsystem /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/Developer/Library/Frameworks @<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.LinkFileList -Xlinker -rpath -Xlinker @loader_path -Xlinker -rpath -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/PackageFrameworks -Xlinker -rpath -Xlinker @loader_path/../.. -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/../Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_lto.o -Xclang-linker -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_dependency_info.dat -link-objc-runtime -profile-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/appletvsimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport -o <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest/AccessibilityExamplesTests
+
+ExtractAppIntentsMetadata (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name AccessibilityExamplesTests --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk --xcode-version 27A266a --platform-family tvOS --deployment-target 26.0 --bundle-identifier workspace.AccessibilityExamplesTests --output <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest --target-triple arm64-apple-tvos26.0-simulator --binary-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest/AccessibilityExamplesTests --dependency-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_dependency_info.dat --stringsdata-file <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList --metadata-file-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyMetadataFileList --static-metadata-file-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyStaticMetadataFileList --swift-const-vals-list <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-11-07 08:36:44.376 appintentsmetadataprocessor[93953:7703187] Starting appintentsmetadataprocessor export
+2026-11-07 08:36:44.378 appintentsmetadataprocessor[93953:7703187] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+CopySwiftLibs <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    builtin-swiftStdLibTool --copy --verbose --scan-executable <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest/AccessibilityExamplesTests --scan-folder <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest/Frameworks --scan-folder <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest/PlugIns --scan-folder <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest/SystemExtensions --scan-folder <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest/Extensions --platform appletvsimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-appletvsimulator/AccessibilityExamplesTests-p.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+RegisterExecutionPolicyException <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    builtin-RegisterExecutionPolicyException <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest
+
+Touch <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace
+    /usr/bin/touch -c <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Products/Debug-appletvsimulator/AccessibilityExamplesTests.xctest
+
+PruneExplicitPrecompiledModules <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/SDKExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules <PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+Test Suite 'Selected tests' started at 2026-11-07 08:36:58.101.
+Test Suite 'AccessibilityExamplesTests.xctest' started at 2026-11-07 08:36:58.105.
+Test Suite 'MediaSelectionTests' started at 2026-11-07 08:36:58.105.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAbsentGroupIsNotFailure]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAbsentGroupIsNotFailure]' passed (0.215 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testActualRefreshAbsentSetsAbsentPhase]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testActualRefreshAbsentSetsAbsentPhase]' passed (0.308 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testActualRefreshErrorSetsFailedPhase]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testActualRefreshErrorSetsFailedPhase]' passed (0.052 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testActualRefreshPassesItemAndCharacteristicToLoader]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testActualRefreshPassesItemAndCharacteristicToLoader]' passed (0.027 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAudioOffMatchesActualGroupPermission]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAudioOffMatchesActualGroupPermission]' passed (0.052 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAudioStoreReadsDescriptionTag]' started.
+2026-11-07 08:36:58.797098-0800 xctest[94033:7704672] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:36:58.798086-0800 xctest[94033:7704690] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:36:58.799107-0800 xctest[94033:7704672] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:36:58.800188-0800 xctest[94033:7704672] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:36:58.801255-0800 xctest[94033:7704672] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:36:58.802708-0800 xctest[94033:7704710] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:36:58.803994-0800 xctest[94033:7704667] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+2026-11-07 08:36:58.804307-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:36:58.804975-0800 xctest[94033:7704708] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:36:58.805242-0800 xctest[94033:7704667] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+2026-11-07 08:36:58.805546-0800 xctest[94033:7704708] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:36:58.825508-0800 xctest[94033:7704667] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+2026-11-07 08:36:58.827985-0800 xctest[94033:7704597] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:58.831112-0800 xctest[94033:7704597] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:58.838620-0800 xctest[94033:7704597] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:58.843097-0800 xctest[94033:7704725] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:58.844222-0800 xctest[94033:7704724] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:58.844633-0800 xctest[94033:7704714] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:58.847140-0800 xctest[94033:7704725] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:58.847531-0800 xctest[94033:7704724] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:58.848257-0800 xctest[94033:7704714] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:58.849700-0800 xctest[94033:7704725] [player] <<<< Async >>>> signalled err=-12785 at <>:4737
+2026-11-07 08:36:58.850322-0800 xctest[94033:7704724] [player] <<<< Async >>>> signalled err=-12785 at <>:4737
+2026-11-07 08:36:58.853512-0800 xctest[94033:7704714] [player] <<<< Async >>>> signalled err=-12785 at <>:4737
+2026-11-07 08:36:58.854641-0800 xctest[94033:7704714] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:58.856631-0800 xctest[94033:7704725] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:58.854862-0800 xctest[94033:7704724] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAudioStoreReadsDescriptionTag]' passed (0.096 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testBindingReadsExternalSelection]' started.
+2026-11-07 08:36:58.859310-0800 xctest[94033:7704724] [player] <<<< Async >>>> signalled err=-12785 at <>:4776
+2026-11-07 08:36:58.859467-0800 xctest[94033:7704714] [player] <<<< Async >>>> signalled err=-12785 at <>:4776
+2026-11-07 08:36:58.860279-0800 xctest[94033:7704725] [player] <<<< Async >>>> signalled err=-12785 at <>:4776
+2026-11-07 08:36:59.104321-0800 xctest[94033:7704725] [plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x105a25260> <DEVICE_OR_RUN_UUID>
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testBindingReadsExternalSelection]' passed (0.294 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testBindingWriteInvalidatesObservableSelection]' started.
+2026-11-07 08:36:59.232718-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1755  ReadPListFile: unable to open stream for LoudnessManager plist
+2026-11-07 08:36:59.232908-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1261  GetHardwarePlatformKey: cannot get acoustic ID
+2026-11-07 08:36:59.233096-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.233292-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.240919-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.241085-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.273677-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.273854-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.277763-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.277898-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.291026-0800 xctest[94033:7704710] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:36:59.291129-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:36:59.292792-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:36:59.293003-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:36:59.297863-0800 xctest[94033:7704710] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:36:59.297903-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testBindingWriteInvalidatesObservableSelection]' passed (0.145 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testBindingWritesNativeSelection]' started.
+2026-11-07 08:36:59.338484-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.338603-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.342464-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.342830-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.789975-0800 xctest[94033:7704726] [player] <<<< Async >>>> signalled err=-12785 at <>:3471
+2026-11-07 08:36:59.817579-0800 xctest[94033:7704726] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:59.822404-0800 xctest[94033:7704726] [player] <<<< Async >>>> signalled err=-12785 at <>:4737
+2026-11-07 08:36:59.841388-0800 xctest[94033:7704726] [player] <<<< Async >>>> signalled err=-12785 at <>:4776
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testBindingWritesNativeSelection]' passed (0.574 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelDoesNotClearNativeSelection]' started.
+2026-11-07 08:36:59.888428-0800 xctest[94033:7704726] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:59.890241-0800 xctest[94033:7704726] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:36:59.914619-0800 xctest[94033:7704691] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.914879-0800 xctest[94033:7704691] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.918448-0800 xctest[94033:7704691] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:36:59.918647-0800 xctest[94033:7704691] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelDoesNotClearNativeSelection]' passed (0.117 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelledCurrentTaskDoesNotPublishResult]' started.
+2026-11-07 08:37:00.033508-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.033812-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.037829-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.038006-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.083112-0800 xctest[94033:7704698] [player] <<<< Async >>>> signalled err=-12785 at <>:4784
+2026-11-07 08:37:00.084141-0800 xctest[94033:7704698] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:37:00.088768-0800 xctest[94033:7704698] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelledCurrentTaskDoesNotPublishResult]' passed (0.106 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelledOldTaskCannotCancelNewerLoad]' started.
+2026-11-07 08:37:00.106106-0800 xctest[94033:7704630] [player] <<<< Async >>>> signalled err=-12785 at <>:3471
+2026-11-07 08:37:00.107784-0800 xctest[94033:7704699] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.107893-0800 xctest[94033:7704699] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.111373-0800 xctest[94033:7704699] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.111513-0800 xctest[94033:7704699] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.111918-0800 xctest[94033:7704630] [player] <<<< Async >>>> signalled err=-12785 at <>:3471
+2026-11-07 08:37:00.113137-0800 xctest[94033:7704630] [player] <<<< Async >>>> signalled err=-12785 at <>:4745
+2026-11-07 08:37:00.113634-0800 xctest[94033:7704630] [player] <<<< Async >>>> signalled err=-12785 at <>:4784
+2026-11-07 08:37:00.115123-0800 xctest[94033:7704630] [player] <<<< Async >>>> signalled err=-12785 at <>:3471
+2026-11-07 08:37:00.126369-0800 xctest[94033:7704713] [player] <<<< Async >>>> signalled err=-12785 at <>:2025
+2026-11-07 08:37:00.126662-0800 xctest[94033:7704667] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelledOldTaskCannotCancelNewerLoad]' passed (0.022 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelRejectsLateCompletion]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelRejectsLateCompletion]' passed (0.031 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCapturedBindingRejectsAfterCancellation]' started.
+2026-11-07 08:37:00.172737-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.172854-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.177358-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.177934-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCapturedBindingRejectsAfterCancellation]' passed (0.050 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testChoiceIDsUniqueWithinSnapshot]' started.
+2026-11-07 08:37:00.256371-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.256496-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.260621-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.260928-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testChoiceIDsUniqueWithinSnapshot]' passed (0.069 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testDuplicateCompletionCannotOverwriteSuccess]' started.
+2026-11-07 08:37:00.329377-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.329510-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.333367-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.333478-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testDuplicateCompletionCannotOverwriteSuccess]' passed (0.029 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testErrorThenReloadRecovers]' started.
+2026-11-07 08:37:00.339776-0800 xctest[94033:7704726] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:37:00.340390-0800 xctest[94033:7704726] [player] <<<< Async >>>> signalled err=-12785 at <>:4737
+2026-11-07 08:37:00.344218-0800 xctest[94033:7704726] [player] <<<< Async >>>> signalled err=-12785 at <>:4776
+2026-11-07 08:37:00.347671-0800 xctest[94033:7704699] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+2026-11-07 08:37:00.347516-0800 xctest[94033:7704726] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testErrorThenReloadRecovers]' passed (0.019 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testFullSubtitleChoicesExcludeForcedOnly]' started.
+2026-11-07 08:37:00.372790-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.372942-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.377362-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.377640-0800 xctest[94033:7704703] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.384861-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:37:00.385209-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:37:00.387876-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testFullSubtitleChoicesExcludeForcedOnly]' passed (0.032 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testInvalidChoiceDoesNotInvalidateObservableSelection]' started.
+2026-11-07 08:37:00.397589-0800 xctest[94033:7704699] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testInvalidChoiceDoesNotInvalidateObservableSelection]' passed (0.021 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testLoadFailureIsNotEmptySuccess]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testLoadFailureIsNotEmptySuccess]' passed (0.004 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testLoadingDoesNotChangeNativeChoice]' started.
+2026-11-07 08:37:00.430060-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.430211-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.433732-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.433847-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.442192-0800 xctest[94033:7704694] [player] <<<< Async >>>> signalled err=-12785 at <>:3471
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testLoadingDoesNotChangeNativeChoice]' passed (0.033 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testNativeRefreshLoadsActualGroup]' started.
+2026-11-07 08:37:00.469175-0800 xctest[94033:7704715] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.469389-0800 xctest[94033:7704715] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.473108-0800 xctest[94033:7704715] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.473298-0800 xctest[94033:7704715] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.481977-0800 xctest[94033:7704698] [player] <<<< Async >>>> signalled err=-12785 at <>:3471
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testNativeRefreshLoadsActualGroup]' passed (0.043 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testNoItemIsNotAbsentGroup]' started.
+2026-11-07 08:37:00.501215-0800 xctest[94033:7704699] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testNoItemIsNotAbsentGroup]' passed (0.008 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOffClearsOnlyPermittedGroup]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOffClearsOnlyPermittedGroup]' passed (0.012 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOffPreservesAudio]' started.
+2026-11-07 08:37:00.528408-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.528528-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.528918-0800 xctest[94033:7704726] [player] <<<< Async >>>> signalled err=-12785 at <>:4784
+2026-11-07 08:37:00.532331-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.532447-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOffPreservesAudio]' passed (0.035 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOldCompletionCannotOverwriteNewLoad]' started.
+2026-11-07 08:37:00.560273-0800 xctest[94033:7704699] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOldCompletionCannotOverwriteNewLoad]' passed (0.015 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOldErrorCannotOverwriteNewSuccess]' started.
+2026-11-07 08:37:00.590943-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.591070-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.594583-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.594916-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOldErrorCannotOverwriteNewSuccess]' passed (0.033 seconds).
+2026-11-07 08:37:00.601727-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOldOptionIDCannotSelectAfterReload]' started.
+2026-11-07 08:37:00.601935-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:37:00.604421-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:37:00.616939-0800 xctest[94033:7704715] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.617061-0800 xctest[94033:7704715] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOldOptionIDCannotSelectAfterReload]' passed (0.019 seconds).
+2026-11-07 08:37:00.620767-0800 xctest[94033:7704715] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.620886-0800 xctest[94033:7704715] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testReloadRecoversNativeChoiceWithNewIDs]' started.
+2026-11-07 08:37:00.627307-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:37:00.629825-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:37:00.630986-0800 xctest[94033:7704699] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testReloadRecoversNativeChoiceWithNewIDs]' passed (0.018 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testReplacedItemRejectsOldChoice]' started.
+2026-11-07 08:37:00.653731-0800 xctest[94033:7704715] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.653854-0800 xctest[94033:7704715] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.657992-0800 xctest[94033:7704715] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:00.658181-0800 xctest[94033:7704715] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/workspace/Tests/AccessibilityExamplesTests/MediaSelectionTests.swift:176: error: -[AccessibilityExamplesTests.MediaSelectionTests testReplacedItemRejectsOldChoice] : XCTAssertNil failed: "<AVMediaSelectionTrackOption: 0x105aa6500, language = en, mediaType = 'sbtl', forced subtitles only, default = YES>"
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testReplacedItemRejectsOldChoice]' failed (0.453 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testReplacedItemRejectsOldCompletion]' started.
+2026-11-07 08:37:01.107995-0800 xctest[94033:7704672] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:37:01.108365-0800 xctest[94033:7704691] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:37:01.108578-0800 xctest[94033:7704672] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:37:01.108749-0800 xctest[94033:7704672] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:37:01.108945-0800 xctest[94033:7704672] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:37:01.116106-0800 xctest[94033:7704699] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+2026-11-07 08:37:01.116511-0800 xctest[94033:7704699] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testReplacedItemRejectsOldCompletion]' passed (0.028 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testSelectionPreservesPlayerSettingsAndIdentity]' started.
+2026-11-07 08:37:01.126106-0800 xctest[94033:7704711] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:37:01.126485-0800 xctest[94033:7704691] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:37:01.126804-0800 xctest[94033:7704711] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:37:01.127036-0800 xctest[94033:7704711] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:37:01.127378-0800 xctest[94033:7704711] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:37:01.130350-0800 xctest[94033:7704699] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+2026-11-07 08:37:01.131324-0800 xctest[94033:7704699] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testSelectionPreservesPlayerSettingsAndIdentity]' passed (0.018 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testSubtitleChangePreservesDescriptiveAudio]' started.
+2026-11-07 08:37:01.158060-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:01.158209-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:01.163095-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:01.163205-0800 xctest[94033:7704689] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:01.170139-0800 xctest[94033:7704711] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:37:01.170307-0800 xctest[94033:7704711] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:37:01.172682-0800 xctest[94033:7704672] [] (Fig) signalled err=-12785 at <>:1469
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testSubtitleChangePreservesDescriptiveAudio]' passed (0.031 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testUnknownChoicePreservesSelection]' started.
+2026-11-07 08:37:01.177497-0800 xctest[94033:7704699] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testUnknownChoicePreservesSelection]' passed (0.016 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testViewRetainsSameStoreAndPlayer]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testViewRetainsSameStoreAndPlayer]' passed (0.003 seconds).
+Test Suite 'MediaSelectionTests' failed at 2026-11-07 08:37:01.216.
+	 Executed 35 tests, with 1 failure (0 unexpected) in 3.027 (3.111) seconds
+Test Suite 'AccessibilityExamplesTests.xctest' failed at 2026-11-07 08:37:01.217.
+	 Executed 35 tests, with 1 failure (0 unexpected) in 3.027 (3.112) seconds
+Test Suite 'Selected tests' failed at 2026-11-07 08:37:01.219.
+	 Executed 35 tests, with 1 failure (0 unexpected) in 3.027 (3.119) seconds
+2026-11-07 08:37:01.253721-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:01.254083-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:01.257947-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:01.258219-0800 xctest[94033:7704716] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:37:01.266398-0800 xctest[94033:7704711] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:37:01.268089-0800 xctest[94033:7704711] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:37:01.268416-0800 xctest[94033:7704711] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:37:01.270887-0800 xctest[94033:7704711] [] (Fig) signalled err=-12785 at <>:1469
+
+Test session results, code coverage, and logs:
+	<PRIVATE_TMP>/swiftui-media-campaign-r3/sui-media-tv-positive-r3/tests.xcresult
+
+Testing started
+2026-11-07 08:36:27.528 xcodebuild[93464:7701446] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+2026-11-07 08:37:01.574 xcodebuild[93464:7701446] [MT] IDETestOperationsObserverDebug: 17.090 elapsed -- Testing started completed.
+2026-11-07 08:37:01.574 xcodebuild[93464:7701446] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-07 08:37:01.574 xcodebuild[93464:7701446] [MT] IDETestOperationsObserverDebug: 17.090 sec, +17.090 sec -- end
+Failing tests:
+	MediaSelectionTests.testReplacedItemRejectsOldChoice()
+
+** TEST FAILED **
+

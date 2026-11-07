@@ -553,3 +553,61 @@ example execution, installs, worker messages or released-skill/baseline changes.
 
 See research/evaluation/milestone-package-v2/README.md. Runtime skill, frozen
 baselines, original guides/candidates, native evidence and quarantines are unchanged.
+
+## SwiftUI Reconciliation And Real Media Selection
+
+- [x] Preserve upstream checkpoint `8e51ee9` and pin2,267 tracked inputs, including
+  released skill, frozen baselines, previous native evidence and sealed BigDog v2.
+- [x] Reconcile217 requirements/15 rules with actual existing assertion/receipt
+  bindings and the13-row forwarding overlay; retain explicit scope for all28
+  previously unresolved rows. No whole-clause coverage inferred from compilation.
+- [x] Add actual AVFoundation item/group selection, SwiftUI binding and observation
+  invalidation, async/current-item ownership and scoped retry composition.
+- [x] Validate36 positive methods per platform on macOS27/iOS26.5/tvOS26.5,
+  deployment26/SDK27; four distinct intended mutants reject on the shared host lane.
+- [x] Preserve25 native attempts and first source/diagnostics before two test-compile
+  repairs, one harness snapshot repair and the separate preservation-oracle repair.
+  Add forward-use error classification; historical adapters/results stay unchanged.
+- [x] Pair three behavioral families with nine complete draft developer questions,
+  separate alternative-aware rubrics and actual assertion bindings. Four general
+  Swift/harness/oracle diagnostic questions remain separate, draft/not-run.
+- [x] Preserve actual source selectors and SDK hashes; do not confuse a deprecated
+  neighboring declaration or comment with the async loader's availability.
+- [x] Keep progressive disclosure bounded: guidance first, source/contracts and
+  complete fixture on demand, no controller or incident context by default.
+- [x] Pass1,301 offline checks, baseline210-file verification and historical87-pin
+  verification. Zero model calls, additional spend, UI tests or mandatory manual gates.
+- [ ] Supplemental live stream-state observation: item rebinding and deterministic
+  observer teardown remain a named testable implementation remainder (G-015-L32).
+- [ ] Independent source/oracle/prompt review and accepted findings for a later
+  candidate. No released-skill promotion or BigDog sealed-input changes implied.
+
+See [consolidated report](../swiftui-closure-v1/RESULTS.md) and
+[review packet](../swiftui-closure-v1/REVIEW-REQUEST.md). Prepared, not dispatched;
+Git publication remains separately authorized.
+
+## Separate-Context SwiftUI Review And Candidate Dev.6
+
+- [x] Retain original and follow-up reviewer output separately from author
+  adjudication. One review agent, two source-only turns; no human/model-lift claim.
+- [x] Reproduce three failing assertions against unchanged prior source: stale Off
+  after reload, stale Off after replacement, and a filtered native choice labeled Off.
+- [x] Validate corrective media-v2 with44 methods/platform, three target compiles
+  and two new intended mutants; keep all native attempts and earlier batch immutable.
+- [x] Narrow cancellation to cooperative return checks versus immediate explicit
+  owner invalidation; state external reload ownership and include store task identity.
+- [x] Create nine revised complete media-only question/rubric pairs. Remove worked
+  form/generation scaffolding, ask for tests, separate correctness/evidence grades,
+  exclude implementation-only notification/key/timing diagnostics from grading.
+- [x] Distill accepted lessons into research-only0.3.0-dev.6. Concern notes and target
+  SDK excerpts first; source/complete runnable units only on request. Other routes
+  inherit pinned dev.5 limits; no silent requalification of unrelated source gaps.
+- [x] Pass1,332 offline checks; verify baseline210 files, historical87 pins, prior
+  closure738 pins and inherited/sealed141 pins. No released-skill/baseline edits.
+- [ ] Publish consolidated checkpoint when authorized; let BigDog complete its
+  unchanged comparison before selecting a later candidate comparison with explicit
+  quota limits. No new frontier benchmark or provider run authorized by this work.
+
+See [review results](../swiftui-review-v1/RESULTS.md) and
+[candidate dev.6](candidates/0.3.0-dev.6/README.md). Live stream observer lifecycle
+remains outside this extension and explicitly unresolved; no UI/manual gate added.

@@ -1,0 +1,51 @@
+{
+  "manifestHash": "cfa7cd7d455a1dfb13bd55dba7d9e0f36b50bbae3473ccd8d27e3b0cda597a0c",
+  "check": {
+    "id": "cancel",
+    "lane": "unit",
+    "expected": "failure",
+    "claimIds": [
+      "ownership"
+    ],
+    "testIds": [
+      "MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad"
+    ],
+    "failureIds": [
+      "MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad"
+    ],
+    "replacement": {
+      "target": "Sources/MediaSelection.swift",
+      "source": "NegativeFixtures/cancel.swift"
+    }
+  },
+  "environment": {
+    "platform": "macOS",
+    "deploymentTarget": "26.0",
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+    "sdkVersion": "27.0",
+    "sdkBuild": "26A425",
+    "architecture": "arm64",
+    "destinationType": "host",
+    "runtimeVersion": "27.0",
+    "runtimeBuild": "26A428"
+  },
+  "command": [
+    "xcodebuild",
+    "test",
+    "-scheme",
+    "AccessibilityExamples",
+    "-destination",
+    "platform=macOS,id=<HOST_DEVICE_ID>",
+    "-derivedDataPath",
+    "<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-mac-cancel-r4/DerivedData",
+    "-resultBundlePath",
+    "<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-mac-cancel-r4/tests.xcresult",
+    "-parallel-testing-enabled",
+    "NO",
+    "-collect-test-diagnostics",
+    "never",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad",
+    "CODE_SIGNING_ALLOWED=NO"
+  ]
+}

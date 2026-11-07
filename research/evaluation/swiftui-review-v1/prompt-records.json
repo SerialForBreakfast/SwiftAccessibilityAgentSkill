@@ -1,0 +1,403 @@
+{
+  "schema": 1,
+  "cases": [
+    {
+      "id": "swiftui-media-macos-v2/ownership",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "family": "ownership",
+      "status": "draft-review-informed",
+      "cohort": "development-not-holdout",
+      "inputScaffolding": "minimal synthetic media state; no worked form/generation algorithm",
+      "manifest": "code-examples/swiftui/media-macos-v2/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testLoadingDoesNotChangeNativeChoice",
+        "MediaSelectionTests/testOldOptionIDCannotSelectAfterReload",
+        "MediaSelectionTests/testDuplicateCompletionCannotOverwriteSuccess",
+        "MediaSelectionTests/testOldCompletionCannotOverwriteNewLoad",
+        "MediaSelectionTests/testOldErrorCannotOverwriteNewSuccess",
+        "MediaSelectionTests/testCancelRejectsLateCompletion",
+        "MediaSelectionTests/testCancelDoesNotClearNativeSelection",
+        "MediaSelectionTests/testReplacedItemRejectsOldChoice",
+        "MediaSelectionTests/testReplacedItemRejectsOldCompletion",
+        "MediaSelectionTests/testCapturedBindingRejectsAfterCancellation",
+        "MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad",
+        "MediaSelectionTests/testCancelledCurrentTaskDoesNotPublishResult",
+        "MediaSelectionTests/testAlreadyCancelledTaskCannotStartLoad",
+        "ReviewRegressionTests/testStaleOffCannotClearReloadedSelection",
+        "ReviewRegressionTests/testStaleOffCannotClearReplacementSelection",
+        "ReviewRegressionTests/testOldCompletionLeavesLoadingOnItemChange"
+      ],
+      "diagnosticOnlyExcluded": [
+        "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+        "ReviewRegressionTests/testViewLoadKeyIncludesStoreIdentity",
+        "ReviewRegressionTests/testExplicitCancelInvalidatesWhileLoaderIsSuspended"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-macos-v2/evaluation/ownership.prompt.md",
+        "text": "# macOS developer question\n\nPeople can change videos or reload caption choices while this SwiftUI screen is open. Old callbacks sometimes affect the new selection, including turning captions off. Make these operations belong to the right item and request, and include focused unit tests. Explain how the screen should react when the player item changes and what cancellation does. Target macOS26 or later. Here is the complete current file:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\nstruct CaptionOption: Identifiable {\n    let id: String\n    let name: String\n}\n\n@MainActor @Observable\nfinal class CaptionState {\n    let player: AVPlayer\n    var options: [CaptionOption] = []\n    var selected: String?\n    var loading = false\n    init(player: AVPlayer) { self.player = player }\n    func load(using loader: (@escaping @MainActor ([CaptionOption]) -> Void) -> Void) {\n        loading = true\n        loader { options in self.options = options; self.loading = false }\n    }\n    func choose(_ id: String?) { selected = id }\n}\n\nstruct CaptionScreen: View {\n    @Bindable var state: CaptionState\n    var body: some View {\n        VStack {\n            VideoPlayer(player: state.player)\n            Picker(\"Captions\", selection: Binding(get: { state.selected }, set: { state.choose($0) })) {\n                Text(\"Off\").tag(nil as String?)\n                ForEach(state.options) { option in Text(option.name).tag(Optional(option.id)) }\n            }\n        }\n    }\n}\n```\n",
+        "sha256": "f48375292f98ee5c3d82de97ff1be062e334571fe10dcd03b38a5b9ba1737e59"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-macos-v2/evaluation/ownership.rubric.md",
+        "sha256": "082ec413cde6beb0e66bb1dc31d3159cad5724a8aa1a8653b8b43142d37341a8"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      }
+    },
+    {
+      "id": "swiftui-media-macos-v2/selection",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "family": "selection",
+      "status": "draft-review-informed",
+      "cohort": "development-not-holdout",
+      "inputScaffolding": "minimal synthetic media state; no worked form/generation algorithm",
+      "manifest": "code-examples/swiftui/media-macos-v2/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testFullSubtitleChoicesExcludeForcedOnly",
+        "MediaSelectionTests/testBindingWritesNativeSelection",
+        "MediaSelectionTests/testBindingReadsExternalSelection",
+        "MediaSelectionTests/testUnknownChoicePreservesSelection",
+        "MediaSelectionTests/testOffClearsOnlyPermittedGroup",
+        "MediaSelectionTests/testSubtitleChangePreservesDescriptiveAudio",
+        "MediaSelectionTests/testOffPreservesAudio",
+        "MediaSelectionTests/testAudioStoreReadsDescriptionTag",
+        "MediaSelectionTests/testAudioOffMatchesActualGroupPermission",
+        "MediaSelectionTests/testReloadRecoversNativeChoiceWithNewIDs",
+        "MediaSelectionTests/testErrorThenReloadRecovers",
+        "MediaSelectionTests/testSelectionPreservesPlayerSettingsAndIdentity",
+        "MediaSelectionTests/testChoiceIDsUniqueWithinSnapshot",
+        "MediaSelectionTests/testBindingWriteInvalidatesObservableSelection",
+        "ReviewRegressionTests/testForcedSelectionIsNotOff",
+        "ReviewRegressionTests/testUnlistedChoicePreservesNativeSelection",
+        "ReviewRegressionTests/testExplicitOffIsDistinctFromUnlistedSelection"
+      ],
+      "diagnosticOnlyExcluded": [
+        "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+        "ReviewRegressionTests/testViewLoadKeyIncludesStoreIdentity",
+        "ReviewRegressionTests/testExplicitCancelInvalidatesWhileLoaderIsSuspended"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-macos-v2/evaluation/selection.prompt.md",
+        "text": "# macOS developer question\n\nMy SwiftUI video screen only changes a local selected value when someone chooses captions. Connect the choices to the real media item without resetting audio or playback settings. Offer complete captions rather than tracks with just occasional translated lines. Preserve a current choice outside that list without pretending it is Off. Include focused unit tests. Target macOS26 or later. Here is the complete current file:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\nstruct CaptionOption: Identifiable {\n    let id: String\n    let name: String\n}\n\n@MainActor @Observable\nfinal class CaptionState {\n    let player: AVPlayer\n    var options: [CaptionOption] = []\n    var selected: String?\n    var loading = false\n    init(player: AVPlayer) { self.player = player }\n    func load(using loader: (@escaping @MainActor ([CaptionOption]) -> Void) -> Void) {\n        loading = true\n        loader { options in self.options = options; self.loading = false }\n    }\n    func choose(_ id: String?) { selected = id }\n}\n\nstruct CaptionScreen: View {\n    @Bindable var state: CaptionState\n    var body: some View {\n        VStack {\n            VideoPlayer(player: state.player)\n            Picker(\"Captions\", selection: Binding(get: { state.selected }, set: { state.choose($0) })) {\n                Text(\"Off\").tag(nil as String?)\n                ForEach(state.options) { option in Text(option.name).tag(Optional(option.id)) }\n            }\n        }\n    }\n}\n```\n",
+        "sha256": "2104029bd14c12eda38a504e6860f9b6315f505e890635497313abf4f59afdd4"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-macos-v2/evaluation/selection.rubric.md",
+        "sha256": "990f4d0dcf900df8c5d8818dfc4469734496aaac989269311d0dbe4e043fb2f2"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      }
+    },
+    {
+      "id": "swiftui-media-macos-v2/wiring",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "family": "wiring",
+      "status": "draft-review-informed",
+      "cohort": "development-not-holdout",
+      "inputScaffolding": "minimal synthetic media state; no worked form/generation algorithm",
+      "manifest": "code-examples/swiftui/media-macos-v2/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testNativeRefreshLoadsActualGroup",
+        "MediaSelectionTests/testNoItemIsNotAbsentGroup",
+        "MediaSelectionTests/testAbsentGroupIsNotFailure",
+        "MediaSelectionTests/testLoadFailureIsNotEmptySuccess",
+        "MediaSelectionTests/testViewRetainsSameStoreAndPlayer",
+        "MediaSelectionTests/testActualRefreshPassesItemAndCharacteristicToLoader",
+        "MediaSelectionTests/testActualRefreshErrorSetsFailedPhase",
+        "MediaSelectionTests/testActualRefreshAbsentSetsAbsentPhase"
+      ],
+      "diagnosticOnlyExcluded": [
+        "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+        "ReviewRegressionTests/testViewLoadKeyIncludesStoreIdentity",
+        "ReviewRegressionTests/testExplicitCancelInvalidatesWhileLoaderIsSuspended"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-macos-v2/evaluation/wiring.prompt.md",
+        "text": "# macOS developer question\n\nBuild a SwiftUI media-option picker using the same player as the video view. It should show the real selection, distinguish loading, absent options and failure, and allow retry. Keep normal player controls. Include focused unit tests and state which external changes require an explicit reload. Target macOS26 or later. Here is the complete current file:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\nstruct CaptionOption: Identifiable {\n    let id: String\n    let name: String\n}\n\n@MainActor @Observable\nfinal class CaptionState {\n    let player: AVPlayer\n    var options: [CaptionOption] = []\n    var selected: String?\n    var loading = false\n    init(player: AVPlayer) { self.player = player }\n    func load(using loader: (@escaping @MainActor ([CaptionOption]) -> Void) -> Void) {\n        loading = true\n        loader { options in self.options = options; self.loading = false }\n    }\n    func choose(_ id: String?) { selected = id }\n}\n\nstruct CaptionScreen: View {\n    @Bindable var state: CaptionState\n    var body: some View {\n        VStack {\n            VideoPlayer(player: state.player)\n            Picker(\"Captions\", selection: Binding(get: { state.selected }, set: { state.choose($0) })) {\n                Text(\"Off\").tag(nil as String?)\n                ForEach(state.options) { option in Text(option.name).tag(Optional(option.id)) }\n            }\n        }\n    }\n}\n```\n",
+        "sha256": "f35a126fd39e0a3cd16dc9f8fb0a24434382d3a27ef2d25cbe177f1a046f684e"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-macos-v2/evaluation/wiring.rubric.md",
+        "sha256": "a20e4c0212a3102f7c1a1f4f36f76b7dfe3198aacac8087d27a13931c4a12e3e"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      }
+    },
+    {
+      "id": "swiftui-media-ios-v2/ownership",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "family": "ownership",
+      "status": "draft-review-informed",
+      "cohort": "development-not-holdout",
+      "inputScaffolding": "minimal synthetic media state; no worked form/generation algorithm",
+      "manifest": "code-examples/swiftui/media-ios-v2/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testLoadingDoesNotChangeNativeChoice",
+        "MediaSelectionTests/testOldOptionIDCannotSelectAfterReload",
+        "MediaSelectionTests/testDuplicateCompletionCannotOverwriteSuccess",
+        "MediaSelectionTests/testOldCompletionCannotOverwriteNewLoad",
+        "MediaSelectionTests/testOldErrorCannotOverwriteNewSuccess",
+        "MediaSelectionTests/testCancelRejectsLateCompletion",
+        "MediaSelectionTests/testCancelDoesNotClearNativeSelection",
+        "MediaSelectionTests/testReplacedItemRejectsOldChoice",
+        "MediaSelectionTests/testReplacedItemRejectsOldCompletion",
+        "MediaSelectionTests/testCapturedBindingRejectsAfterCancellation",
+        "MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad",
+        "MediaSelectionTests/testCancelledCurrentTaskDoesNotPublishResult",
+        "MediaSelectionTests/testAlreadyCancelledTaskCannotStartLoad",
+        "ReviewRegressionTests/testStaleOffCannotClearReloadedSelection",
+        "ReviewRegressionTests/testStaleOffCannotClearReplacementSelection",
+        "ReviewRegressionTests/testOldCompletionLeavesLoadingOnItemChange"
+      ],
+      "diagnosticOnlyExcluded": [
+        "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+        "ReviewRegressionTests/testViewLoadKeyIncludesStoreIdentity",
+        "ReviewRegressionTests/testExplicitCancelInvalidatesWhileLoaderIsSuspended"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-ios-v2/evaluation/ownership.prompt.md",
+        "text": "# iOS developer question\n\nPeople can change videos or reload caption choices while this SwiftUI screen is open. Old callbacks sometimes affect the new selection, including turning captions off. Make these operations belong to the right item and request, and include focused unit tests. Explain how the screen should react when the player item changes and what cancellation does. Target iOS26 or later. Here is the complete current file:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\nstruct CaptionOption: Identifiable {\n    let id: String\n    let name: String\n}\n\n@MainActor @Observable\nfinal class CaptionState {\n    let player: AVPlayer\n    var options: [CaptionOption] = []\n    var selected: String?\n    var loading = false\n    init(player: AVPlayer) { self.player = player }\n    func load(using loader: (@escaping @MainActor ([CaptionOption]) -> Void) -> Void) {\n        loading = true\n        loader { options in self.options = options; self.loading = false }\n    }\n    func choose(_ id: String?) { selected = id }\n}\n\nstruct CaptionScreen: View {\n    @Bindable var state: CaptionState\n    var body: some View {\n        VStack {\n            VideoPlayer(player: state.player)\n            Picker(\"Captions\", selection: Binding(get: { state.selected }, set: { state.choose($0) })) {\n                Text(\"Off\").tag(nil as String?)\n                ForEach(state.options) { option in Text(option.name).tag(Optional(option.id)) }\n            }\n        }\n    }\n}\n```\n",
+        "sha256": "c04cc5d4aa6f82d29e1217246c88eb8152abbe74a045b902fbd51d2837657936"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-ios-v2/evaluation/ownership.rubric.md",
+        "sha256": "7e5a75d2c6c70304b15835a8f6cf419f3f43653cd10e8c5e25916ef33bdb7885"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      }
+    },
+    {
+      "id": "swiftui-media-ios-v2/selection",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "family": "selection",
+      "status": "draft-review-informed",
+      "cohort": "development-not-holdout",
+      "inputScaffolding": "minimal synthetic media state; no worked form/generation algorithm",
+      "manifest": "code-examples/swiftui/media-ios-v2/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testFullSubtitleChoicesExcludeForcedOnly",
+        "MediaSelectionTests/testBindingWritesNativeSelection",
+        "MediaSelectionTests/testBindingReadsExternalSelection",
+        "MediaSelectionTests/testUnknownChoicePreservesSelection",
+        "MediaSelectionTests/testOffClearsOnlyPermittedGroup",
+        "MediaSelectionTests/testSubtitleChangePreservesDescriptiveAudio",
+        "MediaSelectionTests/testOffPreservesAudio",
+        "MediaSelectionTests/testAudioStoreReadsDescriptionTag",
+        "MediaSelectionTests/testAudioOffMatchesActualGroupPermission",
+        "MediaSelectionTests/testReloadRecoversNativeChoiceWithNewIDs",
+        "MediaSelectionTests/testErrorThenReloadRecovers",
+        "MediaSelectionTests/testSelectionPreservesPlayerSettingsAndIdentity",
+        "MediaSelectionTests/testChoiceIDsUniqueWithinSnapshot",
+        "MediaSelectionTests/testBindingWriteInvalidatesObservableSelection",
+        "ReviewRegressionTests/testForcedSelectionIsNotOff",
+        "ReviewRegressionTests/testUnlistedChoicePreservesNativeSelection",
+        "ReviewRegressionTests/testExplicitOffIsDistinctFromUnlistedSelection"
+      ],
+      "diagnosticOnlyExcluded": [
+        "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+        "ReviewRegressionTests/testViewLoadKeyIncludesStoreIdentity",
+        "ReviewRegressionTests/testExplicitCancelInvalidatesWhileLoaderIsSuspended"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-ios-v2/evaluation/selection.prompt.md",
+        "text": "# iOS developer question\n\nMy SwiftUI video screen only changes a local selected value when someone chooses captions. Connect the choices to the real media item without resetting audio or playback settings. Offer complete captions rather than tracks with just occasional translated lines. Preserve a current choice outside that list without pretending it is Off. Include focused unit tests. Target iOS26 or later. Here is the complete current file:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\nstruct CaptionOption: Identifiable {\n    let id: String\n    let name: String\n}\n\n@MainActor @Observable\nfinal class CaptionState {\n    let player: AVPlayer\n    var options: [CaptionOption] = []\n    var selected: String?\n    var loading = false\n    init(player: AVPlayer) { self.player = player }\n    func load(using loader: (@escaping @MainActor ([CaptionOption]) -> Void) -> Void) {\n        loading = true\n        loader { options in self.options = options; self.loading = false }\n    }\n    func choose(_ id: String?) { selected = id }\n}\n\nstruct CaptionScreen: View {\n    @Bindable var state: CaptionState\n    var body: some View {\n        VStack {\n            VideoPlayer(player: state.player)\n            Picker(\"Captions\", selection: Binding(get: { state.selected }, set: { state.choose($0) })) {\n                Text(\"Off\").tag(nil as String?)\n                ForEach(state.options) { option in Text(option.name).tag(Optional(option.id)) }\n            }\n        }\n    }\n}\n```\n",
+        "sha256": "6d2dd61c5ac4abfc9e173ab8322ad9810107fb9fe648041424285d83a909fa76"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-ios-v2/evaluation/selection.rubric.md",
+        "sha256": "b8448ad90519e77d419cae21f22252aa65f0d726cf9f851507b54d7f8256f2b8"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      }
+    },
+    {
+      "id": "swiftui-media-ios-v2/wiring",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "family": "wiring",
+      "status": "draft-review-informed",
+      "cohort": "development-not-holdout",
+      "inputScaffolding": "minimal synthetic media state; no worked form/generation algorithm",
+      "manifest": "code-examples/swiftui/media-ios-v2/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testNativeRefreshLoadsActualGroup",
+        "MediaSelectionTests/testNoItemIsNotAbsentGroup",
+        "MediaSelectionTests/testAbsentGroupIsNotFailure",
+        "MediaSelectionTests/testLoadFailureIsNotEmptySuccess",
+        "MediaSelectionTests/testViewRetainsSameStoreAndPlayer",
+        "MediaSelectionTests/testActualRefreshPassesItemAndCharacteristicToLoader",
+        "MediaSelectionTests/testActualRefreshErrorSetsFailedPhase",
+        "MediaSelectionTests/testActualRefreshAbsentSetsAbsentPhase"
+      ],
+      "diagnosticOnlyExcluded": [
+        "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+        "ReviewRegressionTests/testViewLoadKeyIncludesStoreIdentity",
+        "ReviewRegressionTests/testExplicitCancelInvalidatesWhileLoaderIsSuspended"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-ios-v2/evaluation/wiring.prompt.md",
+        "text": "# iOS developer question\n\nBuild a SwiftUI media-option picker using the same player as the video view. It should show the real selection, distinguish loading, absent options and failure, and allow retry. Keep normal player controls. Include focused unit tests and state which external changes require an explicit reload. Target iOS26 or later. Here is the complete current file:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\nstruct CaptionOption: Identifiable {\n    let id: String\n    let name: String\n}\n\n@MainActor @Observable\nfinal class CaptionState {\n    let player: AVPlayer\n    var options: [CaptionOption] = []\n    var selected: String?\n    var loading = false\n    init(player: AVPlayer) { self.player = player }\n    func load(using loader: (@escaping @MainActor ([CaptionOption]) -> Void) -> Void) {\n        loading = true\n        loader { options in self.options = options; self.loading = false }\n    }\n    func choose(_ id: String?) { selected = id }\n}\n\nstruct CaptionScreen: View {\n    @Bindable var state: CaptionState\n    var body: some View {\n        VStack {\n            VideoPlayer(player: state.player)\n            Picker(\"Captions\", selection: Binding(get: { state.selected }, set: { state.choose($0) })) {\n                Text(\"Off\").tag(nil as String?)\n                ForEach(state.options) { option in Text(option.name).tag(Optional(option.id)) }\n            }\n        }\n    }\n}\n```\n",
+        "sha256": "4ec92962591872fabca8bb0ab6faacf07ad76da6968ceadb8a178257cd8aed3c"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-ios-v2/evaluation/wiring.rubric.md",
+        "sha256": "51b231ef4f49ddd97d5bc4ef1ce834a755f3f77c4688531ed93a62c4a9aefb05"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      }
+    },
+    {
+      "id": "swiftui-media-tvos-v2/ownership",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "family": "ownership",
+      "status": "draft-review-informed",
+      "cohort": "development-not-holdout",
+      "inputScaffolding": "minimal synthetic media state; no worked form/generation algorithm",
+      "manifest": "code-examples/swiftui/media-tvos-v2/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testLoadingDoesNotChangeNativeChoice",
+        "MediaSelectionTests/testOldOptionIDCannotSelectAfterReload",
+        "MediaSelectionTests/testDuplicateCompletionCannotOverwriteSuccess",
+        "MediaSelectionTests/testOldCompletionCannotOverwriteNewLoad",
+        "MediaSelectionTests/testOldErrorCannotOverwriteNewSuccess",
+        "MediaSelectionTests/testCancelRejectsLateCompletion",
+        "MediaSelectionTests/testCancelDoesNotClearNativeSelection",
+        "MediaSelectionTests/testReplacedItemRejectsOldChoice",
+        "MediaSelectionTests/testReplacedItemRejectsOldCompletion",
+        "MediaSelectionTests/testCapturedBindingRejectsAfterCancellation",
+        "MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad",
+        "MediaSelectionTests/testCancelledCurrentTaskDoesNotPublishResult",
+        "MediaSelectionTests/testAlreadyCancelledTaskCannotStartLoad",
+        "ReviewRegressionTests/testStaleOffCannotClearReloadedSelection",
+        "ReviewRegressionTests/testStaleOffCannotClearReplacementSelection",
+        "ReviewRegressionTests/testOldCompletionLeavesLoadingOnItemChange"
+      ],
+      "diagnosticOnlyExcluded": [
+        "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+        "ReviewRegressionTests/testViewLoadKeyIncludesStoreIdentity",
+        "ReviewRegressionTests/testExplicitCancelInvalidatesWhileLoaderIsSuspended"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-tvos-v2/evaluation/ownership.prompt.md",
+        "text": "# tvOS developer question\n\nPeople can change videos or reload caption choices while this SwiftUI screen is open. Old callbacks sometimes affect the new selection, including turning captions off. Make these operations belong to the right item and request, and include focused unit tests. Explain how the screen should react when the player item changes and what cancellation does. Target tvOS26 or later. Here is the complete current file:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\nstruct CaptionOption: Identifiable {\n    let id: String\n    let name: String\n}\n\n@MainActor @Observable\nfinal class CaptionState {\n    let player: AVPlayer\n    var options: [CaptionOption] = []\n    var selected: String?\n    var loading = false\n    init(player: AVPlayer) { self.player = player }\n    func load(using loader: (@escaping @MainActor ([CaptionOption]) -> Void) -> Void) {\n        loading = true\n        loader { options in self.options = options; self.loading = false }\n    }\n    func choose(_ id: String?) { selected = id }\n}\n\nstruct CaptionScreen: View {\n    @Bindable var state: CaptionState\n    var body: some View {\n        VStack {\n            VideoPlayer(player: state.player)\n            Picker(\"Captions\", selection: Binding(get: { state.selected }, set: { state.choose($0) })) {\n                Text(\"Off\").tag(nil as String?)\n                ForEach(state.options) { option in Text(option.name).tag(Optional(option.id)) }\n            }\n        }\n    }\n}\n```\n",
+        "sha256": "c6b25ad753e6a2d2dc4451dbfdb211a58676df4895119ecd568242e3dc9e1676"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-tvos-v2/evaluation/ownership.rubric.md",
+        "sha256": "516a9018a6043ff30974be9cf0e9b0b9bc4ddaffec87506937c61cb1376412e4"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      }
+    },
+    {
+      "id": "swiftui-media-tvos-v2/selection",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "family": "selection",
+      "status": "draft-review-informed",
+      "cohort": "development-not-holdout",
+      "inputScaffolding": "minimal synthetic media state; no worked form/generation algorithm",
+      "manifest": "code-examples/swiftui/media-tvos-v2/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testFullSubtitleChoicesExcludeForcedOnly",
+        "MediaSelectionTests/testBindingWritesNativeSelection",
+        "MediaSelectionTests/testBindingReadsExternalSelection",
+        "MediaSelectionTests/testUnknownChoicePreservesSelection",
+        "MediaSelectionTests/testOffClearsOnlyPermittedGroup",
+        "MediaSelectionTests/testSubtitleChangePreservesDescriptiveAudio",
+        "MediaSelectionTests/testOffPreservesAudio",
+        "MediaSelectionTests/testAudioStoreReadsDescriptionTag",
+        "MediaSelectionTests/testAudioOffMatchesActualGroupPermission",
+        "MediaSelectionTests/testReloadRecoversNativeChoiceWithNewIDs",
+        "MediaSelectionTests/testErrorThenReloadRecovers",
+        "MediaSelectionTests/testSelectionPreservesPlayerSettingsAndIdentity",
+        "MediaSelectionTests/testChoiceIDsUniqueWithinSnapshot",
+        "MediaSelectionTests/testBindingWriteInvalidatesObservableSelection",
+        "ReviewRegressionTests/testForcedSelectionIsNotOff",
+        "ReviewRegressionTests/testUnlistedChoicePreservesNativeSelection",
+        "ReviewRegressionTests/testExplicitOffIsDistinctFromUnlistedSelection"
+      ],
+      "diagnosticOnlyExcluded": [
+        "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+        "ReviewRegressionTests/testViewLoadKeyIncludesStoreIdentity",
+        "ReviewRegressionTests/testExplicitCancelInvalidatesWhileLoaderIsSuspended"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-tvos-v2/evaluation/selection.prompt.md",
+        "text": "# tvOS developer question\n\nMy SwiftUI video screen only changes a local selected value when someone chooses captions. Connect the choices to the real media item without resetting audio or playback settings. Offer complete captions rather than tracks with just occasional translated lines. Preserve a current choice outside that list without pretending it is Off. Include focused unit tests. Target tvOS26 or later. Here is the complete current file:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\nstruct CaptionOption: Identifiable {\n    let id: String\n    let name: String\n}\n\n@MainActor @Observable\nfinal class CaptionState {\n    let player: AVPlayer\n    var options: [CaptionOption] = []\n    var selected: String?\n    var loading = false\n    init(player: AVPlayer) { self.player = player }\n    func load(using loader: (@escaping @MainActor ([CaptionOption]) -> Void) -> Void) {\n        loading = true\n        loader { options in self.options = options; self.loading = false }\n    }\n    func choose(_ id: String?) { selected = id }\n}\n\nstruct CaptionScreen: View {\n    @Bindable var state: CaptionState\n    var body: some View {\n        VStack {\n            VideoPlayer(player: state.player)\n            Picker(\"Captions\", selection: Binding(get: { state.selected }, set: { state.choose($0) })) {\n                Text(\"Off\").tag(nil as String?)\n                ForEach(state.options) { option in Text(option.name).tag(Optional(option.id)) }\n            }\n        }\n    }\n}\n```\n",
+        "sha256": "5d121776613655db44b2e7aa2249c90a70d8fa995b2d0e42b167bf3c968299bb"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-tvos-v2/evaluation/selection.rubric.md",
+        "sha256": "e2dab947466b05c2a13cf5ec3745e761150e8f009b4f8bdfed827bc833691882"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      }
+    },
+    {
+      "id": "swiftui-media-tvos-v2/wiring",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "family": "wiring",
+      "status": "draft-review-informed",
+      "cohort": "development-not-holdout",
+      "inputScaffolding": "minimal synthetic media state; no worked form/generation algorithm",
+      "manifest": "code-examples/swiftui/media-tvos-v2/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testNativeRefreshLoadsActualGroup",
+        "MediaSelectionTests/testNoItemIsNotAbsentGroup",
+        "MediaSelectionTests/testAbsentGroupIsNotFailure",
+        "MediaSelectionTests/testLoadFailureIsNotEmptySuccess",
+        "MediaSelectionTests/testViewRetainsSameStoreAndPlayer",
+        "MediaSelectionTests/testActualRefreshPassesItemAndCharacteristicToLoader",
+        "MediaSelectionTests/testActualRefreshErrorSetsFailedPhase",
+        "MediaSelectionTests/testActualRefreshAbsentSetsAbsentPhase"
+      ],
+      "diagnosticOnlyExcluded": [
+        "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+        "ReviewRegressionTests/testViewLoadKeyIncludesStoreIdentity",
+        "ReviewRegressionTests/testExplicitCancelInvalidatesWhileLoaderIsSuspended"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-tvos-v2/evaluation/wiring.prompt.md",
+        "text": "# tvOS developer question\n\nBuild a SwiftUI media-option picker using the same player as the video view. It should show the real selection, distinguish loading, absent options and failure, and allow retry. Keep normal player controls. Include focused unit tests and state which external changes require an explicit reload. Target tvOS26 or later. Here is the complete current file:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\nstruct CaptionOption: Identifiable {\n    let id: String\n    let name: String\n}\n\n@MainActor @Observable\nfinal class CaptionState {\n    let player: AVPlayer\n    var options: [CaptionOption] = []\n    var selected: String?\n    var loading = false\n    init(player: AVPlayer) { self.player = player }\n    func load(using loader: (@escaping @MainActor ([CaptionOption]) -> Void) -> Void) {\n        loading = true\n        loader { options in self.options = options; self.loading = false }\n    }\n    func choose(_ id: String?) { selected = id }\n}\n\nstruct CaptionScreen: View {\n    @Bindable var state: CaptionState\n    var body: some View {\n        VStack {\n            VideoPlayer(player: state.player)\n            Picker(\"Captions\", selection: Binding(get: { state.selected }, set: { state.choose($0) })) {\n                Text(\"Off\").tag(nil as String?)\n                ForEach(state.options) { option in Text(option.name).tag(Optional(option.id)) }\n            }\n        }\n    }\n}\n```\n",
+        "sha256": "55c3b232938702c1892c9d26d4d95c4ddb06740b4e2d467c775d69781c766425"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-tvos-v2/evaluation/wiring.rubric.md",
+        "sha256": "66df608a0d5512880039bb7a5b8434ebcf51af00d51ae73abb1b84c623ea9b72"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      }
+    }
+  ],
+  "diagnosticOnly": [
+    "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+    "ReviewRegressionTests/testViewLoadKeyIncludesStoreIdentity",
+    "ReviewRegressionTests/testExplicitCancelInvalidatesWhileLoaderIsSuspended"
+  ]
+}

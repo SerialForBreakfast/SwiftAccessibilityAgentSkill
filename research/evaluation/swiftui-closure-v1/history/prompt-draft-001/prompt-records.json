@@ -1,0 +1,338 @@
+{
+  "schema": 1,
+  "cases": [
+    {
+      "id": "swiftui-media-macos/selection",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "classification": "SwiftUI-specific composition with shared AVFoundation/application contract",
+      "family": "selection",
+      "status": "draft",
+      "manifest": "code-examples/swiftui/media-macos-v1/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testFullSubtitleChoicesExcludeForcedOnly",
+        "MediaSelectionTests/testBindingWritesNativeSelection",
+        "MediaSelectionTests/testBindingReadsExternalSelection",
+        "MediaSelectionTests/testUnknownChoicePreservesSelection",
+        "MediaSelectionTests/testOffClearsOnlyPermittedGroup",
+        "MediaSelectionTests/testSubtitleChangePreservesDescriptiveAudio",
+        "MediaSelectionTests/testOffPreservesAudio",
+        "MediaSelectionTests/testAudioStoreReadsDescriptionTag",
+        "MediaSelectionTests/testAudioOffMatchesActualGroupPermission",
+        "MediaSelectionTests/testReloadRecoversNativeChoiceWithNewIDs",
+        "MediaSelectionTests/testOldOptionIDCannotSelectAfterReload",
+        "MediaSelectionTests/testErrorThenReloadRecovers",
+        "MediaSelectionTests/testSelectionPreservesPlayerSettingsAndIdentity",
+        "MediaSelectionTests/testChoiceIDsUniqueWithinSnapshot",
+        "MediaSelectionTests/testCapturedBindingRejectsAfterCancellation",
+        "MediaSelectionTests/testBindingWriteInvalidatesObservableSelection"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-macos-v1/evaluation/selection.prompt.md",
+        "sha256": "edee5814ee78b359e7bdef4a1bd586d084f485b2490a1299e52dc1acf47f13d1",
+        "text": "# macOS developer request\n\nMy SwiftUI player shows caption choices, but choosing one currently only changes local state. Connect this to the media item so choosing captions really works without disturbing the audio the viewer selected. Keep ordinary player controls. Target macOS 26 or later. Here is the complete current implementation:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\n@MainActor @Observable\nfinal class FormMediaState {\n    var text = \"\"\n    private(set) var error: String?\n    private(set) var busy = false\n    private var generation = 0\n    private var active: Int?\n    var accepted: (String) -> Void = { _ in }\n    var validate: (String, @escaping @MainActor (String?) -> Void) -> Void = { _, reply in reply(nil) }\n    var input: Binding<String> {\n        Binding(get: { self.text }, set: { value in self.text = value; self.cancel() })\n    }\n    func cancel() { generation += 1; active = nil; busy = false; error = nil }\n    func submit() {\n        generation += 1; let ticket = generation, snapshot = text\n        active = ticket; busy = true; error = nil\n        validate(snapshot) { [weak self] message in\n            guard let self, self.active == ticket else { return }\n            guard self.text == snapshot else { self.cancel(); return }\n            self.active = nil; self.busy = false\n            if let message { self.error = message.isEmpty ? \"Validation unavailable\" : message }\n            else { self.accepted(snapshot) }\n        }\n    }\n}\n\nstruct TrackChoice: Identifiable, Equatable {\n    let id: String\n    let name: String\n    let descriptive: Bool\n}\n\n@MainActor @Observable\nfinal class MediaState {\n    let player: AVPlayer\n    private(set) var tracks: [TrackChoice] = []\n    private(set) var selected: String?\n    private(set) var loaded = false\n    private var generation = 0\n    private var active: Int?\n    init(player: AVPlayer = AVPlayer()) { self.player = player }\n    var status: String { !loaded ? \"Options unavailable\" : tracks.isEmpty ? \"No caption options\" : \"\\(tracks.count) caption options\" }\n    func load(_ loader: (@escaping @MainActor ([TrackChoice]) -> Void) -> Void) {\n        generation += 1; let ticket = generation; active = ticket; loaded = false\n        loader { [weak self] tracks in\n            guard let self, self.active == ticket else { return }\n            self.active = nil\n            guard Set(tracks.map(\\.id)).count == tracks.count else { return }\n            self.tracks = tracks; self.loaded = true\n            if let selected = self.selected, !tracks.contains(where: { $0.id == selected }) { self.selected = nil }\n        }\n    }\n    func choose(_ id: String?) {\n        guard loaded, id == nil || tracks.contains(where: { $0.id == id }) else { return }\n        selected = id\n    }\n}\n\nstruct FormMediaExample: View {\n    @Bindable var form: FormMediaState\n    @Bindable var media: MediaState\n    var body: some View {\n        VStack {\n            TextField(\"Email\", text: form.input)\n            if let error = form.error { Text(error).accessibilityLabel(\"Error: \\(error)\") }\n            Button(\"Save\", action: form.submit).disabled(form.busy)\n            VideoPlayer(player: media.player)\n            Text(media.status)\n            ForEach(media.tracks) { track in\n                Button(track.name) { media.choose(track.id) }\n                    .accessibilityValue(media.selected == track.id ? \"Selected\" : \"Not selected\")\n            }\n        }\n    }\n}\n```\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-macos-v1/evaluation/selection.rubric.md",
+        "sha256": "e7ed1933f2f5724c15dd6918509a8a309739d84115c50276b25964681d97ad7a"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "knownIncidentDevelopmentCase": true
+    },
+    {
+      "id": "swiftui-media-macos/ownership",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "classification": "SwiftUI-specific composition with shared AVFoundation/application contract",
+      "family": "ownership",
+      "status": "draft",
+      "manifest": "code-examples/swiftui/media-macos-v1/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testLoadingDoesNotChangeNativeChoice",
+        "MediaSelectionTests/testDuplicateCompletionCannotOverwriteSuccess",
+        "MediaSelectionTests/testOldCompletionCannotOverwriteNewLoad",
+        "MediaSelectionTests/testCancelRejectsLateCompletion",
+        "MediaSelectionTests/testCancelDoesNotClearNativeSelection",
+        "MediaSelectionTests/testReplacedItemRejectsOldChoice",
+        "MediaSelectionTests/testReplacedItemRejectsOldCompletion",
+        "MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad",
+        "MediaSelectionTests/testCancelledCurrentTaskDoesNotPublishResult",
+        "MediaSelectionTests/testAlreadyCancelledTaskCannotStartLoad"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-macos-v1/evaluation/ownership.prompt.md",
+        "sha256": "5f436c17e0c4887d4dfe03c0dca9cd88a55cd7add27058f56c331674264c8077",
+        "text": "# macOS developer request\n\nIn this SwiftUI player, people can leave and return or change videos while media options are loading. Review and implement ownership so old results and old option callbacks cannot affect the current video, including cancellation and retries. Target macOS 26 or later. Here is the complete current implementation:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\n@MainActor @Observable\nfinal class FormMediaState {\n    var text = \"\"\n    private(set) var error: String?\n    private(set) var busy = false\n    private var generation = 0\n    private var active: Int?\n    var accepted: (String) -> Void = { _ in }\n    var validate: (String, @escaping @MainActor (String?) -> Void) -> Void = { _, reply in reply(nil) }\n    var input: Binding<String> {\n        Binding(get: { self.text }, set: { value in self.text = value; self.cancel() })\n    }\n    func cancel() { generation += 1; active = nil; busy = false; error = nil }\n    func submit() {\n        generation += 1; let ticket = generation, snapshot = text\n        active = ticket; busy = true; error = nil\n        validate(snapshot) { [weak self] message in\n            guard let self, self.active == ticket else { return }\n            guard self.text == snapshot else { self.cancel(); return }\n            self.active = nil; self.busy = false\n            if let message { self.error = message.isEmpty ? \"Validation unavailable\" : message }\n            else { self.accepted(snapshot) }\n        }\n    }\n}\n\nstruct TrackChoice: Identifiable, Equatable {\n    let id: String\n    let name: String\n    let descriptive: Bool\n}\n\n@MainActor @Observable\nfinal class MediaState {\n    let player: AVPlayer\n    private(set) var tracks: [TrackChoice] = []\n    private(set) var selected: String?\n    private(set) var loaded = false\n    private var generation = 0\n    private var active: Int?\n    init(player: AVPlayer = AVPlayer()) { self.player = player }\n    var status: String { !loaded ? \"Options unavailable\" : tracks.isEmpty ? \"No caption options\" : \"\\(tracks.count) caption options\" }\n    func load(_ loader: (@escaping @MainActor ([TrackChoice]) -> Void) -> Void) {\n        generation += 1; let ticket = generation; active = ticket; loaded = false\n        loader { [weak self] tracks in\n            guard let self, self.active == ticket else { return }\n            self.active = nil\n            guard Set(tracks.map(\\.id)).count == tracks.count else { return }\n            self.tracks = tracks; self.loaded = true\n            if let selected = self.selected, !tracks.contains(where: { $0.id == selected }) { self.selected = nil }\n        }\n    }\n    func choose(_ id: String?) {\n        guard loaded, id == nil || tracks.contains(where: { $0.id == id }) else { return }\n        selected = id\n    }\n}\n\nstruct FormMediaExample: View {\n    @Bindable var form: FormMediaState\n    @Bindable var media: MediaState\n    var body: some View {\n        VStack {\n            TextField(\"Email\", text: form.input)\n            if let error = form.error { Text(error).accessibilityLabel(\"Error: \\(error)\") }\n            Button(\"Save\", action: form.submit).disabled(form.busy)\n            VideoPlayer(player: media.player)\n            Text(media.status)\n            ForEach(media.tracks) { track in\n                Button(track.name) { media.choose(track.id) }\n                    .accessibilityValue(media.selected == track.id ? \"Selected\" : \"Not selected\")\n            }\n        }\n    }\n}\n```\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-macos-v1/evaluation/ownership.rubric.md",
+        "sha256": "41671439415fbbdcc566601742c21de2ce8fb5ecf90b36744f41bc2bc58def59"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "knownIncidentDevelopmentCase": true
+    },
+    {
+      "id": "swiftui-media-macos/wiring",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "classification": "SwiftUI-specific composition with shared AVFoundation/application contract",
+      "family": "wiring",
+      "status": "draft",
+      "manifest": "code-examples/swiftui/media-macos-v1/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testNativeRefreshLoadsActualGroup",
+        "MediaSelectionTests/testOldErrorCannotOverwriteNewSuccess",
+        "MediaSelectionTests/testNoItemIsNotAbsentGroup",
+        "MediaSelectionTests/testAbsentGroupIsNotFailure",
+        "MediaSelectionTests/testLoadFailureIsNotEmptySuccess",
+        "MediaSelectionTests/testViewRetainsSameStoreAndPlayer",
+        "MediaSelectionTests/testActualRefreshPassesItemAndCharacteristicToLoader",
+        "MediaSelectionTests/testActualRefreshErrorSetsFailedPhase",
+        "MediaSelectionTests/testActualRefreshAbsentSetsAbsentPhase",
+        "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-macos-v1/evaluation/wiring.prompt.md",
+        "sha256": "9cb4d6bc27fab42d9df79d898bd96af1d90b95a8f38aae5a3e6725039216257a",
+        "text": "# macOS developer request\n\nBuild a SwiftUI media-option picker that uses the same player and selection state as the video view. Distinguish a missing video, options still loading, no options and a load error. Provide a retry path and focused unit tests. Target macOS 26 or later. Here is the complete current implementation:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\n@MainActor @Observable\nfinal class FormMediaState {\n    var text = \"\"\n    private(set) var error: String?\n    private(set) var busy = false\n    private var generation = 0\n    private var active: Int?\n    var accepted: (String) -> Void = { _ in }\n    var validate: (String, @escaping @MainActor (String?) -> Void) -> Void = { _, reply in reply(nil) }\n    var input: Binding<String> {\n        Binding(get: { self.text }, set: { value in self.text = value; self.cancel() })\n    }\n    func cancel() { generation += 1; active = nil; busy = false; error = nil }\n    func submit() {\n        generation += 1; let ticket = generation, snapshot = text\n        active = ticket; busy = true; error = nil\n        validate(snapshot) { [weak self] message in\n            guard let self, self.active == ticket else { return }\n            guard self.text == snapshot else { self.cancel(); return }\n            self.active = nil; self.busy = false\n            if let message { self.error = message.isEmpty ? \"Validation unavailable\" : message }\n            else { self.accepted(snapshot) }\n        }\n    }\n}\n\nstruct TrackChoice: Identifiable, Equatable {\n    let id: String\n    let name: String\n    let descriptive: Bool\n}\n\n@MainActor @Observable\nfinal class MediaState {\n    let player: AVPlayer\n    private(set) var tracks: [TrackChoice] = []\n    private(set) var selected: String?\n    private(set) var loaded = false\n    private var generation = 0\n    private var active: Int?\n    init(player: AVPlayer = AVPlayer()) { self.player = player }\n    var status: String { !loaded ? \"Options unavailable\" : tracks.isEmpty ? \"No caption options\" : \"\\(tracks.count) caption options\" }\n    func load(_ loader: (@escaping @MainActor ([TrackChoice]) -> Void) -> Void) {\n        generation += 1; let ticket = generation; active = ticket; loaded = false\n        loader { [weak self] tracks in\n            guard let self, self.active == ticket else { return }\n            self.active = nil\n            guard Set(tracks.map(\\.id)).count == tracks.count else { return }\n            self.tracks = tracks; self.loaded = true\n            if let selected = self.selected, !tracks.contains(where: { $0.id == selected }) { self.selected = nil }\n        }\n    }\n    func choose(_ id: String?) {\n        guard loaded, id == nil || tracks.contains(where: { $0.id == id }) else { return }\n        selected = id\n    }\n}\n\nstruct FormMediaExample: View {\n    @Bindable var form: FormMediaState\n    @Bindable var media: MediaState\n    var body: some View {\n        VStack {\n            TextField(\"Email\", text: form.input)\n            if let error = form.error { Text(error).accessibilityLabel(\"Error: \\(error)\") }\n            Button(\"Save\", action: form.submit).disabled(form.busy)\n            VideoPlayer(player: media.player)\n            Text(media.status)\n            ForEach(media.tracks) { track in\n                Button(track.name) { media.choose(track.id) }\n                    .accessibilityValue(media.selected == track.id ? \"Selected\" : \"Not selected\")\n            }\n        }\n    }\n}\n```\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-macos-v1/evaluation/wiring.rubric.md",
+        "sha256": "2da9f9ee35337ee2960d2f8405da0dff93961e3f97d9900844849d0869dde9c0"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "knownIncidentDevelopmentCase": true
+    },
+    {
+      "id": "swiftui-media-ios/selection",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "classification": "SwiftUI-specific composition with shared AVFoundation/application contract",
+      "family": "selection",
+      "status": "draft",
+      "manifest": "code-examples/swiftui/media-ios-v1/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testFullSubtitleChoicesExcludeForcedOnly",
+        "MediaSelectionTests/testBindingWritesNativeSelection",
+        "MediaSelectionTests/testBindingReadsExternalSelection",
+        "MediaSelectionTests/testUnknownChoicePreservesSelection",
+        "MediaSelectionTests/testOffClearsOnlyPermittedGroup",
+        "MediaSelectionTests/testSubtitleChangePreservesDescriptiveAudio",
+        "MediaSelectionTests/testOffPreservesAudio",
+        "MediaSelectionTests/testAudioStoreReadsDescriptionTag",
+        "MediaSelectionTests/testAudioOffMatchesActualGroupPermission",
+        "MediaSelectionTests/testReloadRecoversNativeChoiceWithNewIDs",
+        "MediaSelectionTests/testOldOptionIDCannotSelectAfterReload",
+        "MediaSelectionTests/testErrorThenReloadRecovers",
+        "MediaSelectionTests/testSelectionPreservesPlayerSettingsAndIdentity",
+        "MediaSelectionTests/testChoiceIDsUniqueWithinSnapshot",
+        "MediaSelectionTests/testCapturedBindingRejectsAfterCancellation",
+        "MediaSelectionTests/testBindingWriteInvalidatesObservableSelection"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-ios-v1/evaluation/selection.prompt.md",
+        "sha256": "c3df366844dd497a391be643266b7a3ec0661c5779d5876763b5cf2c5ed44988",
+        "text": "# iOS developer request\n\nMy SwiftUI player shows caption choices, but choosing one currently only changes local state. Connect this to the media item so choosing captions really works without disturbing the audio the viewer selected. Keep ordinary player controls. Target iOS 26 or later. Here is the complete current implementation:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\n@MainActor @Observable\nfinal class FormMediaState {\n    var text = \"\"\n    private(set) var error: String?\n    private(set) var busy = false\n    private var generation = 0\n    private var active: Int?\n    var accepted: (String) -> Void = { _ in }\n    var validate: (String, @escaping @MainActor (String?) -> Void) -> Void = { _, reply in reply(nil) }\n    var input: Binding<String> {\n        Binding(get: { self.text }, set: { value in self.text = value; self.cancel() })\n    }\n    func cancel() { generation += 1; active = nil; busy = false; error = nil }\n    func submit() {\n        generation += 1; let ticket = generation, snapshot = text\n        active = ticket; busy = true; error = nil\n        validate(snapshot) { [weak self] message in\n            guard let self, self.active == ticket else { return }\n            guard self.text == snapshot else { self.cancel(); return }\n            self.active = nil; self.busy = false\n            if let message { self.error = message.isEmpty ? \"Validation unavailable\" : message }\n            else { self.accepted(snapshot) }\n        }\n    }\n}\n\nstruct TrackChoice: Identifiable, Equatable {\n    let id: String\n    let name: String\n    let descriptive: Bool\n}\n\n@MainActor @Observable\nfinal class MediaState {\n    let player: AVPlayer\n    private(set) var tracks: [TrackChoice] = []\n    private(set) var selected: String?\n    private(set) var loaded = false\n    private var generation = 0\n    private var active: Int?\n    init(player: AVPlayer = AVPlayer()) { self.player = player }\n    var status: String { !loaded ? \"Options unavailable\" : tracks.isEmpty ? \"No caption options\" : \"\\(tracks.count) caption options\" }\n    func load(_ loader: (@escaping @MainActor ([TrackChoice]) -> Void) -> Void) {\n        generation += 1; let ticket = generation; active = ticket; loaded = false\n        loader { [weak self] tracks in\n            guard let self, self.active == ticket else { return }\n            self.active = nil\n            guard Set(tracks.map(\\.id)).count == tracks.count else { return }\n            self.tracks = tracks; self.loaded = true\n            if let selected = self.selected, !tracks.contains(where: { $0.id == selected }) { self.selected = nil }\n        }\n    }\n    func choose(_ id: String?) {\n        guard loaded, id == nil || tracks.contains(where: { $0.id == id }) else { return }\n        selected = id\n    }\n}\n\nstruct FormMediaExample: View {\n    @Bindable var form: FormMediaState\n    @Bindable var media: MediaState\n    var body: some View {\n        VStack {\n            TextField(\"Email\", text: form.input)\n            if let error = form.error { Text(error).accessibilityLabel(\"Error: \\(error)\") }\n            Button(\"Save\", action: form.submit).disabled(form.busy)\n            VideoPlayer(player: media.player)\n            Text(media.status)\n            ForEach(media.tracks) { track in\n                Button(track.name) { media.choose(track.id) }\n                    .accessibilityValue(media.selected == track.id ? \"Selected\" : \"Not selected\")\n            }\n        }\n    }\n}\n```\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-ios-v1/evaluation/selection.rubric.md",
+        "sha256": "97d767126c1675c0fb0c669ec31c8fbe9d533fb0304f21827b1282c63325ce17"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "knownIncidentDevelopmentCase": true
+    },
+    {
+      "id": "swiftui-media-ios/ownership",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "classification": "SwiftUI-specific composition with shared AVFoundation/application contract",
+      "family": "ownership",
+      "status": "draft",
+      "manifest": "code-examples/swiftui/media-ios-v1/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testLoadingDoesNotChangeNativeChoice",
+        "MediaSelectionTests/testDuplicateCompletionCannotOverwriteSuccess",
+        "MediaSelectionTests/testOldCompletionCannotOverwriteNewLoad",
+        "MediaSelectionTests/testCancelRejectsLateCompletion",
+        "MediaSelectionTests/testCancelDoesNotClearNativeSelection",
+        "MediaSelectionTests/testReplacedItemRejectsOldChoice",
+        "MediaSelectionTests/testReplacedItemRejectsOldCompletion",
+        "MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad",
+        "MediaSelectionTests/testCancelledCurrentTaskDoesNotPublishResult",
+        "MediaSelectionTests/testAlreadyCancelledTaskCannotStartLoad"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-ios-v1/evaluation/ownership.prompt.md",
+        "sha256": "918e20d33a7ec3de1fe558e4095c3ed62f0fc30447852d1c115cbefc8f370366",
+        "text": "# iOS developer request\n\nIn this SwiftUI player, people can leave and return or change videos while media options are loading. Review and implement ownership so old results and old option callbacks cannot affect the current video, including cancellation and retries. Target iOS 26 or later. Here is the complete current implementation:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\n@MainActor @Observable\nfinal class FormMediaState {\n    var text = \"\"\n    private(set) var error: String?\n    private(set) var busy = false\n    private var generation = 0\n    private var active: Int?\n    var accepted: (String) -> Void = { _ in }\n    var validate: (String, @escaping @MainActor (String?) -> Void) -> Void = { _, reply in reply(nil) }\n    var input: Binding<String> {\n        Binding(get: { self.text }, set: { value in self.text = value; self.cancel() })\n    }\n    func cancel() { generation += 1; active = nil; busy = false; error = nil }\n    func submit() {\n        generation += 1; let ticket = generation, snapshot = text\n        active = ticket; busy = true; error = nil\n        validate(snapshot) { [weak self] message in\n            guard let self, self.active == ticket else { return }\n            guard self.text == snapshot else { self.cancel(); return }\n            self.active = nil; self.busy = false\n            if let message { self.error = message.isEmpty ? \"Validation unavailable\" : message }\n            else { self.accepted(snapshot) }\n        }\n    }\n}\n\nstruct TrackChoice: Identifiable, Equatable {\n    let id: String\n    let name: String\n    let descriptive: Bool\n}\n\n@MainActor @Observable\nfinal class MediaState {\n    let player: AVPlayer\n    private(set) var tracks: [TrackChoice] = []\n    private(set) var selected: String?\n    private(set) var loaded = false\n    private var generation = 0\n    private var active: Int?\n    init(player: AVPlayer = AVPlayer()) { self.player = player }\n    var status: String { !loaded ? \"Options unavailable\" : tracks.isEmpty ? \"No caption options\" : \"\\(tracks.count) caption options\" }\n    func load(_ loader: (@escaping @MainActor ([TrackChoice]) -> Void) -> Void) {\n        generation += 1; let ticket = generation; active = ticket; loaded = false\n        loader { [weak self] tracks in\n            guard let self, self.active == ticket else { return }\n            self.active = nil\n            guard Set(tracks.map(\\.id)).count == tracks.count else { return }\n            self.tracks = tracks; self.loaded = true\n            if let selected = self.selected, !tracks.contains(where: { $0.id == selected }) { self.selected = nil }\n        }\n    }\n    func choose(_ id: String?) {\n        guard loaded, id == nil || tracks.contains(where: { $0.id == id }) else { return }\n        selected = id\n    }\n}\n\nstruct FormMediaExample: View {\n    @Bindable var form: FormMediaState\n    @Bindable var media: MediaState\n    var body: some View {\n        VStack {\n            TextField(\"Email\", text: form.input)\n            if let error = form.error { Text(error).accessibilityLabel(\"Error: \\(error)\") }\n            Button(\"Save\", action: form.submit).disabled(form.busy)\n            VideoPlayer(player: media.player)\n            Text(media.status)\n            ForEach(media.tracks) { track in\n                Button(track.name) { media.choose(track.id) }\n                    .accessibilityValue(media.selected == track.id ? \"Selected\" : \"Not selected\")\n            }\n        }\n    }\n}\n```\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-ios-v1/evaluation/ownership.rubric.md",
+        "sha256": "f680c9c057698fb28f8b66b7c02093c90de0264e5608e6590468309c7fa35203"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "knownIncidentDevelopmentCase": true
+    },
+    {
+      "id": "swiftui-media-ios/wiring",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "classification": "SwiftUI-specific composition with shared AVFoundation/application contract",
+      "family": "wiring",
+      "status": "draft",
+      "manifest": "code-examples/swiftui/media-ios-v1/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testNativeRefreshLoadsActualGroup",
+        "MediaSelectionTests/testOldErrorCannotOverwriteNewSuccess",
+        "MediaSelectionTests/testNoItemIsNotAbsentGroup",
+        "MediaSelectionTests/testAbsentGroupIsNotFailure",
+        "MediaSelectionTests/testLoadFailureIsNotEmptySuccess",
+        "MediaSelectionTests/testViewRetainsSameStoreAndPlayer",
+        "MediaSelectionTests/testActualRefreshPassesItemAndCharacteristicToLoader",
+        "MediaSelectionTests/testActualRefreshErrorSetsFailedPhase",
+        "MediaSelectionTests/testActualRefreshAbsentSetsAbsentPhase",
+        "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-ios-v1/evaluation/wiring.prompt.md",
+        "sha256": "d4bd274c3a345669a1e01f5fecb2bfbbb4c48fe0e0850d9267e5fb2dba6536d8",
+        "text": "# iOS developer request\n\nBuild a SwiftUI media-option picker that uses the same player and selection state as the video view. Distinguish a missing video, options still loading, no options and a load error. Provide a retry path and focused unit tests. Target iOS 26 or later. Here is the complete current implementation:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\n@MainActor @Observable\nfinal class FormMediaState {\n    var text = \"\"\n    private(set) var error: String?\n    private(set) var busy = false\n    private var generation = 0\n    private var active: Int?\n    var accepted: (String) -> Void = { _ in }\n    var validate: (String, @escaping @MainActor (String?) -> Void) -> Void = { _, reply in reply(nil) }\n    var input: Binding<String> {\n        Binding(get: { self.text }, set: { value in self.text = value; self.cancel() })\n    }\n    func cancel() { generation += 1; active = nil; busy = false; error = nil }\n    func submit() {\n        generation += 1; let ticket = generation, snapshot = text\n        active = ticket; busy = true; error = nil\n        validate(snapshot) { [weak self] message in\n            guard let self, self.active == ticket else { return }\n            guard self.text == snapshot else { self.cancel(); return }\n            self.active = nil; self.busy = false\n            if let message { self.error = message.isEmpty ? \"Validation unavailable\" : message }\n            else { self.accepted(snapshot) }\n        }\n    }\n}\n\nstruct TrackChoice: Identifiable, Equatable {\n    let id: String\n    let name: String\n    let descriptive: Bool\n}\n\n@MainActor @Observable\nfinal class MediaState {\n    let player: AVPlayer\n    private(set) var tracks: [TrackChoice] = []\n    private(set) var selected: String?\n    private(set) var loaded = false\n    private var generation = 0\n    private var active: Int?\n    init(player: AVPlayer = AVPlayer()) { self.player = player }\n    var status: String { !loaded ? \"Options unavailable\" : tracks.isEmpty ? \"No caption options\" : \"\\(tracks.count) caption options\" }\n    func load(_ loader: (@escaping @MainActor ([TrackChoice]) -> Void) -> Void) {\n        generation += 1; let ticket = generation; active = ticket; loaded = false\n        loader { [weak self] tracks in\n            guard let self, self.active == ticket else { return }\n            self.active = nil\n            guard Set(tracks.map(\\.id)).count == tracks.count else { return }\n            self.tracks = tracks; self.loaded = true\n            if let selected = self.selected, !tracks.contains(where: { $0.id == selected }) { self.selected = nil }\n        }\n    }\n    func choose(_ id: String?) {\n        guard loaded, id == nil || tracks.contains(where: { $0.id == id }) else { return }\n        selected = id\n    }\n}\n\nstruct FormMediaExample: View {\n    @Bindable var form: FormMediaState\n    @Bindable var media: MediaState\n    var body: some View {\n        VStack {\n            TextField(\"Email\", text: form.input)\n            if let error = form.error { Text(error).accessibilityLabel(\"Error: \\(error)\") }\n            Button(\"Save\", action: form.submit).disabled(form.busy)\n            VideoPlayer(player: media.player)\n            Text(media.status)\n            ForEach(media.tracks) { track in\n                Button(track.name) { media.choose(track.id) }\n                    .accessibilityValue(media.selected == track.id ? \"Selected\" : \"Not selected\")\n            }\n        }\n    }\n}\n```\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-ios-v1/evaluation/wiring.rubric.md",
+        "sha256": "a15230e0e83c07fefe0734949883a3199689968558b4b6f14162f74feeae94f5"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "knownIncidentDevelopmentCase": true
+    },
+    {
+      "id": "swiftui-media-tvos/selection",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "classification": "SwiftUI-specific composition with shared AVFoundation/application contract",
+      "family": "selection",
+      "status": "draft",
+      "manifest": "code-examples/swiftui/media-tvos-v1/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testFullSubtitleChoicesExcludeForcedOnly",
+        "MediaSelectionTests/testBindingWritesNativeSelection",
+        "MediaSelectionTests/testBindingReadsExternalSelection",
+        "MediaSelectionTests/testUnknownChoicePreservesSelection",
+        "MediaSelectionTests/testOffClearsOnlyPermittedGroup",
+        "MediaSelectionTests/testSubtitleChangePreservesDescriptiveAudio",
+        "MediaSelectionTests/testOffPreservesAudio",
+        "MediaSelectionTests/testAudioStoreReadsDescriptionTag",
+        "MediaSelectionTests/testAudioOffMatchesActualGroupPermission",
+        "MediaSelectionTests/testReloadRecoversNativeChoiceWithNewIDs",
+        "MediaSelectionTests/testOldOptionIDCannotSelectAfterReload",
+        "MediaSelectionTests/testErrorThenReloadRecovers",
+        "MediaSelectionTests/testSelectionPreservesPlayerSettingsAndIdentity",
+        "MediaSelectionTests/testChoiceIDsUniqueWithinSnapshot",
+        "MediaSelectionTests/testCapturedBindingRejectsAfterCancellation",
+        "MediaSelectionTests/testBindingWriteInvalidatesObservableSelection"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-tvos-v1/evaluation/selection.prompt.md",
+        "sha256": "84d1fbaddaa2cf254516c0d519aae29fcae5c6da50506b0a6b32377ac2b8f2f7",
+        "text": "# tvOS developer request\n\nMy SwiftUI player shows caption choices, but choosing one currently only changes local state. Connect this to the media item so choosing captions really works without disturbing the audio the viewer selected. Keep ordinary player controls. Target tvOS 26 or later. Here is the complete current implementation:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\n@MainActor @Observable\nfinal class FormMediaState {\n    var text = \"\"\n    private(set) var error: String?\n    private(set) var busy = false\n    private var generation = 0\n    private var active: Int?\n    var accepted: (String) -> Void = { _ in }\n    var validate: (String, @escaping @MainActor (String?) -> Void) -> Void = { _, reply in reply(nil) }\n    var input: Binding<String> {\n        Binding(get: { self.text }, set: { value in self.text = value; self.cancel() })\n    }\n    func cancel() { generation += 1; active = nil; busy = false; error = nil }\n    func submit() {\n        generation += 1; let ticket = generation, snapshot = text\n        active = ticket; busy = true; error = nil\n        validate(snapshot) { [weak self] message in\n            guard let self, self.active == ticket else { return }\n            guard self.text == snapshot else { self.cancel(); return }\n            self.active = nil; self.busy = false\n            if let message { self.error = message.isEmpty ? \"Validation unavailable\" : message }\n            else { self.accepted(snapshot) }\n        }\n    }\n}\n\nstruct TrackChoice: Identifiable, Equatable {\n    let id: String\n    let name: String\n    let descriptive: Bool\n}\n\n@MainActor @Observable\nfinal class MediaState {\n    let player: AVPlayer\n    private(set) var tracks: [TrackChoice] = []\n    private(set) var selected: String?\n    private(set) var loaded = false\n    private var generation = 0\n    private var active: Int?\n    init(player: AVPlayer = AVPlayer()) { self.player = player }\n    var status: String { !loaded ? \"Options unavailable\" : tracks.isEmpty ? \"No caption options\" : \"\\(tracks.count) caption options\" }\n    func load(_ loader: (@escaping @MainActor ([TrackChoice]) -> Void) -> Void) {\n        generation += 1; let ticket = generation; active = ticket; loaded = false\n        loader { [weak self] tracks in\n            guard let self, self.active == ticket else { return }\n            self.active = nil\n            guard Set(tracks.map(\\.id)).count == tracks.count else { return }\n            self.tracks = tracks; self.loaded = true\n            if let selected = self.selected, !tracks.contains(where: { $0.id == selected }) { self.selected = nil }\n        }\n    }\n    func choose(_ id: String?) {\n        guard loaded, id == nil || tracks.contains(where: { $0.id == id }) else { return }\n        selected = id\n    }\n}\n\nstruct FormMediaExample: View {\n    @Bindable var form: FormMediaState\n    @Bindable var media: MediaState\n    var body: some View {\n        VStack {\n            TextField(\"Email\", text: form.input)\n            if let error = form.error { Text(error).accessibilityLabel(\"Error: \\(error)\") }\n            Button(\"Save\", action: form.submit).disabled(form.busy)\n            VideoPlayer(player: media.player)\n            Text(media.status)\n            ForEach(media.tracks) { track in\n                Button(track.name) { media.choose(track.id) }\n                    .accessibilityValue(media.selected == track.id ? \"Selected\" : \"Not selected\")\n            }\n        }\n    }\n}\n```\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-tvos-v1/evaluation/selection.rubric.md",
+        "sha256": "c2dcbc9e41df3ec5930e188af4fe7012d78b46f6511882a6a38085ff8eae20a4"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "knownIncidentDevelopmentCase": true
+    },
+    {
+      "id": "swiftui-media-tvos/ownership",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "classification": "SwiftUI-specific composition with shared AVFoundation/application contract",
+      "family": "ownership",
+      "status": "draft",
+      "manifest": "code-examples/swiftui/media-tvos-v1/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testLoadingDoesNotChangeNativeChoice",
+        "MediaSelectionTests/testDuplicateCompletionCannotOverwriteSuccess",
+        "MediaSelectionTests/testOldCompletionCannotOverwriteNewLoad",
+        "MediaSelectionTests/testCancelRejectsLateCompletion",
+        "MediaSelectionTests/testCancelDoesNotClearNativeSelection",
+        "MediaSelectionTests/testReplacedItemRejectsOldChoice",
+        "MediaSelectionTests/testReplacedItemRejectsOldCompletion",
+        "MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad",
+        "MediaSelectionTests/testCancelledCurrentTaskDoesNotPublishResult",
+        "MediaSelectionTests/testAlreadyCancelledTaskCannotStartLoad"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-tvos-v1/evaluation/ownership.prompt.md",
+        "sha256": "0ad013a4877500310bf6fca1b31ef1d497b17a8e525212b4b9c4dd12242d19d9",
+        "text": "# tvOS developer request\n\nIn this SwiftUI player, people can leave and return or change videos while media options are loading. Review and implement ownership so old results and old option callbacks cannot affect the current video, including cancellation and retries. Target tvOS 26 or later. Here is the complete current implementation:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\n@MainActor @Observable\nfinal class FormMediaState {\n    var text = \"\"\n    private(set) var error: String?\n    private(set) var busy = false\n    private var generation = 0\n    private var active: Int?\n    var accepted: (String) -> Void = { _ in }\n    var validate: (String, @escaping @MainActor (String?) -> Void) -> Void = { _, reply in reply(nil) }\n    var input: Binding<String> {\n        Binding(get: { self.text }, set: { value in self.text = value; self.cancel() })\n    }\n    func cancel() { generation += 1; active = nil; busy = false; error = nil }\n    func submit() {\n        generation += 1; let ticket = generation, snapshot = text\n        active = ticket; busy = true; error = nil\n        validate(snapshot) { [weak self] message in\n            guard let self, self.active == ticket else { return }\n            guard self.text == snapshot else { self.cancel(); return }\n            self.active = nil; self.busy = false\n            if let message { self.error = message.isEmpty ? \"Validation unavailable\" : message }\n            else { self.accepted(snapshot) }\n        }\n    }\n}\n\nstruct TrackChoice: Identifiable, Equatable {\n    let id: String\n    let name: String\n    let descriptive: Bool\n}\n\n@MainActor @Observable\nfinal class MediaState {\n    let player: AVPlayer\n    private(set) var tracks: [TrackChoice] = []\n    private(set) var selected: String?\n    private(set) var loaded = false\n    private var generation = 0\n    private var active: Int?\n    init(player: AVPlayer = AVPlayer()) { self.player = player }\n    var status: String { !loaded ? \"Options unavailable\" : tracks.isEmpty ? \"No caption options\" : \"\\(tracks.count) caption options\" }\n    func load(_ loader: (@escaping @MainActor ([TrackChoice]) -> Void) -> Void) {\n        generation += 1; let ticket = generation; active = ticket; loaded = false\n        loader { [weak self] tracks in\n            guard let self, self.active == ticket else { return }\n            self.active = nil\n            guard Set(tracks.map(\\.id)).count == tracks.count else { return }\n            self.tracks = tracks; self.loaded = true\n            if let selected = self.selected, !tracks.contains(where: { $0.id == selected }) { self.selected = nil }\n        }\n    }\n    func choose(_ id: String?) {\n        guard loaded, id == nil || tracks.contains(where: { $0.id == id }) else { return }\n        selected = id\n    }\n}\n\nstruct FormMediaExample: View {\n    @Bindable var form: FormMediaState\n    @Bindable var media: MediaState\n    var body: some View {\n        VStack {\n            TextField(\"Email\", text: form.input)\n            if let error = form.error { Text(error).accessibilityLabel(\"Error: \\(error)\") }\n            Button(\"Save\", action: form.submit).disabled(form.busy)\n            VideoPlayer(player: media.player)\n            Text(media.status)\n            ForEach(media.tracks) { track in\n                Button(track.name) { media.choose(track.id) }\n                    .accessibilityValue(media.selected == track.id ? \"Selected\" : \"Not selected\")\n            }\n        }\n    }\n}\n```\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-tvos-v1/evaluation/ownership.rubric.md",
+        "sha256": "b9a9f0c3caf7efa93d94e976b39f05424215ac59fc6a8c1068c40a58c61f7578"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "knownIncidentDevelopmentCase": true
+    },
+    {
+      "id": "swiftui-media-tvos/wiring",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "classification": "SwiftUI-specific composition with shared AVFoundation/application contract",
+      "family": "wiring",
+      "status": "draft",
+      "manifest": "code-examples/swiftui/media-tvos-v1/manifest.json",
+      "testIds": [
+        "MediaSelectionTests/testNativeRefreshLoadsActualGroup",
+        "MediaSelectionTests/testOldErrorCannotOverwriteNewSuccess",
+        "MediaSelectionTests/testNoItemIsNotAbsentGroup",
+        "MediaSelectionTests/testAbsentGroupIsNotFailure",
+        "MediaSelectionTests/testLoadFailureIsNotEmptySuccess",
+        "MediaSelectionTests/testViewRetainsSameStoreAndPlayer",
+        "MediaSelectionTests/testActualRefreshPassesItemAndCharacteristicToLoader",
+        "MediaSelectionTests/testActualRefreshErrorSetsFailedPhase",
+        "MediaSelectionTests/testActualRefreshAbsentSetsAbsentPhase",
+        "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection"
+      ],
+      "subject": {
+        "path": "code-examples/swiftui/media-tvos-v1/evaluation/wiring.prompt.md",
+        "sha256": "dc1e54ce99c97729718ca2a3ab0cbb3b7e4d4852578ab284be68b5818cbd66f9",
+        "text": "# tvOS developer request\n\nBuild a SwiftUI media-option picker that uses the same player and selection state as the video view. Distinguish a missing video, options still loading, no options and a load error. Provide a retry path and focused unit tests. Target tvOS 26 or later. Here is the complete current implementation:\n\n```swift\nimport SwiftUI\nimport Observation\nimport AVKit\n\n@MainActor @Observable\nfinal class FormMediaState {\n    var text = \"\"\n    private(set) var error: String?\n    private(set) var busy = false\n    private var generation = 0\n    private var active: Int?\n    var accepted: (String) -> Void = { _ in }\n    var validate: (String, @escaping @MainActor (String?) -> Void) -> Void = { _, reply in reply(nil) }\n    var input: Binding<String> {\n        Binding(get: { self.text }, set: { value in self.text = value; self.cancel() })\n    }\n    func cancel() { generation += 1; active = nil; busy = false; error = nil }\n    func submit() {\n        generation += 1; let ticket = generation, snapshot = text\n        active = ticket; busy = true; error = nil\n        validate(snapshot) { [weak self] message in\n            guard let self, self.active == ticket else { return }\n            guard self.text == snapshot else { self.cancel(); return }\n            self.active = nil; self.busy = false\n            if let message { self.error = message.isEmpty ? \"Validation unavailable\" : message }\n            else { self.accepted(snapshot) }\n        }\n    }\n}\n\nstruct TrackChoice: Identifiable, Equatable {\n    let id: String\n    let name: String\n    let descriptive: Bool\n}\n\n@MainActor @Observable\nfinal class MediaState {\n    let player: AVPlayer\n    private(set) var tracks: [TrackChoice] = []\n    private(set) var selected: String?\n    private(set) var loaded = false\n    private var generation = 0\n    private var active: Int?\n    init(player: AVPlayer = AVPlayer()) { self.player = player }\n    var status: String { !loaded ? \"Options unavailable\" : tracks.isEmpty ? \"No caption options\" : \"\\(tracks.count) caption options\" }\n    func load(_ loader: (@escaping @MainActor ([TrackChoice]) -> Void) -> Void) {\n        generation += 1; let ticket = generation; active = ticket; loaded = false\n        loader { [weak self] tracks in\n            guard let self, self.active == ticket else { return }\n            self.active = nil\n            guard Set(tracks.map(\\.id)).count == tracks.count else { return }\n            self.tracks = tracks; self.loaded = true\n            if let selected = self.selected, !tracks.contains(where: { $0.id == selected }) { self.selected = nil }\n        }\n    }\n    func choose(_ id: String?) {\n        guard loaded, id == nil || tracks.contains(where: { $0.id == id }) else { return }\n        selected = id\n    }\n}\n\nstruct FormMediaExample: View {\n    @Bindable var form: FormMediaState\n    @Bindable var media: MediaState\n    var body: some View {\n        VStack {\n            TextField(\"Email\", text: form.input)\n            if let error = form.error { Text(error).accessibilityLabel(\"Error: \\(error)\") }\n            Button(\"Save\", action: form.submit).disabled(form.busy)\n            VideoPlayer(player: media.player)\n            Text(media.status)\n            ForEach(media.tracks) { track in\n                Button(track.name) { media.choose(track.id) }\n                    .accessibilityValue(media.selected == track.id ? \"Selected\" : \"Not selected\")\n            }\n        }\n    }\n}\n```\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/media-tvos-v1/evaluation/wiring.rubric.md",
+        "sha256": "4ae2d0c06b0a64f69f091b8aaf911b81475130142deac64287a1be0a74fede52"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "knownIncidentDevelopmentCase": true
+    }
+  ]
+}

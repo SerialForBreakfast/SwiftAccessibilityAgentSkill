@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "id": "swiftui-media-review-repro-v1",
+  "revision": "1",
+  "platform": "macOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 27,
+  "limitations": "Genuine review-defect reproduction on unchanged v1 source. Expected failures are incident evidence, not deliberate mutants or proof of a corrected example.",
+  "claims": [
+    {
+      "id": "ownership",
+      "url": "https://developer.apple.com/documentation/avfoundation/avasset/loadmediaselectiongroup(for:)",
+      "section": "Public SDK declaration and narrowly asserted application contract",
+      "statement": "Item identity, load generation and task cancellation ownership are application policy.",
+      "availability": "Deployment26, installed SDK27. Actual runtime recorded by native adapter; no speech, playback rendering or focus evidence.",
+      "reviewedOn": "2026-11-07"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/MediaSelection.swift",
+      "sha256": "2b43ff10420bf592a85edd16df023f2ea2dcc1f2581d5a27c2c6aae316f5d8ff"
+    },
+    {
+      "path": "Tests/ReviewRegressionTests.swift",
+      "sha256": "c409ae17f9a08a2de7722bf204807f102659d890769fbcfd0dd27c725fc76745"
+    },
+    {
+      "path": "Tests/DescriptionFixture.swift",
+      "sha256": "b65a164d2ea9121fa058094c177116405c31904789e300872aea15cae7ad0a2e"
+    }
+  ],
+  "checks": [
+    {
+      "id": "review-repro",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "ownership"
+      ],
+      "testIds": [
+        "ReviewRegressionTests/testStaleOffCannotClearReloadedSelection",
+        "ReviewRegressionTests/testStaleOffCannotClearReplacementSelection",
+        "ReviewRegressionTests/testForcedSelectionIsNotOff"
+      ],
+      "failureIds": [
+        "ReviewRegressionTests/testStaleOffCannotClearReloadedSelection",
+        "ReviewRegressionTests/testStaleOffCannotClearReplacementSelection",
+        "ReviewRegressionTests/testForcedSelectionIsNotOff"
+      ]
+    }
+  ]
+}

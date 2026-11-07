@@ -1,0 +1,528 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -scheme AccessibilityExamples -destination platform=macOS,id=<HOST_DEVICE_ID> -derivedDataPath <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData -resultBundlePath <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/tests.xcresult -parallel-testing-enabled NO -collect-test-diagnostics never "-only-testing:AccessibilityExamplesTests/ReviewRegressionTests/testStaleOffCannotClearReloadedSelection" CODE_SIGNING_ALLOWED=NO
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  AccessibilityExamples: <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+
+Writing result bundle at path:
+	<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/tests.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (3 targets)
+    Target 'AccessibilityExamples-product' in project 'AccessibilityExamples'
+        ➜ Explicit dependency on target 'AccessibilityExamples' in project 'AccessibilityExamples'
+    Target 'AccessibilityExamplesTests-product' in project 'AccessibilityExamples'
+        ➜ Explicit dependency on target 'AccessibilityExamples' in project 'AccessibilityExamples'
+    Target 'AccessibilityExamples' in project 'AccessibilityExamples' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: f31cc91a31cce48ae5995114b0f95542
+Build description path: <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/XCBuildData/f31cc91a31cce48ae5995114b0f95542.xcbuilddata
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/CompilationCache.noindex
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/CompilationCache.noindex
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -o <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/PrecompiledHeaders
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/PrecompiledHeaders
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/PackageFrameworks
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/PackageFrameworks
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/AccessibilityExamples.modulemap (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/AccessibilityExamples.modulemap
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftConstValuesFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftConstValuesFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.LinkFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.LinkFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/empty-AccessibilityExamplesTests.plist (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/empty-AccessibilityExamplesTests.plist
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftConstValuesFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftConstValuesFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.LinkFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.LinkFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyStaticMetadataFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyMetadataFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyMetadataFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/AccessibilityExamples.DependencyStaticMetadataFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/AccessibilityExamples.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/AccessibilityExamples.DependencyMetadataFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    write-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/AccessibilityExamples.DependencyMetadataFileList
+
+Copy <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps/AccessibilityExamples.modulemap <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/AccessibilityExamples.modulemap (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/AccessibilityExamples.modulemap <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps
+
+MkDir <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/MacOS (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    /bin/mkdir -p <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/MacOS
+
+MkDir <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    /bin/mkdir -p <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents
+
+MkDir <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    /bin/mkdir -p <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest
+
+SwiftDriver AccessibilityExamples normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamples -Onone @<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/include -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h -working-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_AvailabilityInternal-DSKSIFTCR0H51FAU2DCEHPHX4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/DeveloperToolsSupport-EEN4IPSPEBU26OOIN7JG2ILRT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdbool-DOSK0MTM600N3Z3RIPW7HK0CA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/SwiftShims-BUV5D3NXLRBOQD1772ABBCDOY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/ptrcheck-3RV9HW2PQDQN1PTXFWORAO5YF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_SwiftConcurrencyShims-7T98SC1O151SFZPYO70KWADC7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_Builtin_float-D7ZF9Q6QD4WETT7HFNN0199T0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdarg-DRTTKCZU3EY8NU8SFBDSELCQJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stddef-AG50QZTFPDMRE6BU1XP0JY3ZO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/ptrauth-D8BUUV6M4BGG3A89TGL5XH0WM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_DarwinFoundation1-1B119C2WOKXPIEA6VD3UHQPQZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_DarwinFoundation2-D4R6EW01O899337HSGETWGUN9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_Builtin_limits-BLSP0INWAAGBS4LMBF2XOGNKZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdint-3WS8ZK786NG64HLRBMS5QZKPJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_Builtin_tgmath-7TVEF1QQVSUGA28D39ITB1AC5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/string_h-1NE7JDM9ZA8HQLMU7D3DC2UDE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/sys_types-4J0FDJ23I4TQHBVI4BSAZOZZO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdatomic-A6XVQULCCXER0HTH18T0AG3YV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/libDER-B37LEG5Q7BYJH8PVF1H3EGCM3.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_DarwinFoundation3-6HZLQ6VDUUDHP8EV7LIFV600H.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_Builtin_intrinsics-F1M2LVTC2AZ4QSSFOC6N4T9VA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/_Builtin_inttypes-E0VCEZTNH4ORK0KV4REL4E5N3.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/Darwin-EVFR3TWBDT2B76KRJBP0DQK0D.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/simd-NVVMJVGPTM1EAJRCYPO6HD5Y.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/MachO-EPI2U4DEB4AO9BABB76PQIBEN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CUPS-6JF87RJH257CC54VWOZF4DNL1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/launch-9NBIYV2TEAL0WFJR76M5Z06VJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/libkern-5D2CHJPX1JCBGOVER0QFJ3M9A.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/ObjectiveC-465BVFK11Y6LQ62ULG449NSKP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/Spatial-3RNLAJZAYZFYFJNVDKNH6WWWW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/os_object-5GRUZ35WR3Z9NN5E5UDO3Q89K.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/os_workgroup-BWTYUJDHVR15CX8OI81D9ZUIQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/Dispatch-OVF75DKGBR0W8D89QNANR6WB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CoreFoundation-E96WWBAQ7NXFAPWFVW9WM0ILE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/XPC-1SRLS56EMMJ7706TWGM9XTS8R.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/os-4DG17LTWX9V42EA1TM8DH5R9V.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CoreAudioTypes-2RPW1MAEOQSR4NVLCL110N1LK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/Security-AFR8USJTTX2PB5LOJZURW60E2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CFNetwork-78F6L3YXYNLV96K80LBE4UV45.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/IOKit-6LHZKFLX9YL9C0K0DH078CYRV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/ColorSync-70655L3FS91HDZ773MMN6S93A.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/DiskArbitration-3CXN51TBC8ZHLMBVAOA9ZNZV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CoreGraphics-9L7VGRD8Z7EG3ENI4OKKRDQCM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CoreServices-8FE307PT9QHBRDJZ40Y9RAKGL.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CoreText-3SVF4BM2QII8TA7OHR5NMFUZB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/ImageIO-8QDMZFJDSD59J7WABSHMSPK3A.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/Foundation-DOPCIOCPW65DN3O1YCI02WL3K.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/Symbols-56PH02OE7POS1TO7OHK41AUDP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/ApplicationServices-1LN6HHBVAJ4850BMS3JEIT6DB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/OSLog-9BBR1SEUVTJDCNBAS2V0UTOTA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/UniformTypeIdentifiers-HVOLVOFMXI3I8TFT6YOFWS78.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CoreTransferable-7FHO6GUWYAKP1N3NR6G6N1YXS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CoreData-20WHW1C44HFOLWMRF615NQ1KP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CoreAudio-51S42P7JAN4GV0R0MZ31U2HSX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/DataDetection-55QPAJ6JTD2S8VK4C7C82YXXX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/Accessibility-C3WVL2NQT0A3G15S8HFPFAOF4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CoreMIDI-51YTQMQX32YRYH2QUJ7CWOHA3.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/IOSurface-30CD1ONYX0KP6RL5RFMXVO3YS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/Carbon-R8G6TOM5IVME36XBNONA7UG6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/Metal-D8V8VS12H6R0K83GLAZG48Y37.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/OpenGL-2CLRFQRL898EQE8HRANXA08GX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/AudioToolbox-C5TMUOEBQHWIWJMKIK60TDPUV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CoreVideo-AQTP254IV9ZYWAO02BZUERND0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/QuartzCore-EJGSDDQ01GT8PQAA877UMLX28.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CoreImage-8AS4P6SOX803242DXVQ1A22HX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/CoreMedia-5KDIWIDFW6DM1ICMSGKJGHOEJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/SwiftUICore-8OCYPD76YY8PTSC7SYM1KJKAQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/VideoToolbox-ENH6XUOYQ7Q56SM805L4ODA70.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/MediaToolbox-DEQ9ET8VJW487NLCC7YX3IYBB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/AVFAudio-DW682QNW9L4BAN662TY2II1HM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/AppKit-8EBP1FL5U888007IV89QE1X8Q.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/AVFoundation-5KMZJPRH3EN6GGX8DL8MZBJHD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/Cocoa-53OFVR3AETA859SVFNVRTH66P.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/SwiftUI-7PTLCP7GD4EHPA30ALTHIXR2T.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules/AVKit-358YWMUGARAHB33M3GYTKSGO2.pcm
+
+SwiftCompile normal arm64 Compiling\ MediaSelection.swift <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/Sources/AccessibilityExamples/MediaSelection.swift (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/Sources/AccessibilityExamples/MediaSelection.swift (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-SwiftPerFileCompile MediaSelection.swift
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ AccessibilityExamples (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for AccessibilityExamples (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+
+SwiftDriver\ Compilation\ Requirements AccessibilityExamples normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamples -Onone @<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/include -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h -working-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftMergeGeneratedHeaders <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps/AccessibilityExamples-Swift.h <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    builtin-swiftHeaderTool -arch arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h -o <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps/AccessibilityExamples-Swift.h
+
+Copy <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamples.swiftmodule/arm64-apple-macos.abi.json <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.abi.json (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.abi.json <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamples.swiftmodule/arm64-apple-macos.abi.json
+
+Copy <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamples.swiftmodule/arm64-apple-macos.swiftmodule <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamples.swiftmodule/arm64-apple-macos.swiftmodule
+
+Copy <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamples.swiftmodule/arm64-apple-macos.swiftdoc <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftdoc (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftdoc <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamples.swiftmodule/arm64-apple-macos.swiftdoc
+
+Copy <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamples.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftsourceinfo (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftsourceinfo <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamples.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo
+
+SwiftDriver AccessibilityExamplesTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamplesTests -Onone @<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/PackageFrameworks -F <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/include -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-A4G2UREO7SYNZ8N6FY6KXW8FU.pcm
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-HDFN3K9RMML8.swiftmodule
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-375DH34HQ2E2PD78ZBRP8E4C6.pcm
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-2X2FD7OIMZX7C.swiftmodule
+
+SwiftCompile normal arm64 Compiling\ DescriptionFixture.swift <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/Tests/AccessibilityExamplesTests/DescriptionFixture.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/Tests/AccessibilityExamplesTests/DescriptionFixture.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-SwiftPerFileCompile DescriptionFixture.swift
+
+SwiftCompile normal arm64 Compiling\ MediaSelectionTests.swift <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/Tests/AccessibilityExamplesTests/MediaSelectionTests.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/Tests/AccessibilityExamplesTests/MediaSelectionTests.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-SwiftPerFileCompile MediaSelectionTests.swift
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ AccessibilityExamplesTests (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ ReviewRegressionTests.swift <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/Tests/AccessibilityExamplesTests/ReviewRegressionTests.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/Tests/AccessibilityExamplesTests/ReviewRegressionTests.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-SwiftPerFileCompile ReviewRegressionTests.swift
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for AccessibilityExamplesTests (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftDriver\ Compilation\ Requirements AccessibilityExamplesTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamplesTests -Onone @<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/PackageFrameworks -F <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/include -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Copy <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.swiftmodule/arm64-apple-macos.abi.json <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.abi.json (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.abi.json <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.swiftmodule/arm64-apple-macos.abi.json
+
+Copy <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.swiftmodule/arm64-apple-macos.swiftdoc <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftdoc (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftdoc <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.swiftmodule/arm64-apple-macos.swiftdoc
+
+Copy <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.swiftmodule/arm64-apple-macos.swiftmodule <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.swiftmodule/arm64-apple-macos.swiftmodule
+
+Copy <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftsourceinfo (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftsourceinfo <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling DescriptionFixture.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftDriverJobDiscovery normal arm64 Compiling ReviewRegressionTests.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftDriverJobDiscovery normal arm64 Compiling MediaSelection.swift (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+
+SwiftDriver\ Compilation AccessibilityExamples normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamples -Onone @<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/include -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h -working-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Ld <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamples.o normal (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos26.0 -r -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -O0 -Xlinker -no_warn_duplicate_libraries -F<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -F<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -filelist <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.LinkFileList -nostdlib -Xlinker -object_path_lto -Xlinker <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_lto.o -Xlinker -no_deduplicate -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule -o <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamples.o
+
+ExtractAppIntentsMetadata (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name AccessibilityExamples --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk --xcode-version 27A266a --platform-family macOS --deployment-target 26.0 --bundle-identifier workspace.AccessibilityExamples --output <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamples.appintents --target-triple arm64-apple-macos26.0 --binary-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamples.o --dependency-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_dependency_info.dat --stringsdata-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList --metadata-file-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/AccessibilityExamples.DependencyMetadataFileList --static-metadata-file-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/AccessibilityExamples.DependencyStaticMetadataFileList --swift-const-vals-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftConstValuesFileList --force --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-11-07 08:58:26.473 appintentsmetadataprocessor[978:7743310] Starting appintentsmetadataprocessor export
+2026-11-07 08:58:26.528 appintentsmetadataprocessor[978:7743310] Extracted no relevant App Intents symbols, skipping writing output
+
+ProcessInfoPlistFile <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/Info.plist <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/empty-AccessibilityExamplesTests.plist (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    builtin-infoPlistUtility <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/empty-AccessibilityExamplesTests.plist -producttype com.apple.product-type.bundle.unit-test -expandbuildsettings -platform macosx -o <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/Info.plist
+
+SwiftDriverJobDiscovery normal arm64 Compiling MediaSelectionTests.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftDriver\ Compilation AccessibilityExamplesTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamplesTests -Onone @<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/PackageFrameworks -F <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/include -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Ld <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/MacOS/AccessibilityExamplesTests normal (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -Xlinker -reproducible -target arm64-apple-macos26.0 -Xlinker -bundle -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -Xlinker -no_warn_duplicate_libraries -L<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -L<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -F<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/PackageFrameworks -F<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug -Fsystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks @<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.LinkFileList -Xlinker -rpath -Xlinker @loader_path -Xlinker -rpath -Xlinker <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/PackageFrameworks -Xlinker -rpath -Xlinker @loader_path/../../.. -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/../Frameworks -Xlinker -object_path_lto -Xlinker <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_lto.o -Xclang-linker -rdynamic -Xlinker -no_deduplicate -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_dependency_info.dat -link-objc-runtime -profile-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport -o <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/MacOS/AccessibilityExamplesTests
+
+CopySwiftLibs <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    builtin-swiftStdLibTool --copy --verbose --scan-executable <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/MacOS/AccessibilityExamplesTests --scan-folder <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/Frameworks --scan-folder <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/PlugIns --scan-folder <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/Library/SystemExtensions --scan-folder <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/Extensions --platform macosx --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+ExtractAppIntentsMetadata (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name AccessibilityExamplesTests --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk --xcode-version 27A266a --platform-family macOS --deployment-target 26.0 --bundle-identifier workspace.AccessibilityExamplesTests --output <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/Resources --target-triple arm64-apple-macos26.0 --binary-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest/Contents/MacOS/AccessibilityExamplesTests --dependency-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_dependency_info.dat --stringsdata-file <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList --metadata-file-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyMetadataFileList --static-metadata-file-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyStaticMetadataFileList --swift-const-vals-list <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-11-07 08:58:26.988 appintentsmetadataprocessor[1001:7743356] Starting appintentsmetadataprocessor export
+2026-11-07 08:58:26.989 appintentsmetadataprocessor[1001:7743356] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+RegisterExecutionPolicyException <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    builtin-RegisterExecutionPolicyException <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest
+
+Touch <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace
+    /usr/bin/touch -c <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Products/Debug/AccessibilityExamplesTests.xctest
+
+PruneExplicitPrecompiledModules <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/SDKExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules <PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+Test Suite 'Selected tests' started at 2026-11-07 08:58:27.703.
+Test Suite 'AccessibilityExamplesTests.xctest' started at 2026-11-07 08:58:27.703.
+Test Suite 'ReviewRegressionTests' started at 2026-11-07 08:58:27.703.
+Test Case '-[AccessibilityExamplesTests.ReviewRegressionTests testStaleOffCannotClearReloadedSelection]' started.
+2026-11-07 08:58:27.715081-0800 xctest[1003:7743365] [ClientDonation] (+[PPSClientDonation isRegisteredSubsystem:category:]) Permission denied: CoreMedia / CM-ASSETCREATION
+2026-11-07 08:58:27.736515-0800 xctest[1003:7743406] [] <<< FigCaptionTranslator >>> signalled err=-19894 at <>:773
+2026-11-07 08:58:28.240670-0800 xctest[1003:7743381] [plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x75dee3d6c0> <DEVICE_OR_RUN_UUID>
+<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/workspace/Tests/AccessibilityExamplesTests/ReviewRegressionTests.swift:26: error: -[AccessibilityExamplesTests.ReviewRegressionTests testStaleOffCannotClearReloadedSelection] : XCTAssertEqual failed: ("nil") is not equal to ("Optional(<AVMediaSelectionTrackOption: 0x75df5de030, language = en, mediaType = 'sbtl', associated forced-only option = <AVMediaSelectionTrackOption: 0x75df5ddf90>>)")
+Test Case '-[AccessibilityExamplesTests.ReviewRegressionTests testStaleOffCannotClearReloadedSelection]' failed (0.693 seconds).
+Test Suite 'ReviewRegressionTests' failed at 2026-11-07 08:58:28.397.
+	 Executed 1 test, with 1 failure (0 unexpected) in 0.693 (0.694) seconds
+Test Suite 'AccessibilityExamplesTests.xctest' failed at 2026-11-07 08:58:28.397.
+	 Executed 1 test, with 1 failure (0 unexpected) in 0.693 (0.694) seconds
+Test Suite 'Selected tests' failed at 2026-11-07 08:58:28.397.
+	 Executed 1 test, with 1 failure (0 unexpected) in 0.693 (0.695) seconds
+2026-11-07 08:58:28.403677-0800 xctest[1003:7743416] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10687
+
+Test session results, code coverage, and logs:
+	<PRIVATE_TMP>/swiftui-review-corrected-r1/sui-media-review-mac-staleoff-r1/tests.xcresult
+
+Testing started
+2026-11-07 08:58:16.854 xcodebuild[822:7742691] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:<HOST_DEVICE_ID>, name:My Mac }
+{ platform:macOS, arch:x86_64, id:<HOST_DEVICE_ID>, name:My Mac }
+{ platform:macOS, arch:arm64, variant:Mac Catalyst, id:<HOST_DEVICE_ID>, name:My Mac }
+{ platform:macOS, arch:x86_64, variant:Mac Catalyst, id:<HOST_DEVICE_ID>, name:My Mac }
+{ platform:macOS, arch:arm64, variant:DriverKit, id:<HOST_DEVICE_ID>, name:My Mac }
+{ platform:macOS, arch:arm64, variant:Designed for [iPad,iPhone], id:<HOST_DEVICE_ID>, name:My Mac }
+{ platform:macOS, arch:arm64e.x1, variant:Designed for [iPad,iPhone], id:<HOST_DEVICE_ID>, name:My Mac }
+{ platform:macOS, arch:arm64_32, variant:Designed for [iPad,iPhone], id:<HOST_DEVICE_ID>, name:My Mac }
+2026-11-07 08:58:27.066 xcodebuild[822:7742709]  DVTAssertions: Warning in IDEFrameworks/IDEFoundation/Execution/LaunchSystem/IDELaunchSession.m:395
+Details:  setRunnablePIDWithDiagnostics:logSection:andCompletionHandler: called without a completion handler - blocking until diagnostics setup completes. Callers should migrate to using a completion handler for better performance.
+Object:   <IDELaunchSession: 0x7484d90300>
+Method:   -setRunnablePIDWithDiagnostics:logSection:andCompletionHandler:
+Thread:   <NSThread: 0x7482db4600>{number = 8, name = (null)}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-07 08:58:28.679 xcodebuild[822:7742691] [MT] IDETestOperationsObserverDebug: 1.649 elapsed -- Testing started completed.
+2026-11-07 08:58:28.679 xcodebuild[822:7742691] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-07 08:58:28.679 xcodebuild[822:7742691] [MT] IDETestOperationsObserverDebug: 1.649 sec, +1.649 sec -- end
+Failing tests:
+	ReviewRegressionTests.testStaleOffCannotClearReloadedSelection()
+
+** TEST FAILED **
+

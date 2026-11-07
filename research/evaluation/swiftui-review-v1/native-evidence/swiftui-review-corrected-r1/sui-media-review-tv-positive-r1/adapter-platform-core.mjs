@@ -1,0 +1,48 @@
+import {artifact, validateManifest} from './contracts.mjs';
+export const platforms = {
+  macOS: {sdk:'macosx', triple:'macosx', destination:'macOS', package:'macOS', simulator:false},
+  tvOS: {sdk:'appletvsimulator', triple:'tvos', destination:'tvOS Simulator', package:'tvOS', simulator:true}
+};
+export function nativePlan(manifest, root, checkId) {
+  validateManifest(manifest,root);
+  if (!platforms[manifest.platform]) throw Error('Explicit macOS or tvOS package required');
+  const check=manifest.checks.find(c=>c.id===checkId);
+  if(!check) throw Error('Unknown native check');
+  const inputs=manifest.files.filter(f=>/^(Sources|Tests)\/[A-Za-z0-9_]+\.swift$/.test(f.path));
+  if(!inputs.some(f=>f.path.startsWith('Sources/')) || !inputs.some(f=>f.path.startsWith('Tests/'))) throw Error('Missing package inputs');
+  inputs.forEach(f=>artifact(root,f));
+  if(check.replacement && (!inputs.some(f=>f.path===check.replacement.target && f.path.startsWith('Sources/')) || !manifest.files.some(f=>f.path===check.replacement.source && f.path.startsWith('NegativeFixtures/')))) throw Error('Invalid replacement');
+  if(check.compileSources && (!Array.isArray(check.compileSources)||!check.compileSources.length||check.compileSources.some(p=>!manifest.files.some(f=>f.path===p&&p.endsWith('.swift'))))) throw Error('Invalid compile sources');
+  if(check.lane==='unit' && check.testIds.some(id=>!/^\w+\/\w+$/.test(id))) throw Error('Invalid test ID');
+  return {execution:false,check,inputs,platform:manifest.platform,deploymentTarget:manifest.deploymentTarget,runtimeMajor:manifest.runtimeMajor};
+}
+export function selectDestination(devices,runtimes,uuid,major) {
+  const runtime=runtimes.runtimes.find(r=>r.identifier.includes('.tvOS-')&&Number(r.version.split('.')[0])===major&&r.isAvailable&&(devices.devices[r.identifier]??[]).some(d=>d.udid===uuid&&d.isAvailable));
+  if(!runtime) throw Error('Requested tvOS runtime/destination unavailable');
+  return {version:runtime.version,build:runtime.buildversion};
+}
+export function hostDestination(devices,version,build,major,architecture) {
+  if(Number(version.split('.')[0])!==major) throw Error('Host runtime does not match manifest major');
+  // xcdevice identifies Apple Silicon hardware as arm64e; the generated target is arm64.
+  const hosts=devices.filter(d=>d.platform==='com.apple.platform.macosx'&&d.available&&
+    (d.architecture===architecture || architecture==='arm64' && d.architecture==='arm64e'));
+  if(hosts.length!==1) throw Error('Ambiguous or unavailable native Mac destination');
+  if(hosts[0].operatingSystemVersion.split(' ')[0]!==version) throw Error('Host version mismatch');
+  return {uuid:hosts[0].identifier,version,build,platform:'macOS'};
+}
+export function unitOutcome(result,log,summary,check,destination) {
+  if(result.error||result.signal||![0,65].includes(result.status)) throw Error('Unit infrastructure error');
+  const matches=[...log.matchAll(/Test Case '-\[AccessibilityExamplesTests\.(\w+) (\w+)\]' (passed|failed)/g)];
+  const executedTestIds=matches.map(m=>m[1]+'/'+m[2]),failedTestIds=matches.filter(m=>m[3]==='failed').map(m=>m[1]+'/'+m[2]);
+  const same=(a,b)=>JSON.stringify([...a].sort())===JSON.stringify([...b].sort());
+  if(!same(executedTestIds,check.testIds)||summary?.totalTestCount!==executedTestIds.length||summary.skippedTests!==0||summary.failedTests!==failedTestIds.length||summary.passedTests!==executedTestIds.length-failedTestIds.length) throw Error('Incomplete or inconsistent unit evidence');
+  const ds=summary.devicesAndConfigurations;
+  if(ds?.length!==1||ds[0].device.deviceId!==destination.uuid||ds[0].device.osVersion!==destination.version||ds[0].device.osBuildNumber!==destination.build||ds[0].device.platform!==destination.platform) throw Error('Result destination differs from preflight');
+  if((result.status===0)!==(failedTestIds.length===0)) throw Error('Exit/test mismatch');
+  if(failedTestIds.length && (!summary.testFailures?.length||summary.testFailures.some(f=>!f.failureText?.startsWith('XCTAssert')||!failedTestIds.includes(f.testIdentifierString?.replace(/\(\)$/,''))))) throw Error('Non-assertion failure');
+  return {exitCode:result.status,signal:null,infrastructureError:null,build:'passed',skippedTests:0,executedTestIds,failedTestIds,diagnosticIds:[]};
+}
+export function packageSource(target,platform) {
+  if(!/^\d+\.\d+(\.\d+)?$/.test(target)||!platforms[platform]) throw Error('Invalid package target');
+  return `// swift-tools-version: 6.0\nimport PackageDescription\nlet package = Package(name: "AccessibilityExamples", platforms: [.${platforms[platform].package}("${target}")], products: [.library(name: "AccessibilityExamples", targets: ["AccessibilityExamples"])], targets: [.target(name: "AccessibilityExamples"), .testTarget(name: "AccessibilityExamplesTests", dependencies: ["AccessibilityExamples"])])\n`;
+}

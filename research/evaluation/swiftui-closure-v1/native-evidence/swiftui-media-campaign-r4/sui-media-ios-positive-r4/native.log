@@ -1,0 +1,762 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -scheme AccessibilityExamples -destination "platform=iOS Simulator,id=<DEVICE_OR_RUN_UUID>" -derivedDataPath <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData -resultBundlePath <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/tests.xcresult -parallel-testing-enabled NO -collect-test-diagnostics never "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testNativeRefreshLoadsActualGroup" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testFullSubtitleChoicesExcludeForcedOnly" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testBindingWritesNativeSelection" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testBindingReadsExternalSelection" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testUnknownChoicePreservesSelection" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOffClearsOnlyPermittedGroup" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testSubtitleChangePreservesDescriptiveAudio" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOffPreservesAudio" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAudioStoreReadsDescriptionTag" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAudioOffMatchesActualGroupPermission" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testLoadingDoesNotChangeNativeChoice" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testReloadRecoversNativeChoiceWithNewIDs" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOldOptionIDCannotSelectAfterReload" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testDuplicateCompletionCannotOverwriteSuccess" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOldCompletionCannotOverwriteNewLoad" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOldErrorCannotOverwriteNewSuccess" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelRejectsLateCompletion" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelDoesNotClearNativeSelection" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testReplacedItemRejectsOldChoice" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testReplacedItemRejectsOldCompletion" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testNoItemIsNotAbsentGroup" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAbsentGroupIsNotFailure" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testLoadFailureIsNotEmptySuccess" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testErrorThenReloadRecovers" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testSelectionPreservesPlayerSettingsAndIdentity" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testChoiceIDsUniqueWithinSnapshot" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testViewRetainsSameStoreAndPlayer" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCapturedBindingRejectsAfterCancellation" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testActualRefreshPassesItemAndCharacteristicToLoader" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testActualRefreshErrorSetsFailedPhase" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testActualRefreshAbsentSetsAbsentPhase" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelledCurrentTaskDoesNotPublishResult" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testBindingWriteInvalidatesObservableSelection" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection" "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAlreadyCancelledTaskCannotStartLoad" CODE_SIGNING_ALLOWED=NO
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  AccessibilityExamples: <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+
+Writing result bundle at path:
+	<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/tests.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (3 targets)
+    Target 'AccessibilityExamples-product' in project 'AccessibilityExamples'
+        ➜ Explicit dependency on target 'AccessibilityExamples' in project 'AccessibilityExamples'
+    Target 'AccessibilityExamplesTests-product' in project 'AccessibilityExamples'
+        ➜ Explicit dependency on target 'AccessibilityExamples' in project 'AccessibilityExamples'
+    Target 'AccessibilityExamples' in project 'AccessibilityExamples' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: ef0b31642c95e75fd3762d084a395bf5
+Build description path: <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/XCBuildData/ef0b31642c95e75fd3762d084a395bf5.xcbuilddata
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/CompilationCache.noindex
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/CompilationCache.noindex
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -o <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/PrecompiledHeaders
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/PrecompiledHeaders
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+
+CreateBuildDirectory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/PackageFrameworks
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-create-build-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/PackageFrameworks
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/empty-AccessibilityExamplesTests.plist (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/empty-AccessibilityExamplesTests.plist
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.LinkFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.LinkFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftConstValuesFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftConstValuesFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyStaticMetadataFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyMetadataFileList (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyMetadataFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftConstValuesFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftConstValuesFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.LinkFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.LinkFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/AccessibilityExamples.modulemap (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/AccessibilityExamples.modulemap
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/AccessibilityExamples.DependencyStaticMetadataFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/AccessibilityExamples.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/AccessibilityExamples.DependencyMetadataFileList (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    write-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/AccessibilityExamples.DependencyMetadataFileList
+
+MkDir <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    /bin/mkdir -p <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/AccessibilityExamples.modulemap <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/AccessibilityExamples.modulemap (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/AccessibilityExamples.modulemap <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
+
+SwiftDriver AccessibilityExamples normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamples -Onone @<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/include -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h -working-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stddef-B41QWKJY7KDVK7B2WMG2SA9J1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/DeveloperToolsSupport-2OVPGZUU3K2ZN1ND62C5E4B2H.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdarg-423XKIWUY5AGNO30K6VE506FK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/ptrcheck-3LMX2WFZS9I4NJF5B2CJN5JFT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_AvailabilityInternal-DDDKFA45TJAE3U1MLE17XPW26.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/SwiftShims-74XKE6TNUQRKLPETUD8QIBS8H.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_SwiftConcurrencyShims-1ZUQE7Y4NM7BHDY3F47WW37XL.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/ptrauth-DAI7IMK5KCYV50KJUPLQ36LPZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdbool-D9PPEI1I9PWAYOQM9P2KGZWME.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_Builtin_float-4AYSK4OAU06QQ20O4COI9OEPC.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_DarwinFoundation1-3MJ8WPBNQHX7BWAGRMMVXR6CW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_DarwinFoundation2-CMEF3OL8E3XSWF7A2EOZI3B25.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_Builtin_limits-U01B1MP4P44JNN162XVHTFLM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdint-6KQ7KYB1H3IQT7DRUAOBN3CVJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_Builtin_tgmath-1MUMO5ISPK7GP5WTAXDHG5Z6J.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/sys_types-2EGI0DBHSEGQGBABB04KR0RY5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/string_h-60KNJJ6P9HA3D3ENFNM9TFWA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_Builtin_stdatomic-3NAAKP65MLKRSMLMEKZT1AO1S.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_Builtin_intrinsics-F2KEUG9T2HPDMGUQLUS4C8ATT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_DarwinFoundation3-A3MTB7T4BZYM9XAQHOYMVF2FB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_Builtin_inttypes-DXNE8TIQ8KXXINAES2BX80W50.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/Darwin-BOI9HSJYR4S6FXRN5YP1CSEV5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/simd-3VCGXUCE1ZP8C9E8LSYZYWD92.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/ObjectiveC-BQWQ37I0YZYJWL05V3NH0QW91.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/MachO-AU9T759VONGSDIXUS5BQ5JU9S.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/os_object-10O93E248NP4FTZ8H1JBMJURD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/os_workgroup-4HYFK688ZZGNXBOR62SWIDV1W.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/Spatial-7PDLLXHVIJN6H8CADPT6G152W.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/Dispatch-7IDU1A617A4GYKOCIW00QWOOT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/dnssd-5J0W2RBO3367ZBG7TYMBILBT4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CoreFoundation-E98T3GKCQO11SO55KJN6UYXFY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/XPC-9BPSG2DQATPP595DR13WUZRY2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/os-9CIIVC1KT6DY9KKZB5B731ZWU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CoreGraphics-4TTZ9N00B6L6CS24BZGCQU8XR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CFNetwork-DE785H8NV8PYK8UJOZ7E2CNQQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/Security-58TESI0EKCT3V8N1BOSGFKYA9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CoreAudioTypes-BLK4YI1GMU3YZAI0383JEGBP2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CoreAudio-A4NQM2UOTYWY15NSR600DC5FW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/Foundation-C95A7KC3967BIURCGHOAY8EC7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CoreText-5WH6IT7JXSLILN32O5MG9RU66.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/ImageIO-CGVMA25YL19QPJN594O7RA1B9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/DataDetection-1VURU5KWLXU7LIU6MPI0779O.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/OpenGLES-25SRAFJCVA3FTQCXO6US0USEB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/OSLog-11H1DFWJ5KXJFJV8KJVIP5FED.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/Network-1WAXP0VVKBJ8R23B2BUVRCG90.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CoreTransferable-F1LUZ717QJR517SJYZQ5QDWCO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/IOSurface-8I9X1G9RVJ84XRXTZIDMOOUV7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/Accessibility-1OWVDBW4XNPNAUWV55L66K1AM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/Symbols-9QC1Z1K5FK4GGX2V1UEN8Z58B.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CoreData-A0WILJA1HVYX1CSGOLZ9SGYFT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CoreMIDI-707ESOAXVPSDYSI8ARQ4A4NGS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/UIUtilities-AEVBEWVYMA543KPROIUA8YS7A.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/UniformTypeIdentifiers-U1CBP8T8MOT3556HQ0EZOGK5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/Metal-6R84WIURZZY22UVKDQ9091RAJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/UserNotifications-5RA7MFV15EU7Q1YYS5SSBIT1K.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/_LocationEssentials-6N56KY6D52AER68YQ64HVANO7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/AVRouting-4KAAV4EFPHKOX23MBZSO39ZVU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/FileProvider-AW23LXT9AKCI078DOYC5EM17W.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/AudioToolbox-9URDG2XIIJC9E3GIDKA6HYCTM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CoreLocation-B5A5VDVUBEACPQPV7CXZO2TJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CoreVideo-DKPL6GFQ7K4Q45104TO3HV0T6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CoreMotion-AS3X3771L4MCG6AZ3E1DMEPD3.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CoreMedia-8XUQMQZ68UJSN3B91TVOEGPRV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/CoreImage-EI8TFBQA3KZXO8UFB1THM2AHY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/QuartzCore-1SMFQFCIHZ1W1PKOTEI0FCLC4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/SwiftUICore-9J6RHWV49ONI66H8HEOGA44LR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/VideoToolbox-3YVZBK8VPFRCO68FKDPOK0HJ3.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/AVFAudio-A2J87HIFVQ230GOGWK5U6SKMR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/UIKit-3JIUYL7VCQTPFBBDEQ4AFPVYF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/MediaToolbox-2E71I3P16NAJ2YD0NXV9Z504L.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/AVFoundation-EKJRAPAH80WW6DH0NKH738Z6J.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/SwiftUI-AF0VSL1HAL2Z4BEZX73LW8WX9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules/AVKit-D12JW6ZZNA9O6GJYOZLX18OQ3.pcm
+
+SwiftCompile normal arm64 Compiling\ MediaSelection.swift <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/Sources/AccessibilityExamples/MediaSelection.swift (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/Sources/AccessibilityExamples/MediaSelection.swift (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-SwiftPerFileCompile MediaSelection.swift
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ AccessibilityExamples (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for AccessibilityExamples (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+
+SwiftDriver\ Compilation\ Requirements AccessibilityExamples normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamples -Onone @<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/include -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h -working-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftMergeGeneratedHeaders <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/AccessibilityExamples-Swift.h <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    builtin-swiftHeaderTool -arch arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h -o <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/AccessibilityExamples-Swift.h
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamples.swiftmodule/arm64-apple-ios-simulator.swiftdoc <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftdoc (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftdoc <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamples.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamples.swiftmodule/arm64-apple-ios-simulator.abi.json <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.abi.json (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.abi.json <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamples.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamples.swiftmodule/arm64-apple-ios-simulator.swiftmodule <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamples.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamples.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftsourceinfo (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftsourceinfo <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamples.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftDriver AccessibilityExamplesTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamplesTests -Onone @<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/PackageFrameworks -F <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/include -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-DF2NM756ONEZ3UDGAKBLCZLZ8.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-2X0P9V2OBMELYRQTSNYAAOXFC.pcm
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-29MWC9L0W6LWD.swiftmodule
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-1U8QHWQR9E81I.swiftmodule
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ AccessibilityExamplesTests (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ MediaSelectionTests.swift <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/Tests/AccessibilityExamplesTests/MediaSelectionTests.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/Tests/AccessibilityExamplesTests/MediaSelectionTests.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-SwiftPerFileCompile MediaSelectionTests.swift
+
+SwiftCompile normal arm64 Compiling\ DescriptionFixture.swift <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/Tests/AccessibilityExamplesTests/DescriptionFixture.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftCompile normal arm64 <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/Tests/AccessibilityExamplesTests/DescriptionFixture.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-SwiftPerFileCompile DescriptionFixture.swift
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for AccessibilityExamplesTests (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftDriver\ Compilation\ Requirements AccessibilityExamplesTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamplesTests -Onone @<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/PackageFrameworks -F <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/include -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.swiftmodule/arm64-apple-ios-simulator.swiftdoc <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftdoc (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftdoc <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.swiftmodule/arm64-apple-ios-simulator.abi.json <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.abi.json (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.abi.json <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.swiftmodule/arm64-apple-ios-simulator.swiftmodule <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftsourceinfo (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftsourceinfo <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling DescriptionFixture.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftDriverJobDiscovery normal arm64 Compiling MediaSelection.swift (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+
+SwiftDriver\ Compilation AccessibilityExamples normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamples -Onone @<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/include -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples-Swift.h -working-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Ld <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamples.o normal (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios26.0-simulator -r -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -O0 -Xlinker -no_warn_duplicate_libraries -F<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -filelist <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.LinkFileList -nostdlib -Xlinker -object_path_lto -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_lto.o -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.swiftmodule -o <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamples.o
+
+ExtractAppIntentsMetadata (in target 'AccessibilityExamples' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name AccessibilityExamples --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk --xcode-version 27A266a --platform-family iOS --deployment-target 26.0 --bundle-identifier workspace.AccessibilityExamples --output <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamples.appintents --target-triple arm64-apple-ios26.0-simulator --binary-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamples.o --dependency-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples_dependency_info.dat --stringsdata-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftFileList --metadata-file-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/AccessibilityExamples.DependencyMetadataFileList --static-metadata-file-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/AccessibilityExamples.DependencyStaticMetadataFileList --swift-const-vals-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamples-t.build/Objects-normal/arm64/AccessibilityExamples.SwiftConstValuesFileList --force --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-11-07 08:40:57.423 appintentsmetadataprocessor[97156:7720427] Starting appintentsmetadataprocessor export
+2026-11-07 08:40:57.654 appintentsmetadataprocessor[97156:7720427] Extracted no relevant App Intents symbols, skipping writing output
+
+ProcessInfoPlistFile <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/Info.plist <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/empty-AccessibilityExamplesTests.plist (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    builtin-infoPlistUtility <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/empty-AccessibilityExamplesTests.plist -producttype com.apple.product-type.bundle.unit-test -expandbuildsettings -format binary -platform iphonesimulator -o <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/Info.plist
+
+SwiftDriverJobDiscovery normal arm64 Compiling MediaSelectionTests.swift (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+
+SwiftDriver\ Compilation AccessibilityExamplesTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name AccessibilityExamplesTests -Onone @<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/PackageFrameworks -F <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex -sdk-module-cache-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name workspace -emit-const-values -const-gather-protocols-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_const_extract_protocols.json -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/include -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/DerivedSources-normal/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/DerivedSources/arm64 -Xcc -I<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Ld <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/AccessibilityExamplesTests normal (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -Xlinker -reproducible -target arm64-apple-ios26.0-simulator -Xlinker -bundle -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -Xlinker -no_warn_duplicate_libraries -L<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/PackageFrameworks -F<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator -Fsystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -Fsystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks @<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.LinkFileList -Xlinker -rpath -Xlinker @loader_path -Xlinker -rpath -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @loader_path/../.. -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/../Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_lto.o -Xclang-linker -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_dependency_info.dat -link-objc-runtime -profile-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.swiftmodule -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport -o <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/AccessibilityExamplesTests
+
+CopySwiftLibs <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    builtin-swiftStdLibTool --copy --verbose --scan-executable <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/AccessibilityExamplesTests --scan-folder <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/Frameworks --scan-folder <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/PlugIns --scan-folder <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/SystemExtensions --scan-folder <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+ExtractAppIntentsMetadata (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name AccessibilityExamplesTests --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk --xcode-version 27A266a --platform-family iOS --deployment-target 26.0 --bundle-identifier workspace.AccessibilityExamplesTests --output <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest --target-triple arm64-apple-ios26.0-simulator --binary-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/AccessibilityExamplesTests --dependency-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests_dependency_info.dat --stringsdata-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftFileList --metadata-file-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyMetadataFileList --static-metadata-file-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyStaticMetadataFileList --swift-const-vals-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/Objects-normal/arm64/AccessibilityExamplesTests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-11-07 08:40:58.212 appintentsmetadataprocessor[97236:7720605] Starting appintentsmetadataprocessor export
+2026-11-07 08:40:58.214 appintentsmetadataprocessor[97236:7720605] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+AppIntentsSSUTraining (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/Info.plist --temp-dir-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/ssu --bundle-id workspace.AccessibilityExamplesTests --product-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest --extracted-metadata-path <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/Metadata.appintents --metadata-file-list <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/AccessibilityExamples.build/Debug-iphonesimulator/AccessibilityExamplesTests-p.build/AccessibilityExamplesTests.DependencyMetadataFileList --source-file <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest/Info.plist --archive-ssu-assets
+2026-11-07 08:40:58.246 appintentsnltrainingprocessor[97239:7720608] Parsing options for appintentsnltrainingprocessor
+2026-11-07 08:40:58.247 appintentsnltrainingprocessor[97239:7720608] Starting AppIntents SSU YAML Generation
+2026-11-07 08:40:58.249 appintentsnltrainingprocessor[97239:7720608] No AppShortcuts found - Skipping.
+
+RegisterExecutionPolicyException <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    builtin-RegisterExecutionPolicyException <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest
+
+Touch <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest (in target 'AccessibilityExamplesTests-product' from project 'AccessibilityExamples')
+    cd <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/workspace
+    /usr/bin/touch -c <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Products/Debug-iphonesimulator/AccessibilityExamplesTests.xctest
+
+PruneExplicitPrecompiledModules <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/SDKExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules <PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+Test Suite 'Selected tests' started at 2026-11-07 08:41:15.530.
+Test Suite 'AccessibilityExamplesTests.xctest' started at 2026-11-07 08:41:15.533.
+Test Suite 'MediaSelectionTests' started at 2026-11-07 08:41:15.533.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAbsentGroupIsNotFailure]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAbsentGroupIsNotFailure]' passed (0.054 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testActualRefreshAbsentSetsAbsentPhase]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testActualRefreshAbsentSetsAbsentPhase]' passed (0.178 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testActualRefreshErrorSetsFailedPhase]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testActualRefreshErrorSetsFailedPhase]' passed (0.017 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testActualRefreshPassesItemAndCharacteristicToLoader]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testActualRefreshPassesItemAndCharacteristicToLoader]' passed (0.013 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAlreadyCancelledTaskCannotStartLoad]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAlreadyCancelledTaskCannotStartLoad]' passed (0.021 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAudioOffMatchesActualGroupPermission]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAudioOffMatchesActualGroupPermission]' passed (0.072 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAudioStoreReadsDescriptionTag]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testAudioStoreReadsDescriptionTag]' passed (0.057 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testBindingReadsExternalSelection]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testBindingReadsExternalSelection]' passed (0.033 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testBindingWriteInvalidatesObservableSelection]' started.
+2026-11-07 08:41:16.008852-0800 xctest[97342:7722212] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:16.010810-0800 xctest[97342:7722226] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:16.012411-0800 xctest[97342:7722212] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:16.013187-0800 xctest[97342:7722212] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:16.013774-0800 xctest[97342:7722212] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:16.015854-0800 xctest[97342:7722251] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.017881-0800 xctest[97342:7722208] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+2026-11-07 08:41:16.018161-0800 xctest[97342:7722252] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.019211-0800 xctest[97342:7722254] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.019449-0800 xctest[97342:7722208] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+2026-11-07 08:41:16.026707-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.026789-0800 xctest[97342:7722246] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+2026-11-07 08:41:16.027089-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.027332-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.028188-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.028429-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.028648-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.042497-0800 xctest[97342:7722259] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.042740-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.042823-0800 xctest[97342:7722264] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.042926-0800 xctest[97342:7722266] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.043063-0800 xctest[97342:7722259] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.043202-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.043277-0800 xctest[97342:7722261] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.043542-0800 xctest[97342:7722268] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.043698-0800 xctest[97342:7722259] [player] <<<< Async >>>> signalled err=-12785 at <>:4737
+2026-11-07 08:41:16.043979-0800 xctest[97342:7722264] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.043905-0800 xctest[97342:7722266] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.044155-0800 xctest[97342:7722261] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.044286-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:4737
+2026-11-07 08:41:16.044415-0800 xctest[97342:7722266] [player] <<<< Async >>>> signalled err=-12785 at <>:4737
+2026-11-07 08:41:16.044556-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.044678-0800 xctest[97342:7722268] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.044820-0800 xctest[97342:7722261] [player] <<<< Async >>>> signalled err=-12785 at <>:4737
+2026-11-07 08:41:16.045025-0800 xctest[97342:7722259] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.045160-0800 xctest[97342:7722266] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.045314-0800 xctest[97342:7722264] [player] <<<< Async >>>> signalled err=-12785 at <>:4737
+2026-11-07 08:41:16.046072-0800 xctest[97342:7722268] [player] <<<< Async >>>> signalled err=-12785 at <>:4737
+2026-11-07 08:41:16.046554-0800 xctest[97342:7722268] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.050304-0800 xctest[97342:7722268] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.050687-0800 xctest[97342:7722259] [player] <<<< Async >>>> signalled err=-12785 at <>:4776
+2026-11-07 08:41:16.051103-0800 xctest[97342:7722268] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.051240-0800 xctest[97342:7722261] [player] <<<< Async >>>> signalled err=-12785 at <>:4776
+2026-11-07 08:41:16.052057-0800 xctest[97342:7722264] [player] <<<< Async >>>> signalled err=-12785 at <>:4776
+2026-11-07 08:41:16.052837-0800 xctest[97342:7722264] [player] <<<< Async >>>> signalled err=-12785 at <>:4776
+2026-11-07 08:41:16.053672-0800 xctest[97342:7722264] [player] <<<< Async >>>> signalled err=-12785 at <>:4776
+2026-11-07 08:41:16.053752-0800 xctest[97342:7722261] [player] <<<< Async >>>> signalled err=-12785 at <>:4776
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testBindingWriteInvalidatesObservableSelection]' passed (0.078 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testBindingWritesNativeSelection]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testBindingWritesNativeSelection]' passed (0.063 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelDoesNotClearNativeSelection]' started.
+2026-11-07 08:41:16.142761-0800 xctest[97342:7722259] [plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x1071c8f00> <DEVICE_OR_RUN_UUID>
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelDoesNotClearNativeSelection]' passed (0.111 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelledCurrentTaskDoesNotPublishResult]' started.
+2026-11-07 08:41:16.257595-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1755  ReadPListFile: unable to open stream for LoudnessManager plist
+2026-11-07 08:41:16.257723-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1261  GetHardwarePlatformKey: cannot get acoustic ID
+2026-11-07 08:41:16.257823-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.257924-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.262374-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.262531-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.267852-0800 xctest[97342:7722225] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.268053-0800 xctest[97342:7722225] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.272186-0800 xctest[97342:7722225] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.272406-0800 xctest[97342:7722225] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.278402-0800 xctest[97342:7722244] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.278564-0800 xctest[97342:7722244] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.281552-0800 xctest[97342:7722244] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.281707-0800 xctest[97342:7722244] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.297440-0800 xctest[97342:7722252] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.297505-0800 xctest[97342:7722212] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.299437-0800 xctest[97342:7722252] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.299489-0800 xctest[97342:7722212] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.299807-0800 xctest[97342:7722252] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.300954-0800 xctest[97342:7722252] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.303851-0800 xctest[97342:7722252] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.303998-0800 xctest[97342:7722212] [] (Fig) signalled err=-12785 at <>:1469
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelledCurrentTaskDoesNotPublishResult]' passed (0.109 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelledOldTaskCannotCancelNewerLoad]' started.
+2026-11-07 08:41:16.359066-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.359184-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.362348-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.362517-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.369467-0800 xctest[97342:7722251] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.369690-0800 xctest[97342:7722251] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.371580-0800 xctest[97342:7722251] [] (Fig) signalled err=-12785 at <>:1469
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelledOldTaskCannotCancelNewerLoad]' passed (0.023 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelRejectsLateCompletion]' started.
+2026-11-07 08:41:16.385310-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.385583-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.389018-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.389181-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.393111-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:4776
+2026-11-07 08:41:16.393991-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:4737
+2026-11-07 08:41:16.394238-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+2026-11-07 08:41:16.395334-0800 xctest[97342:7722197] [player] <<<< Async >>>> signalled err=-12785 at <>:4776
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCancelRejectsLateCompletion]' passed (0.028 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCapturedBindingRejectsAfterCancellation]' started.
+2026-11-07 08:41:16.421318-0800 xctest[97342:7722224] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.421432-0800 xctest[97342:7722224] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.424444-0800 xctest[97342:7722224] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.424529-0800 xctest[97342:7722224] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testCapturedBindingRejectsAfterCancellation]' passed (0.047 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testChoiceIDsUniqueWithinSnapshot]' started.
+2026-11-07 08:41:16.471321-0800 xctest[97342:7722225] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.471405-0800 xctest[97342:7722225] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.474438-0800 xctest[97342:7722225] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.474588-0800 xctest[97342:7722225] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.479609-0800 xctest[97342:7722212] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.480644-0800 xctest[97342:7722212] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.480924-0800 xctest[97342:7722212] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.483201-0800 xctest[97342:7722212] [] (Fig) signalled err=-12785 at <>:1469
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testChoiceIDsUniqueWithinSnapshot]' passed (0.077 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testDuplicateCompletionCannotOverwriteSuccess]' started.
+2026-11-07 08:41:16.613794-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.613901-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.616892-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.616994-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testDuplicateCompletionCannotOverwriteSuccess]' passed (0.121 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testErrorThenReloadRecovers]' started.
+2026-11-07 08:41:16.670140-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.670254-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.673466-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.673550-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.694031-0800 xctest[97342:7722266] [player] <<<< Async >>>> signalled err=-12785 at <>:3462
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testErrorThenReloadRecovers]' passed (0.040 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testFullSubtitleChoicesExcludeForcedOnly]' started.
+2026-11-07 08:41:16.710167-0800 xctest[97342:7722244] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.710277-0800 xctest[97342:7722244] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.713587-0800 xctest[97342:7722244] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.713677-0800 xctest[97342:7722244] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testFullSubtitleChoicesExcludeForcedOnly]' passed (0.042 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testInvalidChoiceDoesNotInvalidateObservableSelection]' started.
+2026-11-07 08:41:16.763731-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.763842-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.767146-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.767404-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testInvalidChoiceDoesNotInvalidateObservableSelection]' passed (0.048 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testLoadFailureIsNotEmptySuccess]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testLoadFailureIsNotEmptySuccess]' passed (0.006 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testLoadingDoesNotChangeNativeChoice]' started.
+2026-11-07 08:41:16.806954-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.807061-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.810290-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.810417-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.813563-0800 xctest[97342:7722252] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:16.814025-0800 xctest[97342:7722248] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:16.814361-0800 xctest[97342:7722252] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:16.814600-0800 xctest[97342:7722252] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:16.814978-0800 xctest[97342:7722252] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:16.819934-0800 xctest[97342:7722208] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+2026-11-07 08:41:16.820376-0800 xctest[97342:7722208] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testLoadingDoesNotChangeNativeChoice]' passed (0.029 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testNativeRefreshLoadsActualGroup]' started.
+2026-11-07 08:41:16.838435-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.838546-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.841628-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.841787-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testNativeRefreshLoadsActualGroup]' passed (0.057 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testNoItemIsNotAbsentGroup]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testNoItemIsNotAbsentGroup]' passed (0.008 seconds).
+2026-11-07 08:41:16.893340-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.893438-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOffClearsOnlyPermittedGroup]' started.
+2026-11-07 08:41:16.896374-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.896521-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.902637-0800 xctest[97342:7722212] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.904977-0800 xctest[97342:7722212] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.905087-0800 xctest[97342:7722212] [] (Fig) signalled err=-12785 at <>:1469
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOffClearsOnlyPermittedGroup]' passed (0.017 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOffPreservesAudio]' started.
+2026-11-07 08:41:16.921721-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.921836-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.925345-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.925466-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.930064-0800 xctest[97342:7722251] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.930870-0800 xctest[97342:7722251] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:16.933110-0800 xctest[97342:7722251] [] (Fig) signalled err=-12785 at <>:1469
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOffPreservesAudio]' passed (0.025 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOldCompletionCannotOverwriteNewLoad]' started.
+2026-11-07 08:41:16.953352-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.953516-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.957214-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.957324-0800 xctest[97342:7722243] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:16.965435-0800 xctest[97342:7722248] [player] <<<< FigFilePlayer >>>> signalled err=-12780 at <>:29134
+2026-11-07 08:41:16.965692-0800 xctest[97342:7722248] [player] <<<< FigFilePlayer >>>> signalled err=-12780 at <>:29134
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOldCompletionCannotOverwriteNewLoad]' passed (0.061 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOldErrorCannotOverwriteNewSuccess]' started.
+2026-11-07 08:41:17.042286-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.042423-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.045529-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.045671-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.050184-0800 xctest[97342:7722251] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:17.051075-0800 xctest[97342:7722251] [] (Fig) signalled err=-12785 at <>:1469
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOldErrorCannotOverwriteNewSuccess]' passed (0.055 seconds).
+2026-11-07 08:41:17.053569-0800 xctest[97342:7722251] [] (Fig) signalled err=-12785 at <>:1469
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOldOptionIDCannotSelectAfterReload]' started.
+2026-11-07 08:41:17.076632-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.076737-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.079915-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.080046-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testOldOptionIDCannotSelectAfterReload]' passed (0.054 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testReloadRecoversNativeChoiceWithNewIDs]' started.
+2026-11-07 08:41:17.137673-0800 xctest[97342:7722225] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.137889-0800 xctest[97342:7722225] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.141163-0800 xctest[97342:7722225] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.141334-0800 xctest[97342:7722225] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.162176-0800 xctest[97342:7722251] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:17.164526-0800 xctest[97342:7722212] [] (Fig) signalled err=-12785 at <>:1469
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testReloadRecoversNativeChoiceWithNewIDs]' passed (0.058 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testReplacedItemRejectsOldChoice]' started.
+2026-11-07 08:41:17.180425-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.180651-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.183600-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.183750-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testReplacedItemRejectsOldChoice]' passed (0.074 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testReplacedItemRejectsOldCompletion]' started.
+2026-11-07 08:41:17.254245-0800 xctest[97342:7722252] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:17.254461-0800 xctest[97342:7722209] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:17.254630-0800 xctest[97342:7722252] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:17.254819-0800 xctest[97342:7722252] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:17.254971-0800 xctest[97342:7722252] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:17.261904-0800 xctest[97342:7722246] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+2026-11-07 08:41:17.262164-0800 xctest[97342:7722246] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testReplacedItemRejectsOldCompletion]' passed (0.028 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testSelectionPreservesPlayerSettingsAndIdentity]' started.
+2026-11-07 08:41:17.279794-0800 xctest[97342:7722251] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:17.280021-0800 xctest[97342:7722209] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:17.280162-0800 xctest[97342:7722251] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:17.280358-0800 xctest[97342:7722251] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:17.280560-0800 xctest[97342:7722251] [] <<< URLAsset >>> signalled err=-12174 at <>:2335
+2026-11-07 08:41:17.284733-0800 xctest[97342:7722246] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+2026-11-07 08:41:17.285143-0800 xctest[97342:7722246] [player] <<<< FigFilePlayer >>>> signalled err=-12864 at <>:10127
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testSelectionPreservesPlayerSettingsAndIdentity]' passed (0.036 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testSubtitleChangePreservesDescriptiveAudio]' started.
+2026-11-07 08:41:17.334518-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.334708-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.338004-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.338239-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testSubtitleChangePreservesDescriptiveAudio]' passed (0.072 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testUnknownChoicePreservesSelection]' started.
+2026-11-07 08:41:17.396480-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.396589-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.399574-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.399696-0800 xctest[97342:7722226] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.404052-0800 xctest[97342:7722252] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:17.404877-0800 xctest[97342:7722252] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:17.405013-0800 xctest[97342:7722252] [] (Fig) signalled err=-12785 at <>:1469
+2026-11-07 08:41:17.406852-0800 xctest[97342:7722252] [] (Fig) signalled err=-12785 at <>:1469
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testUnknownChoicePreservesSelection]' passed (0.038 seconds).
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testViewRetainsSameStoreAndPlayer]' started.
+Test Case '-[AccessibilityExamplesTests.MediaSelectionTests testViewRetainsSameStoreAndPlayer]' passed (0.003 seconds).
+Test Suite 'MediaSelectionTests' passed at 2026-11-07 08:41:17.426.
+	 Executed 36 tests, with 0 failures (0 unexpected) in 1.854 (1.893) seconds
+Test Suite 'AccessibilityExamplesTests.xctest' passed at 2026-11-07 08:41:17.427.
+	 Executed 36 tests, with 0 failures (0 unexpected) in 1.854 (1.894) seconds
+Test Suite 'Selected tests' passed at 2026-11-07 08:41:17.427.
+	 Executed 36 tests, with 0 failures (0 unexpected) in 1.854 (1.897) seconds
+2026-11-07 08:41:17.443429-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.443516-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.446582-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-07 08:41:17.446703-0800 xctest[97342:7722209] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+
+Test session results, code coverage, and logs:
+	<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/tests.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started
+2026-11-07 08:40:50.081 xcodebuild[97050:7719891] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+2026-11-07 08:41:17.779 xcodebuild[97050:7719891] [MT] IDETestOperationsObserverDebug: 19.491 elapsed -- Testing started completed.
+2026-11-07 08:41:17.779 xcodebuild[97050:7719891] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-07 08:41:17.779 xcodebuild[97050:7719891] [MT] IDETestOperationsObserverDebug: 19.491 sec, +19.491 sec -- end

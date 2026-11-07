@@ -1,0 +1,23 @@
+{
+  "selection": [
+    "Apply an explicit choice to the current item's actual media-selection group, not only a display string.",
+    "Preserve unrelated audio/subtitle selection and do not reset the player.",
+    "Unknown or stale choices leave the current selection unchanged.",
+    "Off follows the actual group permission.",
+    "For the requested full-caption UI, distinguish forced-only tracks from full subtitle options; accept explicit alternate policy if the UI offers a separate forced-track choice."
+  ],
+  "ownership": [
+    "Ignore old success/error results after a newer request or item replacement.",
+    "Duplicate completions cannot overwrite a committed result.",
+    "Cancellation invalidates only work owned by that request, not a newer operation.",
+    "Already-cancelled tasks do not start new work.",
+    "Preserve valid native selection when old callbacks are rejected."
+  ],
+  "wiring": [
+    "Visible selection controls and VideoPlayer use the same underlying store/player.",
+    "Selection binding invokes actual native operations and reads actual selection.",
+    "Store-owned native writes trigger observable invalidation; automatic external native observation is a separate contract.",
+    "Distinguish no item, loading, absent group and load failure; provide a usable retry path.",
+    "Keep ordinary player controls; compile actual view composition without claiming speech, layout or delivered focus."
+  ]
+}

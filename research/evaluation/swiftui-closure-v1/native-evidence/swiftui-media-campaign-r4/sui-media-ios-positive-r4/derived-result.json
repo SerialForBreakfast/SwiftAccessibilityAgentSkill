@@ -1,0 +1,278 @@
+{
+  "attempt": "swiftui-media-campaign-r4/sui-media-ios-positive-r4",
+  "package": "swiftui-media-ios-v1",
+  "revision": "4",
+  "checkId": "positive",
+  "originalResultHash": "c748f3b8abe6249cd8e1d42bc2c6cc1604d7cfc5bd3ef803057968f54b474914",
+  "manifestHash": "5eea62c4e000ab09a08bb1a0a523fecc6cfe405e9076012df9023d6f2f1f103c",
+  "status": "passed",
+  "observed": "success",
+  "reason": null,
+  "failureClassification": null,
+  "recordedAt": "2026-11-07T16:40:48.088Z",
+  "environment": {
+    "platform": "iOS",
+    "deploymentTarget": "26.0",
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+    "sdkVersion": "27.0",
+    "sdkBuild": "24A430",
+    "architecture": "arm64",
+    "destinationType": "simulator",
+    "runtimeVersion": "26.5",
+    "runtimeBuild": "23F77"
+  },
+  "execution": {
+    "exitCode": 0,
+    "signal": null,
+    "infrastructureError": null,
+    "build": "passed",
+    "skippedTests": 0,
+    "executedTestIds": [
+      "MediaSelectionTests/testAbsentGroupIsNotFailure",
+      "MediaSelectionTests/testActualRefreshAbsentSetsAbsentPhase",
+      "MediaSelectionTests/testActualRefreshErrorSetsFailedPhase",
+      "MediaSelectionTests/testActualRefreshPassesItemAndCharacteristicToLoader",
+      "MediaSelectionTests/testAlreadyCancelledTaskCannotStartLoad",
+      "MediaSelectionTests/testAudioOffMatchesActualGroupPermission",
+      "MediaSelectionTests/testAudioStoreReadsDescriptionTag",
+      "MediaSelectionTests/testBindingReadsExternalSelection",
+      "MediaSelectionTests/testBindingWriteInvalidatesObservableSelection",
+      "MediaSelectionTests/testBindingWritesNativeSelection",
+      "MediaSelectionTests/testCancelDoesNotClearNativeSelection",
+      "MediaSelectionTests/testCancelledCurrentTaskDoesNotPublishResult",
+      "MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad",
+      "MediaSelectionTests/testCancelRejectsLateCompletion",
+      "MediaSelectionTests/testCapturedBindingRejectsAfterCancellation",
+      "MediaSelectionTests/testChoiceIDsUniqueWithinSnapshot",
+      "MediaSelectionTests/testDuplicateCompletionCannotOverwriteSuccess",
+      "MediaSelectionTests/testErrorThenReloadRecovers",
+      "MediaSelectionTests/testFullSubtitleChoicesExcludeForcedOnly",
+      "MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+      "MediaSelectionTests/testLoadFailureIsNotEmptySuccess",
+      "MediaSelectionTests/testLoadingDoesNotChangeNativeChoice",
+      "MediaSelectionTests/testNativeRefreshLoadsActualGroup",
+      "MediaSelectionTests/testNoItemIsNotAbsentGroup",
+      "MediaSelectionTests/testOffClearsOnlyPermittedGroup",
+      "MediaSelectionTests/testOffPreservesAudio",
+      "MediaSelectionTests/testOldCompletionCannotOverwriteNewLoad",
+      "MediaSelectionTests/testOldErrorCannotOverwriteNewSuccess",
+      "MediaSelectionTests/testOldOptionIDCannotSelectAfterReload",
+      "MediaSelectionTests/testReloadRecoversNativeChoiceWithNewIDs",
+      "MediaSelectionTests/testReplacedItemRejectsOldChoice",
+      "MediaSelectionTests/testReplacedItemRejectsOldCompletion",
+      "MediaSelectionTests/testSelectionPreservesPlayerSettingsAndIdentity",
+      "MediaSelectionTests/testSubtitleChangePreservesDescriptiveAudio",
+      "MediaSelectionTests/testUnknownChoicePreservesSelection",
+      "MediaSelectionTests/testViewRetainsSameStoreAndPlayer"
+    ],
+    "failedTestIds": [],
+    "diagnosticIds": []
+  },
+  "command": [
+    "xcodebuild",
+    "test",
+    "-scheme",
+    "AccessibilityExamples",
+    "-destination",
+    "platform=iOS Simulator,id=<DEVICE_OR_RUN_UUID>",
+    "-derivedDataPath",
+    "<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/DerivedData",
+    "-resultBundlePath",
+    "<PRIVATE_TMP>/swiftui-media-campaign-r4/sui-media-ios-positive-r4/tests.xcresult",
+    "-parallel-testing-enabled",
+    "NO",
+    "-collect-test-diagnostics",
+    "never",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testNativeRefreshLoadsActualGroup",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testFullSubtitleChoicesExcludeForcedOnly",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testBindingWritesNativeSelection",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testBindingReadsExternalSelection",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testUnknownChoicePreservesSelection",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOffClearsOnlyPermittedGroup",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testSubtitleChangePreservesDescriptiveAudio",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOffPreservesAudio",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAudioStoreReadsDescriptionTag",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAudioOffMatchesActualGroupPermission",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testLoadingDoesNotChangeNativeChoice",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testReloadRecoversNativeChoiceWithNewIDs",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOldOptionIDCannotSelectAfterReload",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testDuplicateCompletionCannotOverwriteSuccess",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOldCompletionCannotOverwriteNewLoad",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testOldErrorCannotOverwriteNewSuccess",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelRejectsLateCompletion",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelDoesNotClearNativeSelection",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testReplacedItemRejectsOldChoice",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testReplacedItemRejectsOldCompletion",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testNoItemIsNotAbsentGroup",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAbsentGroupIsNotFailure",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testLoadFailureIsNotEmptySuccess",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testErrorThenReloadRecovers",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testSelectionPreservesPlayerSettingsAndIdentity",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testChoiceIDsUniqueWithinSnapshot",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testViewRetainsSameStoreAndPlayer",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCapturedBindingRejectsAfterCancellation",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testActualRefreshPassesItemAndCharacteristicToLoader",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testActualRefreshErrorSetsFailedPhase",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testActualRefreshAbsentSetsAbsentPhase",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testCancelledCurrentTaskDoesNotPublishResult",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testBindingWriteInvalidatesObservableSelection",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testInvalidChoiceDoesNotInvalidateObservableSelection",
+    "-only-testing:AccessibilityExamplesTests/MediaSelectionTests/testAlreadyCancelledTaskCannotStartLoad",
+    "CODE_SIGNING_ALLOWED=NO"
+  ],
+  "artifacts": [
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/manifest.json",
+      "sha256": "5eea62c4e000ab09a08bb1a0a523fecc6cfe405e9076012df9023d6f2f1f103c",
+      "originalSha256": "5eea62c4e000ab09a08bb1a0a523fecc6cfe405e9076012df9023d6f2f1f103c",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/adapter-swiftui-media-native.mjs",
+      "sha256": "38a44d42cfa238cce9e0730fda76f0c3d3a62b71779fcf96c1c15e300e181bd0",
+      "originalSha256": "38a44d42cfa238cce9e0730fda76f0c3d3a62b71779fcf96c1c15e300e181bd0",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/adapter-native-core.mjs",
+      "sha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346",
+      "originalSha256": "10709e14acd380a18a805858b4881956a512f674e66c7cfbedd54c2303d03346",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/adapter-contracts.mjs",
+      "sha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130",
+      "originalSha256": "53ca8012b8cd18e2685b063a2a746b97510a50b8d8ed1c63d4e71fa1da4bd130",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/adapter-swiftui-media-diagnostics.mjs",
+      "sha256": "60f946097023cc248d82ffee07c7d7286ae249ae610848c0913eba949a879431",
+      "originalSha256": "60f946097023cc248d82ffee07c7d7286ae249ae610848c0913eba949a879431",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/inputs/Sources/MediaSelection.swift",
+      "sha256": "2b43ff10420bf592a85edd16df023f2ea2dcc1f2581d5a27c2c6aae316f5d8ff",
+      "originalSha256": "2b43ff10420bf592a85edd16df023f2ea2dcc1f2581d5a27c2c6aae316f5d8ff",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/inputs/Tests/MediaSelectionTests.swift",
+      "sha256": "fe40a666ae4d873b1ec751e3cf9fc0633aeb19bc43363c10047fa360472a9bbe",
+      "originalSha256": "fe40a666ae4d873b1ec751e3cf9fc0633aeb19bc43363c10047fa360472a9bbe",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/inputs/Tests/DescriptionFixture.swift",
+      "sha256": "b65a164d2ea9121fa058094c177116405c31904789e300872aea15cae7ad0a2e",
+      "originalSha256": "b65a164d2ea9121fa058094c177116405c31904789e300872aea15cae7ad0a2e",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/inputs/NegativeFixtures/forced.swift",
+      "sha256": "16734d9e5b5bcf5c31139876d54059e7e62e1ddcf6d99fec51a86ad964089e3b",
+      "originalSha256": "16734d9e5b5bcf5c31139876d54059e7e62e1ddcf6d99fec51a86ad964089e3b",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/inputs/NegativeFixtures/stale.swift",
+      "sha256": "ce00e27a4d7123cb7ed9d60dace2917a8adf9ee776758782f26aa9b051bcc6da",
+      "originalSha256": "ce00e27a4d7123cb7ed9d60dace2917a8adf9ee776758782f26aa9b051bcc6da",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/inputs/NegativeFixtures/cancel.swift",
+      "sha256": "d18b5c8e8a76ebffd4886af1a966f0122629c4f0a17efa74c7249e3fed9ed3f5",
+      "originalSha256": "d18b5c8e8a76ebffd4886af1a966f0122629c4f0a17efa74c7249e3fed9ed3f5",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/inputs/NegativeFixtures/disconnect.swift",
+      "sha256": "643d00accd25c64d76275364f35be6bb90f6af568e0c2a4f605cde8eb585c9d8",
+      "originalSha256": "643d00accd25c64d76275364f35be6bb90f6af568e0c2a4f605cde8eb585c9d8",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/generated-package.swift",
+      "sha256": "5cd7ba64d053bbe7f009d28c7f3ecabe82d3bb2a2fbb2284bc42921d779ee75b",
+      "originalSha256": "5cd7ba64d053bbe7f009d28c7f3ecabe82d3bb2a2fbb2284bc42921d779ee75b",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/xcode.txt",
+      "sha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77",
+      "originalSha256": "694b44731d0b415c5b11d844151e466d7f5e200a95627efda377f232f1a6ab77",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/compiler.txt",
+      "sha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908",
+      "originalSha256": "1b207d5b85484205225f907ee34c5c63fcf5ba15260fad7ceb129191841e9908",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/sdk-path.txt",
+      "sha256": "3ba87c09483737cf52e0f24936936ae207e4e5f433bc120069330c02d39a0cec",
+      "originalSha256": "3ba87c09483737cf52e0f24936936ae207e4e5f433bc120069330c02d39a0cec",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/sdk-version.txt",
+      "sha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a",
+      "originalSha256": "7b01c549928398a045692f24bcac7803b348524cdd76f21265b02984b2ba556a",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/sdk-build.txt",
+      "sha256": "62cbab419e9a35d0a85cc03b9d4bb98e5dae96591632655688ac714805d333be",
+      "originalSha256": "62cbab419e9a35d0a85cc03b9d4bb98e5dae96591632655688ac714805d333be",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/devices.json",
+      "sha256": "ffa656f5c966038960fd6c4525f16e9ad418662284d5ce4dddb23874296b7ecb",
+      "originalSha256": "b176b77028b4c6199aa672dba23b12b5d497578e29f1c05ff01f90461de50d18",
+      "transformation": "path-and-device-identifier-redaction"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/runtimes.json",
+      "sha256": "6c9602f36049e86d2eecb89bbe2967e96e3c936f28cc9d675043365b2b5dc264",
+      "originalSha256": "6c9602f36049e86d2eecb89bbe2967e96e3c936f28cc9d675043365b2b5dc264",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/intent.json",
+      "sha256": "2aa3b714bd5fa6f4a781dfa5604e678e80334ae2b1fbaf9f8caf846b43b5bf87",
+      "originalSha256": "f66a3e295a3d8924f60ce940f493a144cbdd2c20e014509867ae389fd1292e4e",
+      "transformation": "path-and-device-identifier-redaction"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/native.log",
+      "sha256": "9ca7ea9a8288bbbc75636450555944d42e0e8484c32dc0b3a5f93283f4e0f3b0",
+      "originalSha256": "ffabb6b5042b8b6acc45601bc7ecebf9264cdb4ab7e08cd9b627e3cd3658e1b8",
+      "transformation": "path-and-device-identifier-redaction"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/process.json",
+      "sha256": "d0ef1793fc13add34dd1610335fe38247d701426d50c61fbb9215cc13d1b3de1",
+      "originalSha256": "d0ef1793fc13add34dd1610335fe38247d701426d50c61fbb9215cc13d1b3de1",
+      "transformation": "none"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/summary-process.txt",
+      "sha256": "b279d5cef420706c1eff06acd495a3a4a419795622a78b3193b62591cd803b4d",
+      "originalSha256": "db23ca28cf66e389057dcd2884236b1f50fd765086a6883e057cc504aae234a3",
+      "transformation": "path-and-device-identifier-redaction"
+    },
+    {
+      "path": "research/evaluation/swiftui-closure-v1/native-evidence/swiftui-media-campaign-r4/sui-media-ios-positive-r4/summary.json",
+      "sha256": "ca8463179aa12e5cc0f0391838323fd6bb3153964e531f6163d7635cf0bd78b6",
+      "originalSha256": "eef2063ccffe374b4ee0ce2b7019c3b8e486afa0f98d341066253d421deb4780",
+      "transformation": "path-and-device-identifier-redaction"
+    }
+  ],
+  "provenance": "derived public record; original result in private archive; redaction is not fresh execution"
+}
