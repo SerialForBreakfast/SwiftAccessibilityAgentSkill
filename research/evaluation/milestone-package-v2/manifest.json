@@ -1,0 +1,2023 @@
+{
+  "schema": 1,
+  "id": "controlled-skill-lift-milestone-2",
+  "status": "author-scoped-platform-resolution-independent-review-pending",
+  "preparationBaseCommit": "760554c",
+  "inputs": [
+    {
+      "path": "research/evaluation/milestone-package-v1/selection.json",
+      "sha256": "fb7c6d701f29d04352d11f6061ddbb6dd8023ce91e1f9c1099c54601ae865a56"
+    },
+    {
+      "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/controller.json",
+      "sha256": "1ae3eb48b098bfb57fbb25b0b6437caa0ab17452139d8b6bfba3b211cd02a2bd"
+    },
+    {
+      "path": "research/evaluation/rubric-closure-v1/rubrics.json",
+      "sha256": "cb6b17d44c7a5ac9f6c6a2683112c36b5c250b40a252da1e16b58606113df0a1"
+    },
+    {
+      "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/ENTRYPOINT.md",
+      "sha256": "c5eb7e68c40aeb663109a7c7ca0b7d091b3acf0c2c51bc4cdeefc60be82637e7"
+    },
+    {
+      "path": "research/evaluation/milestone-package-v1/manifest.json",
+      "sha256": "dbc7b3a7224e70bdd60dc17cbe7a45e5c8744eaf13667578a2370a2b5745a38b"
+    },
+    {
+      "path": "research/evaluation/milestone-package-v2/sdk-evidence.json",
+      "sha256": "c5b1f07575d8fcc20199f24d7476b3633e83618e66908e9e7cdc11aff852c0fa"
+    },
+    {
+      "path": "research/evaluation/milestone-audit-v1/audit.json",
+      "sha256": "a6e76dfa9288fc92e493be9aaf5a6d80a24c203ad40b076a334f25ff2c70d77d"
+    }
+  ],
+  "cases": [
+    {
+      "id": "ios-uikit-actions",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "actions",
+      "family": "topic/actions",
+      "subjectSha256": "ddf8bad3cbd8d08785f91dfcdb1ed4f6d44a36a2a09d793554ddfe9fb820c882",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "ios-uikit-actions",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/ios-uikit-actions/generic-C0.json",
+          "sha256": "a7d0d1ae3550a8ec0a8775e7de54348f5cd95a836c503bf640a7ec0c47530666",
+          "bytes": 1086,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2",
+          "path": "payloads/ios-uikit-actions/candidate-controlled.json",
+          "sha256": "d209c3a557779307b6e95747a6691979adeb2d7553c8dfce3d68c8d4cca9551b",
+          "bytes": 7955,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/actions.md",
+              "sha256": "ccdc0f5443b282c3787450dee298ceee033f5054ebd64582eccef407cec8e6d0"
+            },
+            {
+              "path": "references/uikit/guidelines/u-007-accessibility-custom-actions.md",
+              "sha256": "f20e8d3ecbefb75ffa3d876d58dad2fc49af30e4523e0bbed0c6ed4c554a3c05"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "ios-uikit-state",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "state",
+      "family": "topic/state",
+      "subjectSha256": "01d940885a29d8915fe75196935ebc5a3d444e111c01f00dad2436dab8b73e3c",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "ios-uikit-state",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/ios-uikit-state/generic-C0.json",
+          "sha256": "5b9bd4dfcd710adfb5b82222885518becf35f5ae0b371d3de8b63e1e1f4b5e68",
+          "bytes": 1180,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2",
+          "path": "payloads/ios-uikit-state/candidate-controlled.json",
+          "sha256": "0bc236e100852039c92b61af42858990332c134e4303a6362f204f8cd95dbd58",
+          "bytes": 8232,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/state.md",
+              "sha256": "a21a76cbac25f4ee0e738cb80858fb86b83391b6dd18dd8915b4a08b9647d05a"
+            },
+            {
+              "path": "references/uikit/guidelines/u-003-values-stateful-controls.md",
+              "sha256": "af43c4f7d66b8426f4908dd2046065d7173bc0fe2159ccdb1dffceba63a2197d"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "ios-uikit-text",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "text",
+      "family": "topic/text",
+      "subjectSha256": "9afcc6a91cfcbb0e11cb21dfd972280bc2d49b1f18a798771c1937e538a150fc",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "ios-uikit-text",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/ios-uikit-text/generic-C0.json",
+          "sha256": "28e4fd6fca71b869c8b63f9352a32feb795c9918dae708814449427aa334f409",
+          "bytes": 1124,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2",
+          "path": "payloads/ios-uikit-text/candidate-controlled.json",
+          "sha256": "e01ef627f597793a0453a09244bc9a42374c49f6ed2bac92479e1be3459070b1",
+          "bytes": 8316,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/text.md",
+              "sha256": "887e01e6a9b0ce52e312fbc46e4ada38581e4e53c1c3dd8d2474ddb629db380d"
+            },
+            {
+              "path": "references/uikit/guidelines/u-010-dynamic-type-layout-resilience.md",
+              "sha256": "8565fd2ab005eabdec87902a0a88d25bcaf513e53905146b6f3f1881b453f2a0"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "ios-swiftui-semantics",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "topic": "semantics",
+      "family": "topic/semantics",
+      "subjectSha256": "63e10b06dd993c30d5d7ff8814eb13eb239dfed5b19c40046aac9d957fa89797",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "ios-swiftui-semantics",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/ios-swiftui-semantics/generic-C0.json",
+          "sha256": "ff35510db5ab98e30916f65c63cf68b2d91252fdfb4c1f5ecc571e592a6a924f",
+          "bytes": 1112,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2",
+          "path": "payloads/ios-swiftui-semantics/candidate-controlled.json",
+          "sha256": "5d848d29a2b7e2dd739d4e9342dbfb86638b3c8933e0569f1f7da30949c4c630",
+          "bytes": 8456,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/semantics.md",
+              "sha256": "ae23c912f47db0fe9d6e19260897c512217e7a4ab059e17282fdbba7579397c3"
+            },
+            {
+              "path": "references/swiftui/guidelines/g-001-labels-meaningful-names.md",
+              "sha256": "17aaf680a5b4f6d642f260d33332bd4c02e346c54f133893a27d78a7a6bd9a87"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "ios-swiftui-lifecycle",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "topic": "lifecycle",
+      "family": "topic/lifecycle",
+      "subjectSha256": "f29fcfe6ec64e75b7dcf5c692aa04d5b4133ae72bf12d5c07f2c3a415353caf9",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "ios-swiftui-lifecycle",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/ios-swiftui-lifecycle/generic-C0.json",
+          "sha256": "f48a8973dfd55cc8f590572700229290da475e27b81aae77096adf267bdc8282",
+          "bytes": 1131,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2",
+          "path": "payloads/ios-swiftui-lifecycle/candidate-controlled.json",
+          "sha256": "a2ed6f79de4fae5b19b9336f3613186ba50a1e0b3055463b2559ede7c0492ca3",
+          "bytes": 8592,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/lifecycle.md",
+              "sha256": "67c2193f4ee96b4f858273704b8405839e9ad2f79c733dfe51e6e1be7cd74398"
+            },
+            {
+              "path": "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md",
+              "sha256": "fd64c7e97f8fb5b6262dc0e5dc0b04621213611b14f4847caa2e32bcba4fdf15"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "ios-swiftui-media",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "topic": "media",
+      "family": "topic/media",
+      "subjectSha256": "b12c69f62639d32d35bf72db851861a484dd1aa2436623787a47968be965c948",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "ios-swiftui-media",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/ios-swiftui-media/generic-C0.json",
+          "sha256": "fd33c87d4ec6c474c58ab3f2f0969236e2db656cb6a3848e352487846dffdaa7",
+          "bytes": 1132,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2",
+          "path": "payloads/ios-swiftui-media/candidate-controlled.json",
+          "sha256": "3753897fa57bee9c560177049eb6edc194a66381a1d294ef7532873e920fd992",
+          "bytes": 9516,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/media.md",
+              "sha256": "a3f1abfdac63afc39bc06d6186a5eadc29cd4d3620021dfee2f891acba87b3e2"
+            },
+            {
+              "path": "references/swiftui/guidelines/g-015-media-captions-audio-descriptions.md",
+              "sha256": "21103a19878f49c3fbe3647d4dcf41a916af4308cb84af9ed23d34196fe88fbd"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "macos-appkit-actions",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "actions",
+      "family": "topic/actions",
+      "subjectSha256": "a3221645549ddf2c66f04db5b3d20952a7a1d01607d64463344ea58fc3fb6eee",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "macos-appkit-actions",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/macos-appkit-actions/generic-C0.json",
+          "sha256": "c4f60113620821d05622ff6d5123fd1400462f32a25f38325381d959b2ecbf42",
+          "bytes": 1089,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2",
+          "path": "payloads/macos-appkit-actions/candidate-controlled.json",
+          "sha256": "dffb002653b5b622fb1001570902984cd4e67e52b4128c61d34e515b174537ef",
+          "bytes": 8623,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/actions.md",
+              "sha256": "ccdc0f5443b282c3787450dee298ceee033f5054ebd64582eccef407cec8e6d0"
+            },
+            {
+              "path": "references/macos/guidelines/m-001-nsaccessibility-roles-labels-values-actions.md",
+              "sha256": "0aecee6094e8f1486a2496bb06759f88c8f7a875da166cb0c7e599a35cae9076"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "macos-appkit-structure",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "structure",
+      "family": "topic/structure",
+      "subjectSha256": "7f59da93d717eae764f0baedbd29bead108fefbb158ed0132c1fc8f870b9fc5e",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "macos-appkit-structure",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/macos-appkit-structure/generic-C0.json",
+          "sha256": "920a84f6d5f48a68cea234e01b035df6932327b6cdf2f44cb05e26893ac23360",
+          "bytes": 1119,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2",
+          "path": "payloads/macos-appkit-structure/candidate-controlled.json",
+          "sha256": "02b7bdc179587676bff0d16500c77659166fb00c6baaad55b3bc2b7c68396a45",
+          "bytes": 8287,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/structure.md",
+              "sha256": "58ec62dc1475922283eac5a33e0f84a5e725018f41c1e676b99de747427bb4fa"
+            },
+            {
+              "path": "references/macos/guidelines/m-003-grouping-hierarchy-desktop-layouts.md",
+              "sha256": "13acfe965e5ed63d08e91d5183e2925c35b2cf034e4d4898dd21957dc9257953"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "macos-appkit-testing",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "testing",
+      "family": "topic/testing",
+      "subjectSha256": "f853b3b93cb6865771bf542f68da79adeae1d8866607d56103a409848dc1fdd3",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "macos-appkit-testing",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/macos-appkit-testing/generic-C0.json",
+          "sha256": "1f93642cb2754cbd04d5b2a18ea0f2a5933016d5335e00fa2aef6fb500d198d6",
+          "bytes": 1129,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2-project-policy-only",
+          "path": "payloads/macos-appkit-testing/candidate-controlled.json",
+          "sha256": "7bb8d6b3f8d90299b1dcdc87395c224c57ebcafcca16c7a34866646b46628683",
+          "bytes": 5925,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/testing.md",
+              "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "macos-swiftui-state",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "topic": "state",
+      "family": "topic/state",
+      "subjectSha256": "93fed5f76679b0f230e01516424aa8dbee8bb46bbc6262b489c8033a7b652400",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "macos-swiftui-state",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/macos-swiftui-state/generic-C0.json",
+          "sha256": "86486726f4246fc8f0b4bb9c1fe6a5d884b466f8334fb69fc6f669ba7f751af3",
+          "bytes": 1184,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2-sdk-scoped",
+          "path": "payloads/macos-swiftui-state/candidate-controlled.json",
+          "sha256": "555969a41a3857c272eca8e49d345caad67face86540f2a77713552d604ec02b",
+          "bytes": 6903,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/state.md",
+              "sha256": "a21a76cbac25f4ee0e738cb80858fb86b83391b6dd18dd8915b4a08b9647d05a"
+            },
+            {
+              "path": "references/scoped-sdk/macos-values.md",
+              "sha256": "148504970dfd2b0f28a72b4818e08483b750937678e6b8ef842f1049ab1a4301"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "macos-swiftui-text",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "topic": "text",
+      "family": "topic/text",
+      "subjectSha256": "f4d1432a0aa93e63b243dc8b17ee8ac13e621297b7834d530ad3f47d62805b60",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "macos-swiftui-text",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/macos-swiftui-text/generic-C0.json",
+          "sha256": "ab0bd72e5ef38bcf94817586c1770d82d71fe2b9eb16462cd9a5f253bb7f50f1",
+          "bytes": 1128,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2-sdk-scoped",
+          "path": "payloads/macos-swiftui-text/candidate-controlled.json",
+          "sha256": "a60cbf63734befdadb7af04043f8cbaffe79082c787b34c0dcf84a431e0dcbfe",
+          "bytes": 7860,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/text.md",
+              "sha256": "887e01e6a9b0ce52e312fbc46e4ada38581e4e53c1c3dd8d2474ddb629db380d"
+            },
+            {
+              "path": "references/scoped-sdk/macos-text-sizing.md",
+              "sha256": "d62331b86c8f5e03a7713bc5dc5176386276b33c94858ef73a2bb8de89d30f3e"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "macos-swiftui-lifecycle",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "topic": "lifecycle",
+      "family": "topic/lifecycle",
+      "subjectSha256": "829faec4b038b7d3be389073df491880ff66dfd1db1eba02eb11eb66fb23bacd",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "macos-swiftui-lifecycle",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/macos-swiftui-lifecycle/generic-C0.json",
+          "sha256": "b628ebbab8d1e770a676f1d5908a13c5cadecb55c5cc604c60513c0fcff9da88",
+          "bytes": 1133,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2-sdk-scoped",
+          "path": "payloads/macos-swiftui-lifecycle/candidate-controlled.json",
+          "sha256": "029a28f7ccdc49de75ad3e39f15a02b1769c7b84f9e658e2868482735e377ea1",
+          "bytes": 6982,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/lifecycle.md",
+              "sha256": "67c2193f4ee96b4f858273704b8405839e9ad2f79c733dfe51e6e1be7cd74398"
+            },
+            {
+              "path": "references/scoped-sdk/macos-focus-requests.md",
+              "sha256": "ed3e9f490d21da74b172759e6d4df6b14d7aa4596de743cefb126325b1a51970"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "tvos-uikit-state",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "state",
+      "family": "topic/state",
+      "subjectSha256": "5f3c8c25e44c4bf4221a9955a44edc50da7fbdf0bad70e933cb752e5440e488d",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "tvos-uikit-state",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/tvos-uikit-state/generic-C0.json",
+          "sha256": "063cb657a8ae0f644ffe35723de8060fa07fe4290d3e78cac7054beb72c9ce1a",
+          "bytes": 1182,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2",
+          "path": "payloads/tvos-uikit-state/candidate-controlled.json",
+          "sha256": "ea7b644a40f6e896bc4e29814793c114369a3b6e6eeacf3ac54c04780f4ee939",
+          "bytes": 8563,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/state.md",
+              "sha256": "a21a76cbac25f4ee0e738cb80858fb86b83391b6dd18dd8915b4a08b9647d05a"
+            },
+            {
+              "path": "references/tvos/guidelines/t-003-labels-values-traits-focused-controls.md",
+              "sha256": "dbb50ac919c1db9338fd64a5c22717cee202ed232fd5ee2c4120e56a9f3eb41b"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "tvos-uikit-media",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "media",
+      "family": "topic/media",
+      "subjectSha256": "1584405193ce1b13dc1ee1f6fd32a9b1cbd4c81bd7b3622cc585b00753d2a25e",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "tvos-uikit-media",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/tvos-uikit-media/generic-C0.json",
+          "sha256": "37a21555de2a95c0e2d15790b5563e719c5c5e28dc7afa346fc0b2aef1d8cdb6",
+          "bytes": 1132,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2",
+          "path": "payloads/tvos-uikit-media/candidate-controlled.json",
+          "sha256": "db6041d418481d70bb8d895b293fc2c65fef1d4158a610f59d5f5abc63a5d058",
+          "bytes": 9848,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/media.md",
+              "sha256": "a3f1abfdac63afc39bc06d6186a5eadc29cd4d3620021dfee2f891acba87b3e2"
+            },
+            {
+              "path": "references/tvos/guidelines/t-007-media-playback-controls.md",
+              "sha256": "8f44a48bde8b94837e50d3d6d56f6bb13a48ef2848d48aca68ccc02905bf4b23"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "tvos-uikit-lifecycle",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "lifecycle",
+      "family": "topic/lifecycle",
+      "subjectSha256": "148da9164533198057a53307c42a0d679db502a19160515b42646074c65f1a03",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "tvos-uikit-lifecycle",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/tvos-uikit-lifecycle/generic-C0.json",
+          "sha256": "7d78b54fea0dc17af5874b354025abd1dc30a11a31d4aa6d96fe589c054de05f",
+          "bytes": 1131,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2",
+          "path": "payloads/tvos-uikit-lifecycle/candidate-controlled.json",
+          "sha256": "8ba77fcf5622010d47d9a6606bd0d395e153401683aaf5e67d3bc4a6daf332f1",
+          "bytes": 8975,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/lifecycle.md",
+              "sha256": "67c2193f4ee96b4f858273704b8405839e9ad2f79c733dfe51e6e1be7cd74398"
+            },
+            {
+              "path": "references/tvos/guidelines/t-002-initial-focus-modal-restoration.md",
+              "sha256": "7e0cd4af9fa89e320ffdb069c24973827a3ba5e702edd8ddb4bea569c68c0804"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "tvos-swiftui-actions",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "topic": "actions",
+      "family": "topic/actions",
+      "subjectSha256": "5e241a2f3c435f9eeb42a9c03d5f261df0735616692dc88b3d409d825b88cc5a",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "tvos-swiftui-actions",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/tvos-swiftui-actions/generic-C0.json",
+          "sha256": "dbb1a09063bb27d4f7456a3529fbcbc45bcf5f2a5728cf71dc40e7764da93293",
+          "bytes": 1090,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2-sdk-scoped",
+          "path": "payloads/tvos-swiftui-actions/candidate-controlled.json",
+          "sha256": "ee08d0705700d7363e690b96712b041b440d4f7f1afd6acce5ec0f11be830e6e",
+          "bytes": 7090,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/actions.md",
+              "sha256": "ccdc0f5443b282c3787450dee298ceee033f5054ebd64582eccef407cec8e6d0"
+            },
+            {
+              "path": "references/scoped-sdk/tvos-actions.md",
+              "sha256": "ad122dbdb393d5b8c750ee15730f0063fffe23a2daee0611a0a0165b82765fbe"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "tvos-swiftui-structure",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "topic": "structure",
+      "family": "topic/structure",
+      "subjectSha256": "79d7d5bb05ed7deaf3510b7fb3429fdf9e11d6e651b6f989516e44a306877a3d",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "tvos-swiftui-structure",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/tvos-swiftui-structure/generic-C0.json",
+          "sha256": "6d2ab20abc5842197411dd389fe29ca0ea4a85d113587b43c6f601e3cc383816",
+          "bytes": 1120,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2-sdk-scoped",
+          "path": "payloads/tvos-swiftui-structure/candidate-controlled.json",
+          "sha256": "309fca9906851925f7c5f6545a8401a278262861f0548ebd31f73e40e14deaf2",
+          "bytes": 6884,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/structure.md",
+              "sha256": "58ec62dc1475922283eac5a33e0f84a5e725018f41c1e676b99de747427bb4fa"
+            },
+            {
+              "path": "references/scoped-sdk/tvos-children.md",
+              "sha256": "bc833f2c02e1e65aeafa6939b38dd0140c1e75bcf3874879a6ca1e2b4d7fcccf"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "tvos-swiftui-testing",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "topic": "testing",
+      "family": "topic/testing",
+      "subjectSha256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "tvos-swiftui-testing",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/tvos-swiftui-testing/generic-C0.json",
+          "sha256": "63d9e4dd52365b7adf3bbb707eb150eba48edea37304dd8b70263c201058bd22",
+          "bytes": 1130,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C2-project-policy-only",
+          "path": "payloads/tvos-swiftui-testing/candidate-controlled.json",
+          "sha256": "b7157e9d40bcb1f010b7811162137cf225788cee6ec4b2649dfae14494b651d7",
+          "bytes": 5926,
+          "tokens": null,
+          "suppliedReferences": [
+            {
+              "path": "references/tasks/testing.md",
+              "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096"
+            }
+          ],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "ios-uikit-no-change",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "semantics",
+      "family": "control/preservation",
+      "subjectSha256": "2a184c4680bf73ceae8b229cba3401e82a249515023b04d8eb76130584ff6113",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "ios-uikit-no-change",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/ios-uikit-no-change/generic-C0.json",
+          "sha256": "1764589d7764adf9c27032dd35fa79f95ea74e82cddbe1f24043ddd203e3878d",
+          "bytes": 645,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C1",
+          "path": "payloads/ios-uikit-no-change/candidate-controlled.json",
+          "sha256": "cf25aacae0e923242c49080ea192478dc96fe6c4bd6b8e431751fa4e88d0b2dd",
+          "bytes": 4210,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "ios-swiftui-no-change",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "topic": "semantics",
+      "family": "control/preservation",
+      "subjectSha256": "702058f370f81716a175faa26c5f206edcbcf95941684f9eacec8f1042277de6",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "ios-swiftui-no-change",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/ios-swiftui-no-change/generic-C0.json",
+          "sha256": "7856b6f8dc65120e98b6dc43e9fde3bdc753a27c3a29d27a75231bdf32ee49c0",
+          "bytes": 639,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C1",
+          "path": "payloads/ios-swiftui-no-change/candidate-controlled.json",
+          "sha256": "9cbf5022fab8609a5ace88a4d2cf5ad81343f3738dfc2080020b1bcae3acb60b",
+          "bytes": 4204,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "macos-appkit-no-change",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "semantics",
+      "family": "control/preservation",
+      "subjectSha256": "5ce9c8f199aeffdf70c26b545910183a41c4878da3f629c27d61099f46cd965e",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "macos-appkit-no-change",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/macos-appkit-no-change/generic-C0.json",
+          "sha256": "17d80d6d269a4478676b32b7b6161fc3f4c1113b23a5f67a5064217ac82484f3",
+          "bytes": 619,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C1",
+          "path": "payloads/macos-appkit-no-change/candidate-controlled.json",
+          "sha256": "de7812c8cd5cc56514b8bef38eba4922f197deb7269c26888b4517295a56e39e",
+          "bytes": 4184,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "mixed-macos-owner",
+      "platform": "macOS",
+      "framework": "mixed",
+      "topic": "structure",
+      "family": "control/ownership",
+      "subjectSha256": "5c3d5710d5060f260e752be193c34c0ea11efb7270875478383a014a7ce52ef2",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "mixed-macos-owner",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/mixed-macos-owner/generic-C0.json",
+          "sha256": "948fd9acb25d626b76776f6371379cf61c802135d83f92975763afddaf4b6ab9",
+          "bytes": 664,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C1",
+          "path": "payloads/mixed-macos-owner/candidate-controlled.json",
+          "sha256": "d3a114c9e6f3d2d119c7df3f1ef77b39c2eaedac647bf09b71a35f0f83631858",
+          "bytes": 4229,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "ios-missing-reference",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "testing",
+      "family": "control/unavailable-reference",
+      "subjectSha256": "7c78d80e047b9239cf16cb276d1a9437491ecf7d57dfdb86d86057a9ef4f0446",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "ios-missing-reference",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/ios-missing-reference/generic-C0.json",
+          "sha256": "da232168ddbc625819eae5baacb873f59a11cf4094484e533bfaa74512fd6084",
+          "bytes": 657,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C1",
+          "path": "payloads/ios-missing-reference/candidate-controlled.json",
+          "sha256": "e25a2628c05a4bf193f9d194d0c6e7b3065c54fd7cd8af0f26019d3920c39fa4",
+          "bytes": 4222,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    },
+    {
+      "id": "tvos-version-boundary",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "text",
+      "family": "control/version-boundary",
+      "subjectSha256": "92cd811da55d55b64373a71eea9ddec21922d305bdef119b51564a58414dec2c",
+      "rubricSha256": "70bb95cb6eca5c6a0e2df65b7991127e5ad6f9a0822597698a4080ba502ae6aa",
+      "rubricCaseId": "tvos-version-boundary",
+      "cohort": "known-development-not-holdout",
+      "independentlyQualified": false,
+      "plans": [
+        {
+          "arm": "generic-C0",
+          "condition": "C0",
+          "path": "payloads/tvos-version-boundary/generic-C0.json",
+          "sha256": "d194a8dc9373fbcde39aec8d159e7eb26131413e1a11618f40e7d4fac8076ddf",
+          "bytes": 665,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": false,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        },
+        {
+          "arm": "candidate-controlled",
+          "condition": "C1",
+          "path": "payloads/tvos-version-boundary/candidate-controlled.json",
+          "sha256": "d2d35c376c24ad8482e27f823587982c726797b51cbc4485b8afd8b9637f9417",
+          "bytes": 4230,
+          "tokens": null,
+          "suppliedReferences": [],
+          "protocolApplicable": true,
+          "readTraceClaim": "Controlled supplied reference content; no model/tool read trace exists"
+        }
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "ios-swiftui-semantics",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "ios-swiftui-state",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "ios-swiftui-actions",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "ios-swiftui-structure",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "ios-swiftui-text",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "ios-swiftui-lifecycle",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "ios-swiftui-media",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "ios-swiftui-testing",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "macos-swiftui-semantics",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "macos-swiftui-state",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "macos-swiftui-actions",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "macos-swiftui-structure",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "macos-swiftui-text",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "macos-swiftui-lifecycle",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "macos-swiftui-media",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "macos-swiftui-testing",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "tvos-swiftui-semantics",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "tvos-swiftui-state",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "tvos-swiftui-actions",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "tvos-swiftui-structure",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "tvos-swiftui-text",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "tvos-swiftui-lifecycle",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "tvos-swiftui-media",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "tvos-swiftui-testing",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "ios-uikit-semantics",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "ios-uikit-state",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "ios-uikit-actions",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "ios-uikit-structure",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "ios-uikit-text",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "ios-uikit-lifecycle",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "ios-uikit-media",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "ios-uikit-testing",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "tvos-uikit-semantics",
+      "disposition": "quarantined",
+      "reason": "Standard-switch premise needs clarification: installed UIKit SDK declares UISwitch unavailable on tvOS"
+    },
+    {
+      "id": "tvos-uikit-state",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "tvos-uikit-actions",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "tvos-uikit-structure",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "tvos-uikit-text",
+      "disposition": "quarantined",
+      "reason": "Primary-source mapping unresolved"
+    },
+    {
+      "id": "tvos-uikit-lifecycle",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "tvos-uikit-media",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "tvos-uikit-testing",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "macos-appkit-semantics",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "macos-appkit-state",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "macos-appkit-actions",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "macos-appkit-structure",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "macos-appkit-text",
+      "disposition": "quarantined",
+      "reason": "Primary-source mapping unresolved"
+    },
+    {
+      "id": "macos-appkit-lifecycle",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "macos-appkit-media",
+      "disposition": "quarantined",
+      "reason": "Primary-source mapping unresolved"
+    },
+    {
+      "id": "macos-appkit-testing",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "ios-uikit-no-change",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "ios-swiftui-no-change",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "macos-appkit-no-change",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "tvos-uikit-no-change",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "mixed-ios-owner",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "mixed-macos-owner",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "mixed-tvos-owner",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "watchos-scope",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "visionos-scope",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "ios-missing-reference",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    },
+    {
+      "id": "macos-version-boundary",
+      "disposition": "deferred-development",
+      "reason": "Outside this bounded selection; not a holdout"
+    },
+    {
+      "id": "tvos-version-boundary",
+      "disposition": "proposed-selection",
+      "reason": "Representative author selection, review pending"
+    }
+  ],
+  "summary": {
+    "sourceCases": 60,
+    "selected": 24,
+    "quarantined": 4,
+    "deferred": 32,
+    "cells": 48,
+    "relatedFamilies": 12,
+    "modelCalls": 0
+  },
+  "authorization": {
+    "schema": 1,
+    "id": "controlled-skill-lift-milestone-2",
+    "status": "v2-author-scoped-independent-review-pending",
+    "selected": [
+      "ios-uikit-actions",
+      "ios-uikit-state",
+      "ios-uikit-text",
+      "ios-swiftui-semantics",
+      "ios-swiftui-lifecycle",
+      "ios-swiftui-media",
+      "macos-appkit-actions",
+      "macos-appkit-structure",
+      "macos-appkit-testing",
+      "macos-swiftui-state",
+      "macos-swiftui-text",
+      "macos-swiftui-lifecycle",
+      "tvos-uikit-state",
+      "tvos-uikit-media",
+      "tvos-uikit-lifecycle",
+      "tvos-swiftui-actions",
+      "tvos-swiftui-structure",
+      "tvos-swiftui-testing",
+      "ios-uikit-no-change",
+      "ios-swiftui-no-change",
+      "macos-appkit-no-change",
+      "mixed-macos-owner",
+      "ios-missing-reference",
+      "tvos-version-boundary"
+    ],
+    "quarantined": [
+      {
+        "id": "macos-appkit-text",
+        "reason": "Primary-source mapping unresolved"
+      },
+      {
+        "id": "macos-appkit-media",
+        "reason": "Primary-source mapping unresolved"
+      },
+      {
+        "id": "tvos-uikit-text",
+        "reason": "Primary-source mapping unresolved"
+      },
+      {
+        "id": "tvos-uikit-semantics",
+        "reason": "Standard-switch premise needs clarification: installed UIKit SDK declares UISwitch unavailable on tvOS"
+      }
+    ],
+    "familyRule": "Topic variants share one topic family; preservation, ownership, unavailable-reference and version-boundary controls each form one family. These are known development families, not holdouts.",
+    "arms": [
+      "generic-C0",
+      "candidate-controlled"
+    ],
+    "proposedCells": 48,
+    "approvedCalls": 0,
+    "retries": 0,
+    "concurrency": 1,
+    "maxInputBytes": 24000,
+    "maxOutputTokens": null,
+    "totalTokenCeiling": null,
+    "deadlineSeconds": null,
+    "provider": null,
+    "independentReview": false,
+    "sourceApplicabilityReview": false,
+    "harnessIsolationAttested": false,
+    "liveAuthorization": false
+  },
+  "limits": "This manifest cannot execute models or authorize promotion. No C3, released-skill superiority, installed discovery or new-holdout claim.",
+  "contextRevision": "policy-and-target-sdk-v2",
+  "sourceResolutions": [
+    {
+      "id": "macos-swiftui-state",
+      "oldReference": "references/swiftui/guidelines/g-003-values-stateful-controls.md",
+      "resolution": "replace-ios-only-guide-with-target-sdk-card",
+      "declaredPlatforms": [
+        "macOS"
+      ],
+      "declarationIds": [
+        "macos-value"
+      ],
+      "compileEvidence": {
+        "manifest": {
+          "path": "code-examples/swiftui/macos-v1/manifest.json",
+          "sha256": "55839f4f25cce0c3b2554225f88b9f7f9cfe49000db36e06c491b1b6647b9f75",
+          "sourcePins": [
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Documents.swift",
+              "sha256": "81954f9eeefb3f0035deb4304cacb6bda53e7e93f653662c07e250e9b9f49abf"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/FormsMedia.swift",
+              "sha256": "b1bd2ad221453e4ccf252b653fca9be03fbba5c6e4f9e2d7e7e3b163b8dbb7fe"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Interop.swift",
+              "sha256": "056958067a8c670625b84236acd94bea77c939c0aeb4c5efd00bf8a6d202dec4"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Lifecycle.swift",
+              "sha256": "f28c995e8afd31392c31604b425d876f30de38f80258eb0f0fff50b91b98986e"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Preferences.swift",
+              "sha256": "f49df9c3171ed6527ddfbae260622f8131432cc055c067f8053a6de9cf10a958"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Semantics.swift",
+              "sha256": "b6ce46c81e9213b519cf8ac0e2e949902f2afcefbb7593074e00c95a43396db1"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Tests/InteropTests.swift",
+              "sha256": "a5c2c44182b831a492ecac06ac1eef19ee502c318c39539f1920b06aca4625ef"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Tests/SwiftUIContractsTests.swift",
+              "sha256": "18f6d43bfd6d9f9d2dee94af36d60380fc3881186ea254255be7452bc26d2227"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/documents.swift",
+              "sha256": "fb73e07bd643979a7ba9bf36c030f33e3595d6a09e0e23cdf14f91aee2c9f3eb"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/forms.swift",
+              "sha256": "d09db719821a6885b3d1fdfb26d8fff09a59cf22dca15cafd604c899673f6f4b"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/interop.swift",
+              "sha256": "ccf0c933e72d0f84aec7ec6da830ed0b1d24cb321af3bebd07818e2db90a081a"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/lifecycle.swift",
+              "sha256": "ec383d810ce016a2fa507de46c0a38e76955598299dcf36bd5071356d604d597"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/media.swift",
+              "sha256": "9c1583a5b940606eaaa46dc679c4ea743e3d3a1e059c22c985deb0d73b4a0ac7"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/preferences.swift",
+              "sha256": "eb8d732d05900884d4595d1c738567c9f5d1b2547cd6eedb436546c841333b33"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/semantics.swift",
+              "sha256": "63cdae534262a74ff5b0cdca53be80c30f937c48fc048d8000f45b4770048f92"
+            }
+          ],
+          "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+        },
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "indexSha256": "f6f2a4c9bc21a8389b5c8509c2a304fa71f2be9ad81d3120c4d930f1416f65cf",
+        "attempt": "swiftui-mac-compile-r3",
+        "environment": {
+          "platform": "macOS",
+          "deploymentTarget": "26.0",
+          "xcode": "Xcode 27.0\nBuild version 27A266a",
+          "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+          "sdkVersion": "27.0",
+          "sdkBuild": "26A425",
+          "architecture": "arm64",
+          "destinationType": "compile-only",
+          "runtimeVersion": null,
+          "runtimeBuild": null
+        },
+        "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+      },
+      "supportedScope": "Declared API availability and recorded composition compilation only",
+      "behaviorClaims": "Not broadened; no automatic text-setting propagation, generated-tree, speech or focus-delivery guarantee",
+      "independentlyAccepted": false
+    },
+    {
+      "id": "macos-swiftui-text",
+      "oldReference": "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md",
+      "resolution": "replace-ios-only-guide-with-target-sdk-card",
+      "declaredPlatforms": [
+        "macOS"
+      ],
+      "declarationIds": [
+        "macos-dynamic-size",
+        "macos-scaled-metric"
+      ],
+      "compileEvidence": {
+        "manifest": {
+          "path": "code-examples/swiftui/macos-v1/manifest.json",
+          "sha256": "55839f4f25cce0c3b2554225f88b9f7f9cfe49000db36e06c491b1b6647b9f75",
+          "sourcePins": [
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Documents.swift",
+              "sha256": "81954f9eeefb3f0035deb4304cacb6bda53e7e93f653662c07e250e9b9f49abf"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/FormsMedia.swift",
+              "sha256": "b1bd2ad221453e4ccf252b653fca9be03fbba5c6e4f9e2d7e7e3b163b8dbb7fe"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Interop.swift",
+              "sha256": "056958067a8c670625b84236acd94bea77c939c0aeb4c5efd00bf8a6d202dec4"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Lifecycle.swift",
+              "sha256": "f28c995e8afd31392c31604b425d876f30de38f80258eb0f0fff50b91b98986e"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Preferences.swift",
+              "sha256": "f49df9c3171ed6527ddfbae260622f8131432cc055c067f8053a6de9cf10a958"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Semantics.swift",
+              "sha256": "b6ce46c81e9213b519cf8ac0e2e949902f2afcefbb7593074e00c95a43396db1"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Tests/InteropTests.swift",
+              "sha256": "a5c2c44182b831a492ecac06ac1eef19ee502c318c39539f1920b06aca4625ef"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Tests/SwiftUIContractsTests.swift",
+              "sha256": "18f6d43bfd6d9f9d2dee94af36d60380fc3881186ea254255be7452bc26d2227"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/documents.swift",
+              "sha256": "fb73e07bd643979a7ba9bf36c030f33e3595d6a09e0e23cdf14f91aee2c9f3eb"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/forms.swift",
+              "sha256": "d09db719821a6885b3d1fdfb26d8fff09a59cf22dca15cafd604c899673f6f4b"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/interop.swift",
+              "sha256": "ccf0c933e72d0f84aec7ec6da830ed0b1d24cb321af3bebd07818e2db90a081a"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/lifecycle.swift",
+              "sha256": "ec383d810ce016a2fa507de46c0a38e76955598299dcf36bd5071356d604d597"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/media.swift",
+              "sha256": "9c1583a5b940606eaaa46dc679c4ea743e3d3a1e059c22c985deb0d73b4a0ac7"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/preferences.swift",
+              "sha256": "eb8d732d05900884d4595d1c738567c9f5d1b2547cd6eedb436546c841333b33"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/semantics.swift",
+              "sha256": "63cdae534262a74ff5b0cdca53be80c30f937c48fc048d8000f45b4770048f92"
+            }
+          ],
+          "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+        },
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "indexSha256": "f6f2a4c9bc21a8389b5c8509c2a304fa71f2be9ad81d3120c4d930f1416f65cf",
+        "attempt": "swiftui-mac-compile-r3",
+        "environment": {
+          "platform": "macOS",
+          "deploymentTarget": "26.0",
+          "xcode": "Xcode 27.0\nBuild version 27A266a",
+          "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+          "sdkVersion": "27.0",
+          "sdkBuild": "26A425",
+          "architecture": "arm64",
+          "destinationType": "compile-only",
+          "runtimeVersion": null,
+          "runtimeBuild": null
+        },
+        "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+      },
+      "supportedScope": "Declared API availability and recorded composition compilation only",
+      "behaviorClaims": "Not broadened; no automatic text-setting propagation, generated-tree, speech or focus-delivery guarantee",
+      "independentlyAccepted": false
+    },
+    {
+      "id": "macos-swiftui-lifecycle",
+      "oldReference": "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md",
+      "resolution": "replace-ios-only-guide-with-target-sdk-card",
+      "declaredPlatforms": [
+        "macOS"
+      ],
+      "declarationIds": [
+        "macos-focus"
+      ],
+      "compileEvidence": {
+        "manifest": {
+          "path": "code-examples/swiftui/macos-v1/manifest.json",
+          "sha256": "55839f4f25cce0c3b2554225f88b9f7f9cfe49000db36e06c491b1b6647b9f75",
+          "sourcePins": [
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Documents.swift",
+              "sha256": "81954f9eeefb3f0035deb4304cacb6bda53e7e93f653662c07e250e9b9f49abf"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/FormsMedia.swift",
+              "sha256": "b1bd2ad221453e4ccf252b653fca9be03fbba5c6e4f9e2d7e7e3b163b8dbb7fe"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Interop.swift",
+              "sha256": "056958067a8c670625b84236acd94bea77c939c0aeb4c5efd00bf8a6d202dec4"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Lifecycle.swift",
+              "sha256": "f28c995e8afd31392c31604b425d876f30de38f80258eb0f0fff50b91b98986e"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Preferences.swift",
+              "sha256": "f49df9c3171ed6527ddfbae260622f8131432cc055c067f8053a6de9cf10a958"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Sources/Semantics.swift",
+              "sha256": "b6ce46c81e9213b519cf8ac0e2e949902f2afcefbb7593074e00c95a43396db1"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Tests/InteropTests.swift",
+              "sha256": "a5c2c44182b831a492ecac06ac1eef19ee502c318c39539f1920b06aca4625ef"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/Tests/SwiftUIContractsTests.swift",
+              "sha256": "18f6d43bfd6d9f9d2dee94af36d60380fc3881186ea254255be7452bc26d2227"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/documents.swift",
+              "sha256": "fb73e07bd643979a7ba9bf36c030f33e3595d6a09e0e23cdf14f91aee2c9f3eb"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/forms.swift",
+              "sha256": "d09db719821a6885b3d1fdfb26d8fff09a59cf22dca15cafd604c899673f6f4b"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/interop.swift",
+              "sha256": "ccf0c933e72d0f84aec7ec6da830ed0b1d24cb321af3bebd07818e2db90a081a"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/lifecycle.swift",
+              "sha256": "ec383d810ce016a2fa507de46c0a38e76955598299dcf36bd5071356d604d597"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/media.swift",
+              "sha256": "9c1583a5b940606eaaa46dc679c4ea743e3d3a1e059c22c985deb0d73b4a0ac7"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/preferences.swift",
+              "sha256": "eb8d732d05900884d4595d1c738567c9f5d1b2547cd6eedb436546c841333b33"
+            },
+            {
+              "path": "code-examples/swiftui/macos-v1/NegativeFixtures/semantics.swift",
+              "sha256": "63cdae534262a74ff5b0cdca53be80c30f937c48fc048d8000f45b4770048f92"
+            }
+          ],
+          "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+        },
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "indexSha256": "f6f2a4c9bc21a8389b5c8509c2a304fa71f2be9ad81d3120c4d930f1416f65cf",
+        "attempt": "swiftui-mac-compile-r3",
+        "environment": {
+          "platform": "macOS",
+          "deploymentTarget": "26.0",
+          "xcode": "Xcode 27.0\nBuild version 27A266a",
+          "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+          "sdkVersion": "27.0",
+          "sdkBuild": "26A425",
+          "architecture": "arm64",
+          "destinationType": "compile-only",
+          "runtimeVersion": null,
+          "runtimeBuild": null
+        },
+        "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+      },
+      "supportedScope": "Declared API availability and recorded composition compilation only",
+      "behaviorClaims": "Not broadened; no automatic text-setting propagation, generated-tree, speech or focus-delivery guarantee",
+      "independentlyAccepted": false
+    },
+    {
+      "id": "tvos-swiftui-actions",
+      "oldReference": "references/swiftui/guidelines/g-007-accessibility-actions.md",
+      "resolution": "replace-ios-only-guide-with-target-sdk-card",
+      "declaredPlatforms": [
+        "tvOS"
+      ],
+      "declarationIds": [
+        "tvos-action"
+      ],
+      "compileEvidence": {
+        "manifest": {
+          "path": "code-examples/swiftui/tvos-v1/manifest.json",
+          "sha256": "9ebc307039c3cd7a5850e754e7493241a1a82b4c12a0abdd5e4d14d23bf6c62f",
+          "sourcePins": [
+            {
+              "path": "code-examples/swiftui/tvos-v1/Sources/Documents.swift",
+              "sha256": "81954f9eeefb3f0035deb4304cacb6bda53e7e93f653662c07e250e9b9f49abf"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Sources/FormsMedia.swift",
+              "sha256": "b1bd2ad221453e4ccf252b653fca9be03fbba5c6e4f9e2d7e7e3b163b8dbb7fe"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Sources/Interop.swift",
+              "sha256": "056958067a8c670625b84236acd94bea77c939c0aeb4c5efd00bf8a6d202dec4"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Sources/Lifecycle.swift",
+              "sha256": "f28c995e8afd31392c31604b425d876f30de38f80258eb0f0fff50b91b98986e"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Sources/Preferences.swift",
+              "sha256": "f49df9c3171ed6527ddfbae260622f8131432cc055c067f8053a6de9cf10a958"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Sources/Semantics.swift",
+              "sha256": "b6ce46c81e9213b519cf8ac0e2e949902f2afcefbb7593074e00c95a43396db1"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Tests/InteropTests.swift",
+              "sha256": "a5c2c44182b831a492ecac06ac1eef19ee502c318c39539f1920b06aca4625ef"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Tests/SwiftUIContractsTests.swift",
+              "sha256": "18f6d43bfd6d9f9d2dee94af36d60380fc3881186ea254255be7452bc26d2227"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/documents.swift",
+              "sha256": "fb73e07bd643979a7ba9bf36c030f33e3595d6a09e0e23cdf14f91aee2c9f3eb"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/forms.swift",
+              "sha256": "d09db719821a6885b3d1fdfb26d8fff09a59cf22dca15cafd604c899673f6f4b"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/interop.swift",
+              "sha256": "ccf0c933e72d0f84aec7ec6da830ed0b1d24cb321af3bebd07818e2db90a081a"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/lifecycle.swift",
+              "sha256": "ec383d810ce016a2fa507de46c0a38e76955598299dcf36bd5071356d604d597"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/media.swift",
+              "sha256": "9c1583a5b940606eaaa46dc679c4ea743e3d3a1e059c22c985deb0d73b4a0ac7"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/preferences.swift",
+              "sha256": "eb8d732d05900884d4595d1c738567c9f5d1b2547cd6eedb436546c841333b33"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/semantics.swift",
+              "sha256": "63cdae534262a74ff5b0cdca53be80c30f937c48fc048d8000f45b4770048f92"
+            }
+          ],
+          "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+        },
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "indexSha256": "f6f2a4c9bc21a8389b5c8509c2a304fa71f2be9ad81d3120c4d930f1416f65cf",
+        "attempt": "swiftui-tv-compile-r3",
+        "environment": {
+          "platform": "tvOS",
+          "deploymentTarget": "26.0",
+          "xcode": "Xcode 27.0\nBuild version 27A266a",
+          "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+          "sdkVersion": "27.0",
+          "sdkBuild": "24J360",
+          "architecture": "arm64",
+          "destinationType": "compile-only",
+          "runtimeVersion": null,
+          "runtimeBuild": null
+        },
+        "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+      },
+      "supportedScope": "Declared API availability and recorded composition compilation only",
+      "behaviorClaims": "Not broadened; no automatic text-setting propagation, generated-tree, speech or focus-delivery guarantee",
+      "independentlyAccepted": false
+    },
+    {
+      "id": "tvos-swiftui-structure",
+      "oldReference": "references/swiftui/guidelines/g-005-grouping-containment.md",
+      "resolution": "replace-ios-only-guide-with-target-sdk-card",
+      "declaredPlatforms": [
+        "tvOS"
+      ],
+      "declarationIds": [
+        "tvos-children"
+      ],
+      "compileEvidence": {
+        "manifest": {
+          "path": "code-examples/swiftui/tvos-v1/manifest.json",
+          "sha256": "9ebc307039c3cd7a5850e754e7493241a1a82b4c12a0abdd5e4d14d23bf6c62f",
+          "sourcePins": [
+            {
+              "path": "code-examples/swiftui/tvos-v1/Sources/Documents.swift",
+              "sha256": "81954f9eeefb3f0035deb4304cacb6bda53e7e93f653662c07e250e9b9f49abf"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Sources/FormsMedia.swift",
+              "sha256": "b1bd2ad221453e4ccf252b653fca9be03fbba5c6e4f9e2d7e7e3b163b8dbb7fe"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Sources/Interop.swift",
+              "sha256": "056958067a8c670625b84236acd94bea77c939c0aeb4c5efd00bf8a6d202dec4"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Sources/Lifecycle.swift",
+              "sha256": "f28c995e8afd31392c31604b425d876f30de38f80258eb0f0fff50b91b98986e"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Sources/Preferences.swift",
+              "sha256": "f49df9c3171ed6527ddfbae260622f8131432cc055c067f8053a6de9cf10a958"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Sources/Semantics.swift",
+              "sha256": "b6ce46c81e9213b519cf8ac0e2e949902f2afcefbb7593074e00c95a43396db1"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Tests/InteropTests.swift",
+              "sha256": "a5c2c44182b831a492ecac06ac1eef19ee502c318c39539f1920b06aca4625ef"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/Tests/SwiftUIContractsTests.swift",
+              "sha256": "18f6d43bfd6d9f9d2dee94af36d60380fc3881186ea254255be7452bc26d2227"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/documents.swift",
+              "sha256": "fb73e07bd643979a7ba9bf36c030f33e3595d6a09e0e23cdf14f91aee2c9f3eb"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/forms.swift",
+              "sha256": "d09db719821a6885b3d1fdfb26d8fff09a59cf22dca15cafd604c899673f6f4b"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/interop.swift",
+              "sha256": "ccf0c933e72d0f84aec7ec6da830ed0b1d24cb321af3bebd07818e2db90a081a"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/lifecycle.swift",
+              "sha256": "ec383d810ce016a2fa507de46c0a38e76955598299dcf36bd5071356d604d597"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/media.swift",
+              "sha256": "9c1583a5b940606eaaa46dc679c4ea743e3d3a1e059c22c985deb0d73b4a0ac7"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/preferences.swift",
+              "sha256": "eb8d732d05900884d4595d1c738567c9f5d1b2547cd6eedb436546c841333b33"
+            },
+            {
+              "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/semantics.swift",
+              "sha256": "63cdae534262a74ff5b0cdca53be80c30f937c48fc048d8000f45b4770048f92"
+            }
+          ],
+          "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+        },
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "indexSha256": "f6f2a4c9bc21a8389b5c8509c2a304fa71f2be9ad81d3120c4d930f1416f65cf",
+        "attempt": "swiftui-tv-compile-r3",
+        "environment": {
+          "platform": "tvOS",
+          "deploymentTarget": "26.0",
+          "xcode": "Xcode 27.0\nBuild version 27A266a",
+          "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+          "sdkVersion": "27.0",
+          "sdkBuild": "24J360",
+          "architecture": "arm64",
+          "destinationType": "compile-only",
+          "runtimeVersion": null,
+          "runtimeBuild": null
+        },
+        "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+      },
+      "supportedScope": "Declared API availability and recorded composition compilation only",
+      "behaviorClaims": "Not broadened; no automatic text-setting propagation, generated-tree, speech or focus-delivery guarantee",
+      "independentlyAccepted": false
+    },
+    {
+      "id": "macos-appkit-testing",
+      "resolution": "remove-mandatory-manual-workflow-from-unit-only-context",
+      "supportedScope": "Project compile/unit evidence policy, not Apple interaction-validation requirements",
+      "independentlyAccepted": false
+    },
+    {
+      "id": "tvos-swiftui-testing",
+      "resolution": "replace-wrong-topic-ios-guide-with-project-testing-note",
+      "supportedScope": "Project compile/unit evidence policy, not Apple interaction-validation requirements",
+      "independentlyAccepted": false
+    }
+  ],
+  "changes": [
+    {
+      "caseId": "macos-appkit-testing",
+      "arm": "candidate-controlled",
+      "path": "payloads/macos-appkit-testing/candidate-controlled.json",
+      "originalSha256": "b7b669213f42281495d0d77e12d09140f60e1ff02a0c14019de131d3adc48296",
+      "beforeBytes": 9017,
+      "afterBytes": 5925,
+      "condition": "C2-project-policy-only"
+    },
+    {
+      "caseId": "macos-swiftui-state",
+      "arm": "candidate-controlled",
+      "path": "payloads/macos-swiftui-state/candidate-controlled.json",
+      "originalSha256": "dfeca59136f20ef0b420ae8435bccacb2b02b85160620263db25888721455393",
+      "beforeBytes": 8497,
+      "afterBytes": 6903,
+      "condition": "C2-sdk-scoped"
+    },
+    {
+      "caseId": "macos-swiftui-text",
+      "arm": "candidate-controlled",
+      "path": "payloads/macos-swiftui-text/candidate-controlled.json",
+      "originalSha256": "2ceccc6c38a2bc7e96f6af3bc48d738e8d03059db4a49ae9bec5508a5c5f2a11",
+      "beforeBytes": 8484,
+      "afterBytes": 7860,
+      "condition": "C2-sdk-scoped"
+    },
+    {
+      "caseId": "macos-swiftui-lifecycle",
+      "arm": "candidate-controlled",
+      "path": "payloads/macos-swiftui-lifecycle/candidate-controlled.json",
+      "originalSha256": "df1395e9151d5e1e0919eca96317a2f1e57c0ab9e3df3eb6ab7e7ba7ddd23f0a",
+      "beforeBytes": 8594,
+      "afterBytes": 6982,
+      "condition": "C2-sdk-scoped"
+    },
+    {
+      "caseId": "tvos-swiftui-actions",
+      "arm": "candidate-controlled",
+      "path": "payloads/tvos-swiftui-actions/candidate-controlled.json",
+      "originalSha256": "d5f8b9e832cb024da92a17066d18583d89acfaf78fe92f3684af62ab02ae1c65",
+      "beforeBytes": 8128,
+      "afterBytes": 7090,
+      "condition": "C2-sdk-scoped"
+    },
+    {
+      "caseId": "tvos-swiftui-structure",
+      "arm": "candidate-controlled",
+      "path": "payloads/tvos-swiftui-structure/candidate-controlled.json",
+      "originalSha256": "d744500304f93c8610421117027b5165d3e565559aa8441ce8192273288a6c25",
+      "beforeBytes": 8625,
+      "afterBytes": 6884,
+      "condition": "C2-sdk-scoped"
+    },
+    {
+      "caseId": "tvos-swiftui-testing",
+      "arm": "candidate-controlled",
+      "path": "payloads/tvos-swiftui-testing/candidate-controlled.json",
+      "originalSha256": "0b6790f055bc2d2b0dd5cbc1d18cc08790ff2743cfb241425110ce850606601c",
+      "beforeBytes": 8628,
+      "afterBytes": 5926,
+      "condition": "C2-project-policy-only"
+    }
+  ],
+  "authorReview": {
+    "requiredReferenceRepairsApplied": 2,
+    "originalPlatformScopeWarnings": 6,
+    "platformScopeQuestionsAddressed": 6,
+    "remainingInheritedScopeWarnings": 0,
+    "platformBehaviorVerified": false,
+    "independentAcceptance": false,
+    "remainingContextFlags": [
+      "Two existing OS27 media addenda require version-aware interpretation; no deployment26 availability inferred."
+    ],
+    "primaryMappingQuarantinesPreserved": 3
+  }
+}

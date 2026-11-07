@@ -1,0 +1,1710 @@
+{
+  "schema": 1,
+  "scope": "All15 SwiftUI guidelines; implementation/refinement, test, and do/dont requirements. Frozen source hashes; platform availability evaluated separately.",
+  "documents": [
+    {
+      "id": "G-001",
+      "path": "references/swiftui/guidelines/g-001-labels-meaningful-names.md",
+      "sha256": "17aaf680a5b4f6d642f260d33332bd4c02e346c54f133893a27d78a7a6bd9a87",
+      "rule": "Every meaningful interactive element and non-decorative content element must expose a clear accessibility label that reflects user intent, not implementation details.",
+      "clauses": [
+        {
+          "id": "G-001-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Prefer native controls (`Button`, `Toggle`, `TextField`, etc.) because they provide baseline semantics."
+        },
+        {
+          "id": "G-001-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use `.accessibilityLabel(_:)` when visible text is missing or insufficient."
+        },
+        {
+          "id": "G-001-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Mark decorative-only imagery as decorative so it is excluded from spoken output."
+        },
+        {
+          "id": "G-001-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Keep sibling labels distinct within the same context."
+        },
+        {
+          "id": "G-001-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Ensure wrapped UIKit views set `accessibilityLabel` and do not override SwiftUI-provided semantics accidentally."
+        },
+        {
+          "id": "G-001-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "In representables, forward semantic naming from SwiftUI state into UIKit view properties."
+        },
+        {
+          "id": "G-001-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify each meaningful control has a non-empty label."
+        },
+        {
+          "id": "G-001-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify labels are unique enough to disambiguate sibling controls."
+        },
+        {
+          "id": "G-001-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify decorative elements are not present as focusable items."
+        },
+        {
+          "id": "G-001-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Swipe through screen order and confirm each control is announced with a meaningful name."
+        },
+        {
+          "id": "G-001-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm icon-only controls announce action intent (for example, \"Delete message\" instead of \"Trash\")."
+        },
+        {
+          "id": "G-001-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert presence by accessibility identifier where possible."
+        },
+        {
+          "id": "G-001-L49",
+          "line": 49,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert user-facing labels for high-risk controls using accessibility label assertions."
+        },
+        {
+          "id": "G-001-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: add explicit labels to icon-only buttons and non-text controls."
+        },
+        {
+          "id": "G-001-L54",
+          "line": 54,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: use vague labels such as \"Tap here\", \"Button\", or repeated names that do not distinguish actions."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/documentation/swiftui/view-accessibility",
+        "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+        "https://developer.apple.com/documentation/accessibility"
+      ]
+    },
+    {
+      "id": "G-002",
+      "path": "references/swiftui/guidelines/g-002-hints-when-to-use.md",
+      "sha256": "e171bc9cda7ce4f078b0e3406686dd4c9714025292995226b806a71ec1d9b2c3",
+      "rule": "Add an accessibility hint only when the label, value, and role do not already communicate what action will occur.",
+      "clauses": [
+        {
+          "id": "G-002-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use `.accessibilityHint(_:)` for controls with non-obvious consequences or gestures."
+        },
+        {
+          "id": "G-002-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Omit hints for standard controls where default semantics are clear."
+        },
+        {
+          "id": "G-002-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Keep hints short and action-oriented."
+        },
+        {
+          "id": "G-002-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Re-check hints when control behavior changes to avoid stale guidance."
+        },
+        {
+          "id": "G-002-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Set `accessibilityHint` on wrapped UIKit views only where needed."
+        },
+        {
+          "id": "G-002-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Avoid hint duplication when UIKit controls already provide enough context through label and traits."
+        },
+        {
+          "id": "G-002-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm hint exists only on controls that need extra action context."
+        },
+        {
+          "id": "G-002-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm hint text does not duplicate label/value verbatim."
+        },
+        {
+          "id": "G-002-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Focus controls and verify announcements stay concise."
+        },
+        {
+          "id": "G-002-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm controls with custom behavior include a useful hint."
+        },
+        {
+          "id": "G-002-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Validate presence/absence of hints for high-risk custom controls through UI metadata checks where available."
+        },
+        {
+          "id": "G-002-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: add hints for custom gestures or destructive actions when intent is not obvious."
+        },
+        {
+          "id": "G-002-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: add hints that merely repeat the label (for example, label \"Save\", hint \"Saves item\")."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/documentation/swiftui/view-accessibility",
+        "https://developer.apple.com/documentation/accessibility/enhancing-the-accessibility-of-your-swiftui-app",
+        "https://developer.apple.com/design/human-interface-guidelines/accessibility"
+      ]
+    },
+    {
+      "id": "G-003",
+      "path": "references/swiftui/guidelines/g-003-values-stateful-controls.md",
+      "sha256": "ca95e1a5de1856dc676f90e2e84952707b4ae75a58a8275a761b60dc9ae64c28",
+      "rule": "Any UI element with meaningful state must provide an accurate accessibility value that updates with state changes.",
+      "clauses": [
+        {
+          "id": "G-003-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use native controls first; many expose state semantics automatically."
+        },
+        {
+          "id": "G-003-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Add `.accessibilityValue(_:)` for custom stateful elements and readouts."
+        },
+        {
+          "id": "G-003-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Keep value text concise and user-focused (for example, \"On\", \"75 percent\", \"3 selected\")."
+        },
+        {
+          "id": "G-003-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Ensure value updates are synchronized with visual state updates."
+        },
+        {
+          "id": "G-003-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Set `accessibilityValue` on UIKit-backed controls/readouts when SwiftUI wrappers do not provide it."
+        },
+        {
+          "id": "G-003-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "In representables, update UIKit accessibility value whenever bound state changes."
+        },
+        {
+          "id": "G-003-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Inspect stateful elements and verify value is present and current."
+        },
+        {
+          "id": "G-003-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Trigger state change and re-check value immediately after update."
+        },
+        {
+          "id": "G-003-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Focus stateful controls and confirm spoken output includes current value."
+        },
+        {
+          "id": "G-003-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Change state and confirm subsequent focus announces the new value."
+        },
+        {
+          "id": "G-003-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert toggle/slider/value labels for representative controls."
+        },
+        {
+          "id": "G-003-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add smoke assertions for critical state announcements where UI labels map deterministically."
+        },
+        {
+          "id": "G-003-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: expose \"Selected\"/\"Not selected\", numeric levels, or progress values when state matters."
+        },
+        {
+          "id": "G-003-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: rely only on color, icon changes, or animation to communicate control state."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/documentation/swiftui/view-accessibility",
+        "https://developer.apple.com/documentation/accessibility/enhancing-the-accessibility-of-your-swiftui-app",
+        "https://developer.apple.com/design/human-interface-guidelines/accessibility"
+      ]
+    },
+    {
+      "id": "G-004",
+      "path": "references/swiftui/guidelines/g-004-traits-roles.md",
+      "sha256": "8f08b2cd75db1f5ca71ce6143a48759bc2fc561c9951c9815e190eaf78f441be",
+      "rule": "Use native semantic controls whenever possible; when custom UI is unavoidable, explicitly set accessibility traits/roles to match actual behavior.",
+      "clauses": [
+        {
+          "id": "G-004-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Prefer semantic controls (`Button`, `Toggle`, `Slider`, `NavigationLink`, etc.) over gesture-only generic views."
+        },
+        {
+          "id": "G-004-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use `.accessibilityAddTraits(_:)` and `.accessibilityRemoveTraits(_:)` to align behavior where needed."
+        },
+        {
+          "id": "G-004-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Mark structural headings with heading semantics to improve rotor-based navigation."
+        },
+        {
+          "id": "G-004-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Ensure selectable, adjustable, and destructive states are represented consistently with control behavior."
+        },
+        {
+          "id": "G-004-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Set `accessibilityTraits` in wrapped UIKit controls when default traits are not accurate."
+        },
+        {
+          "id": "G-004-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Validate trait mapping when embedding SwiftUI in UIKit containers that may override element behavior."
+        },
+        {
+          "id": "G-004-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify each interactive element has a role/trait aligned to behavior."
+        },
+        {
+          "id": "G-004-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify heading landmarks appear where section navigation is expected."
+        },
+        {
+          "id": "G-004-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify custom controls are not exposed as generic static text when interactive."
+        },
+        {
+          "id": "G-004-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm spoken announcements include expected role/trait context (for example, button, selected state, adjustable behavior)."
+        },
+        {
+          "id": "G-004-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm rotor navigation discovers headings where intended."
+        },
+        {
+          "id": "G-004-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert trait-related state changes indirectly through label/value/state output for key controls."
+        },
+        {
+          "id": "G-004-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: use native controls first and add traits only for semantic corrections."
+        },
+        {
+          "id": "G-004-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: implement tappable `HStack`/`ZStack` controls without matching semantic role exposure."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/documentation/swiftui/view-accessibility",
+        "https://developer.apple.com/videos/play/wwdc2023/10036/"
+      ]
+    },
+    {
+      "id": "G-005",
+      "path": "references/swiftui/guidelines/g-005-grouping-containment.md",
+      "sha256": "a3f87952b3f93729bd577391e2e6c8f999428eee40b4afdf579ab86d7bae639d",
+      "rule": "Choose grouping behavior (`combine`, `contain`, `ignore`) based on user intent: combine elements that represent one concept, contain related interactive children, and ignore decorative noise.",
+      "clauses": [
+        {
+          "id": "G-005-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use `.accessibilityElement(children: .combine)` for rows where multiple text fragments form one meaning."
+        },
+        {
+          "id": "G-005-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use `.accessibilityElement(children: .contain)` when child controls must remain individually actionable."
+        },
+        {
+          "id": "G-005-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use `.accessibilityElement(children: .ignore)` or `.accessibilityHidden(true)` for decorative-only content."
+        },
+        {
+          "id": "G-005-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Re-check grouping after layout refactors; visual changes often break semantic grouping."
+        },
+        {
+          "id": "G-005-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "In UIKit containers, ensure child accessibility exposure is not flattened unexpectedly."
+        },
+        {
+          "id": "G-005-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "In representables, verify container and child `isAccessibilityElement` behavior matches intended grouping."
+        },
+        {
+          "id": "G-005-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify tree structure matches expected conceptual groups."
+        },
+        {
+          "id": "G-005-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify actionable children remain focusable when containment is required."
+        },
+        {
+          "id": "G-005-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify decorative descendants do not appear as separate focus targets."
+        },
+        {
+          "id": "G-005-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Swipe through grouped sections and confirm concise announcements for combined content."
+        },
+        {
+          "id": "G-005-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm separately actionable controls remain individually reachable."
+        },
+        {
+          "id": "G-005-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Use identifier-level assertions for expected child element presence/absence in grouped rows."
+        },
+        {
+          "id": "G-005-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: combine a title + subtitle row into one element when both describe one item."
+        },
+        {
+          "id": "G-005-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: combine rows that contain buttons/toggles users must activate separately."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/documentation/swiftui/view-accessibility",
+        "https://developer.apple.com/documentation/accessibility/enhancing-the-accessibility-of-your-swiftui-app",
+        "https://developer.apple.com/videos/play/wwdc2024/10073/"
+      ]
+    },
+    {
+      "id": "G-006",
+      "path": "references/swiftui/guidelines/g-006-focus-reading-order.md",
+      "sha256": "da7b18b89d29e5853c847d3986cbdfde30c764d31b0fe4b9116b95a32701fdc7",
+      "rule": "Accessibility focus order must follow a coherent content flow; use structural hierarchy first, and apply explicit sort priority only to correct true ordering issues.",
+      "clauses": [
+        {
+          "id": "G-006-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Build semantic order through view hierarchy and container structure before adding explicit priorities."
+        },
+        {
+          "id": "G-006-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use `.accessibilitySortPriority(_:)` sparingly to resolve edge-case ordering conflicts."
+        },
+        {
+          "id": "G-006-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Preserve heading structure and section grouping to improve rotor and linear navigation."
+        },
+        {
+          "id": "G-006-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Re-validate order when introducing overlays, sheets, and async content insertion."
+        },
+        {
+          "id": "G-006-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Verify `UIHostingController` inside UIKit navigation/container stacks does not reorder elements unexpectedly."
+        },
+        {
+          "id": "G-006-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "In representables, ensure UIKit subview ordering aligns with expected spoken traversal order."
+        },
+        {
+          "id": "G-006-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Inspect traversal order and verify it matches expected content flow."
+        },
+        {
+          "id": "G-006-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm no hidden/overlay elements are unexpectedly focusable before primary content."
+        },
+        {
+          "id": "G-006-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm sort priorities are intentional and minimal."
+        },
+        {
+          "id": "G-006-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Swipe through each screen and verify top-level order matches user task flow."
+        },
+        {
+          "id": "G-006-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Open sheets/alerts and confirm focus enters modal content and returns correctly on dismiss."
+        },
+        {
+          "id": "G-006-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Use screen-level smoke tests that assert key controls appear in expected interaction sequence."
+        },
+        {
+          "id": "G-006-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: model layout so natural hierarchy produces the right focus order."
+        },
+        {
+          "id": "G-006-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: depend on widespread sort-priority overrides to patch structural ordering issues."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/documentation/swiftui/view-accessibility",
+        "https://developer.apple.com/videos/play/wwdc2023/10036/"
+      ]
+    },
+    {
+      "id": "G-007",
+      "path": "references/swiftui/guidelines/g-007-accessibility-actions.md",
+      "sha256": "04b1847ff5dd0750581c2cea81cd429a07c890d90d4a0f8cf5e3834739c08d9e",
+      "rule": "Any interaction that cannot be reliably discovered or performed through default semantic controls must provide an explicit accessibility action.",
+      "clauses": [
+        {
+          "id": "G-007-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use `.accessibilityAction(_:)` for single custom operations."
+        },
+        {
+          "id": "G-007-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use `.accessibilityActions { ... }` for multiple contextual operations."
+        },
+        {
+          "id": "G-007-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use `.accessibilityAdjustableAction(_:)` for increment/decrement style controls."
+        },
+        {
+          "id": "G-007-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Keep action names concise, task-focused, and distinct."
+        },
+        {
+          "id": "G-007-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Map equivalent operations to `UIAccessibilityCustomAction` for UIKit-backed controls."
+        },
+        {
+          "id": "G-007-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Ensure action handlers in representables are synchronized with SwiftUI state updates."
+        },
+        {
+          "id": "G-007-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify action names are exposed on relevant elements."
+        },
+        {
+          "id": "G-007-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify no duplicate/ambiguous action names on the same element."
+        },
+        {
+          "id": "G-007-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Focus element, open actions rotor/menu, and confirm expected actions are present."
+        },
+        {
+          "id": "G-007-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Execute each action and confirm state/result changes are announced."
+        },
+        {
+          "id": "G-007-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Validate resulting state changes for action-driven operations through labels/values."
+        },
+        {
+          "id": "G-007-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: expose swipe-only row actions as explicit accessibility actions."
+        },
+        {
+          "id": "G-007-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: depend solely on custom gestures for critical operations."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/documentation/swiftui/view-accessibility",
+        "https://developer.apple.com/videos/play/wwdc2024/10073/"
+      ]
+    },
+    {
+      "id": "G-008",
+      "path": "references/swiftui/guidelines/g-008-custom-controls-representation.md",
+      "sha256": "1569f558d084f9efe61af342fefca2192725d131ea07a3d932b9d459f8baf608",
+      "rule": "Any custom interactive component must expose equivalent accessibility semantics (role, label, value, actions) to the native control it replaces.",
+      "clauses": [
+        {
+          "id": "G-008-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Prefer native controls first; custom controls are a fallback."
+        },
+        {
+          "id": "G-008-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "If using a custom control, explicitly provide label, value, traits/role, and actions."
+        },
+        {
+          "id": "G-008-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use accessibility representation techniques to map complex visuals to clear semantic elements."
+        },
+        {
+          "id": "G-008-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Keep semantic behavior synchronized with custom visual state transitions."
+        },
+        {
+          "id": "G-008-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "In UIKit-backed custom views, set `isAccessibilityElement`, `accessibilityLabel`, `accessibilityValue`, and traits explicitly."
+        },
+        {
+          "id": "G-008-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "In representables, verify semantic fields update when SwiftUI bindings change."
+        },
+        {
+          "id": "G-008-P35",
+          "line": 35,
+          "section": "Interaction Refinement (Source Review: 2026-11-04)",
+          "subsection": "",
+          "text": "Expose purpose, current value, equivalent actions, and meaningful feedback. For continuous controls, provide adjustable increment/decrement behavior before adding precision gestures. Direct touch and passthrough gestures are additional interaction options, not substitutes for discoverable actions. Keep ordinary navigation usable for people who do not use rotor shortcuts."
+        },
+        {
+          "id": "G-008-P37",
+          "line": 37,
+          "section": "Interaction Refinement (Source Review: 2026-11-04)",
+          "subsection": "",
+          "text": "In SwiftUI, `accessibilityAdjustableAction` is available from iOS/tvOS 13 and macOS 10.15; `accessibilityDirectTouch` from iOS/tvOS 17 and macOS 14. Both are available on visionOS 1. Check the exact platform target before generating code. Keep value-change announcements useful rather than speaking every intermediate update."
+        },
+        {
+          "id": "G-008-L45",
+          "line": 45,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm custom controls are exposed as the intended semantic type, not generic containers."
+        },
+        {
+          "id": "G-008-L46",
+          "line": 46,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm label/value/traits/actions are all present and consistent."
+        },
+        {
+          "id": "G-008-L50",
+          "line": 50,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Focus custom control and verify announcement matches expected role/state."
+        },
+        {
+          "id": "G-008-L51",
+          "line": 51,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Trigger interaction and confirm updated state and action feedback."
+        },
+        {
+          "id": "G-008-L55",
+          "line": 55,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert critical custom control states via accessibility labels/values/identifiers."
+        },
+        {
+          "id": "G-008-L59",
+          "line": 59,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: model a custom stepper as an adjustable control with clear increment/decrement behavior."
+        },
+        {
+          "id": "G-008-L60",
+          "line": 60,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: ship custom tappable views with only visual affordances and no semantic role."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/documentation/swiftui/view-accessibility",
+        "https://developer.apple.com/documentation/accessibility/enhancing-the-accessibility-of-your-swiftui-app",
+        "https://developer.apple.com/videos/play/wwdc2023/10036/"
+      ]
+    },
+    {
+      "id": "G-009",
+      "path": "references/swiftui/guidelines/g-009-rotors-when-and-why.md",
+      "sha256": "6b15d456fcac2582406981eefff25af777574a4a2fe7f9e69a09f0bce556be0f",
+      "rule": "Screens with repeated sections, dense content, or contextual row actions should expose rotor-friendly landmarks and action surfaces so users can jump efficiently, without making rotor fluency a prerequisite for core task completion.",
+      "clauses": [
+        {
+          "id": "G-009-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Mark section headers with heading semantics where they represent navigation landmarks."
+        },
+        {
+          "id": "G-009-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Structure lists/forms so major regions and containers are semantically distinct."
+        },
+        {
+          "id": "G-009-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use grouping intentionally so rotor jumps land on meaningful units rather than noisy fragments."
+        },
+        {
+          "id": "G-009-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Pair contextual row operations with explicit accessibility actions; keep primary actions directly discoverable in linear navigation."
+        },
+        {
+          "id": "G-009-L27",
+          "line": 27,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Treat rotor support as acceleration, not the sole path to complete the task."
+        },
+        {
+          "id": "G-009-L28",
+          "line": 28,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Avoid over-labeling every item as a heading; reserve for true landmarks."
+        },
+        {
+          "id": "G-009-L29",
+          "line": 29,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Re-test rotor behavior after major layout or data-model changes."
+        },
+        {
+          "id": "G-009-L33",
+          "line": 33,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Ensure UIKit-hosted sections preserve heading/landmark semantics when embedded with SwiftUI content."
+        },
+        {
+          "id": "G-009-L34",
+          "line": 34,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Validate mixed stacks where container composition may flatten structure or detach row-level actions from their intended container."
+        },
+        {
+          "id": "G-009-L40",
+          "line": 40,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify heading traits are present on intended landmarks."
+        },
+        {
+          "id": "G-009-L41",
+          "line": 41,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify hierarchy structure supports navigation by sections and meaningful containers."
+        },
+        {
+          "id": "G-009-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify contextual actions are attached to the intended row or element when applicable."
+        },
+        {
+          "id": "G-009-L46",
+          "line": 46,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Swipe linearly through the screen and confirm core tasks remain fully discoverable without rotor changes."
+        },
+        {
+          "id": "G-009-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Use rotor navigation to move by headings/landmarks."
+        },
+        {
+          "id": "G-009-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm jumps land on expected semantic anchors and preserve context."
+        },
+        {
+          "id": "G-009-L49",
+          "line": 49,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Open the actions menu on complex rows and confirm contextual actions are present without replacing primary controls."
+        },
+        {
+          "id": "G-009-L53",
+          "line": 53,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Limited direct rotor automation; use structural assertions (presence of heading-labeled elements and contextual-action-bearing rows) as proxies."
+        },
+        {
+          "id": "G-009-L57",
+          "line": 57,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: define headings for major sections in long forms and content-heavy screens."
+        },
+        {
+          "id": "G-009-L58",
+          "line": 58,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: expose contextual row operations through accessibility actions when direct controls would overload the row."
+        },
+        {
+          "id": "G-009-L59",
+          "line": 59,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: mark decorative captions or every row title as a heading."
+        },
+        {
+          "id": "G-009-L60",
+          "line": 60,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: make primary task completion depend on rotor-only discovery."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/documentation/swiftui/view-accessibility",
+        "https://developer.apple.com/videos/play/wwdc2024/10073/",
+        "https://developer.apple.com/documentation/accessibility/performing-accessibility-testing-for-your-app"
+      ]
+    },
+    {
+      "id": "G-010",
+      "path": "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md",
+      "sha256": "4d75696847519c5911efb9536498d314f493dc02809a3b631b54f6b75bae6e14",
+      "rule": "All user-facing text and interactive layouts must remain readable and operable across supported Dynamic Type sizes, including accessibility categories.",
+      "clauses": [
+        {
+          "id": "G-010-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use text styles (`.font(.body)`, `.headline`, etc.) and avoid fixed font sizes for primary content."
+        },
+        {
+          "id": "G-010-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Prefer adaptive layout containers that can wrap/reflow (`VStack`, flexible frames, multiline text)."
+        },
+        {
+          "id": "G-010-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Avoid hard height/width constraints that clip text at large categories."
+        },
+        {
+          "id": "G-010-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Test controls with longer localized strings and larger categories together."
+        },
+        {
+          "id": "G-010-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Ensure UIKit views in representables use Dynamic Type-compatible fonts and adjust for content size category changes."
+        },
+        {
+          "id": "G-010-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Validate mixed SwiftUI/UIKit screens for clipping where UIKit constraints are rigid."
+        },
+        {
+          "id": "G-010-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Review text and controls at large categories for clipping/truncation."
+        },
+        {
+          "id": "G-010-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify tappable targets remain reachable after text expansion."
+        },
+        {
+          "id": "G-010-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Enable a large text category and confirm reading/focus order still matches task flow."
+        },
+        {
+          "id": "G-010-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm all critical labels and actions remain discoverable."
+        },
+        {
+          "id": "G-010-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add snapshot/smoke tests for key screens at selected large content-size categories."
+        },
+        {
+          "id": "G-010-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: allow text to wrap and containers to expand naturally."
+        },
+        {
+          "id": "G-010-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: lock essential text into fixed-height rows that truncate at accessibility sizes."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+        "https://developer.apple.com/documentation/accessibility/enhancing-the-accessibility-of-your-swiftui-app",
+        "https://developer.apple.com/documentation/accessibility/performing-accessibility-testing-for-your-app"
+      ]
+    },
+    {
+      "id": "G-011",
+      "path": "references/swiftui/guidelines/g-011-color-contrast-non-color-cues.md",
+      "sha256": "fde1cb5094e630a9bc882b9c22d09007508c9e11de9f55dea8169891b0ad9843",
+      "rule": "Any meaningful status, feedback, or interaction cue conveyed with color must also be conveyed with text, symbol, shape, or another non-color indicator, and text/controls must maintain sufficient contrast.",
+      "clauses": [
+        {
+          "id": "G-011-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Pair color changes with semantic text or icon changes (for example, \"Error\" + symbol, not red-only text)."
+        },
+        {
+          "id": "G-011-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use system colors/materials where possible to inherit accessibility-aware behavior."
+        },
+        {
+          "id": "G-011-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Avoid encoding selection/validation state solely by tint differences."
+        },
+        {
+          "id": "G-011-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Check both light and dark appearances if supported."
+        },
+        {
+          "id": "G-011-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Ensure UIKit-backed controls use contrast-safe color tokens consistent with SwiftUI theme definitions."
+        },
+        {
+          "id": "G-011-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Validate mixed screens for color-state inconsistencies where UIKit and SwiftUI styling overlap."
+        },
+        {
+          "id": "G-011-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Run contrast and visual checks for text and interactive elements."
+        },
+        {
+          "id": "G-011-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify status indicators include non-color semantic cues."
+        },
+        {
+          "id": "G-011-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm spoken output includes state/error context that might otherwise be presented visually by color."
+        },
+        {
+          "id": "G-011-L46",
+          "line": 46,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert presence of explicit state text/symbols for critical statuses (error, success, selection)."
+        },
+        {
+          "id": "G-011-L50",
+          "line": 50,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: combine icon/text labels with color to indicate status."
+        },
+        {
+          "id": "G-011-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: indicate required, selected, or error states with color alone."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+        "https://developer.apple.com/documentation/accessibility",
+        "https://developer.apple.com/help/app-store-connect/manage-app-accessibility/overview-of-accessibility-nutrition-labels/"
+      ]
+    },
+    {
+      "id": "G-012",
+      "path": "references/swiftui/guidelines/g-012-reduced-motion.md",
+      "sha256": "2238746114031a49485add8cd04f535968c2b9707f831a5e21e369861f227e12",
+      "rule": "When `Reduce Motion` is enabled, replace non-essential animations with low-motion alternatives that preserve state-change clarity.",
+      "clauses": [
+        {
+          "id": "G-012-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Detect motion preference through environment values and conditionally reduce animation intensity."
+        },
+        {
+          "id": "G-012-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Prefer fades or immediate state updates over large-scale movement."
+        },
+        {
+          "id": "G-012-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Ensure critical transitions still communicate result/state."
+        },
+        {
+          "id": "G-012-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Avoid relying on motion alone to indicate completion or navigation change."
+        },
+        {
+          "id": "G-012-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Ensure UIKit animations embedded in SwiftUI flows also respect reduced motion preferences."
+        },
+        {
+          "id": "G-012-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Keep transition behavior consistent across mixed SwiftUI/UIKit screens."
+        },
+        {
+          "id": "G-012-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Validate key transitions remain understandable with animations reduced."
+        },
+        {
+          "id": "G-012-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify state changes remain visible without motion cues."
+        },
+        {
+          "id": "G-012-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Enable Reduce Motion and run primary flows."
+        },
+        {
+          "id": "G-012-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm navigation and state context remain clear after transitions."
+        },
+        {
+          "id": "G-012-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add smoke tests that validate final UI state after transitions when reduced-motion mode is enabled."
+        },
+        {
+          "id": "G-012-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: replace spring-heavy transitions with subtle fades or direct state changes."
+        },
+        {
+          "id": "G-012-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: hide critical completion feedback inside motion-only effects."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+        "https://developer.apple.com/documentation/accessibility",
+        "https://developer.apple.com/help/app-store-connect/manage-app-accessibility/overview-of-accessibility-nutrition-labels/"
+      ]
+    },
+    {
+      "id": "G-013",
+      "path": "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md",
+      "sha256": "fd64c7e97f8fb5b6262dc0e5dc0b04621213611b14f4847caa2e32bcba4fdf15",
+      "rule": "When presenting sheets, alerts, or full-screen overlays, focus must move into the presented context, stay within relevant elements, and return to a logical anchor after dismissal.",
+      "clauses": [
+        {
+          "id": "G-013-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Present modal content with clear headings/labels that identify the new context."
+        },
+        {
+          "id": "G-013-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Ensure background controls are not inadvertently reachable while modal interaction is active."
+        },
+        {
+          "id": "G-013-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Provide explicit dismissal actions with clear labels."
+        },
+        {
+          "id": "G-013-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "On dismissal, return focus to the control that triggered presentation (or nearest logical anchor)."
+        },
+        {
+          "id": "G-013-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Validate `UIHostingController` presentations in UIKit stacks for focus handoff and restoration."
+        },
+        {
+          "id": "G-013-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Ensure UIKit presentation styles do not leave hidden background elements in the accessibility traversal path."
+        },
+        {
+          "id": "G-013-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify active modal tree is reachable and prioritized over background content."
+        },
+        {
+          "id": "G-013-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify background elements are not focusable during modal interaction when they should be inactive."
+        },
+        {
+          "id": "G-013-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Present modal and confirm immediate focus lands on modal title/first actionable element."
+        },
+        {
+          "id": "G-013-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Dismiss modal and confirm focus returns to expected trigger/anchor element."
+        },
+        {
+          "id": "G-013-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add flow tests asserting modal entry/exit controls and post-dismiss anchor visibility."
+        },
+        {
+          "id": "G-013-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: announce modal context with a clear title and predictable primary action."
+        },
+        {
+          "id": "G-013-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: allow focus to continue traversing background content while modal is active."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/documentation/accessibility/enhancing-the-accessibility-of-your-swiftui-app",
+        "https://developer.apple.com/videos/play/wwdc2023/10036/",
+        "https://developer.apple.com/documentation/accessibility/performing-accessibility-testing-for-your-app"
+      ]
+    },
+    {
+      "id": "G-014",
+      "path": "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md",
+      "sha256": "bdbf044aef5a596fa142b983823f527d9f0be676267328239d20a0ba6d498c0a",
+      "rule": "In lists and forms, prefer native controls and explicit row semantics so each item exposes clear label, value, role, and action behavior.",
+      "clauses": [
+        {
+          "id": "G-014-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Use `List`, `Form`, `Toggle`, `Slider`, and other native controls for built-in semantics."
+        },
+        {
+          "id": "G-014-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "For complex rows, decide whether row content should be combined or kept as separate actionable children."
+        },
+        {
+          "id": "G-014-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Ensure row-level swipe/secondary actions are available through accessibility actions when needed."
+        },
+        {
+          "id": "G-014-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Keep value/state announcements accurate for toggles, sliders, and selection rows."
+        },
+        {
+          "id": "G-014-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "For UIKit-backed table/collection content, align cell accessibility structure with SwiftUI row semantics."
+        },
+        {
+          "id": "G-014-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Verify reusable cells do not leak stale labels/values across reused content."
+        },
+        {
+          "id": "G-014-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Check each row/control exposes expected role and current value."
+        },
+        {
+          "id": "G-014-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Check grouped rows do not hide required child actions."
+        },
+        {
+          "id": "G-014-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Check sliders/toggles expose adjustable/state semantics correctly."
+        },
+        {
+          "id": "G-014-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Traverse list/form top-to-bottom and confirm row announcements are concise and unambiguous."
+        },
+        {
+          "id": "G-014-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Interact with toggles/sliders and confirm updated values are announced."
+        },
+        {
+          "id": "G-014-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert representative row/control identifiers and state labels in key form flows."
+        },
+        {
+          "id": "G-014-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: keep each form row semantically focused on one primary task."
+        },
+        {
+          "id": "G-014-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: pack multiple unrelated interactive targets into one unlabeled row."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/documentation/swiftui/view-accessibility",
+        "https://developer.apple.com/documentation/accessibility/enhancing-the-accessibility-of-your-swiftui-app",
+        "https://developer.apple.com/videos/play/wwdc2024/10073/"
+      ]
+    },
+    {
+      "id": "G-015",
+      "path": "references/swiftui/guidelines/g-015-media-captions-audio-descriptions.md",
+      "sha256": "21103a19878f49c3fbe3647d4dcf41a916af4308cb84af9ed23d34196fe88fbd",
+      "rule": "Media experiences must provide accessible playback control semantics and support captions/subtitles for spoken content; when visual-only meaning is important, provide descriptive alternatives.",
+      "clauses": [
+        {
+          "id": "G-015-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Ensure play/pause/seek/speed controls have clear labels, values, and roles."
+        },
+        {
+          "id": "G-015-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Expose current playback state and timing readouts accessibly."
+        },
+        {
+          "id": "G-015-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Provide caption/subtitle availability where spoken media exists."
+        },
+        {
+          "id": "G-015-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Define a narrow debug/test inspection contract when stream state includes live/on-demand mode, seekability, buffering, playback rate, or selected media options that are useful for verification but too noisy for spoken output."
+        },
+        {
+          "id": "G-015-L27",
+          "line": 27,
+          "section": "How To Implement",
+          "subsection": "SwiftUI",
+          "text": "Avoid gesture-only media controls without accessible action alternatives."
+        },
+        {
+          "id": "G-015-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "When wrapping AVKit/UIKit media controllers, verify control labels and states are exposed correctly."
+        },
+        {
+          "id": "G-015-L32",
+          "line": 32,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Assign one owner for supplemental stream-state metadata so host overlays and embedded players report one consistent state model."
+        },
+        {
+          "id": "G-015-L33",
+          "line": 33,
+          "section": "How To Implement",
+          "subsection": "UIKit Interop Notes",
+          "text": "Ensure custom overlay controls do not block or duplicate native accessible media controls."
+        },
+        {
+          "id": "G-015-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify all media controls are discoverable and labeled."
+        },
+        {
+          "id": "G-015-L40",
+          "line": 40,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify state/value updates (playing/paused, position) are exposed."
+        },
+        {
+          "id": "G-015-L41",
+          "line": 41,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify caption-related controls/options are reachable when available."
+        },
+        {
+          "id": "G-015-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Capture stream kind, seekability, buffering/loading state, playback rate, and selected media-option context where supported."
+        },
+        {
+          "id": "G-015-L46",
+          "line": 46,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Navigate media controls and confirm each control announces purpose and state."
+        },
+        {
+          "id": "G-015-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Enable captions/subtitles and verify the flow is operable without touch exploration."
+        },
+        {
+          "id": "G-015-L51",
+          "line": 51,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add smoke tests for playback-state transitions and caption-toggle control availability."
+        },
+        {
+          "id": "G-015-L52",
+          "line": 52,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert supplemental inspection snapshot fields when playback state exceeds what the spoken response should include."
+        },
+        {
+          "id": "G-015-L56",
+          "line": 56,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: provide clear, labeled controls for play, pause, and timeline navigation."
+        },
+        {
+          "id": "G-015-L57",
+          "line": 57,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: hide primary media controls behind unlabeled gestures or icon-only overlays."
+        }
+      ],
+      "sourceURLs": [
+        "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+        "https://developer.apple.com/documentation/accessibility",
+        "https://developer.apple.com/help/app-store-connect/manage-app-accessibility/overview-of-accessibility-nutrition-labels/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "schema": 1,
+  "id": "macos-closure-v1",
+  "revision": "1",
+  "platform": "macOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 27,
+  "limitations": "Unit/configuration/ownership callbacks only, deterministic injected completions rather than network/Task scheduling. Existing metadata loaders have separate fixture evidence. No UI tests, speech/focus delivery or broad runtime support claim.",
+  "claims": [
+    {
+      "id": "async",
+      "url": "https://developer.apple.com/documentation/swift/mainactor",
+      "section": "Actor ownership and native field snapshots; application policy",
+      "statement": "Latest validation owns results; preserve input, ordered invalid-target request and current UI state. Transport cancellation is not claimed.",
+      "availability": "Target26 compilation against installed SDK27; runtime receipt distinct. Mac rotor macOS10.13. TV editable UITextView member excluded as unavailable; no TV27 Larger Text runtime claim.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "media",
+      "url": "https://developer.apple.com/documentation/avfoundation/avplayer/currentitem",
+      "section": "Actual current-item identity plus application request generation",
+      "statement": "Accept a loaded result only for the current item and active request; cancellation and duplicates cannot overwrite it.",
+      "availability": "Target26 compilation against installed SDK27; runtime receipt distinct. Mac rotor macOS10.13. TV editable UITextView member excluded as unavailable; no TV27 Larger Text runtime claim.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "text",
+      "url": "https://developer.apple.com/documentation/appkit/nsaccessibilitycustomrotor",
+      "section": "Native search predicate/result/range API and ordinary text selection",
+      "statement": "Native rotor searches respect UTF16/grapheme boundaries, query revisions and ordinary text access.",
+      "availability": "Target26 compilation against installed SDK27; runtime receipt distinct. Mac rotor macOS10.13. TV editable UITextView member excluded as unavailable; no TV27 Larger Text runtime claim.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "state",
+      "url": "https://developer.apple.com/documentation/appkit/nsaccessibilityprotocol",
+      "section": "Role/value/action, grouping, modal metadata and native controls",
+      "statement": "Expose explicit metadata and non-color state; preserve normal controls and previous modal configuration.",
+      "availability": "Target26 compilation against installed SDK27; runtime receipt distinct. Mac rotor macOS10.13. TV editable UITextView member excluded as unavailable; no TV27 Larger Text runtime claim.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/AsyncOwnership.swift",
+      "sha256": "507d9c2201d209a23adba82217d1dbe86e6ad582ecbcabef8904b56296b5383c"
+    },
+    {
+      "path": "Sources/DesktopText.swift",
+      "sha256": "079bd9bb3b1f856fc3c2fae19c6ea397f83f4388c4837c8bdcd2f2dbaa3126af"
+    },
+    {
+      "path": "Sources/StateContracts.swift",
+      "sha256": "e98fe859e82384d9f921bf3506712083b7804d517f15e0db99a3965cbe1eb007"
+    },
+    {
+      "path": "Tests/AsyncOwnershipTests.swift",
+      "sha256": "ecd41c110364c1349cc8da1b0590dda92f15419dc933dae9800116e0ef94d975"
+    },
+    {
+      "path": "Tests/DesktopTextTests.swift",
+      "sha256": "05b22a077add8d4e8c5b8348c8292bc2b3dcc845123dcfdb47e3734e81eadafe"
+    },
+    {
+      "path": "Tests/StateContractTests.swift",
+      "sha256": "aa6a87e7c4fca25304a2d0d4d79949e34e4b54974f488675be64c56e8e9d9048"
+    },
+    {
+      "path": "NegativeFixtures/media_duplicate.swift",
+      "sha256": "e81b7dab8db62785cd5a93e11f37a3986cbc534a8ec560751bac26f1b20c1d7d"
+    },
+    {
+      "path": "NegativeFixtures/media_identity.swift",
+      "sha256": "d84e90e1ef93abc593b6eb6c839d762dd100bfe443748a3df9da103bdf22a76d"
+    },
+    {
+      "path": "NegativeFixtures/modal_restore.swift",
+      "sha256": "59aeb04ede35ea45a7861fa315305f1cfc0cd7dd957068061774391643e79734"
+    },
+    {
+      "path": "NegativeFixtures/state_text.swift",
+      "sha256": "f5ba6dd908dd4f9ab5657fe33e8280abe338cb4da73bc2777d8db33f86876ad8"
+    },
+    {
+      "path": "NegativeFixtures/text_boundary.swift",
+      "sha256": "b5ea3f1c499bc048ee57c871c432496bd8f891d48664e91c1bdce5750e43d32c"
+    },
+    {
+      "path": "NegativeFixtures/text_stale.swift",
+      "sha256": "b9050c297bf455e52bb2a1256a17f314185029e995668cabbbc03e2f9bbdec48"
+    },
+    {
+      "path": "NegativeFixtures/validation_generation.swift",
+      "sha256": "efd573622865536230c9f577af05d4fb4c5940e660c1695d898b99d3ba17cb7c"
+    },
+    {
+      "path": "NegativeFixtures/validation_snapshot.swift",
+      "sha256": "6db455a98fbd71803b7a4470babad444e7e161e57a1eb8edd6e5b797b91f5f6f"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "async",
+        "media",
+        "text",
+        "state"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "async",
+        "media",
+        "text",
+        "state"
+      ],
+      "testIds": [
+        "AsyncOwnershipTests/testPendingStateAndSnapshotPreserveInput",
+        "AsyncOwnershipTests/testOutOfOrderReplyCannotReplaceLatestErrors",
+        "AsyncOwnershipTests/testEditInvalidatesInFlightResult",
+        "AsyncOwnershipTests/testCancelRejectsLateReply",
+        "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot",
+        "AsyncOwnershipTests/testFirstInvalidUsesDeclaredFieldOrder",
+        "AsyncOwnershipTests/testDuplicateReplyCannotAcceptTwice",
+        "AsyncOwnershipTests/testUnknownFieldAndEmptyErrorAreNotSuccess",
+        "AsyncOwnershipTests/testSynchronousCompletionWorks",
+        "AsyncOwnershipTests/testReentrantAcceptancePreservesNewRequest",
+        "AsyncOwnershipTests/testRetainedReplyDoesNotRetainForm",
+        "AsyncOwnershipTests/testSuccessRecoversAfterErrorAndKeepsFieldIdentity",
+        "MediaLoadOwnerTests/testNilItemDoesNotInvokeLoader",
+        "MediaLoadOwnerTests/testReplacementRejectsOldItemCompletion",
+        "MediaLoadOwnerTests/testSameItemNewRequestRejectsOldGeneration",
+        "MediaLoadOwnerTests/testExternalReplacementRejectsOldResult",
+        "MediaLoadOwnerTests/testCancellationRejectsLateSuccess",
+        "MediaLoadOwnerTests/testErrorIsNotMissingOrSuccessfulMetadata",
+        "MediaLoadOwnerTests/testDuplicateCallbackCannotOverwriteFirstResult",
+        "MediaLoadOwnerTests/testInspectionDoesNotChangePlayerPreferences",
+        "MediaLoadOwnerTests/testRetainedLoaderReplyDoesNotRetainOwner",
+        "DesktopTextTests/testForwardBackwardAndBothBoundaries",
+        "DesktopTextTests/testInitialPreviousStartsAtLast",
+        "DesktopTextTests/testUTF16RangeCanBeSelectedNormally",
+        "DesktopTextTests/testPartialGraphemesExcluded",
+        "DesktopTextTests/testExplicitOverlapPolicy",
+        "DesktopTextTests/testOldRotorCannotSearchNewRevision",
+        "DesktopTextTests/testNewSessionRestartsOldResult",
+        "DesktopTextTests/testUnannouncedEditRejectsCachedRange",
+        "DesktopTextTests/testEmptyQueryPreservesOrdinaryText",
+        "DesktopTextTests/testFilterStringIsRespected",
+        "DesktopTextTests/testForeignAndPartialCurrentResultsRestart",
+        "DesktopTextTests/testRemovedMatchesClearRotor",
+        "StateContractTests/testRegionPreservesOrdinaryControlAndNamedBoundary",
+        "StateContractTests/testSelectedStateHasNonColorTextAndValue",
+        "StateContractTests/testReconfigureClearsStaleSelectionText",
+        "StateContractTests/testReducedTransparencyDoesNotRemoveContent",
+        "StateContractTests/testNativePlayerControlsAndPlayerArePreserved",
+        "StateContractTests/testModalFlagRestoresOriginalFalse",
+        "StateContractTests/testRepeatedModalBeginRestoresOriginalTrue",
+        "StateContractTests/testCustomToggleRoleValueAndPressAgree",
+        "StateContractTests/testDisabledCustomControlRejectsBothActionPaths",
+        "StateContractTests/testOrdinaryAndAccessibilityActionUseSameStateTransition"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "validation-generation",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "async"
+      ],
+      "testIds": [
+        "AsyncOwnershipTests/testOutOfOrderReplyCannotReplaceLatestErrors"
+      ],
+      "failureIds": [
+        "AsyncOwnershipTests/testOutOfOrderReplyCannotReplaceLatestErrors"
+      ],
+      "replacement": {
+        "target": "Sources/AsyncOwnership.swift",
+        "source": "NegativeFixtures/validation_generation.swift"
+      }
+    },
+    {
+      "id": "validation-snapshot",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "async"
+      ],
+      "testIds": [
+        "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot"
+      ],
+      "failureIds": [
+        "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot"
+      ],
+      "replacement": {
+        "target": "Sources/AsyncOwnership.swift",
+        "source": "NegativeFixtures/validation_snapshot.swift"
+      }
+    },
+    {
+      "id": "media-identity",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "media"
+      ],
+      "testIds": [
+        "MediaLoadOwnerTests/testExternalReplacementRejectsOldResult"
+      ],
+      "failureIds": [
+        "MediaLoadOwnerTests/testExternalReplacementRejectsOldResult"
+      ],
+      "replacement": {
+        "target": "Sources/AsyncOwnership.swift",
+        "source": "NegativeFixtures/media_identity.swift"
+      }
+    },
+    {
+      "id": "media-duplicate",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "media"
+      ],
+      "testIds": [
+        "MediaLoadOwnerTests/testDuplicateCallbackCannotOverwriteFirstResult"
+      ],
+      "failureIds": [
+        "MediaLoadOwnerTests/testDuplicateCallbackCannotOverwriteFirstResult"
+      ],
+      "replacement": {
+        "target": "Sources/AsyncOwnership.swift",
+        "source": "NegativeFixtures/media_duplicate.swift"
+      }
+    },
+    {
+      "id": "text-boundary",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "text"
+      ],
+      "testIds": [
+        "DesktopTextTests/testPartialGraphemesExcluded"
+      ],
+      "failureIds": [
+        "DesktopTextTests/testPartialGraphemesExcluded"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopText.swift",
+        "source": "NegativeFixtures/text_boundary.swift"
+      }
+    },
+    {
+      "id": "text-stale",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "text"
+      ],
+      "testIds": [
+        "DesktopTextTests/testUnannouncedEditRejectsCachedRange"
+      ],
+      "failureIds": [
+        "DesktopTextTests/testUnannouncedEditRejectsCachedRange"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopText.swift",
+        "source": "NegativeFixtures/text_stale.swift"
+      }
+    },
+    {
+      "id": "state-text",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "state"
+      ],
+      "testIds": [
+        "StateContractTests/testSelectedStateHasNonColorTextAndValue"
+      ],
+      "failureIds": [
+        "StateContractTests/testSelectedStateHasNonColorTextAndValue"
+      ],
+      "replacement": {
+        "target": "Sources/StateContracts.swift",
+        "source": "NegativeFixtures/state_text.swift"
+      }
+    },
+    {
+      "id": "modal-restore",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "state"
+      ],
+      "testIds": [
+        "StateContractTests/testRepeatedModalBeginRestoresOriginalTrue"
+      ],
+      "failureIds": [
+        "StateContractTests/testRepeatedModalBeginRestoresOriginalTrue"
+      ],
+      "replacement": {
+        "target": "Sources/StateContracts.swift",
+        "source": "NegativeFixtures/modal_restore.swift"
+      }
+    }
+  ]
+}

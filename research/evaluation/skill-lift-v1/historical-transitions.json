@@ -1,0 +1,606 @@
+{
+  "schema": 1,
+  "scope": "Read-only reinterpretation of reported historical transitions; no new answers or grades",
+  "inputs": [
+    {
+      "path": "evals/reports/local-compact-b-20261106/summary.json",
+      "sha256": "66c6bef489037336e125d3809921a9aafb126a0c29059b25a3f4f5098ccdd397"
+    },
+    {
+      "path": "evals/reports/skill-0.3.0-dev.1-vs-0.3.0-dev.2-20261106/summary.json",
+      "sha256": "9cddfb4bf7df99484e93e5077a3a192d38252fe80531f36345c596be74c77085"
+    },
+    {
+      "path": "evals/reports/skill-0.3.0-dev.1-vs-0.3.0-dev.2-claude-20261106/summary.json",
+      "sha256": "892544903cb7256f8036266fae0e03478126d5e648490279603dcc89987a1cf1"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "local-gemma4:12b",
+      "modelRevision": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+      "scope": "Diagnostic small-model historical source review, not frontier optimization target",
+      "beforeCondition": "F",
+      "afterCondition": "BR",
+      "rows": [
+        {
+          "case": "GP26-01",
+          "platform": "iOS",
+          "framework": "UIKit",
+          "before": "gap",
+          "after": "gap",
+          "transition": "persistent-failure",
+          "inputTokenChange": -0.32459425717852686,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "typecheck_pass",
+            "transition": "preserved"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "60d6ccd8d7808de71d46bce76ac33cd92a80838bfbac5ccbecb0dcf46d1f63a0",
+            "after": "052d09de9c22f0dfc22ca5a342253a9c64fbb7f1c7a1e696db72d3faec939fed"
+          }
+        },
+        {
+          "case": "GP26-02",
+          "platform": "iOS",
+          "framework": "UIKit",
+          "before": "met",
+          "after": "met",
+          "transition": "preserved",
+          "inputTokenChange": -0.3142943487458447,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "typecheck_pass",
+            "transition": "preserved"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "d1921c7cae8990b134d7516782265ea138fa8dd39a0153c87a0e3c33b4d4a9ef",
+            "after": "c60ac239bc8589747fb91c090baee4b9cff30c783b2d2a350e7c6830d4bd2c56"
+          }
+        },
+        {
+          "case": "GP26-03",
+          "platform": "iOS",
+          "framework": "UIKit",
+          "before": "gap",
+          "after": "gap",
+          "transition": "persistent-failure",
+          "inputTokenChange": -0.37302725968436157,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "typecheck_failed",
+            "transition": "regression"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "07b6bf7b2da32a3827718b6310d1def7540b38b7a3102e6acd24812383504519",
+            "after": "f6baa6ac8c0a4f750963804270d15333446e0a5052e7a101bade2407532b9b31"
+          }
+        },
+        {
+          "case": "GP26-04",
+          "platform": "iPadOS",
+          "framework": "SwiftUI",
+          "before": "gap",
+          "after": "gap",
+          "transition": "persistent-failure",
+          "inputTokenChange": -0.2925457102672293,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "typecheck_failed",
+            "transition": "regression"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "12f84ec5eac7aa7c477056c79aeb56a7b63f26acb41fc05a857bbf87872af63c",
+            "after": "230627d6aea71d659063a0545a7e0c71b6232268c7733ca94c4ab93b600a1c6f"
+          }
+        },
+        {
+          "case": "GP26-05",
+          "platform": "tvOS",
+          "framework": "SwiftUI",
+          "before": "met",
+          "after": "met",
+          "transition": "preserved",
+          "inputTokenChange": -0.315725561627201,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "typecheck_pass",
+            "transition": "preserved"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "b81dd88b0c4c5fcb5e6e5f6d77d6cbf11231e6b96e13cb6e3c18511b760380b9",
+            "after": "abc8622401620a099e8b6c4ff0ef64f4c1c4fb2126384888fcd8c2278a91c53a"
+          }
+        },
+        {
+          "case": "GP26-06",
+          "platform": "iOS",
+          "framework": "SwiftUI",
+          "before": "met",
+          "after": "met",
+          "transition": "preserved",
+          "inputTokenChange": -0.37983929875821765,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "not_applicable",
+            "transition": "inconclusive"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "308ba1e15ca80d0ac1378ffcdced25ce1593270e6f3d85605f74d7a4603ce53d",
+            "after": "2d638d92e3985088c59a4b6cecd5b1376d71bfa7fce2557ac2546dc82c8abb70"
+          }
+        }
+      ],
+      "counts": {
+        "gain": 0,
+        "regression": 0,
+        "preserved": 3,
+        "persistent-failure": 3,
+        "inconclusive": 0,
+        "missing": 0
+      },
+      "medianInputTokenChange": -0.32015990940286393,
+      "causalLiftQualified": false,
+      "qualification": "Exact historical task/harness serialization and independent semantic grading not revalidated here; compiler axis remains separate."
+    },
+    {
+      "id": "local-qwen2.5-coder:14b",
+      "modelRevision": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+      "scope": "Diagnostic small-model historical source review, not frontier optimization target",
+      "beforeCondition": "F",
+      "afterCondition": "BR",
+      "rows": [
+        {
+          "case": "GP26-01",
+          "platform": "iOS",
+          "framework": "UIKit",
+          "before": "gap",
+          "after": "gap",
+          "transition": "persistent-failure",
+          "inputTokenChange": -0.3111111111111111,
+          "compiler": {
+            "before": "typecheck_failed",
+            "after": "typecheck_pass",
+            "transition": "gain"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "8855bf1e262b2422e18d588a5156e1e45f6cd5c33bd416e74e9c1394c00117e3",
+            "after": "e4e20392947846480bd363783db7dc66feb4d6f7946f86ebd7aa07a4864774fa"
+          }
+        },
+        {
+          "case": "GP26-02",
+          "platform": "iOS",
+          "framework": "UIKit",
+          "before": "gap",
+          "after": "gap",
+          "transition": "persistent-failure",
+          "inputTokenChange": -0.30092592592592593,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "typecheck_pass",
+            "transition": "preserved"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "11ecd46015bfa0bdafc83ca22e15dad72e03b479026b1dc8c850a60b85123f0e",
+            "after": "79bfb3594cc2bc8d458286995dd6c803ada7655331f4b77d5bcba70eddfa1c32"
+          }
+        },
+        {
+          "case": "GP26-03",
+          "platform": "iOS",
+          "framework": "UIKit",
+          "before": "gap",
+          "after": "gap",
+          "transition": "persistent-failure",
+          "inputTokenChange": -0.3572830781311347,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "typecheck_pass",
+            "transition": "preserved"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "0480f40ec3c528c88b4d4f2895823cbe961614e11000505854176d6a9d8dfec7",
+            "after": "8da74507c9c941205c7b0616e4490d01e56927dc0e65403ba383a3ffb134037c"
+          }
+        },
+        {
+          "case": "GP26-04",
+          "platform": "iPadOS",
+          "framework": "SwiftUI",
+          "before": "gap",
+          "after": "gap",
+          "transition": "persistent-failure",
+          "inputTokenChange": -0.2785430058157331,
+          "compiler": {
+            "before": "typecheck_failed",
+            "after": "typecheck_failed",
+            "transition": "persistent-failure"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "44486ba93dcacff753a1cae8e45e303b3daf24f37ca6c849b7e566cc72ddc84d",
+            "after": "c6aeb21b728a7c98966fbac47bc1583eb1f71e64482426c38b843bb9f7236663"
+          }
+        },
+        {
+          "case": "GP26-05",
+          "platform": "tvOS",
+          "framework": "SwiftUI",
+          "before": "gap",
+          "after": "gap",
+          "transition": "persistent-failure",
+          "inputTokenChange": -0.3035356904603068,
+          "compiler": {
+            "before": "typecheck_failed",
+            "after": "typecheck_pass",
+            "transition": "gain"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "0c398cb656f6bc006bbd6353cfa9dd03622bc0529721e37f1a6a71514649ad38",
+            "after": "06e146d72a7b3c5837fed72f8fa3330b0f648423dc5646758b9a376d9754b889"
+          }
+        },
+        {
+          "case": "GP26-06",
+          "platform": "iOS",
+          "framework": "SwiftUI",
+          "before": "gap",
+          "after": "met",
+          "transition": "gain",
+          "inputTokenChange": -0.36269430051813467,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "typecheck_pass",
+            "transition": "preserved"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "d6b97a09d8a5cc1c88434967500b498e6d6db36b45bb3b6fc4b90ea6ccbd6ea5",
+            "after": "b718c3a8bb10aa619f41dacb96a851aa51dae0a787231c9550f1e9d2e7b31af1"
+          }
+        }
+      ],
+      "counts": {
+        "gain": 1,
+        "regression": 0,
+        "preserved": 0,
+        "persistent-failure": 5,
+        "inconclusive": 0,
+        "missing": 0
+      },
+      "medianInputTokenChange": -0.30732340078570897,
+      "causalLiftQualified": false,
+      "qualification": "Exact historical task/harness serialization and independent semantic grading not revalidated here; compiler axis remains separate."
+    },
+    {
+      "id": "local-qwen3.5:latest",
+      "modelRevision": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+      "scope": "Diagnostic small-model historical source review, not frontier optimization target",
+      "beforeCondition": "F",
+      "afterCondition": "BR",
+      "rows": [
+        {
+          "case": "GP26-01",
+          "platform": "iOS",
+          "framework": "UIKit",
+          "before": "gap",
+          "after": "gap",
+          "transition": "persistent-failure",
+          "inputTokenChange": -0.3220669483262918,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "typecheck_pass",
+            "transition": "preserved"
+          },
+          "finish": {
+            "before": "length",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "ad59986894d25c6ac694add489909a2234c43bf4a01ee6c7329957b4abfe4272",
+            "after": "8658de12e6f8f27647e12a1324b959e54d36d8228558b8c26b45ff2c0068a2bb"
+          }
+        },
+        {
+          "case": "GP26-02",
+          "platform": "iOS",
+          "framework": "UIKit",
+          "before": "inconclusive",
+          "after": "gap",
+          "transition": "inconclusive",
+          "inputTokenChange": -0.3113415017279296,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "typecheck_failed",
+            "transition": "regression"
+          },
+          "finish": {
+            "before": "length",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "06f2f51371457a1b7f49ff28dd3204f279239820c169776b9b56e8089df381f6",
+            "after": "cb86147a52699c14c18a9352eee1b21d3e337f83e814e599e27933c0181f8bfb"
+          }
+        },
+        {
+          "case": "GP26-03",
+          "platform": "iOS",
+          "framework": "UIKit",
+          "before": "gap",
+          "after": "gap",
+          "transition": "persistent-failure",
+          "inputTokenChange": -0.36977611940298505,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "typecheck_pass",
+            "transition": "preserved"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "1fb499d2089814fb350a8fdfaa1bf441c65f1941fdaa597154d8da4d6c3d2998",
+            "after": "ccaf2305f65154e488e6f8eeedb4d987595685c42005f98b53d1cf1fe15ffd81"
+          }
+        },
+        {
+          "case": "GP26-04",
+          "platform": "iPadOS",
+          "framework": "SwiftUI",
+          "before": "gap",
+          "after": "gap",
+          "transition": "persistent-failure",
+          "inputTokenChange": -0.2889212827988338,
+          "compiler": {
+            "before": "typecheck_failed",
+            "after": "typecheck_failed",
+            "transition": "persistent-failure"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "941711ab524284818235764bb56e209a4c201a048a5f137360501ed00e96ac29",
+            "after": "e50eea2ad18a203c14885b415381e5c3c5afd57830383bba5618729c14b768b1"
+          }
+        },
+        {
+          "case": "GP26-05",
+          "platform": "tvOS",
+          "framework": "SwiftUI",
+          "before": "met",
+          "after": "gap",
+          "transition": "regression",
+          "inputTokenChange": -0.31360759493670887,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "typecheck_failed",
+            "transition": "regression"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "167b99e480f8af21853a30a81d0c2810830244b6e9ad831cf5fbce9de3a56809",
+            "after": "0acce9e2678e60fe6d2a085720b561a45525cf727aa0d35df0267eebf72913a7"
+          }
+        },
+        {
+          "case": "GP26-06",
+          "platform": "iOS",
+          "framework": "SwiftUI",
+          "before": "met",
+          "after": "met",
+          "transition": "preserved",
+          "inputTokenChange": -0.37452758881330306,
+          "compiler": {
+            "before": "typecheck_pass",
+            "after": "not_applicable",
+            "transition": "inconclusive"
+          },
+          "finish": {
+            "before": "stop",
+            "after": "stop"
+          },
+          "answerHashes": {
+            "before": "59751995cc6123b280d2d6eef43d64ff79474ad5df5b6e6f8140b84de9ac72c2",
+            "after": "18868637efd444419c312a1f4a1fcce1651141ea9fa95e5699c3511510fb7bcc"
+          }
+        }
+      ],
+      "counts": {
+        "gain": 0,
+        "regression": 1,
+        "preserved": 1,
+        "persistent-failure": 3,
+        "inconclusive": 1,
+        "missing": 0
+      },
+      "medianInputTokenChange": -0.31783727163150033,
+      "causalLiftQualified": false,
+      "qualification": "Exact historical task/harness serialization and independent semantic grading not revalidated here; compiler axis remains separate."
+    },
+    {
+      "id": "historical-agy-dev1-dev2",
+      "modelRevision": "not independently exposed in response",
+      "scope": "Historical frontier source-only grades; no native answer checks",
+      "rows": [
+        {
+          "case": "GP26-01",
+          "before": "meets",
+          "after": "meets",
+          "transition": "preserved"
+        },
+        {
+          "case": "GP26-02",
+          "before": "meets",
+          "after": "meets",
+          "transition": "preserved"
+        },
+        {
+          "case": "GP26-03",
+          "before": "not-assessable",
+          "after": "meets",
+          "transition": "inconclusive"
+        },
+        {
+          "case": "GP26-07",
+          "before": "meets",
+          "after": "meets",
+          "transition": "preserved"
+        },
+        {
+          "case": "GP26-08",
+          "before": "meets",
+          "after": "meets",
+          "transition": "preserved"
+        },
+        {
+          "case": "GP26-09",
+          "before": "meets",
+          "after": "meets",
+          "transition": "preserved"
+        },
+        {
+          "case": "GP26-10",
+          "before": "meets",
+          "after": "meets",
+          "transition": "preserved"
+        }
+      ],
+      "counts": {
+        "gain": 0,
+        "regression": 0,
+        "preserved": 6,
+        "persistent-failure": 0,
+        "inconclusive": 1,
+        "missing": 0
+      },
+      "reportedTotalTokenChangePercent": 1,
+      "reportedMedianTokenChangePercent": 3.29,
+      "causalLiftQualified": false,
+      "qualification": "Inconclusive-to-pass is not fail-to-pass. Raw answers and exact returned model revision are unavailable in this public summary."
+    },
+    {
+      "id": "historical-claude-dev1-dev2",
+      "modelRevision": "claude-haiku-5-5",
+      "scope": "Historical frontier source-only grades; no native answer checks",
+      "rows": [
+        {
+          "case": "GP26-03",
+          "before": "not-assessable",
+          "after": "not-assessable",
+          "transition": "inconclusive"
+        },
+        {
+          "case": "GP26-07",
+          "before": "meets",
+          "after": "meets",
+          "transition": "preserved"
+        },
+        {
+          "case": "GP26-08",
+          "before": "meets",
+          "after": "meets",
+          "transition": "preserved"
+        },
+        {
+          "case": "GP26-02",
+          "before": "meets",
+          "after": "meets",
+          "transition": "preserved"
+        },
+        {
+          "case": "GP26-09",
+          "before": "meets",
+          "after": "meets",
+          "transition": "preserved"
+        },
+        {
+          "case": "GP26-10",
+          "before": "meets",
+          "after": "meets",
+          "transition": "preserved"
+        },
+        {
+          "case": "GP26-01",
+          "before": "meets",
+          "after": "meets",
+          "transition": "preserved"
+        }
+      ],
+      "counts": {
+        "gain": 0,
+        "regression": 0,
+        "preserved": 6,
+        "persistent-failure": 0,
+        "inconclusive": 1,
+        "missing": 0
+      },
+      "reportedTotalTokenChangePercent": 1.02,
+      "reportedMedianTokenChangePercent": 3.34,
+      "causalLiftQualified": false,
+      "qualification": "Source grading is preserved, not regraded with operational-1. Full exact matched execution metadata is not reconstructed."
+    }
+  ],
+  "pooledScore": null,
+  "releaseEligible": false,
+  "modelCalls": 0,
+  "warnings": [
+    "Gains/regressions here describe original source grades, not validated native task outcomes.",
+    "Do not pool models, harnesses, rubric revisions, conditions or token accounting conventions.",
+    "No result for dev.3/dev.4/dev.5 is inferred from earlier snapshots."
+  ]
+}

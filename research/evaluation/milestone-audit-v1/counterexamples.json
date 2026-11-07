@@ -1,0 +1,218 @@
+{
+  "schema": 1,
+  "legacySourcePins": [
+    {
+      "path": "research/evaluation/milestone-package-v1/package.mjs",
+      "sha256": "c56c1109066cbf491008d93fb8d5587cfbc994abf55c3e3b026331e97434140a"
+    },
+    {
+      "path": "research/evaluation/skill-lift-v1/compare.mjs",
+      "sha256": "271831d224922fb5cf01c6807f0c7adc9cda84a36d4eccc9e74e88f807f887df"
+    }
+  ],
+  "fixtureKind": "synthetic-controller-counterexamples-not-model-answers",
+  "cases": [
+    {
+      "id": "malformed-case-plans",
+      "input": {
+        "change": "cases[0].plans = null",
+        "sourceManifest": "research/evaluation/milestone-package-v1/manifest.json"
+      },
+      "original": {
+        "name": "TypeError",
+        "message": "c.plans is not iterable"
+      },
+      "guarded": {
+        "integrityPassed": false,
+        "integrityErrors": [
+          "invalid-case-shape",
+          "cell-count-mismatch"
+        ],
+        "blockers": [
+          "malformed-package"
+        ],
+        "liveRunsAuthorized": false,
+        "modelCalls": 0
+      },
+      "classification": "harness-robustness-defect; in-process preflight throws instead of returning structured rejection; no model call exposure"
+    },
+    {
+      "id": "explicitly-unverified-model-identity",
+      "input": [
+        {
+          "id": "synthetic-a",
+          "before": {
+            "scenarioId": "synthetic-a",
+            "scenarioFamily": "synthetic-a",
+            "platform": "iOS",
+            "framework": "UIKit",
+            "topic": "state",
+            "taskClass": "focused",
+            "subjectSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "modelRevision": "not independently exposed in response",
+            "harnessSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "rubricSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "environmentFingerprint": "ios26.5-sdk27",
+            "samplingFingerprint": "temperature0-seed42",
+            "tokenConvention": "input+output",
+            "conditionId": "before",
+            "outcome": "pass",
+            "quality": 0.7,
+            "inputTokens": 1000,
+            "outputTokens": 200,
+            "totalTokens": 1200,
+            "criticalErrors": []
+          },
+          "after": {
+            "scenarioId": "synthetic-a",
+            "scenarioFamily": "synthetic-a",
+            "platform": "iOS",
+            "framework": "UIKit",
+            "topic": "state",
+            "taskClass": "focused",
+            "subjectSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "modelRevision": "not independently exposed in response",
+            "harnessSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "rubricSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "environmentFingerprint": "ios26.5-sdk27",
+            "samplingFingerprint": "temperature0-seed42",
+            "tokenConvention": "input+output",
+            "conditionId": "after",
+            "outcome": "pass",
+            "quality": 0.8,
+            "inputTokens": 800,
+            "outputTokens": 200,
+            "totalTokens": 1000,
+            "criticalErrors": []
+          }
+        },
+        {
+          "id": "synthetic-b",
+          "before": {
+            "scenarioId": "synthetic-b",
+            "scenarioFamily": "synthetic-b",
+            "platform": "iOS",
+            "framework": "UIKit",
+            "topic": "state",
+            "taskClass": "focused",
+            "subjectSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "modelRevision": "not independently exposed in response",
+            "harnessSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "rubricSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "environmentFingerprint": "ios26.5-sdk27",
+            "samplingFingerprint": "temperature0-seed42",
+            "tokenConvention": "input+output",
+            "conditionId": "before",
+            "outcome": "pass",
+            "quality": 0.7,
+            "inputTokens": 1000,
+            "outputTokens": 200,
+            "totalTokens": 1200,
+            "criticalErrors": []
+          },
+          "after": {
+            "scenarioId": "synthetic-b",
+            "scenarioFamily": "synthetic-b",
+            "platform": "iOS",
+            "framework": "UIKit",
+            "topic": "state",
+            "taskClass": "focused",
+            "subjectSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "modelRevision": "not independently exposed in response",
+            "harnessSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "rubricSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "environmentFingerprint": "ios26.5-sdk27",
+            "samplingFingerprint": "temperature0-seed42",
+            "tokenConvention": "input+output",
+            "conditionId": "after",
+            "outcome": "pass",
+            "quality": 0.8,
+            "inputTokens": 800,
+            "outputTokens": 200,
+            "totalTokens": 1000,
+            "criticalErrors": []
+          }
+        }
+      ],
+      "original": {
+        "counts": {
+          "gain": 0,
+          "regression": 0,
+          "preserved": 2,
+          "persistent-failure": 0,
+          "inconclusive": 0,
+          "missing": 0,
+          "unmatched": 0
+        },
+        "gates": {
+          "releaseEligible": true,
+          "reasons": [],
+          "qualityImprovementSupported": true,
+          "focusedInputTokenTargetMet": true,
+          "focusedInputSavingsSupported": true,
+          "efficiencyClaimSupported": true,
+          "promotionAuthorized": false,
+          "liveRunsAuthorized": false,
+          "policy": "Quality is a predeclared 0-1 normalized rubric score; two-percentage-point margin. Broader token efficiency also requires measured total tokens not worsening. Monetary savings are not inferred. Flags require externally verified artifacts. Numeric eligibility never authorizes promotion or model runs."
+        }
+      },
+      "guarded": {
+        "counts": {
+          "gain": 0,
+          "regression": 0,
+          "preserved": 0,
+          "persistent-failure": 0,
+          "inconclusive": 0,
+          "missing": 0,
+          "unmatched": 2
+        },
+        "rejections": [
+          {
+            "pair": "synthetic-a",
+            "arm": "before",
+            "field": "modelRevision",
+            "reason": "Identity/accounting explicitly unverified"
+          },
+          {
+            "pair": "synthetic-a",
+            "arm": "after",
+            "field": "modelRevision",
+            "reason": "Identity/accounting explicitly unverified"
+          },
+          {
+            "pair": "synthetic-b",
+            "arm": "before",
+            "field": "modelRevision",
+            "reason": "Identity/accounting explicitly unverified"
+          },
+          {
+            "pair": "synthetic-b",
+            "arm": "after",
+            "field": "modelRevision",
+            "reason": "Identity/accounting explicitly unverified"
+          }
+        ],
+        "gates": {
+          "releaseEligible": false,
+          "reasons": [
+            "critical-evidence-incomplete",
+            "unresolved-pairs",
+            "quality-noninferiority-not-established",
+            "quality-evidence-incomplete"
+          ],
+          "qualityImprovementSupported": false,
+          "focusedInputTokenTargetMet": null,
+          "focusedInputSavingsSupported": false,
+          "efficiencyClaimSupported": false,
+          "promotionAuthorized": false,
+          "liveRunsAuthorized": false,
+          "policy": "Quality is a predeclared 0-1 normalized rubric score; two-percentage-point margin. Broader token efficiency also requires measured total tokens not worsening. Monetary savings are not inferred. Flags require externally verified artifacts. Numeric eligibility never authorizes promotion or model runs."
+        }
+      },
+      "classification": "comparison-oracle-defect; unavailable identity text must not qualify as a matched revision"
+    }
+  ],
+  "modelCalls": 0,
+  "newNativeRuns": 0,
+  "sourceChanges": "Forward-use guard only; original modules retained byte-for-byte"
+}

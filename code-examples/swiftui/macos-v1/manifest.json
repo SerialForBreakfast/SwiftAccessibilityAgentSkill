@@ -1,0 +1,352 @@
+{
+  "schema": 1,
+  "id": "swiftui-macos-v1",
+  "revision": "3",
+  "platform": "macOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 27,
+  "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only.",
+  "claims": [
+    {
+      "id": "semantics",
+      "url": "https://developer.apple.com/documentation/swiftui/view-accessibility",
+      "section": "Public SwiftUI API composition; exact installed SDK declarations and narrow application contract",
+      "statement": "Native controls/modifier composition and Binding-backed application state. Tests do not inspect generated accessibility elements.",
+      "availability": "Compile target26 against SDK27; exact runtime recorded separately. Platform-specific unavailable members must be excluded or explicitly unresolved, not guessed.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "documents",
+      "url": "https://developer.apple.com/documentation/swiftui/view/accessibilityrotor(_:entries:entrylabel:)",
+      "section": "Public SwiftUI API composition; exact installed SDK declarations and narrow application contract",
+      "statement": "Rotor composition and landmark item identity. Stable IDs/revision-owned actions are application policy, not proof of rotor navigation.",
+      "availability": "Compile target26 against SDK27; exact runtime recorded separately. Platform-specific unavailable members must be excluded or explicitly unresolved, not guessed.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "preferences",
+      "url": "https://developer.apple.com/documentation/swiftui/scaledmetric",
+      "section": "Public SwiftUI API composition; exact installed SDK declarations and narrow application contract",
+      "statement": "Semantic text and environment-driven composition; units assert pure policy, not environment propagation or rendered scaling.",
+      "availability": "Compile target26 against SDK27; exact runtime recorded separately. Platform-specific unavailable members must be excluded or explicitly unresolved, not guessed.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "lifecycle",
+      "url": "https://developer.apple.com/documentation/swiftui/accessibilityfocusstate",
+      "section": "Public SwiftUI API composition; exact installed SDK declarations and narrow application contract",
+      "statement": "Focus binding and sheet callback composition. State units prove requested target ownership, not delivered focus.",
+      "availability": "Compile target26 against SDK27; exact runtime recorded separately. Platform-specific unavailable members must be excluded or explicitly unresolved, not guessed.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "forms",
+      "url": "https://developer.apple.com/documentation/swiftui/binding",
+      "section": "Public SwiftUI API composition; exact installed SDK declarations and narrow application contract",
+      "statement": "Form input Binding and injected main-actor validator ownership; no actual network scheduling.",
+      "availability": "Compile target26 against SDK27; exact runtime recorded separately. Platform-specific unavailable members must be excluded or explicitly unresolved, not guessed.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "interop",
+      "url": "https://developer.apple.com/documentation/swiftui/nsviewrepresentable",
+      "section": "Public SwiftUI API composition; exact installed SDK declarations and narrow application contract",
+      "statement": "Public native coordinator configuration/action/dismantle paths, with separate AppKit/UIKit implementation. Not automatic hosting/update propagation.",
+      "availability": "Compile target26 against SDK27; exact runtime recorded separately. Platform-specific unavailable members must be excluded or explicitly unresolved, not guessed.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "media",
+      "url": "https://developer.apple.com/documentation/avkit/videoplayer",
+      "section": "Public SwiftUI API composition; exact installed SDK declarations and narrow application contract",
+      "statement": "Native VideoPlayer composition and synthetic caption-option state; no actual caption rendering or AVMediaSelection application.",
+      "availability": "Compile target26 against SDK27; exact runtime recorded separately. Platform-specific unavailable members must be excluded or explicitly unresolved, not guessed.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/Documents.swift",
+      "sha256": "81954f9eeefb3f0035deb4304cacb6bda53e7e93f653662c07e250e9b9f49abf"
+    },
+    {
+      "path": "Sources/FormsMedia.swift",
+      "sha256": "b1bd2ad221453e4ccf252b653fca9be03fbba5c6e4f9e2d7e7e3b163b8dbb7fe"
+    },
+    {
+      "path": "Sources/Interop.swift",
+      "sha256": "056958067a8c670625b84236acd94bea77c939c0aeb4c5efd00bf8a6d202dec4"
+    },
+    {
+      "path": "Sources/Lifecycle.swift",
+      "sha256": "f28c995e8afd31392c31604b425d876f30de38f80258eb0f0fff50b91b98986e"
+    },
+    {
+      "path": "Sources/Preferences.swift",
+      "sha256": "f49df9c3171ed6527ddfbae260622f8131432cc055c067f8053a6de9cf10a958"
+    },
+    {
+      "path": "Sources/Semantics.swift",
+      "sha256": "b6ce46c81e9213b519cf8ac0e2e949902f2afcefbb7593074e00c95a43396db1"
+    },
+    {
+      "path": "Tests/InteropTests.swift",
+      "sha256": "a5c2c44182b831a492ecac06ac1eef19ee502c318c39539f1920b06aca4625ef"
+    },
+    {
+      "path": "Tests/SwiftUIContractsTests.swift",
+      "sha256": "18f6d43bfd6d9f9d2dee94af36d60380fc3881186ea254255be7452bc26d2227"
+    },
+    {
+      "path": "NegativeFixtures/documents.swift",
+      "sha256": "fb73e07bd643979a7ba9bf36c030f33e3595d6a09e0e23cdf14f91aee2c9f3eb"
+    },
+    {
+      "path": "NegativeFixtures/forms.swift",
+      "sha256": "d09db719821a6885b3d1fdfb26d8fff09a59cf22dca15cafd604c899673f6f4b"
+    },
+    {
+      "path": "NegativeFixtures/interop.swift",
+      "sha256": "ccf0c933e72d0f84aec7ec6da830ed0b1d24cb321af3bebd07818e2db90a081a"
+    },
+    {
+      "path": "NegativeFixtures/lifecycle.swift",
+      "sha256": "ec383d810ce016a2fa507de46c0a38e76955598299dcf36bd5071356d604d597"
+    },
+    {
+      "path": "NegativeFixtures/media.swift",
+      "sha256": "9c1583a5b940606eaaa46dc679c4ea743e3d3a1e059c22c985deb0d73b4a0ac7"
+    },
+    {
+      "path": "NegativeFixtures/preferences.swift",
+      "sha256": "eb8d732d05900884d4595d1c738567c9f5d1b2547cd6eedb436546c841333b33"
+    },
+    {
+      "path": "NegativeFixtures/semantics.swift",
+      "sha256": "63cdae534262a74ff5b0cdca53be80c30f937c48fc048d8000f45b4770048f92"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "semantics",
+        "documents",
+        "preferences",
+        "lifecycle",
+        "forms",
+        "interop",
+        "media"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "semantics",
+        "documents",
+        "preferences",
+        "lifecycle",
+        "forms",
+        "interop",
+        "media"
+      ],
+      "testIds": [
+        "InteropTests/testCoordinatorUpdatesCurrentNameAndEnabledState",
+        "InteropTests/testCoordinatorReplacesOldCallback",
+        "InteropTests/testNativeActionDispatchUsesCurrentHandlerOnce",
+        "InteropTests/testOldNativeViewCannotDispatchAfterRebind",
+        "InteropTests/testExternallyDisabledButtonRejectsCallback",
+        "InteropTests/testDismantleRejectsRetainedAction",
+        "InteropTests/testRetainedCallbackDoesNotRetainCoordinator",
+        "InteropTests/testCoordinatorDoesNotRetainNativeView",
+        "InteropTests/testUnownedNativeViewLifetimeAfterAutoreleasePool",
+        "InteropTests/testPublicDismantleStopsCoordinator",
+        "SemanticsTests/testBindingReadsCurrentNativeToggleState",
+        "SemanticsTests/testRepeatedBindingSetDoesNotDuplicateCallback",
+        "SemanticsTests/testDisabledBindingPreservesState",
+        "SemanticsTests/testBothToggleTransitionsRefreshValue",
+        "SemanticsTests/testConfigureClearsPriorStatusAndPriorityWithoutReuse",
+        "SemanticsTests/testCurrentPriorityNameAndStatus",
+        "SemanticsTests/testOrdinaryHelpUsesExistingCallback",
+        "SemanticsTests/testDisabledHelpDoesNotInvoke",
+        "SemanticsTests/testOrdinarySetterAndAdjustmentShareValue",
+        "SemanticsTests/testBoundsDoNotDuplicateChange",
+        "SemanticsTests/testDisabledAdjustmentCannotChangeState",
+        "SemanticsTests/testHintTracksCurrentAvailability",
+        "DocumentTests/testLandmarksAreSubsetNotEveryRow",
+        "DocumentTests/testDuplicateIDsRejectUpdateAtomically",
+        "DocumentTests/testSelectionSurvivesReorder",
+        "DocumentTests/testRemovedSelectionClears",
+        "DocumentTests/testOldActionDoesNotTargetReboundRow",
+        "DocumentTests/testOrdinarySelectionUsesCurrentItem",
+        "DocumentTests/testDeleteCurrentItemOnceAndClearSelection",
+        "DocumentTests/testUnknownItemActionIsQuiet",
+        "DocumentTests/testRetainedActionDoesNotRetainOwner",
+        "DocumentTests/testEmptyDocumentHasNoLandmarksOrSelection",
+        "PreferenceTests/testReducedMotionPolicyKeepsFinalStateIndependent",
+        "PreferenceTests/testTransparencyPolicyPreservesNonColorText",
+        "PreferenceTests/testLargeTextPolicyUsesVerticalComposition",
+        "PreferenceTests/testNormalTextDoesNotForceVerticalComposition",
+        "PreferenceTests/testDifferentiateFlagDoesNotRequireMotion",
+        "PreferenceTests/testPreferencesAreIndependent",
+        "LifecycleTests/testBeginRecordsEntryWithoutRestorationRequest",
+        "LifecycleTests/testDismissResolvesCurrentOrigin",
+        "LifecycleTests/testRemovedOriginUsesFallback",
+        "LifecycleTests/testOldDismissalCannotConsumeNewSession",
+        "LifecycleTests/testRepeatedDismissIsQuiet",
+        "LifecycleTests/testCancellationUsesSameRestorationContract",
+        "LifecycleTests/testReentrantRequestPreservesNewPresentation",
+        "LifecycleTests/testEligibleListIsEvaluatedAtCompletion",
+        "FormsMediaTests/testFormPreservesRawInputSnapshot",
+        "FormsMediaTests/testEditBindingInvalidatesPendingReply",
+        "FormsMediaTests/testOutOfOrderValidationCannotOverwriteLatest",
+        "FormsMediaTests/testDuplicateSuccessDoesNotSaveTwice",
+        "FormsMediaTests/testDirectEditRejectsOldSnapshot",
+        "FormsMediaTests/testInvalidThenCorrectedFormRecovers",
+        "FormsMediaTests/testEmptyValidationMessageIsUnavailableNotSuccess",
+        "FormsMediaTests/testReentrantSaveOwnsNewRequest",
+        "FormsMediaTests/testRetainedReplyDoesNotRetainForm",
+        "FormsMediaTests/testMissingAndEmptyMediaAreDifferentStates",
+        "FormsMediaTests/testMediaSelectionSurvivesReorder",
+        "FormsMediaTests/testRemovedTrackSelectionClears",
+        "FormsMediaTests/testStaleTrackLoadIsIgnored",
+        "FormsMediaTests/testUnknownTrackCannotChangeSelection",
+        "FormsMediaTests/testMetadataChoiceDoesNotMutatePlayerPreferences",
+        "FormsMediaTests/testDuplicateTrackIDsAreNotAccepted"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "interop",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "interop"
+      ],
+      "testIds": [
+        "InteropTests/testCoordinatorReplacesOldCallback"
+      ],
+      "failureIds": [
+        "InteropTests/testCoordinatorReplacesOldCallback"
+      ],
+      "replacement": {
+        "target": "Sources/Interop.swift",
+        "source": "NegativeFixtures/interop.swift"
+      }
+    },
+    {
+      "id": "semantics",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "semantics"
+      ],
+      "testIds": [
+        "SemanticsTests/testRepeatedBindingSetDoesNotDuplicateCallback"
+      ],
+      "failureIds": [
+        "SemanticsTests/testRepeatedBindingSetDoesNotDuplicateCallback"
+      ],
+      "replacement": {
+        "target": "Sources/Semantics.swift",
+        "source": "NegativeFixtures/semantics.swift"
+      }
+    },
+    {
+      "id": "documents",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "documents"
+      ],
+      "testIds": [
+        "DocumentTests/testOldActionDoesNotTargetReboundRow"
+      ],
+      "failureIds": [
+        "DocumentTests/testOldActionDoesNotTargetReboundRow"
+      ],
+      "replacement": {
+        "target": "Sources/Documents.swift",
+        "source": "NegativeFixtures/documents.swift"
+      }
+    },
+    {
+      "id": "preferences",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "preferences"
+      ],
+      "testIds": [
+        "PreferenceTests/testReducedMotionPolicyKeepsFinalStateIndependent"
+      ],
+      "failureIds": [
+        "PreferenceTests/testReducedMotionPolicyKeepsFinalStateIndependent"
+      ],
+      "replacement": {
+        "target": "Sources/Preferences.swift",
+        "source": "NegativeFixtures/preferences.swift"
+      }
+    },
+    {
+      "id": "lifecycle",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "lifecycle"
+      ],
+      "testIds": [
+        "LifecycleTests/testOldDismissalCannotConsumeNewSession"
+      ],
+      "failureIds": [
+        "LifecycleTests/testOldDismissalCannotConsumeNewSession"
+      ],
+      "replacement": {
+        "target": "Sources/Lifecycle.swift",
+        "source": "NegativeFixtures/lifecycle.swift"
+      }
+    },
+    {
+      "id": "forms",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "forms"
+      ],
+      "testIds": [
+        "FormsMediaTests/testOutOfOrderValidationCannotOverwriteLatest"
+      ],
+      "failureIds": [
+        "FormsMediaTests/testOutOfOrderValidationCannotOverwriteLatest"
+      ],
+      "replacement": {
+        "target": "Sources/FormsMedia.swift",
+        "source": "NegativeFixtures/forms.swift"
+      }
+    },
+    {
+      "id": "media",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "media"
+      ],
+      "testIds": [
+        "FormsMediaTests/testStaleTrackLoadIsIgnored"
+      ],
+      "failureIds": [
+        "FormsMediaTests/testStaleTrackLoadIsIgnored"
+      ],
+      "replacement": {
+        "target": "Sources/FormsMedia.swift",
+        "source": "NegativeFixtures/media.swift"
+      }
+    }
+  ]
+}

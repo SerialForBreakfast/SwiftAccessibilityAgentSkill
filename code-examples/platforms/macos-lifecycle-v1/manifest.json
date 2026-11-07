@@ -1,0 +1,222 @@
+{
+  "schema": 1,
+  "id": "macos-lifecycle-v1",
+  "revision": "2",
+  "platform": "macOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 27,
+  "limitations": "Compile/unit request, state and observer ownership only. Injected scheduling makes lifecycle assertions deterministic; no UI automation, delivered focus/speech, actual system preference changes or appearance claim. Mac27 host does not prove Mac26 runtime behavior.",
+  "claims": [
+    {
+      "id": "restoration",
+      "url": "https://developer.apple.com/documentation/appkit/nswindow/makefirstresponder(_:)",
+      "section": "Requesting first responder or focus update; ownership, fallback and token policy are example-specific",
+      "statement": "After current dismissal completion, request a currently eligible owned target once; reject stale/cancelled completions.",
+      "availability": "SDK27 declarations and target26 compilation; full member introduction/deprecation audit remains separate.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "preferences",
+      "url": "https://developer.apple.com/documentation/appkit/nsworkspace/accessibilitydisplayoptionsdidchangenotification",
+      "section": "Platform preference change notification and current setting queries",
+      "statement": "Read fresh motion/transparency/contrast settings on start and observed changes; own observer cleanup and ignore stopped or stale queued delivery.",
+      "availability": "NSAccessibility.h: display-options notification, contrast/transparency macOS10.10; reduce motion macOS10.12. Exact execution environment is recorded separately.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/DesktopLifecycle.swift",
+      "sha256": "1d79aece2dae160d39b3c7fa274d19bccbaf72213de8f45cc2c07b3d7a5e4193"
+    },
+    {
+      "path": "Tests/DesktopLifecycleTests.swift",
+      "sha256": "7aee737b5a3d3edf1390c8ee4b14910a5733cfea8bbdf2622135a0b4b00b1338"
+    },
+    {
+      "path": "NegativeFixtures/ForeignTarget.swift",
+      "sha256": "e7f8d2fd6c9aef05ef71cabe20a456c71fcbf810fde7564a693944c582f50e25"
+    },
+    {
+      "path": "NegativeFixtures/StaleCompletion.swift",
+      "sha256": "15ca25f2c324982a02fbc7b12c06e102670e775ee38c706947a710859584c036"
+    },
+    {
+      "path": "NegativeFixtures/StoppedDelivery.swift",
+      "sha256": "80845229f37030c478773b49761ccc5d4eb03fe35145a9c172e61a0c6566d68a"
+    },
+    {
+      "path": "NegativeFixtures/OldGeneration.swift",
+      "sha256": "03925fcc00328b1c49c72094501be3f647e55ee898abce2dde40a8922c880ce6"
+    },
+    {
+      "path": "NegativeFixtures/RepeatedPreference.swift",
+      "sha256": "e8b18798874b98d628f4d91c8a49b2982df6dc96296b63f190eda3d06a12b573"
+    },
+    {
+      "path": "NegativeFixtures/OriginalNoResponderCheck.swift",
+      "sha256": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "restoration",
+        "preferences"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "restoration",
+        "preferences"
+      ],
+      "testIds": [
+        "DesktopLifecycleTests/testRefusingOriginalUsesFallback",
+        "DesktopLifecycleTests/testBeginDoesNotRequestFocus",
+        "DesktopLifecycleTests/testCompletedModalRequestsOriginal",
+        "DesktopLifecycleTests/testRemovedOriginalUsesFallback",
+        "DesktopLifecycleTests/testHiddenAncestorUsesFallback",
+        "DesktopLifecycleTests/testDisabledOriginalUsesFallback",
+        "DesktopLifecycleTests/testForeignOriginalUsesFallback",
+        "DesktopLifecycleTests/testOldCompletionCannotConsumeNewSession",
+        "DesktopLifecycleTests/testDuplicateCompletionIsQuiet",
+        "DesktopLifecycleTests/testCancellationRejectsLateCompletion",
+        "DesktopLifecycleTests/testOldCancellationPreservesCurrentSession",
+        "DesktopLifecycleTests/testNoEligibleTargetDoesNotRequest",
+        "DesktopLifecycleTests/testRequestRejectionIsReturned",
+        "DesktopLifecycleTests/testReentrantRequestPreservesNewSession",
+        "DesktopLifecycleTests/testHiddenRootPreventsRequest",
+        "DesktopLifecycleTests/testPreferenceInitialSnapshot",
+        "DesktopLifecycleTests/testPreferenceStartIsIdempotent",
+        "DesktopLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated",
+        "DesktopLifecycleTests/testPreferenceMotionChange",
+        "DesktopLifecycleTests/testPreferenceTransparencyChange",
+        "DesktopLifecycleTests/testPreferenceContrastChange",
+        "DesktopLifecycleTests/testPreferenceStoppedQueuedWorkIgnored",
+        "DesktopLifecycleTests/testPreferenceStopRemovesObservers",
+        "DesktopLifecycleTests/testPreferenceRestartRefreshesSnapshot",
+        "DesktopLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart",
+        "DesktopLifecycleTests/testPreferenceOtherCenterIgnored",
+        "DesktopLifecycleTests/testPreferenceDeinitRemovesObservers",
+        "DesktopLifecycleTests/testDefaultRequestWithoutWindowReturnsFalse"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "foreigntarget",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "restoration"
+      ],
+      "testIds": [
+        "DesktopLifecycleTests/testForeignOriginalUsesFallback"
+      ],
+      "failureIds": [
+        "DesktopLifecycleTests/testForeignOriginalUsesFallback"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopLifecycle.swift",
+        "source": "NegativeFixtures/ForeignTarget.swift"
+      }
+    },
+    {
+      "id": "stalecompletion",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "restoration"
+      ],
+      "testIds": [
+        "DesktopLifecycleTests/testOldCompletionCannotConsumeNewSession"
+      ],
+      "failureIds": [
+        "DesktopLifecycleTests/testOldCompletionCannotConsumeNewSession"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopLifecycle.swift",
+        "source": "NegativeFixtures/StaleCompletion.swift"
+      }
+    },
+    {
+      "id": "stoppeddelivery",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "preferences"
+      ],
+      "testIds": [
+        "DesktopLifecycleTests/testPreferenceStoppedQueuedWorkIgnored"
+      ],
+      "failureIds": [
+        "DesktopLifecycleTests/testPreferenceStoppedQueuedWorkIgnored"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopLifecycle.swift",
+        "source": "NegativeFixtures/StoppedDelivery.swift"
+      }
+    },
+    {
+      "id": "oldgeneration",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "preferences"
+      ],
+      "testIds": [
+        "DesktopLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart"
+      ],
+      "failureIds": [
+        "DesktopLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopLifecycle.swift",
+        "source": "NegativeFixtures/OldGeneration.swift"
+      }
+    },
+    {
+      "id": "repeatedpreference",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "preferences"
+      ],
+      "testIds": [
+        "DesktopLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated"
+      ],
+      "failureIds": [
+        "DesktopLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopLifecycle.swift",
+        "source": "NegativeFixtures/RepeatedPreference.swift"
+      }
+    },
+    {
+      "id": "original-responder-check",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "restoration"
+      ],
+      "testIds": [
+        "DesktopLifecycleTests/testRefusingOriginalUsesFallback"
+      ],
+      "failureIds": [
+        "DesktopLifecycleTests/testRefusingOriginalUsesFallback"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopLifecycle.swift",
+        "source": "NegativeFixtures/OriginalNoResponderCheck.swift"
+      }
+    }
+  ]
+}

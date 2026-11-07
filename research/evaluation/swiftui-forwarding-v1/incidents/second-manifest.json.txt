@@ -1,0 +1,173 @@
+{
+  "schema": 1,
+  "id": "swiftui-forwarding-macos-v1",
+  "revision": "2",
+  "platform": "macOS",
+  "runtimeMajor": 27,
+  "deploymentTarget": "26.0",
+  "limitations": "Direct native configuration/dispatch and bound application policy. No SwiftUI tree introspection, automatic update propagation, delivered speech/focus, rendered text/contrast, UI testing or OS27 promotion.",
+  "claims": [
+    {
+      "id": "forwarding",
+      "url": "https://developer.apple.com/documentation/swiftui/nsviewrepresentable",
+      "section": "Public update/coordinator/dismantle paths and explicit native properties",
+      "statement": "Direct native label/value/help/selection/children/action forwarding used by actual representable source. Not automatic hosting propagation or SwiftUI generated-tree evidence.",
+      "availability": "Target26 compiled against SDK27; Mac heading role declared macOS26. Runtime receipts separately identify host27 and simulators26.5. TV font configuration is not TV27 Larger Text preference.",
+      "reviewedOn": "2026-11-06"
+    },
+    {
+      "id": "preferences",
+      "url": "https://developer.apple.com/documentation/swiftui/environmentvalues/accessibilityreducemotion",
+      "section": "Injected shared selection animation policy and native text configuration",
+      "statement": "Final application state changes before optional animation; no callbacks for unchanged selection. Unit policy is separate from framework environment propagation and rendered contrast.",
+      "availability": "Target26/SDK27; native fonts and member availability determined by platform declarations, not inferred UIKit defaults for SwiftUI.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/NativeSurface.swift",
+      "sha256": "68509063339b3691e466660a5c46f1411023406a01470727c9b9c8415432cb6e"
+    },
+    {
+      "path": "Sources/PreferenceSurface.swift",
+      "sha256": "91c78ea47d7d4e473ddf8e90edc74233033366a956e6e0d9eb04b3e600f69e55"
+    },
+    {
+      "path": "Tests/ForwardingTests.swift",
+      "sha256": "229eb3f14a00b06d5b4f42d7718c111ef3e0581913e8c77465cec92326ba5a83"
+    },
+    {
+      "path": "NegativeFixtures/hint.swift",
+      "sha256": "6d72f51b795ee168a349d8d320d44ffc84dba645254044513f95f1ebe7c413d4"
+    },
+    {
+      "path": "NegativeFixtures/motion.swift",
+      "sha256": "23e6d6c1d467b6c0cc2aec971ad4f565efbf27becdb9ee0e214527712f69cdb2"
+    },
+    {
+      "path": "NegativeFixtures/stale.swift",
+      "sha256": "358299d42056f3d8763ebfff3571ece7ecf441f2a0439b3971833fb9602e08a3"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "forwarding",
+        "preferences"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "forwarding",
+        "preferences"
+      ],
+      "testIds": [
+        "ForwardingTests/testInitialExplicitName",
+        "ForwardingTests/testNamesRefreshWithoutReconstruction",
+        "ForwardingTests/testValueMatchesVisibleState",
+        "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+        "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+        "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+        "ForwardingTests/testHintCanBeSet",
+        "ForwardingTests/testNilHintClearsOldHelp",
+        "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+        "ForwardingTests/testDisabledStateForwardedToBothControls",
+        "ForwardingTests/testReenableRestoresBothControls",
+        "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+        "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+        "ForwardingTests/testHeadingIsAddedAndRemoved",
+        "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+        "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+        "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+        "ForwardingTests/testReconfigureDoesNotAccumulateChildren",
+        "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+        "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+        "ForwardingTests/testShortcutUsesSameSecondaryPath",
+        "ForwardingTests/testOldShortcutCannotReachNewItem",
+        "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+        "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+        "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+        "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+        "ForwardingTests/testStopInvalidatesCapturedAction",
+        "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+        "ForwardingTests/testShortcutListDoesNotAccumulate",
+        "ForwardingTests/testCallbackDoesNotRetainOwner",
+        "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+        "ForwardingTests/testPublicDismantleStopsNativeDispatch",
+        "StoreTests/testBindingWritesSameSnapshotConsumedByWrapper",
+        "StoreTests/testSelectionUpdatesBeforeAnimationCallback",
+        "StoreTests/testReducedMotionStillUpdatesFinalState",
+        "StoreTests/testUnchangedSelectionDoesNotNotifyOrAnimate",
+        "StoreTests/testBothSelectionDirectionsUseCurrentStatus",
+        "StoreTests/testReentrantAnimationPreservesLatestState",
+        "StoreTests/testReduceTransparencyPolicyChoosesOpaque",
+        "StoreTests/testPreferenceChangeRestoresNormalPolicy",
+        "StoreTests/testTitleEditDoesNotEraseSelection"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "hint",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "forwarding"
+      ],
+      "testIds": [
+        "ForwardingTests/testNilHintClearsOldHelp"
+      ],
+      "failureIds": [
+        "ForwardingTests/testNilHintClearsOldHelp"
+      ],
+      "replacement": {
+        "target": "Sources/NativeSurface.swift",
+        "source": "NegativeFixtures/hint.swift"
+      }
+    },
+    {
+      "id": "stale",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "forwarding"
+      ],
+      "testIds": [
+        "ForwardingTests/testOldShortcutCannotReachNewItem"
+      ],
+      "failureIds": [
+        "ForwardingTests/testOldShortcutCannotReachNewItem"
+      ],
+      "replacement": {
+        "target": "Sources/NativeSurface.swift",
+        "source": "NegativeFixtures/stale.swift"
+      }
+    },
+    {
+      "id": "motion",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "preferences"
+      ],
+      "testIds": [
+        "StoreTests/testReducedMotionStillUpdatesFinalState"
+      ],
+      "failureIds": [
+        "StoreTests/testReducedMotionStillUpdatesFinalState"
+      ],
+      "replacement": {
+        "target": "Sources/PreferenceSurface.swift",
+        "source": "NegativeFixtures/motion.swift"
+      }
+    }
+  ]
+}

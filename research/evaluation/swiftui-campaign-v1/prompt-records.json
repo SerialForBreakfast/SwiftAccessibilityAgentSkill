@@ -1,0 +1,837 @@
+{
+  "schema": 1,
+  "cases": [
+    {
+      "id": "swiftui-ios-v1/semantics",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "semantics",
+      "guidelines": [
+        "G-001",
+        "G-002",
+        "G-003",
+        "G-004",
+        "G-007",
+        "G-008"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/semantics.prompt.md",
+        "sha256": "74d04592641f2fb2a3050be50548406afd9582cbf473bccf67976bfdbf3e6076",
+        "text": "Target iOS26, SwiftUI.\n\nOur SwiftUI settings area has a Downloads toggle, Help button and volume readout. Keep the ordinary controls and their current callbacks. Updates can change title, priority and status without reconstructing the state object. Make the names and state reflect current data. Add five-point accessible volume adjustment through the same bounded setter as ordinary controls; values range from0 to100 and unchanged or disabled requests must not call back. Preserve a valid native Toggle rather than inventing a missing-value defect.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/semantics.rubric.md",
+        "sha256": "b9f4ce1f8bb89311630973c5a8a2aedd08cc2ba6fa8f31fdb820d178e3d063bc"
+      },
+      "testIds": [
+        "SemanticsTests/testBindingReadsCurrentNativeToggleState",
+        "SemanticsTests/testRepeatedBindingSetDoesNotDuplicateCallback",
+        "SemanticsTests/testDisabledBindingPreservesState",
+        "SemanticsTests/testBothToggleTransitionsRefreshValue",
+        "SemanticsTests/testConfigureClearsPriorStatusAndPriorityWithoutReuse",
+        "SemanticsTests/testCurrentPriorityNameAndStatus",
+        "SemanticsTests/testOrdinaryHelpUsesExistingCallback",
+        "SemanticsTests/testDisabledHelpDoesNotInvoke",
+        "SemanticsTests/testOrdinarySetterAndAdjustmentShareValue",
+        "SemanticsTests/testBoundsDoNotDuplicateChange",
+        "SemanticsTests/testDisabledAdjustmentCannotChangeState",
+        "SemanticsTests/testHintTracksCurrentAvailability"
+      ],
+      "manifest": "code-examples/swiftui/ios-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-ios-v1/documents",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "documents",
+      "guidelines": [
+        "G-005",
+        "G-006",
+        "G-007",
+        "G-009",
+        "G-014"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/documents.prompt.md",
+        "sha256": "7310de6a5160a4cccc83aba9c3d77d4a824b71515ddc53625310188846281691",
+        "text": "Target iOS26, SwiftUI.\n\nOur SwiftUI article list has stable string IDs, titles and a flag identifying important articles. Keep visible Open and Delete operations on each row, and add shortcut navigation to important articles without requiring it for ordinary use. Updates may rename, reorder or remove articles. Reject duplicate IDs atomically; preserve surviving selection. Old captured actions must not apply to a rebound revision, and deleted selections must clear.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/documents.rubric.md",
+        "sha256": "7165d4edc4678dbb7abef8291f767e485a7aa08159cc207e16c10a9e137c55d9"
+      },
+      "testIds": [
+        "DocumentTests/testLandmarksAreSubsetNotEveryRow",
+        "DocumentTests/testDuplicateIDsRejectUpdateAtomically",
+        "DocumentTests/testSelectionSurvivesReorder",
+        "DocumentTests/testRemovedSelectionClears",
+        "DocumentTests/testOldActionDoesNotTargetReboundRow",
+        "DocumentTests/testOrdinarySelectionUsesCurrentItem",
+        "DocumentTests/testDeleteCurrentItemOnceAndClearSelection",
+        "DocumentTests/testUnknownItemActionIsQuiet",
+        "DocumentTests/testRetainedActionDoesNotRetainOwner",
+        "DocumentTests/testEmptyDocumentHasNoLandmarksOrSelection"
+      ],
+      "manifest": "code-examples/swiftui/ios-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-ios-v1/preferences",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "preferences",
+      "guidelines": [
+        "G-010",
+        "G-011",
+        "G-012"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/preferences.prompt.md",
+        "sha256": "7331721435c05211af1942acb0bfed69b4722fdffac1eed6a7fba557ea0ee7d0",
+        "text": "Target iOS26, SwiftUI.\n\nBuild a SwiftUI status area with readable scalable text and selected/not-selected wording, not color alone. Respect reduced motion and reduced transparency without losing the final state or content. On platforms with the relevant system text-size environment, use a flexible layout policy for accessibility sizes. For TV26, keep readable semantic text but do not promise the TV27 system Larger Text feature.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/preferences.rubric.md",
+        "sha256": "a435b0f49a9df112f24cfb15be9a93049e2c134f0ced327c3c90481d95880b6f"
+      },
+      "testIds": [
+        "PreferenceTests/testReducedMotionPolicyKeepsFinalStateIndependent",
+        "PreferenceTests/testTransparencyPolicyPreservesNonColorText",
+        "PreferenceTests/testLargeTextPolicyUsesVerticalComposition",
+        "PreferenceTests/testNormalTextDoesNotForceVerticalComposition",
+        "PreferenceTests/testDifferentiateFlagDoesNotRequireMotion",
+        "PreferenceTests/testPreferencesAreIndependent"
+      ],
+      "manifest": "code-examples/swiftui/ios-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-ios-v1/lifecycle",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "lifecycle",
+      "guidelines": [
+        "G-006",
+        "G-013"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/lifecycle.prompt.md",
+        "sha256": "90629dd9d60ff9063e86301fadc4998f412c5b06214fd2ef241ad7e1ee33d310",
+        "text": "Target iOS26, SwiftUI.\n\nOur SwiftUI details sheet needs a clear entry target and a return target after dismissal. Keep the ordinary Open and Close controls. The originating item may disappear while the sheet is open; use a persistent fallback. Multiple presentation generations and old dismissal callbacks are possible. Resolve the current eligible target at completion and ignore stale or repeated completion. A restoration request may synchronously open another sheet.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/lifecycle.rubric.md",
+        "sha256": "a7b49c158a6f31cae5387e831cf3c385ea1275643861fcaa6377fc202cdbe54a"
+      },
+      "testIds": [
+        "LifecycleTests/testBeginRecordsEntryWithoutRestorationRequest",
+        "LifecycleTests/testDismissResolvesCurrentOrigin",
+        "LifecycleTests/testRemovedOriginUsesFallback",
+        "LifecycleTests/testOldDismissalCannotConsumeNewSession",
+        "LifecycleTests/testRepeatedDismissIsQuiet",
+        "LifecycleTests/testCancellationUsesSameRestorationContract",
+        "LifecycleTests/testReentrantRequestPreservesNewPresentation",
+        "LifecycleTests/testEligibleListIsEvaluatedAtCompletion"
+      ],
+      "manifest": "code-examples/swiftui/ios-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-ios-v1/forms",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "forms",
+      "guidelines": [
+        "G-003",
+        "G-014"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/forms.prompt.md",
+        "sha256": "3c54c7b993ec8918a1cd07a12dd6443a3d3a7386582d112520cf1021310ea91d",
+        "text": "Target iOS26, SwiftUI.\n\nOur SwiftUI email form uses an injected main-actor validator taking the current string and a completion. A nil error means success, a nonempty string is a user-facing error, and an empty error is a service failure. Replies may be synchronous, duplicated or out of order. Edits, cancellation and another Save must invalidate obsolete replies. Preserve raw input; Save may reenter validation. Show current errors visibly and keep the existing form controls.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/forms.rubric.md",
+        "sha256": "060e53a281ff32f520468d2e40439a37ab90d4411da3ae832c9cd1c0d0ccd84a"
+      },
+      "testIds": [
+        "FormsMediaTests/testFormPreservesRawInputSnapshot",
+        "FormsMediaTests/testEditBindingInvalidatesPendingReply",
+        "FormsMediaTests/testOutOfOrderValidationCannotOverwriteLatest",
+        "FormsMediaTests/testDuplicateSuccessDoesNotSaveTwice",
+        "FormsMediaTests/testDirectEditRejectsOldSnapshot",
+        "FormsMediaTests/testInvalidThenCorrectedFormRecovers",
+        "FormsMediaTests/testEmptyValidationMessageIsUnavailableNotSuccess",
+        "FormsMediaTests/testReentrantSaveOwnsNewRequest",
+        "FormsMediaTests/testRetainedReplyDoesNotRetainForm"
+      ],
+      "manifest": "code-examples/swiftui/ios-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-ios-v1/media",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "media",
+      "guidelines": [
+        "G-015"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/media.prompt.md",
+        "sha256": "2ef8d48e375dbc193bbb232fe5bfc9dd480c9f1f8831c88d61fe309131bd54cc",
+        "text": "Target iOS26, SwiftUI.\n\nOur SwiftUI player must keep the supplied AVPlayer and native controls. Build a synthetic, injected caption-options browser with stable IDs and localized names. Distinguish not-yet-loaded options from a successfully empty result. Preserve a selected ID through reordering, clear it when removed, reject unknown selections and duplicate IDs, and ignore old asynchronous option-list replies. Do not change volume or mute while browsing. This component records a preference only; applying AVMediaSelection and rendering captions are outside this task.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/media.rubric.md",
+        "sha256": "e19eaaded9e1925ee2558d2863f30dff7d2ff272da4e99d351ab1a7245ab029c"
+      },
+      "testIds": [
+        "FormsMediaTests/testMissingAndEmptyMediaAreDifferentStates",
+        "FormsMediaTests/testMediaSelectionSurvivesReorder",
+        "FormsMediaTests/testRemovedTrackSelectionClears",
+        "FormsMediaTests/testStaleTrackLoadIsIgnored",
+        "FormsMediaTests/testUnknownTrackCannotChangeSelection",
+        "FormsMediaTests/testMetadataChoiceDoesNotMutatePlayerPreferences",
+        "FormsMediaTests/testDuplicateTrackIDsAreNotAccepted"
+      ],
+      "manifest": "code-examples/swiftui/ios-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-ios-v1/interop",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "interopFramework": "UIKit",
+      "family": "interop",
+      "guidelines": [
+        "G-001",
+        "G-003",
+        "G-004",
+        "G-005",
+        "G-007",
+        "G-008",
+        "G-014"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/interop.prompt.md",
+        "sha256": "026905587626705c5bbb5418d7fdad0ccb69e8e796c24f6115ff28af01741963",
+        "text": "Target iOS26, SwiftUI with UIKit interop.\n\nOur SwiftUI native-button wrapper receives a title, enabled state and callback that can change on every update. Keep the same native button when appropriate, refresh its explicit name and enabled state, and replace rather than accumulate handlers. A coordinator may be rebound to a different button. Old native controls and captured actions must never invoke the new item handler. Dismantling must stop dispatch and retained callbacks must not retain the coordinator or view.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/ios-v1/evaluation/interop.rubric.md",
+        "sha256": "e78a47885ba64625bf9e705c5a4c5e672649e5d429876ca4fdc8aa45a7a75214"
+      },
+      "testIds": [
+        "InteropTests/testCoordinatorUpdatesCurrentNameAndEnabledState",
+        "InteropTests/testCoordinatorReplacesOldCallback",
+        "InteropTests/testNativeActionDispatchUsesCurrentHandlerOnce",
+        "InteropTests/testOldNativeViewCannotDispatchAfterRebind",
+        "InteropTests/testExternallyDisabledButtonRejectsCallback",
+        "InteropTests/testDismantleRejectsRetainedAction",
+        "InteropTests/testRetainedCallbackDoesNotRetainCoordinator",
+        "InteropTests/testCoordinatorDoesNotRetainNativeView",
+        "InteropTests/testUnownedNativeViewLifetimeAfterAutoreleasePool",
+        "InteropTests/testPublicDismantleStopsCoordinator"
+      ],
+      "manifest": "code-examples/swiftui/ios-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-macos-v1/semantics",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "semantics",
+      "guidelines": [
+        "G-001",
+        "G-002",
+        "G-003",
+        "G-004",
+        "G-007",
+        "G-008"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/semantics.prompt.md",
+        "sha256": "29e54c4dae19893035f718bbeb2124503eafa09077fe26ae7b827dcd8f72a3fe",
+        "text": "Target macOS26, SwiftUI.\n\nOur SwiftUI settings area has a Downloads toggle, Help button and volume readout. Keep the ordinary controls and their current callbacks. Updates can change title, priority and status without reconstructing the state object. Make the names and state reflect current data. Add five-point accessible volume adjustment through the same bounded setter as ordinary controls; values range from0 to100 and unchanged or disabled requests must not call back. Preserve a valid native Toggle rather than inventing a missing-value defect.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/semantics.rubric.md",
+        "sha256": "699bd67bc5d893d5e632f9333d2bb96133fa643e0939ec2d364ac31691ad6ab3"
+      },
+      "testIds": [
+        "SemanticsTests/testBindingReadsCurrentNativeToggleState",
+        "SemanticsTests/testRepeatedBindingSetDoesNotDuplicateCallback",
+        "SemanticsTests/testDisabledBindingPreservesState",
+        "SemanticsTests/testBothToggleTransitionsRefreshValue",
+        "SemanticsTests/testConfigureClearsPriorStatusAndPriorityWithoutReuse",
+        "SemanticsTests/testCurrentPriorityNameAndStatus",
+        "SemanticsTests/testOrdinaryHelpUsesExistingCallback",
+        "SemanticsTests/testDisabledHelpDoesNotInvoke",
+        "SemanticsTests/testOrdinarySetterAndAdjustmentShareValue",
+        "SemanticsTests/testBoundsDoNotDuplicateChange",
+        "SemanticsTests/testDisabledAdjustmentCannotChangeState",
+        "SemanticsTests/testHintTracksCurrentAvailability"
+      ],
+      "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-macos-v1/documents",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "documents",
+      "guidelines": [
+        "G-005",
+        "G-006",
+        "G-007",
+        "G-009",
+        "G-014"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/documents.prompt.md",
+        "sha256": "8fec6fa1b5990e7ebcf559c9d7cb0491e46beb417a6c3b988cb699e001ff67e3",
+        "text": "Target macOS26, SwiftUI.\n\nOur SwiftUI article list has stable string IDs, titles and a flag identifying important articles. Keep visible Open and Delete operations on each row, and add shortcut navigation to important articles without requiring it for ordinary use. Updates may rename, reorder or remove articles. Reject duplicate IDs atomically; preserve surviving selection. Old captured actions must not apply to a rebound revision, and deleted selections must clear.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/documents.rubric.md",
+        "sha256": "1801ae0bf593f6cea4b7b6e910d1ad1004a96ee6c97ccbae70c79f30518d158b"
+      },
+      "testIds": [
+        "DocumentTests/testLandmarksAreSubsetNotEveryRow",
+        "DocumentTests/testDuplicateIDsRejectUpdateAtomically",
+        "DocumentTests/testSelectionSurvivesReorder",
+        "DocumentTests/testRemovedSelectionClears",
+        "DocumentTests/testOldActionDoesNotTargetReboundRow",
+        "DocumentTests/testOrdinarySelectionUsesCurrentItem",
+        "DocumentTests/testDeleteCurrentItemOnceAndClearSelection",
+        "DocumentTests/testUnknownItemActionIsQuiet",
+        "DocumentTests/testRetainedActionDoesNotRetainOwner",
+        "DocumentTests/testEmptyDocumentHasNoLandmarksOrSelection"
+      ],
+      "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-macos-v1/preferences",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "preferences",
+      "guidelines": [
+        "G-010",
+        "G-011",
+        "G-012"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/preferences.prompt.md",
+        "sha256": "5d3ebb1283a579a371b55bbf43361e7a595d3940989dc6f41aed060cd99ec975",
+        "text": "Target macOS26, SwiftUI.\n\nBuild a SwiftUI status area with readable scalable text and selected/not-selected wording, not color alone. Respect reduced motion and reduced transparency without losing the final state or content. On platforms with the relevant system text-size environment, use a flexible layout policy for accessibility sizes. For TV26, keep readable semantic text but do not promise the TV27 system Larger Text feature.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/preferences.rubric.md",
+        "sha256": "62f5378d631edbba1ae6afb1972a39ce17249d04dca9aafa52d4fd67293d23bc"
+      },
+      "testIds": [
+        "PreferenceTests/testReducedMotionPolicyKeepsFinalStateIndependent",
+        "PreferenceTests/testTransparencyPolicyPreservesNonColorText",
+        "PreferenceTests/testLargeTextPolicyUsesVerticalComposition",
+        "PreferenceTests/testNormalTextDoesNotForceVerticalComposition",
+        "PreferenceTests/testDifferentiateFlagDoesNotRequireMotion",
+        "PreferenceTests/testPreferencesAreIndependent"
+      ],
+      "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-macos-v1/lifecycle",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "lifecycle",
+      "guidelines": [
+        "G-006",
+        "G-013"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/lifecycle.prompt.md",
+        "sha256": "1c220f178060c807001ca888648c00470ed71a86640dcf1de0c37e2e48c3a3d8",
+        "text": "Target macOS26, SwiftUI.\n\nOur SwiftUI details sheet needs a clear entry target and a return target after dismissal. Keep the ordinary Open and Close controls. The originating item may disappear while the sheet is open; use a persistent fallback. Multiple presentation generations and old dismissal callbacks are possible. Resolve the current eligible target at completion and ignore stale or repeated completion. A restoration request may synchronously open another sheet.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/lifecycle.rubric.md",
+        "sha256": "3d42884d1477477bd985277fafc181a9607dc08e3b55b1799344d60d5311d102"
+      },
+      "testIds": [
+        "LifecycleTests/testBeginRecordsEntryWithoutRestorationRequest",
+        "LifecycleTests/testDismissResolvesCurrentOrigin",
+        "LifecycleTests/testRemovedOriginUsesFallback",
+        "LifecycleTests/testOldDismissalCannotConsumeNewSession",
+        "LifecycleTests/testRepeatedDismissIsQuiet",
+        "LifecycleTests/testCancellationUsesSameRestorationContract",
+        "LifecycleTests/testReentrantRequestPreservesNewPresentation",
+        "LifecycleTests/testEligibleListIsEvaluatedAtCompletion"
+      ],
+      "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-macos-v1/forms",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "forms",
+      "guidelines": [
+        "G-003",
+        "G-014"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/forms.prompt.md",
+        "sha256": "7708079eaec0dab4e4b17f1334a3aa75403e814db5dd7eed862d86d30740daa6",
+        "text": "Target macOS26, SwiftUI.\n\nOur SwiftUI email form uses an injected main-actor validator taking the current string and a completion. A nil error means success, a nonempty string is a user-facing error, and an empty error is a service failure. Replies may be synchronous, duplicated or out of order. Edits, cancellation and another Save must invalidate obsolete replies. Preserve raw input; Save may reenter validation. Show current errors visibly and keep the existing form controls.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/forms.rubric.md",
+        "sha256": "cdd9c2306a32f6123a3d03c47baa6d4a6d64424e837917724332a31fc508fcfa"
+      },
+      "testIds": [
+        "FormsMediaTests/testFormPreservesRawInputSnapshot",
+        "FormsMediaTests/testEditBindingInvalidatesPendingReply",
+        "FormsMediaTests/testOutOfOrderValidationCannotOverwriteLatest",
+        "FormsMediaTests/testDuplicateSuccessDoesNotSaveTwice",
+        "FormsMediaTests/testDirectEditRejectsOldSnapshot",
+        "FormsMediaTests/testInvalidThenCorrectedFormRecovers",
+        "FormsMediaTests/testEmptyValidationMessageIsUnavailableNotSuccess",
+        "FormsMediaTests/testReentrantSaveOwnsNewRequest",
+        "FormsMediaTests/testRetainedReplyDoesNotRetainForm"
+      ],
+      "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-macos-v1/media",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "media",
+      "guidelines": [
+        "G-015"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/media.prompt.md",
+        "sha256": "1af6c7c13b30302a506bb90a66f319958b229266c62a431acccfe949dc3f3d67",
+        "text": "Target macOS26, SwiftUI.\n\nOur SwiftUI player must keep the supplied AVPlayer and native controls. Build a synthetic, injected caption-options browser with stable IDs and localized names. Distinguish not-yet-loaded options from a successfully empty result. Preserve a selected ID through reordering, clear it when removed, reject unknown selections and duplicate IDs, and ignore old asynchronous option-list replies. Do not change volume or mute while browsing. This component records a preference only; applying AVMediaSelection and rendering captions are outside this task.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/media.rubric.md",
+        "sha256": "8431319404d8733b4f356cac5fb8084dd26a2bf7e0273ba3a8e59375e32b51fc"
+      },
+      "testIds": [
+        "FormsMediaTests/testMissingAndEmptyMediaAreDifferentStates",
+        "FormsMediaTests/testMediaSelectionSurvivesReorder",
+        "FormsMediaTests/testRemovedTrackSelectionClears",
+        "FormsMediaTests/testStaleTrackLoadIsIgnored",
+        "FormsMediaTests/testUnknownTrackCannotChangeSelection",
+        "FormsMediaTests/testMetadataChoiceDoesNotMutatePlayerPreferences",
+        "FormsMediaTests/testDuplicateTrackIDsAreNotAccepted"
+      ],
+      "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-macos-v1/interop",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "interopFramework": "AppKit",
+      "family": "interop",
+      "guidelines": [
+        "G-001",
+        "G-003",
+        "G-004",
+        "G-005",
+        "G-007",
+        "G-008",
+        "G-014"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/interop.prompt.md",
+        "sha256": "acff177ada107a849a82728681ebfc55b479769bd2963664ee31acd68536c065",
+        "text": "Target macOS26, SwiftUI with AppKit interop.\n\nOur SwiftUI native-button wrapper receives a title, enabled state and callback that can change on every update. Keep the same native button when appropriate, refresh its explicit name and enabled state, and replace rather than accumulate handlers. A coordinator may be rebound to a different button. Old native controls and captured actions must never invoke the new item handler. Dismantling must stop dispatch and retained callbacks must not retain the coordinator or view.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/macos-v1/evaluation/interop.rubric.md",
+        "sha256": "b53ff8c5e4ed5881f675a351e709863659a28b68e17ea0c5d633232ff80ae249"
+      },
+      "testIds": [
+        "InteropTests/testCoordinatorUpdatesCurrentNameAndEnabledState",
+        "InteropTests/testCoordinatorReplacesOldCallback",
+        "InteropTests/testNativeActionDispatchUsesCurrentHandlerOnce",
+        "InteropTests/testOldNativeViewCannotDispatchAfterRebind",
+        "InteropTests/testExternallyDisabledButtonRejectsCallback",
+        "InteropTests/testDismantleRejectsRetainedAction",
+        "InteropTests/testRetainedCallbackDoesNotRetainCoordinator",
+        "InteropTests/testCoordinatorDoesNotRetainNativeView",
+        "InteropTests/testUnownedNativeViewLifetimeAfterAutoreleasePool",
+        "InteropTests/testPublicDismantleStopsCoordinator"
+      ],
+      "manifest": "code-examples/swiftui/macos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-tvos-v1/semantics",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "semantics",
+      "guidelines": [
+        "G-001",
+        "G-002",
+        "G-003",
+        "G-004",
+        "G-007",
+        "G-008"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/semantics.prompt.md",
+        "sha256": "ecaf99703fde8ff9f40508996e9bf4b6bd8af8c8e3d6fadee4358162752cc678",
+        "text": "Target tvOS26, SwiftUI.\n\nOur SwiftUI settings area has a Downloads toggle, Help button and volume readout. Keep the ordinary controls and their current callbacks. Updates can change title, priority and status without reconstructing the state object. Make the names and state reflect current data. Add five-point accessible volume adjustment through the same bounded setter as ordinary controls; values range from0 to100 and unchanged or disabled requests must not call back. Preserve a valid native Toggle rather than inventing a missing-value defect.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/semantics.rubric.md",
+        "sha256": "9a4e08a0388e2c0acc03339f260cfb5f2f10d8f08fb38d2a264094d5e2809a9b"
+      },
+      "testIds": [
+        "SemanticsTests/testBindingReadsCurrentNativeToggleState",
+        "SemanticsTests/testRepeatedBindingSetDoesNotDuplicateCallback",
+        "SemanticsTests/testDisabledBindingPreservesState",
+        "SemanticsTests/testBothToggleTransitionsRefreshValue",
+        "SemanticsTests/testConfigureClearsPriorStatusAndPriorityWithoutReuse",
+        "SemanticsTests/testCurrentPriorityNameAndStatus",
+        "SemanticsTests/testOrdinaryHelpUsesExistingCallback",
+        "SemanticsTests/testDisabledHelpDoesNotInvoke",
+        "SemanticsTests/testOrdinarySetterAndAdjustmentShareValue",
+        "SemanticsTests/testBoundsDoNotDuplicateChange",
+        "SemanticsTests/testDisabledAdjustmentCannotChangeState",
+        "SemanticsTests/testHintTracksCurrentAvailability"
+      ],
+      "manifest": "code-examples/swiftui/tvos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-tvos-v1/documents",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "documents",
+      "guidelines": [
+        "G-005",
+        "G-006",
+        "G-007",
+        "G-009",
+        "G-014"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/documents.prompt.md",
+        "sha256": "9f59e96226e92f0c5f7c39005e7f3432d0c8ce21401a8780434a5da6a2d454ba",
+        "text": "Target tvOS26, SwiftUI.\n\nOur SwiftUI article list has stable string IDs, titles and a flag identifying important articles. Keep visible Open and Delete operations on each row, and add shortcut navigation to important articles without requiring it for ordinary use. Updates may rename, reorder or remove articles. Reject duplicate IDs atomically; preserve surviving selection. Old captured actions must not apply to a rebound revision, and deleted selections must clear.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/documents.rubric.md",
+        "sha256": "46cfa1f2e48058c447e0798c183561b8fdb0671a02443054bf09aa7d6f9d8b1c"
+      },
+      "testIds": [
+        "DocumentTests/testLandmarksAreSubsetNotEveryRow",
+        "DocumentTests/testDuplicateIDsRejectUpdateAtomically",
+        "DocumentTests/testSelectionSurvivesReorder",
+        "DocumentTests/testRemovedSelectionClears",
+        "DocumentTests/testOldActionDoesNotTargetReboundRow",
+        "DocumentTests/testOrdinarySelectionUsesCurrentItem",
+        "DocumentTests/testDeleteCurrentItemOnceAndClearSelection",
+        "DocumentTests/testUnknownItemActionIsQuiet",
+        "DocumentTests/testRetainedActionDoesNotRetainOwner",
+        "DocumentTests/testEmptyDocumentHasNoLandmarksOrSelection"
+      ],
+      "manifest": "code-examples/swiftui/tvos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-tvos-v1/preferences",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "preferences",
+      "guidelines": [
+        "G-010",
+        "G-011",
+        "G-012"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/preferences.prompt.md",
+        "sha256": "d9e53ce2b017867a2204d056c2507a787596a6e0a2783b988f98f0e3d027c73f",
+        "text": "Target tvOS26, SwiftUI.\n\nBuild a SwiftUI status area with readable scalable text and selected/not-selected wording, not color alone. Respect reduced motion and reduced transparency without losing the final state or content. On platforms with the relevant system text-size environment, use a flexible layout policy for accessibility sizes. For TV26, keep readable semantic text but do not promise the TV27 system Larger Text feature.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/preferences.rubric.md",
+        "sha256": "a11c2fd525d29e5c6e5ffb927420350e44e59e7261d5b53cb554b6648f1d06b1"
+      },
+      "testIds": [
+        "PreferenceTests/testReducedMotionPolicyKeepsFinalStateIndependent",
+        "PreferenceTests/testTransparencyPolicyPreservesNonColorText",
+        "PreferenceTests/testLargeTextPolicyUsesVerticalComposition",
+        "PreferenceTests/testNormalTextDoesNotForceVerticalComposition",
+        "PreferenceTests/testDifferentiateFlagDoesNotRequireMotion",
+        "PreferenceTests/testPreferencesAreIndependent"
+      ],
+      "manifest": "code-examples/swiftui/tvos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-tvos-v1/lifecycle",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "lifecycle",
+      "guidelines": [
+        "G-006",
+        "G-013"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/lifecycle.prompt.md",
+        "sha256": "22af858f9af21fe10a7fbf7041ab2967ca817304041bc830eeeb720667ba9677",
+        "text": "Target tvOS26, SwiftUI.\n\nOur SwiftUI details sheet needs a clear entry target and a return target after dismissal. Keep the ordinary Open and Close controls. The originating item may disappear while the sheet is open; use a persistent fallback. Multiple presentation generations and old dismissal callbacks are possible. Resolve the current eligible target at completion and ignore stale or repeated completion. A restoration request may synchronously open another sheet.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/lifecycle.rubric.md",
+        "sha256": "0c3e8edf274a439c3ec6576b9fab3e547d22ebf3422615c61cfa6ead8d04731a"
+      },
+      "testIds": [
+        "LifecycleTests/testBeginRecordsEntryWithoutRestorationRequest",
+        "LifecycleTests/testDismissResolvesCurrentOrigin",
+        "LifecycleTests/testRemovedOriginUsesFallback",
+        "LifecycleTests/testOldDismissalCannotConsumeNewSession",
+        "LifecycleTests/testRepeatedDismissIsQuiet",
+        "LifecycleTests/testCancellationUsesSameRestorationContract",
+        "LifecycleTests/testReentrantRequestPreservesNewPresentation",
+        "LifecycleTests/testEligibleListIsEvaluatedAtCompletion"
+      ],
+      "manifest": "code-examples/swiftui/tvos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-tvos-v1/forms",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "forms",
+      "guidelines": [
+        "G-003",
+        "G-014"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/forms.prompt.md",
+        "sha256": "fe5ec3a625e9f0f3bad6e71dd676a94ae4dd265f519a7168bf43aa2732894fb3",
+        "text": "Target tvOS26, SwiftUI.\n\nOur SwiftUI email form uses an injected main-actor validator taking the current string and a completion. A nil error means success, a nonempty string is a user-facing error, and an empty error is a service failure. Replies may be synchronous, duplicated or out of order. Edits, cancellation and another Save must invalidate obsolete replies. Preserve raw input; Save may reenter validation. Show current errors visibly and keep the existing form controls.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/forms.rubric.md",
+        "sha256": "e8350b970e7dadd2b3749f6633619b2c89c55bfb1f9076381662b49754624586"
+      },
+      "testIds": [
+        "FormsMediaTests/testFormPreservesRawInputSnapshot",
+        "FormsMediaTests/testEditBindingInvalidatesPendingReply",
+        "FormsMediaTests/testOutOfOrderValidationCannotOverwriteLatest",
+        "FormsMediaTests/testDuplicateSuccessDoesNotSaveTwice",
+        "FormsMediaTests/testDirectEditRejectsOldSnapshot",
+        "FormsMediaTests/testInvalidThenCorrectedFormRecovers",
+        "FormsMediaTests/testEmptyValidationMessageIsUnavailableNotSuccess",
+        "FormsMediaTests/testReentrantSaveOwnsNewRequest",
+        "FormsMediaTests/testRetainedReplyDoesNotRetainForm"
+      ],
+      "manifest": "code-examples/swiftui/tvos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-tvos-v1/media",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "interopFramework": null,
+      "family": "media",
+      "guidelines": [
+        "G-015"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/media.prompt.md",
+        "sha256": "231795c762c2e042cd466646ec9e0faca2acc179e7b9002642957987f0134685",
+        "text": "Target tvOS26, SwiftUI.\n\nOur SwiftUI player must keep the supplied AVPlayer and native controls. Build a synthetic, injected caption-options browser with stable IDs and localized names. Distinguish not-yet-loaded options from a successfully empty result. Preserve a selected ID through reordering, clear it when removed, reject unknown selections and duplicate IDs, and ignore old asynchronous option-list replies. Do not change volume or mute while browsing. This component records a preference only; applying AVMediaSelection and rendering captions are outside this task.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/media.rubric.md",
+        "sha256": "16b8ca9ccf7803781d184301f4990e02733435549f3432e2474796773f2041d1"
+      },
+      "testIds": [
+        "FormsMediaTests/testMissingAndEmptyMediaAreDifferentStates",
+        "FormsMediaTests/testMediaSelectionSurvivesReorder",
+        "FormsMediaTests/testRemovedTrackSelectionClears",
+        "FormsMediaTests/testStaleTrackLoadIsIgnored",
+        "FormsMediaTests/testUnknownTrackCannotChangeSelection",
+        "FormsMediaTests/testMetadataChoiceDoesNotMutatePlayerPreferences",
+        "FormsMediaTests/testDuplicateTrackIDsAreNotAccepted"
+      ],
+      "manifest": "code-examples/swiftui/tvos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "swiftui-tvos-v1/interop",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "interopFramework": "UIKit",
+      "family": "interop",
+      "guidelines": [
+        "G-001",
+        "G-003",
+        "G-004",
+        "G-005",
+        "G-007",
+        "G-008",
+        "G-014"
+      ],
+      "status": "draft-not-run",
+      "subject": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/interop.prompt.md",
+        "sha256": "375ea9d9a373c3bb905f07e0a3a1e8e18dadab0f18ab50bd4dc96b48c9a07552",
+        "text": "Target tvOS26, SwiftUI with UIKit interop.\n\nOur SwiftUI native-button wrapper receives a title, enabled state and callback that can change on every update. Keep the same native button when appropriate, refresh its explicit name and enabled state, and replace rather than accumulate handlers. A coordinator may be rebound to a different button. Old native controls and captured actions must never invoke the new item handler. Dismantling must stop dispatch and retained callbacks must not retain the coordinator or view.\n\nProvide complete code and focused compile/unit tests. No UI automation.\n"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/tvos-v1/evaluation/interop.rubric.md",
+        "sha256": "e0dc8a7515d301d9b52112f94c987d8220a96e8752f7458fa67a313d0baa97a7"
+      },
+      "testIds": [
+        "InteropTests/testCoordinatorUpdatesCurrentNameAndEnabledState",
+        "InteropTests/testCoordinatorReplacesOldCallback",
+        "InteropTests/testNativeActionDispatchUsesCurrentHandlerOnce",
+        "InteropTests/testOldNativeViewCannotDispatchAfterRebind",
+        "InteropTests/testExternallyDisabledButtonRejectsCallback",
+        "InteropTests/testDismantleRejectsRetainedAction",
+        "InteropTests/testRetainedCallbackDoesNotRetainCoordinator",
+        "InteropTests/testCoordinatorDoesNotRetainNativeView",
+        "InteropTests/testUnownedNativeViewLifetimeAfterAutoreleasePool",
+        "InteropTests/testPublicDismantleStopsCoordinator"
+      ],
+      "manifest": "code-examples/swiftui/tvos-v1/manifest.json",
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    }
+  ],
+  "capture": "Exact current owner plan is in AUTHORING.md. Subject prompts are complete synthetic task specifications; full provider-internal authoring context unavailable. Source/test outputs and native failures retained separately."
+}

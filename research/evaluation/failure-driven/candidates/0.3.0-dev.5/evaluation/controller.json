@@ -1,0 +1,2162 @@
+{
+  "schema": 1,
+  "status": "draft-gold-candidates-not-reviewed",
+  "cases": [
+    {
+      "id": "ios-swiftui-semantics",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "topic": "semantics",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-swiftui-semantics.md",
+        "sha256": "63e10b06dd993c30d5d7ff8814eb13eb239dfed5b19c40046aac9d957fa89797"
+      },
+      "controller": {
+        "criteria": [
+          "Does not invent a defect solely from missing overrides.",
+          "Preserves native control and its existing state binding.",
+          "Distinguishes meaningful visible naming from implementation identifiers."
+        ],
+        "acceptedAlternatives": [
+          "Leave correct native semantics alone with a bounded explanation.",
+          "Request a concrete symptom before recommending a semantic override."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-001-labels-meaningful-names.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/semantics.md",
+        "exampleSource": "code-examples/swiftui/ios-v1/Sources/Semantics.swift",
+        "exampleManifest": "code-examples/swiftui/ios-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-swiftui-state",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "topic": "state",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-swiftui-state.md",
+        "sha256": "d8205a82dc459cee49d68dc4d11c28f9238402ac68aff85ad3b020d8e59760be"
+      },
+      "controller": {
+        "criteria": [
+          "Clears obsolete optional metadata on the same instance.",
+          "Checks current item plus request identity before accepting results.",
+          "Preserves unrelated state and the ordinary Open action."
+        ],
+        "acceptedAlternatives": [
+          "Cancel and invalidate previous requests plus guard current identity.",
+          "Generation token with current-item identity and explicit optional clearing."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-003-values-stateful-controls.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/state.md",
+        "exampleSource": "code-examples/swiftui/ios-v1/Sources/FormsMedia.swift",
+        "exampleManifest": "code-examples/swiftui/ios-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-swiftui-actions",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "topic": "actions",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-swiftui-actions.md",
+        "sha256": "60c470883f4712e4417040c619bb099ed6e1f298d8f32b8afe39c2b1e20ed998"
+      },
+      "controller": {
+        "criteria": [
+          "Preserves independent visible ordinary actions.",
+          "Shortcut uses the current file and respects enabled state.",
+          "Repeated updates do not accumulate handlers or retain obsolete owners."
+        ],
+        "acceptedAlternatives": [
+          "A supported named accessibility action in addition to the ordinary button.",
+          "Retain existing implementation if it already supplies the requested shortcut correctly."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-007-accessibility-actions.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/actions.md",
+        "exampleSource": "code-examples/swiftui/ios-v1/Sources/Documents.swift",
+        "exampleManifest": "code-examples/swiftui/ios-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-swiftui-structure",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "topic": "structure",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-swiftui-structure.md",
+        "sha256": "5522293008473d70ddfef981f571431be977f77db951ee0d2efcb4b154388ad9"
+      },
+      "controller": {
+        "criteria": [
+          "Does not merge away independent controls.",
+          "Keeps ordinary navigation and stable current item identity.",
+          "Does not claim generated tree or rotor discoverability from configuration-only units."
+        ],
+        "acceptedAlternatives": [
+          "Group descriptive fragments separately from independent controls.",
+          "Keep meaningful existing structure and add only justified landmarks."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-005-grouping-containment.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/structure.md",
+        "exampleSource": "code-examples/swiftui/ios-v1/Sources/Documents.swift",
+        "exampleManifest": "code-examples/swiftui/ios-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-swiftui-text",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "topic": "text",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-swiftui-text.md",
+        "sha256": "66fb2482875ccfe5482dcd00615f3464394a41bad9a83ad345af80435c53b860"
+      },
+      "controller": {
+        "criteria": [
+          "Addresses scalable text and live integration as distinct concerns.",
+          "Preserves Pay behavior and accepts valid layout alternatives.",
+          "Checks platform/OS availability rather than borrowing another target’s text behavior.",
+          "Does not equate wrapping or modifier compilation with rendered layout success."
+        ],
+        "acceptedAlternatives": [
+          "Flexible multiline layout with target-appropriate scalable typography.",
+          "A permanent vertical arrangement if justified by the supplied layout requirements."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/text.md",
+        "exampleSource": "code-examples/swiftui/ios-v1/Sources/Preferences.swift",
+        "exampleManifest": "code-examples/swiftui/ios-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-swiftui-lifecycle",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "topic": "lifecycle",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-swiftui-lifecycle.md",
+        "sha256": "f29fcfe6ec64e75b7dcf5c692aa04d5b4133ae72bf12d5c07f2c3a415353caf9"
+      },
+      "controller": {
+        "criteria": [
+          "Resolves a current valid anchor at completion time.",
+          "Rejects stale or duplicate completion and consumes ownership before external callbacks.",
+          "Distinguishes requesting restoration from proving delivered focus."
+        ],
+        "acceptedAlternatives": [
+          "Session token plus current-item lookup and a valid fallback.",
+          "Explicit state machine with equivalent stale-completion and reentrancy handling."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/lifecycle.md",
+        "exampleSource": "code-examples/swiftui/ios-v1/Sources/Lifecycle.swift",
+        "exampleManifest": "code-examples/swiftui/ios-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-swiftui-media",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "topic": "media",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-swiftui-media.md",
+        "sha256": "b12c69f62639d32d35bf72db851861a484dd1aa2436623787a47968be965c948"
+      },
+      "controller": {
+        "criteria": [
+          "Keeps loading, empty/missing, error and positive metadata distinct.",
+          "Rejects results for an obsolete player item/request.",
+          "Does not change selected media options as a side effect of inspection.",
+          "Does not infer spoken description quality or complete caption support from a metadata flag."
+        ],
+        "acceptedAlternatives": [
+          "Explicit loading/result state with identity-guarded completion.",
+          "Equivalent typed result model preserving selection and unavailable evidence."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-015-media-captions-audio-descriptions.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/media.md",
+        "exampleSource": "code-examples/swiftui/ios-v1/Sources/FormsMedia.swift",
+        "exampleManifest": "code-examples/swiftui/ios-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-swiftui-testing",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "topic": "testing",
+      "classification": "shared-principle-demonstrated-through-SwiftUI",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-swiftui-testing.md",
+        "sha256": "59d1f8df7ab924dd0ca13535cd0f66ac84615cc7a3c16f95e90067621c1d48e2"
+      },
+      "controller": {
+        "criteria": [
+          "Limits conclusions to actual assertions and compilation.",
+          "Keeps exact first failures separate from repairs and deliberate mutants.",
+          "Checks imported API names and availability on the real selected target.",
+          "Does not add mandatory manual verification or UI tests."
+        ],
+        "acceptedAlternatives": [
+          "Compile real modifier/native compositions and test public state/action dispatch.",
+          "Explicitly record unsupported semantic observations rather than inventing a test oracle."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+        "exampleSource": null,
+        "exampleManifest": null,
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-swiftui-semantics",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "topic": "semantics",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-semantics.md",
+        "sha256": "098f9f2660b845a1f73b080d9b092daf18773cc7f1cca3c349c78d2e04b4d4c1"
+      },
+      "controller": {
+        "criteria": [
+          "Does not invent a defect solely from missing overrides.",
+          "Preserves native control and its existing state binding.",
+          "Distinguishes meaningful visible naming from implementation identifiers."
+        ],
+        "acceptedAlternatives": [
+          "Leave correct native semantics alone with a bounded explanation.",
+          "Request a concrete symptom before recommending a semantic override."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-001-labels-meaningful-names.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/semantics.md",
+        "exampleSource": "code-examples/swiftui/macos-v1/Sources/Semantics.swift",
+        "exampleManifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-swiftui-state",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "topic": "state",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-state.md",
+        "sha256": "93fed5f76679b0f230e01516424aa8dbee8bb46bbc6262b489c8033a7b652400"
+      },
+      "controller": {
+        "criteria": [
+          "Clears obsolete optional metadata on the same instance.",
+          "Checks current item plus request identity before accepting results.",
+          "Preserves unrelated state and the ordinary Open action."
+        ],
+        "acceptedAlternatives": [
+          "Cancel and invalidate previous requests plus guard current identity.",
+          "Generation token with current-item identity and explicit optional clearing."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-003-values-stateful-controls.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/state.md",
+        "exampleSource": "code-examples/swiftui/macos-v1/Sources/FormsMedia.swift",
+        "exampleManifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-swiftui-actions",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "topic": "actions",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-actions.md",
+        "sha256": "28fc2a61842e8e9abe5c5ab5d6052301d471ac9a1143a7cc146797157953f0d0"
+      },
+      "controller": {
+        "criteria": [
+          "Preserves independent visible ordinary actions.",
+          "Shortcut uses the current file and respects enabled state.",
+          "Repeated updates do not accumulate handlers or retain obsolete owners."
+        ],
+        "acceptedAlternatives": [
+          "A supported named accessibility action in addition to the ordinary button.",
+          "Retain existing implementation if it already supplies the requested shortcut correctly."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-007-accessibility-actions.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/actions.md",
+        "exampleSource": "code-examples/swiftui/macos-v1/Sources/Documents.swift",
+        "exampleManifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-swiftui-structure",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "topic": "structure",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-structure.md",
+        "sha256": "b10eceec4b299a6e7c1517737ec6d2529bbe18901977c7bad898fe1596e3daa4"
+      },
+      "controller": {
+        "criteria": [
+          "Does not merge away independent controls.",
+          "Keeps ordinary navigation and stable current item identity.",
+          "Does not claim generated tree or rotor discoverability from configuration-only units."
+        ],
+        "acceptedAlternatives": [
+          "Group descriptive fragments separately from independent controls.",
+          "Keep meaningful existing structure and add only justified landmarks."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-005-grouping-containment.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/structure.md",
+        "exampleSource": "code-examples/swiftui/macos-v1/Sources/Documents.swift",
+        "exampleManifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-swiftui-text",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "topic": "text",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-text.md",
+        "sha256": "f4d1432a0aa93e63b243dc8b17ee8ac13e621297b7834d530ad3f47d62805b60"
+      },
+      "controller": {
+        "criteria": [
+          "Addresses scalable text and live integration as distinct concerns.",
+          "Preserves Pay behavior and accepts valid layout alternatives.",
+          "Checks platform/OS availability rather than borrowing another target’s text behavior.",
+          "Does not equate wrapping or modifier compilation with rendered layout success."
+        ],
+        "acceptedAlternatives": [
+          "Flexible multiline layout with target-appropriate scalable typography.",
+          "A permanent vertical arrangement if justified by the supplied layout requirements."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/text.md",
+        "exampleSource": "code-examples/swiftui/macos-v1/Sources/Preferences.swift",
+        "exampleManifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-swiftui-lifecycle",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "topic": "lifecycle",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-lifecycle.md",
+        "sha256": "829faec4b038b7d3be389073df491880ff66dfd1db1eba02eb11eb66fb23bacd"
+      },
+      "controller": {
+        "criteria": [
+          "Resolves a current valid anchor at completion time.",
+          "Rejects stale or duplicate completion and consumes ownership before external callbacks.",
+          "Distinguishes requesting restoration from proving delivered focus."
+        ],
+        "acceptedAlternatives": [
+          "Session token plus current-item lookup and a valid fallback.",
+          "Explicit state machine with equivalent stale-completion and reentrancy handling."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/lifecycle.md",
+        "exampleSource": "code-examples/swiftui/macos-v1/Sources/Lifecycle.swift",
+        "exampleManifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-swiftui-media",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "topic": "media",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-media.md",
+        "sha256": "faac5bd6a5a7593be92cb6596590940914eae955eab070b96231dbf33ad0c3b9"
+      },
+      "controller": {
+        "criteria": [
+          "Keeps loading, empty/missing, error and positive metadata distinct.",
+          "Rejects results for an obsolete player item/request.",
+          "Does not change selected media options as a side effect of inspection.",
+          "Does not infer spoken description quality or complete caption support from a metadata flag."
+        ],
+        "acceptedAlternatives": [
+          "Explicit loading/result state with identity-guarded completion.",
+          "Equivalent typed result model preserving selection and unavailable evidence."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-015-media-captions-audio-descriptions.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/media.md",
+        "exampleSource": "code-examples/swiftui/macos-v1/Sources/FormsMedia.swift",
+        "exampleManifest": "code-examples/swiftui/macos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-swiftui-testing",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "topic": "testing",
+      "classification": "shared-principle-demonstrated-through-SwiftUI",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-testing.md",
+        "sha256": "a8c7f78759160c16ff184365b94563bb7e9b9d1743f3242687ec4325f79c662b"
+      },
+      "controller": {
+        "criteria": [
+          "Limits conclusions to actual assertions and compilation.",
+          "Keeps exact first failures separate from repairs and deliberate mutants.",
+          "Checks imported API names and availability on the real selected target.",
+          "Does not add mandatory manual verification or UI tests."
+        ],
+        "acceptedAlternatives": [
+          "Compile real modifier/native compositions and test public state/action dispatch.",
+          "Explicitly record unsupported semantic observations rather than inventing a test oracle."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+        "exampleSource": null,
+        "exampleManifest": null,
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-swiftui-semantics",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "topic": "semantics",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-semantics.md",
+        "sha256": "7e885552c249f2434beb2c705b7df2468200624aa4a74d6d71115f23cd360f70"
+      },
+      "controller": {
+        "criteria": [
+          "Does not invent a defect solely from missing overrides.",
+          "Preserves native control and its existing state binding.",
+          "Distinguishes meaningful visible naming from implementation identifiers."
+        ],
+        "acceptedAlternatives": [
+          "Leave correct native semantics alone with a bounded explanation.",
+          "Request a concrete symptom before recommending a semantic override."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-001-labels-meaningful-names.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/semantics.md",
+        "exampleSource": "code-examples/swiftui/tvos-v1/Sources/Semantics.swift",
+        "exampleManifest": "code-examples/swiftui/tvos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-swiftui-state",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "topic": "state",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-state.md",
+        "sha256": "7c88f87b3e1ff9d3af6fea5e2f9630529cfd1b8fc64f3a608ca25689603316c3"
+      },
+      "controller": {
+        "criteria": [
+          "Clears obsolete optional metadata on the same instance.",
+          "Checks current item plus request identity before accepting results.",
+          "Preserves unrelated state and the ordinary Open action."
+        ],
+        "acceptedAlternatives": [
+          "Cancel and invalidate previous requests plus guard current identity.",
+          "Generation token with current-item identity and explicit optional clearing."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-003-values-stateful-controls.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/state.md",
+        "exampleSource": "code-examples/swiftui/tvos-v1/Sources/FormsMedia.swift",
+        "exampleManifest": "code-examples/swiftui/tvos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-swiftui-actions",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "topic": "actions",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-actions.md",
+        "sha256": "5e241a2f3c435f9eeb42a9c03d5f261df0735616692dc88b3d409d825b88cc5a"
+      },
+      "controller": {
+        "criteria": [
+          "Preserves independent visible ordinary actions.",
+          "Shortcut uses the current file and respects enabled state.",
+          "Repeated updates do not accumulate handlers or retain obsolete owners."
+        ],
+        "acceptedAlternatives": [
+          "A supported named accessibility action in addition to the ordinary button.",
+          "Retain existing implementation if it already supplies the requested shortcut correctly."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-007-accessibility-actions.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/actions.md",
+        "exampleSource": "code-examples/swiftui/tvos-v1/Sources/Documents.swift",
+        "exampleManifest": "code-examples/swiftui/tvos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-swiftui-structure",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "topic": "structure",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-structure.md",
+        "sha256": "79d7d5bb05ed7deaf3510b7fb3429fdf9e11d6e651b6f989516e44a306877a3d"
+      },
+      "controller": {
+        "criteria": [
+          "Does not merge away independent controls.",
+          "Keeps ordinary navigation and stable current item identity.",
+          "Does not claim generated tree or rotor discoverability from configuration-only units."
+        ],
+        "acceptedAlternatives": [
+          "Group descriptive fragments separately from independent controls.",
+          "Keep meaningful existing structure and add only justified landmarks."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-005-grouping-containment.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/structure.md",
+        "exampleSource": "code-examples/swiftui/tvos-v1/Sources/Documents.swift",
+        "exampleManifest": "code-examples/swiftui/tvos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-swiftui-text",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "topic": "text",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-text.md",
+        "sha256": "c3e3f054d52862ed9f8f73ab04539aecc6d44dd5965b4bab01a7c8bce272ac79"
+      },
+      "controller": {
+        "criteria": [
+          "Addresses scalable text and live integration as distinct concerns.",
+          "Preserves Pay behavior and accepts valid layout alternatives.",
+          "Checks platform/OS availability rather than borrowing another target’s text behavior.",
+          "Does not equate wrapping or modifier compilation with rendered layout success."
+        ],
+        "acceptedAlternatives": [
+          "Flexible multiline layout with target-appropriate scalable typography.",
+          "A permanent vertical arrangement if justified by the supplied layout requirements."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/text.md",
+        "exampleSource": "code-examples/swiftui/tvos-v1/Sources/Preferences.swift",
+        "exampleManifest": "code-examples/swiftui/tvos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-swiftui-lifecycle",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "topic": "lifecycle",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-lifecycle.md",
+        "sha256": "a09da2dce9e3c9fb7751921bd6ab45096a351c9f2a475fab6f78f48a6acf45ca"
+      },
+      "controller": {
+        "criteria": [
+          "Resolves a current valid anchor at completion time.",
+          "Rejects stale or duplicate completion and consumes ownership before external callbacks.",
+          "Distinguishes requesting restoration from proving delivered focus."
+        ],
+        "acceptedAlternatives": [
+          "Session token plus current-item lookup and a valid fallback.",
+          "Explicit state machine with equivalent stale-completion and reentrancy handling."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/lifecycle.md",
+        "exampleSource": "code-examples/swiftui/tvos-v1/Sources/Lifecycle.swift",
+        "exampleManifest": "code-examples/swiftui/tvos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-swiftui-media",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "topic": "media",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-media.md",
+        "sha256": "f1ab1fb5176da5955845c8efa6a859dd51faab808810eb4354b38cdad2fe9b82"
+      },
+      "controller": {
+        "criteria": [
+          "Keeps loading, empty/missing, error and positive metadata distinct.",
+          "Rejects results for an obsolete player item/request.",
+          "Does not change selected media options as a side effect of inspection.",
+          "Does not infer spoken description quality or complete caption support from a metadata flag."
+        ],
+        "acceptedAlternatives": [
+          "Explicit loading/result state with identity-guarded completion.",
+          "Equivalent typed result model preserving selection and unavailable evidence."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-015-media-captions-audio-descriptions.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/media.md",
+        "exampleSource": "code-examples/swiftui/tvos-v1/Sources/FormsMedia.swift",
+        "exampleManifest": "code-examples/swiftui/tvos-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-swiftui-testing",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "topic": "testing",
+      "classification": "shared-principle-demonstrated-through-SwiftUI",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-testing.md",
+        "sha256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461"
+      },
+      "controller": {
+        "criteria": [
+          "Limits conclusions to actual assertions and compilation.",
+          "Keeps exact first failures separate from repairs and deliberate mutants.",
+          "Checks imported API names and availability on the real selected target.",
+          "Does not add mandatory manual verification or UI tests."
+        ],
+        "acceptedAlternatives": [
+          "Compile real modifier/native compositions and test public state/action dispatch.",
+          "Explicitly record unsupported semantic observations rather than inventing a test oracle."
+        ],
+        "expectedRoute": "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+        "exampleSource": null,
+        "exampleManifest": null,
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-uikit-semantics",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "semantics",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-semantics.md",
+        "sha256": "181f2a05ca54f05e2874fc9c9a8ea5afd63a51db926cadfcfdd6ebb3ad24f9a2"
+      },
+      "controller": {
+        "criteria": [
+          "Does not invent a defect solely from missing overrides.",
+          "Preserves native control and its existing state binding.",
+          "Distinguishes meaningful visible naming from implementation identifiers."
+        ],
+        "acceptedAlternatives": [
+          "Leave correct native semantics alone with a bounded explanation.",
+          "Request a concrete symptom before recommending a semantic override."
+        ],
+        "expectedRoute": "references/uikit/guidelines/u-001-labels-meaningful-names.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/semantics.md",
+        "exampleSource": "code-examples/pilots/uikit-naming-v1/Sources/NamingUIKit.swift",
+        "exampleManifest": "code-examples/pilots/uikit-naming-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-uikit-state",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "state",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-state.md",
+        "sha256": "01d940885a29d8915fe75196935ebc5a3d444e111c01f00dad2436dab8b73e3c"
+      },
+      "controller": {
+        "criteria": [
+          "Clears obsolete optional metadata on the same instance.",
+          "Checks current item plus request identity before accepting results.",
+          "Preserves unrelated state and the ordinary Open action."
+        ],
+        "acceptedAlternatives": [
+          "Cancel and invalidate previous requests plus guard current identity.",
+          "Generation token with current-item identity and explicit optional clearing."
+        ],
+        "expectedRoute": "references/uikit/guidelines/u-003-values-stateful-controls.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/state.md",
+        "exampleSource": "code-examples/pilots/uikit-reuse-v1/Sources/ReuseUIKit.swift",
+        "exampleManifest": "code-examples/pilots/uikit-reuse-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-uikit-actions",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "actions",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-actions.md",
+        "sha256": "ddf8bad3cbd8d08785f91dfcdb1ed4f6d44a36a2a09d793554ddfe9fb820c882"
+      },
+      "controller": {
+        "criteria": [
+          "Preserves independent visible ordinary actions.",
+          "Shortcut uses the current file and respects enabled state.",
+          "Repeated updates do not accumulate handlers or retain obsolete owners."
+        ],
+        "acceptedAlternatives": [
+          "A supported named accessibility action in addition to the ordinary button.",
+          "Retain existing implementation if it already supplies the requested shortcut correctly."
+        ],
+        "expectedRoute": "references/uikit/guidelines/u-007-accessibility-custom-actions.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/actions.md",
+        "exampleSource": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+        "exampleManifest": "code-examples/pilots/uikit-containers-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-uikit-structure",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "structure",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-structure.md",
+        "sha256": "643b451e2ad63894756b1c686ecf9db3ea6aabc6bc42ecb5a12df082c6932990"
+      },
+      "controller": {
+        "criteria": [
+          "Does not merge away independent controls.",
+          "Keeps ordinary navigation and stable current item identity.",
+          "Does not claim generated tree or rotor discoverability from configuration-only units."
+        ],
+        "acceptedAlternatives": [
+          "Group descriptive fragments separately from independent controls.",
+          "Keep meaningful existing structure and add only justified landmarks."
+        ],
+        "expectedRoute": "references/uikit/guidelines/u-005-grouping-containment.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/structure.md",
+        "exampleSource": "code-examples/pilots/uikit-containers-v1/Sources/ContainerUIKit.swift",
+        "exampleManifest": "code-examples/pilots/uikit-containers-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-uikit-text",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "text",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-text.md",
+        "sha256": "9afcc6a91cfcbb0e11cb21dfd972280bc2d49b1f18a798771c1937e538a150fc"
+      },
+      "controller": {
+        "criteria": [
+          "Addresses scalable text and live integration as distinct concerns.",
+          "Preserves Pay behavior and accepts valid layout alternatives.",
+          "Checks platform/OS availability rather than borrowing another target’s text behavior.",
+          "Does not equate wrapping or modifier compilation with rendered layout success."
+        ],
+        "acceptedAlternatives": [
+          "Flexible multiline layout with target-appropriate scalable typography.",
+          "A permanent vertical arrangement if justified by the supplied layout requirements."
+        ],
+        "expectedRoute": "references/uikit/guidelines/u-010-dynamic-type-layout-resilience.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/text.md",
+        "exampleSource": "code-examples/pilots/uikit-dynamic-v1/Sources/DynamicUIKit.swift",
+        "exampleManifest": "code-examples/pilots/uikit-dynamic-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-uikit-lifecycle",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "lifecycle",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-lifecycle.md",
+        "sha256": "a7d20ec9287421dbd91d672066c88e1356be1c1cf733c289bcd38942ea1f6324"
+      },
+      "controller": {
+        "criteria": [
+          "Resolves a current valid anchor at completion time.",
+          "Rejects stale or duplicate completion and consumes ownership before external callbacks.",
+          "Distinguishes requesting restoration from proving delivered focus."
+        ],
+        "acceptedAlternatives": [
+          "Session token plus current-item lookup and a valid fallback.",
+          "Explicit state machine with equivalent stale-completion and reentrancy handling."
+        ],
+        "expectedRoute": "references/uikit/guidelines/u-013-modal-focus-containment.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/lifecycle.md",
+        "exampleSource": "code-examples/pilots/uikit-lifecycle-v1/Sources/LifecycleUIKit.swift",
+        "exampleManifest": "code-examples/pilots/uikit-lifecycle-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-uikit-media",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "media",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-media.md",
+        "sha256": "2515312dff15fc585df30f92667313abe8dbc5a9fda8c4594da791a67b93c98a"
+      },
+      "controller": {
+        "criteria": [
+          "Keeps loading, empty/missing, error and positive metadata distinct.",
+          "Rejects results for an obsolete player item/request.",
+          "Does not change selected media options as a side effect of inspection.",
+          "Does not infer spoken description quality or complete caption support from a metadata flag."
+        ],
+        "acceptedAlternatives": [
+          "Explicit loading/result state with identity-guarded completion.",
+          "Equivalent typed result model preserving selection and unavailable evidence."
+        ],
+        "expectedRoute": "references/uikit/guidelines/u-015-media-captions-descriptions-controls.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/media.md",
+        "exampleSource": "code-examples/pilots/uikit-media-v1/Sources/MediaUIKit.swift",
+        "exampleManifest": "code-examples/pilots/uikit-media-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-uikit-testing",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "testing",
+      "classification": "shared-principle-demonstrated-through-UIKit",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-testing.md",
+        "sha256": "fc6df1b1dcb40e899198f2c48abfa30a1276c05c941506ba015a041eb602c811"
+      },
+      "controller": {
+        "criteria": [
+          "Limits conclusions to actual assertions and compilation.",
+          "Keeps exact first failures separate from repairs and deliberate mutants.",
+          "Checks imported API names and availability on the real selected target.",
+          "Does not add mandatory manual verification or UI tests."
+        ],
+        "acceptedAlternatives": [
+          "Compile real modifier/native compositions and test public state/action dispatch.",
+          "Explicitly record unsupported semantic observations rather than inventing a test oracle."
+        ],
+        "expectedRoute": "references/uikit/guidelines/u-014-table-collection-form-semantics.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+        "exampleSource": null,
+        "exampleManifest": null,
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-uikit-semantics",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "semantics",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-uikit-semantics.md",
+        "sha256": "9c2143013425f10e182ad4ce1233e079acb8ce6a406e6044fe69dc11638fb90c"
+      },
+      "controller": {
+        "criteria": [
+          "Does not invent a defect solely from missing overrides.",
+          "Preserves native control and its existing state binding.",
+          "Distinguishes meaningful visible naming from implementation identifiers."
+        ],
+        "acceptedAlternatives": [
+          "Leave correct native semantics alone with a bounded explanation.",
+          "Request a concrete symptom before recommending a semantic override."
+        ],
+        "expectedRoute": "references/tvos/guidelines/t-003-labels-values-traits-focused-controls.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/semantics.md",
+        "exampleSource": "code-examples/platforms/tvos-uikit-v1/Sources/TelevisionActions.swift",
+        "exampleManifest": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-uikit-state",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "state",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-uikit-state.md",
+        "sha256": "5f3c8c25e44c4bf4221a9955a44edc50da7fbdf0bad70e933cb752e5440e488d"
+      },
+      "controller": {
+        "criteria": [
+          "Clears obsolete optional metadata on the same instance.",
+          "Checks current item plus request identity before accepting results.",
+          "Preserves unrelated state and the ordinary Open action."
+        ],
+        "acceptedAlternatives": [
+          "Cancel and invalidate previous requests plus guard current identity.",
+          "Generation token with current-item identity and explicit optional clearing."
+        ],
+        "expectedRoute": "references/tvos/guidelines/t-003-labels-values-traits-focused-controls.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/state.md",
+        "exampleSource": "code-examples/platforms/tvos-state-recovery-v1/Sources/StateContracts.swift",
+        "exampleManifest": "code-examples/platforms/tvos-state-recovery-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-uikit-actions",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "actions",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-uikit-actions.md",
+        "sha256": "075479577ffd8774daf5fa7acf7c9b98dfa25a2fc2d55c14eecb1639e0d4e33c"
+      },
+      "controller": {
+        "criteria": [
+          "Preserves independent visible ordinary actions.",
+          "Shortcut uses the current file and respects enabled state.",
+          "Repeated updates do not accumulate handlers or retain obsolete owners."
+        ],
+        "acceptedAlternatives": [
+          "A supported named accessibility action in addition to the ordinary button.",
+          "Retain existing implementation if it already supplies the requested shortcut correctly."
+        ],
+        "expectedRoute": "references/tvos/guidelines/t-005-custom-actions-remote-first.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/actions.md",
+        "exampleSource": "code-examples/platforms/tvos-uikit-v1/Sources/TelevisionActions.swift",
+        "exampleManifest": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-uikit-structure",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "structure",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-uikit-structure.md",
+        "sha256": "4cd1ca74b4489e780875e6dcff1247442d46c046ee08891c756f83a9c7c7f8e4"
+      },
+      "controller": {
+        "criteria": [
+          "Does not merge away independent controls.",
+          "Keeps ordinary navigation and stable current item identity.",
+          "Does not claim generated tree or rotor discoverability from configuration-only units."
+        ],
+        "acceptedAlternatives": [
+          "Group descriptive fragments separately from independent controls.",
+          "Keep meaningful existing structure and add only justified landmarks."
+        ],
+        "expectedRoute": "references/tvos/guidelines/t-004-grouping-containment-shelves-grids.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/structure.md",
+        "exampleSource": "code-examples/platforms/tvos-uikit-v1/Sources/TelevisionActions.swift",
+        "exampleManifest": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-uikit-text",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "text",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-uikit-text.md",
+        "sha256": "917951fc6ac2d87b7d9ae9b3d5fc9408492588b9c5a7e101fefd48bb92874c2e"
+      },
+      "controller": {
+        "criteria": [
+          "Addresses scalable text and live integration as distinct concerns.",
+          "Preserves Pay behavior and accepts valid layout alternatives.",
+          "Checks platform/OS availability rather than borrowing another target’s text behavior.",
+          "Does not equate wrapping or modifier compilation with rendered layout success."
+        ],
+        "acceptedAlternatives": [
+          "Flexible multiline layout with target-appropriate scalable typography.",
+          "A permanent vertical arrangement if justified by the supplied layout requirements."
+        ],
+        "expectedRoute": null,
+        "sourceGap": true,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/text.md",
+        "exampleSource": null,
+        "exampleManifest": null,
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-uikit-lifecycle",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "lifecycle",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-uikit-lifecycle.md",
+        "sha256": "148da9164533198057a53307c42a0d679db502a19160515b42646074c65f1a03"
+      },
+      "controller": {
+        "criteria": [
+          "Resolves a current valid anchor at completion time.",
+          "Rejects stale or duplicate completion and consumes ownership before external callbacks.",
+          "Distinguishes requesting restoration from proving delivered focus."
+        ],
+        "acceptedAlternatives": [
+          "Session token plus current-item lookup and a valid fallback.",
+          "Explicit state machine with equivalent stale-completion and reentrancy handling."
+        ],
+        "expectedRoute": "references/tvos/guidelines/t-002-initial-focus-modal-restoration.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/lifecycle.md",
+        "exampleSource": null,
+        "exampleManifest": null,
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-uikit-media",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "media",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-uikit-media.md",
+        "sha256": "1584405193ce1b13dc1ee1f6fd32a9b1cbd4c81bd7b3622cc585b00753d2a25e"
+      },
+      "controller": {
+        "criteria": [
+          "Keeps loading, empty/missing, error and positive metadata distinct.",
+          "Rejects results for an obsolete player item/request.",
+          "Does not change selected media options as a side effect of inspection.",
+          "Does not infer spoken description quality or complete caption support from a metadata flag."
+        ],
+        "acceptedAlternatives": [
+          "Explicit loading/result state with identity-guarded completion.",
+          "Equivalent typed result model preserving selection and unavailable evidence."
+        ],
+        "expectedRoute": "references/tvos/guidelines/t-007-media-playback-controls.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/media.md",
+        "exampleSource": null,
+        "exampleManifest": null,
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-uikit-testing",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "testing",
+      "classification": "shared-principle-demonstrated-through-UIKit",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-uikit-testing.md",
+        "sha256": "22bfddfa4df10cb32a160bc4cc854f2fcbb07a548682027d70ff328de23d1dac"
+      },
+      "controller": {
+        "criteria": [
+          "Limits conclusions to actual assertions and compilation.",
+          "Keeps exact first failures separate from repairs and deliberate mutants.",
+          "Checks imported API names and availability on the real selected target.",
+          "Does not add mandatory manual verification or UI tests."
+        ],
+        "acceptedAlternatives": [
+          "Compile real modifier/native compositions and test public state/action dispatch.",
+          "Explicitly record unsupported semantic observations rather than inventing a test oracle."
+        ],
+        "expectedRoute": "references/uikit/guidelines/u-014-table-collection-form-semantics.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+        "exampleSource": null,
+        "exampleManifest": null,
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-appkit-semantics",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "semantics",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-semantics.md",
+        "sha256": "eb8dd2c59170a20a6206cb8037423320a0bc7f6a4f50427668202fc2a8b3ceba"
+      },
+      "controller": {
+        "criteria": [
+          "Does not invent a defect solely from missing overrides.",
+          "Preserves native control and its existing state binding.",
+          "Distinguishes meaningful visible naming from implementation identifiers."
+        ],
+        "acceptedAlternatives": [
+          "Leave correct native semantics alone with a bounded explanation.",
+          "Request a concrete symptom before recommending a semantic override."
+        ],
+        "expectedRoute": "references/macos/guidelines/m-001-nsaccessibility-roles-labels-values-actions.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/semantics.md",
+        "exampleSource": "code-examples/platforms/macos-appkit-v1/Sources/DesktopActions.swift",
+        "exampleManifest": "code-examples/platforms/macos-appkit-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-appkit-state",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "state",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-state.md",
+        "sha256": "250987b9b6d8e857c7966ed549f9530e9130a760f4ee1e3a9bd98322912dc567"
+      },
+      "controller": {
+        "criteria": [
+          "Clears obsolete optional metadata on the same instance.",
+          "Checks current item plus request identity before accepting results.",
+          "Preserves unrelated state and the ordinary Open action."
+        ],
+        "acceptedAlternatives": [
+          "Cancel and invalidate previous requests plus guard current identity.",
+          "Generation token with current-item identity and explicit optional clearing."
+        ],
+        "expectedRoute": "references/macos/guidelines/m-004-announcements-state-change-notifications.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/state.md",
+        "exampleSource": "code-examples/platforms/macos-closure-v1/Sources/AsyncOwnership.swift",
+        "exampleManifest": "code-examples/platforms/macos-closure-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-appkit-actions",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "actions",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-actions.md",
+        "sha256": "a3221645549ddf2c66f04db5b3d20952a7a1d01607d64463344ea58fc3fb6eee"
+      },
+      "controller": {
+        "criteria": [
+          "Preserves independent visible ordinary actions.",
+          "Shortcut uses the current file and respects enabled state.",
+          "Repeated updates do not accumulate handlers or retain obsolete owners."
+        ],
+        "acceptedAlternatives": [
+          "A supported named accessibility action in addition to the ordinary button.",
+          "Retain existing implementation if it already supplies the requested shortcut correctly."
+        ],
+        "expectedRoute": "references/macos/guidelines/m-001-nsaccessibility-roles-labels-values-actions.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/actions.md",
+        "exampleSource": "code-examples/platforms/macos-appkit-v1/Sources/DesktopActions.swift",
+        "exampleManifest": "code-examples/platforms/macos-appkit-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-appkit-structure",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "structure",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-structure.md",
+        "sha256": "7f59da93d717eae764f0baedbd29bead108fefbb158ed0132c1fc8f870b9fc5e"
+      },
+      "controller": {
+        "criteria": [
+          "Does not merge away independent controls.",
+          "Keeps ordinary navigation and stable current item identity.",
+          "Does not claim generated tree or rotor discoverability from configuration-only units."
+        ],
+        "acceptedAlternatives": [
+          "Group descriptive fragments separately from independent controls.",
+          "Keep meaningful existing structure and add only justified landmarks."
+        ],
+        "expectedRoute": "references/macos/guidelines/m-003-grouping-hierarchy-desktop-layouts.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/structure.md",
+        "exampleSource": "code-examples/platforms/macos-appkit-v1/Sources/DesktopActions.swift",
+        "exampleManifest": "code-examples/platforms/macos-appkit-v1/manifest.json",
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-appkit-text",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "text",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-text.md",
+        "sha256": "8738d0e8134b910b600a6db010e5cfbb4512566c4bba2b41c47f4567d2659065"
+      },
+      "controller": {
+        "criteria": [
+          "Addresses scalable text and live integration as distinct concerns.",
+          "Preserves Pay behavior and accepts valid layout alternatives.",
+          "Checks platform/OS availability rather than borrowing another target’s text behavior.",
+          "Does not equate wrapping or modifier compilation with rendered layout success."
+        ],
+        "acceptedAlternatives": [
+          "Flexible multiline layout with target-appropriate scalable typography.",
+          "A permanent vertical arrangement if justified by the supplied layout requirements."
+        ],
+        "expectedRoute": null,
+        "sourceGap": true,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/text.md",
+        "exampleSource": null,
+        "exampleManifest": null,
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-appkit-lifecycle",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "lifecycle",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-lifecycle.md",
+        "sha256": "bcffdebdceec9416918a7fded426dbbdab0e472472a490c46684a67007401c9a"
+      },
+      "controller": {
+        "criteria": [
+          "Resolves a current valid anchor at completion time.",
+          "Rejects stale or duplicate completion and consumes ownership before external callbacks.",
+          "Distinguishes requesting restoration from proving delivered focus."
+        ],
+        "acceptedAlternatives": [
+          "Session token plus current-item lookup and a valid fallback.",
+          "Explicit state machine with equivalent stale-completion and reentrancy handling."
+        ],
+        "expectedRoute": "references/macos/guidelines/m-007-modal-window-focus-containment.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/lifecycle.md",
+        "exampleSource": null,
+        "exampleManifest": null,
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-appkit-media",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "media",
+      "classification": "framework-specific-application",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-media.md",
+        "sha256": "9db43c88a0f3ae72d412859d27ba6cff5ef5b733104d2bb33499401911dfabab"
+      },
+      "controller": {
+        "criteria": [
+          "Keeps loading, empty/missing, error and positive metadata distinct.",
+          "Rejects results for an obsolete player item/request.",
+          "Does not change selected media options as a side effect of inspection.",
+          "Does not infer spoken description quality or complete caption support from a metadata flag."
+        ],
+        "acceptedAlternatives": [
+          "Explicit loading/result state with identity-guarded completion.",
+          "Equivalent typed result model preserving selection and unavailable evidence."
+        ],
+        "expectedRoute": null,
+        "sourceGap": true,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/media.md",
+        "exampleSource": null,
+        "exampleManifest": null,
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-appkit-testing",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "testing",
+      "classification": "shared-principle-demonstrated-through-AppKit",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-testing.md",
+        "sha256": "f853b3b93cb6865771bf542f68da79adeae1d8866607d56103a409848dc1fdd3"
+      },
+      "controller": {
+        "criteria": [
+          "Limits conclusions to actual assertions and compilation.",
+          "Keeps exact first failures separate from repairs and deliberate mutants.",
+          "Checks imported API names and availability on the real selected target.",
+          "Does not add mandatory manual verification or UI tests."
+        ],
+        "acceptedAlternatives": [
+          "Compile real modifier/native compositions and test public state/action dispatch.",
+          "Explicitly record unsupported semantic observations rather than inventing a test oracle."
+        ],
+        "expectedRoute": "references/macos/guidelines/m-010-testing-workflow.md",
+        "sourceGap": false,
+        "note": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+        "exampleSource": null,
+        "exampleManifest": null,
+        "provenance": "New authored scenario inspired by known development themes; no captured subject answer.",
+        "evidenceLimit": "Existing fixture is a linked research lead, not execution or qualification of this new prompt.",
+        "criticalErrors": [
+          "Invented API or unsupported availability",
+          "Removing an independent working action",
+          "Claiming unobserved speech/focus/tree behavior"
+        ]
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-uikit-no-change",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "semantics",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-no-change.md",
+        "sha256": "2a184c4680bf73ceae8b229cba3401e82a249515023b04d8eb76130584ff6113"
+      },
+      "controller": {
+        "criteria": [
+          "Does not transfer defaults, support or runtime evidence across targets.",
+          "Preserves the valid existing native control without inventing a defect.",
+          "Does not claim a document was read merely because its name is known."
+        ],
+        "acceptedAlternatives": [
+          "A bounded answer with targeted clarification.",
+          "No change when the supplied implementation is already valid."
+        ],
+        "expectedDisposition": "bounded-evidence-answer"
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-swiftui-no-change",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "topic": "semantics",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-swiftui-no-change.md",
+        "sha256": "702058f370f81716a175faa26c5f206edcbcf95941684f9eacec8f1042277de6"
+      },
+      "controller": {
+        "criteria": [
+          "Does not transfer defaults, support or runtime evidence across targets.",
+          "Preserves the valid existing native control without inventing a defect.",
+          "Does not claim a document was read merely because its name is known."
+        ],
+        "acceptedAlternatives": [
+          "A bounded answer with targeted clarification.",
+          "No change when the supplied implementation is already valid."
+        ],
+        "expectedDisposition": "bounded-evidence-answer"
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-appkit-no-change",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "semantics",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-no-change.md",
+        "sha256": "5ce9c8f199aeffdf70c26b545910183a41c4878da3f629c27d61099f46cd965e"
+      },
+      "controller": {
+        "criteria": [
+          "Does not transfer defaults, support or runtime evidence across targets.",
+          "Preserves the valid existing native control without inventing a defect.",
+          "Does not claim a document was read merely because its name is known."
+        ],
+        "acceptedAlternatives": [
+          "A bounded answer with targeted clarification.",
+          "No change when the supplied implementation is already valid."
+        ],
+        "expectedDisposition": "bounded-evidence-answer"
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-uikit-no-change",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "actions",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-uikit-no-change.md",
+        "sha256": "e04681330e61ddd5ce42190ef342fa3f7d52b101d765a7ce3355905693e1e12a"
+      },
+      "controller": {
+        "criteria": [
+          "Does not transfer defaults, support or runtime evidence across targets.",
+          "Preserves the valid existing native control without inventing a defect.",
+          "Does not claim a document was read merely because its name is known."
+        ],
+        "acceptedAlternatives": [
+          "A bounded answer with targeted clarification.",
+          "No change when the supplied implementation is already valid."
+        ],
+        "expectedDisposition": "bounded-evidence-answer"
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "mixed-ios-owner",
+      "platform": "iOS",
+      "framework": "mixed",
+      "topic": "actions",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/mixed-ios-owner.md",
+        "sha256": "2c81e2807765962ad6a20e1755275cdd90ba468e0428d02717408a8f15dd3905"
+      },
+      "controller": {
+        "criteria": [
+          "Clarifies actual ownership before selecting API-specific guidance.",
+          "States the missing evidence or boundary honestly.",
+          "Does not claim a document was read merely because its name is known."
+        ],
+        "acceptedAlternatives": [
+          "A bounded answer with targeted clarification.",
+          "No change when the supplied implementation is already valid."
+        ],
+        "expectedDisposition": "needs-owner"
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "mixed-macos-owner",
+      "platform": "macOS",
+      "framework": "mixed",
+      "topic": "structure",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/mixed-macos-owner.md",
+        "sha256": "5c3d5710d5060f260e752be193c34c0ea11efb7270875478383a014a7ce52ef2"
+      },
+      "controller": {
+        "criteria": [
+          "Clarifies actual ownership before selecting API-specific guidance.",
+          "States the missing evidence or boundary honestly.",
+          "Does not claim a document was read merely because its name is known."
+        ],
+        "acceptedAlternatives": [
+          "A bounded answer with targeted clarification.",
+          "No change when the supplied implementation is already valid."
+        ],
+        "expectedDisposition": "needs-owner"
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "mixed-tvos-owner",
+      "platform": "tvOS",
+      "framework": "mixed",
+      "topic": "state",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/mixed-tvos-owner.md",
+        "sha256": "381dfc1ba3ce3bc6f300a14d964d2a61e190c43b3cd1af6eeb854056c0847257"
+      },
+      "controller": {
+        "criteria": [
+          "Clarifies actual ownership before selecting API-specific guidance.",
+          "States the missing evidence or boundary honestly.",
+          "Does not claim a document was read merely because its name is known."
+        ],
+        "acceptedAlternatives": [
+          "A bounded answer with targeted clarification.",
+          "No change when the supplied implementation is already valid."
+        ],
+        "expectedDisposition": "needs-owner"
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "watchos-scope",
+      "platform": "watchOS",
+      "framework": "SwiftUI",
+      "topic": "text",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/watchos-scope.md",
+        "sha256": "39dbf83e050318c1ae3bda4c0dbd69a9f12c2b8fe8f1994e82601619d81fe52a"
+      },
+      "controller": {
+        "criteria": [
+          "Does not transfer defaults, support or runtime evidence across targets.",
+          "States the missing evidence or boundary honestly.",
+          "Does not claim a document was read merely because its name is known."
+        ],
+        "acceptedAlternatives": [
+          "A bounded answer with targeted clarification.",
+          "No change when the supplied implementation is already valid."
+        ],
+        "expectedDisposition": "outside-current-companion-coverage"
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "visionos-scope",
+      "platform": "visionOS",
+      "framework": "SwiftUI",
+      "topic": "structure",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/visionos-scope.md",
+        "sha256": "d3a09e1117081caacf648da3003b2b7efeec279985f472095a767e67de2970a2"
+      },
+      "controller": {
+        "criteria": [
+          "Does not transfer defaults, support or runtime evidence across targets.",
+          "States the missing evidence or boundary honestly.",
+          "Does not claim a document was read merely because its name is known."
+        ],
+        "acceptedAlternatives": [
+          "A bounded answer with targeted clarification.",
+          "No change when the supplied implementation is already valid."
+        ],
+        "expectedDisposition": "outside-current-companion-coverage"
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "ios-missing-reference",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "topic": "testing",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-missing-reference.md",
+        "sha256": "7c78d80e047b9239cf16cb276d1a9437491ecf7d57dfdb86d86057a9ef4f0446"
+      },
+      "controller": {
+        "criteria": [
+          "Does not transfer defaults, support or runtime evidence across targets.",
+          "States the missing evidence or boundary honestly.",
+          "Does not claim a document was read merely because its name is known."
+        ],
+        "acceptedAlternatives": [
+          "A bounded answer with targeted clarification.",
+          "No change when the supplied implementation is already valid."
+        ],
+        "expectedDisposition": "bounded-evidence-answer"
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "macos-version-boundary",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "topic": "testing",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-version-boundary.md",
+        "sha256": "252207fba9ffeae66da66383007962190fdd3a5c35f390a5b1bfa43f9d83fee5"
+      },
+      "controller": {
+        "criteria": [
+          "Does not transfer defaults, support or runtime evidence across targets.",
+          "States the missing evidence or boundary honestly.",
+          "Does not claim a document was read merely because its name is known."
+        ],
+        "acceptedAlternatives": [
+          "A bounded answer with targeted clarification.",
+          "No change when the supplied implementation is already valid."
+        ],
+        "expectedDisposition": "bounded-evidence-answer"
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    },
+    {
+      "id": "tvos-version-boundary",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "topic": "text",
+      "status": "draft-gold-candidate",
+      "cohort": "development-not-holdout",
+      "subject": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-version-boundary.md",
+        "sha256": "92cd811da55d55b64373a71eea9ddec21922d305bdef119b51564a58414dec2c"
+      },
+      "controller": {
+        "criteria": [
+          "Does not transfer defaults, support or runtime evidence across targets.",
+          "States the missing evidence or boundary honestly.",
+          "Does not claim a document was read merely because its name is known."
+        ],
+        "acceptedAlternatives": [
+          "A bounded answer with targeted clarification.",
+          "No change when the supplied implementation is already valid."
+        ],
+        "expectedDisposition": "bounded-evidence-answer"
+      },
+      "attempts": [],
+      "outputsAvailable": false
+    }
+  ],
+  "modelCalls": 0,
+  "qualification": "No independent review or new subject outputs; not a frozen benchmark."
+}

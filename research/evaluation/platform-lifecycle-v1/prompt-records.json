@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "scope": "Four new lifecycle development prompts; separate from the nine prepared Gemini review cases",
+  "cases": [
+    {
+      "id": "macos-lifecycle-v1/modal-restoration",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/macos-lifecycle-v1/evaluation/modal-restoration.prompt.md",
+        "sha256": "59ae696cc325925c28d586ae2f699ea46a99c9c132988ae3fedbf68b53d8a774",
+        "text": "In our AppKit/macOS app, closing a modal should request a return to the original button, or a fallback if that button is no longer eligible in the owning view. The controls may be removed, hidden or disabled while the modal is open. A new modal can replace an older one, and cancellation or duplicate completion must not disturb the new flow. Implement a small coordinator that runs only after dismissal completes, handles a request that starts another modal, and can be unit tested without driving the UI. Target macOS 26.0.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/macos-lifecycle-v1/evaluation/modal-restoration.rubric.md",
+        "sha256": "a0ee4eb51906a0fe5d0e8eba91de39161934c6fa3fb01ea2378f8b4d476f3f47",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/macos-lifecycle-v1/manifest.json",
+      "authoringCapture": "See AUTHORING.md; current visible request and native tool inputs/results captured, full provider context unavailable"
+    },
+    {
+      "id": "macos-lifecycle-v1/display-preferences",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/macos-lifecycle-v1/evaluation/display-preferences.prompt.md",
+        "sha256": "7b07f9df8d9fb489a1d95ffaf640518f70b8d33135f58d3b560e5090a151979d",
+        "text": "In our AppKit/macOS app, a screen needs the current Reduce Motion, Reduce Transparency and increased-contrast settings when it starts, then updates when those settings change. It may stop and restart while an update is already queued. Repeated identical values should not trigger extra rendering. Implement a small observer with correct platform notification registration, owned cleanup and unit tests using injected settings and scheduling. Target macOS 26.0; do not change the machine's settings.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/macos-lifecycle-v1/evaluation/display-preferences.rubric.md",
+        "sha256": "9c0073f5578f72174bb9c7b3911cdfb4b1564dda367234dd2034ef60f179f97b",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/macos-lifecycle-v1/manifest.json",
+      "authoringCapture": "See AUTHORING.md; current visible request and native tool inputs/results captured, full provider context unavailable"
+    },
+    {
+      "id": "tvos-lifecycle-v1/modal-restoration",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/tvos-lifecycle-v1/evaluation/modal-restoration.prompt.md",
+        "sha256": "568f3cf50e437f15cdb86ca69d554a43e25d572587cc60924f40948d99d207d2",
+        "text": "In our UIKit/tvOS app, closing a modal should request a return to the original button, or a fallback if that button is no longer eligible in the owning view. The controls may be removed, hidden or disabled while the modal is open. A new modal can replace an older one, and cancellation or duplicate completion must not disturb the new flow. Implement a small coordinator that runs only after dismissal completes, handles a request that starts another modal, and can be unit tested without driving the UI. Target tvOS 26.0.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/tvos-lifecycle-v1/evaluation/modal-restoration.rubric.md",
+        "sha256": "3386d3afd58d28608243c42a1313cb677b2a9e531b8e7806620f9d5027a1e2ef",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/tvos-lifecycle-v1/manifest.json",
+      "authoringCapture": "See AUTHORING.md; current visible request and native tool inputs/results captured, full provider context unavailable"
+    },
+    {
+      "id": "tvos-lifecycle-v1/display-preferences",
+      "lifecycle": "draft-not-run",
+      "subject": {
+        "path": "code-examples/platforms/tvos-lifecycle-v1/evaluation/display-preferences.prompt.md",
+        "sha256": "c60353787b2df04bd1b0838d9a19ef84354fbb33a894e5154afc76b498bd3221",
+        "text": "In our UIKit/tvOS app, a screen needs the current Reduce Motion, Reduce Transparency and increased-contrast settings when it starts, then updates when those settings change. It may stop and restart while an update is already queued. Repeated identical values should not trigger extra rendering. Implement a small observer with correct platform notification registration, owned cleanup and unit tests using injected settings and scheduling. Target tvOS 26.0; do not change the machine's settings.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/tvos-lifecycle-v1/evaluation/display-preferences.rubric.md",
+        "sha256": "4cd5f54214254262d2e5f8f685a05701be466fed21a9f21031113f5d1f56c0db",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/tvos-lifecycle-v1/manifest.json",
+      "authoringCapture": "See AUTHORING.md; current visible request and native tool inputs/results captured, full provider context unavailable"
+    }
+  ]
+}

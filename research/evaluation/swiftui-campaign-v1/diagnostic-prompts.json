@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "scope": "Two controller diagnostic cases, separate from21 platform accessibility tasks. Input files must be loaded explicitly into a future diagnostic payload; no such payload or independent answer has been run.",
+  "cases": [
+    {
+      "id": "SUI-D01",
+      "kind": "oracle-diagnostic",
+      "provenance": "new synthetic diagnostic based on preserved incident, not a reconstructed historical prompt",
+      "subject": {
+        "question": "An AppKit unit test creates an NSButton, assigns it to a coordinator whose view property is weak, clears the local strong reference, and immediately expects the weak reference to be nil. The assertion fails. Does this establish a coordinator leak? Propose a minimal diagnostic that separates native allocation lifetime from coordinator ownership; do not use UI automation.",
+        "inputs": {
+          "firstSource": "incidents/mac-first-interop.swift.txt",
+          "firstTest": "incidents/mac-first-interop-tests.swift.txt",
+          "diagnostics": "incidents/mac-first-failures.json"
+        }
+      },
+      "controller": {
+        "rubric": "Inspect actual strong references before blaming ownership. Compare a native-only control and coordinator case at a valid lifetime boundary. An autorelease-pool boundary is accepted; do not change the subject reference to unowned/unsafe or suppress the failure. This is an oracle diagnostic, not accessibility guidance."
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": "SUI-02 in DIFFICULTIES.md; original and repaired native outcomes are recorded separately."
+    },
+    {
+      "id": "SUI-D02",
+      "kind": "inventory-diagnostic",
+      "provenance": "new synthetic diagnostic based on preserved scanner gap",
+      "subject": {
+        "question": "A guideline inventory includes implementation, testing, do/dont and interaction-refinement sections. The original document also has an appended platform-release update paragraph. Audit the source against the inventoried requirement IDs and explain whether the inventory is complete. Do not implement the newer-platform feature as part of the audit.",
+        "inputs": {
+          "guideline": "references/swiftui/guidelines/g-015-media-captions-audio-descriptions.md",
+          "firstInventory": "incidents/requirements-first-inventory.json.txt"
+        }
+      },
+      "controller": {
+        "rubric": "Identify the omitted OS27 paragraph and give it an explicit version-scoped unresolved disposition. Preserve the original inventory and source hash. Do not claim a documentation-supported future behavior was unit-tested on OS26, and do not convert a scanner failure into accessibility advice."
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": "SUI-04 in DIFFICULTIES.md; corrected inventory217 versus preserved inventory216."
+    }
+  ]
+}

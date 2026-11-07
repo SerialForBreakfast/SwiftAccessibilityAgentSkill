@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "id": "tvos-uikit-semantics",
+  "classification": "prompt-premise-ambiguity-not-model-failure",
+  "original": {
+    "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-uikit-semantics.md",
+    "sha256": "9c2143013425f10e182ad4ce1233e079acb8ce6a406e6044fe69dc11638fb90c",
+    "text": "I am using UIKit on tvOS 26 deployment target; available validation anchor tvOS 26.5.\n\nA settings screen has a standard switch with visible text “Download on Wi-Fi” and a working on/off binding. A review says every control needs a custom accessibility label and role. Nothing reports a specific failure. Should I change it? Explain what you can conclude from this information and what you would leave alone.\n\nThis is a design/debugging question; no existing project or omitted source files are available. If code is useful, supply a self-contained minimal example and state material assumptions. Do not execute anything.\n"
+  },
+  "primaryEvidence": {
+    "kind": "installed-public-sdk-declaration",
+    "sdk": "AppleTVSimulator27.0.sdk",
+    "path": "/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator27.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UISwitch.h",
+    "sha256": "9ce71cfc7014255a33e6f971056c36a2353bd77b231b4a9f6436b019da27966c",
+    "line": 22,
+    "quote": "UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(tvos, watchos) NS_SWIFT_UI_ACTOR\n@interface UISwitch : UIControl <NSCoding>"
+  },
+  "finding": "A standard UIKit switch on tvOS is an unsafe premise: UISwitch is declared unavailable. A custom on/off control would need explicit ownership and configuration. The prompt does not name UISwitch, so this is quarantined ambiguity, not proof every interpretation is impossible.",
+  "disposition": "Exclude from proposed selection pending independent prompt clarification; preserve old subject bytes and all old grades.",
+  "availabilityLimit": "Current installed SDK declaration, not execution on all OS versions or an inferred version of first change.",
+  "runtimeSkillChanged": false,
+  "originalPromptChanged": false,
+  "modelCalls": 0
+}

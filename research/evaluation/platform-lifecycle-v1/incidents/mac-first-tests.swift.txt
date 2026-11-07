@@ -1,0 +1,80 @@
+import XCTest
+import AppKit
+@testable import AccessibilityExamples
+
+@MainActor
+private final class ModalHarness {
+    let root: NSView
+    let primary: NSButton
+    let fallback: NSButton
+    var seen: [NSButton] = []
+    var accepted = true
+    lazy var restore = DesktopModalRestore(root: root) { [weak self] target in
+        guard let self else { return false }; self.seen.append(target); return self.accepted
+    }
+    init() {
+        _ = NSApplication.shared
+        root = NSView(); primary = NSButton(title: "Action", target: nil, action: nil); fallback = NSButton(title: "Action", target: nil, action: nil)
+        root.addSubview(primary); root.addSubview(fallback)
+    }
+    func begin() -> Int { restore.begin(primary: primary, fallback: fallback) }
+}
+
+@MainActor
+private final class PreferenceHarness {
+    let center = NotificationCenter()
+    var snapshot = DisplayPreferences()
+    var applied: [DisplayPreferences] = []
+    var reads = 0
+    var jobs: [@MainActor @Sendable () -> Void] = []
+    lazy var observer = DesktopPreferences(center: center, read: { [unowned self] in
+        reads += 1; return snapshot
+    }, enqueue: { [weak self] action in
+        MainActor.assumeIsolated { self?.jobs.append(action) }
+    }, apply: { [unowned self] value in applied.append(value) })
+    func post(_ index: Int = 0) { center.post(name: DesktopPreferences.names[index], object: nil) }
+    func drain() { let pending = jobs; jobs = []; pending.forEach { $0() } }
+}
+
+@MainActor
+final class DesktopLifecycleTests: XCTestCase {
+    func testBeginDoesNotRequestFocus() { let h = ModalHarness(); _ = h.begin(); XCTAssertTrue(h.seen.isEmpty) }
+    func testCompletedModalRequestsOriginal() { let h = ModalHarness(); XCTAssertTrue(h.restore.finish(h.begin())); XCTAssertTrue(h.seen.first === h.primary) }
+    func testRemovedOriginalUsesFallback() { let h = ModalHarness(); let token = h.begin(); h.primary.removeFromSuperview(); XCTAssertTrue(h.restore.finish(token)); XCTAssertTrue(h.seen.first === h.fallback) }
+    func testHiddenAncestorUsesFallback() { let h = ModalHarness(); let group = NSView(); h.root.addSubview(group); group.addSubview(h.primary); let token = h.begin(); group.isHidden = true; XCTAssertTrue(h.restore.finish(token)); XCTAssertTrue(h.seen.first === h.fallback) }
+    func testDisabledOriginalUsesFallback() { let h = ModalHarness(); let token = h.begin(); h.primary.isEnabled = false; XCTAssertTrue(h.restore.finish(token)); XCTAssertTrue(h.seen.first === h.fallback) }
+    func testForeignOriginalUsesFallback() { let h = ModalHarness(); let token = h.begin(); let other = NSView(); other.addSubview(h.primary); XCTAssertTrue(h.restore.finish(token)); XCTAssertTrue(h.seen.first === h.fallback) }
+    func testOldCompletionCannotConsumeNewSession() { let h = ModalHarness(); let old = h.begin(); let current = h.restore.begin(primary: h.fallback, fallback: nil); XCTAssertFalse(h.restore.finish(old)); XCTAssertTrue(h.seen.isEmpty); XCTAssertTrue(h.restore.finish(current)); XCTAssertTrue(h.seen.first === h.fallback) }
+    func testDuplicateCompletionIsQuiet() { let h = ModalHarness(); let token = h.begin(); XCTAssertTrue(h.restore.finish(token)); XCTAssertFalse(h.restore.finish(token)); XCTAssertEqual(h.seen.count, 1) }
+    func testCancellationRejectsLateCompletion() { let h = ModalHarness(); let token = h.begin(); h.restore.cancel(token); XCTAssertFalse(h.restore.finish(token)); XCTAssertTrue(h.seen.isEmpty) }
+    func testOldCancellationPreservesCurrentSession() { let h = ModalHarness(); let old = h.begin(), current = h.begin(); h.restore.cancel(old); XCTAssertTrue(h.restore.finish(current)) }
+    func testNoEligibleTargetDoesNotRequest() { let h = ModalHarness(); let token = h.begin(); h.primary.isHidden = true; h.fallback.isEnabled = false; XCTAssertFalse(h.restore.finish(token)); XCTAssertTrue(h.seen.isEmpty) }
+    func testRequestRejectionIsReturned() { let h = ModalHarness(); h.accepted = false; XCTAssertFalse(h.restore.finish(h.begin())); XCTAssertEqual(h.seen.count, 1) }
+    func testReentrantRequestPreservesNewSession() {
+        let h = ModalHarness(); var next: Int?, calls = 0; var r: DesktopModalRestore!
+        r = DesktopModalRestore(root: h.root) { _ in calls += 1; if next == nil { next = r.begin(primary: h.fallback, fallback: nil) }; return true }
+        let first = r.begin(primary: h.primary, fallback: nil)
+        XCTAssertTrue(r.finish(first)); XCTAssertNotNil(next); XCTAssertTrue(r.finish(next!)); XCTAssertEqual(calls, 2); r = nil
+    }
+    func testHiddenRootPreventsRequest() { let h = ModalHarness(); let token = h.begin(); h.root.isHidden = true; XCTAssertFalse(h.restore.finish(token)); XCTAssertTrue(h.seen.isEmpty) }
+    func testPreferenceInitialSnapshot() { let h = PreferenceHarness(); h.snapshot.reduceMotion = true; h.observer.start(); XCTAssertEqual(h.applied, [h.snapshot]); XCTAssertEqual(h.reads, 1) }
+    func testPreferenceStartIsIdempotent() { let h = PreferenceHarness(); h.observer.start(); h.observer.start(); h.post(); XCTAssertEqual(h.jobs.count, 1); XCTAssertEqual(h.reads, 1) }
+    func testPreferenceIdenticalValuesAreDeduplicated() { let h = PreferenceHarness(); h.observer.start(); h.post(); h.drain(); XCTAssertEqual(h.applied.count, 1); XCTAssertEqual(h.reads, 2) }
+    func testPreferenceMotionChange() { let h = PreferenceHarness(); h.observer.start(); h.snapshot.reduceMotion = true; h.post(); h.drain(); XCTAssertTrue(h.applied.last!.reduceMotion) }
+    func testPreferenceTransparencyChange() { let h = PreferenceHarness(); h.observer.start(); h.snapshot.reduceTransparency = true; h.post(0); h.drain(); XCTAssertTrue(h.applied.last!.reduceTransparency); XCTAssertFalse(h.applied.last!.reduceMotion) }
+    func testPreferenceContrastChange() { let h = PreferenceHarness(); h.observer.start(); h.snapshot.increaseContrast = true; h.post(0); h.drain(); XCTAssertTrue(h.applied.last!.increaseContrast) }
+    func testPreferenceStoppedQueuedWorkIgnored() { let h = PreferenceHarness(); h.observer.start(); h.post(); h.observer.stop(); h.snapshot.reduceMotion = true; h.drain(); XCTAssertEqual(h.reads, 1); XCTAssertEqual(h.applied.count, 1) }
+    func testPreferenceStopRemovesObservers() { let h = PreferenceHarness(); h.observer.start(); h.observer.stop(); for name in DesktopPreferences.names { h.center.post(name: name, object: nil) }; XCTAssertTrue(h.jobs.isEmpty) }
+    func testPreferenceRestartRefreshesSnapshot() { let h = PreferenceHarness(); h.observer.start(); h.observer.stop(); h.snapshot.reduceTransparency = true; h.observer.start(); XCTAssertEqual(h.reads, 2); XCTAssertTrue(h.applied.last!.reduceTransparency) }
+    func testPreferenceOldGenerationIgnoredAfterRestart() { let h = PreferenceHarness(); h.observer.start(); h.post(); h.observer.stop(); h.observer.start(); h.drain(); XCTAssertEqual(h.reads, 2) }
+    func testPreferenceOtherCenterIgnored() { let h = PreferenceHarness(); h.observer.start(); NotificationCenter().post(name: DesktopPreferences.names[0], object: nil); XCTAssertTrue(h.jobs.isEmpty) }
+    func testPreferenceDeinitRemovesObservers() {
+        let center = NotificationCenter(); let queue = PreferenceHarness(); weak var weakObserver: DesktopPreferences?
+        autoreleasepool {
+            let observer = DesktopPreferences(center: center, read: {DisplayPreferences()}, enqueue: { action in MainActor.assumeIsolated { queue.jobs.append(action) } }, apply: {_ in})
+            weakObserver = observer; observer.start()
+        }
+        XCTAssertNil(weakObserver); for name in DesktopPreferences.names { center.post(name: name, object: nil) }; XCTAssertTrue(queue.jobs.isEmpty)
+    }
+    func testDefaultRequestWithoutWindowReturnsFalse() { let h = ModalHarness(); let r = DesktopModalRestore(root: h.root); XCTAssertFalse(r.finish(r.begin(primary: h.primary, fallback: nil))) }
+}

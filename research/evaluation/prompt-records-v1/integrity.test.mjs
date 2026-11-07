@@ -6,10 +6,9 @@ import {fileURLToPath} from 'node:url';
 import {hash} from '../../../code-examples/tools/contracts.mjs';
 const root=fileURLToPath(new URL('../../../',import.meta.url));
 const index=JSON.parse(fs.readFileSync(new URL('./platform-prompts.json',import.meta.url)));
-test('all current platform question files appear exactly once',()=>{
-  const base=path.join(root,'code-examples/platforms');
-  const paths=fs.readdirSync(base).filter(n=>!n.startsWith('.')).flatMap(folder=>{
-    const relative=`code-examples/platforms/${folder}/evaluation`;
+test('all question files in the original indexed packages appear exactly once',()=>{
+  const folders=[...new Set(index.cases.map(c=>path.dirname(c.subject.path)))];
+  const paths=folders.flatMap(relative=>{
     if(!fs.existsSync(path.join(root,relative)))return [];
     return fs.readdirSync(path.join(root,relative)).filter(n=>n.endsWith('.prompt.md')).map(n=>relative+'/'+n);
   });

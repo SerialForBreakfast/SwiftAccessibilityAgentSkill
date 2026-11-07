@@ -1,0 +1,252 @@
+{
+  "schema": 1,
+  "id": "macos-structure-v1",
+  "revision": "1",
+  "platform": "macOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 27,
+  "limitations": "Native unit configuration, data-source topology, identity, action and validation contracts only. No layout, spoken output, UI automation or directional/keyboard interaction proof. Validator and error strings are application-provided.",
+  "claims": [
+    {
+      "id": "forms",
+      "url": "https://developer.apple.com/documentation/appkit/nsaccessibilityprotocol/setaccessibilityhelp(_:)",
+      "section": "Native help/hint metadata and ordinary control action APIs; SDK declarations",
+      "statement": "Application policy keeps entered text and ordinary save control, exposes visible validation error and resets transient help on edit.",
+      "reviewedOn": "2026-11-06",
+      "availability": "Installed SDK27 declarations audited; target26 compile and actual runtime evidence are separate. No inferred earliest availability for unannotated members."
+    },
+    {
+      "id": "collections",
+      "url": "https://developer.apple.com/documentation/appkit/nsoutlineviewdatasource",
+      "section": "Programmatic data source requirements; NSOutlineView.h identity/row methods",
+      "statement": "Provide hierarchy, per-column data and stable node identity; application policy preserves selection and rejects duplicate IDs atomically.",
+      "reviewedOn": "2026-11-06",
+      "availability": "Installed SDK27 declarations audited; target26 compile and actual runtime evidence are separate. No inferred earliest availability for unannotated members."
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/DesktopForm.swift",
+      "sha256": "c0741b9b71599dbd5ff2393324d2dd2326535541c9a5657a926aed59cedc0693"
+    },
+    {
+      "path": "Sources/DesktopOutline.swift",
+      "sha256": "904da0ffc643617d7f2c5678a7e801a6d0e6a713d6808f95ea274150f9992a50"
+    },
+    {
+      "path": "Tests/DesktopFormTests.swift",
+      "sha256": "ee449562ffa500c2f3d14a7e4db406fffd25d1db3321c0215be48b1e152a34cf"
+    },
+    {
+      "path": "Tests/DesktopOutlineTests.swift",
+      "sha256": "42d882544ff09f96d4144a5e9461af62ec7dfd9dac8ba451e9614d362074864c"
+    },
+    {
+      "path": "NegativeFixtures/DuplicateIDs.swift",
+      "sha256": "e06679c0d5ab4144d3e3060ce45d993f704dbbb4ebe82ef9f2276c352f05e6f7"
+    },
+    {
+      "path": "NegativeFixtures/InvalidSaves.swift",
+      "sha256": "f0712de7c1f021a1e655f3f709847469b50de39fc42ffa060b1b48266b665688"
+    },
+    {
+      "path": "NegativeFixtures/LostIdentity.swift",
+      "sha256": "7b29104e78fe3bd5027cf51facf91f02b116ad6546ac57d3dd296659aa818ea1"
+    },
+    {
+      "path": "NegativeFixtures/LostSelection.swift",
+      "sha256": "3f08edbb873e99426ec92ba67de7093b576c69b2ebe6d0d8dfdc6ba7ecd7295d"
+    },
+    {
+      "path": "NegativeFixtures/ReentrantSave.swift",
+      "sha256": "85a596f4f303b1a9a676bc1319eff1c983aa8a09081f78353445194d65bb6b40"
+    },
+    {
+      "path": "NegativeFixtures/StaleMessage.swift",
+      "sha256": "020327a5faf353896631e89b8498967fd91669f141f8a6fb85cc6d3c2acefd12"
+    },
+    {
+      "path": "NegativeFixtures/StaleNode.swift",
+      "sha256": "3b0609ab059ebbc4d27011927ad72ce5790ae63bab5b87d6bee6aff7dff0adef"
+    }
+  ],
+  "checks": [
+    {
+      "id": "compile",
+      "lane": "compile",
+      "expected": "success",
+      "claimIds": [
+        "forms",
+        "collections"
+      ],
+      "testIds": [],
+      "failureIds": []
+    },
+    {
+      "id": "positive",
+      "lane": "unit",
+      "expected": "success",
+      "claimIds": [
+        "forms",
+        "collections"
+      ],
+      "testIds": [
+        "DesktopFormTests/testInitialIndependentControlsAndQuietError",
+        "DesktopFormTests/testInvalidInputShowsErrorWithoutSavingOrErasing",
+        "DesktopFormTests/testRepeatedErrorPreservesOriginalHelpWithoutAppending",
+        "DesktopFormTests/testEditingClearsErrorRestoresHelpAndPreservesInput",
+        "DesktopFormTests/testCorrectionRecoversAndAllowsOrdinarySubmission",
+        "DesktopFormTests/testValidInputIsNotSilentlyTrimmed",
+        "DesktopFormTests/testDisabledSubmissionDoesNotValidateOrSave",
+        "DesktopFormTests/testReentrantSaveDoesNotSubmitTwice",
+        "DesktopFormTests/testAbsentHelpReturnsToNilAfterEditing",
+        "DesktopFormTests/testValidationKeepsExistingControlIdentity",
+        "DesktopFormTests/testEditingDoesNotValidateOrSave",
+        "DesktopFormTests/testSubmissionPassesInputSnapshotToCallback",
+        "DesktopOutlineTests/testColumnsHaveDistinctNamesAndOutlineOwnership",
+        "DesktopOutlineTests/testRootCountAndChildOrder",
+        "DesktopOutlineTests/testNestedChildrenAndExpandableState",
+        "DesktopOutlineTests/testEachColumnUsesItsOwnValue",
+        "DesktopOutlineTests/testRenameRetainsStableNodeIdentity",
+        "DesktopOutlineTests/testExpansionPersistsAcrossReload",
+        "DesktopOutlineTests/testSelectedChildSurvivesSiblingReorder",
+        "DesktopOutlineTests/testRemovedSelectionClears",
+        "DesktopOutlineTests/testDuplicateRootsAreRejectedAtomically",
+        "DesktopOutlineTests/testDuplicateNestedIDsAreRejectedAtomically",
+        "DesktopOutlineTests/testSameIDInDifferentBranchesIsRejected",
+        "DesktopOutlineTests/testRemovedNodeCannotSupplyStaleChildren",
+        "DesktopOutlineTests/testUnknownColumnDoesNotInventAValue",
+        "DesktopOutlineTests/testCollapsedChildCannotSelectWrongRow",
+        "DesktopOutlineTests/testEmptyUpdateClearsRowsAndSelection",
+        "DesktopOutlineTests/testDeepNestedRelationshipsAreRetained"
+      ],
+      "failureIds": []
+    },
+    {
+      "id": "invalidsave",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "forms"
+      ],
+      "testIds": [
+        "DesktopFormTests/testInvalidInputShowsErrorWithoutSavingOrErasing"
+      ],
+      "failureIds": [
+        "DesktopFormTests/testInvalidInputShowsErrorWithoutSavingOrErasing"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopForm.swift",
+        "source": "NegativeFixtures/InvalidSaves.swift"
+      }
+    },
+    {
+      "id": "stalemessage",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "forms"
+      ],
+      "testIds": [
+        "DesktopFormTests/testEditingClearsErrorRestoresHelpAndPreservesInput"
+      ],
+      "failureIds": [
+        "DesktopFormTests/testEditingClearsErrorRestoresHelpAndPreservesInput"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopForm.swift",
+        "source": "NegativeFixtures/StaleMessage.swift"
+      }
+    },
+    {
+      "id": "reentrant",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "forms"
+      ],
+      "testIds": [
+        "DesktopFormTests/testReentrantSaveDoesNotSubmitTwice"
+      ],
+      "failureIds": [
+        "DesktopFormTests/testReentrantSaveDoesNotSubmitTwice"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopForm.swift",
+        "source": "NegativeFixtures/ReentrantSave.swift"
+      }
+    },
+    {
+      "id": "duplicates",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "collections"
+      ],
+      "testIds": [
+        "DesktopOutlineTests/testDuplicateRootsAreRejectedAtomically"
+      ],
+      "failureIds": [
+        "DesktopOutlineTests/testDuplicateRootsAreRejectedAtomically"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopOutline.swift",
+        "source": "NegativeFixtures/DuplicateIDs.swift"
+      }
+    },
+    {
+      "id": "identity",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "collections"
+      ],
+      "testIds": [
+        "DesktopOutlineTests/testRenameRetainsStableNodeIdentity"
+      ],
+      "failureIds": [
+        "DesktopOutlineTests/testRenameRetainsStableNodeIdentity"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopOutline.swift",
+        "source": "NegativeFixtures/LostIdentity.swift"
+      }
+    },
+    {
+      "id": "stalenode",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "collections"
+      ],
+      "testIds": [
+        "DesktopOutlineTests/testRemovedNodeCannotSupplyStaleChildren"
+      ],
+      "failureIds": [
+        "DesktopOutlineTests/testRemovedNodeCannotSupplyStaleChildren"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopOutline.swift",
+        "source": "NegativeFixtures/StaleNode.swift"
+      }
+    },
+    {
+      "id": "selection",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "collections"
+      ],
+      "testIds": [
+        "DesktopOutlineTests/testSelectedChildSurvivesSiblingReorder"
+      ],
+      "failureIds": [
+        "DesktopOutlineTests/testSelectedChildSurvivesSiblingReorder"
+      ],
+      "replacement": {
+        "target": "Sources/DesktopOutline.swift",
+        "source": "NegativeFixtures/LostSelection.swift"
+      }
+    }
+  ]
+}

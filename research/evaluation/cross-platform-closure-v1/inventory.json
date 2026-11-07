@@ -1,0 +1,4100 @@
+{
+  "schema": 1,
+  "scope": "All 15 existing UIKit guidelines/209 clauses; all 10 Mac and 11 TV guidelines using explicit implementation, ownership, test and Do/Do-not clauses, plus TV11 prose. Source fingerprints frozen before closure implementation.",
+  "documents": [
+    {
+      "guideline": "U-001",
+      "path": "references/uikit/guidelines/u-001-labels-meaningful-names.md",
+      "sha256": "e12d8489ee29b7d5d44461323af17743918af600d257b1aa9fe46c55578da440",
+      "rule": "Every meaningful interactive element and non-decorative content element must expose a clear accessibility label that reflects user intent, not implementation details.",
+      "clauses": [
+        {
+          "id": "U-001-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Prefer semantic controls (`UIButton`, `UISwitch`, `UITextField`, etc.) over gesture-only generic views.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Set `accessibilityLabel` when visible text is missing or insufficient.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Mark decorative-only imagery as non-accessible.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Keep sibling control labels distinct within the same context.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Ensure `UIHostingController` container logic does not override UIKit labels unintentionally.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Keep semantic naming aligned between UIKit parents and hosted SwiftUI children.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify each meaningful control has a non-empty label.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify labels disambiguate sibling controls.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify decorative-only elements are not focusable.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Swipe through screen order and confirm each control is announced with a meaningful name.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm icon-only controls announce user intent (for example, \"Delete message\").",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert critical controls exist via stable identifiers.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L49",
+          "line": 49,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert high-risk control labels for user-critical flows.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: add explicit labels to icon-only buttons and custom icon controls.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-001-L54",
+          "line": 54,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: use vague or repeated labels that do not distinguish actions.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-002",
+      "path": "references/uikit/guidelines/u-002-hints-when-to-use.md",
+      "sha256": "ac624e5016370a2556fb8b715d46254dfcab12df86ce472d20bad359a8d0f16c",
+      "rule": "Add an accessibility hint only when label, value, and role do not already communicate what action will occur.",
+      "clauses": [
+        {
+          "id": "U-002-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Use `accessibilityHint` only for controls with non-obvious consequences.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-002-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Omit hints for standard controls when semantics are already clear.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-002-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Keep hints short and action-oriented.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-002-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Re-check hints when control behavior changes to prevent stale guidance.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-002-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "In mixed stacks, avoid duplicate hints between UIKit wrappers and hosted SwiftUI content.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-002-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Ensure hint ownership is clear for shared controls.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-002-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm hints are present only where extra action context is needed.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-002-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm hint text does not duplicate label/value verbatim.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-002-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Focus controls and verify announcements stay concise.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-002-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm custom behavior controls include useful hints.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-002-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Validate presence/absence of hints for selected high-risk controls where metadata is inspectable.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-002-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: add hints for destructive actions when consequence is not obvious.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-002-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: repeat the label as the hint.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-003",
+      "path": "references/uikit/guidelines/u-003-values-stateful-controls.md",
+      "sha256": "af43c4f7d66b8426f4908dd2046065d7173bc0fe2159ccdb1dffceba63a2197d",
+      "rule": "Any UI element with meaningful state must provide an accurate accessibility value that updates with state changes.",
+      "clauses": [
+        {
+          "id": "U-003-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Use native controls first, then add `accessibilityValue` for custom stateful elements.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-003-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Keep value text concise and user-focused (for example, \"On\", \"75 percent\").",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-003-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Ensure value updates are synchronized with visual state changes.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-003-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "For reusable cells/views, clear stale values during reuse.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-003-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "In mixed screens, confirm UIKit values and SwiftUI values do not conflict for equivalent controls.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-003-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Validate state forwarding across representable boundaries.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-003-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Inspect stateful elements and verify value is present and current.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-003-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Trigger state change and re-check value immediately.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-003-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Focus stateful controls and confirm spoken output includes current value.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-003-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Change state and confirm subsequent focus announces updated value.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-003-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert representative toggle/slider/value state labels after interaction.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-003-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: expose selected/not-selected, progress, or numeric values where state matters.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-003-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: rely only on color or animation to communicate state.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-004",
+      "path": "references/uikit/guidelines/u-004-traits-roles.md",
+      "sha256": "febfa3fb6a185f59e974f08e7004ddfcc80e1b50406cece5c8ebebc6ff943505",
+      "rule": "Use native semantic controls whenever possible; when custom UI is unavoidable, explicitly set accessibility traits/roles to match actual behavior.",
+      "clauses": [
+        {
+          "id": "U-004-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Prefer semantic UIKit controls over gesture-only generic `UIView` interactions.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-004-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Set `accessibilityTraits` to align announcements with actual behavior.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-004-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Mark structural headings where section navigation is needed.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-004-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Ensure selected/adjustable/destructive context is represented consistently.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-004-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Validate trait mapping when UIKit hosts SwiftUI via `UIHostingController`.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-004-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Ensure container-level behavior does not flatten child role semantics.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-004-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify each interactive element has correct role/trait.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-004-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify heading landmarks appear where expected.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-004-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify custom controls are not exposed as generic static text.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-004-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm announcements include expected role/trait context.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-004-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm heading navigation works for long content sections.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-004-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert trait-related behavior indirectly through state/label/value output for key controls.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-004-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: use native controls first and add traits only for semantic correction.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-004-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: ship tappable container views without role exposure.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-005",
+      "path": "references/uikit/guidelines/u-005-grouping-containment.md",
+      "sha256": "1819bb94e27c62c08e34d538c2c020f373a416ed79dc23a2e805350a7734bb6e",
+      "rule": "Set accessibility grouping so combined content is concise, interactive children remain reachable when needed, and decorative noise is removed from traversal.",
+      "clauses": [
+        {
+          "id": "U-005-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Use container `isAccessibilityElement` and `accessibilityElements` behavior intentionally.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-005-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Combine text fragments only when they represent one concept.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-005-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Keep child controls separately reachable when they support distinct actions.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-005-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Hide decorative views from accessibility traversal.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-005-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "In mixed containers, verify UIKit grouping does not flatten hosted SwiftUI children unexpectedly.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-005-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Re-check grouping after list or cell refactors.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-005-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify tree structure matches expected conceptual groups.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-005-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify actionable children remain focusable.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-005-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify decorative descendants are not separate focus targets.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-005-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Swipe grouped sections and confirm concise announcements.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-005-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm individually actionable controls remain reachable.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-005-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Use identifier-level assertions for expected child element presence/absence in grouped rows.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-005-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: combine title and subtitle when they represent one row concept.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-005-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: combine rows that contain separately actionable controls.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-006",
+      "path": "references/uikit/guidelines/u-006-focus-reading-order.md",
+      "sha256": "7d4aae6d1d36e2c969e4122d5acba9441931e0aaf15eb9fb4f66e037da638dd6",
+      "rule": "Accessibility focus order must follow coherent task flow; use structural hierarchy first and explicit ordering overrides only for real edge cases.",
+      "clauses": [
+        {
+          "id": "U-006-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Build semantic order through view hierarchy and container composition.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-006-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Avoid arbitrary subview reordering that breaks expected traversal.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-006-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Ensure overlays and modals do not leave background elements focusable.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-006-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Use explicit `accessibilityElements` ordering only when structure alone is insufficient.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-006-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Validate focus order across UIKit containers hosting SwiftUI content.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-006-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Re-test order after introducing representables, overlays, or async insertions.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-006-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Inspect traversal order and verify alignment with task flow.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-006-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm hidden/overlay elements are not focused before primary content.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-006-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm explicit ordering overrides are minimal and intentional.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-006-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Swipe through each screen and verify sequence matches user workflow.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-006-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Open/dismiss modal content and confirm focus handoff and restoration.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-006-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add screen-level smoke tests asserting key controls appear in expected interaction sequence.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-006-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: structure views so natural hierarchy produces the right order.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-006-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: patch structural ordering defects with widespread manual overrides.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-007",
+      "path": "references/uikit/guidelines/u-007-accessibility-custom-actions.md",
+      "sha256": "f20e8d3ecbefb75ffa3d876d58dad2fc49af30e4523e0bbed0c6ed4c554a3c05",
+      "rule": "Any interaction that cannot be reliably discovered through default control semantics must provide explicit accessibility custom actions.",
+      "clauses": [
+        {
+          "id": "U-007-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Use `UIAccessibilityCustomAction` for contextual row operations and gesture-heavy behaviors.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-007-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Keep action names concise, task-focused, and distinct.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-007-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Ensure action handlers update UI state and semantics immediately.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-007-L29",
+          "line": 29,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Ensure action ownership is not duplicated between UIKit containers and hosted SwiftUI rows.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-007-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Re-check action menus when migrating rows between stacks.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-007-L36",
+          "line": 36,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify expected custom actions are exposed on relevant elements.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-007-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify no duplicate/ambiguous action names on the same element.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-007-L41",
+          "line": 41,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Focus element, open actions menu, confirm expected actions exist.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-007-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Execute each action and verify result/state is announced.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-007-L46",
+          "line": 46,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Validate resulting state changes for action-driven operations via labels/values.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-007-L50",
+          "line": 50,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: expose swipe-only table row actions through custom actions.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-007-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: depend solely on gestures for critical operations.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-008",
+      "path": "references/uikit/guidelines/u-008-custom-controls-semantic-equivalence.md",
+      "sha256": "353b218d7d8776f9f49b501085b934983c6f6461224413c57eeec657a07faf2f",
+      "rule": "Any custom interactive UIKit component must expose equivalent semantics (role, label, value, actions) to the native control it replaces.",
+      "clauses": [
+        {
+          "id": "U-008-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Prefer native controls whenever possible.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-008-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "For custom controls, set `isAccessibilityElement`, label, value, traits, and custom actions explicitly.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-008-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Keep semantic state synchronized with visual state transitions.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-008-L29",
+          "line": 29,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Ensure representable boundaries preserve custom control semantics.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-008-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Validate parent container behavior does not mask child custom-control traits.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-008-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm custom controls are exposed as intended semantic types.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-008-L45",
+          "line": 45,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm label/value/traits/actions are present and consistent.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-008-L49",
+          "line": 49,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Focus custom control and verify announcement matches role/state intent.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-008-L50",
+          "line": 50,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Trigger interactions and confirm updated state feedback.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-008-L54",
+          "line": 54,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert critical custom control states via labels/values/identifiers.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-008-L58",
+          "line": 58,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: model custom steppers as adjustable controls with clear increment/decrement behavior.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-008-L59",
+          "line": 59,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: ship custom tappable views with no semantic role.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-009",
+      "path": "references/uikit/guidelines/u-009-rotor-friendly-structure.md",
+      "sha256": "3c253e8bbb39e3445319d99659ea9b8d17392cac5ce9b04e7f4be6da41d0622c",
+      "rule": "Screens with repeated sections, dense content, or contextual row actions should expose heading and structural semantics so users can jump efficiently, without making rotor fluency a prerequisite for core task completion.",
+      "clauses": [
+        {
+          "id": "U-009-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Mark true section landmarks with heading traits.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Structure table/collection/form regions and containers so major sections are semantically distinct.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Keep primary actions directly discoverable in the linear traversal path.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Expose contextual or overflow row operations with accessibility custom actions when inline controls would overload the layout.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L27",
+          "line": 27,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Treat rotor support as acceleration, not the sole path to complete the task.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L28",
+          "line": 28,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Avoid over-marking every row as a heading.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L32",
+          "line": 32,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Confirm heading semantics remain intact when UIKit containers host SwiftUI sections.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L33",
+          "line": 33,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Re-test rotor behavior after screen composition changes, especially when container ownership or row-action placement changes.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify heading traits are present on intended landmarks.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L40",
+          "line": 40,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify hierarchy supports section-level navigation and meaningful containers.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L41",
+          "line": 41,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify contextual actions are attached to the intended row or element when applicable.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L45",
+          "line": 45,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Swipe linearly through the screen and confirm core tasks remain fully discoverable without rotor changes.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L46",
+          "line": 46,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Use rotor to navigate by headings.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm jumps land on expected semantic anchors.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Open the actions menu on complex rows and confirm contextual actions are present without replacing primary controls.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L52",
+          "line": 52,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Use structural proxies (presence of heading-labeled elements and contextual-action-bearing rows) for limited automation.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L56",
+          "line": 56,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: define headings for major sections in long forms.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L57",
+          "line": 57,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: expose contextual row operations through custom accessibility actions when direct controls would overload the row.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L58",
+          "line": 58,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: mark decorative captions or every row title as headings.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-009-L59",
+          "line": 59,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: make primary task completion depend on rotor-only discovery.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-010",
+      "path": "references/uikit/guidelines/u-010-dynamic-type-layout-resilience.md",
+      "sha256": "8565fd2ab005eabdec87902a0a88d25bcaf513e53905146b6f3f1881b453f2a0",
+      "rule": "All user-facing text and interactive layouts must remain readable and operable across supported Dynamic Type sizes, including accessibility categories.",
+      "clauses": [
+        {
+          "id": "U-010-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Use Dynamic Type-compatible fonts (`preferredFont` + text styles).",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-010-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Enable automatic content-size-category adjustments for text controls.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-010-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Avoid fixed row heights and rigid constraints that clip text at large sizes.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-010-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Validate cell reuse with long localized strings and large text sizes.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-010-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Verify UIKit constraints do not clip hosted SwiftUI content at large sizes.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-010-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Keep text-scaling behavior consistent across mixed UIKit/SwiftUI screens.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-010-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Review screens at large categories for clipping, truncation, and overlap.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-010-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify tappable targets remain reachable after text expansion.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-010-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Enable large text category and verify focus order still matches workflow.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-010-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm critical labels and actions remain discoverable.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-010-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add smoke/snapshot checks for key screens at selected large content-size categories.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-010-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: allow text to wrap and containers to expand naturally.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-010-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: lock essential text into fixed-height rows that truncate at accessibility sizes.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-011",
+      "path": "references/uikit/guidelines/u-011-color-contrast-non-color-cues.md",
+      "sha256": "0a368af7aedb0ee2d57f55c73c1da9c611bb1172d918630b27980e81af25a808",
+      "rule": "Any meaningful status, feedback, or interaction cue conveyed with color must also be conveyed with text, symbol, shape, or another non-color indicator, and text/controls must maintain sufficient contrast.",
+      "clauses": [
+        {
+          "id": "U-011-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Pair color changes with text or symbolic indicators.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-011-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Use system semantic colors where possible.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-011-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Avoid encoding selection/validation state solely by tint differences.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-011-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Validate contrast in all supported appearances.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-011-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Align color-state semantics between UIKit and hosted SwiftUI components.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-011-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Ensure mixed styling layers do not remove non-color cues.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-011-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Run contrast and visual checks for text and interactive elements.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-011-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify status indicators include non-color semantic cues.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-011-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm spoken output includes state/error context otherwise represented visually by color.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-011-L46",
+          "line": 46,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert presence of explicit state labels/symbols for critical statuses.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-011-L50",
+          "line": 50,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: combine text/icon labels with color to indicate status.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-011-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: indicate required, selected, or error states with color alone.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-012",
+      "path": "references/uikit/guidelines/u-012-reduced-motion.md",
+      "sha256": "a8a670a7800a219b55df387a07db71eab422091bd0f0c714850ec15436e14538",
+      "rule": "When Reduce Motion is enabled, replace non-essential animations with low-motion alternatives that preserve state-change clarity.",
+      "clauses": [
+        {
+          "id": "U-012-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Detect reduced-motion settings and conditionally reduce animation intensity.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-012-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Prefer fades or immediate state updates over large motion transitions.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-012-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Ensure critical state changes remain clear without motion cues.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-012-L29",
+          "line": 29,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Keep transition behavior consistent when UIKit and SwiftUI components are combined.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-012-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Validate that hosted SwiftUI transitions do not reintroduce heavy motion.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-012-L36",
+          "line": 36,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify key transitions remain understandable with reduced motion.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-012-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify state changes remain visible without motion dependence.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-012-L41",
+          "line": 41,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Enable Reduce Motion and run core flows.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-012-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm navigation/state context remains clear after transitions.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-012-L46",
+          "line": 46,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add smoke tests for final UI state after transitions when reduced-motion mode is on.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-012-L50",
+          "line": 50,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: replace spring-heavy animations with subtle fades or direct updates.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-012-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: hide completion feedback in motion-only effects.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-013",
+      "path": "references/uikit/guidelines/u-013-modal-focus-containment.md",
+      "sha256": "f72c325f3ea2df07d831f3d9f7c5ec33afc9eea6d4f1cd25d173941a56bd352b",
+      "rule": "When presenting sheets, alerts, or overlays, focus must move into presented content, stay within relevant modal elements, and return to a logical anchor on dismissal.",
+      "clauses": [
+        {
+          "id": "U-013-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Ensure modal context includes a clear heading/title and primary action.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-013-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Prevent inactive background content from remaining in traversal.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-013-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Provide explicit dismissal actions with clear labels.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-013-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Restore focus to launch trigger or nearest logical anchor on dismissal.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-013-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Validate `UIHostingController` modals for focus handoff and restoration.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-013-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Confirm mixed presentation styles do not leak background focus targets.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-013-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify modal tree is reachable and prioritized over background content.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-013-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify inactive background elements are not focusable.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-013-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Present modal and confirm focus lands on modal title or first primary action.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-013-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Dismiss modal and confirm focus returns to expected anchor.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-013-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add flow tests asserting modal entry/exit controls and post-dismiss anchor presence.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-013-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: announce modal context with a clear title and predictable action.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-013-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: allow focus to traverse background controls while modal is active.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-014",
+      "path": "references/uikit/guidelines/u-014-table-collection-form-semantics.md",
+      "sha256": "c9936a3193d3f935d316e95d4f883aed08c1b970dec0c857323cd179cde19cc5",
+      "rule": "In tables, collections, and forms, prefer native controls and explicit row semantics so each item exposes clear label, value, role, and action behavior.",
+      "clauses": [
+        {
+          "id": "U-014-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Use standard UIKit controls in cells/forms for built-in semantics.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-014-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Decide per row whether content should be combined or separately actionable.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-014-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Expose contextual row actions through custom actions when needed.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-014-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Reset reused cell accessibility state to avoid stale labels/values.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-014-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Align UIKit cell semantics with SwiftUI row semantics in mixed screens.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-014-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Verify embedded hosted views do not duplicate row announcements.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-014-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Check each row/control exposes expected role and current value.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-014-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Check grouped rows do not hide required child actions.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-014-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Check toggles/sliders expose adjustable/state semantics correctly.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-014-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Traverse table/collection/form content and confirm concise announcements.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-014-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Interact with stateful controls and confirm updated values are announced.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-014-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert representative row/control identifiers and state labels in key flows.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-014-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: keep each row semantically focused on one primary task.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-014-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: pack multiple unrelated actions into one unlabeled cell.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "U-015",
+      "path": "references/uikit/guidelines/u-015-media-captions-descriptions-controls.md",
+      "sha256": "da3ebea8a7e32416394cb7054b9214a3102021de3bd2d559b19afb92f0686c54",
+      "rule": "Media experiences must provide accessible playback control semantics and support captions/subtitles for spoken content; when visual-only meaning is important, provide descriptive alternatives.",
+      "clauses": [
+        {
+          "id": "U-015-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Ensure play/pause/seek/speed controls expose clear labels, values, and roles.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Expose current playback state and timing readouts accessibly.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Provide caption/subtitle options where spoken media exists.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Define a narrow debug/test inspection contract when stream state includes live/on-demand mode, seekability, buffering, playback rate, or selected media options that are useful for verification but too noisy for spoken output.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L27",
+          "line": 27,
+          "section": "How To Implement",
+          "subsection": "UIKit",
+          "text": "Avoid gesture-only media controls without accessible action alternatives.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "In mixed AVKit/SwiftUI flows, ensure control labels and state are consistent across layers.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L32",
+          "line": 32,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Assign one owner for supplemental stream-state metadata so host overlays and embedded players report one consistent state model.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L33",
+          "line": 33,
+          "section": "How To Implement",
+          "subsection": "SwiftUI Interop Notes",
+          "text": "Verify custom overlays do not block native accessible controls.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify all media controls are discoverable and labeled.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L40",
+          "line": 40,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify playback state/value updates are exposed.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L41",
+          "line": 41,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify caption-related controls are reachable when available.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Capture stream kind, seekability, buffering/loading state, playback rate, and selected media-option context where supported.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L46",
+          "line": 46,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Navigate media controls and confirm each control announces purpose and state.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Enable captions/subtitles and verify operation without touch exploration.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L51",
+          "line": 51,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add smoke tests for playback-state transitions and caption-toggle availability.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L52",
+          "line": 52,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert supplemental inspection snapshot fields when playback state exceeds what the spoken response should include.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L56",
+          "line": 56,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: provide clear labeled controls for play, pause, and timeline navigation.",
+          "status": "pending-clause-review"
+        },
+        {
+          "id": "U-015-L57",
+          "line": 57,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: hide primary controls behind unlabeled gestures or icon-only overlays.",
+          "status": "pending-clause-review"
+        }
+      ],
+      "lane": "iOS/UIKit",
+      "origin": "existing-209-clause-inventory"
+    },
+    {
+      "guideline": "M-001",
+      "lane": "macOS/AppKit",
+      "path": "references/macos/guidelines/m-001-nsaccessibility-roles-labels-values-actions.md",
+      "sha256": "0aecee6094e8f1486a2496bb06759f88c8f7a875da166cb0c7e599a35cae9076",
+      "rule": "All interactive macOS elements must expose correct `NSAccessibility` role and label, include state/value where applicable, and support the expected accessibility action contract for that control type.",
+      "clauses": [
+        {
+          "id": "M-001-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Prefer native SwiftUI controls that map to correct desktop semantics by default."
+        },
+        {
+          "id": "M-001-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Add explicit accessibility labels/values only when defaults are missing or ambiguous."
+        },
+        {
+          "id": "M-001-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Verify custom SwiftUI controls expose equivalent semantics to native control behavior."
+        },
+        {
+          "id": "M-001-L29",
+          "line": 29,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "For custom `NSView` content, implement required `NSAccessibility` role/value/action behavior explicitly."
+        },
+        {
+          "id": "M-001-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "In SwiftUI-AppKit hosting boundaries, verify semantics are forwarded and not flattened at container edges."
+        },
+        {
+          "id": "M-001-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Emit accessibility-relevant state updates so announcements reflect current UI state."
+        },
+        {
+          "id": "M-001-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify each interactive element exposes expected role, label, and value."
+        },
+        {
+          "id": "M-001-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify action availability aligns with control behavior."
+        },
+        {
+          "id": "M-001-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify custom controls are not surfaced as generic groups/static elements when interaction is expected."
+        },
+        {
+          "id": "M-001-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Traverse each key workflow and confirm spoken output includes role + label + state context."
+        },
+        {
+          "id": "M-001-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm actions trigger expected behavior and announce updated state."
+        },
+        {
+          "id": "M-001-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert key controls exist with stable identifiers and reflect state changes in visible labels/values."
+        },
+        {
+          "id": "M-001-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: treat `NSAccessibility` semantics as part of each control's acceptance criteria."
+        },
+        {
+          "id": "M-001-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: ship custom `NSView` interactions without explicit role/label/value/action coverage."
+        }
+      ]
+    },
+    {
+      "guideline": "M-002",
+      "lane": "macOS/AppKit",
+      "path": "references/macos/guidelines/m-002-keyboard-focus-order.md",
+      "sha256": "6b73213a56810d28777ace275ea227b1467a836a989278b4a46c2943e133838f",
+      "rule": "Every macOS workflow must support full keyboard traversal with predictable order, visible focus feedback, and reachable primary/secondary actions without requiring pointer input.",
+      "clauses": [
+        {
+          "id": "M-002-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Prefer native controls with built-in keyboard behavior."
+        },
+        {
+          "id": "M-002-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Structure view hierarchy so focus order follows visual and task order."
+        },
+        {
+          "id": "M-002-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Avoid custom key handling that bypasses standard traversal unless required, and document exceptions."
+        },
+        {
+          "id": "M-002-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Verify keyboard behavior for dialogs, sheets, and multi-pane layouts."
+        },
+        {
+          "id": "M-002-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "For AppKit views, ensure focus chain/order is coherent across custom containers."
+        },
+        {
+          "id": "M-002-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Validate that SwiftUI/AppKit boundaries preserve keyboard reachability and focus context."
+        },
+        {
+          "id": "M-002-L32",
+          "line": 32,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Ensure state transitions do not drop focus onto non-interactive containers."
+        },
+        {
+          "id": "M-002-L36",
+          "line": 36,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Host container owns traversal entry order and cross-pane focus transitions."
+        },
+        {
+          "id": "M-002-L37",
+          "line": 37,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Embedded subtree owns control semantics and keyboard-operable action exposure."
+        },
+        {
+          "id": "M-002-L38",
+          "line": 38,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Boundary owner must ensure focus is not dropped onto non-interactive wrappers."
+        },
+        {
+          "id": "M-002-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify focusable elements expose correct roles and labels."
+        },
+        {
+          "id": "M-002-L45",
+          "line": 45,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify no required controls are skipped in keyboard traversal paths."
+        },
+        {
+          "id": "M-002-L49",
+          "line": 49,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Run a full keyboard-only traversal of critical flows and confirm spoken context matches focus target."
+        },
+        {
+          "id": "M-002-L50",
+          "line": 50,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm modal and window transitions preserve or restore focus to a logical anchor."
+        },
+        {
+          "id": "M-002-L54",
+          "line": 54,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add flow-level tests that validate reachability and state changes for keyboard-driven actions."
+        },
+        {
+          "id": "M-002-L58",
+          "line": 58,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: design and verify tab order as part of screen acceptance criteria."
+        },
+        {
+          "id": "M-002-L59",
+          "line": 59,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: rely on pointer-only affordances for required task completion."
+        }
+      ]
+    },
+    {
+      "guideline": "M-003",
+      "lane": "macOS/AppKit",
+      "path": "references/macos/guidelines/m-003-grouping-hierarchy-desktop-layouts.md",
+      "sha256": "13acfe965e5ed63d08e91d5183e2925c35b2cf034e4d4898dd21957dc9257953",
+      "rule": "Complex macOS screens must expose semantic group hierarchy that reflects visual and task structure, without obscuring individual interactive elements.",
+      "clauses": [
+        {
+          "id": "M-003-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Use structural containers that map cleanly to content regions."
+        },
+        {
+          "id": "M-003-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Label groups/regions when they provide meaningful navigation context."
+        },
+        {
+          "id": "M-003-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Keep child controls independently accessible."
+        },
+        {
+          "id": "M-003-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Avoid generic wrapper stacks that flatten semantic hierarchy."
+        },
+        {
+          "id": "M-003-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "For AppKit container views, ensure group/region semantics represent pane boundaries."
+        },
+        {
+          "id": "M-003-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Verify SwiftUI-AppKit hosting does not collapse nested hierarchy into generic groups."
+        },
+        {
+          "id": "M-003-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify grouped regions align to task-relevant layout zones."
+        },
+        {
+          "id": "M-003-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify nested controls remain reachable and correctly labeled."
+        },
+        {
+          "id": "M-003-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Traverse across panes/regions and confirm transitions are understandable."
+        },
+        {
+          "id": "M-003-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm repeated controls in different regions remain distinguishable."
+        },
+        {
+          "id": "M-003-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add presence checks for representative controls in each primary region."
+        },
+        {
+          "id": "M-003-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: model semantic regions to match how users understand the page."
+        },
+        {
+          "id": "M-003-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: expose entire multi-pane layouts as one unlabeled accessibility group."
+        }
+      ]
+    },
+    {
+      "guideline": "M-004",
+      "lane": "macOS/AppKit",
+      "path": "references/macos/guidelines/m-004-announcements-state-change-notifications.md",
+      "sha256": "70b6a7483c5a9c5b312934f3740e14715d3c55fb08bd8caec5ab69a2e9665da1",
+      "rule": "When macOS UI state changes affect user understanding or next action, update accessibility properties and emit appropriate accessibility notifications so assistive technologies receive current context.",
+      "clauses": [
+        {
+          "id": "M-004-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Ensure state changes are reflected in labels/values bound to visible controls."
+        },
+        {
+          "id": "M-004-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Prefer native controls that automatically announce common state transitions."
+        },
+        {
+          "id": "M-004-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "For custom components, provide explicit updated state semantics."
+        },
+        {
+          "id": "M-004-L29",
+          "line": 29,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "In custom `NSView` implementations, post accessibility notifications for significant content/state changes."
+        },
+        {
+          "id": "M-004-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Ensure notification timing aligns with UI update completion."
+        },
+        {
+          "id": "M-004-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Verify hosted SwiftUI/AppKit boundaries do not suppress expected state announcements."
+        },
+        {
+          "id": "M-004-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify updated state appears in inspected accessibility properties after actions."
+        },
+        {
+          "id": "M-004-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify notifications correspond to meaningful user-visible transitions."
+        },
+        {
+          "id": "M-004-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Trigger success/error/loading state changes and confirm announcements communicate outcome."
+        },
+        {
+          "id": "M-004-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm updates are neither missing nor excessively repetitive."
+        },
+        {
+          "id": "M-004-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add assertions for visible state text/value changes that correspond to announced events."
+        },
+        {
+          "id": "M-004-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: announce state changes that affect user decisions or workflow progression."
+        },
+        {
+          "id": "M-004-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: rely on visual-only banners/status text for critical updates."
+        }
+      ]
+    },
+    {
+      "guideline": "M-005",
+      "lane": "macOS/AppKit",
+      "path": "references/macos/guidelines/m-005-swiftui-appkit-interop-forwarding.md",
+      "sha256": "deac88edfbce39161b9271b78ae527349f8e2147c27b77d307536b9060f1d344",
+      "rule": "Any SwiftUI-AppKit integration point must be validated for semantic forwarding so accessibility roles, labels, values, actions, and focus behavior remain equivalent across hosting boundaries.",
+      "clauses": [
+        {
+          "id": "M-005-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Prefer native SwiftUI controls with explicit accessibility modifiers only when needed."
+        },
+        {
+          "id": "M-005-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Validate semantics after embedding SwiftUI in AppKit containers."
+        },
+        {
+          "id": "M-005-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Keep identifier and naming conventions stable across hosted boundaries."
+        },
+        {
+          "id": "M-005-L29",
+          "line": 29,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "For `NSHostingView`/AppKit container layers, verify child semantics are not flattened."
+        },
+        {
+          "id": "M-005-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Forward required accessibility properties for wrapped custom AppKit views."
+        },
+        {
+          "id": "M-005-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Re-check focus and announcement behavior when container hierarchy changes."
+        },
+        {
+          "id": "M-005-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Compare semantics before and after hosting boundary introduction."
+        },
+        {
+          "id": "M-005-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify roles, labels, values, and actions persist on child controls."
+        },
+        {
+          "id": "M-005-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Traverse interop screens and confirm control announcements and focus behavior match expectations."
+        },
+        {
+          "id": "M-005-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Validate modal and dynamic updates across hosted boundaries."
+        },
+        {
+          "id": "M-005-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add regression checks for representative interop surfaces (control presence + key state updates)."
+        },
+        {
+          "id": "M-005-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: treat every hosting boundary as a required accessibility regression checkpoint."
+        },
+        {
+          "id": "M-005-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: assume semantics automatically transfer from one framework layer to another."
+        }
+      ]
+    },
+    {
+      "guideline": "M-006",
+      "lane": "macOS/AppKit",
+      "path": "references/macos/guidelines/m-006-table-outline-list-semantics.md",
+      "sha256": "76d8dc697adb4eeae97de2714c9f29739b47e2ac96cb6413422071684a4c6fbf",
+      "rule": "macOS data views must expose row/item semantics, selection/expansion state, and contextual labels so users can navigate and operate large collections predictably.",
+      "clauses": [
+        {
+          "id": "M-006-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Use native list/table controls where possible."
+        },
+        {
+          "id": "M-006-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Provide clear labels for columns/row actions and expose selected state."
+        },
+        {
+          "id": "M-006-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "For expandable structures, expose hierarchy and expansion status clearly."
+        },
+        {
+          "id": "M-006-L29",
+          "line": 29,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "In AppKit table/outline implementations, ensure row/item role semantics and state are explicit."
+        },
+        {
+          "id": "M-006-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Verify custom cell content preserves accessible labels/actions."
+        },
+        {
+          "id": "M-006-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Ensure hosted SwiftUI row content does not remove structural context from AppKit containers."
+        },
+        {
+          "id": "M-006-L35",
+          "line": 35,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Host table/outline container owns row hierarchy, selection model, and focus transitions."
+        },
+        {
+          "id": "M-006-L36",
+          "line": 36,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Embedded row/cell views own per-item labels, values, and action semantics."
+        },
+        {
+          "id": "M-006-L37",
+          "line": 37,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Boundary owner must verify structure remains exposed after row virtualization/reuse updates."
+        },
+        {
+          "id": "M-006-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify row/item semantics, selected state, and expand/collapse state."
+        },
+        {
+          "id": "M-006-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify row actions remain discoverable and properly named."
+        },
+        {
+          "id": "M-006-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Navigate across rows and hierarchical nodes; confirm announcements include context and state."
+        },
+        {
+          "id": "M-006-L49",
+          "line": 49,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Perform selection/expansion actions and confirm updates are announced."
+        },
+        {
+          "id": "M-006-L53",
+          "line": 53,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add tests for row selection and expansion state transitions on critical views."
+        },
+        {
+          "id": "M-006-L57",
+          "line": 57,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: expose row context and hierarchy state as part of each data-view interaction."
+        },
+        {
+          "id": "M-006-L58",
+          "line": 58,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: ship custom rows that hide actions or state behind non-semantic visuals."
+        }
+      ]
+    },
+    {
+      "guideline": "M-007",
+      "lane": "macOS/AppKit",
+      "path": "references/macos/guidelines/m-007-modal-window-focus-containment.md",
+      "sha256": "e4f4710c7136a0489ec996effd30330acf7d775bba388ff81929d58d1921818c",
+      "rule": "When a modal sheet, panel, or window takes focus on macOS, focus must remain within that context until dismissal, then restore to the originating control or nearest meaningful anchor.",
+      "clauses": [
+        {
+          "id": "M-007-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Present modal content with a clear primary focus target."
+        },
+        {
+          "id": "M-007-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Keep a deterministic return anchor in the presenting context."
+        },
+        {
+          "id": "M-007-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "On dismissal, explicitly return focus to that anchor when default behavior is insufficient."
+        },
+        {
+          "id": "M-007-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Re-test focus behavior when modal content is conditionally rendered or async-loaded."
+        },
+        {
+          "id": "M-007-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "In AppKit-based windows/sheets, ensure accessibility focus does not remain on background controls while modal content is active."
+        },
+        {
+          "id": "M-007-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "For SwiftUI-AppKit hosting boundaries, confirm focus restoration is not lost at container transitions."
+        },
+        {
+          "id": "M-007-L32",
+          "line": 32,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Ensure state announcements after dismissal reflect the newly active context."
+        },
+        {
+          "id": "M-007-L36",
+          "line": 36,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Modal/window host owns focus containment boundaries and restore anchor."
+        },
+        {
+          "id": "M-007-L37",
+          "line": 37,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Embedded content owns element semantics and contextual state announcements."
+        },
+        {
+          "id": "M-007-L38",
+          "line": 38,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Dismissal owner must verify both completion and cancel paths return focus correctly."
+        },
+        {
+          "id": "M-007-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify only active modal/window controls are focusable during modal presentation."
+        },
+        {
+          "id": "M-007-L45",
+          "line": 45,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify presenting context controls re-enter focus order after dismissal."
+        },
+        {
+          "id": "M-007-L49",
+          "line": 49,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Open each modal/window flow and confirm focus lands on intended initial control."
+        },
+        {
+          "id": "M-007-L50",
+          "line": 50,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Dismiss context and confirm focus returns to launch anchor (or documented fallback)."
+        },
+        {
+          "id": "M-007-L51",
+          "line": 51,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Repeat for cancellation and completion paths."
+        },
+        {
+          "id": "M-007-L55",
+          "line": 55,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add open/close modal tests asserting anchor reachability before and after transitions."
+        },
+        {
+          "id": "M-007-L59",
+          "line": 59,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: define explicit focus-entry and focus-exit anchors for each modal/window flow."
+        },
+        {
+          "id": "M-007-L60",
+          "line": 60,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: rely on implicit focus behavior when multiple windows/sheets can appear in sequence."
+        }
+      ]
+    },
+    {
+      "guideline": "M-008",
+      "lane": "macOS/AppKit",
+      "path": "references/macos/guidelines/m-008-voice-control-naming-disambiguation.md",
+      "sha256": "cfc20cea116236efe193c63f3cee07cd2fa12e1154aa2b9a6d42ad6586a19978",
+      "rule": "Interactive controls in the same context must have distinct, speakable names and stable wording across states unless a state change requires a meaningfully different command target.",
+      "clauses": [
+        {
+          "id": "M-008-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Use explicit accessibility labels for icon-only or repeated controls."
+        },
+        {
+          "id": "M-008-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Avoid generic labels like \"More\" or \"Options\" when multiple instances are present."
+        },
+        {
+          "id": "M-008-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Keep naming stable across state changes where function remains the same."
+        },
+        {
+          "id": "M-008-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Include contextual nouns for repeated actions in lists/tables."
+        },
+        {
+          "id": "M-008-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "For AppKit controls, ensure accessible names match intended voice command language."
+        },
+        {
+          "id": "M-008-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Verify SwiftUI-AppKit boundaries do not duplicate or truncate names."
+        },
+        {
+          "id": "M-008-L32",
+          "line": 32,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Ensure dynamic content updates preserve name uniqueness in the active context."
+        },
+        {
+          "id": "M-008-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Inspect changed screens for duplicate interactive names in the same context."
+        },
+        {
+          "id": "M-008-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify icon-only controls expose meaningful labels."
+        },
+        {
+          "id": "M-008-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm spoken labels are clear and distinct for neighboring/repeated controls."
+        },
+        {
+          "id": "M-008-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Validate that state changes do not remove needed disambiguation context."
+        },
+        {
+          "id": "M-008-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add checks for expected labels on high-risk repeated controls (toolbars, lists, row actions)."
+        },
+        {
+          "id": "M-008-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: include contextual naming (for example, \"Delete Draft\", \"Delete Attachment\") when multiple similar actions exist."
+        },
+        {
+          "id": "M-008-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: reuse the same short label for multiple controls in the same interaction scope."
+        }
+      ]
+    },
+    {
+      "guideline": "M-009",
+      "lane": "macOS/AppKit",
+      "path": "references/macos/guidelines/m-009-contrast-reduced-transparency.md",
+      "sha256": "6ec3b2bc4adb97169f7778a90006b35949ceb9fac8446aad0c7210a44ab0042b",
+      "rule": "macOS interfaces must preserve contrast across window/background states, remain legible when transparency effects are reduced, and communicate critical status with non-color cues.",
+      "clauses": [
+        {
+          "id": "M-009-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Use semantic system colors and materials instead of hard-coded decorative palettes."
+        },
+        {
+          "id": "M-009-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Provide text/icon/shape reinforcement for selected, warning, and error states."
+        },
+        {
+          "id": "M-009-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Verify legibility in sidebars, toolbars, and overlays that use translucency."
+        },
+        {
+          "id": "M-009-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Favor explicit labels for status chips/tags that might otherwise be color-only."
+        },
+        {
+          "id": "M-009-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "In AppKit views, verify contrast under active/inactive window states."
+        },
+        {
+          "id": "M-009-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Ensure custom `NSView` drawing still conveys state when transparency effects are reduced."
+        },
+        {
+          "id": "M-009-L32",
+          "line": 32,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Confirm SwiftUI-AppKit boundaries preserve state cues and do not drop text/icon reinforcement."
+        },
+        {
+          "id": "M-009-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify actionable text and controls meet contrast expectations."
+        },
+        {
+          "id": "M-009-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify state remains interpretable without color-only differentiation."
+        },
+        {
+          "id": "M-009-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm spoken output conveys state independently of color styling."
+        },
+        {
+          "id": "M-009-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Verify status transitions announce meaningful updated context."
+        },
+        {
+          "id": "M-009-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add assertions that state transitions update textual/icon indicators, not only tint/color."
+        },
+        {
+          "id": "M-009-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: design every critical state with color plus another cue (text, icon, or shape)."
+        },
+        {
+          "id": "M-009-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: rely on vibrancy/transparency styling that makes controls unreadable in varied desktop contexts."
+        }
+      ]
+    },
+    {
+      "guideline": "M-010",
+      "lane": "macOS/AppKit",
+      "path": "references/macos/guidelines/m-010-testing-workflow.md",
+      "sha256": "6c734ed535da20cc7c51f11e28e55e5c5cdf81d78ec99b2a5762dcbbd35baaf7",
+      "rule": "Every significant macOS UI change must pass a three-part accessibility workflow: Accessibility Inspector audit, VoiceOver interaction walkthrough, and keyboard-only task traversal for critical flows.",
+      "clauses": [
+        {
+          "id": "M-010-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Define screen-level test paths before implementation to ensure verifiable acceptance criteria."
+        },
+        {
+          "id": "M-010-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Use stable accessibility identifiers on high-risk controls to support repeatable checks."
+        },
+        {
+          "id": "M-010-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "SwiftUI (macOS)",
+          "text": "Include keyboard-only completion criteria for each critical task flow."
+        },
+        {
+          "id": "M-010-L29",
+          "line": 29,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "For AppKit/custom views, include explicit checks for `NSAccessibility` role/value/action exposure."
+        },
+        {
+          "id": "M-010-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Verify SwiftUI-AppKit hosting boundaries do not alter expected focus/announcement behavior."
+        },
+        {
+          "id": "M-010-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "UIKit/AppKit Interop Notes",
+          "text": "Add regression checks for modal/window focus restoration after open/close transitions."
+        },
+        {
+          "id": "M-010-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Inspect each changed screen for role/label/value/action correctness."
+        },
+        {
+          "id": "M-010-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm non-interactive visual elements are not incorrectly focusable."
+        },
+        {
+          "id": "M-010-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm hierarchy/grouping reflects expected navigation structure."
+        },
+        {
+          "id": "M-010-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Traverse top-priority task flows and confirm announcement clarity and order."
+        },
+        {
+          "id": "M-010-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Validate modal/window transitions keep focus context and return to logical anchors."
+        },
+        {
+          "id": "M-010-L45",
+          "line": 45,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Validate state changes announce updated context for controls and statuses."
+        },
+        {
+          "id": "M-010-L49",
+          "line": 49,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Run smoke assertions for control presence, state updates, and modal open/close anchors."
+        },
+        {
+          "id": "M-010-L50",
+          "line": 50,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Use these hooks as regression guardrails, not a replacement for manual assistive-tech validation."
+        },
+        {
+          "id": "M-010-L54",
+          "line": 54,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: require Inspector + VoiceOver + keyboard evidence before marking a macOS accessibility-sensitive PR complete."
+        },
+        {
+          "id": "M-010-L55",
+          "line": 55,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: treat passing XCUITest checks alone as accessibility sign-off."
+        }
+      ]
+    },
+    {
+      "guideline": "T-001",
+      "lane": "tvOS/UIKit",
+      "path": "references/tvos/guidelines/t-001-focus-order-directional-navigation.md",
+      "sha256": "6fe90ea0b7df2964dbfcadf24dc18367a38098a4db301c5d3b5a769901a9d250",
+      "rule": "Every focusable screen must define predictable directional navigation and a logical initial focus target; no focus path may dead-end before the user can reach all primary actions.",
+      "clauses": [
+        {
+          "id": "T-001-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Build with native focusable controls before custom focusable views."
+        },
+        {
+          "id": "T-001-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Use `preferredFocusEnvironments` to guide initial focus for each screen and modal."
+        },
+        {
+          "id": "T-001-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Override focus update behavior only when default directional movement produces incorrect outcomes."
+        },
+        {
+          "id": "T-001-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Group related controls and avoid hidden/off-screen focusable artifacts."
+        },
+        {
+          "id": "T-001-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "In SwiftUI-on-tvos flows, verify hosted UIKit containers do not override or reset expected focus anchors."
+        },
+        {
+          "id": "T-001-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "For representables, ensure child UIKit views participate correctly in tvOS focus evaluation."
+        },
+        {
+          "id": "T-001-L35",
+          "line": 35,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Host container owns screen-entry and screen-exit focus targets."
+        },
+        {
+          "id": "T-001-L36",
+          "line": 36,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Embedded subtree owns element labels/values/traits/actions."
+        },
+        {
+          "id": "T-001-L37",
+          "line": 37,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Modal presenter owns restoration to prior focus anchor after dismiss."
+        },
+        {
+          "id": "T-001-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm focusable elements are exposed with correct labels/traits."
+        },
+        {
+          "id": "T-001-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm hidden/decorative views are not focusable."
+        },
+        {
+          "id": "T-001-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Navigate each screen with remote directional movement and confirm deterministic focus transitions."
+        },
+        {
+          "id": "T-001-L49",
+          "line": 49,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Open/dismiss modal overlays and confirm focus enters modal content and restores to a logical anchor."
+        },
+        {
+          "id": "T-001-L50",
+          "line": 50,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm all primary actions are reachable without trapped loops."
+        },
+        {
+          "id": "T-001-L54",
+          "line": 54,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add focus-smoke tests that assert primary controls become focused in expected sequence."
+        },
+        {
+          "id": "T-001-L58",
+          "line": 58,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: establish one clear initial focus anchor per screen and validate directional paths end to end."
+        },
+        {
+          "id": "T-001-L59",
+          "line": 59,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: rely on incidental layout behavior that leaves controls unreachable from one or more directions."
+        }
+      ]
+    },
+    {
+      "guideline": "T-002",
+      "lane": "tvOS/UIKit",
+      "path": "references/tvos/guidelines/t-002-initial-focus-modal-restoration.md",
+      "sha256": "7e0cd4af9fa89e320ffdb069c24973827a3ba5e702edd8ddb4bea569c68c0804",
+      "rule": "Each modal presentation on tvOS must define an explicit initial focus target and restore focus to a meaningful originating control (or nearest equivalent anchor) on dismissal.",
+      "clauses": [
+        {
+          "id": "T-002-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Set the modal's initial focus via `preferredFocusEnvironments`."
+        },
+        {
+          "id": "T-002-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Keep a stable reference to the launch control or fallback anchor before presenting the modal."
+        },
+        {
+          "id": "T-002-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "On dismiss, update focus so navigation resumes from that anchor, not an arbitrary top-level element."
+        },
+        {
+          "id": "T-002-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Re-evaluate focus restoration when modal content is async-loaded or state-driven."
+        },
+        {
+          "id": "T-002-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "In SwiftUI-hosted tvOS screens, verify focus anchors survive UIKit presentation/dismissal boundaries."
+        },
+        {
+          "id": "T-002-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Ensure representable wrappers do not reset focus to container roots after dismissal."
+        },
+        {
+          "id": "T-002-L35",
+          "line": 35,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Host modal controller owns initial focus and restore-focus anchor lifecycle."
+        },
+        {
+          "id": "T-002-L36",
+          "line": 36,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Embedded content subtree owns element-level semantics and state announcements."
+        },
+        {
+          "id": "T-002-L37",
+          "line": 37,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Dismissal path owner must guarantee focus restoration for success and cancel paths."
+        },
+        {
+          "id": "T-002-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify modal controls are focusable and correctly labeled."
+        },
+        {
+          "id": "T-002-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify background content is not incorrectly focusable while modal is active."
+        },
+        {
+          "id": "T-002-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Open modal from multiple entry points and confirm initial focus lands on the intended primary control."
+        },
+        {
+          "id": "T-002-L49",
+          "line": 49,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Dismiss modal and confirm focus returns to the launch control (or declared fallback anchor)."
+        },
+        {
+          "id": "T-002-L50",
+          "line": 50,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Repeat with interrupted flows (e.g., async loading) and confirm no focus loss."
+        },
+        {
+          "id": "T-002-L54",
+          "line": 54,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add modal-open/modal-close tests asserting expected focused anchor controls before and after dismissal."
+        },
+        {
+          "id": "T-002-L58",
+          "line": 58,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: define an explicit focus anchor contract for each modal entry and exit path."
+        },
+        {
+          "id": "T-002-L59",
+          "line": 59,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: allow default or incidental focus behavior to choose restoration targets."
+        }
+      ]
+    },
+    {
+      "guideline": "T-003",
+      "lane": "tvOS/UIKit",
+      "path": "references/tvos/guidelines/t-003-labels-values-traits-focused-controls.md",
+      "sha256": "dbb50ac919c1db9338fd64a5c22717cee202ed232fd5ee2c4120e56a9f3eb41b",
+      "rule": "Every focusable tvOS control must provide a meaningful label, include value/state when applicable, and expose traits that match actual control behavior.",
+      "clauses": [
+        {
+          "id": "T-003-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Prefer native focusable controls that provide semantic defaults."
+        },
+        {
+          "id": "T-003-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Set `accessibilityLabel` for icon-only or context-dependent controls."
+        },
+        {
+          "id": "T-003-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Set `accessibilityValue` for stateful controls (selection, playback state, toggled states)."
+        },
+        {
+          "id": "T-003-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Apply traits that represent behavior accurately (button, selected, adjustable, etc.)."
+        },
+        {
+          "id": "T-003-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Verify semantic forwarding when SwiftUI views are hosted inside UIKit containers on tvOS."
+        },
+        {
+          "id": "T-003-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Ensure representable wrappers do not strip labels/values/traits from child controls."
+        },
+        {
+          "id": "T-003-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm each focusable element exposes label and role/traits."
+        },
+        {
+          "id": "T-003-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm stateful controls expose current value."
+        },
+        {
+          "id": "T-003-L39",
+          "line": 39,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm decorative/non-interactive elements are not focusable."
+        },
+        {
+          "id": "T-003-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Move focus through all key controls and confirm spoken output includes clear label + role + state context."
+        },
+        {
+          "id": "T-003-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Toggle stateful controls and confirm updated values are announced."
+        },
+        {
+          "id": "T-003-L45",
+          "line": 45,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Check repeated controls in a row/list for naming disambiguation."
+        },
+        {
+          "id": "T-003-L49",
+          "line": 49,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert presence and state-output changes for key controls with stable identifiers."
+        },
+        {
+          "id": "T-003-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: include explicit semantics for every focusable item, especially icon-only controls."
+        },
+        {
+          "id": "T-003-L54",
+          "line": 54,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: expose generic or duplicate names that force users to guess control purpose."
+        }
+      ]
+    },
+    {
+      "guideline": "T-004",
+      "lane": "tvOS/UIKit",
+      "path": "references/tvos/guidelines/t-004-grouping-containment-shelves-grids.md",
+      "sha256": "39d3e27f8499f36ca506a71f04a29e070a1eecd1cc244fde26c99036f217e3dc",
+      "rule": "tvOS shelf/grid interfaces must expose clear semantic grouping so focus movement and announcements preserve section context without hiding actionable children.",
+      "clauses": [
+        {
+          "id": "T-004-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Use collection and container structures that preserve section boundaries."
+        },
+        {
+          "id": "T-004-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Label section/group containers when they provide navigation context."
+        },
+        {
+          "id": "T-004-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Ensure child items remain independently focusable and actionable."
+        },
+        {
+          "id": "T-004-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Avoid over-grouping that collapses important item-level semantics."
+        },
+        {
+          "id": "T-004-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Verify grouping semantics survive SwiftUI/UIKit hosting boundaries."
+        },
+        {
+          "id": "T-004-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Ensure representables do not flatten section context into unlabeled containers."
+        },
+        {
+          "id": "T-004-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify section/group containers expose meaningful labels when needed."
+        },
+        {
+          "id": "T-004-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify each child item remains focusable with complete semantics."
+        },
+        {
+          "id": "T-004-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Traverse across shelves/rows and confirm users can distinguish section transitions."
+        },
+        {
+          "id": "T-004-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm item announcements include enough context to disambiguate repeated titles."
+        },
+        {
+          "id": "T-004-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add smoke tests for representative section/item identifiers across key catalog screens."
+        },
+        {
+          "id": "T-004-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: expose section context while preserving item-level interaction semantics."
+        },
+        {
+          "id": "T-004-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: flatten large catalog UIs into unlabeled, repetitive item streams."
+        }
+      ]
+    },
+    {
+      "guideline": "T-005",
+      "lane": "tvOS/UIKit",
+      "path": "references/tvos/guidelines/t-005-custom-actions-remote-first.md",
+      "sha256": "33d98bc9172b56d5fa5fc97df68daa4bbba56b3ebb0e8c8ff459dedd3e7a9ce7",
+      "rule": "When primary tvOS controls cannot directly expose all needed operations, provide discoverable accessibility custom actions with stable names and predictable results.",
+      "clauses": [
+        {
+          "id": "T-005-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Prefer direct controls first; add custom actions only for overflow or contextual operations."
+        },
+        {
+          "id": "T-005-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Use concise, verb-first action names aligned to user intent."
+        },
+        {
+          "id": "T-005-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Keep action ordering stable for repeated items."
+        },
+        {
+          "id": "T-005-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Ensure action completion updates visible and spoken state."
+        },
+        {
+          "id": "T-005-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Validate custom actions on hosted views across SwiftUI/UIKit boundaries."
+        },
+        {
+          "id": "T-005-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Ensure representables forward actions and state updates correctly."
+        },
+        {
+          "id": "T-005-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify custom actions are attached only where needed and are correctly named."
+        },
+        {
+          "id": "T-005-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify no duplicate or conflicting action names within the same context."
+        },
+        {
+          "id": "T-005-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Invoke each custom action and confirm behavior matches its name."
+        },
+        {
+          "id": "T-005-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm state/result announcements occur after action completion."
+        },
+        {
+          "id": "T-005-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add targeted tests for high-value custom action surfaces and resulting state changes."
+        },
+        {
+          "id": "T-005-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: use custom actions to close specific interaction gaps in remote workflows."
+        },
+        {
+          "id": "T-005-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: replace straightforward visible controls with hidden action menus."
+        }
+      ]
+    },
+    {
+      "guideline": "T-006",
+      "lane": "tvOS/UIKit",
+      "path": "references/tvos/guidelines/t-006-search-filter-collection-semantics.md",
+      "sha256": "693780275de47d20d936e7d202ce5bd886bb68fe7ba0c75f5f70d96490d0ccc1",
+      "rule": "tvOS search/filter interfaces must expose explicit labels and state values for query/filter controls and preserve meaningful semantics across dynamic collection updates.",
+      "clauses": [
+        {
+          "id": "T-006-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Label search fields and filter controls with explicit purpose."
+        },
+        {
+          "id": "T-006-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Expose selected filter state via values or labels."
+        },
+        {
+          "id": "T-006-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Keep sort/filter controls reachable near result context."
+        },
+        {
+          "id": "T-006-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Announce result-count or state changes through accessible status updates when practical."
+        },
+        {
+          "id": "T-006-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Ensure dynamic updates from SwiftUI state changes remain reflected in hosted UIKit semantics."
+        },
+        {
+          "id": "T-006-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Verify representables preserve query/filter state announcements."
+        },
+        {
+          "id": "T-006-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify filter/search controls have distinct labels and current values."
+        },
+        {
+          "id": "T-006-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify collection items remain focusable and semantically complete after updates."
+        },
+        {
+          "id": "T-006-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Execute search and filter changes; confirm users can identify active criteria and updated results."
+        },
+        {
+          "id": "T-006-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm cleared/changed filters announce meaningful new state."
+        },
+        {
+          "id": "T-006-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add tests for filter toggles and result-state text/value updates."
+        },
+        {
+          "id": "T-006-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: expose active criteria and state transitions clearly during collection updates."
+        },
+        {
+          "id": "T-006-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: hide current filter/query context behind non-spoken visual-only chips."
+        }
+      ]
+    },
+    {
+      "guideline": "T-007",
+      "lane": "tvOS/UIKit",
+      "path": "references/tvos/guidelines/t-007-media-playback-controls.md",
+      "sha256": "8f44a48bde8b94837e50d3d6d56f6bb13a48ef2848d48aca68ccc02905bf4b23",
+      "rule": "tvOS media players must provide fully focusable transport controls, accurate labels/traits/values, and explicit spoken state updates for key playback changes.",
+      "clauses": [
+        {
+          "id": "T-007-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Use native playback controls where possible to inherit expected semantics."
+        },
+        {
+          "id": "T-007-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Ensure play/pause, scrub, captions, and audio options are reachable by directional focus."
+        },
+        {
+          "id": "T-007-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Provide stateful values (playing/paused, elapsed/remaining time, selected caption track)."
+        },
+        {
+          "id": "T-007-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Define a narrow debug/test inspection contract when live/VOD mode, seekability, buffering, playback rate, selected media options, or ad state are useful for verification but too noisy for spoken output."
+        },
+        {
+          "id": "T-007-L27",
+          "line": 27,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Keep control naming stable and disambiguated when multiple media actions are present."
+        },
+        {
+          "id": "T-007-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Validate semantic forwarding for custom player overlays hosted across SwiftUI/UIKit boundaries."
+        },
+        {
+          "id": "T-007-L32",
+          "line": 32,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Assign one owner for supplemental stream-state metadata so host overlays and embedded players report one consistent state model."
+        },
+        {
+          "id": "T-007-L33",
+          "line": 33,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Ensure overlay presentation/dismissal does not hide required controls from focus."
+        },
+        {
+          "id": "T-007-L37",
+          "line": 37,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Host playback surface owns focus entry and overlay lifecycle behavior."
+        },
+        {
+          "id": "T-007-L38",
+          "line": 38,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Embedded player controls own transport/action semantics and state values."
+        },
+        {
+          "id": "T-007-L39",
+          "line": 39,
+          "section": "Interop Ownership",
+          "subsection": "",
+          "text": "Host and embedded layers must agree on one source of truth for playback state announcements."
+        },
+        {
+          "id": "T-007-L45",
+          "line": 45,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify transport controls expose correct roles and labels."
+        },
+        {
+          "id": "T-007-L46",
+          "line": 46,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify time/progress and selected media-option values are available when stateful."
+        },
+        {
+          "id": "T-007-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Capture live/VOD state, seekability, buffering/loading state, playback rate, and ad or alternate-track context where those states affect transport behavior."
+        },
+        {
+          "id": "T-007-L51",
+          "line": 51,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Start, pause, seek, and change media options while confirming spoken updates reflect current state."
+        },
+        {
+          "id": "T-007-L52",
+          "line": 52,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm captions/audio controls are reachable and announce selected option context."
+        },
+        {
+          "id": "T-007-L53",
+          "line": 53,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm controls remain discoverable over dynamic video backgrounds."
+        },
+        {
+          "id": "T-007-L57",
+          "line": 57,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add playback state tests asserting label/value changes after play/pause/seek actions."
+        },
+        {
+          "id": "T-007-L58",
+          "line": 58,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Assert supplemental inspection snapshot fields when playback state exceeds what the spoken response should include."
+        },
+        {
+          "id": "T-007-L62",
+          "line": 62,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: ensure each playback transition has an accessible state signal users can hear or inspect."
+        },
+        {
+          "id": "T-007-L63",
+          "line": 63,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: hide critical transport actions behind non-obvious gestures or unlabeled overlay buttons."
+        }
+      ]
+    },
+    {
+      "guideline": "T-008",
+      "lane": "tvOS/UIKit",
+      "path": "references/tvos/guidelines/t-008-reduce-motion-focus-animations.md",
+      "sha256": "3a4e1df06c23d0083b2ef2cb3f9d1949388406152687c3591aef0bb4a4585048",
+      "rule": "tvOS UIs must provide reduced-motion behavior for focus and transition animations while preserving clear focus location, selection state, and navigation context.",
+      "clauses": [
+        {
+          "id": "T-008-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Prefer system animation behaviors that automatically adapt to accessibility settings."
+        },
+        {
+          "id": "T-008-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Reduce custom parallax, scaling, and camera-motion intensity when reduced motion is enabled."
+        },
+        {
+          "id": "T-008-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Keep non-motion cues for focus state (contrast ring, scale-lite highlight, text/icon state)."
+        },
+        {
+          "id": "T-008-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Ensure state transitions remain understandable if animation timing/effects are minimized."
+        },
+        {
+          "id": "T-008-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Verify reduced-motion behavior is consistent across hosted SwiftUI and UIKit focus surfaces."
+        },
+        {
+          "id": "T-008-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Ensure representable wrappers do not reintroduce high-motion effects in mixed stacks."
+        },
+        {
+          "id": "T-008-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm focusable controls remain semantically correct after reduced-motion variants are applied."
+        },
+        {
+          "id": "T-008-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Confirm focus indicators remain visible and distinguishable without motion-heavy effects."
+        },
+        {
+          "id": "T-008-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Enable reduced motion and navigate across key screens."
+        },
+        {
+          "id": "T-008-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm focus movement remains predictable and perceivable."
+        },
+        {
+          "id": "T-008-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm no core state information is conveyed only through animation."
+        },
+        {
+          "id": "T-008-L48",
+          "line": 48,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add regression checks for focus/selection state indicators that remain present in reduced-motion mode."
+        },
+        {
+          "id": "T-008-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: replace motion-heavy focus effects with stable visual cues when reduced motion is enabled."
+        },
+        {
+          "id": "T-008-L53",
+          "line": 53,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: depend on animated movement alone to communicate focus or state changes."
+        }
+      ]
+    },
+    {
+      "guideline": "T-009",
+      "lane": "tvOS/UIKit",
+      "path": "references/tvos/guidelines/t-009-contrast-non-color-cues.md",
+      "sha256": "4bb1fe3b03ee91f9f0e09699d821c21620e6259ac765cc5cb67537901f50e21e",
+      "rule": "Text, controls, and critical status indicators in tvOS UIs must maintain sufficient contrast and must not rely on color alone to convey meaning.",
+      "clauses": [
+        {
+          "id": "T-009-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Use system semantic colors and native controls where possible."
+        },
+        {
+          "id": "T-009-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Pair color state with secondary cues (icon, text, shape, position, or explicit label)."
+        },
+        {
+          "id": "T-009-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Ensure focus indicators remain visually distinct against all backgrounds."
+        },
+        {
+          "id": "T-009-L26",
+          "line": 26,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Re-check overlays, gradients, and media backdrops where contrast often regresses."
+        },
+        {
+          "id": "T-009-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Verify hosted SwiftUI content and UIKit containers resolve semantic colors consistently."
+        },
+        {
+          "id": "T-009-L31",
+          "line": 31,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Ensure custom representables preserve both contrast and non-color state cues."
+        },
+        {
+          "id": "T-009-L37",
+          "line": 37,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Run contrast checks for primary text and actionable controls."
+        },
+        {
+          "id": "T-009-L38",
+          "line": 38,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Verify state differences remain understandable when color distinctions are reduced."
+        },
+        {
+          "id": "T-009-L42",
+          "line": 42,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm spoken labels/values communicate state without depending on visual color."
+        },
+        {
+          "id": "T-009-L43",
+          "line": 43,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Confirm focused controls announce clear state context for selected/on/off modes."
+        },
+        {
+          "id": "T-009-L47",
+          "line": 47,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Add state-change checks asserting visible text/icon cues update with control state."
+        },
+        {
+          "id": "T-009-L51",
+          "line": 51,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: pair color with textual or symbolic state signals and validate contrast on actual tvOS backgrounds."
+        },
+        {
+          "id": "T-009-L52",
+          "line": 52,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: indicate selection, errors, or availability with color-only badges/highlights."
+        }
+      ]
+    },
+    {
+      "guideline": "T-010",
+      "lane": "tvOS/UIKit",
+      "path": "references/tvos/guidelines/t-010-xcuitest-focus-regression-hooks.md",
+      "sha256": "4bc0286d4218f245fceafee8f01c0a82df32e6f23204bce437f7fc4449f4ab43",
+      "rule": "Maintain a compact tvOS accessibility smoke suite in XCUITest that checks focus reachability, critical control presence, and key state transitions, while treating manual assistive-tech validation as mandatory.",
+      "clauses": [
+        {
+          "id": "T-010-L23",
+          "line": 23,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Add stable identifiers for critical controls and anchors."
+        },
+        {
+          "id": "T-010-L24",
+          "line": 24,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Add tests covering focus entry points, modal restore anchors, and playback/search state transitions."
+        },
+        {
+          "id": "T-010-L25",
+          "line": 25,
+          "section": "How To Implement",
+          "subsection": "UIKit (tvOS)",
+          "text": "Keep assertions scoped to deterministic behavior to avoid brittle failures."
+        },
+        {
+          "id": "T-010-L29",
+          "line": 29,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Ensure identifiers survive hosted-view boundaries and representable wrappers."
+        },
+        {
+          "id": "T-010-L30",
+          "line": 30,
+          "section": "How To Implement",
+          "subsection": "SwiftUI/UIKit Interop Notes",
+          "text": "Add regression checks for interop screens where focus/order issues have occurred."
+        },
+        {
+          "id": "T-010-L36",
+          "line": 36,
+          "section": "How To Test",
+          "subsection": "Accessibility Inspector",
+          "text": "Use inspector checks to validate semantics not covered by XCUITest assertions."
+        },
+        {
+          "id": "T-010-L40",
+          "line": 40,
+          "section": "How To Test",
+          "subsection": "VoiceOver Walkthrough",
+          "text": "Validate spoken output and qualitative focus behavior on representative end-to-end flows."
+        },
+        {
+          "id": "T-010-L44",
+          "line": 44,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Run tvOS accessibility smoke tests on every PR for critical screens."
+        },
+        {
+          "id": "T-010-L45",
+          "line": 45,
+          "section": "How To Test",
+          "subsection": "Optional XCUITest Hook",
+          "text": "Include modal open/close anchor assertions and core control state transitions."
+        },
+        {
+          "id": "T-010-L49",
+          "line": 49,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Do: treat XCUITest as regression guardrails for deterministic failures."
+        },
+        {
+          "id": "T-010-L50",
+          "line": 50,
+          "section": "Do / Don't",
+          "subsection": "",
+          "text": "Don't: treat passing automation as complete accessibility sign-off."
+        }
+      ]
+    },
+    {
+      "guideline": "T-011",
+      "lane": "tvOS/UIKit",
+      "path": "references/tvos/guidelines/t-011-larger-text.md",
+      "sha256": "2a044d285a6c82d868458c9fb5ab262fa31f12a49230a66168812dd6cd642092",
+      "rule": "Version-qualified Larger Text guidance; no tvOS27 runtime promotion in this campaign.",
+      "clauses": [
+        {
+          "id": "T-011-P1",
+          "section": "Availability and implementation",
+          "subsection": "UIKit",
+          "text": "System Larger Text is described for tvOS 27. Keep that availability boundary explicit when an app also supports tvOS 26; readable layouts remain valuable on both versions, but the new system preference must not be promised on older OSes."
+        },
+        {
+          "id": "T-011-P2",
+          "section": "Availability and implementation",
+          "subsection": "UIKit",
+          "text": "Use semantic text styles and flexible dimensions. For UIKit labels, enable content-size-category font adjustment. Adapt dense shelves and cards at larger sizes: fewer columns or a vertical arrangement can preserve full titles and reachable controls. Preserve useful focus relationships when layout changes."
+        },
+        {
+          "id": "T-011-P3",
+          "section": "Availability and implementation",
+          "subsection": "UIKit",
+          "text": "For implementation review, inspect fixed fonts, heights, and widths. For runtime evaluation, compare default and accessibility sizes, including focus and title visibility. Documentation supports the recommendation; runtime checks assess the particular app implementation."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,499 @@
+{
+  "schema": 1,
+  "scope": "Thirteen development cases; no frozen baseline or model quota expansion",
+  "cases": [
+    {
+      "id": "ios-closure-v1/validation-ownership",
+      "lifecycle": "draft-not-run",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "subject": {
+        "path": "code-examples/platforms/ios-closure-v1/evaluation/validation-ownership.prompt.md",
+        "sha256": "61f7850a2f1701cdd9d12b6543751631af7c0796f590459e3818420456c08de0",
+        "text": "Our UIKit iOS form has editable name and email fields. Validation is supplied as a callback-based service that takes a snapshot of both strings and eventually returns a dictionary of field IDs to nonempty error messages; an empty dictionary means valid. The callback runs on the main actor but may run immediately, twice, or out of order. A user can edit, cancel, or submit again before it returns. Implement ownership of the pending state and results without replacing the existing fields or losing entered text. Request the first invalid field in name-then-email order, and pass successful snapshots to our save callback, which can itself start another validation. Treat unknown field IDs or empty error messages as a service error. Target iOS 26; include deterministic unit tests without networking or UI automation.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/ios-closure-v1/evaluation/validation-ownership.rubric.md",
+        "sha256": "73f5804af3ad3600ccca4eb2653dc736fce63b8598fb504ced8813e593a335f8",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/ios-closure-v1/manifest.json",
+      "testIds": [
+        "AsyncOwnershipTests/testPendingStateAndSnapshotPreserveInput",
+        "AsyncOwnershipTests/testOutOfOrderReplyCannotReplaceLatestErrors",
+        "AsyncOwnershipTests/testEditInvalidatesInFlightResult",
+        "AsyncOwnershipTests/testCancelRejectsLateReply",
+        "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot",
+        "AsyncOwnershipTests/testFirstInvalidUsesDeclaredFieldOrder",
+        "AsyncOwnershipTests/testDuplicateReplyCannotAcceptTwice",
+        "AsyncOwnershipTests/testUnknownFieldAndEmptyErrorAreNotSuccess",
+        "AsyncOwnershipTests/testSynchronousCompletionWorks",
+        "AsyncOwnershipTests/testReentrantAcceptancePreservesNewRequest",
+        "AsyncOwnershipTests/testRetainedReplyDoesNotRetainForm",
+        "AsyncOwnershipTests/testSuccessRecoversAfterErrorAndKeepsFieldIdentity"
+      ],
+      "negativeChecks": [
+        "validation-generation",
+        "validation-snapshot"
+      ],
+      "authoringCapture": "AUTHORING.md; source, diagnostics and native receipts preserved; provider-internal context unavailable"
+    },
+    {
+      "id": "ios-closure-v1/media-load-ownership",
+      "lifecycle": "draft-not-run",
+      "framework": "UIKit",
+      "platform": "iOS",
+      "subject": {
+        "path": "code-examples/platforms/ios-closure-v1/evaluation/media-load-ownership.prompt.md",
+        "sha256": "5cac0e1c6c305829b5612814aa742d174c76eea02ee204ed297d960f66489787",
+        "text": "Our iOS app uses AVPlayer. We asynchronously load a short description of its current AVPlayerItem through an injected callback on the main actor. Items can be replaced externally, the same item can be inspected again, and results can arrive late or twice. Implement a small owner for loading, success, error, cancellation and no-item states. It must not apply results to a different current item or alter playback preferences. The callback may outlive the owner. Include deterministic unit tests using synthetic player items; no network or UI automation. Target iOS 26.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/ios-closure-v1/evaluation/media-load-ownership.rubric.md",
+        "sha256": "41ae703f40b170b1d87a02d221d4b037615c2b5597bb8140fe7127a873a0e5d2",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/ios-closure-v1/manifest.json",
+      "testIds": [
+        "MediaLoadOwnerTests/testNilItemDoesNotInvokeLoader",
+        "MediaLoadOwnerTests/testReplacementRejectsOldItemCompletion",
+        "MediaLoadOwnerTests/testSameItemNewRequestRejectsOldGeneration",
+        "MediaLoadOwnerTests/testExternalReplacementRejectsOldResult",
+        "MediaLoadOwnerTests/testCancellationRejectsLateSuccess",
+        "MediaLoadOwnerTests/testErrorIsNotMissingOrSuccessfulMetadata",
+        "MediaLoadOwnerTests/testDuplicateCallbackCannotOverwriteFirstResult",
+        "MediaLoadOwnerTests/testInspectionDoesNotChangePlayerPreferences",
+        "MediaLoadOwnerTests/testRetainedLoaderReplyDoesNotRetainOwner"
+      ],
+      "negativeChecks": [
+        "media-identity",
+        "media-duplicate"
+      ],
+      "authoringCapture": "AUTHORING.md; source, diagnostics and native receipts preserved; provider-internal context unavailable"
+    },
+    {
+      "id": "macos-closure-v1/validation-ownership",
+      "lifecycle": "draft-not-run",
+      "framework": "AppKit",
+      "platform": "macOS",
+      "subject": {
+        "path": "code-examples/platforms/macos-closure-v1/evaluation/validation-ownership.prompt.md",
+        "sha256": "5200ef96ce8adb600c4beb0a0bc6fbeaa1ede4b12c8a34dc5b26c9a31d800255",
+        "text": "Our AppKit macOS form has editable name and email fields. Validation is supplied as a callback-based service that takes a snapshot of both strings and eventually returns a dictionary of field IDs to nonempty error messages; an empty dictionary means valid. The callback runs on the main actor but may run immediately, twice, or out of order. A user can edit, cancel, or submit again before it returns. Implement ownership of the pending state and results without replacing the existing fields or losing entered text. Request the first invalid field in name-then-email order, and pass successful snapshots to our save callback, which can itself start another validation. Treat unknown field IDs or empty error messages as a service error. Target macOS 26; include deterministic unit tests without networking or UI automation.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/macos-closure-v1/evaluation/validation-ownership.rubric.md",
+        "sha256": "6ac8ca5ff1548d94cacb9c4919ff455d617072e2373979593fb3af24df8fd047",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/macos-closure-v1/manifest.json",
+      "testIds": [
+        "AsyncOwnershipTests/testPendingStateAndSnapshotPreserveInput",
+        "AsyncOwnershipTests/testOutOfOrderReplyCannotReplaceLatestErrors",
+        "AsyncOwnershipTests/testEditInvalidatesInFlightResult",
+        "AsyncOwnershipTests/testCancelRejectsLateReply",
+        "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot",
+        "AsyncOwnershipTests/testFirstInvalidUsesDeclaredFieldOrder",
+        "AsyncOwnershipTests/testDuplicateReplyCannotAcceptTwice",
+        "AsyncOwnershipTests/testUnknownFieldAndEmptyErrorAreNotSuccess",
+        "AsyncOwnershipTests/testSynchronousCompletionWorks",
+        "AsyncOwnershipTests/testReentrantAcceptancePreservesNewRequest",
+        "AsyncOwnershipTests/testRetainedReplyDoesNotRetainForm",
+        "AsyncOwnershipTests/testSuccessRecoversAfterErrorAndKeepsFieldIdentity"
+      ],
+      "negativeChecks": [
+        "validation-generation",
+        "validation-snapshot"
+      ],
+      "authoringCapture": "AUTHORING.md; source, diagnostics and native receipts preserved; provider-internal context unavailable"
+    },
+    {
+      "id": "macos-closure-v1/media-load-ownership",
+      "lifecycle": "draft-not-run",
+      "framework": "AppKit",
+      "platform": "macOS",
+      "subject": {
+        "path": "code-examples/platforms/macos-closure-v1/evaluation/media-load-ownership.prompt.md",
+        "sha256": "f607ba4f9080866881ca68026d842b75b1103f40a9348334fc8510c86795ff3b",
+        "text": "Our macOS app uses AVPlayer. We asynchronously load a short description of its current AVPlayerItem through an injected callback on the main actor. Items can be replaced externally, the same item can be inspected again, and results can arrive late or twice. Implement a small owner for loading, success, error, cancellation and no-item states. It must not apply results to a different current item or alter playback preferences. The callback may outlive the owner. Include deterministic unit tests using synthetic player items; no network or UI automation. Target macOS 26.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/macos-closure-v1/evaluation/media-load-ownership.rubric.md",
+        "sha256": "3f1c9f0b748658848ed2c4c9a143279fbf38f1eba40dad32c2e7fa31c0f47005",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/macos-closure-v1/manifest.json",
+      "testIds": [
+        "MediaLoadOwnerTests/testNilItemDoesNotInvokeLoader",
+        "MediaLoadOwnerTests/testReplacementRejectsOldItemCompletion",
+        "MediaLoadOwnerTests/testSameItemNewRequestRejectsOldGeneration",
+        "MediaLoadOwnerTests/testExternalReplacementRejectsOldResult",
+        "MediaLoadOwnerTests/testCancellationRejectsLateSuccess",
+        "MediaLoadOwnerTests/testErrorIsNotMissingOrSuccessfulMetadata",
+        "MediaLoadOwnerTests/testDuplicateCallbackCannotOverwriteFirstResult",
+        "MediaLoadOwnerTests/testInspectionDoesNotChangePlayerPreferences",
+        "MediaLoadOwnerTests/testRetainedLoaderReplyDoesNotRetainOwner"
+      ],
+      "negativeChecks": [
+        "media-identity",
+        "media-duplicate"
+      ],
+      "authoringCapture": "AUTHORING.md; source, diagnostics and native receipts preserved; provider-internal context unavailable"
+    },
+    {
+      "id": "macos-closure-v1/text-rotor",
+      "lifecycle": "draft-not-run",
+      "framework": "AppKit",
+      "platform": "macOS",
+      "subject": {
+        "path": "code-examples/platforms/macos-closure-v1/evaluation/text-rotor.prompt.md",
+        "sha256": "5ab179c11529a9a65838c6aaf297b773659f7242285184f55a0c007964a65774",
+        "text": "In our AppKit macOS reader, users can read and select the original text normally. Add a custom accessibility rotor for literal search matches, without replacing ordinary text access. Text and query can change while an old search result or rotor is still retained. Search forwards and backwards without wrapping; start at the appropriate end on a fresh search. Text may contain emoji and combining marks; do not select only part of a composed character. Allow overlapping matches only when explicitly requested. Respect the native rotor search filter. Implement this for macOS 26 and unit-test the search callbacks and ranges, without driving VoiceOver.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/macos-closure-v1/evaluation/text-rotor.rubric.md",
+        "sha256": "d85cf34d78602860b2ce4e32163fc417f6833f2d93c36cca1480e24d5ef1ce18",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/macos-closure-v1/manifest.json",
+      "testIds": [
+        "DesktopTextTests/testForwardBackwardAndBothBoundaries",
+        "DesktopTextTests/testInitialPreviousStartsAtLast",
+        "DesktopTextTests/testUTF16RangeCanBeSelectedNormally",
+        "DesktopTextTests/testPartialGraphemesExcluded",
+        "DesktopTextTests/testExplicitOverlapPolicy",
+        "DesktopTextTests/testOldRotorCannotSearchNewRevision",
+        "DesktopTextTests/testNewSessionRestartsOldResult",
+        "DesktopTextTests/testUnannouncedEditRejectsCachedRange",
+        "DesktopTextTests/testEmptyQueryPreservesOrdinaryText",
+        "DesktopTextTests/testFilterStringIsRespected",
+        "DesktopTextTests/testForeignAndPartialCurrentResultsRestart",
+        "DesktopTextTests/testRemovedMatchesClearRotor"
+      ],
+      "negativeChecks": [
+        "text-boundary",
+        "text-stale"
+      ],
+      "authoringCapture": "AUTHORING.md; source, diagnostics and native receipts preserved; provider-internal context unavailable"
+    },
+    {
+      "id": "macos-closure-v1/native-state",
+      "lifecycle": "draft-not-run",
+      "framework": "AppKit",
+      "platform": "macOS",
+      "subject": {
+        "path": "code-examples/platforms/macos-closure-v1/evaluation/native-state.prompt.md",
+        "sha256": "590b3706be273dd288a0617ec23b2132904a8ccb8561c7559888ae4d4b500c67",
+        "text": "For our AppKit macOS Downloads area, preserve the ordinary Open control and readable status. Give the region and controls useful names, show selection in text as well as accessibility state, and clear stale names and state when reused. Reduced transparency should remove only the backdrop, not content. Keep native AVKit controls and the supplied player. Add a small modal-metadata scope that restores the original flag after repeated begin/end calls. Also implement a custom Notifications checkbox whose ordinary and accessibility press actions share state and respect disabled state. Target macOS 26. Include focused unit tests of configuration and callbacks, not UI automation.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/macos-closure-v1/evaluation/native-state.rubric.md",
+        "sha256": "c36cbca4bf193bf422be4b44135c4572038388958a2ad12fd0fb589cddc8fa34",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/macos-closure-v1/manifest.json",
+      "testIds": [
+        "StateContractTests/testRegionPreservesOrdinaryControlAndNamedBoundary",
+        "StateContractTests/testSelectedStateHasNonColorTextAndValue",
+        "StateContractTests/testReconfigureClearsStaleSelectionText",
+        "StateContractTests/testReducedTransparencyDoesNotRemoveContent",
+        "StateContractTests/testNativePlayerControlsAndPlayerArePreserved",
+        "StateContractTests/testModalFlagRestoresOriginalFalse",
+        "StateContractTests/testRepeatedModalBeginRestoresOriginalTrue",
+        "StateContractTests/testCustomToggleRoleValueAndPressAgree",
+        "StateContractTests/testDisabledCustomControlRejectsBothActionPaths",
+        "StateContractTests/testOrdinaryAndAccessibilityActionUseSameStateTransition"
+      ],
+      "negativeChecks": [
+        "state-text",
+        "modal-restore"
+      ],
+      "authoringCapture": "AUTHORING.md; source, diagnostics and native receipts preserved; provider-internal context unavailable"
+    },
+    {
+      "id": "tvos-closure-v1/validation-ownership",
+      "lifecycle": "draft-not-run",
+      "framework": "UIKit",
+      "platform": "tvOS",
+      "subject": {
+        "path": "code-examples/platforms/tvos-closure-v1/evaluation/validation-ownership.prompt.md",
+        "sha256": "8e63e559f869291b1d3ab0867bbb637bb594b9fd0efd5bb5a56727b3b625fe9c",
+        "text": "Our UIKit tvOS form has editable name and email fields. Validation is supplied as a callback-based service that takes a snapshot of both strings and eventually returns a dictionary of field IDs to nonempty error messages; an empty dictionary means valid. The callback runs on the main actor but may run immediately, twice, or out of order. A user can edit, cancel, or submit again before it returns. Implement ownership of the pending state and results without replacing the existing fields or losing entered text. Request the first invalid field in name-then-email order, and pass successful snapshots to our save callback, which can itself start another validation. Treat unknown field IDs or empty error messages as a service error. Target tvOS 26; include deterministic unit tests without networking or UI automation.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/tvos-closure-v1/evaluation/validation-ownership.rubric.md",
+        "sha256": "73a363995276cb0eb9088ec39e35f0d044a2ce231baa8fe7025fdcec77d4cbf2",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+      "testIds": [
+        "AsyncOwnershipTests/testPendingStateAndSnapshotPreserveInput",
+        "AsyncOwnershipTests/testOutOfOrderReplyCannotReplaceLatestErrors",
+        "AsyncOwnershipTests/testEditInvalidatesInFlightResult",
+        "AsyncOwnershipTests/testCancelRejectsLateReply",
+        "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot",
+        "AsyncOwnershipTests/testFirstInvalidUsesDeclaredFieldOrder",
+        "AsyncOwnershipTests/testDuplicateReplyCannotAcceptTwice",
+        "AsyncOwnershipTests/testUnknownFieldAndEmptyErrorAreNotSuccess",
+        "AsyncOwnershipTests/testSynchronousCompletionWorks",
+        "AsyncOwnershipTests/testReentrantAcceptancePreservesNewRequest",
+        "AsyncOwnershipTests/testRetainedReplyDoesNotRetainForm",
+        "AsyncOwnershipTests/testSuccessRecoversAfterErrorAndKeepsFieldIdentity"
+      ],
+      "negativeChecks": [
+        "validation-generation",
+        "validation-snapshot"
+      ],
+      "authoringCapture": "AUTHORING.md; source, diagnostics and native receipts preserved; provider-internal context unavailable"
+    },
+    {
+      "id": "tvos-closure-v1/media-load-ownership",
+      "lifecycle": "draft-not-run",
+      "framework": "UIKit",
+      "platform": "tvOS",
+      "subject": {
+        "path": "code-examples/platforms/tvos-closure-v1/evaluation/media-load-ownership.prompt.md",
+        "sha256": "369095f8f4ececac3b9b7467d234bcb7209bc2a54de3d0185739e4d6fb2ceafc",
+        "text": "Our tvOS app uses AVPlayer. We asynchronously load a short description of its current AVPlayerItem through an injected callback on the main actor. Items can be replaced externally, the same item can be inspected again, and results can arrive late or twice. Implement a small owner for loading, success, error, cancellation and no-item states. It must not apply results to a different current item or alter playback preferences. The callback may outlive the owner. Include deterministic unit tests using synthetic player items; no network or UI automation. Target tvOS 26.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/tvos-closure-v1/evaluation/media-load-ownership.rubric.md",
+        "sha256": "6d20ca01385762db5420c2b4037e7ff271dcfaa98c7ca704b90aa7e41daf84fb",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+      "testIds": [
+        "MediaLoadOwnerTests/testNilItemDoesNotInvokeLoader",
+        "MediaLoadOwnerTests/testReplacementRejectsOldItemCompletion",
+        "MediaLoadOwnerTests/testSameItemNewRequestRejectsOldGeneration",
+        "MediaLoadOwnerTests/testExternalReplacementRejectsOldResult",
+        "MediaLoadOwnerTests/testCancellationRejectsLateSuccess",
+        "MediaLoadOwnerTests/testErrorIsNotMissingOrSuccessfulMetadata",
+        "MediaLoadOwnerTests/testDuplicateCallbackCannotOverwriteFirstResult",
+        "MediaLoadOwnerTests/testInspectionDoesNotChangePlayerPreferences",
+        "MediaLoadOwnerTests/testRetainedLoaderReplyDoesNotRetainOwner"
+      ],
+      "negativeChecks": [
+        "media-identity",
+        "media-duplicate"
+      ],
+      "authoringCapture": "AUTHORING.md; source, diagnostics and native receipts preserved; provider-internal context unavailable"
+    },
+    {
+      "id": "tvos-closure-v1/text-rotor",
+      "lifecycle": "draft-not-run",
+      "framework": "UIKit",
+      "platform": "tvOS",
+      "subject": {
+        "path": "code-examples/platforms/tvos-closure-v1/evaluation/text-rotor.prompt.md",
+        "sha256": "659283ab576494bfbd9abbc07c10b1bb4d181cdcffbaa6583d322bbc1306095b",
+        "text": "In our UIKit tvOS reader, users can read and select the original text normally. Add a custom accessibility rotor for literal search matches, without replacing ordinary text access. Text and query can change while an old search result or rotor is still retained. Search forwards and backwards without wrapping; start at the appropriate end on a fresh search. Text may contain emoji and combining marks; do not select only part of a composed character. Allow overlapping matches only when explicitly requested. Implement this for tvOS 26 and unit-test the search callbacks and ranges, without driving VoiceOver.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/tvos-closure-v1/evaluation/text-rotor.rubric.md",
+        "sha256": "9871bfab0eb82b8418f733e5e86d19eaf32e84b29fb48c33df69ed7028a73a66",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+      "testIds": [
+        "EditedRotorUIKitTests/testInitialDirectionAndBothBoundaries",
+        "EditedRotorUIKitTests/testForwardAndBackwardUseFullCurrentRange",
+        "EditedRotorUIKitTests/testUnicodePrefixProducesCorrectNativeRange",
+        "EditedRotorUIKitTests/testPartialGraphemeMatchesAreExcluded",
+        "EditedRotorUIKitTests/testOverlapPolicyIsExplicit",
+        "EditedRotorUIKitTests/testNewRevisionRestartsRetainedResult",
+        "EditedRotorUIKitTests/testRetainedOldRotorIsInvalidAfterQueryChange",
+        "EditedRotorUIKitTests/testInsertionAndDeletionRebuildRanges",
+        "EditedRotorUIKitTests/testEmptyQueryUpdatesOrdinaryDocumentWithoutRotor",
+        "EditedRotorUIKitTests/testUnannouncedTextChangeRejectsCachedSearch",
+        "EditedRotorUIKitTests/testForeignTextInputPositionsRestartSafely",
+        "EditedRotorUIKitTests/testNativeRangeCanBeUsedForOrdinaryTextSelection"
+      ],
+      "negativeChecks": [
+        "text-boundary",
+        "text-stale"
+      ],
+      "authoringCapture": "AUTHORING.md; source, diagnostics and native receipts preserved; provider-internal context unavailable"
+    },
+    {
+      "id": "tvos-closure-v1/native-state",
+      "lifecycle": "draft-not-run",
+      "framework": "UIKit",
+      "platform": "tvOS",
+      "subject": {
+        "path": "code-examples/platforms/tvos-closure-v1/evaluation/native-state.prompt.md",
+        "sha256": "a424d7b520fd2607d131a3c795bc91af1d1e4eb7dd871aed9d343b2a841b0eae",
+        "text": "For our UIKit tvOS Downloads area, preserve the ordinary Open control and readable status. Give the region and controls useful names, show selection in text as well as accessibility state, and clear stale names and state when reused. Reduced transparency should remove only the backdrop, not content. Keep native AVKit controls and the supplied player. Add a small modal-metadata scope that restores the original flag after repeated begin/end calls. Keep the labeled search field, result-count status and filter state together, and use flexible multiline semantic text configuration without promising a newer system Larger Text preference. Target tvOS 26. Include focused unit tests of configuration and callbacks, not UI automation.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/tvos-closure-v1/evaluation/native-state.rubric.md",
+        "sha256": "842acc0bb179f7acc4245201a0936800c3a697e7a13bb1c7b34eb12a8b04e3e1",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/tvos-closure-v1/manifest.json",
+      "testIds": [
+        "StateContractTests/testRegionPreservesOrdinaryControlAndNamedBoundary",
+        "StateContractTests/testSelectedStateHasNonColorTextAndValue",
+        "StateContractTests/testReconfigureClearsStaleSelectionText",
+        "StateContractTests/testReducedTransparencyDoesNotRemoveContent",
+        "StateContractTests/testNativePlayerControlsAndPlayerArePreserved",
+        "StateContractTests/testModalFlagRestoresOriginalFalse",
+        "StateContractTests/testRepeatedModalBeginRestoresOriginalTrue",
+        "StateContractTests/testSearchQueryAndResultCountRemainVisible",
+        "StateContractTests/testSelectionPreservesUnrelatedTraits",
+        "StateContractTests/testTextUsesFlexibleSemanticConfigurationWithoutOS27Claim"
+      ],
+      "negativeChecks": [
+        "state-text",
+        "modal-restore"
+      ],
+      "authoringCapture": "AUTHORING.md; source, diagnostics and native receipts preserved; provider-internal context unavailable",
+      "retrievalPackage": "tvos-state-recovery-v1",
+      "supersededEvidence": "code-examples/platforms/tvos-state-recovery-v1/manifest.json"
+    },
+    {
+      "id": "macos-closure-details-v1/row-metadata",
+      "lifecycle": "draft-not-run",
+      "framework": "AppKit",
+      "platform": "macOS",
+      "subject": {
+        "path": "code-examples/platforms/macos-closure-details-v1/evaluation/row-metadata.prompt.md",
+        "sha256": "c8704ad5719705056ddf9e0af973d8da34c93335ba3ce93706a4ee1277087076",
+        "text": "Our AppKit app has a custom row containing an ordinary Open button. Rows are reused for different records. Implement explicit row role, title, selection and expansion metadata, while preserving the child button and its contextual name. When a row is rebound, the ordinary action should use the current record ID; disabled actions should not invoke it. Target macOS26 and add unit assertions of metadata and native action dispatch, without UI automation.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/macos-closure-details-v1/evaluation/row-metadata.rubric.md",
+        "sha256": "af5c3e7b9bd37c2f71167814f6570f0e5cc265156c52d2aff163fac93a5ad77a",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/macos-closure-details-v1/manifest.json",
+      "testIds": [
+        "DesktopContractTests/testExplicitRowRoleAndChildSemantics",
+        "DesktopContractTests/testReconfigureClearsSelectionExpansionAndNames",
+        "DesktopContractTests/testOrdinaryRowActionUsesCurrentIdentity",
+        "DesktopContractTests/testDisabledRowActionDoesNotChoose"
+      ],
+      "negativeChecks": [
+        "row-selected"
+      ],
+      "authoringCapture": "AUTHORING.md"
+    },
+    {
+      "id": "macos-closure-details-v1/keyboard-action",
+      "lifecycle": "draft-not-run",
+      "framework": "AppKit",
+      "platform": "macOS",
+      "subject": {
+        "path": "code-examples/platforms/macos-closure-details-v1/evaluation/keyboard-action.prompt.md",
+        "sha256": "0e0b9fd8e2bba2440b53887e5690a1baac904adbfc0fc39cd6bb79d6d15197ed",
+        "text": "In our programmatic AppKit Notifications checkbox, Space, Return and the accessibility press action should use the same on/off transition. The control can be disabled. Show the native responder override and unit tests that pass synthetic key events directly into it; do not use UI automation or require a real window. Target macOS26.\n"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/macos-closure-details-v1/evaluation/keyboard-action.rubric.md",
+        "sha256": "92f23a4d765d222d2ef6d388db1069ea1c6baf21f14424b349e92d6b65201c45",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/macos-closure-details-v1/manifest.json",
+      "testIds": [
+        "DesktopContractTests/testSpaceEventUsesOrdinaryToggleTransition",
+        "DesktopContractTests/testReturnEventUsesSameTransitionAsAccessibilityPress",
+        "DesktopContractTests/testDisabledKeyboardEventCannotToggle"
+      ],
+      "negativeChecks": [
+        "keyboard-disabled"
+      ],
+      "authoringCapture": "AUTHORING.md"
+    },
+    {
+      "id": "tvos-state-recovery-v1/state-recovery",
+      "lifecycle": "draft-not-run",
+      "framework": "UIKit",
+      "platform": "tvOS",
+      "subject": {
+        "path": "code-examples/platforms/tvos-state-recovery-v1/evaluation/state-recovery.prompt.md",
+        "sha256": "70ad36b8473f5069cb1572df9ca311b28537b874a619191a5512de6df728560b",
+        "text": "This UIKit tvOS26 component is reused for search results and selection. After search runs, configure changes the visible status but the accessibility label can still describe the previous result count. Fix the stale state without removing the ordinary controls, selected traits, reduced-transparency behavior, native player controls or modal restoration. Add deterministic unit tests for both update orders. Do not drive VoiceOver or use UI automation.\n\n```swift\nimport UIKit\nimport AVKit\n\n@MainActor\nfinal class RegionState: UIView {\n    let button = UIButton(type: .system)\n    let status = UILabel()\n    let query = UITextField()\n    let backdrop = UIVisualEffectView(effect: UIBlurEffect(style: .regular))\n    override init(frame: CGRect) {\n        super.init(frame: frame); [backdrop, button, status, query].forEach { addSubview($0) }\n        isAccessibilityElement = false; accessibilityLabel = \"Downloads\"\n        accessibilityElements = [query, button, status]\n        query.accessibilityLabel = \"Search downloads\"\n        status.textColor = .label; status.numberOfLines = 0; status.lineBreakMode = .byWordWrapping\n        status.font = .preferredFont(forTextStyle: .body); status.adjustsFontForContentSizeCategory = true\n    }\n    required init?(coder: NSCoder) { fatalError(\"Programmatic example\") }\n    func configure(name: String, selected: Bool, reduceTransparency: Bool) {\n        button.setTitle(name, for: .normal); button.accessibilityLabel = name\n        status.text = selected ? \"Selected\" : \"Not selected\"; button.accessibilityValue = status.text\n        if selected { button.accessibilityTraits.insert(.selected) } else { button.accessibilityTraits.remove(.selected) }\n        backdrop.isHidden = reduceTransparency\n    }\n    func search(_ text: String, count: Int) {\n        query.text = text; status.text = \"\\(count) results\"; status.accessibilityLabel = status.text\n    }\n    static func player(_ player: AVPlayer) -> AVPlayerViewController {\n        let view = AVPlayerViewController(); view.player = player; view.showsPlaybackControls = true; return view\n    }\n}\n\n@MainActor\nfinal class ModalFlag {\n    let view: UIView\n    private var prior: Bool?\n    init(_ view: UIView) { self.view = view }\n    func begin() { guard prior == nil else { return }; prior = view.accessibilityViewIsModal; view.accessibilityViewIsModal = true }\n    func end() { guard let prior else { return }; view.accessibilityViewIsModal = prior; self.prior = nil }\n}\n```\n"
+      },
+      "starter": {
+        "path": "code-examples/platforms/tvos-closure-v1/Sources/StateContracts.swift",
+        "sha256": "805c307049316a4e40c7e6e935dcfd7e79326ea64237cf13fd7cb3bc4a58d1ac"
+      },
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": {
+        "path": "code-examples/platforms/tvos-state-recovery-v1/evaluation/state-recovery.rubric.md",
+        "sha256": "41b2b84aab1993680f5fc90614252df3ac61581c6d0a7af5794862192f08035b",
+        "answerAnalysis": null
+      },
+      "nativeManifest": "code-examples/platforms/tvos-state-recovery-v1/manifest.json",
+      "testIds": [
+        "StateContractTests/testSearchThenSelectionDoesNotLeaveStaleLabel",
+        "StateContractTests/testRepeatedSearchAndSelectionKeepCurrentStatus",
+        "StateContractTests/testRegionPreservesOrdinaryControlAndNamedBoundary",
+        "StateContractTests/testSelectedStateHasNonColorTextAndValue",
+        "StateContractTests/testReconfigureClearsStaleSelectionText",
+        "StateContractTests/testReducedTransparencyDoesNotRemoveContent",
+        "StateContractTests/testNativePlayerControlsAndPlayerArePreserved",
+        "StateContractTests/testModalFlagRestoresOriginalFalse",
+        "StateContractTests/testRepeatedModalBeginRestoresOriginalTrue",
+        "StateContractTests/testSearchQueryAndResultCountRemainVisible",
+        "StateContractTests/testSelectionPreservesUnrelatedTraits",
+        "StateContractTests/testTextUsesFlexibleSemanticConfigurationWithoutOS27Claim"
+      ],
+      "negativeChecks": [
+        "stale-status"
+      ],
+      "authoringCapture": "AUTHORING.md; exact original source and first failing native receipt retained"
+    }
+  ]
+}

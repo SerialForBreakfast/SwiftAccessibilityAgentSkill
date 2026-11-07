@@ -1,0 +1,2236 @@
+{
+  "schema": 1,
+  "priorLedger": {
+    "path": "research/evaluation/swiftui-campaign-v1/clause-ledger.json",
+    "sha256": "06106263b97c1489d676ca846af3f979b8b14e956c0a7f70369ae9750ec6b21e"
+  },
+  "rows": [
+    {
+      "id": "G-001-L30",
+      "text": "Ensure wrapped UIKit views set `accessibilityLabel` and do not override SwiftUI-provided semantics accidentally.",
+      "priorDisposition": "unresolved",
+      "status": "native-forwarding-subset; broader SwiftUI hosting requirement remains unresolved",
+      "scope": "Explicit native label/value/help/heading/selected/children/action/font configuration and native dispatch. No automatic hosting or generated SwiftUI semantics claim.",
+      "bindings": [
+        {
+          "caseId": "forwarding-macos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-macos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G-001-L31",
+      "text": "In representables, forward semantic naming from SwiftUI state into UIKit view properties.",
+      "priorDisposition": "unresolved",
+      "status": "native-forwarding-subset; broader SwiftUI hosting requirement remains unresolved",
+      "scope": "Explicit native label/value/help/heading/selected/children/action/font configuration and native dispatch. No automatic hosting or generated SwiftUI semantics claim.",
+      "bindings": [
+        {
+          "caseId": "forwarding-macos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-macos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G-002-L30",
+      "text": "Set `accessibilityHint` on wrapped UIKit views only where needed.",
+      "priorDisposition": "unresolved",
+      "status": "native-forwarding-subset; broader SwiftUI hosting requirement remains unresolved",
+      "scope": "Explicit native label/value/help/heading/selected/children/action/font configuration and native dispatch. No automatic hosting or generated SwiftUI semantics claim.",
+      "bindings": [
+        {
+          "caseId": "forwarding-macos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-macos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G-003-L30",
+      "text": "Set `accessibilityValue` on UIKit-backed controls/readouts when SwiftUI wrappers do not provide it.",
+      "priorDisposition": "unresolved",
+      "status": "native-forwarding-subset; broader SwiftUI hosting requirement remains unresolved",
+      "scope": "Explicit native label/value/help/heading/selected/children/action/font configuration and native dispatch. No automatic hosting or generated SwiftUI semantics claim.",
+      "bindings": [
+        {
+          "caseId": "forwarding-macos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-macos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G-003-L31",
+      "text": "In representables, update UIKit accessibility value whenever bound state changes.",
+      "priorDisposition": "unresolved",
+      "status": "native-forwarding-subset; broader SwiftUI hosting requirement remains unresolved",
+      "scope": "Explicit native label/value/help/heading/selected/children/action/font configuration and native dispatch. No automatic hosting or generated SwiftUI semantics claim.",
+      "bindings": [
+        {
+          "caseId": "forwarding-macos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-macos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G-004-L30",
+      "text": "Set `accessibilityTraits` in wrapped UIKit controls when default traits are not accurate.",
+      "priorDisposition": "unresolved",
+      "status": "native-forwarding-subset; broader SwiftUI hosting requirement remains unresolved",
+      "scope": "Explicit native label/value/help/heading/selected/children/action/font configuration and native dispatch. No automatic hosting or generated SwiftUI semantics claim.",
+      "bindings": [
+        {
+          "caseId": "forwarding-macos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-macos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G-005-L31",
+      "text": "In representables, verify container and child `isAccessibilityElement` behavior matches intended grouping.",
+      "priorDisposition": "unresolved",
+      "status": "native-forwarding-subset; broader SwiftUI hosting requirement remains unresolved",
+      "scope": "Explicit native label/value/help/heading/selected/children/action/font configuration and native dispatch. No automatic hosting or generated SwiftUI semantics claim.",
+      "bindings": [
+        {
+          "caseId": "forwarding-macos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-macos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G-007-L30",
+      "text": "Map equivalent operations to `UIAccessibilityCustomAction` for UIKit-backed controls.",
+      "priorDisposition": "unresolved",
+      "status": "native-forwarding-subset; broader SwiftUI hosting requirement remains unresolved",
+      "scope": "Explicit native label/value/help/heading/selected/children/action/font configuration and native dispatch. No automatic hosting or generated SwiftUI semantics claim.",
+      "bindings": [
+        {
+          "caseId": "forwarding-macos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-macos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G-007-L31",
+      "text": "Ensure action handlers in representables are synchronized with SwiftUI state updates.",
+      "priorDisposition": "unresolved",
+      "status": "native-forwarding-subset; broader SwiftUI hosting requirement remains unresolved",
+      "scope": "Explicit native label/value/help/heading/selected/children/action/font configuration and native dispatch. No automatic hosting or generated SwiftUI semantics claim.",
+      "bindings": [
+        {
+          "caseId": "forwarding-macos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-macos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G-008-L30",
+      "text": "In UIKit-backed custom views, set `isAccessibilityElement`, `accessibilityLabel`, `accessibilityValue`, and traits explicitly.",
+      "priorDisposition": "unresolved",
+      "status": "native-forwarding-subset; broader SwiftUI hosting requirement remains unresolved",
+      "scope": "Explicit native label/value/help/heading/selected/children/action/font configuration and native dispatch. No automatic hosting or generated SwiftUI semantics claim.",
+      "bindings": [
+        {
+          "caseId": "forwarding-macos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-macos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G-008-L31",
+      "text": "In representables, verify semantic fields update when SwiftUI bindings change.",
+      "priorDisposition": "unresolved",
+      "status": "native-forwarding-subset; broader SwiftUI hosting requirement remains unresolved",
+      "scope": "Explicit native label/value/help/heading/selected/children/action/font configuration and native dispatch. No automatic hosting or generated SwiftUI semantics claim.",
+      "bindings": [
+        {
+          "caseId": "forwarding-macos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-macos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G-009-L33",
+      "text": "Ensure UIKit-hosted sections preserve heading/landmark semantics when embedded with SwiftUI content.",
+      "priorDisposition": "unresolved",
+      "status": "native-forwarding-subset; broader SwiftUI hosting requirement remains unresolved",
+      "scope": "Explicit native label/value/help/heading/selected/children/action/font configuration and native dispatch. No automatic hosting or generated SwiftUI semantics claim.",
+      "bindings": [
+        {
+          "caseId": "forwarding-macos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-macos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G-010-L30",
+      "text": "Ensure UIKit views in representables use Dynamic Type-compatible fonts and adjust for content size category changes.",
+      "priorDisposition": "unresolved",
+      "status": "native-forwarding-subset; broader SwiftUI hosting requirement remains unresolved",
+      "scope": "Explicit native label/value/help/heading/selected/children/action/font configuration and native dispatch. No automatic hosting or generated SwiftUI semantics claim.",
+      "bindings": [
+        {
+          "caseId": "forwarding-macos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-macos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+          "manifestHash": "fb44f82fc4b35b38e034649933486753d03e3cf93cef454e31819613870c0b78",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-mac-positive-r4",
+            "hash": "1fe3d6225c82302d2652b2eae31b3fa794528b151f9a907d14102017b6b6b6d8"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-ios-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+          "manifestHash": "1ac83a1261f754610f5436af70f56f633eb4b85595b60a2b7f63e7c389acdc5b",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-ios-positive-r5",
+            "hash": "6fe40affd96588bc511ef9030b8d74fd1732f111626a09bb18bfc40ae8a3c544"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-metadata",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testInitialExplicitName",
+            "ForwardingTests/testNamesRefreshWithoutReconstruction",
+            "ForwardingTests/testValueMatchesVisibleState",
+            "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+            "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+            "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+            "ForwardingTests/testHintCanBeSet",
+            "ForwardingTests/testNilHintClearsOldHelp",
+            "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+            "ForwardingTests/testDisabledStateForwardedToBothControls",
+            "ForwardingTests/testReenableRestoresBothControls",
+            "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+            "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+            "ForwardingTests/testHeadingIsAddedAndRemoved",
+            "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+            "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+            "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+            "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        },
+        {
+          "caseId": "forwarding-tvos-v1/native-actions",
+          "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+          "manifestHash": "741c04de901ba539c96e1142bd861b5aef8d29cc214873f4b1e2c1ea1b5bfbc2",
+          "testIds": [
+            "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+            "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+            "ForwardingTests/testShortcutUsesSameSecondaryPath",
+            "ForwardingTests/testOldShortcutCannotReachNewItem",
+            "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+            "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+            "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+            "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+            "ForwardingTests/testStopInvalidatesCapturedAction",
+            "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+            "ForwardingTests/testShortcutListDoesNotAccumulate",
+            "ForwardingTests/testCallbackDoesNotRetainOwner",
+            "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+            "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+          ],
+          "receipt": {
+            "attempt": "sui-forward-tv-positive-r5",
+            "hash": "218990dd6dc329b99cf1115b6c7816d6781dcd943ca7f7521f90ff8f8f90001a"
+          }
+        }
+      ]
+    }
+  ],
+  "priorUnresolvedCount": 28,
+  "autoClosedRequirements": 0,
+  "unmodifiedPriorLedger": true,
+  "sharedPreferencePolicy": "Separate shared state/animation callback assertions, not embedded UIKit animation proof."
+}

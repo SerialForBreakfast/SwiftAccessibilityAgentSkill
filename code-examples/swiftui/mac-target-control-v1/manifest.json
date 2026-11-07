@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "id": "swiftui-mac-target-control-v1",
+  "revision": "1",
+  "platform": "macOS",
+  "deploymentTarget": "26.0",
+  "runtimeMajor": 27,
+  "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only.",
+  "claims": [
+    {
+      "id": "interop",
+      "url": "https://developer.apple.com/documentation/swiftui/nsviewrepresentable",
+      "section": "Public SwiftUI API composition; exact installed SDK declarations and narrow application contract",
+      "statement": "Public native coordinator configuration/action/dismantle paths, with separate AppKit/UIKit implementation. Not automatic hosting/update propagation.",
+      "availability": "Compile target26 against SDK27; exact runtime recorded separately. Platform-specific unavailable members must be excluded or explicitly unresolved, not guessed.",
+      "reviewedOn": "2026-11-06"
+    }
+  ],
+  "files": [
+    {
+      "path": "Sources/Interop.swift",
+      "sha256": "056958067a8c670625b84236acd94bea77c939c0aeb4c5efd00bf8a6d202dec4"
+    },
+    {
+      "path": "Tests/InteropTests.swift",
+      "sha256": "a5c2c44182b831a492ecac06ac1eef19ee502c318c39539f1920b06aca4625ef"
+    },
+    {
+      "path": "NegativeFixtures/old_target.swift",
+      "sha256": "bc551a2e99c9a63f0d7f51130767fa28449593611c6988e13183838023e85356"
+    }
+  ],
+  "checks": [
+    {
+      "id": "old-target",
+      "lane": "unit",
+      "expected": "failure",
+      "claimIds": [
+        "interop"
+      ],
+      "testIds": [
+        "InteropTests/testOldNativeViewCannotDispatchAfterRebind"
+      ],
+      "failureIds": [
+        "InteropTests/testOldNativeViewCannotDispatchAfterRebind"
+      ],
+      "replacement": {
+        "target": "Sources/Interop.swift",
+        "source": "NegativeFixtures/old_target.swift"
+      }
+    }
+  ]
+}

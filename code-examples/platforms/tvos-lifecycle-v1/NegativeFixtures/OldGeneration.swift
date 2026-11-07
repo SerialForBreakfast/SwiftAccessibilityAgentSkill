@@ -1,0 +1,118 @@
+import UIKit
+
+@MainActor
+private func eligible(_ target: UIButton?, in root: UIView?) -> Bool {
+    guard let target, let root, target.isDescendant(of: root), target.isEnabled else { return false }
+    var view: UIView? = target
+    while let current = view {
+        guard !current.isHidden, current.alpha > 0, current.isUserInteractionEnabled else { return false }
+        if current === root { return true }
+        view = current.superview
+    }
+    return false
+}
+
+@MainActor
+class TelevisionFocusRoot: UIView {
+    weak var restorationTarget: UIButton?
+    override var preferredFocusEnvironments: [UIFocusEnvironment] {
+        guard eligible(restorationTarget, in: self), let target = restorationTarget else { return [] }
+        return [target]
+    }
+}
+
+@MainActor
+final class TelevisionModalRestore {
+    private weak var root: TelevisionFocusRoot?
+    private weak var primary: UIButton?
+    private weak var fallback: UIButton?
+    private var nextID = 0
+    private var active: Int?
+    private let request: (UIButton) -> Bool
+    init(root: TelevisionFocusRoot, request: ((UIButton) -> Bool)? = nil) {
+        self.root = root
+        self.request = request ?? { [weak root] target in
+            guard let root else { return false }
+            root.restorationTarget = target
+            root.setNeedsFocusUpdate()
+            return true
+        }
+    }
+    func begin(primary: UIButton?, fallback: UIButton?) -> Int {
+        nextID += 1; active = nextID
+        self.primary = primary; self.fallback = fallback
+        return nextID
+    }
+    func cancel(_ token: Int) {
+        guard active == token else { return }
+        active = nil; primary = nil; fallback = nil
+    }
+    func finish(_ token: Int) -> Bool {
+        guard active == token else { return false }
+        active = nil
+        let target = eligible(primary, in: root) ? primary : eligible(fallback, in: root) ? fallback : nil
+        primary = nil; fallback = nil
+        guard let target else { return false }
+        return request(target)
+    }
+}
+
+struct DisplayPreferences: Equatable, Sendable {
+    var reduceMotion = false
+    var reduceTransparency = false
+    var increaseContrast = false
+}
+
+// Immutable ownership of Foundation tokens; cleanup can occur on any thread.
+private final class Observations: @unchecked Sendable {
+    let center: NotificationCenter
+    let tokens: [NSObjectProtocol]
+    init(center: NotificationCenter, tokens: [NSObjectProtocol]) { self.center = center; self.tokens = tokens }
+    deinit { tokens.forEach { center.removeObserver($0) } }
+}
+
+@MainActor
+final class TelevisionPreferences {
+    static let names = [UIAccessibility.reduceMotionStatusDidChangeNotification,
+        UIAccessibility.reduceTransparencyStatusDidChangeNotification,
+        UIAccessibility.darkerSystemColorsStatusDidChangeNotification]
+    private let center: NotificationCenter
+    private let read: () -> DisplayPreferences
+    private let apply: (DisplayPreferences) -> Void
+    private let enqueue: @Sendable (@escaping @MainActor @Sendable () -> Void) -> Void
+    private var observations: Observations?
+    private var generation = 0
+    private var last: DisplayPreferences?
+    init(center: NotificationCenter = .default,
+         read: @escaping () -> DisplayPreferences = {
+             DisplayPreferences(reduceMotion: UIAccessibility.isReduceMotionEnabled,
+                 reduceTransparency: UIAccessibility.isReduceTransparencyEnabled,
+                 increaseContrast: UIAccessibility.isDarkerSystemColorsEnabled)
+         }, enqueue: @escaping @Sendable (@escaping @MainActor @Sendable () -> Void) -> Void = {
+             action in Task { @MainActor in action() }
+         }, apply: @escaping (DisplayPreferences) -> Void) {
+        self.center = center; self.read = read; self.enqueue = enqueue; self.apply = apply
+    }
+    func start() {
+        guard observations == nil else { return }
+        generation += 1
+        let revision = generation, schedule = enqueue
+        let tokens = Self.names.map { name in
+            center.addObserver(forName: name, object: nil, queue: nil) { [weak self] _ in
+                schedule { [weak self] in
+                    guard let self, self.observations != nil, true else { return }
+                    self.refresh()
+                }
+            }
+        }
+        observations = Observations(center: center, tokens: tokens)
+        refresh()
+    }
+    func stop() { generation += 1; observations = nil; last = nil }
+    private func refresh() {
+        let value = read()
+        guard value != last else { return }
+        last = value
+        apply(value)
+    }
+}

@@ -8,7 +8,7 @@ is practical: help agents preserve working accessibility, find real defects, and
 make changes that improve the experience of people using Apple-platform software.
 
 **Released skill: `0.2.2`** · [Install or upgrade](INSTALLATION.md) ·
-[Latest UIKit evidence](research/evaluation/failure-driven/uikit-closure-v1/RESULTS.md) ·
+[Latest native evidence](research/evaluation/cross-platform-closure-v1/RESULTS.md) ·
 [Evaluation dashboard](evals/reports/README.md)
 
 ## What Makes This Different
@@ -47,18 +47,60 @@ skill. Each linked report explains exactly what its assertions establish.
 
 | Framework / platform | Examples currently tested | Recorded runtime | Positive unit methods passed |
 | --- | --- | --- | ---: |
-| [UIKit / iOS](research/evaluation/failure-driven/uikit-closure-v1/RESULTS.md) | Naming, traits, controls, grouping, actions, reuse, rotors, text scaling, preferences, modal restoration requests, media and form state | iOS 26.5 | 202 |
-| [AppKit / macOS](research/evaluation/platform-navigation-v1/RESULTS.md) | Names, actions, reuse, notification requests, table selection and key-view configuration | macOS 27.0 | 38 |
-| [UIKit / Apple TV](research/evaluation/platform-navigation-v1/RESULTS.md) | Card actions, reuse, focus candidates, filtered results, selected traits and motion-independent status | tvOS 26.5 | 38 |
+| [UIKit / iOS](research/evaluation/cross-platform-closure-v1/RESULTS.md) | Existing semantics, controls, rotors, text, lifecycle and media contracts; asynchronous form and current-item result ownership | iOS 26.5 | 223 |
+| [AppKit + AVFoundation / macOS](research/evaluation/cross-platform-closure-v1/RESULTS.md) | Actions, tables/outlines, form and media ownership, text rotors, explicit row state, keyboard entry points, preferences and modal metadata | macOS 27.0 | 169 |
+| [UIKit + AVFoundation / Apple TV](research/evaluation/cross-platform-closure-v1/RESULTS.md) | Actions/shelves, form and media ownership, text rotors, search/selection recovery, preferences and modal metadata | tvOS 26.5 | 166 |
 
 Checkpoint: November 6, 2026. Method counts are not coverage percentages or proof of
-real-world assistive-tool behavior. SwiftUI and visionOS guidance is available in
-the skill; the tested companion currently covers the three lanes above.
+real-world assistive-tool behavior. These native-framework results stay separate
+from the SwiftUI campaign below. VisionOS guidance remains available in the skill.
+
+The [cross-platform ledger](research/evaluation/cross-platform-closure-v1/COVERAGE.md)
+accounts for 507 clauses across 36 guidelines, with exact assertion/receipt bindings
+and explicit scope limits. Counts above exclude superseded TV state copies; shared
+algorithms exercised on different platforms are not independent behavioral coverage.
+Thirteen new development prompt/rubric pairs accompany this campaign. They await
+independent technical review, not mandatory manual accessibility verification.
+The existing Gemini plan is unchanged; the complete new member-level availability
+inventory and benchmark-backed promotion remain separate work.
+
+### SwiftUI Companion
+
+The [SwiftUI campaign](research/evaluation/swiftui-campaign-v1/README.md) compiles
+actual modifier compositions and tests the bindings, state, callbacks and native
+coordinators those examples use. It does not infer the generated accessibility tree,
+spoken output, delivered focus or rendered scaling from those units.
+
+| SwiftUI target | Recorded runtime | Positive unit methods passed |
+| --- | --- | ---: |
+| iOS | 26.5 | 62 |
+| macOS | 27.0 | 62 |
+| Apple TV | 26.5 | 62 |
+
+These are 62 method definitions exercised on three platforms, not 186 independent
+behaviors. All 15 SwiftUI guidelines and 217 requirements have explicit dispositions;
+broader hosting semantics and real media-selection application remain unresolved.
+Twenty-one draft developer questions/rubrics accompany the seven families. The
+preserved AppKit stale-target failure and corrected lifetime oracle show why tests,
+source integration and independent review must be evaluated separately.
+
+The [forwarding tranche](research/evaluation/swiftui-forwarding-v1/README.md) adds
+41 passing methods per platform for explicit native metadata, hierarchy, callback
+ownership and preference policy. It preserves build/import and mutant-audit errors
+alongside five intended negative-control rejections. This is additional native-boundary
+evidence, not automatic SwiftUI hosting or generated-tree validation.
 
 **Development status:** the companion's new findings and retrieval changes await
 review and evaluation before inclusion in a future skill release. The installed
 skill remains version `0.2.2`. Test results establish example behavior; paired model
 evaluations establish whether a skill change improves agent answers.
+
+[Milestone candidate `0.3.0-dev.4`](research/evaluation/failure-driven/candidates/0.3.0-dev.4/README.md)
+consolidates eight task-specific guidance notes, explicit platform/framework lookup,
+opt-in examples, read traces and byte budgets. Its audit preserves 55 known developer
+inputs without relabeling them as holdouts. Offline checks do not establish model
+quality or token savings; frontier evaluation is reserved for an approved milestone,
+not every development version.
 
 [Production-readiness plan](research/evaluation/PRODUCTION-READINESS.md): agents own
 technical review and evaluation; the project owner approves quota, disputed product
@@ -197,6 +239,7 @@ those sources with version-scoped observations; they do not create a new source 
 | [code-examples/](code-examples/) | On-demand example infrastructure and existing UIKit pilots |
 | [UIKit campaign](research/evaluation/failure-driven/uikit-closure-v1/README.md) | Current coverage ledger, new contracts, receipts and review status |
 | [evals/](evals/) | Frozen inputs, runners, grading and model comparison reports |
+| [Local analysis tools](tools/local-analysis/README.md) | Schema validation, Swift syntax/lint checks and captured-text replay without model calls |
 | [Research](research/) | Source audits, design decisions and unpromoted investigations |
 | [Source registry](references/core/sources/registry.md) | Source tiers and provenance |
 | [Contributor instructions](AGENTS.md) | Evidence preservation, test-to-prompt workflow and safety boundaries |

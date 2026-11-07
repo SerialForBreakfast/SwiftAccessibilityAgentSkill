@@ -9,6 +9,28 @@ that approval does not promote these library examples.
 
 ## Available now
 
+[SwiftUI native forwarding](../research/evaluation/swiftui-forwarding-v1/README.md)
+adds 41 positive methods per platform, five executed negative controls, nine draft
+question/rubric pairs and preserved compiler/harness difficulties. The original
+SwiftUI campaign and its 217-item ledger remain unchanged; the new coverage overlay
+adds bounded native-property/action evidence without automatically closing broader
+hosting requirements.
+
+[SwiftUI cross-platform campaign](../research/evaluation/swiftui-campaign-v1/README.md)
+adds real SwiftUI composition checks plus binding/state/coordinator units on iOS,
+macOS and tvOS. Its 15-guideline ledger, preserved first failures and 21 draft
+question/rubric pairs remain separate from UIKit/AppKit results. SwiftUI companion
+development is now owner-authorized; older deferral notes below are historical.
+Installed routing, released guidance and frozen model baselines remain unchanged.
+
+[Cross-platform closure campaign](../research/evaluation/cross-platform-closure-v1/README.md)
+consolidates asynchronous ownership, platform-native text rotors, state recovery,
+explicit AppKit row semantics and direct keyboard-entry contracts. The ledger
+accounts for 507 clauses/36 guidelines. Exact native receipts, preserved failures,
+13 new draft question/rubric pairs and a single independent-review packet are linked
+there. This supersedes older "next tranche" lists below without rewriting their
+history. Installed skill routing and frozen baselines remain unchanged.
+
 [Mac navigation and Apple TV results](../research/evaluation/platform-navigation-v1/README.md)
 adds 34 positive methods across table selection, key-view ownership, filtered result
 actions and motion-independent status. Four question/rubric pairs are draft; the
@@ -18,7 +40,8 @@ native batch is executed. Prior example packages and results remain unchanged.
 adds separate platform packages, a native adapter and opt-in retrieval candidate.
 These live under `platforms/`, outside the frozen iOS pilot/campaign selection.
 The Mac host anchor is27; tvOS uses the existing26.5 simulator. This does not imply
-Mac26 runtime coverage or promote OS27 skill guidance. SwiftUI expansion stays deferred.
+Mac26 runtime coverage or promote OS27 skill guidance. That phase deferred SwiftUI;
+the newly authorized SwiftUI campaign is linked above.
 
 [Ordinary playback-speed choices](pilots/uikit-speed-v1/README.md) supplies the
 speed-control gap identified by the media clause audit: eight positive unit methods,
@@ -203,3 +226,45 @@ execution is distinct from prior evaluation-fixture evidence and does not promot
 an anchor. Independent review of this adapter/library remains the next gate.
 No UI tests, mandatory manual verification, automatic minor-version matrix or
 runtime skill changes are part of this infrastructure.
+
+## Mac and Apple TV lifecycle extension
+
+[Lifecycle evidence](../research/evaluation/platform-lifecycle-v1/README.md) adds57
+positive methods (28 AppKit/macOS,29 UIKit/tvOS), ten deliberate mutants and one
+preserved original implementation regression. Modal completion/restoration requests
+and display-preference observer lifecycles now have native evidence and four
+separate draft prompt/rubric pairs. The cumulative platform totals are66 Mac and67 TV.
+
+Use `tools/lifecycle-retrieval.mjs` for opt-in `modal-restoration` or
+`display-preferences` detail. Existing candidate routes delegate unchanged.
+[Remaining parity work](../research/evaluation/platform-lifecycle-v1/COVERAGE.md)
+is tracked by capability. Released routing, frozen baselines, the nine-case Gemini
+plan and SwiftUI deferral remain unchanged.
+
+## Platform media extension
+
+[Media evidence](../research/evaluation/platform-media-v1/README.md) qualifies shared
+AVFoundation metadata, selection and inspection contracts separately on macOS and
+tvOS. Each has 25 positive methods: 16 requalified metadata/inspection methods and 9
+selection/policy methods. These supplement AppKit/UIKit examples, not UI interaction
+claims. The first invalid audio-group permission oracle is preserved and corrected.
+
+`tools/media-retrieval.mjs` loads a short platform companion summary by default,
+then only the requested source or contract. Six new draft question/rubric pairs
+are outside the existing nine-case Gemini plan. Released skill and frozen inputs
+remain unchanged. See the [remaining queue](../research/evaluation/platform-media-v1/COVERAGE.md).
+
+## Native forms and collection structure
+
+[Structure evidence](../research/evaluation/platform-structure-v1/README.md) adds
+28 AppKit/macOS and 29 UIKit/tvOS positive methods. Form recovery preserves typed
+input, visible error/help state and ordinary controls. AppKit adds native outline
+hierarchy, stable identity and per-column data; TV adds custom shelf hierarchy,
+section-qualified selection and ownership-aware callbacks.
+
+`tools/structure-retrieval.mjs` adds form-recovery, outline-structure and
+shelf-structure routes with source/tests loaded only on request. Four draft pairs
+stay separate from existing indices and the nine-case Gemini plan. The cumulative
+native companion totals are 119 Mac and 121 TV, including prior shared AVFoundation
+contracts. Unit scope and [remaining gaps](../research/evaluation/platform-structure-v1/COVERAGE.md)
+are explicit; released skill and SwiftUI deferral remain unchanged.

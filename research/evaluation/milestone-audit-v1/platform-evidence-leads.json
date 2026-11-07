@@ -1,0 +1,704 @@
+{
+  "schema": 1,
+  "declarationCatalog": {
+    "path": "research/evaluation/swiftui-campaign-v1/api-declarations.json",
+    "sha256": "0dc7b3be5897ba583f625ebf4ca6db4b273961af1b2471a77e31b9bea3eea0ac"
+  },
+  "rows": [
+    {
+      "id": "macos-swiftui-state",
+      "platform": "macOS",
+      "topic": "state",
+      "sourceScopeIssue": [
+        "references/swiftui/guidelines/g-003-values-stateful-controls.md"
+      ],
+      "manifest": {
+        "path": "code-examples/swiftui/macos-v1/manifest.json",
+        "sha256": "55839f4f25cce0c3b2554225f88b9f7f9cfe49000db36e06c491b1b6647b9f75",
+        "sourcePins": [
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Documents.swift",
+            "sha256": "81954f9eeefb3f0035deb4304cacb6bda53e7e93f653662c07e250e9b9f49abf"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/FormsMedia.swift",
+            "sha256": "b1bd2ad221453e4ccf252b653fca9be03fbba5c6e4f9e2d7e7e3b163b8dbb7fe"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Interop.swift",
+            "sha256": "056958067a8c670625b84236acd94bea77c939c0aeb4c5efd00bf8a6d202dec4"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Lifecycle.swift",
+            "sha256": "f28c995e8afd31392c31604b425d876f30de38f80258eb0f0fff50b91b98986e"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Preferences.swift",
+            "sha256": "f49df9c3171ed6527ddfbae260622f8131432cc055c067f8053a6de9cf10a958"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Semantics.swift",
+            "sha256": "b6ce46c81e9213b519cf8ac0e2e949902f2afcefbb7593074e00c95a43396db1"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Tests/InteropTests.swift",
+            "sha256": "a5c2c44182b831a492ecac06ac1eef19ee502c318c39539f1920b06aca4625ef"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Tests/SwiftUIContractsTests.swift",
+            "sha256": "18f6d43bfd6d9f9d2dee94af36d60380fc3881186ea254255be7452bc26d2227"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/documents.swift",
+            "sha256": "fb73e07bd643979a7ba9bf36c030f33e3595d6a09e0e23cdf14f91aee2c9f3eb"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/forms.swift",
+            "sha256": "d09db719821a6885b3d1fdfb26d8fff09a59cf22dca15cafd604c899673f6f4b"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/interop.swift",
+            "sha256": "ccf0c933e72d0f84aec7ec6da830ed0b1d24cb321af3bebd07818e2db90a081a"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/lifecycle.swift",
+            "sha256": "ec383d810ce016a2fa507de46c0a38e76955598299dcf36bd5071356d604d597"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/media.swift",
+            "sha256": "9c1583a5b940606eaaa46dc679c4ea743e3d3a1e059c22c985deb0d73b4a0ac7"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/preferences.swift",
+            "sha256": "eb8d732d05900884d4595d1c738567c9f5d1b2547cd6eedb436546c841333b33"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/semantics.swift",
+            "sha256": "63cdae534262a74ff5b0cdca53be80c30f937c48fc048d8000f45b4770048f92"
+          }
+        ],
+        "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+      },
+      "compile": {
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "sha256": "f6f2a4c9bc21a8389b5c8509c2a304fa71f2be9ad81d3120c4d930f1416f65cf",
+        "attempt": "swiftui-mac-compile-r3",
+        "environment": {
+          "platform": "macOS",
+          "deploymentTarget": "26.0",
+          "xcode": "Xcode 27.0\nBuild version 27A266a",
+          "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+          "sdkVersion": "27.0",
+          "sdkBuild": "26A425",
+          "architecture": "arm64",
+          "destinationType": "compile-only",
+          "runtimeVersion": null,
+          "runtimeBuild": null
+        }
+      },
+      "declarationLeads": [
+        {
+          "interface": "arm64e-apple-macos.swiftinterface",
+          "interfaceSha256": "155b00c7d8fa9e9696b96b4bd3291b4c910207b480025d13ba6482f7b9940d38",
+          "line": 29,
+          "preceding": [
+            "import _SwiftConcurrencyShims",
+            "import os.log",
+            "import os",
+            "@available(iOS 18.0, macOS 15.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, *)",
+            "extension SwiftUICore.View {"
+          ],
+          "declaration": "  nonisolated public func accessibilityValue(_ valueDescription: SwiftUICore.Text, isEnabled: Swift.Bool) -> SwiftUICore.ModifiedContent<Self, SwiftUI.AccessibilityAttachmentModifier>"
+        },
+        {
+          "interface": "arm64e-apple-macos.swiftinterface",
+          "interfaceSha256": "155b00c7d8fa9e9696b96b4bd3291b4c910207b480025d13ba6482f7b9940d38",
+          "line": 30,
+          "preceding": [
+            "import os.log",
+            "import os",
+            "@available(iOS 18.0, macOS 15.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, *)",
+            "extension SwiftUICore.View {",
+            "  nonisolated public func accessibilityValue(_ valueDescription: SwiftUICore.Text, isEnabled: Swift.Bool) -> SwiftUICore.ModifiedContent<Self, SwiftUI.AccessibilityAttachmentModifier>"
+          ],
+          "declaration": "  nonisolated public func accessibilityValue(_ valueKey: SwiftUICore.LocalizedStringKey, isEnabled: Swift.Bool) -> SwiftUICore.ModifiedContent<Self, SwiftUI.AccessibilityAttachmentModifier>"
+        }
+      ],
+      "reviewStatus": "lead-only-not-source-applicability-approval",
+      "limit": "Existing composition compilation is not proof every guideline claim or extracted declaration is used, nor rendered semantics. Raw excerpt context can omit enclosing annotations; do not infer exact introduction boundaries."
+    },
+    {
+      "id": "macos-swiftui-text",
+      "platform": "macOS",
+      "topic": "text",
+      "sourceScopeIssue": [
+        "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md"
+      ],
+      "manifest": {
+        "path": "code-examples/swiftui/macos-v1/manifest.json",
+        "sha256": "55839f4f25cce0c3b2554225f88b9f7f9cfe49000db36e06c491b1b6647b9f75",
+        "sourcePins": [
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Documents.swift",
+            "sha256": "81954f9eeefb3f0035deb4304cacb6bda53e7e93f653662c07e250e9b9f49abf"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/FormsMedia.swift",
+            "sha256": "b1bd2ad221453e4ccf252b653fca9be03fbba5c6e4f9e2d7e7e3b163b8dbb7fe"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Interop.swift",
+            "sha256": "056958067a8c670625b84236acd94bea77c939c0aeb4c5efd00bf8a6d202dec4"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Lifecycle.swift",
+            "sha256": "f28c995e8afd31392c31604b425d876f30de38f80258eb0f0fff50b91b98986e"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Preferences.swift",
+            "sha256": "f49df9c3171ed6527ddfbae260622f8131432cc055c067f8053a6de9cf10a958"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Semantics.swift",
+            "sha256": "b6ce46c81e9213b519cf8ac0e2e949902f2afcefbb7593074e00c95a43396db1"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Tests/InteropTests.swift",
+            "sha256": "a5c2c44182b831a492ecac06ac1eef19ee502c318c39539f1920b06aca4625ef"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Tests/SwiftUIContractsTests.swift",
+            "sha256": "18f6d43bfd6d9f9d2dee94af36d60380fc3881186ea254255be7452bc26d2227"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/documents.swift",
+            "sha256": "fb73e07bd643979a7ba9bf36c030f33e3595d6a09e0e23cdf14f91aee2c9f3eb"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/forms.swift",
+            "sha256": "d09db719821a6885b3d1fdfb26d8fff09a59cf22dca15cafd604c899673f6f4b"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/interop.swift",
+            "sha256": "ccf0c933e72d0f84aec7ec6da830ed0b1d24cb321af3bebd07818e2db90a081a"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/lifecycle.swift",
+            "sha256": "ec383d810ce016a2fa507de46c0a38e76955598299dcf36bd5071356d604d597"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/media.swift",
+            "sha256": "9c1583a5b940606eaaa46dc679c4ea743e3d3a1e059c22c985deb0d73b4a0ac7"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/preferences.swift",
+            "sha256": "eb8d732d05900884d4595d1c738567c9f5d1b2547cd6eedb436546c841333b33"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/semantics.swift",
+            "sha256": "63cdae534262a74ff5b0cdca53be80c30f937c48fc048d8000f45b4770048f92"
+          }
+        ],
+        "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+      },
+      "compile": {
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "sha256": "f6f2a4c9bc21a8389b5c8509c2a304fa71f2be9ad81d3120c4d930f1416f65cf",
+        "attempt": "swiftui-mac-compile-r3",
+        "environment": {
+          "platform": "macOS",
+          "deploymentTarget": "26.0",
+          "xcode": "Xcode 27.0\nBuild version 27A266a",
+          "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+          "sdkVersion": "27.0",
+          "sdkBuild": "26A425",
+          "architecture": "arm64",
+          "destinationType": "compile-only",
+          "runtimeVersion": null,
+          "runtimeBuild": null
+        }
+      },
+      "declarationLeads": [
+        {
+          "interface": "arm64e-apple-macos.swiftinterface",
+          "interfaceSha256": "4fb89ff3d972d507faee2bde0a7e81761a2cb9c744eaf94df810235918c7ac13",
+          "line": 14783,
+          "preceding": [
+            "@_originallyDefinedIn(module: \"SwiftUI\", iOS 18.0)",
+            "@_originallyDefinedIn(module: \"SwiftUI\", macOS 15.0)",
+            "@_originallyDefinedIn(module: \"SwiftUI\", tvOS 18.0)",
+            "@_originallyDefinedIn(module: \"SwiftUI\", watchOS 11.0)",
+            "extension SwiftUICore::EnvironmentValues {"
+          ],
+          "declaration": "  public var dynamicTypeSize: SwiftUICore::DynamicTypeSize {"
+        },
+        {
+          "interface": "arm64e-apple-macos.swiftinterface",
+          "interfaceSha256": "4fb89ff3d972d507faee2bde0a7e81761a2cb9c744eaf94df810235918c7ac13",
+          "line": 14794,
+          "preceding": [
+            "@_originallyDefinedIn(module: \"SwiftUI\", iOS 18.0)",
+            "@_originallyDefinedIn(module: \"SwiftUI\", macOS 15.0)",
+            "@_originallyDefinedIn(module: \"SwiftUI\", tvOS 18.0)",
+            "@_originallyDefinedIn(module: \"SwiftUI\", watchOS 11.0)",
+            "extension SwiftUICore::View {"
+          ],
+          "declaration": "  nonisolated public func dynamicTypeSize(_ size: SwiftUICore::DynamicTypeSize) -> some SwiftUICore::View"
+        }
+      ],
+      "reviewStatus": "lead-only-not-source-applicability-approval",
+      "limit": "Existing composition compilation is not proof every guideline claim or extracted declaration is used, nor rendered semantics. Raw excerpt context can omit enclosing annotations; do not infer exact introduction boundaries."
+    },
+    {
+      "id": "macos-swiftui-lifecycle",
+      "platform": "macOS",
+      "topic": "lifecycle",
+      "sourceScopeIssue": [
+        "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md"
+      ],
+      "manifest": {
+        "path": "code-examples/swiftui/macos-v1/manifest.json",
+        "sha256": "55839f4f25cce0c3b2554225f88b9f7f9cfe49000db36e06c491b1b6647b9f75",
+        "sourcePins": [
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Documents.swift",
+            "sha256": "81954f9eeefb3f0035deb4304cacb6bda53e7e93f653662c07e250e9b9f49abf"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/FormsMedia.swift",
+            "sha256": "b1bd2ad221453e4ccf252b653fca9be03fbba5c6e4f9e2d7e7e3b163b8dbb7fe"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Interop.swift",
+            "sha256": "056958067a8c670625b84236acd94bea77c939c0aeb4c5efd00bf8a6d202dec4"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Lifecycle.swift",
+            "sha256": "f28c995e8afd31392c31604b425d876f30de38f80258eb0f0fff50b91b98986e"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Preferences.swift",
+            "sha256": "f49df9c3171ed6527ddfbae260622f8131432cc055c067f8053a6de9cf10a958"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Sources/Semantics.swift",
+            "sha256": "b6ce46c81e9213b519cf8ac0e2e949902f2afcefbb7593074e00c95a43396db1"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Tests/InteropTests.swift",
+            "sha256": "a5c2c44182b831a492ecac06ac1eef19ee502c318c39539f1920b06aca4625ef"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/Tests/SwiftUIContractsTests.swift",
+            "sha256": "18f6d43bfd6d9f9d2dee94af36d60380fc3881186ea254255be7452bc26d2227"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/documents.swift",
+            "sha256": "fb73e07bd643979a7ba9bf36c030f33e3595d6a09e0e23cdf14f91aee2c9f3eb"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/forms.swift",
+            "sha256": "d09db719821a6885b3d1fdfb26d8fff09a59cf22dca15cafd604c899673f6f4b"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/interop.swift",
+            "sha256": "ccf0c933e72d0f84aec7ec6da830ed0b1d24cb321af3bebd07818e2db90a081a"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/lifecycle.swift",
+            "sha256": "ec383d810ce016a2fa507de46c0a38e76955598299dcf36bd5071356d604d597"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/media.swift",
+            "sha256": "9c1583a5b940606eaaa46dc679c4ea743e3d3a1e059c22c985deb0d73b4a0ac7"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/preferences.swift",
+            "sha256": "eb8d732d05900884d4595d1c738567c9f5d1b2547cd6eedb436546c841333b33"
+          },
+          {
+            "path": "code-examples/swiftui/macos-v1/NegativeFixtures/semantics.swift",
+            "sha256": "63cdae534262a74ff5b0cdca53be80c30f937c48fc048d8000f45b4770048f92"
+          }
+        ],
+        "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+      },
+      "compile": {
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "sha256": "f6f2a4c9bc21a8389b5c8509c2a304fa71f2be9ad81d3120c4d930f1416f65cf",
+        "attempt": "swiftui-mac-compile-r3",
+        "environment": {
+          "platform": "macOS",
+          "deploymentTarget": "26.0",
+          "xcode": "Xcode 27.0\nBuild version 27A266a",
+          "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+          "sdkVersion": "27.0",
+          "sdkBuild": "26A425",
+          "architecture": "arm64",
+          "destinationType": "compile-only",
+          "runtimeVersion": null,
+          "runtimeBuild": null
+        }
+      },
+      "declarationLeads": [
+        {
+          "interface": "arm64e-apple-macos.swiftinterface",
+          "interfaceSha256": "155b00c7d8fa9e9696b96b4bd3291b4c910207b480025d13ba6482f7b9940d38",
+          "line": 27924,
+          "preceding": [
+            "  @available(macOS, unavailable)",
+            "  public typealias _Body = @_opaqueReturnTypeOf(\"$s7SwiftUI18PageIndexViewStyleV9_makeBody13configurationQrAA01_deF13ConfigurationV_tF\", 0) __",
+            "}",
+            "#endif",
+            "@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)"
+          ],
+          "declaration": "@propertyWrapper @frozen public struct AccessibilityFocusState<Value> : SwiftUICore.DynamicProperty where Value : Swift.Hashable {"
+        },
+        {
+          "interface": "arm64e-apple-macos.swiftinterface",
+          "interfaceSha256": "155b00c7d8fa9e9696b96b4bd3291b4c910207b480025d13ba6482f7b9940d38",
+          "line": 27932,
+          "preceding": [
+            "    private var _binding: SwiftUICore.Binding<Value>",
+            "    public var wrappedValue: Value {",
+            "      get",
+            "      nonmutating set",
+            "    }"
+          ],
+          "declaration": "    public var projectedValue: SwiftUI.AccessibilityFocusState<Value>.Binding {"
+        }
+      ],
+      "reviewStatus": "lead-only-not-source-applicability-approval",
+      "limit": "Existing composition compilation is not proof every guideline claim or extracted declaration is used, nor rendered semantics. Raw excerpt context can omit enclosing annotations; do not infer exact introduction boundaries."
+    },
+    {
+      "id": "tvos-swiftui-actions",
+      "platform": "tvOS",
+      "topic": "actions",
+      "sourceScopeIssue": [
+        "references/swiftui/guidelines/g-007-accessibility-actions.md"
+      ],
+      "manifest": {
+        "path": "code-examples/swiftui/tvos-v1/manifest.json",
+        "sha256": "9ebc307039c3cd7a5850e754e7493241a1a82b4c12a0abdd5e4d14d23bf6c62f",
+        "sourcePins": [
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Documents.swift",
+            "sha256": "81954f9eeefb3f0035deb4304cacb6bda53e7e93f653662c07e250e9b9f49abf"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/FormsMedia.swift",
+            "sha256": "b1bd2ad221453e4ccf252b653fca9be03fbba5c6e4f9e2d7e7e3b163b8dbb7fe"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Interop.swift",
+            "sha256": "056958067a8c670625b84236acd94bea77c939c0aeb4c5efd00bf8a6d202dec4"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Lifecycle.swift",
+            "sha256": "f28c995e8afd31392c31604b425d876f30de38f80258eb0f0fff50b91b98986e"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Preferences.swift",
+            "sha256": "f49df9c3171ed6527ddfbae260622f8131432cc055c067f8053a6de9cf10a958"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Semantics.swift",
+            "sha256": "b6ce46c81e9213b519cf8ac0e2e949902f2afcefbb7593074e00c95a43396db1"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Tests/InteropTests.swift",
+            "sha256": "a5c2c44182b831a492ecac06ac1eef19ee502c318c39539f1920b06aca4625ef"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Tests/SwiftUIContractsTests.swift",
+            "sha256": "18f6d43bfd6d9f9d2dee94af36d60380fc3881186ea254255be7452bc26d2227"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/documents.swift",
+            "sha256": "fb73e07bd643979a7ba9bf36c030f33e3595d6a09e0e23cdf14f91aee2c9f3eb"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/forms.swift",
+            "sha256": "d09db719821a6885b3d1fdfb26d8fff09a59cf22dca15cafd604c899673f6f4b"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/interop.swift",
+            "sha256": "ccf0c933e72d0f84aec7ec6da830ed0b1d24cb321af3bebd07818e2db90a081a"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/lifecycle.swift",
+            "sha256": "ec383d810ce016a2fa507de46c0a38e76955598299dcf36bd5071356d604d597"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/media.swift",
+            "sha256": "9c1583a5b940606eaaa46dc679c4ea743e3d3a1e059c22c985deb0d73b4a0ac7"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/preferences.swift",
+            "sha256": "eb8d732d05900884d4595d1c738567c9f5d1b2547cd6eedb436546c841333b33"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/semantics.swift",
+            "sha256": "63cdae534262a74ff5b0cdca53be80c30f937c48fc048d8000f45b4770048f92"
+          }
+        ],
+        "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+      },
+      "compile": {
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "sha256": "f6f2a4c9bc21a8389b5c8509c2a304fa71f2be9ad81d3120c4d930f1416f65cf",
+        "attempt": "swiftui-tv-compile-r3",
+        "environment": {
+          "platform": "tvOS",
+          "deploymentTarget": "26.0",
+          "xcode": "Xcode 27.0\nBuild version 27A266a",
+          "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+          "sdkVersion": "27.0",
+          "sdkBuild": "24J360",
+          "architecture": "arm64",
+          "destinationType": "compile-only",
+          "runtimeVersion": null,
+          "runtimeBuild": null
+        }
+      },
+      "declarationLeads": [
+        {
+          "interface": "arm64-apple-tvos-simulator.swiftinterface",
+          "interfaceSha256": "d2da8dce76c6b450f592dd3051b928302b9bb20528583c54364454e607a73c1e",
+          "line": 747,
+          "preceding": [
+            "extension SwiftUICore._TestApp {",
+            "  public func run() -> Swift.Never",
+            "}",
+            "@available(iOS 18.0, macOS 15.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, *)",
+            "extension SwiftUICore.View {"
+          ],
+          "declaration": "  nonisolated public func accessibilityActions<Content>(category: SwiftUICore.AccessibilityActionCategory, @SwiftUICore.ContentBuilder _ content: () -> Content) -> some SwiftUICore.View where Content : SwiftUICore.View"
+        },
+        {
+          "interface": "arm64-apple-tvos-simulator.swiftinterface",
+          "interfaceSha256": "d2da8dce76c6b450f592dd3051b928302b9bb20528583c54364454e607a73c1e",
+          "line": 31233,
+          "preceding": [
+            "  nonisolated public func accessibilityAction<Label>(action: @escaping () -> Swift.Void, @SwiftUICore.ContentBuilder label: () -> Label) -> some SwiftUICore.View where Label : SwiftUICore.View",
+            "  ",
+            "}",
+            "@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)",
+            "extension SwiftUICore.View {"
+          ],
+          "declaration": "  nonisolated public func accessibilityActions<Content>(@SwiftUICore.ContentBuilder _ content: () -> Content) -> some SwiftUICore.View where Content : SwiftUICore.View"
+        }
+      ],
+      "reviewStatus": "lead-only-not-source-applicability-approval",
+      "limit": "Existing composition compilation is not proof every guideline claim or extracted declaration is used, nor rendered semantics. Raw excerpt context can omit enclosing annotations; do not infer exact introduction boundaries."
+    },
+    {
+      "id": "tvos-swiftui-structure",
+      "platform": "tvOS",
+      "topic": "structure",
+      "sourceScopeIssue": [
+        "references/swiftui/guidelines/g-005-grouping-containment.md"
+      ],
+      "manifest": {
+        "path": "code-examples/swiftui/tvos-v1/manifest.json",
+        "sha256": "9ebc307039c3cd7a5850e754e7493241a1a82b4c12a0abdd5e4d14d23bf6c62f",
+        "sourcePins": [
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Documents.swift",
+            "sha256": "81954f9eeefb3f0035deb4304cacb6bda53e7e93f653662c07e250e9b9f49abf"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/FormsMedia.swift",
+            "sha256": "b1bd2ad221453e4ccf252b653fca9be03fbba5c6e4f9e2d7e7e3b163b8dbb7fe"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Interop.swift",
+            "sha256": "056958067a8c670625b84236acd94bea77c939c0aeb4c5efd00bf8a6d202dec4"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Lifecycle.swift",
+            "sha256": "f28c995e8afd31392c31604b425d876f30de38f80258eb0f0fff50b91b98986e"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Preferences.swift",
+            "sha256": "f49df9c3171ed6527ddfbae260622f8131432cc055c067f8053a6de9cf10a958"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Semantics.swift",
+            "sha256": "b6ce46c81e9213b519cf8ac0e2e949902f2afcefbb7593074e00c95a43396db1"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Tests/InteropTests.swift",
+            "sha256": "a5c2c44182b831a492ecac06ac1eef19ee502c318c39539f1920b06aca4625ef"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Tests/SwiftUIContractsTests.swift",
+            "sha256": "18f6d43bfd6d9f9d2dee94af36d60380fc3881186ea254255be7452bc26d2227"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/documents.swift",
+            "sha256": "fb73e07bd643979a7ba9bf36c030f33e3595d6a09e0e23cdf14f91aee2c9f3eb"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/forms.swift",
+            "sha256": "d09db719821a6885b3d1fdfb26d8fff09a59cf22dca15cafd604c899673f6f4b"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/interop.swift",
+            "sha256": "ccf0c933e72d0f84aec7ec6da830ed0b1d24cb321af3bebd07818e2db90a081a"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/lifecycle.swift",
+            "sha256": "ec383d810ce016a2fa507de46c0a38e76955598299dcf36bd5071356d604d597"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/media.swift",
+            "sha256": "9c1583a5b940606eaaa46dc679c4ea743e3d3a1e059c22c985deb0d73b4a0ac7"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/preferences.swift",
+            "sha256": "eb8d732d05900884d4595d1c738567c9f5d1b2547cd6eedb436546c841333b33"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/semantics.swift",
+            "sha256": "63cdae534262a74ff5b0cdca53be80c30f937c48fc048d8000f45b4770048f92"
+          }
+        ],
+        "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+      },
+      "compile": {
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "sha256": "f6f2a4c9bc21a8389b5c8509c2a304fa71f2be9ad81d3120c4d930f1416f65cf",
+        "attempt": "swiftui-tv-compile-r3",
+        "environment": {
+          "platform": "tvOS",
+          "deploymentTarget": "26.0",
+          "xcode": "Xcode 27.0\nBuild version 27A266a",
+          "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+          "sdkVersion": "27.0",
+          "sdkBuild": "24J360",
+          "architecture": "arm64",
+          "destinationType": "compile-only",
+          "runtimeVersion": null,
+          "runtimeBuild": null
+        }
+      },
+      "declarationLeads": [
+        {
+          "interface": "arm64-apple-tvos-simulator.swiftinterface",
+          "interfaceSha256": "d2da8dce76c6b450f592dd3051b928302b9bb20528583c54364454e607a73c1e",
+          "line": 29881,
+          "preceding": [
+            "  public typealias Body = @_opaqueReturnTypeOf(\"$s7SwiftUI20_WKStoryboardContentV4bodyQrvp\", 0) __",
+            "}",
+            "#endif",
+            "@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)",
+            "extension SwiftUICore.View {"
+          ],
+          "declaration": "  nonisolated public func accessibilityElement(children: SwiftUI.AccessibilityChildBehavior = .ignore) -> some SwiftUICore.View"
+        }
+      ],
+      "reviewStatus": "lead-only-not-source-applicability-approval",
+      "limit": "Existing composition compilation is not proof every guideline claim or extracted declaration is used, nor rendered semantics. Raw excerpt context can omit enclosing annotations; do not infer exact introduction boundaries."
+    },
+    {
+      "id": "tvos-swiftui-testing",
+      "platform": "tvOS",
+      "topic": "testing",
+      "sourceScopeIssue": [
+        "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md"
+      ],
+      "manifest": {
+        "path": "code-examples/swiftui/tvos-v1/manifest.json",
+        "sha256": "9ebc307039c3cd7a5850e754e7493241a1a82b4c12a0abdd5e4d14d23bf6c62f",
+        "sourcePins": [
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Documents.swift",
+            "sha256": "81954f9eeefb3f0035deb4304cacb6bda53e7e93f653662c07e250e9b9f49abf"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/FormsMedia.swift",
+            "sha256": "b1bd2ad221453e4ccf252b653fca9be03fbba5c6e4f9e2d7e7e3b163b8dbb7fe"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Interop.swift",
+            "sha256": "056958067a8c670625b84236acd94bea77c939c0aeb4c5efd00bf8a6d202dec4"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Lifecycle.swift",
+            "sha256": "f28c995e8afd31392c31604b425d876f30de38f80258eb0f0fff50b91b98986e"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Preferences.swift",
+            "sha256": "f49df9c3171ed6527ddfbae260622f8131432cc055c067f8053a6de9cf10a958"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Sources/Semantics.swift",
+            "sha256": "b6ce46c81e9213b519cf8ac0e2e949902f2afcefbb7593074e00c95a43396db1"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Tests/InteropTests.swift",
+            "sha256": "a5c2c44182b831a492ecac06ac1eef19ee502c318c39539f1920b06aca4625ef"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/Tests/SwiftUIContractsTests.swift",
+            "sha256": "18f6d43bfd6d9f9d2dee94af36d60380fc3881186ea254255be7452bc26d2227"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/documents.swift",
+            "sha256": "fb73e07bd643979a7ba9bf36c030f33e3595d6a09e0e23cdf14f91aee2c9f3eb"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/forms.swift",
+            "sha256": "d09db719821a6885b3d1fdfb26d8fff09a59cf22dca15cafd604c899673f6f4b"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/interop.swift",
+            "sha256": "ccf0c933e72d0f84aec7ec6da830ed0b1d24cb321af3bebd07818e2db90a081a"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/lifecycle.swift",
+            "sha256": "ec383d810ce016a2fa507de46c0a38e76955598299dcf36bd5071356d604d597"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/media.swift",
+            "sha256": "9c1583a5b940606eaaa46dc679c4ea743e3d3a1e059c22c985deb0d73b4a0ac7"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/preferences.swift",
+            "sha256": "eb8d732d05900884d4595d1c738567c9f5d1b2547cd6eedb436546c841333b33"
+          },
+          {
+            "path": "code-examples/swiftui/tvos-v1/NegativeFixtures/semantics.swift",
+            "sha256": "63cdae534262a74ff5b0cdca53be80c30f937c48fc048d8000f45b4770048f92"
+          }
+        ],
+        "limitations": "Actual SwiftUI views are typechecked; units exercise shared state, Binding and callbacks used by those views, not SwiftUI-generated accessibility tree, executed Button closure installation, environment propagation, spoken output, focus delivery or rendered layout. Media choices are application state only."
+      },
+      "compile": {
+        "index": "research/evaluation/swiftui-campaign-v1/results-index.json",
+        "sha256": "f6f2a4c9bc21a8389b5c8509c2a304fa71f2be9ad81d3120c4d930f1416f65cf",
+        "attempt": "swiftui-tv-compile-r3",
+        "environment": {
+          "platform": "tvOS",
+          "deploymentTarget": "26.0",
+          "xcode": "Xcode 27.0\nBuild version 27A266a",
+          "compiler": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+          "sdkVersion": "27.0",
+          "sdkBuild": "24J360",
+          "architecture": "arm64",
+          "destinationType": "compile-only",
+          "runtimeVersion": null,
+          "runtimeBuild": null
+        }
+      },
+      "declarationLeads": [],
+      "reviewStatus": "lead-only-not-source-applicability-approval",
+      "limit": "Existing composition compilation is not proof every guideline claim or extracted declaration is used, nor rendered semantics. Raw excerpt context can omit enclosing annotations; do not infer exact introduction boundaries."
+    }
+  ],
+  "independentlyAccepted": 0,
+  "modelCalls": 0,
+  "newNativeRuns": 0
+}

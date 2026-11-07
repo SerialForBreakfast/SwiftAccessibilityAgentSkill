@@ -1,0 +1,42 @@
+# Skill candidate versions
+
+Released skill remains **0.2.2**. New development candidates use semantic versions;
+`-dev.N` means an unreleased research snapshot, not a release or qualification claim.
+
+| Skill version | Purpose | State |
+| --- | --- | --- |
+| 0.3.0-dev.1 | Compact baseline with owner-approved default introduction and consulted-file reporting | AGY and Claude: each 6 contracts met, 1 inconclusive |
+| 0.3.0-dev.2 | Evidence-driven guidance revision with the same reporting defaults | AGY: 7 contracts met; Claude: 6 met, 1 inconclusive |
+| [0.3.0-dev.3](0.3.0-dev.3/README.md) | Smaller shared instructions with conditional native-boundary and validation guidance | Prepared; offline checks only; no inference |
+| [0.3.0-dev.4](0.3.0-dev.4/README.md) | Consolidated eight-topic guidance, explicit routing, opt-in examples and input audit | Milestone research bundle; no evaluation allocation |
+
+Historical letter-labeled reports remain unchanged. The first snapshot derives from
+historical compact A; the second derives from historical B. Their new reporting text
+means neither is byte-identical to those drafts. Historical A's 144-call results must
+not be represented as results for 0.3.0-dev.1. See VERSIONS.json for exact provenance.
+
+Both introduce the skill name/version once by default and report actual consulted
+reference files, with separate explicit user opt-outs. Supporting citations remain
+claim-specific. No agent silently disables these defaults. Supplied references are
+reported as supplied, not as autonomous retrieval.
+
+Changing any candidate subject text requires the next unused development version;
+never overwrite a frozen snapshot. Update this registry and pin hashes. Provider
+model IDs (such as gemini-3.8-flash-low) stay separate from skill versions.
+This directory contains research entrypoint bodies, not an additional installable skill.
+Dev.3 uses its own additive `candidate.json`: the earlier `VERSIONS.json` bytes are
+pinned by historical reports and remain unchanged. No model or release result is
+inferred from the new candidate's byte reduction or static checks.
+
+See [execution status](PREPARATION-STATUS.md) for the completed AGY and Claude comparison.
+
+The registry and EXECUTION-STATUS.json retain their historical AGY-checkpoint bytes
+because the reconciliation pins them. Current Claude completion is recorded
+additively in [completion status](CLAUDE-COMPLETION-STATUS-20261106.json).
+
+## Target-complete draft matrix
+
+[0.3.0-dev.5](0.3.0-dev.5/README.md) adds 48 platform/framework/topic applications
+and 12 boundary/preservation controls, separate controller rubrics and sharper
+conditional notes. All are development gold candidates, not independently qualified
+or frozen prompts. No model allocation or release promotion accompanies this update.
