@@ -8,4 +8,6 @@
 | Can we grade code without an LLM reviewer? | [Twelve bounded development tasks](evals/rc1/RUBRIC.md) check executable Swift contracts across six cells. The [fixture scorecard](evals/rc1/scorecard.json) separates compilation from the expected runtime verdict. One qualified target per task is not a platform support matrix. |
 | Does the installed RC activate or improve answers? | Unknown. Offline qualification covers neither. No model calls, quota grants, paid runs or release promotion. |
 
-**Next decision:** qualify the disposable offline submission worker before using third-party answers. Then separately authorize one bounded comparison with released 0.2.2, including repeated baseline observations and explicit versus automatic native invocation. Keep known development cases separate from holdouts.
+**Preserved-answer check:** the [original local checkout harness](research/evaluation/checkout-local-replay/README.md) reproduced all eight first type-check outcomes and all eight unit-method outcomes, without changing any answer. This is not qualification for arbitrary new submissions.
+
+**Next decision:** separately authorize one bounded comparison with released 0.2.2, including repeated baseline observations and explicit versus automatic native invocation. Keep known development cases separate from holdouts.
