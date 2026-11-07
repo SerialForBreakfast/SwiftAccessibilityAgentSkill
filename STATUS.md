@@ -10,4 +10,6 @@
 
 **Preserved-answer check:** the [original local checkout harness](research/evaluation/checkout-local-replay/README.md) reproduced all eight first type-check outcomes and all eight unit-method outcomes, without changing any answer. This is not qualification for arbitrary new submissions.
 
-**Next decision:** don't promote rc.1. Follow [ROADMAP-0.3.md](ROADMAP-0.3.md): fix invocation, build a suite with headroom from historical failures, then target content. Keep known development cases separate from holdouts.
+**Delivery path rehearsed offline (November 7):** `python3 -B evals/protocol/rehearse.py` passes on the preserved returns. It covers the attempt ledger, the answer contract, the native reproduction (33/3), the linked verifier and the decision-first report. Two checkout-font contracts are [qualified](evals/headroom/checkout-font/README.md).
+
+**Next decision:** don't promote rc.1, and hold the next model run. Follow [ROADMAP-0.3.md](ROADMAP-0.3.md): draft the rc.2 text-size card against both checkout-font contracts, label the discovery corpus, and write transfer cases. Keep known development cases separate from holdouts.

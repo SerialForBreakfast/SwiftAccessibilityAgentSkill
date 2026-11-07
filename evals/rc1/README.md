@@ -34,14 +34,14 @@ The grader passes a case only when the Swift file compiles and the hidden unit e
 
 1. **Extract** the first fenced `swift` block from the answer, unchanged. Record output format separately.
 2. **Read** each extracted file before it runs. In `review.json`, record its SHA-256 with `"task"` and `"decision": "run"`. Never approve a file you haven't read.
-3. **Run** `RC1_REVIEWED_LOCAL=review.json RC1_RESULTS_BASE=evals/results/<run>/native python3 -B evals/rc1/grader/grade.py --task TASK --submission Submission.swift`.
+3. **Run** `RC1_REVIEWED_LOCAL=review.json RC1_RESULTS_BASE=evals/results/<run>/native python3 -B evals/rc1/grader/grade.py --task TASK --submission Submission.swift --result evals/results/<run>/scorecards/<cell>.json`. The submission bytes are read once, and the same buffer is approved, stored, compiled and hashed. `--result` writes the structured scorecard once and refuses to overwrite.
    - `grade.py` refuses any hash not in the record.
    - It also refuses any file that imports anything but the task framework, or that mentions process, file, network, environment, print, exit or unsafe APIs (`FORBIDDEN` in grade.py).
    - Results must stay under `evals/results/`.
 
-[native_lane.py](../rc1-comparison/native_lane.py) applies this to a whole return. The screen backs up the read; it doesn't replace it. For long answers, read more carefully or leave them ungraded.
+[native_lane.py](../rc1-comparison/native_lane.py) applies this to a whole return. It runs trusted warm-up fixtures first, writes one record per cell, resumes only ungraded cells with matching fingerprints, and stops at the first infrastructure error. The screen backs up the read; it doesn't replace it. For long answers, read more carefully or leave them ungraded.
 
-**First launch after a boot:** an iOS process that loads fonts can exceed the 40-second unit timeout. That shows up as an infrastructure error, which stops the run. Repeat the run on the warm simulator. Don't raise the timeout.
+**First launch after a boot:** an iOS process that loads fonts can exceed the 40-second unit timeout. That shows up as an infrastructure error, which stops the run. The lane's warm-up absorbs that before any answer is graded. Don't raise the timeout.
 
 See [the controller rubric](RUBRIC.md) for the 12 development cases and evidence boundaries. These cases grade specific contracts, not complete apps, platform usability or universal accessibility. Do not use their 36 executions as independent model answers or as a noise-floor estimate.
 

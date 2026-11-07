@@ -108,6 +108,7 @@ def main():
     parser.add_argument("--export", metavar="TASK")
     parser.add_argument("--task", choices=[t.id for t in TASKS])
     parser.add_argument("--submission", type=Path)
+    parser.add_argument("--result", type=Path, help="write the scorecard JSON here once (structured result)")
     args = parser.parse_args()
     if args.export:
         task = next(t for t in TASKS if t.id == args.export)
@@ -115,27 +116,59 @@ def main():
         starter = task.reference if task.id == "switch-preservation" else '    fatalError("Implement this contract")'
         print(task.question+"\n\nReturn only Submission.swift, preserving this interface. Keep correct code as-is.\n\n"+task.solution(starter))
         return
+    submitted = None
     if args.submission:
         if not args.task:
             parser.error("a submission requires --task")
-        if args.submission.stat().st_size > 64000:
+        # Read once. The same immutable bytes are approved, stored, compiled and hashed.
+        submitted = args.submission.read_bytes()
+        if len(submitted) > 64000:
             parser.error("submission exceeds 64 KB")
-        refusal = reviewed(next(t for t in TASKS if t.id == args.task), args.submission.read_bytes())
+        refusal = reviewed(next(t for t in TASKS if t.id == args.task), submitted)
         if refusal:
             parser.error(refusal)
     base = Path(os.getenv("RC1_RESULTS_BASE") or ROOT/"evals/results/rc1-grader")
-    if not base.resolve().is_relative_to((ROOT/"evals/results").resolve()):
+    if not inside_results(base) or (args.result and not inside_results(args.result)):
         parser.error("results must stay under evals/results/")
+    if args.result and args.result.exists():
+        parser.error("result already recorded; results are written once: " + str(args.result))
+    selected = [t for t in TASKS if not args.task or t.id == args.task]
+    variants = (lambda t: [("submission", submitted)]) if submitted is not None else (
+        lambda t: [(k, t.solution(getattr(t, k)).encode()) for k in ("reference", "alternative", "mutant")])
+    expect = lambda r: "contract-failure" if r["variant"] == "mutant" else "pass"
+    report = execute(selected, variants, base, expect)
+    if args.result:
+        write_once(args.result, report)
+    return 0 if report["accepted"] else 1
+
+
+def inside_results(path):
+    return Path(path).resolve().is_relative_to((ROOT/"evals/results").resolve())
+
+
+def write_once(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "x") as f:
+        f.write(json.dumps(data, indent=2)+"\n")
+
+
+def grader_fingerprint():
+    here = Path(__file__).resolve().parent
+    return {name: digest((here/name).read_bytes()) for name in ("grade.py", "tasks.py")}
+
+
+def execute(selected, variants, base, expect):
+    """Grade each task's variants once; stop at the first infrastructure error. Returns the scorecard."""
     base.mkdir(parents=True,exist_ok=True)
     runroot = Path(tempfile.mkdtemp(prefix="attempt-",dir=base))
     cache = base/"modules"; cache.mkdir(exist_ok=True)
     tmp = runroot/"tmp"; tmp.mkdir()
     env = {"PATH":"/usr/bin:/bin:/usr/sbin:/sbin", "HOME":os.environ["HOME"], "TMPDIR":str(tmp)}
     rows = []
-    report = dict(startUTC=datetime.now(timezone.utc).isoformat(), rows=rows, scope="offline code contracts only")
+    report = dict(startUTC=datetime.now(timezone.utc).isoformat(), rows=rows, scope="offline code contracts only",
+                  grader=grader_fingerprint(), attempt=str(runroot.relative_to(ROOT)))
     path = runroot/"scorecard.json"
     try:
-        selected = [t for t in TASKS if not args.task or t.id == args.task]
         anchors = devices() if any(t.platform != "macos" for t in selected) else {}
         sdkpaths = {s:read("xcrun","--sdk",s,"--show-sdk-path") for s,_ in SDK.values()}
         report.update(xcode=read("xcodebuild","-version"),swift=read("xcrun","swiftc","--version"),host=platform.mac_ver()[0],
@@ -144,9 +177,7 @@ def main():
         for t in selected:
             if t.platform != "macos" and t.platform not in anchors:
                 raise RuntimeError("Boot an existing "+t.platform+" 26.5 unit simulator first")
-            variants = [("submission",args.submission.read_bytes())] if args.submission else [
-                (k,t.solution(getattr(t,k)).encode()) for k in ("reference","alternative","mutant")]
-            for k, source in variants:
+            for k, source in variants(t):
                 r = run(t,k,source,runroot,cache,env,anchors,sdkpaths)
                 rows.append(r)
                 print(f"{t.id}: {k}: {r['status']}",flush=True)
@@ -157,10 +188,10 @@ def main():
     finally:
         report["totals"] = dict(Counter(r["status"] for r in rows))
         report["accepted"] = not report.get("infrastructureError") and bool(rows) and all(
-            r["status"] == ("contract-failure" if r["variant"]=="mutant" else "pass") for r in rows)
-        path.write_text(json.dumps(report,indent=2)+"\n")
+            r["status"] == expect(r) for r in rows)
+        write_once(path, report)
         print(path,report["totals"],report.get("infrastructureError",""),flush=True)
-    return 0 if report["accepted"] else 1
+    return report
 
 
 if __name__ == "__main__":
