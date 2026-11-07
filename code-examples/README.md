@@ -9,6 +9,13 @@ that approval does not promote these library examples.
 
 ## Available now
 
+[SwiftUI cross-platform campaign](../research/evaluation/swiftui-campaign-v1/README.md)
+adds real SwiftUI composition checks plus binding/state/coordinator units on iOS,
+macOS and tvOS. Its 15-guideline ledger, preserved first failures and 21 draft
+question/rubric pairs remain separate from UIKit/AppKit results. SwiftUI companion
+development is now owner-authorized; older deferral notes below are historical.
+Installed routing, released guidance and frozen model baselines remain unchanged.
+
 [Cross-platform closure campaign](../research/evaluation/cross-platform-closure-v1/README.md)
 consolidates asynchronous ownership, platform-native text rotors, state recovery,
 explicit AppKit row semantics and direct keyboard-entry contracts. The ledger
@@ -26,7 +33,8 @@ native batch is executed. Prior example packages and results remain unchanged.
 adds separate platform packages, a native adapter and opt-in retrieval candidate.
 These live under `platforms/`, outside the frozen iOS pilot/campaign selection.
 The Mac host anchor is27; tvOS uses the existing26.5 simulator. This does not imply
-Mac26 runtime coverage or promote OS27 skill guidance. SwiftUI expansion stays deferred.
+Mac26 runtime coverage or promote OS27 skill guidance. That phase deferred SwiftUI;
+the newly authorized SwiftUI campaign is linked above.
 
 [Ordinary playback-speed choices](pilots/uikit-speed-v1/README.md) supplies the
 speed-control gap identified by the media clause audit: eight positive unit methods,

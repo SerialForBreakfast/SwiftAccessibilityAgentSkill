@@ -52,8 +52,8 @@ skill. Each linked report explains exactly what its assertions establish.
 | [UIKit + AVFoundation / Apple TV](research/evaluation/cross-platform-closure-v1/RESULTS.md) | Actions/shelves, form and media ownership, text rotors, search/selection recovery, preferences and modal metadata | tvOS 26.5 | 166 |
 
 Checkpoint: November 6, 2026. Method counts are not coverage percentages or proof of
-real-world assistive-tool behavior. SwiftUI and visionOS guidance is available in
-the skill; the tested companion currently covers the three lanes above.
+real-world assistive-tool behavior. These native-framework results stay separate
+from the SwiftUI campaign below. VisionOS guidance remains available in the skill.
 
 The [cross-platform ledger](research/evaluation/cross-platform-closure-v1/COVERAGE.md)
 accounts for 507 clauses across 36 guidelines, with exact assertion/receipt bindings
@@ -63,6 +63,26 @@ Thirteen new development prompt/rubric pairs accompany this campaign. They await
 independent technical review, not mandatory manual accessibility verification.
 The existing Gemini plan is unchanged; the complete new member-level availability
 inventory and benchmark-backed promotion remain separate work.
+
+### SwiftUI Companion
+
+The [SwiftUI campaign](research/evaluation/swiftui-campaign-v1/README.md) compiles
+actual modifier compositions and tests the bindings, state, callbacks and native
+coordinators those examples use. It does not infer the generated accessibility tree,
+spoken output, delivered focus or rendered scaling from those units.
+
+| SwiftUI target | Recorded runtime | Positive unit methods passed |
+| --- | --- | ---: |
+| iOS | 26.5 | 62 |
+| macOS | 27.0 | 62 |
+| Apple TV | 26.5 | 62 |
+
+These are 62 method definitions exercised on three platforms, not 186 independent
+behaviors. All 15 SwiftUI guidelines and 217 requirements have explicit dispositions;
+broader hosting semantics and real media-selection application remain unresolved.
+Twenty-one draft developer questions/rubrics accompany the seven families. The
+preserved AppKit stale-target failure and corrected lifetime oracle show why tests,
+source integration and independent review must be evaluated separately.
 
 **Development status:** the companion's new findings and retrieval changes await
 review and evaluation before inclusion in a future skill release. The installed

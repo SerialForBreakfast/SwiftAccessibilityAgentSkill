@@ -296,3 +296,23 @@ this is accounting, not a claim of100% behavioral coverage.
 Independent agent review should adjudicate one consolidated packet. The maintainer
 is not a mandatory manual-test gate. Model runs still require an approved bounded
 quota/scope, and these questions do not alter frozen gold prompts or create holdouts.
+
+## SwiftUI campaign - owner-authorized resumption
+
+The current owner explicitly authorized the [SwiftUI campaign](../swiftui-campaign-v1/README.md)
+on iOS, macOS and tvOS; earlier SwiftUI-deferred notes remain historical. This is
+not promotion of the released skill or authorization for new model calls.
+
+- Seven families cover all five planned workstreams, with real modifier compilation
+  and narrow Binding/state/policy/native-coordinator units; no tree introspection.
+- All 15 guidelines and 217 requirements have explicit dispositions, including
+  unresolved broader interop and real media-application requirements.
+- Final positive suites select 62 methods per platform. Shared definitions and
+  platform executions are reported separately, with exact native receipts.
+- Preserve the AppKit old-native-target failure, the autorelease-oracle failure,
+  the first sources/diagnostics and their separate repair histories.
+- Twenty-one questions/rubrics remain draft development pairs, not gold or holdouts.
+- Consolidated independent review is prepared, not sent/accepted. Claude remains
+  pending; no paid/model runs, UI tests, mandatory manual gates or Git publication.
+- Exact negative-control outcomes and final acceptance are in the campaign report;
+  successful units do not establish generated SwiftUI accessibility semantics.
