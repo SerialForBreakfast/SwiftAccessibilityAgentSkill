@@ -8,16 +8,31 @@ import {fileURLToPath} from 'node:url';
 import {projectOutputPath, runEnvironment} from './workspace-paths.mjs';
 
 export const sha256 = b => crypto.createHash('sha256').update(b).digest('hex');
+export function targetConfiguration(platform) {
+  if (platform === 'macOS') return {sdk: 'macosx', target: 'arm64-apple-macosx26.0'};
+  if (platform === 'tvOS') return {sdk: 'appletvsimulator', target: 'arm64-apple-tvos26.0-simulator'};
+  if (['iOS', 'iPadOS'].includes(platform)) return {sdk: 'iphonesimulator', target: 'arm64-apple-ios26.0-simulator'};
+  throw Error('Unsupported reviewed target: ' + platform);
+}
 export function swiftBlocks(answer) {
   return [...answer.matchAll(/^```(?:swift|Swift)[ \t]*\r?\n([\s\S]*?)^```[ \t]*$/gm)].map(m => m[1]);
 }
 export function adapt(answer, adaptation) {
-  const blocks = swiftBlocks(answer);
-  if (!Array.isArray(adaptation.blocks) || !adaptation.blocks.length) throw Error('Explicit block indexes required');
-  const selected = adaptation.blocks.map(i => {
-    if (!Number.isInteger(i) || i < 0 || i >= blocks.length) throw Error('Invalid Swift fence index');
-    return blocks[i];
-  });
+  let blocks, selected;
+  if (adaptation.sourceRange) {
+    const {start, end} = adaptation.sourceRange;
+    if (adaptation.blocks || !Number.isInteger(start) || !Number.isInteger(end) || start < 0 || end <= start || end > answer.length) throw Error('Invalid explicit source range');
+    // Used only after review confirms complete Swift bytes in an unclosed Markdown
+    // fence. Never manufacture missing braces or silently repair truncated code.
+    blocks = selected = [answer.slice(start, end)];
+  } else {
+    blocks = swiftBlocks(answer);
+    if (!Array.isArray(adaptation.blocks) || !adaptation.blocks.length) throw Error('Explicit block indexes required');
+    selected = adaptation.blocks.map(i => {
+      if (!Number.isInteger(i) || i < 0 || i >= blocks.length) throw Error('Invalid Swift fence index');
+      return blocks[i];
+    });
+  }
   // Imports may move to file scope; no other generated code is changed.
   const imports = [];
   const bodies = selected.map(b => b.replace(/^import [A-Za-z_][A-Za-z0-9_.]*[ \t]*\r?\n/gm, line => { imports.push(line.trim()); return ''; }));
@@ -41,14 +56,14 @@ function main() {
   fs.writeFileSync(path.join(out, 'records-snapshot.jsonl'), recordBytes, {mode: 0o600});
   fs.writeFileSync(path.join(out, 'reviewed-plan.json'), planBytes, {mode: 0o600});
   const sdks = {};
-  for (const name of ['iphonesimulator', 'appletvsimulator']) {
+  for (const name of [...new Set(plan.probes.map(p => targetConfiguration(p.platform).sdk))]) {
     const r = command('xcrun', ['--sdk', name, '--show-sdk-path'], env);
     if (r.exitCode !== 0) throw Error('SDK unavailable: ' + name);
     sdks[name] = r.stdout.trim();
   }
   const results = [];
   for (const p of plan.probes) {
-    if (!['iOS', 'iPadOS', 'tvOS'].includes(p.platform)) throw Error('Unsupported reviewed target: ' + p.platform);
+    const {sdk, target} = targetConfiguration(p.platform);
     const record = records.find(r => r.id === p.recordId);
     if (!record || sha256(record.output) !== p.answerHash) throw Error('Missing/changed reviewed answer: ' + p.recordId);
     const row = {recordId: record.id, answerHash: p.answerHash, reviewNote: p.reviewNote, platform: p.platform};
@@ -63,12 +78,10 @@ function main() {
     const sourcePath = path.join(out, stem + '-probe.swift');
     fs.writeFileSync(sourcePath, source, {mode: 0o600});
     fs.writeFileSync(path.join(out, stem + '-adaptation.json'), JSON.stringify(p, null, 2), {mode: 0o600});
-    const sdk = p.platform === 'tvOS' ? 'appletvsimulator' : 'iphonesimulator';
-    const target = p.platform === 'tvOS' ? 'arm64-apple-tvos26.0-simulator' : 'arm64-apple-ios26.0-simulator';
     const args = ['swiftc', '-sdk', sdks[sdk], '-target', target, '-swift-version', '6', '-typecheck', '-parse-as-library', '-module-cache-path', env.SWIFT_MODULECACHE_PATH, '-module-name', 'ReviewedProbe', sourcePath];
     const r = command('xcrun', args, env);
     const status = r.error || r.signal ? 'infrastructure_error' : r.exitCode === 0 ? 'typecheck_pass' : 'typecheck_failed';
-    results.push({...row, status, blocks: p.blocks, sourceHash: sha256(source), command: ['xcrun', ...args], ...r});
+    results.push({...row, status, blocks: p.blocks, sourceRange: p.sourceRange, sourceHash: sha256(source), command: ['xcrun', ...args], ...r});
     fs.writeFileSync(path.join(out, 'results.json'), JSON.stringify(results, null, 2));
     console.log(JSON.stringify({recordId: record.id, status}));
     if (status === 'infrastructure_error') break;

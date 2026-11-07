@@ -36,3 +36,9 @@ No defensible exact subscription-percent forecast for Argon-high is established 
 - Obtain a fresh explicit owner approval for the named48-subject model, subscription-percentage allowance, actual supported bounds and one consolidated stop policy. No repairs/retries/extra probes or expansion. Other providers require separate approval.
 
 The status reply1439 predates the subsequent local controller-resolution acceptance and is not an execution dispatch. No additional automatic status messages, resends or background polling are scheduled. A received/imported response, if obtained later, must be recorded separately rather than inferred from share presence.
+
+## Executed continuation — owner-authorized Gemini run
+
+The later owner instruction “Do it” and “No you can start it no need to stop to tell me” superseded the proposed 48-cell hold for this named run only. All 48 first attempts are now executed and independently source-graded; no retries, fallback or extra probes. Dev.5 meets 13/24 versus generic 9/24, with six paired gains, three regressions and four inconclusive pairs. Displayed Argon weekly usage rose 0% to 17%; returned serving revision remains unexposed. These are supplied-context source results, not installed loading, native validation or release qualification.
+
+See the [completed report](gemini-controlled-run-20261107/README.md). Remote ff846ac was fast-forwarded after execution and adds separate reviewed SwiftUI media evidence and dev.6, without changing the sealed dev.5 comparison. Reconcile the measured gaps with dev.6 before preparing another bounded comparison. The earlier 12-session native/explicit diagnostic remains held. Earlier preparation gates above remain historical records.

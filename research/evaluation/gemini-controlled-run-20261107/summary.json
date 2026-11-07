@@ -1,0 +1,2338 @@
+{
+  "schema": 1,
+  "status": "complete-and-source-graded",
+  "model_requested": "gemini-4-argon-high",
+  "client": "AGY1.5.3",
+  "returned_serving_identity": "not exposed in current result JSON; no immutable-weight or backend-origin attestation",
+  "subject_sessions_planned": 48,
+  "subject_sessions_completed": 48,
+  "source_answers_graded": 48,
+  "pairs": 24,
+  "related_families": 12,
+  "conditions": {
+    "generic-C0": {
+      "planned": 24,
+      "completed": 24,
+      "source_graded": 24,
+      "reviewer_core": {
+        "meets": 9,
+        "material-gap": 13,
+        "not-assessable": 2
+      },
+      "provider_reported_tokens": 173217,
+      "critical_answers": 0,
+      "median_reported_total_tokens": 7963.5
+    },
+    "candidate-controlled": {
+      "planned": 24,
+      "completed": 24,
+      "source_graded": 24,
+      "reviewer_core": {
+        "meets": 13,
+        "material-gap": 8,
+        "not-assessable": 3
+      },
+      "provider_reported_tokens": 183547,
+      "critical_answers": 0,
+      "median_reported_total_tokens": 8255.5
+    }
+  },
+  "paired_transitions": {
+    "gap-to-meets": 6,
+    "inconclusive-pair": 4,
+    "meets-to-gap": 3,
+    "preserved-material-gap": 5,
+    "preserved-meets": 6
+  },
+  "calibration": {
+    "fixtures": 48,
+    "representative_families": 12,
+    "independent_labels_reconciled": true,
+    "scope": "Source/design answer grading,not native/SDK/gold qualification"
+  },
+  "comparability": {
+    "design": "Bundled supplied dev.5 context versus generic; C1 controls and C2 scoped-context strata separate",
+    "native_skill_activation_test": false,
+    "released_skill_comparison": false,
+    "pure_body_effect": false,
+    "strict_immutable_serving_identity_eligibility": false,
+    "uncertainty": "One first sample per arm; known development families and imperfect condition masking. Unknown integration paths stay inconclusive, not failed or positive."
+  },
+  "retries": 0,
+  "fallbacks": 0,
+  "native_tests": 0,
+  "pair_rows": [
+    {
+      "case": "ios-uikit-actions",
+      "family": "topic/actions",
+      "candidate_condition": "C2",
+      "reviewer_task_transition": "inconclusive-pair",
+      "narrow_criterion_transition_derived": "preserved-meets"
+    },
+    {
+      "case": "ios-uikit-state",
+      "family": "topic/state",
+      "candidate_condition": "C2",
+      "reviewer_task_transition": "inconclusive-pair",
+      "narrow_criterion_transition_derived": "gap-to-meets"
+    },
+    {
+      "case": "ios-uikit-text",
+      "family": "topic/text",
+      "candidate_condition": "C2",
+      "reviewer_task_transition": "preserved-material-gap",
+      "narrow_criterion_transition_derived": "preserved-material-gap"
+    },
+    {
+      "case": "ios-swiftui-semantics",
+      "family": "topic/semantics",
+      "candidate_condition": "C2",
+      "reviewer_task_transition": "preserved-meets",
+      "narrow_criterion_transition_derived": "preserved-meets"
+    },
+    {
+      "case": "ios-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "candidate_condition": "C2",
+      "reviewer_task_transition": "meets-to-gap",
+      "narrow_criterion_transition_derived": "meets-to-gap"
+    },
+    {
+      "case": "ios-swiftui-media",
+      "family": "topic/media",
+      "candidate_condition": "C2",
+      "reviewer_task_transition": "preserved-material-gap",
+      "narrow_criterion_transition_derived": "preserved-material-gap"
+    },
+    {
+      "case": "macos-appkit-actions",
+      "family": "topic/actions",
+      "candidate_condition": "C2",
+      "reviewer_task_transition": "inconclusive-pair",
+      "narrow_criterion_transition_derived": "preserved-meets"
+    },
+    {
+      "case": "macos-appkit-structure",
+      "family": "topic/structure",
+      "candidate_condition": "C2",
+      "reviewer_task_transition": "gap-to-meets",
+      "narrow_criterion_transition_derived": "gap-to-meets"
+    },
+    {
+      "case": "macos-appkit-testing",
+      "family": "topic/testing",
+      "candidate_condition": "C2-project-policy-only",
+      "reviewer_task_transition": "gap-to-meets",
+      "narrow_criterion_transition_derived": "gap-to-meets"
+    },
+    {
+      "case": "macos-swiftui-state",
+      "family": "topic/state",
+      "candidate_condition": "C2-sdk-scoped",
+      "reviewer_task_transition": "gap-to-meets",
+      "narrow_criterion_transition_derived": "gap-to-meets"
+    },
+    {
+      "case": "macos-swiftui-text",
+      "family": "topic/text",
+      "candidate_condition": "C2-sdk-scoped",
+      "reviewer_task_transition": "preserved-material-gap",
+      "narrow_criterion_transition_derived": "preserved-material-gap"
+    },
+    {
+      "case": "macos-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "candidate_condition": "C2-sdk-scoped",
+      "reviewer_task_transition": "preserved-material-gap",
+      "narrow_criterion_transition_derived": "preserved-material-gap"
+    },
+    {
+      "case": "tvos-uikit-state",
+      "family": "topic/state",
+      "candidate_condition": "C2",
+      "reviewer_task_transition": "gap-to-meets",
+      "narrow_criterion_transition_derived": "gap-to-meets"
+    },
+    {
+      "case": "tvos-uikit-media",
+      "family": "topic/media",
+      "candidate_condition": "C2",
+      "reviewer_task_transition": "inconclusive-pair",
+      "narrow_criterion_transition_derived": "inconclusive-pair"
+    },
+    {
+      "case": "tvos-uikit-lifecycle",
+      "family": "topic/lifecycle",
+      "candidate_condition": "C2",
+      "reviewer_task_transition": "meets-to-gap",
+      "narrow_criterion_transition_derived": "meets-to-gap"
+    },
+    {
+      "case": "tvos-swiftui-actions",
+      "family": "topic/actions",
+      "candidate_condition": "C2-sdk-scoped",
+      "reviewer_task_transition": "gap-to-meets",
+      "narrow_criterion_transition_derived": "gap-to-meets"
+    },
+    {
+      "case": "tvos-swiftui-structure",
+      "family": "topic/structure",
+      "candidate_condition": "C2-sdk-scoped",
+      "reviewer_task_transition": "preserved-meets",
+      "narrow_criterion_transition_derived": "preserved-meets"
+    },
+    {
+      "case": "tvos-swiftui-testing",
+      "family": "topic/testing",
+      "candidate_condition": "C2-project-policy-only",
+      "reviewer_task_transition": "preserved-material-gap",
+      "narrow_criterion_transition_derived": "preserved-material-gap"
+    },
+    {
+      "case": "ios-uikit-no-change",
+      "family": "control/preservation",
+      "candidate_condition": "C1",
+      "reviewer_task_transition": "gap-to-meets",
+      "narrow_criterion_transition_derived": "gap-to-meets"
+    },
+    {
+      "case": "ios-swiftui-no-change",
+      "family": "control/preservation",
+      "candidate_condition": "C1",
+      "reviewer_task_transition": "preserved-meets",
+      "narrow_criterion_transition_derived": "preserved-meets"
+    },
+    {
+      "case": "macos-appkit-no-change",
+      "family": "control/preservation",
+      "candidate_condition": "C1",
+      "reviewer_task_transition": "preserved-meets",
+      "narrow_criterion_transition_derived": "preserved-meets"
+    },
+    {
+      "case": "mixed-macos-owner",
+      "family": "control/ownership",
+      "candidate_condition": "C1",
+      "reviewer_task_transition": "meets-to-gap",
+      "narrow_criterion_transition_derived": "meets-to-gap"
+    },
+    {
+      "case": "ios-missing-reference",
+      "family": "control/unavailable-reference",
+      "candidate_condition": "C1",
+      "reviewer_task_transition": "preserved-meets",
+      "narrow_criterion_transition_derived": "preserved-meets"
+    },
+    {
+      "case": "tvos-version-boundary",
+      "family": "control/version-boundary",
+      "candidate_condition": "C1",
+      "reviewer_task_transition": "preserved-meets",
+      "narrow_criterion_transition_derived": "preserved-meets"
+    }
+  ],
+  "grade_evidence_pins": [
+    {
+      "block": "block1",
+      "packet_sha256": "6fc2f91b7e441789037ab5615f8d33d65f77f449266bf74157c768daf104ed4d",
+      "grades_sha256": "87d910085c51366024ad042e6e77a9de8e93eef565cabfc602fd8f28c78c28d9"
+    },
+    {
+      "block": "block2",
+      "packet_sha256": "aa7e42d0778ca68446e420e47483726f04927f385a995f4bfc193b94b76b24d5",
+      "grades_sha256": "ac4e72d334acd5cf80a330eb26ffc1150ed958d377d2bb5513711c1468b797cb"
+    },
+    {
+      "block": "block3",
+      "packet_sha256": "9a838fd4ecba8ddeb4a17607f1b98ba165d34420948658ebca1d5792714dba71",
+      "grades_sha256": "860fa7f1e9a94f1c8fa54c997d09ee54737aea3bea59026f16e3fbd8beec72b1"
+    },
+    {
+      "block": "block4",
+      "packet_sha256": "67551e0527209357b1a628156bba33ffa071e331f0419c3edb136bb2ace80e2e",
+      "grades_sha256": "fa8b8e9bdea548789d2e6fd55717eedb86297991b172cc51e3d35f1cc1c03c01"
+    },
+    {
+      "block": "block5",
+      "packet_sha256": "fe2a8a1fbb7aca217bd878768bb313127bb9c9a84c6c44f67c8323510ec7af3e",
+      "grades_sha256": "061d23051d857804d733b1100457eb42cdc5de36bd8afd6cc0635fed8e7e8abe"
+    },
+    {
+      "block": "block6",
+      "packet_sha256": "0c21a956eb928cd76cd6723aac08a859db97874653c5f79f4ac18f7f9edcdaa5",
+      "grades_sha256": "7375a0063ddcf3a4e07e4c7027d21f9436b4d9074fa3a01c225971bf73196adb"
+    },
+    {
+      "block": "block7",
+      "packet_sha256": "ce7d3240477274a513ef1a63b48047d9b0ef46b9519c317872dbfc615d9e77ed",
+      "grades_sha256": "92ba7b15a2a4b3d6f4ac78eb08ff58c84f8fb93d5730fb118a2049426e9579e7"
+    },
+    {
+      "block": "block8",
+      "packet_sha256": "3791ebc129ed4ad0d538389a558df5d1577e11beeb82656005b91d76ad34ec1e",
+      "grades_sha256": "aeab6dd5937934e1766f13428fb36cdf87afe14e5e78c4835c02d727e85abacd"
+    }
+  ],
+  "quota": {
+    "before": [
+      {
+        "bucket": "Gemini Models/Weekly Limit Remaining",
+        "used_percent": 0.0
+      },
+      {
+        "bucket": "Gemini Models/Five Hour Limit Remaining",
+        "used_percent": 0.0
+      },
+      {
+        "bucket": "Gemini 4 Argon/Gemini 4 Argon Weekly Limit",
+        "used_percent": 0.0
+      }
+    ],
+    "latest": [
+      {
+        "bucket": "Gemini Models/Weekly Limit Remaining",
+        "used_percent": 0.0
+      },
+      {
+        "bucket": "Gemini Models/Five Hour Limit Remaining",
+        "used_percent": 0.0
+      },
+      {
+        "bucket": "Gemini 4 Argon/Gemini 4 Argon Weekly Limit",
+        "used_percent": 17.0
+      }
+    ]
+  },
+  "protocol": {
+    "generic-C0": {
+      "answers": 24,
+      "correct_dev5_identity_present": 0,
+      "routing_line_present": 0,
+      "actual_reference_reads": 0,
+      "read_interpretation": "References supplied inline; tools unavailable. Identity/routing does not prove native skill loading or autonomous reads."
+    },
+    "candidate-controlled": {
+      "answers": 24,
+      "correct_dev5_identity_present": 24,
+      "routing_line_present": 24,
+      "actual_reference_reads": 0,
+      "read_interpretation": "References supplied inline; tools unavailable. Identity/routing does not prove native skill loading or autonomous reads."
+    }
+  },
+  "strata": {
+    "C1": {
+      "pairs": 6,
+      "transitions": {
+        "gap-to-meets": 1,
+        "meets-to-gap": 1,
+        "preserved-meets": 4
+      }
+    },
+    "C2": {
+      "pairs": 11,
+      "transitions": {
+        "gap-to-meets": 2,
+        "inconclusive-pair": 4,
+        "meets-to-gap": 2,
+        "preserved-material-gap": 2,
+        "preserved-meets": 1
+      }
+    },
+    "C2-project-policy-only": {
+      "pairs": 2,
+      "transitions": {
+        "gap-to-meets": 1,
+        "preserved-material-gap": 1
+      }
+    },
+    "C2-sdk-scoped": {
+      "pairs": 5,
+      "transitions": {
+        "gap-to-meets": 2,
+        "preserved-material-gap": 2,
+        "preserved-meets": 1
+      }
+    }
+  },
+  "scope_status": "Executed and independently source-graded; not native-validated, gold-accepted or promoted",
+  "rows": [
+    {
+      "id": "ios-uikit-actions--generic-C0",
+      "case": "ios-uikit-actions",
+      "family": "topic/actions",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "not-assessable",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "ios-uikit-actions/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-uikit-actions/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-uikit-actions/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 1,
+          "relevance": 4
+        },
+        "weighted_score": 0.5125,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": true,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 9727,
+      "returned_model": null,
+      "answer_sha256": "4a1bb4704f3115d4e2c8894ee9a12abfb435d1124215387f540ad67148d4f90d"
+    },
+    {
+      "id": "ios-uikit-actions--candidate-controlled",
+      "case": "ios-uikit-actions",
+      "family": "topic/actions",
+      "arm": "candidate-controlled",
+      "condition": "C2",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "not-assessable",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "ios-uikit-actions/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-uikit-actions/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-uikit-actions/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.5875,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": true,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 9347,
+      "returned_model": null,
+      "answer_sha256": "87924547f52fb373ac3a6ff850a840ff509a8fabb3b907d05245aabd42338561"
+    },
+    {
+      "id": "ios-uikit-state--candidate-controlled",
+      "case": "ios-uikit-state",
+      "family": "topic/state",
+      "arm": "candidate-controlled",
+      "condition": "C2",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "not-assessable",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "ios-uikit-state/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-uikit-state/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-uikit-state/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.5875,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": true,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 8874,
+      "returned_model": null,
+      "answer_sha256": "16761554459d5a4055b4be137226d8b988b3d8ddc54d83233cf0d0054e0d3a05"
+    },
+    {
+      "id": "ios-uikit-state--generic-C0",
+      "case": "ios-uikit-state",
+      "family": "topic/state",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "ios-uikit-state/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-uikit-state/criterion-1",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "ios-uikit-state/criterion-2",
+            "verdict": "material-gap"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 2,
+          "relevance": 4
+        },
+        "weighted_score": 0.55,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 11106,
+      "returned_model": null,
+      "answer_sha256": "0d81f1874ad6776f3e3f2c5bea29d6118509d1646f3e4862908a0495faeec4ee"
+    },
+    {
+      "id": "ios-uikit-text--generic-C0",
+      "case": "ios-uikit-text",
+      "family": "topic/text",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "ios-uikit-text/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-uikit-text/criterion-1",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "ios-uikit-text/criterion-2",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-uikit-text/criterion-3",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 2,
+          "relevance": 4
+        },
+        "weighted_score": 0.55,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 7878,
+      "returned_model": null,
+      "answer_sha256": "194a0ba8d21f39590ae87fb30f12a7b23a9e55ffdc21704cb099cc5269795575"
+    },
+    {
+      "id": "ios-uikit-text--candidate-controlled",
+      "case": "ios-uikit-text",
+      "family": "topic/text",
+      "arm": "candidate-controlled",
+      "condition": "C2",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "ios-uikit-text/criterion-0",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "ios-uikit-text/criterion-1",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "ios-uikit-text/criterion-2",
+            "verdict": "not-assessable"
+          },
+          {
+            "id": "ios-uikit-text/criterion-3",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 2,
+          "relevance": 4
+        },
+        "weighted_score": 0.55,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 8512,
+      "returned_model": null,
+      "answer_sha256": "802e92957f4b66dd62ee26d7860e9dda5ac1dcadf1140b5352d109548ff3a194"
+    },
+    {
+      "id": "ios-swiftui-semantics--candidate-controlled",
+      "case": "ios-swiftui-semantics",
+      "family": "topic/semantics",
+      "arm": "candidate-controlled",
+      "condition": "C2",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "ios-swiftui-semantics/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-swiftui-semantics/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-swiftui-semantics/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 6484,
+      "returned_model": null,
+      "answer_sha256": "9d3d9ddbdad8faeea0eca2d0f2cb21328ef697673cc5b80fde0752c8d616187f"
+    },
+    {
+      "id": "ios-swiftui-semantics--generic-C0",
+      "case": "ios-swiftui-semantics",
+      "family": "topic/semantics",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "ios-swiftui-semantics/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-swiftui-semantics/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-swiftui-semantics/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 3,
+          "task_success": 4,
+          "calibration": 1,
+          "relevance": 4
+        },
+        "weighted_score": 0.7875,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 4112,
+      "returned_model": null,
+      "answer_sha256": "9c4936003bc49f96942d1f5fdda8052746e14b7610bc63d71b42615bfd62ce70"
+    },
+    {
+      "id": "ios-swiftui-lifecycle--generic-C0",
+      "case": "ios-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "ios-swiftui-lifecycle/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-swiftui-lifecycle/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-swiftui-lifecycle/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 3,
+          "task_success": 4,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.8625,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 10077,
+      "returned_model": null,
+      "answer_sha256": "71747e1f7489266317d1d6ada9d3d5330141bbe91f0ed96443cab30112e84aae"
+    },
+    {
+      "id": "ios-swiftui-lifecycle--candidate-controlled",
+      "case": "ios-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "arm": "candidate-controlled",
+      "condition": "C2",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "ios-swiftui-lifecycle/criterion-0",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "ios-swiftui-lifecycle/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-swiftui-lifecycle/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 0.625,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 10365,
+      "returned_model": null,
+      "answer_sha256": "e95ac5d308635f59a79eca3a0c188ac8836ad3a42221b2aad2d0baea41af1209"
+    },
+    {
+      "id": "ios-swiftui-media--candidate-controlled",
+      "case": "ios-swiftui-media",
+      "family": "topic/media",
+      "arm": "candidate-controlled",
+      "condition": "C2",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "ios-swiftui-media/criterion-0",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "ios-swiftui-media/criterion-1",
+            "verdict": "not-assessable"
+          },
+          {
+            "id": "ios-swiftui-media/criterion-2",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-swiftui-media/criterion-3",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.5875,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 7999,
+      "returned_model": null,
+      "answer_sha256": "2718dce43a4dbd0241ef9b4ecc9944bce38bd969480285e55815c5117d9acdbc"
+    },
+    {
+      "id": "ios-swiftui-media--generic-C0",
+      "case": "ios-swiftui-media",
+      "family": "topic/media",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "ios-swiftui-media/criterion-0",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "ios-swiftui-media/criterion-1",
+            "verdict": "not-assessable"
+          },
+          {
+            "id": "ios-swiftui-media/criterion-2",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "ios-swiftui-media/criterion-3",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 2,
+          "relevance": 4
+        },
+        "weighted_score": 0.55,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 7725,
+      "returned_model": null,
+      "answer_sha256": "0aed2b86893ace8b6cb8ec787ce831783ef207b28ebe81eecc7087cf8f20df82"
+    },
+    {
+      "id": "macos-appkit-actions--generic-C0",
+      "case": "macos-appkit-actions",
+      "family": "topic/actions",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "not-assessable",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "macos-appkit-actions/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-actions/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-actions/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.5875,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": true,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 7196,
+      "returned_model": null,
+      "answer_sha256": "4b0df2a14aa64a276eae1afc825039d1f1d82e326a895d60309b5255239420a1"
+    },
+    {
+      "id": "macos-appkit-actions--candidate-controlled",
+      "case": "macos-appkit-actions",
+      "family": "topic/actions",
+      "arm": "candidate-controlled",
+      "condition": "C2",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "macos-appkit-actions/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-actions/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-actions/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 8772,
+      "returned_model": null,
+      "answer_sha256": "2637d92df0e49aae49fd1fe62d46d74ecc1453e2410e5295221c447c1dcab9db"
+    },
+    {
+      "id": "macos-appkit-structure--candidate-controlled",
+      "case": "macos-appkit-structure",
+      "family": "topic/structure",
+      "arm": "candidate-controlled",
+      "condition": "C2",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "macos-appkit-structure/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-structure/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-structure/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 3,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 0.9,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 8531,
+      "returned_model": null,
+      "answer_sha256": "2fa872fd8fed7dd44630f4178bf85d18761aa745bd5d9407f4efb4c961430c04"
+    },
+    {
+      "id": "macos-appkit-structure--generic-C0",
+      "case": "macos-appkit-structure",
+      "family": "topic/structure",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "macos-appkit-structure/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-structure/criterion-1",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "macos-appkit-structure/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 3,
+          "task_success": 2,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.6875,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 8164,
+      "returned_model": null,
+      "answer_sha256": "cf09af8dd3f858e92dfd8177fd9041014b0d3a7ce60490c05fe24782884f2d53"
+    },
+    {
+      "id": "macos-appkit-testing--generic-C0",
+      "case": "macos-appkit-testing",
+      "family": "topic/testing",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "macos-appkit-testing/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-testing/criterion-1",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "macos-appkit-testing/criterion-2",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "macos-appkit-testing/criterion-3",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 3,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.6749999999999999,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 8943,
+      "returned_model": null,
+      "answer_sha256": "3effaddc39c24b7369bc9c2208bb21886db7364b4493172d160fc39b52b12802"
+    },
+    {
+      "id": "macos-appkit-testing--candidate-controlled",
+      "case": "macos-appkit-testing",
+      "family": "topic/testing",
+      "arm": "candidate-controlled",
+      "condition": "C2-project-policy-only",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "macos-appkit-testing/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-testing/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-testing/criterion-2",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-testing/criterion-3",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 3,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 0.9,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 9402,
+      "returned_model": null,
+      "answer_sha256": "b8430c44b0168bbf5499e06cb20dcda76615ddde4a2c19f50a53386b8a5e97e2"
+    },
+    {
+      "id": "macos-swiftui-state--candidate-controlled",
+      "case": "macos-swiftui-state",
+      "family": "topic/state",
+      "arm": "candidate-controlled",
+      "condition": "C2-sdk-scoped",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "macos-swiftui-state/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-swiftui-state/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-swiftui-state/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 3,
+          "task_success": 3,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 0.8125,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 9712,
+      "returned_model": null,
+      "answer_sha256": "a221fda89aea2ce8cd5c76371a7a70a700ed97076d737830184718282a639a16"
+    },
+    {
+      "id": "macos-swiftui-state--generic-C0",
+      "case": "macos-swiftui-state",
+      "family": "topic/state",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "macos-swiftui-state/criterion-0",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "macos-swiftui-state/criterion-1",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "macos-swiftui-state/criterion-2",
+            "verdict": "not-assessable"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 2,
+          "relevance": 4
+        },
+        "weighted_score": 0.55,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 8400,
+      "returned_model": null,
+      "answer_sha256": "fe1851312197a5a967f9c40e8b5f39d26685ce96e5f7543cc0c5a708d2a7baa0"
+    },
+    {
+      "id": "macos-swiftui-text--generic-C0",
+      "case": "macos-swiftui-text",
+      "family": "topic/text",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "macos-swiftui-text/criterion-0",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "macos-swiftui-text/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-swiftui-text/criterion-2",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "macos-swiftui-text/criterion-3",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 3,
+          "calibration": 2,
+          "relevance": 4
+        },
+        "weighted_score": 0.6375,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 9173,
+      "returned_model": null,
+      "answer_sha256": "d96aa62e332316de1cdd2611e9cc615fc9b67ed46c6d06e5c8c60916224427d9"
+    },
+    {
+      "id": "macos-swiftui-text--candidate-controlled",
+      "case": "macos-swiftui-text",
+      "family": "topic/text",
+      "arm": "candidate-controlled",
+      "condition": "C2-sdk-scoped",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "macos-swiftui-text/criterion-0",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "macos-swiftui-text/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-swiftui-text/criterion-2",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-swiftui-text/criterion-3",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 3,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 0.7124999999999999,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 7779,
+      "returned_model": null,
+      "answer_sha256": "d33b8edbcf091113dc5853a8756c2b230a53a36fb7acf4e94a1a506ee65c11fe"
+    },
+    {
+      "id": "macos-swiftui-lifecycle--candidate-controlled",
+      "case": "macos-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "arm": "candidate-controlled",
+      "condition": "C2-sdk-scoped",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "macos-swiftui-lifecycle/criterion-0",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "macos-swiftui-lifecycle/criterion-1",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "macos-swiftui-lifecycle/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 0.625,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 8798,
+      "returned_model": null,
+      "answer_sha256": "45fe69cad9f21b3b0a27a6249114ddaf392b6faa4ab7f76ef71ae1311f6bef67"
+    },
+    {
+      "id": "macos-swiftui-lifecycle--generic-C0",
+      "case": "macos-swiftui-lifecycle",
+      "family": "topic/lifecycle",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "macos-swiftui-lifecycle/criterion-0",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "macos-swiftui-lifecycle/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-swiftui-lifecycle/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.5875,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 8839,
+      "returned_model": null,
+      "answer_sha256": "b4a310e5677d8308a5346a6bdf81d8c96c0aab7f62f73a5799ca82c53dabedbc"
+    },
+    {
+      "id": "tvos-uikit-state--generic-C0",
+      "case": "tvos-uikit-state",
+      "family": "topic/state",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "tvos-uikit-state/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-uikit-state/criterion-1",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "tvos-uikit-state/criterion-2",
+            "verdict": "material-gap"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.5875,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 10881,
+      "returned_model": null,
+      "answer_sha256": "718de8b6e70fa1c877ebb12ed42610106218949494adca92d8a7482155a475ba"
+    },
+    {
+      "id": "tvos-uikit-state--candidate-controlled",
+      "case": "tvos-uikit-state",
+      "family": "topic/state",
+      "arm": "candidate-controlled",
+      "condition": "C2",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "tvos-uikit-state/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-uikit-state/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-uikit-state/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 11349,
+      "returned_model": null,
+      "answer_sha256": "2f81e0c7b3ad3ffece09aa8af6fa44a0eec15cacec130a4356395ab7c7e43a86"
+    },
+    {
+      "id": "tvos-uikit-media--candidate-controlled",
+      "case": "tvos-uikit-media",
+      "family": "topic/media",
+      "arm": "candidate-controlled",
+      "condition": "C2",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "not-assessable",
+        "frozen_criterion_aggregate_derived": "not-assessable",
+        "criteria": [
+          {
+            "id": "tvos-uikit-media/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-uikit-media/criterion-1",
+            "verdict": "not-assessable"
+          },
+          {
+            "id": "tvos-uikit-media/criterion-2",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-uikit-media/criterion-3",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 3,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.6749999999999999,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": true,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 9549,
+      "returned_model": null,
+      "answer_sha256": "87f16cf33c6036a2ce959659ab28f7bf566667d9066fff98e698bf3589af2b21"
+    },
+    {
+      "id": "tvos-uikit-media--generic-C0",
+      "case": "tvos-uikit-media",
+      "family": "topic/media",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "tvos-uikit-media/criterion-0",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "tvos-uikit-media/criterion-1",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "tvos-uikit-media/criterion-2",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "tvos-uikit-media/criterion-3",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 2,
+          "relevance": 4
+        },
+        "weighted_score": 0.55,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 7904,
+      "returned_model": null,
+      "answer_sha256": "f1042af6cbd47efe724bef5319a742292c6d2c6bc01b25752167b4895e1e0a1e"
+    },
+    {
+      "id": "tvos-uikit-lifecycle--generic-C0",
+      "case": "tvos-uikit-lifecycle",
+      "family": "topic/lifecycle",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "tvos-uikit-lifecycle/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-uikit-lifecycle/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-uikit-lifecycle/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 3,
+          "task_success": 3,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.775,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 9820,
+      "returned_model": null,
+      "answer_sha256": "34d33eca715596cf84e094b19b65e87449b326dedec738464322b0d2a226b0e8"
+    },
+    {
+      "id": "tvos-uikit-lifecycle--candidate-controlled",
+      "case": "tvos-uikit-lifecycle",
+      "family": "topic/lifecycle",
+      "arm": "candidate-controlled",
+      "condition": "C2",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "tvos-uikit-lifecycle/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-uikit-lifecycle/criterion-1",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "tvos-uikit-lifecycle/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.5875,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 9805,
+      "returned_model": null,
+      "answer_sha256": "04f9d128494f06f31f6bc8bc315c891a93e21a8fd309b08e6ace2d7ebc55b763"
+    },
+    {
+      "id": "tvos-swiftui-actions--candidate-controlled",
+      "case": "tvos-swiftui-actions",
+      "family": "topic/actions",
+      "arm": "candidate-controlled",
+      "condition": "C2-sdk-scoped",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "tvos-swiftui-actions/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-swiftui-actions/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-swiftui-actions/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 7615,
+      "returned_model": null,
+      "answer_sha256": "ff3dd8080bcf8ab4beb12d3587f9fcc1fc3657801f1676d4d2cc3b8ef5d9c929"
+    },
+    {
+      "id": "tvos-swiftui-actions--generic-C0",
+      "case": "tvos-swiftui-actions",
+      "family": "topic/actions",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "tvos-swiftui-actions/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-swiftui-actions/criterion-1",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "tvos-swiftui-actions/criterion-2",
+            "verdict": "not-assessable"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 2,
+          "relevance": 4
+        },
+        "weighted_score": 0.55,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 9152,
+      "returned_model": null,
+      "answer_sha256": "1d01264632db0bd0ef1596324de6cae94e6497c177e2c8448c54f500a50547f7"
+    },
+    {
+      "id": "tvos-swiftui-structure--generic-C0",
+      "case": "tvos-swiftui-structure",
+      "family": "topic/structure",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "tvos-swiftui-structure/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-swiftui-structure/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-swiftui-structure/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 3,
+          "task_success": 4,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.8625,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 8023,
+      "returned_model": null,
+      "answer_sha256": "6ed9d34a83289a0d3e7646d42aac9600b492e029a8d31bc294b671401acf5d7e"
+    },
+    {
+      "id": "tvos-swiftui-structure--candidate-controlled",
+      "case": "tvos-swiftui-structure",
+      "family": "topic/structure",
+      "arm": "candidate-controlled",
+      "condition": "C2-sdk-scoped",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "tvos-swiftui-structure/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-swiftui-structure/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-swiftui-structure/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 7477,
+      "returned_model": null,
+      "answer_sha256": "16119f5a513cc683b6b9d8ee55e34ea77c082f2f391732d5ee4dfeaa7a32167b"
+    },
+    {
+      "id": "tvos-swiftui-testing--candidate-controlled",
+      "case": "tvos-swiftui-testing",
+      "family": "topic/testing",
+      "arm": "candidate-controlled",
+      "condition": "C2-project-policy-only",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "tvos-swiftui-testing/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-swiftui-testing/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-swiftui-testing/criterion-2",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "tvos-swiftui-testing/criterion-3",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 3,
+          "task_success": 3,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.775,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 7905,
+      "returned_model": null,
+      "answer_sha256": "f436c2ab66f94ab1a9ac5b876653bf88590ff033b59c333f379f9deab9756fa0"
+    },
+    {
+      "id": "tvos-swiftui-testing--generic-C0",
+      "case": "tvos-swiftui-testing",
+      "family": "topic/testing",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "tvos-swiftui-testing/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-swiftui-testing/criterion-1",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "tvos-swiftui-testing/criterion-2",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "tvos-swiftui-testing/criterion-3",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 2,
+          "relevance": 4
+        },
+        "weighted_score": 0.55,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 6934,
+      "returned_model": null,
+      "answer_sha256": "29587a29c7adab9a9f3c6c08df9924c6e4dab3490d6e97c6b3429bd0743dc0d8"
+    },
+    {
+      "id": "ios-uikit-no-change--generic-C0",
+      "case": "ios-uikit-no-change",
+      "family": "control/preservation",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "ios-uikit-no-change/criterion-0",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "ios-uikit-no-change/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-uikit-no-change/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 3,
+          "task_success": 4,
+          "calibration": 2,
+          "relevance": 3
+        },
+        "weighted_score": 0.8,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 3390,
+      "returned_model": null,
+      "answer_sha256": "3e942d13b84e37b10440eb37e711bf85b1b64e6f0d86313fc736b0c0a2a48ba2"
+    },
+    {
+      "id": "ios-uikit-no-change--candidate-controlled",
+      "case": "ios-uikit-no-change",
+      "family": "control/preservation",
+      "arm": "candidate-controlled",
+      "condition": "C1",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "ios-uikit-no-change/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-uikit-no-change/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-uikit-no-change/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 4050,
+      "returned_model": null,
+      "answer_sha256": "b20d950c86101e335557198a57401408187ef9ec61b8e53c5fe834c2e3b10bc4"
+    },
+    {
+      "id": "ios-swiftui-no-change--candidate-controlled",
+      "case": "ios-swiftui-no-change",
+      "family": "control/preservation",
+      "arm": "candidate-controlled",
+      "condition": "C1",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "ios-swiftui-no-change/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-swiftui-no-change/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-swiftui-no-change/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 3,
+          "task_success": 4,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.8625,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 3896,
+      "returned_model": null,
+      "answer_sha256": "5452cef2a7f6ce22233ed652364d954d81c947086f259af82c8c7e4e513b0f15"
+    },
+    {
+      "id": "ios-swiftui-no-change--generic-C0",
+      "case": "ios-swiftui-no-change",
+      "family": "control/preservation",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "ios-swiftui-no-change/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-swiftui-no-change/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-swiftui-no-change/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.9625,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 2973,
+      "returned_model": null,
+      "answer_sha256": "92d79463ed7b06c4ea1fd2d5c2e0fd095a0ac24d38d491015efce428d06dae5b"
+    },
+    {
+      "id": "macos-appkit-no-change--generic-C0",
+      "case": "macos-appkit-no-change",
+      "family": "control/preservation",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "macos-appkit-no-change/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-no-change/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-no-change/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 2693,
+      "returned_model": null,
+      "answer_sha256": "ab9f490f99d1d303ec451a86330cb3f2968969949e354dd1aab695bd92227200"
+    },
+    {
+      "id": "macos-appkit-no-change--candidate-controlled",
+      "case": "macos-appkit-no-change",
+      "family": "control/preservation",
+      "arm": "candidate-controlled",
+      "condition": "C1",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "macos-appkit-no-change/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-no-change/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "macos-appkit-no-change/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 3954,
+      "returned_model": null,
+      "answer_sha256": "21971f71bb59ba22f84cbb405e2222c75a0aa41b14400a24b81e5dc87c91f577"
+    },
+    {
+      "id": "mixed-macos-owner--candidate-controlled",
+      "case": "mixed-macos-owner",
+      "family": "control/ownership",
+      "arm": "candidate-controlled",
+      "condition": "C1",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "material-gap",
+        "frozen_criterion_aggregate_derived": "material-gap",
+        "criteria": [
+          {
+            "id": "mixed-macos-owner/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "mixed-macos-owner/criterion-1",
+            "verdict": "material-gap"
+          },
+          {
+            "id": "mixed-macos-owner/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 3,
+          "task_success": 4,
+          "calibration": 2,
+          "relevance": 4
+        },
+        "weighted_score": 0.8250000000000001,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 4350,
+      "returned_model": null,
+      "answer_sha256": "652634d43e9f8b7363d3e49e6768c02f44a11f82fd55a26452f09812af071e9c"
+    },
+    {
+      "id": "mixed-macos-owner--generic-C0",
+      "case": "mixed-macos-owner",
+      "family": "control/ownership",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "mixed-macos-owner/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "mixed-macos-owner/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "mixed-macos-owner/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 3425,
+      "returned_model": null,
+      "answer_sha256": "0bcb60e91499804f397e63079b402f7c839665422e80c196ccac4559f82db0e4"
+    },
+    {
+      "id": "ios-missing-reference--generic-C0",
+      "case": "ios-missing-reference",
+      "family": "control/unavailable-reference",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "ios-missing-reference/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-missing-reference/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-missing-reference/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 2793,
+      "returned_model": null,
+      "answer_sha256": "d0e33111caf14afc22aa1ee0909ba8ff60a434ee61b3ff3c1bb716253068176c"
+    },
+    {
+      "id": "ios-missing-reference--candidate-controlled",
+      "case": "ios-missing-reference",
+      "family": "control/unavailable-reference",
+      "arm": "candidate-controlled",
+      "condition": "C1",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "ios-missing-reference/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-missing-reference/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "ios-missing-reference/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 4342,
+      "returned_model": null,
+      "answer_sha256": "6150e9b9ccd83268ebd59ff12c0f91169046b57aea3f1f2af2dad799bbd299cd"
+    },
+    {
+      "id": "tvos-version-boundary--candidate-controlled",
+      "case": "tvos-version-boundary",
+      "family": "control/version-boundary",
+      "arm": "candidate-controlled",
+      "condition": "C1",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "tvos-version-boundary/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-version-boundary/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-version-boundary/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 4680,
+      "returned_model": null,
+      "answer_sha256": "38f9b9021892b3985f38cc74193b2ce6b162bfe4f0cf18b75b5bde6d0f6c23c3"
+    },
+    {
+      "id": "tvos-version-boundary--generic-C0",
+      "case": "tvos-version-boundary",
+      "family": "control/version-boundary",
+      "arm": "generic-C0",
+      "condition": "C0",
+      "execution": "completed",
+      "grade": {
+        "reviewer_core": "meets",
+        "frozen_criterion_aggregate_derived": "meets",
+        "criteria": [
+          {
+            "id": "tvos-version-boundary/criterion-0",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-version-boundary/criterion-1",
+            "verdict": "meets"
+          },
+          {
+            "id": "tvos-version-boundary/criterion-2",
+            "verdict": "meets"
+          }
+        ],
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.9625,
+        "critical_flag_count": 0,
+        "native_execution": "not_run",
+        "overall_integration_uncertainty": false,
+        "interpretation": "Criterion aggregate is a transparent derived narrow source measure; it does not override the independent overall task/integration judgment."
+      },
+      "provider_reported_total_tokens": 3889,
+      "returned_model": null,
+      "answer_sha256": "03c9807c0f1b45b706cd958d7a94f302e54e5e93fed0cf2c97d245b9d71e5903"
+    }
+  ],
+  "provenance": {
+    "sealed_v2_manifest_sha256": "7e06c8a7aec68b075db219fd064994e64be84b17da8db9376dc7f9f589183158",
+    "composite_controller_sha256": "bccb8887df9c9f3dca24f0881671c744dce9db8d9274d57dd12982f36f00afde",
+    "private_manifest_sha256": "45a47df12af400fd5d9947454f3c729ca02fa013aa38dd9ecaec832b4e407162",
+    "jobs_sha256": "aefbac198195e0b159d9980932a44036976f3495f94254c87af9a9cfeb7b6523",
+    "executor_sha256": "f3e0f6e8b7fdc5ab52ac67d09e67e36cd2d21042d75bd94273a032d0e806e2ef",
+    "summary_sha256": "3f0aee7b382cb5f51f52fad4ea0110f79f24ff89f6a00f1df2e6e7fbaee64287",
+    "calibration_reconciliation_sha256": "8b4ca1875286755c2f821a60e93b8dd90a7c2aea0b9a329855a180744d438048",
+    "raw_data": "Exact requests, answers, receipts, failed preflights, grading packets and mappings retained privately in ignored project-local evals/results/gemini-controlled-v2-20261107-r1. Raw responses, conversation IDs and account logs excluded from Git."
+  }
+}

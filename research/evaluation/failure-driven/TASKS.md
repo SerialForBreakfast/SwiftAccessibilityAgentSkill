@@ -639,3 +639,19 @@ remains outside this extension and explicitly unresolved; no UI/manual gate adde
 See [preflight packet](../gemini-preflight-v1/README.md). All1,373 current offline
 checks pass, plus25 historical module checks (overlapping, not independent cases).
 No new subject/provider calls, native runs, worker messages or Git publication.
+
+## Owner-authorized Gemini controlled-context comparison — 2026-11-07
+
+- [x] Execute all 48 sealed v2 first attempts under the owner’s continuation approval, with no retry, repair, fallback or extra probe.
+- [x] Reconcile 48 independent source-calibration fixtures before grading; grade all 48 answers with arm mappings withheld and retain integration uncertainty separately from narrow frozen criteria.
+- [x] Verify input/receipt/grade hashes, 22 harness tests, 210 baseline files and sealed package integrity; close the 48-reservation grant.
+- [x] Reconcile remote ff846ac after generation, preserving its separate SwiftUI evidence/dev.6 and this unchanged dev.5 cohort.
+- [ ] Review source regressions/persistent gaps against dev.6 before preparing a future candidate comparison; no release or gold acceptance.
+
+[Results](../gemini-controlled-run-20261107/README.md): candidate meets 13/24, generic 9/24; six gains, three regressions, six preserved successes, five persistent gaps and four inconclusive pairs. Displayed Argon weekly usage 0% to 17% is rounded account-wide telemetry. All 24 candidate answers announce dev.5; references were supplied inline, with no native discovery/read claim. No native tests of these generated answers ran; the earlier 12-session diagnostic remains held.
+
+Publication reconciliation: the preflight section above is the earlier local
+preparation snapshot, not a request to repeat the separately authorized completed
+run. Current follow-up is one retrospective transport qualification report from
+existing artifacts only. All further evaluations, probes and grading batches stay
+held; preserve both records and sealed subject/controller bytes.

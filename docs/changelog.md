@@ -4,6 +4,15 @@ All notable changes to this documentation project are tracked here.
 
 ## [Unreleased]
 
+- Added a bounded local-only diagnostic runner for sealed milestone-v2 contexts:
+  generic, released 0.2.2 and development 0.3.0-dev.5 conditions. Full requests,
+  responses and model identities stay under project-local private artifacts.
+  Reviewed compile-only probes now support macOS deployment target26 as well as
+  iOS/tvOS simulators, with explicit source ranges for complete code whose Markdown
+  fence was cut. A post-run dispatch guard now reserves a full request window to
+  prevent useless calls at the campaign deadline. These are evaluation tools, not
+  runtime skill changes.
+
 - Recorded the owner's project-only working-file rule. Local comparison and Swift
   probe tools now confine outputs, scratch files and compiler caches to the project;
   private artifacts default to `evals/results/`. Released skill behavior is unchanged.
