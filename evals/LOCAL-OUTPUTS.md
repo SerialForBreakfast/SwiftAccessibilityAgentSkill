@@ -23,3 +23,9 @@ Future inference and compiler runs default to a fresh directory under
 `cache/` directories. The local evaluation tools reject outside-project output paths,
 including paths that escape through symlinks. Existing historical records retain
 their original paths and hashes; they are not rewritten to imply a different run.
+
+## Sillycon evaluation returns
+
+When sending completed or partial evaluation results to Sillycon, include the controller evidence with the first results notice. Publish the sanitized summary in Git and deliver the answer-level material through the established private project share. Give the results revision, share location, archive size, SHA-256 and entry point in the project inbox. Verify the uploaded bytes before sending.
+
+For each completed attempt, link the sealed input and complete original answer to its masked ID, original answer hash, criterion verdicts, verbatim evidence spans, reviewer rationale, integration judgment and critical flags. Include the masked packet and grade files with their published hashes. Complete answers let the recipient inspect omissions such as a button whose action was never connected. Include per-arm results, recorded usage, stop reasons, unattempted cells and known evidence gaps. Keep credentials, account identifiers and raw session metadata out of the transfer. Keep answer keys in the controller bundle. Record the inbox receipt separately from recipient acknowledgment.
