@@ -1,0 +1,981 @@
+{
+  "schema": 1,
+  "status": "all12-executed-and-independently-source-reviewed;not-release-accepted",
+  "model": "claude-haiku-5-5",
+  "conditions": {
+    "generic": {
+      "sessions": 4,
+      "total_tokens": 36946,
+      "relevant_sessions": 3,
+      "relevant_skill_calls": 0,
+      "relevant_successful_loads": 0,
+      "relevant_body_reads": 0,
+      "relevant_announcements": 0,
+      "negative_control_skill_calls": 0,
+      "source_quality": {
+        "all4": {
+          "meets": 3,
+          "material-gap": 1,
+          "not-assessable": 0
+        },
+        "accessibility3": {
+          "meets": 2,
+          "material-gap": 1,
+          "not-assessable": 0
+        },
+        "critical_answers": 0
+      }
+    },
+    "0.2.2": {
+      "sessions": 4,
+      "total_tokens": 37549,
+      "relevant_sessions": 3,
+      "relevant_skill_calls": 0,
+      "relevant_successful_loads": 0,
+      "relevant_body_reads": 0,
+      "relevant_announcements": 0,
+      "negative_control_skill_calls": 0,
+      "source_quality": {
+        "all4": {
+          "meets": 2,
+          "material-gap": 2,
+          "not-assessable": 0
+        },
+        "accessibility3": {
+          "meets": 1,
+          "material-gap": 2,
+          "not-assessable": 0
+        },
+        "critical_answers": 1
+      }
+    },
+    "0.3.0-dev.2": {
+      "sessions": 4,
+      "total_tokens": 39378,
+      "relevant_sessions": 3,
+      "relevant_skill_calls": 0,
+      "relevant_successful_loads": 0,
+      "relevant_body_reads": 0,
+      "relevant_announcements": 0,
+      "negative_control_skill_calls": 0,
+      "source_quality": {
+        "all4": {
+          "meets": 3,
+          "material-gap": 1,
+          "not-assessable": 0
+        },
+        "accessibility3": {
+          "meets": 2,
+          "material-gap": 1,
+          "not-assessable": 0
+        },
+        "critical_answers": 0
+      }
+    }
+  },
+  "scored_sessions_executed": 12,
+  "new_probes": 0,
+  "prior_reserved_attempts": 4,
+  "cumulative_reservations": 16,
+  "all_process_status": "completed,exit0,complete final usage receipts",
+  "total_tokens": 113873,
+  "all_tool_calls": 0,
+  "subscription": {
+    "before": {
+      "windows": [
+        {
+          "bucket": "five_hour",
+          "label": "5-hour",
+          "duration_minutes": 300,
+          "used_percent": 0.0,
+          "reset_at": 1794054600.0
+        },
+        {
+          "bucket": "seven_day",
+          "label": "Weekly",
+          "duration_minutes": 10080,
+          "used_percent": 18.0,
+          "reset_at": 1794452400.0
+        }
+      ],
+      "observed_at": 1794037459.7021074,
+      "provenance": "CLI /usage (no inference)"
+    },
+    "after": {
+      "windows": [
+        {
+          "bucket": "five_hour",
+          "label": "5-hour",
+          "duration_minutes": 300,
+          "used_percent": 0.0,
+          "reset_at": 1794054600.0
+        },
+        {
+          "bucket": "seven_day",
+          "label": "Weekly",
+          "duration_minutes": 10080,
+          "used_percent": 18.0,
+          "reset_at": 1794452400.0
+        }
+      ],
+      "observed_at": 1794037768.0175896,
+      "provenance": "CLI /usage (no inference)"
+    },
+    "displayed_five_hour_delta_points": 0,
+    "displayed_weekly_delta_points": 0,
+    "limits_reached": false,
+    "caution": "Rounded/delayed account-wide readings; unchanged display does not establish zero consumption."
+  },
+  "activation": {
+    "relevant_guided_sessions": 6,
+    "advertised_in_relevant_guided_sessions": 6,
+    "successful_skill_loads": 0,
+    "actual_body_reads": 0,
+    "announcements": 0,
+    "routing_lines": 0,
+    "guided_negative_controls": 2,
+    "false_activations_on_negative_controls": 0,
+    "interpretation": "Native catalog advertising succeeded, but no actual target Skill invocation or body read was observed. Provider-internal context is not fully exposed; do not claim exact full context. These are skill-available workflow outcomes, not a direct test of skill-body effectiveness."
+  },
+  "quality": {
+    "status": "independent-provisional-source-quality-review-complete",
+    "reviewer": "/root/grading_review",
+    "reviewed": 12,
+    "meets": 8,
+    "material_gap": 4,
+    "not_assessable": 0,
+    "critical_answers": 1,
+    "critical_scope": "Released-available validation answer ignored new submissions while pending; not attributable to the uninvoked skill body.",
+    "native_execution": "not_run",
+    "exposure": "Independent of answer generation and packet mapping. Prior aggregate findings/candidate context inherited; quality packet masks skill identity/version and ROUTING only, so best-effort condition masking is imperfect. No mappings, provider outputs, token/usage ledgers or protocol results read.",
+    "grader_packet_sha256": "5212d3de308c1044173b8ee16f06012bcc893fefece3ee58e781036f9d9819d4",
+    "exact_supporting_excerpts_verified": true,
+    "limits": "One source-reviewed development sample per cell; no native execution, fresh holdouts or model/skill ranking. Sorting excluded from accessibility-lift counts."
+  },
+  "rows": [
+    {
+      "id": "GP26-02-generic",
+      "case": "GP26-02",
+      "condition": "generic",
+      "lane": "accessibility",
+      "status": "completed",
+      "advertised": false,
+      "skill_calls": 0,
+      "successful_skill_loads": 0,
+      "body_file_reads": 0,
+      "reference_reads": 0,
+      "tool_calls": 0,
+      "returned_read_bytes": 0,
+      "skill_identity_present": false,
+      "expected_version_present": null,
+      "routing_line_present": false,
+      "num_turns_client": 1,
+      "observed_model_responses": 1,
+      "total_tokens": 6379,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5120,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 1257,
+        "output_tokens_details": {
+          "thinking_tokens": 639
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5120,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1257,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 5120,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 5120
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "seconds": 7.84,
+      "native_execution": "not_run",
+      "source_quality": {
+        "core": "meets",
+        "scores": {
+          "correctness": 3,
+          "task_success": 4,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.8625,
+        "critical_flags": [],
+        "native_execution": "not_run"
+      }
+    },
+    {
+      "id": "GP26-02-0.2.2",
+      "case": "GP26-02",
+      "condition": "0.2.2",
+      "lane": "accessibility",
+      "status": "completed",
+      "advertised": true,
+      "skill_calls": 0,
+      "successful_skill_loads": 0,
+      "body_file_reads": 0,
+      "reference_reads": 0,
+      "tool_calls": 0,
+      "returned_read_bytes": 0,
+      "skill_identity_present": false,
+      "expected_version_present": false,
+      "routing_line_present": false,
+      "num_turns_client": 1,
+      "observed_model_responses": 1,
+      "total_tokens": 6646,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 814,
+        "cache_read_input_tokens": 4613,
+        "output_tokens": 1217,
+        "output_tokens_details": {
+          "thinking_tokens": 457
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 814,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1217,
+            "cache_read_input_tokens": 4613,
+            "cache_creation_input_tokens": 814,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 814
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "seconds": 7.47,
+      "native_execution": "not_run",
+      "source_quality": {
+        "core": "meets",
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.9625,
+        "critical_flags": [],
+        "native_execution": "not_run"
+      }
+    },
+    {
+      "id": "GP26-02-0.3.0-dev.2",
+      "case": "GP26-02",
+      "condition": "0.3.0-dev.2",
+      "lane": "accessibility",
+      "status": "completed",
+      "advertised": true,
+      "skill_calls": 0,
+      "successful_skill_loads": 0,
+      "body_file_reads": 0,
+      "reference_reads": 0,
+      "tool_calls": 0,
+      "returned_read_bytes": 0,
+      "skill_identity_present": false,
+      "expected_version_present": false,
+      "routing_line_present": false,
+      "num_turns_client": 1,
+      "observed_model_responses": 1,
+      "total_tokens": 6463,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 814,
+        "cache_read_input_tokens": 4613,
+        "output_tokens": 1034,
+        "output_tokens_details": {
+          "thinking_tokens": 494
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 814,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1034,
+            "cache_read_input_tokens": 4613,
+            "cache_creation_input_tokens": 814,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 814
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "seconds": 6.18,
+      "native_execution": "not_run",
+      "source_quality": {
+        "core": "meets",
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.9625,
+        "critical_flags": [],
+        "native_execution": "not_run"
+      }
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1-0.2.2",
+      "case": "IOS-VALIDATION-OWNERSHIP-R1",
+      "condition": "0.2.2",
+      "lane": "accessibility",
+      "status": "completed",
+      "advertised": true,
+      "skill_calls": 0,
+      "successful_skill_loads": 0,
+      "body_file_reads": 0,
+      "reference_reads": 0,
+      "tool_calls": 0,
+      "returned_read_bytes": 0,
+      "skill_identity_present": false,
+      "expected_version_present": false,
+      "routing_line_present": false,
+      "num_turns_client": 1,
+      "observed_model_responses": 1,
+      "total_tokens": 11282,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1403,
+        "cache_read_input_tokens": 4098,
+        "output_tokens": 5779,
+        "output_tokens_details": {
+          "thinking_tokens": 3179
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 1403,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5779,
+            "cache_read_input_tokens": 4098,
+            "cache_creation_input_tokens": 1403,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1403
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "seconds": 25.88,
+      "native_execution": "not_run",
+      "source_quality": {
+        "core": "material-gap",
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 2,
+          "relevance": 3
+        },
+        "weighted_score": 0.525,
+        "critical_flags": [
+          "lost_functionality"
+        ],
+        "native_execution": "not_run"
+      }
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1-0.3.0-dev.2",
+      "case": "IOS-VALIDATION-OWNERSHIP-R1",
+      "condition": "0.3.0-dev.2",
+      "lane": "accessibility",
+      "status": "completed",
+      "advertised": true,
+      "skill_calls": 0,
+      "successful_skill_loads": 0,
+      "body_file_reads": 0,
+      "reference_reads": 0,
+      "tool_calls": 0,
+      "returned_read_bytes": 0,
+      "skill_identity_present": false,
+      "expected_version_present": false,
+      "routing_line_present": false,
+      "num_turns_client": 1,
+      "observed_model_responses": 1,
+      "total_tokens": 12270,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 814,
+        "cache_read_input_tokens": 4687,
+        "output_tokens": 6767,
+        "output_tokens_details": {
+          "thinking_tokens": 3404
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 814,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 6767,
+            "cache_read_input_tokens": 4687,
+            "cache_creation_input_tokens": 814,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 814
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "seconds": 28.03,
+      "native_execution": "not_run",
+      "source_quality": {
+        "core": "meets",
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flags": [],
+        "native_execution": "not_run"
+      }
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1-generic",
+      "case": "IOS-VALIDATION-OWNERSHIP-R1",
+      "condition": "generic",
+      "lane": "accessibility",
+      "status": "completed",
+      "advertised": false,
+      "skill_calls": 0,
+      "successful_skill_loads": 0,
+      "body_file_reads": 0,
+      "reference_reads": 0,
+      "tool_calls": 0,
+      "returned_read_bytes": 0,
+      "skill_identity_present": false,
+      "expected_version_present": null,
+      "routing_line_present": false,
+      "num_turns_client": 1,
+      "observed_model_responses": 1,
+      "total_tokens": 12267,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 507,
+        "cache_read_input_tokens": 4687,
+        "output_tokens": 7071,
+        "output_tokens_details": {
+          "thinking_tokens": 3741
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 507,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7071,
+            "cache_read_input_tokens": 4687,
+            "cache_creation_input_tokens": 507,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 507
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "seconds": 29.08,
+      "native_execution": "not_run",
+      "source_quality": {
+        "core": "meets",
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 4,
+          "relevance": 4
+        },
+        "weighted_score": 1.0,
+        "critical_flags": [],
+        "native_execution": "not_run"
+      }
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1-0.3.0-dev.2",
+      "case": "IOS-MEDIA-OWNERSHIP-R1",
+      "condition": "0.3.0-dev.2",
+      "lane": "accessibility",
+      "status": "completed",
+      "advertised": true,
+      "skill_calls": 0,
+      "successful_skill_loads": 0,
+      "body_file_reads": 0,
+      "reference_reads": 0,
+      "tool_calls": 0,
+      "returned_read_bytes": 0,
+      "skill_identity_present": false,
+      "expected_version_present": false,
+      "routing_line_present": false,
+      "num_turns_client": 1,
+      "observed_model_responses": 1,
+      "total_tokens": 14269,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1330,
+        "cache_read_input_tokens": 4098,
+        "output_tokens": 8839,
+        "output_tokens_details": {
+          "thinking_tokens": 5231
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 1330,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 8839,
+            "cache_read_input_tokens": 4098,
+            "cache_creation_input_tokens": 1330,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1330
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "seconds": 37.41,
+      "native_execution": "not_run",
+      "source_quality": {
+        "core": "material-gap",
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 3,
+          "relevance": 3
+        },
+        "weighted_score": 0.5625,
+        "critical_flags": [],
+        "native_execution": "not_run"
+      }
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1-generic",
+      "case": "IOS-MEDIA-OWNERSHIP-R1",
+      "condition": "generic",
+      "lane": "accessibility",
+      "status": "completed",
+      "advertised": false,
+      "skill_calls": 0,
+      "successful_skill_loads": 0,
+      "body_file_reads": 0,
+      "reference_reads": 0,
+      "tool_calls": 0,
+      "returned_read_bytes": 0,
+      "skill_identity_present": false,
+      "expected_version_present": null,
+      "routing_line_present": false,
+      "num_turns_client": 1,
+      "observed_model_responses": 1,
+      "total_tokens": 12069,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 507,
+        "cache_read_input_tokens": 4614,
+        "output_tokens": 6946,
+        "output_tokens_details": {
+          "thinking_tokens": 3390
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 507,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 6946,
+            "cache_read_input_tokens": 4614,
+            "cache_creation_input_tokens": 507,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 507
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "seconds": 28.7,
+      "native_execution": "not_run",
+      "source_quality": {
+        "core": "material-gap",
+        "scores": {
+          "correctness": 1,
+          "task_success": 1,
+          "calibration": 3,
+          "relevance": 3
+        },
+        "weighted_score": 0.375,
+        "critical_flags": [],
+        "native_execution": "not_run"
+      }
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1-0.2.2",
+      "case": "IOS-MEDIA-OWNERSHIP-R1",
+      "condition": "0.2.2",
+      "lane": "accessibility",
+      "status": "completed",
+      "advertised": true,
+      "skill_calls": 0,
+      "successful_skill_loads": 0,
+      "body_file_reads": 0,
+      "reference_reads": 0,
+      "tool_calls": 0,
+      "returned_read_bytes": 0,
+      "skill_identity_present": false,
+      "expected_version_present": false,
+      "routing_line_present": false,
+      "num_turns_client": 1,
+      "observed_model_responses": 1,
+      "total_tokens": 13421,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 814,
+        "cache_read_input_tokens": 4614,
+        "output_tokens": 7991,
+        "output_tokens_details": {
+          "thinking_tokens": 4384
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 814,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7991,
+            "cache_read_input_tokens": 4614,
+            "cache_creation_input_tokens": 814,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 814
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "seconds": 33.98,
+      "native_execution": "not_run",
+      "source_quality": {
+        "core": "material-gap",
+        "scores": {
+          "correctness": 2,
+          "task_success": 2,
+          "calibration": 3,
+          "relevance": 3
+        },
+        "weighted_score": 0.5625,
+        "critical_flags": [],
+        "native_execution": "not_run"
+      }
+    },
+    {
+      "id": "SWIFT-SORT-NEGATIVE-R1-generic",
+      "case": "SWIFT-SORT-NEGATIVE-R1",
+      "condition": "generic",
+      "lane": "general-Swift-negative-control",
+      "status": "completed",
+      "advertised": false,
+      "skill_calls": 0,
+      "successful_skill_loads": 0,
+      "body_file_reads": 0,
+      "reference_reads": 0,
+      "tool_calls": 0,
+      "returned_read_bytes": 0,
+      "skill_identity_present": false,
+      "expected_version_present": null,
+      "routing_line_present": false,
+      "num_turns_client": 1,
+      "observed_model_responses": 1,
+      "total_tokens": 6231,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 889,
+        "cache_read_input_tokens": 4098,
+        "output_tokens": 1242,
+        "output_tokens_details": {
+          "thinking_tokens": 651
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 889,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1242,
+            "cache_read_input_tokens": 4098,
+            "cache_creation_input_tokens": 889,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 889
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "seconds": 6.65,
+      "native_execution": "not_run",
+      "source_quality": {
+        "core": "meets",
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.9625,
+        "critical_flags": [],
+        "native_execution": "not_run"
+      }
+    },
+    {
+      "id": "SWIFT-SORT-NEGATIVE-R1-0.2.2",
+      "case": "SWIFT-SORT-NEGATIVE-R1",
+      "condition": "0.2.2",
+      "lane": "general-Swift-negative-control",
+      "status": "completed",
+      "advertised": true,
+      "skill_calls": 0,
+      "successful_skill_loads": 0,
+      "body_file_reads": 0,
+      "reference_reads": 0,
+      "tool_calls": 0,
+      "returned_read_bytes": 0,
+      "skill_identity_present": false,
+      "expected_version_present": false,
+      "routing_line_present": false,
+      "num_turns_client": 1,
+      "observed_model_responses": 1,
+      "total_tokens": 6200,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 814,
+        "cache_read_input_tokens": 4480,
+        "output_tokens": 904,
+        "output_tokens_details": {
+          "thinking_tokens": 311
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 814,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 904,
+            "cache_read_input_tokens": 4480,
+            "cache_creation_input_tokens": 814,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 814
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "seconds": 5.54,
+      "native_execution": "not_run",
+      "source_quality": {
+        "core": "meets",
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.9625,
+        "critical_flags": [],
+        "native_execution": "not_run"
+      }
+    },
+    {
+      "id": "SWIFT-SORT-NEGATIVE-R1-0.3.0-dev.2",
+      "case": "SWIFT-SORT-NEGATIVE-R1",
+      "condition": "0.3.0-dev.2",
+      "lane": "general-Swift-negative-control",
+      "status": "completed",
+      "advertised": true,
+      "skill_calls": 0,
+      "successful_skill_loads": 0,
+      "body_file_reads": 0,
+      "reference_reads": 0,
+      "tool_calls": 0,
+      "returned_read_bytes": 0,
+      "skill_identity_present": false,
+      "expected_version_present": false,
+      "routing_line_present": false,
+      "num_turns_client": 1,
+      "observed_model_responses": 1,
+      "total_tokens": 6376,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 814,
+        "cache_read_input_tokens": 4480,
+        "output_tokens": 1080,
+        "output_tokens_details": {
+          "thinking_tokens": 489
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 814,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1080,
+            "cache_read_input_tokens": 4480,
+            "cache_creation_input_tokens": 814,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 814
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "seconds": 5.81,
+      "native_execution": "not_run",
+      "source_quality": {
+        "core": "meets",
+        "scores": {
+          "correctness": 4,
+          "task_success": 4,
+          "calibration": 3,
+          "relevance": 4
+        },
+        "weighted_score": 0.9625,
+        "critical_flags": [],
+        "native_execution": "not_run"
+      }
+    }
+  ],
+  "integrity": {
+    "manifest_sha256": "377fd68b336f812370ae457464aaea1cae0c29e8e912758136f7f8bd88c74fca",
+    "jobs_sha256": "a88aa1af6a858c0831feb36eb7410698bd957d736260daeb621bf6948ebcf3cb",
+    "parser_sha256": "dcd71b4b67c769234c169aaaf5ee1b0e09dfbecb64a296a479bf88a2a00b0f8b"
+  },
+  "release_status": "No release/baseline changes or promotion; development cases, one run per cell."
+}
