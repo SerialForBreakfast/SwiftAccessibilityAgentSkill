@@ -13,29 +13,17 @@ make changes that improve the experience of people using Apple-platform software
 
 ## Baselines and Current Best at a Glance
 
-**Best measured snapshot in the latest matched comparison: `0.3.0-dev.5`.**
-The latest research candidate is `0.3.0-dev.6`; the installed release remains `0.2.2`.
+**Current benchmark checkpoint: `0.3.0-dev.5`.** The latest candidate, `0.3.0-dev.7`, used 7.8% fewer reported tokens on Flash but met two fewer tasks. The installable release is `0.2.2`.
 
-| Baseline / candidate | Tasks met | What we can conclude |
-| --- | ---: | --- |
-| Generic Swift assistant, no skill context | **9/24** | Matched baseline for the latest controlled-context run |
-| Released `0.2.2` | Not measured in this run | Current installable release; no matched score against dev.5 |
-| **`0.3.0-dev.5`**, supplied instructions and selected context | **13/24** | Best measured snapshot in this comparison; useful gains with remaining regressions |
-| `0.3.0-dev.6`, reviewed media-ownership changes | Not benchmarked yet | Latest research candidate; improved example contracts do not yet establish better agent answers |
+| Matched comparison | Baseline tasks met | Candidate tasks met | Paired gains / regressions |
+| --- | ---: | ---: | ---: |
+| Gemini 3.8 Flash low, 24 questions | dev.5 **11/24** | dev.7 **9/24** | 1 / 3 |
+| Claude Haiku 5.5, first 7 questions | dev.5 **2/7** | dev.7 **3/7** | 2 / 0 |
+| Earlier Gemini Argon high, 24 questions | Generic **9/24** | dev.5 **13/24** | 6 / 3 |
 
-The [48-answer comparison](research/evaluation/gemini-controlled-run-20261107/README.md)
-found **6 paired gains, 3 regressions, 6 preserved successes, 5 persistent gaps and
-4 inconclusive pairs**. All 24 candidate answers announced dev.5. References were
-supplied inline: this demonstrates context delivery, not installed skill discovery.
-These are independent source grades on known development scenarios, with no native
-execution of the generated answers or release-qualified superiority claim.
+Read each row as a comparison within one model and question set. Three Haiku pairs were inconclusive, and 34 Haiku sessions were unattempted after the subscription meter stopped responding. Reviewers graded the generated source with skill context supplied directly. A matched frontier comparison against installed release `0.2.2` remains open.
 
-The historical run requested Gemini Argon high: displayed weekly usage rose
-**17 percentage points**, and candidate reported tokens were **5.96% higher** than
-generic. Future evaluations will use cheaper models, subject to quota approval.
-See the [evaluation dashboard](evals/reports/README.md) for separate earlier cohorts
-and the [dev.6 changes](research/evaluation/failure-driven/candidates/0.3.0-dev.6/README.md)
-for the next candidate's scope.
+[Flash and Haiku results by question](research/evaluation/dev7-flash-haiku-results-20261107/README.md) · [Earlier generic baseline](research/evaluation/gemini-controlled-run-20261107/README.md)
 
 ## What Makes This Different
 

@@ -1,17 +1,12 @@
 # Does the skill help?
 
-**We have useful diagnostic evidence, but not a release-qualified estimate of skill lift.**
-The latest matched supplied-context comparison found **13/24 tasks met with
-`0.3.0-dev.5`, versus 9/24 with generic instructions**: six paired gains, three
-regressions and four inconclusive pairs. This is the best measured snapshot in
-that comparison, not a release-qualified winner. Released `0.2.2` was not an arm;
-newer `0.3.0-dev.6` has no measured answer-quality result yet. Earlier cohorts below
-remain separate and are not pooled.
+**Gemini 3.8 Flash completed all 24 paired questions.** Dev.5 met 11 tasks and dev.7 met nine. Dev.7 gained one, regressed on three, and used 7.8% fewer reported tokens. Reviewers flagged a disconnected Open action and dismissal callbacks that could disrupt navigation.
 
-[Latest 48-answer report](../../research/evaluation/gemini-controlled-run-20261107/README.md) ·
-[Baseline/current-best overview](../../README.md#baselines-and-current-best-at-a-glance)
+**Claude Haiku completed seven pairs.** Dev.5 met two tasks and dev.7 met three. Dev.7 gained two, regressed on zero, and three pairs were inconclusive. The quota meter stopped returning complete readings after 14 answers, leaving 34 sessions unattempted. All 62 completed answers across both models received masked source review. [Full results and subscription usage](../../research/evaluation/dev7-flash-haiku-results-20261107/README.md)
 
-[Current reconciliation and decisions](reconciliation-20261106/README.md)
+The earlier generic comparison measured 9/24 tasks met without skill context and 13/24 with dev.5 on Argon. Released `0.2.2` was outside both frontier comparisons. [Earlier generic baseline](../../research/evaluation/gemini-controlled-run-20261107/README.md) · [At-a-glance comparison](../../README.md#baselines-and-current-best-at-a-glance)
+
+## Earlier evaluations
 
 | Evidence lane | Current outcome | Remaining qualification |
 | --- | --- | --- |

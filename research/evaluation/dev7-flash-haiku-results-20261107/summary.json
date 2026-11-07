@@ -1,0 +1,400 @@
+{
+  "source_revision": "1e568ed02bd93a3dee595f38f0c12b524e1b8ea7",
+  "seal_sha256": "5fb06cc5cfacf6015103373c338d5dedbb953fdf7117c5b706bb4974b9410fca",
+  "models": {
+    "gemini": "gemini-3.8-flash-low",
+    "claude": "claude-haiku-5-5"
+  },
+  "requested_sessions_per_model": 48,
+  "outcomes": {
+    "gemini": {
+      "arms": {
+        "dev5": {
+          "completed": 24,
+          "reported_tokens": 109300,
+          "version_in_opening": 24,
+          "routing_line_present": 24,
+          "source_grades": {
+            "meets": 11,
+            "material-gap": 10,
+            "not-assessable": 3
+          },
+          "critical_answers": 5
+        },
+        "dev7": {
+          "completed": 24,
+          "reported_tokens": 100829,
+          "version_in_opening": 24,
+          "routing_line_present": 24,
+          "source_grades": {
+            "meets": 9,
+            "material-gap": 14,
+            "not-assessable": 1
+          },
+          "critical_answers": 4
+        }
+      },
+      "paired_outcomes": {
+        "preserved success": 8,
+        "persistent gap": 9,
+        "regression": 3,
+        "inconclusive": 3,
+        "gain": 1
+      },
+      "execution": {
+        "closed": {
+          "used": 48,
+          "remaining_cancelled": 0
+        },
+        "completed": 48,
+        "stop": null,
+        "displayed_quota": [
+          {
+            "bucket": "Gemini Models/Weekly Limit Remaining",
+            "start": 3.0,
+            "end": 3.0
+          },
+          {
+            "bucket": "Gemini Models/Five Hour Limit Remaining",
+            "start": 10.0,
+            "end": 11.0
+          }
+        ]
+      }
+    },
+    "claude": {
+      "arms": {
+        "dev5": {
+          "completed": 7,
+          "reported_tokens": 60446,
+          "version_in_opening": 7,
+          "routing_line_present": 7,
+          "source_grades": {
+            "material-gap": 5,
+            "meets": 2
+          },
+          "critical_answers": 1
+        },
+        "dev7": {
+          "completed": 7,
+          "reported_tokens": 50172,
+          "version_in_opening": 7,
+          "routing_line_present": 7,
+          "source_grades": {
+            "not-assessable": 3,
+            "meets": 3,
+            "material-gap": 1
+          },
+          "critical_answers": 0
+        }
+      },
+      "paired_outcomes": {
+        "gain": 2,
+        "inconclusive": 3,
+        "preserved success": 1,
+        "persistent gap": 1
+      },
+      "execution": {
+        "closed": {
+          "used": 14,
+          "remaining_cancelled": 34
+        },
+        "completed": 14,
+        "stop": {
+          "completed": 14,
+          "reason": "CLI quota read incomplete",
+          "kind": "ValueError"
+        },
+        "displayed_quota": [
+          {
+            "bucket": "five_hour",
+            "start": 0.0,
+            "end": 0.0
+          },
+          {
+            "bucket": "seven_day",
+            "start": 18.0,
+            "end": 19.0
+          }
+        ]
+      }
+    }
+  },
+  "pair_rows": [
+    {
+      "provider": "gemini",
+      "case": "ios-swiftui-semantics",
+      "dev5": "meets",
+      "dev7": "meets",
+      "transition": "preserved success"
+    },
+    {
+      "provider": "gemini",
+      "case": "ios-uikit-state",
+      "dev5": "material-gap",
+      "dev7": "material-gap",
+      "transition": "persistent gap"
+    },
+    {
+      "provider": "gemini",
+      "case": "ios-uikit-text",
+      "dev5": "meets",
+      "dev7": "material-gap",
+      "transition": "regression"
+    },
+    {
+      "provider": "gemini",
+      "case": "ios-uikit-actions",
+      "dev5": "material-gap",
+      "dev7": "material-gap",
+      "transition": "persistent gap"
+    },
+    {
+      "provider": "gemini",
+      "case": "macos-appkit-actions",
+      "dev5": "meets",
+      "dev7": "material-gap",
+      "transition": "regression"
+    },
+    {
+      "provider": "gemini",
+      "case": "ios-swiftui-lifecycle",
+      "dev5": "material-gap",
+      "dev7": "material-gap",
+      "transition": "persistent gap"
+    },
+    {
+      "provider": "gemini",
+      "case": "ios-swiftui-media",
+      "dev5": "material-gap",
+      "dev7": "material-gap",
+      "transition": "persistent gap"
+    },
+    {
+      "provider": "gemini",
+      "case": "macos-appkit-structure",
+      "dev5": "material-gap",
+      "dev7": "material-gap",
+      "transition": "persistent gap"
+    },
+    {
+      "provider": "gemini",
+      "case": "macos-swiftui-text",
+      "dev5": "not-assessable",
+      "dev7": "not-assessable",
+      "transition": "inconclusive"
+    },
+    {
+      "provider": "gemini",
+      "case": "macos-swiftui-state",
+      "dev5": "material-gap",
+      "dev7": "meets",
+      "transition": "gain"
+    },
+    {
+      "provider": "gemini",
+      "case": "macos-appkit-testing",
+      "dev5": "material-gap",
+      "dev7": "material-gap",
+      "transition": "persistent gap"
+    },
+    {
+      "provider": "gemini",
+      "case": "macos-swiftui-lifecycle",
+      "dev5": "not-assessable",
+      "dev7": "material-gap",
+      "transition": "inconclusive"
+    },
+    {
+      "provider": "gemini",
+      "case": "tvos-uikit-media",
+      "dev5": "not-assessable",
+      "dev7": "material-gap",
+      "transition": "inconclusive"
+    },
+    {
+      "provider": "gemini",
+      "case": "tvos-uikit-lifecycle",
+      "dev5": "meets",
+      "dev7": "material-gap",
+      "transition": "regression"
+    },
+    {
+      "provider": "gemini",
+      "case": "tvos-swiftui-actions",
+      "dev5": "meets",
+      "dev7": "meets",
+      "transition": "preserved success"
+    },
+    {
+      "provider": "gemini",
+      "case": "tvos-uikit-state",
+      "dev5": "material-gap",
+      "dev7": "material-gap",
+      "transition": "persistent gap"
+    },
+    {
+      "provider": "gemini",
+      "case": "tvos-swiftui-structure",
+      "dev5": "meets",
+      "dev7": "meets",
+      "transition": "preserved success"
+    },
+    {
+      "provider": "gemini",
+      "case": "tvos-swiftui-testing",
+      "dev5": "material-gap",
+      "dev7": "material-gap",
+      "transition": "persistent gap"
+    },
+    {
+      "provider": "gemini",
+      "case": "ios-uikit-no-change",
+      "dev5": "meets",
+      "dev7": "meets",
+      "transition": "preserved success"
+    },
+    {
+      "provider": "gemini",
+      "case": "ios-swiftui-no-change",
+      "dev5": "meets",
+      "dev7": "meets",
+      "transition": "preserved success"
+    },
+    {
+      "provider": "gemini",
+      "case": "tvos-version-boundary",
+      "dev5": "meets",
+      "dev7": "meets",
+      "transition": "preserved success"
+    },
+    {
+      "provider": "gemini",
+      "case": "ios-missing-reference",
+      "dev5": "meets",
+      "dev7": "meets",
+      "transition": "preserved success"
+    },
+    {
+      "provider": "gemini",
+      "case": "mixed-macos-owner",
+      "dev5": "material-gap",
+      "dev7": "material-gap",
+      "transition": "persistent gap"
+    },
+    {
+      "provider": "gemini",
+      "case": "macos-appkit-no-change",
+      "dev5": "meets",
+      "dev7": "meets",
+      "transition": "preserved success"
+    },
+    {
+      "provider": "claude",
+      "case": "ios-uikit-actions",
+      "dev5": "material-gap",
+      "dev7": "meets",
+      "transition": "gain"
+    },
+    {
+      "provider": "claude",
+      "case": "ios-uikit-text",
+      "dev5": "material-gap",
+      "dev7": "not-assessable",
+      "transition": "inconclusive"
+    },
+    {
+      "provider": "claude",
+      "case": "ios-swiftui-semantics",
+      "dev5": "meets",
+      "dev7": "meets",
+      "transition": "preserved success"
+    },
+    {
+      "provider": "claude",
+      "case": "ios-uikit-state",
+      "dev5": "material-gap",
+      "dev7": "material-gap",
+      "transition": "persistent gap"
+    },
+    {
+      "provider": "claude",
+      "case": "ios-swiftui-lifecycle",
+      "dev5": "material-gap",
+      "dev7": "not-assessable",
+      "transition": "inconclusive"
+    },
+    {
+      "provider": "claude",
+      "case": "macos-appkit-actions",
+      "dev5": "meets",
+      "dev7": "not-assessable",
+      "transition": "inconclusive"
+    },
+    {
+      "provider": "claude",
+      "case": "ios-swiftui-media",
+      "dev5": "material-gap",
+      "dev7": "meets",
+      "transition": "gain"
+    }
+  ],
+  "grade_hashes": {
+    "grades-b01.json": "04641a6317630a3f8c7402467fa88514837156d528f3280955da7ef043af2825",
+    "b01.json": "7ab8ccd5a8c28ecc10ac960538460cdda843ccd6e5091ba49d02b29bca1712e7",
+    "grades-b02.json": "7864ac0c36a71f6c77e5b3f22f160c769355f98e525046d002a9f612187ff926",
+    "b02.json": "7464c2bb3447a8a2a5f5fc028298da8b1b674db10b90c7df1985e2f635d27eb4",
+    "grades-b03.json": "77401494891868fad416a9511a0f54c49e3d6aaca44b28e4c50c33e991a62607",
+    "b03.json": "8db6cced119a36a083142b77e17dfd9c54098566a07095a27531e699973c4948",
+    "grades-b04.json": "db72a881395f2b3c6d4340443051eaa38c1492bf2d03d916d8a2ed6d5bcec88a",
+    "b04.json": "e1699328df24507f4808a8357980b00644a1ac6cedb38007165b4de0e03be3ca",
+    "grades-b05.json": "e8c4e65016f5a709bb3af77c5ba8aa55f7690ed62aac31b23e9b8c3a0b146757",
+    "b05.json": "c6e231050f276380ffb65573a1a37a4449439ecffc781ae54cfd59b372f22731",
+    "grades-b07.json": "59913a2ea85b6086afcbd8692fdae2a388629f04a1d9924cb96b048e49d08f02",
+    "b07.json": "3bd7e82a15fee7f31b018fbfd5708d59e567d40a2584f3c09fa1f20bb7a16caa",
+    "grades-b09.json": "6878a37efd8dcb8d606f0995838c670cf88ac261d3344b801b69f888008858fb",
+    "b09.json": "e894000f028ce14fc593a46faa8bcf20ef6b2437d2377cb2b748d3f5c5d195d1",
+    "grades-b11.json": "0d92afa7870efbf86800d439a0a8fbb6e86ac0bbb21473d5ae6b6946b7135270",
+    "b11.json": "933bd839e6edd7c5917abf245671d1c6d97d3aff49b82295ec014b8ed68a77b1"
+  },
+  "unattempted_haiku_subjects": [
+    "subjects/macos-appkit-structure/dev5.json",
+    "subjects/macos-appkit-structure/dev7.json",
+    "subjects/macos-appkit-testing/dev5.json",
+    "subjects/macos-appkit-testing/dev7.json",
+    "subjects/macos-swiftui-state/dev5.json",
+    "subjects/macos-swiftui-state/dev7.json",
+    "subjects/macos-swiftui-text/dev5.json",
+    "subjects/macos-swiftui-text/dev7.json",
+    "subjects/macos-swiftui-lifecycle/dev5.json",
+    "subjects/macos-swiftui-lifecycle/dev7.json",
+    "subjects/tvos-uikit-state/dev5.json",
+    "subjects/tvos-uikit-state/dev7.json",
+    "subjects/tvos-uikit-media/dev5.json",
+    "subjects/tvos-uikit-media/dev7.json",
+    "subjects/tvos-uikit-lifecycle/dev5.json",
+    "subjects/tvos-uikit-lifecycle/dev7.json",
+    "subjects/tvos-swiftui-actions/dev5.json",
+    "subjects/tvos-swiftui-actions/dev7.json",
+    "subjects/tvos-swiftui-structure/dev5.json",
+    "subjects/tvos-swiftui-structure/dev7.json",
+    "subjects/tvos-swiftui-testing/dev5.json",
+    "subjects/tvos-swiftui-testing/dev7.json",
+    "subjects/ios-uikit-no-change/dev5.json",
+    "subjects/ios-uikit-no-change/dev7.json",
+    "subjects/ios-swiftui-no-change/dev5.json",
+    "subjects/ios-swiftui-no-change/dev7.json",
+    "subjects/macos-appkit-no-change/dev5.json",
+    "subjects/macos-appkit-no-change/dev7.json",
+    "subjects/mixed-macos-owner/dev5.json",
+    "subjects/mixed-macos-owner/dev7.json",
+    "subjects/ios-missing-reference/dev5.json",
+    "subjects/ios-missing-reference/dev7.json",
+    "subjects/tvos-version-boundary/dev5.json",
+    "subjects/tvos-version-boundary/dev7.json"
+  ],
+  "haiku_quota_caveat": "Latest available readings precede the final Haiku completion. The final meter read was incomplete.",
+  "quality_basis": "Independent masked Codex source review. No generated-code execution. Reviewers had prior project exposure.",
+  "native_tests": 0,
+  "retries": 0
+}
