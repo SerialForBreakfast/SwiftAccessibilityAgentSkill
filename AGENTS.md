@@ -45,7 +45,8 @@ Load its task list, audit or worker handoff only when relevant.
   the user explicitly authorizes that specific destination. Sandbox write access
   does not grant permission to use another directory.
 - Preserve the UIKit baseline. AppKit/macOS and UIKit/tvOS companion development
-  is now authorized; SwiftUI expansion remains deferred. Compile checks and unit
+  is authorized. SwiftUI development is authorized on iOS, macOS and tvOS only.
+  Separate platform expansion (including watchOS and visionOS) remains deferred. Compile checks and unit
   tests only; no UI tests or mandatory manual accessibility verification. Tests
   establish only their directly asserted behavior.
 - Preserve source tiers. Use annual current/previous tested anchors and exact run
