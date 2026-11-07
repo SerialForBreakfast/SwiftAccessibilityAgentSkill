@@ -1,0 +1,999 @@
+{
+  "schema": 1,
+  "id": "v2-controller-clarification-20261107-r1",
+  "status": "author-draft-for-independent-review-not-execution",
+  "visibility": "controller-only;never subject input",
+  "addresses": [
+    "IR-01",
+    "IR-02"
+  ],
+  "sealed_v2_manifest_sha256": "7e06c8a7aec68b075db219fd064994e64be84b17da8db9376dc7f9f589183158",
+  "prior_rubric_sha256": "cb6b17d44c7a5ac9f6c6a2683112c36b5c250b40a252da1e16b58606113df0a1",
+  "independent_review_sha256": "1e07a61a73be620af6e59240863c7eff0289a509119fa86d803edee21554b3e4",
+  "action_criterion_overrides": [
+    {
+      "criterion_id": "ios-uikit-actions/criterion-1",
+      "original_rule_preserved_in": "research/evaluation/rubric-closure-v1/rubrics.json",
+      "clarified_pass": "Both ordinary and shortcut paths act once on the current owner/file and honor enabled state. Either refresh per-binding handlers with obsolete-binding rejection OR install a stable dispatcher that resolves current file/enabled state at activation. No particular token/helper/closure spelling required.",
+      "clarified_fail": "An obsolete per-binding callback acts on a different/current rebound file, an obsolete captured owner acts unexpectedly, a disabled action still acts, or repeated setup causes duplicate dispatch. A correctly installed stable current-owner dispatcher is not an obsolete per-binding callback.",
+      "missing": "If callback ownership/delay semantics are not specified, accept the explicitly documented safe current-owner design; do not invent a delayed per-binding rejection requirement. No absence-of-weak or speech/focus assertion is a hidden gate.",
+      "task_source": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/ios-uikit-actions.md",
+        "sha256": "ddf8bad3cbd8d08785f91dfcdb1ed4f6d44a36a2a09d793554ddfe9fb820c882",
+        "scope": "Defines current-file, enabled-state and ordinary-control preservation requirements; does not mandate per-binding token design"
+      },
+      "applies_equally": [
+        "generic-C0",
+        "candidate-controlled"
+      ],
+      "calibration": [
+        {
+          "design": "Stable installed handler reads current owner/file and enabled state at activation; routes exactly once and detaches on teardown",
+          "expected": "accept if remaining explicit task contract is met"
+        },
+        {
+          "design": "Per-binding closure from fileA later performs operation on rebound fileB without ownership validation",
+          "expected": "reject"
+        },
+        {
+          "design": "Rebind-specific closure validates captured binding/request and disabled policy before operation",
+          "expected": "accept if remaining explicit task contract is met"
+        },
+        {
+          "design": "Only helper names or weak spelling supplied, with dispatch path omitted",
+          "expected": "insufficient evidence"
+        }
+      ]
+    },
+    {
+      "criterion_id": "macos-appkit-actions/criterion-1",
+      "original_rule_preserved_in": "research/evaluation/rubric-closure-v1/rubrics.json",
+      "clarified_pass": "Both ordinary and shortcut paths act once on the current owner/file and honor enabled state. Either refresh per-binding handlers with obsolete-binding rejection OR install a stable dispatcher that resolves current file/enabled state at activation. No particular token/helper/closure spelling required.",
+      "clarified_fail": "An obsolete per-binding callback acts on a different/current rebound file, an obsolete captured owner acts unexpectedly, a disabled action still acts, or repeated setup causes duplicate dispatch. A correctly installed stable current-owner dispatcher is not an obsolete per-binding callback.",
+      "missing": "If callback ownership/delay semantics are not specified, accept the explicitly documented safe current-owner design; do not invent a delayed per-binding rejection requirement. No absence-of-weak or speech/focus assertion is a hidden gate.",
+      "task_source": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-actions.md",
+        "sha256": "a3221645549ddf2c66f04db5b3d20952a7a1d01607d64463344ea58fc3fb6eee",
+        "scope": "Defines current-file, enabled-state and ordinary-control preservation requirements; does not mandate per-binding token design"
+      },
+      "applies_equally": [
+        "generic-C0",
+        "candidate-controlled"
+      ],
+      "calibration": [
+        {
+          "design": "Stable installed handler reads current owner/file and enabled state at activation; routes exactly once and detaches on teardown",
+          "expected": "accept if remaining explicit task contract is met"
+        },
+        {
+          "design": "Per-binding closure from fileA later performs operation on rebound fileB without ownership validation",
+          "expected": "reject"
+        },
+        {
+          "design": "Rebind-specific closure validates captured binding/request and disabled policy before operation",
+          "expected": "accept if remaining explicit task contract is met"
+        },
+        {
+          "design": "Only helper names or weak spelling supplied, with dispatch path omitted",
+          "expected": "insufficient evidence"
+        }
+      ]
+    },
+    {
+      "criterion_id": "tvos-swiftui-actions/criterion-1",
+      "original_rule_preserved_in": "research/evaluation/rubric-closure-v1/rubrics.json",
+      "clarified_pass": "Both ordinary and shortcut paths act once on the current owner/file and honor enabled state. Either refresh per-binding handlers with obsolete-binding rejection OR install a stable dispatcher that resolves current file/enabled state at activation. No particular token/helper/closure spelling required.",
+      "clarified_fail": "An obsolete per-binding callback acts on a different/current rebound file, an obsolete captured owner acts unexpectedly, a disabled action still acts, or repeated setup causes duplicate dispatch. A correctly installed stable current-owner dispatcher is not an obsolete per-binding callback.",
+      "missing": "If callback ownership/delay semantics are not specified, accept the explicitly documented safe current-owner design; do not invent a delayed per-binding rejection requirement. No absence-of-weak or speech/focus assertion is a hidden gate.",
+      "task_source": {
+        "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-actions.md",
+        "sha256": "5e241a2f3c435f9eeb42a9c03d5f261df0735616692dc88b3d409d825b88cc5a",
+        "scope": "Defines current-file, enabled-state and ordinary-control preservation requirements; does not mandate per-binding token design"
+      },
+      "applies_equally": [
+        "generic-C0",
+        "candidate-controlled"
+      ],
+      "calibration": [
+        {
+          "design": "Stable installed handler reads current owner/file and enabled state at activation; routes exactly once and detaches on teardown",
+          "expected": "accept if remaining explicit task contract is met"
+        },
+        {
+          "design": "Per-binding closure from fileA later performs operation on rebound fileB without ownership validation",
+          "expected": "reject"
+        },
+        {
+          "design": "Rebind-specific closure validates captured binding/request and disabled policy before operation",
+          "expected": "accept if remaining explicit task contract is met"
+        },
+        {
+          "design": "Only helper names or weak spelling supplied, with dispatch path omitted",
+          "expected": "insufficient evidence"
+        }
+      ]
+    }
+  ],
+  "source_bindings": [
+    {
+      "criterion_id": "macos-appkit-testing/criterion-0",
+      "case": "macos-appkit-testing",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-testing.md",
+          "sha256": "f853b3b93cb6865771bf542f68da79adeae1d8866607d56103a409848dc1fdd3",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        },
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+          "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+          "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+        }
+      ],
+      "separate_declaration_context": null,
+      "declaration_freshness": "not applicable; policy-only testing context",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/macos/guidelines/m-010-testing-workflow.md",
+          "sha256": "6c734ed535da20cc7c51f11e28e55e5c5cdf81d78ec99b2a5762dcbbd35baaf7",
+          "startUTF16": 410,
+          "endUTF16": 619,
+          "quote": "## Rule\n\nEvery significant macOS UI change must pass a three-part accessibility workflow: Accessibility Inspector audit, VoiceOver interaction walkthrough, and keyboard-only task traversal for critical flows.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "macos-appkit-testing/criterion-1",
+      "case": "macos-appkit-testing",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-testing.md",
+          "sha256": "f853b3b93cb6865771bf542f68da79adeae1d8866607d56103a409848dc1fdd3",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        },
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+          "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+          "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+        }
+      ],
+      "separate_declaration_context": null,
+      "declaration_freshness": "not applicable; policy-only testing context",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/macos/guidelines/m-010-testing-workflow.md",
+          "sha256": "6c734ed535da20cc7c51f11e28e55e5c5cdf81d78ec99b2a5762dcbbd35baaf7",
+          "startUTF16": 410,
+          "endUTF16": 619,
+          "quote": "## Rule\n\nEvery significant macOS UI change must pass a three-part accessibility workflow: Accessibility Inspector audit, VoiceOver interaction walkthrough, and keyboard-only task traversal for critical flows.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "macos-appkit-testing/criterion-2",
+      "case": "macos-appkit-testing",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-testing.md",
+          "sha256": "f853b3b93cb6865771bf542f68da79adeae1d8866607d56103a409848dc1fdd3",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        },
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+          "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+          "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+        }
+      ],
+      "separate_declaration_context": null,
+      "declaration_freshness": "not applicable; policy-only testing context",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/macos/guidelines/m-010-testing-workflow.md",
+          "sha256": "6c734ed535da20cc7c51f11e28e55e5c5cdf81d78ec99b2a5762dcbbd35baaf7",
+          "startUTF16": 410,
+          "endUTF16": 619,
+          "quote": "## Rule\n\nEvery significant macOS UI change must pass a three-part accessibility workflow: Accessibility Inspector audit, VoiceOver interaction walkthrough, and keyboard-only task traversal for critical flows.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "macos-appkit-testing/criterion-3",
+      "case": "macos-appkit-testing",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-appkit-testing.md",
+          "sha256": "f853b3b93cb6865771bf542f68da79adeae1d8866607d56103a409848dc1fdd3",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        },
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+          "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+          "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+        }
+      ],
+      "separate_declaration_context": null,
+      "declaration_freshness": "not applicable; policy-only testing context",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/macos/guidelines/m-010-testing-workflow.md",
+          "sha256": "6c734ed535da20cc7c51f11e28e55e5c5cdf81d78ec99b2a5762dcbbd35baaf7",
+          "startUTF16": 410,
+          "endUTF16": 619,
+          "quote": "## Rule\n\nEvery significant macOS UI change must pass a three-part accessibility workflow: Accessibility Inspector audit, VoiceOver interaction walkthrough, and keyboard-only task traversal for critical flows.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "macos-swiftui-state/criterion-0",
+      "case": "macos-swiftui-state",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-state.md",
+          "sha256": "93fed5f76679b0f230e01516424aa8dbee8bb46bbc6262b489c8033a7b652400",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/macos-values.md",
+        "sha256": "148504970dfd2b0f28a72b4818e08483b750937678e6b8ef842f1049ab1a4301",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-003-values-stateful-controls.md",
+          "sha256": "ca95e1a5de1856dc676f90e2e84952707b4ae75a58a8275a761b60dc9ae64c28",
+          "startUTF16": 308,
+          "endUTF16": 432,
+          "quote": "## Rule\n\nAny UI element with meaningful state must provide an accurate accessibility value that updates with state changes.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "macos-swiftui-state/criterion-1",
+      "case": "macos-swiftui-state",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-state.md",
+          "sha256": "93fed5f76679b0f230e01516424aa8dbee8bb46bbc6262b489c8033a7b652400",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/macos-values.md",
+        "sha256": "148504970dfd2b0f28a72b4818e08483b750937678e6b8ef842f1049ab1a4301",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-003-values-stateful-controls.md",
+          "sha256": "ca95e1a5de1856dc676f90e2e84952707b4ae75a58a8275a761b60dc9ae64c28",
+          "startUTF16": 308,
+          "endUTF16": 432,
+          "quote": "## Rule\n\nAny UI element with meaningful state must provide an accurate accessibility value that updates with state changes.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "macos-swiftui-state/criterion-2",
+      "case": "macos-swiftui-state",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-state.md",
+          "sha256": "93fed5f76679b0f230e01516424aa8dbee8bb46bbc6262b489c8033a7b652400",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        },
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+          "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+          "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/macos-values.md",
+        "sha256": "148504970dfd2b0f28a72b4818e08483b750937678e6b8ef842f1049ab1a4301",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-003-values-stateful-controls.md",
+          "sha256": "ca95e1a5de1856dc676f90e2e84952707b4ae75a58a8275a761b60dc9ae64c28",
+          "startUTF16": 308,
+          "endUTF16": 432,
+          "quote": "## Rule\n\nAny UI element with meaningful state must provide an accurate accessibility value that updates with state changes.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "macos-swiftui-text/criterion-0",
+      "case": "macos-swiftui-text",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-text.md",
+          "sha256": "f4d1432a0aa93e63b243dc8b17ee8ac13e621297b7834d530ad3f47d62805b60",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/macos-text-sizing.md",
+        "sha256": "d62331b86c8f5e03a7713bc5dc5176386276b33c94858ef73a2bb8de89d30f3e",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md",
+          "sha256": "4d75696847519c5911efb9536498d314f493dc02809a3b631b54f6b75bae6e14",
+          "startUTF16": 289,
+          "endUTF16": 450,
+          "quote": "## Rule\n\nAll user-facing text and interactive layouts must remain readable and operable across supported Dynamic Type sizes, including accessibility categories.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "macos-swiftui-text/criterion-1",
+      "case": "macos-swiftui-text",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-text.md",
+          "sha256": "f4d1432a0aa93e63b243dc8b17ee8ac13e621297b7834d530ad3f47d62805b60",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/macos-text-sizing.md",
+        "sha256": "d62331b86c8f5e03a7713bc5dc5176386276b33c94858ef73a2bb8de89d30f3e",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md",
+          "sha256": "4d75696847519c5911efb9536498d314f493dc02809a3b631b54f6b75bae6e14",
+          "startUTF16": 289,
+          "endUTF16": 450,
+          "quote": "## Rule\n\nAll user-facing text and interactive layouts must remain readable and operable across supported Dynamic Type sizes, including accessibility categories.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "macos-swiftui-text/criterion-2",
+      "case": "macos-swiftui-text",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-text.md",
+          "sha256": "f4d1432a0aa93e63b243dc8b17ee8ac13e621297b7834d530ad3f47d62805b60",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/macos-text-sizing.md",
+        "sha256": "d62331b86c8f5e03a7713bc5dc5176386276b33c94858ef73a2bb8de89d30f3e",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md",
+          "sha256": "4d75696847519c5911efb9536498d314f493dc02809a3b631b54f6b75bae6e14",
+          "startUTF16": 289,
+          "endUTF16": 450,
+          "quote": "## Rule\n\nAll user-facing text and interactive layouts must remain readable and operable across supported Dynamic Type sizes, including accessibility categories.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "macos-swiftui-text/criterion-3",
+      "case": "macos-swiftui-text",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-text.md",
+          "sha256": "f4d1432a0aa93e63b243dc8b17ee8ac13e621297b7834d530ad3f47d62805b60",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        },
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+          "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+          "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/macos-text-sizing.md",
+        "sha256": "d62331b86c8f5e03a7713bc5dc5176386276b33c94858ef73a2bb8de89d30f3e",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-010-dynamic-type-layout-resilience.md",
+          "sha256": "4d75696847519c5911efb9536498d314f493dc02809a3b631b54f6b75bae6e14",
+          "startUTF16": 289,
+          "endUTF16": 450,
+          "quote": "## Rule\n\nAll user-facing text and interactive layouts must remain readable and operable across supported Dynamic Type sizes, including accessibility categories.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "macos-swiftui-lifecycle/criterion-0",
+      "case": "macos-swiftui-lifecycle",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-lifecycle.md",
+          "sha256": "829faec4b038b7d3be389073df491880ff66dfd1db1eba02eb11eb66fb23bacd",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/macos-focus-requests.md",
+        "sha256": "ed3e9f490d21da74b172759e6d4df6b14d7aa4596de743cefb126325b1a51970",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md",
+          "sha256": "fd64c7e97f8fb5b6262dc0e5dc0b04621213611b14f4847caa2e32bcba4fdf15",
+          "startUTF16": 292,
+          "endUTF16": 481,
+          "quote": "## Rule\n\nWhen presenting sheets, alerts, or full-screen overlays, focus must move into the presented context, stay within relevant elements, and return to a logical anchor after dismissal.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "macos-swiftui-lifecycle/criterion-1",
+      "case": "macos-swiftui-lifecycle",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-lifecycle.md",
+          "sha256": "829faec4b038b7d3be389073df491880ff66dfd1db1eba02eb11eb66fb23bacd",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/macos-focus-requests.md",
+        "sha256": "ed3e9f490d21da74b172759e6d4df6b14d7aa4596de743cefb126325b1a51970",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md",
+          "sha256": "fd64c7e97f8fb5b6262dc0e5dc0b04621213611b14f4847caa2e32bcba4fdf15",
+          "startUTF16": 292,
+          "endUTF16": 481,
+          "quote": "## Rule\n\nWhen presenting sheets, alerts, or full-screen overlays, focus must move into the presented context, stay within relevant elements, and return to a logical anchor after dismissal.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "macos-swiftui-lifecycle/criterion-2",
+      "case": "macos-swiftui-lifecycle",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/macos-swiftui-lifecycle.md",
+          "sha256": "829faec4b038b7d3be389073df491880ff66dfd1db1eba02eb11eb66fb23bacd",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        },
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+          "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+          "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/macos-focus-requests.md",
+        "sha256": "ed3e9f490d21da74b172759e6d4df6b14d7aa4596de743cefb126325b1a51970",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-013-modal-sheet-focus-containment.md",
+          "sha256": "fd64c7e97f8fb5b6262dc0e5dc0b04621213611b14f4847caa2e32bcba4fdf15",
+          "startUTF16": 292,
+          "endUTF16": 481,
+          "quote": "## Rule\n\nWhen presenting sheets, alerts, or full-screen overlays, focus must move into the presented context, stay within relevant elements, and return to a logical anchor after dismissal.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "tvos-swiftui-actions/criterion-0",
+      "case": "tvos-swiftui-actions",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-actions.md",
+          "sha256": "5e241a2f3c435f9eeb42a9c03d5f261df0735616692dc88b3d409d825b88cc5a",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/tvos-actions.md",
+        "sha256": "ad122dbdb393d5b8c750ee15730f0063fffe23a2daee0611a0a0165b82765fbe",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-007-accessibility-actions.md",
+          "sha256": "04b1847ff5dd0750581c2cea81cd429a07c890d90d4a0f8cf5e3834739c08d9e",
+          "startUTF16": 300,
+          "endUTF16": 454,
+          "quote": "## Rule\n\nAny interaction that cannot be reliably discovered or performed through default semantic controls must provide an explicit accessibility action.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "tvos-swiftui-actions/criterion-1",
+      "case": "tvos-swiftui-actions",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-actions.md",
+          "sha256": "5e241a2f3c435f9eeb42a9c03d5f261df0735616692dc88b3d409d825b88cc5a",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/tvos-actions.md",
+        "sha256": "ad122dbdb393d5b8c750ee15730f0063fffe23a2daee0611a0a0165b82765fbe",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-007-accessibility-actions.md",
+          "sha256": "04b1847ff5dd0750581c2cea81cd429a07c890d90d4a0f8cf5e3834739c08d9e",
+          "startUTF16": 300,
+          "endUTF16": 454,
+          "quote": "## Rule\n\nAny interaction that cannot be reliably discovered or performed through default semantic controls must provide an explicit accessibility action.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "tvos-swiftui-actions/criterion-2",
+      "case": "tvos-swiftui-actions",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-actions.md",
+          "sha256": "5e241a2f3c435f9eeb42a9c03d5f261df0735616692dc88b3d409d825b88cc5a",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        },
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+          "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+          "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/tvos-actions.md",
+        "sha256": "ad122dbdb393d5b8c750ee15730f0063fffe23a2daee0611a0a0165b82765fbe",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-007-accessibility-actions.md",
+          "sha256": "04b1847ff5dd0750581c2cea81cd429a07c890d90d4a0f8cf5e3834739c08d9e",
+          "startUTF16": 300,
+          "endUTF16": 454,
+          "quote": "## Rule\n\nAny interaction that cannot be reliably discovered or performed through default semantic controls must provide an explicit accessibility action.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "tvos-swiftui-structure/criterion-0",
+      "case": "tvos-swiftui-structure",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-structure.md",
+          "sha256": "79d7d5bb05ed7deaf3510b7fb3429fdf9e11d6e651b6f989516e44a306877a3d",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/tvos-children.md",
+        "sha256": "bc833f2c02e1e65aeafa6939b38dd0140c1e75bcf3874879a6ca1e2b4d7fcccf",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-005-grouping-containment.md",
+          "sha256": "a3f87952b3f93729bd577391e2e6c8f999428eee40b4afdf579ab86d7bae639d",
+          "startUTF16": 288,
+          "endUTF16": 489,
+          "quote": "## Rule\n\nChoose grouping behavior (`combine`, `contain`, `ignore`) based on user intent: combine elements that represent one concept, contain related interactive children, and ignore decorative noise.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "tvos-swiftui-structure/criterion-1",
+      "case": "tvos-swiftui-structure",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-structure.md",
+          "sha256": "79d7d5bb05ed7deaf3510b7fb3429fdf9e11d6e651b6f989516e44a306877a3d",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/tvos-children.md",
+        "sha256": "bc833f2c02e1e65aeafa6939b38dd0140c1e75bcf3874879a6ca1e2b4d7fcccf",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-005-grouping-containment.md",
+          "sha256": "a3f87952b3f93729bd577391e2e6c8f999428eee40b4afdf579ab86d7bae639d",
+          "startUTF16": 288,
+          "endUTF16": 489,
+          "quote": "## Rule\n\nChoose grouping behavior (`combine`, `contain`, `ignore`) based on user intent: combine elements that represent one concept, contain related interactive children, and ignore decorative noise.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "tvos-swiftui-structure/criterion-2",
+      "case": "tvos-swiftui-structure",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-structure.md",
+          "sha256": "79d7d5bb05ed7deaf3510b7fb3429fdf9e11d6e651b6f989516e44a306877a3d",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        },
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+          "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+          "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+        }
+      ],
+      "separate_declaration_context": {
+        "path": "research/evaluation/milestone-package-v2/reference-cards/tvos-children.md",
+        "sha256": "bc833f2c02e1e65aeafa6939b38dd0140c1e75bcf3874879a6ca1e2b4d7fcccf",
+        "scope": "Captured declaration/availability and stated evidence limits ONLY; not application state/callback semantics or actual interaction"
+      },
+      "declaration_freshness": "not independently refreshed on Linux host",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-005-grouping-containment.md",
+          "sha256": "a3f87952b3f93729bd577391e2e6c8f999428eee40b4afdf579ab86d7bae639d",
+          "startUTF16": 288,
+          "endUTF16": 489,
+          "quote": "## Rule\n\nChoose grouping behavior (`combine`, `contain`, `ignore`) based on user intent: combine elements that represent one concept, contain related interactive children, and ignore decorative noise.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "tvos-swiftui-testing/criterion-0",
+      "case": "tvos-swiftui-testing",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-testing.md",
+          "sha256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        },
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+          "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+          "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+        }
+      ],
+      "separate_declaration_context": null,
+      "declaration_freshness": "not applicable; policy-only testing context",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md",
+          "sha256": "bdbf044aef5a596fa142b983823f527d9f0be676267328239d20a0ba6d498c0a",
+          "startUTF16": 290,
+          "endUTF16": 437,
+          "quote": "## Rule\n\nIn lists and forms, prefer native controls and explicit row semantics so each item exposes clear label, value, role, and action behavior.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "tvos-swiftui-testing/criterion-1",
+      "case": "tvos-swiftui-testing",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-testing.md",
+          "sha256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        },
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+          "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+          "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+        }
+      ],
+      "separate_declaration_context": null,
+      "declaration_freshness": "not applicable; policy-only testing context",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md",
+          "sha256": "bdbf044aef5a596fa142b983823f527d9f0be676267328239d20a0ba6d498c0a",
+          "startUTF16": 290,
+          "endUTF16": 437,
+          "quote": "## Rule\n\nIn lists and forms, prefer native controls and explicit row semantics so each item exposes clear label, value, role, and action behavior.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "tvos-swiftui-testing/criterion-2",
+      "case": "tvos-swiftui-testing",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-testing.md",
+          "sha256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        },
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+          "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+          "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+        }
+      ],
+      "separate_declaration_context": null,
+      "declaration_freshness": "not applicable; policy-only testing context",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md",
+          "sha256": "bdbf044aef5a596fa142b983823f527d9f0be676267328239d20a0ba6d498c0a",
+          "startUTF16": 290,
+          "endUTF16": 437,
+          "quote": "## Rule\n\nIn lists and forms, prefer native controls and explicit row semantics so each item exposes clear label, value, role, and action behavior.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    },
+    {
+      "criterion_id": "tvos-swiftui-testing/criterion-3",
+      "case": "tvos-swiftui-testing",
+      "application_acceptance_sources": [
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/subjects/tvos-swiftui-testing.md",
+          "sha256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461",
+          "scope": "Task-specific developer contract, not a universal Apple API guarantee"
+        },
+        {
+          "path": "research/evaluation/failure-driven/PRD.md",
+          "sha256": "36a8a7ab89c9f488106597fc050747ed59b43b97483b53fa62850a185bde1eeb",
+          "scope": "Project evidence/oracle policy; accept alternatives, preserve failures, no mandatory UI/manual gate"
+        },
+        {
+          "path": "research/evaluation/failure-driven/candidates/0.3.0-dev.5/references/tasks/testing.md",
+          "sha256": "76f2cc38cfdb17c2345e9d56370b1aa617457359126fd458eee0862697ffc096",
+          "scope": "Supplied project-policy testing note; proposed versus executed evidence and source/SDK checks"
+        }
+      ],
+      "separate_declaration_context": null,
+      "declaration_freshness": "not applicable; policy-only testing context",
+      "application_rules": "Use the exact task contract and frozen alternatives; card availability is not evidence that application ownership, callback ordering, layout, speech, traversal or focus delivery works. Missing evidence stays insufficient, not invented success or a new UI prerequisite.",
+      "prior_nonpolicy_anchors": [
+        {
+          "path": "references/swiftui/guidelines/g-014-lists-forms-complex-rows.md",
+          "sha256": "bdbf044aef5a596fa142b983823f527d9f0be676267328239d20a0ba6d498c0a",
+          "startUTF16": 290,
+          "endUTF16": 437,
+          "quote": "## Rule\n\nIn lists and forms, prefer native controls and explicit row semantics so each item exposes clear label, value, role, and action behavior.\n",
+          "line": 11,
+          "scope": "Existing local evidence / project grading rationale; not a fresh Apple source verification"
+        }
+      ],
+      "prior_anchor_disposition": "Historical context only for v2 grading; not current support for target applicability or mandatory workflow."
+    }
+  ],
+  "limits": [
+    "No sealed inputs, original rubrics, source captures, candidate body or release files modified.",
+    "No new SDK authenticity/freshness verification, native execution or model result.",
+    "Using this overlay later requires a new composite controller identity shared by both arms; it is not the original sealed v2 rubric unchanged.",
+    "IR-03 freshness and IR-04/05 bounded evidence/grading interpretation limits remain.",
+    "All model comparisons remain held; this document grants zero calls."
+  ]
+}

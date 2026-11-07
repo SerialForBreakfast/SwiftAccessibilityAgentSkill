@@ -73,3 +73,7 @@ Existing outside-project workspace paths are historical artifacts, not approved 
 ## Publication validation
 
 This checkpoint is validated with the new Python parser/invocation regressions, the evaluation runner tests, frozen baseline/historical pin checks and sealed v2 integrity tests. Exact local logs and counts are retained privately in `evals/results/reconciliation-20261107/`; the final summary is [validation.json](reconciliation-20261107/validation.json). Checks validate records and machinery, not new model or accessibility behavior. Released runtime files, candidate snapshots, sealed packages and native evidence are not modified.
+
+## Follow-up after owner requested the next steps
+
+The [next-experiment recommendation](NEXT-EXPERIMENT-20261107.md) records fresh share/cell verification, new Sillycon request1438, independent review of all24 v2 cases, the separate reviewed controller clarification and Gemini-only metadata feasibility. Original sealed inputs and the owner hold remain intact. This follow-up performs no evaluation subject sessions or native tests; planning/review acceptance is not execution authorization.
