@@ -1,0 +1,344 @@
+{
+  "schema": 1,
+  "cases": [
+    {
+      "id": "forwarding-macos-v1/native-metadata",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "nativeFramework": "AppKit",
+      "family": "native-metadata",
+      "subject": {
+        "path": "code-examples/swiftui/forwarding-macos-v1/evaluation/native-metadata.prompt.md",
+        "text": "Target macOS26, SwiftUI with AppKit.\n\nThe application supplies native card layout; preserve it. This task covers semantic/action configuration, not screen layout. Build a SwiftUI wrapper around a native report card with an independent heading, Open button, Details button and status readout. Its snapshot has id/title/status(optional)/hint(optional)/selected/enabled/landmark fields. On every update, preserve controls and show current contextual names, a non-color selected/not-selected readout, value and optional help; clear obsolete values/help when absent. Preserve unrelated native trait bits and ordered children. Use platform-appropriate scalable text configuration without claiming TV27 Larger Text on TV26.\n\nProvide complete code and focused unit tests; no UI automation.\n",
+        "sha256": "d9f01c2c8acad32fbbf3f624da947bdcf5b081a12f00a0c406535599f31d7ee1"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/forwarding-macos-v1/evaluation/native-metadata.rubric.md",
+        "sha256": "9a4a3ecb0be9e3ba9e22fafd1feeee3ee25a184be7e2aeb62f506998243e9068"
+      },
+      "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+      "testIds": [
+        "ForwardingTests/testInitialExplicitName",
+        "ForwardingTests/testNamesRefreshWithoutReconstruction",
+        "ForwardingTests/testValueMatchesVisibleState",
+        "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+        "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+        "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+        "ForwardingTests/testHintCanBeSet",
+        "ForwardingTests/testNilHintClearsOldHelp",
+        "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+        "ForwardingTests/testDisabledStateForwardedToBothControls",
+        "ForwardingTests/testReenableRestoresBothControls",
+        "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+        "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+        "ForwardingTests/testHeadingIsAddedAndRemoved",
+        "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+        "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+        "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+        "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+      ],
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "forwarding-macos-v1/native-actions",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "nativeFramework": "AppKit",
+      "family": "native-actions",
+      "subject": {
+        "path": "code-examples/swiftui/forwarding-macos-v1/evaluation/native-actions.prompt.md",
+        "text": "Target macOS26, SwiftUI with AppKit.\n\nFor the same SwiftUI native report card, preserve ordinary Open and Details controls. Add one optional Details accessibility shortcut through the same callback. Updates change the stable item ID and handler; old shortcuts or detached native controls must not invoke a rebound item. Respect externally disabled controls, replace rather than accumulate handlers, and stop dispatch on dismantle. Retained actions must not retain the coordinator or card.\n\nProvide complete code and focused unit tests; no UI automation.\n",
+        "sha256": "3e267fb278622b360458072ce4c60fa467479c5f17965641b0728917d3660f79"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/forwarding-macos-v1/evaluation/native-actions.rubric.md",
+        "sha256": "fb4c0f47051104a8a36253d4ccb3318666963fb6c013c4a676483e7ab39d46a2"
+      },
+      "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+      "testIds": [
+        "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+        "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+        "ForwardingTests/testShortcutUsesSameSecondaryPath",
+        "ForwardingTests/testOldShortcutCannotReachNewItem",
+        "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+        "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+        "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+        "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+        "ForwardingTests/testStopInvalidatesCapturedAction",
+        "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+        "ForwardingTests/testShortcutListDoesNotAccumulate",
+        "ForwardingTests/testCallbackDoesNotRetainOwner",
+        "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+        "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+      ],
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "forwarding-macos-v1/preference-forwarding",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "nativeFramework": "AppKit",
+      "family": "preference-forwarding",
+      "subject": {
+        "path": "code-examples/swiftui/forwarding-macos-v1/evaluation/preference-forwarding.prompt.md",
+        "text": "Target macOS26, SwiftUI with AppKit.\n\nBuild SwiftUI state feeding that native report card through one snapshot. Editing its name must preserve selection. Selection changes update current visible/value state before an optional animation callback; unchanged requests should not notify or animate. Reduced motion must still apply the final state, with no animation. Reentrant callbacks may change selection again. Reduced transparency chooses an opaque background policy and can return to normal later.\n\nProvide complete code and focused unit tests; no UI automation.\n",
+        "sha256": "2a88209aad2736c45e6ecb340c2e7652dc3905ca5b0dae8f8e9228ded80c42d9"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/forwarding-macos-v1/evaluation/preference-forwarding.rubric.md",
+        "sha256": "447733d834024194536376794685257ce406a439e21f84b8213aae6f9e4052cf"
+      },
+      "manifest": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+      "testIds": [
+        "StoreTests/testBindingWritesSameSnapshotConsumedByWrapper",
+        "StoreTests/testSelectionUpdatesBeforeAnimationCallback",
+        "StoreTests/testReducedMotionStillUpdatesFinalState",
+        "StoreTests/testUnchangedSelectionDoesNotNotifyOrAnimate",
+        "StoreTests/testBothSelectionDirectionsUseCurrentStatus",
+        "StoreTests/testReentrantAnimationPreservesLatestState",
+        "StoreTests/testReduceTransparencyPolicyChoosesOpaque",
+        "StoreTests/testPreferenceChangeRestoresNormalPolicy",
+        "StoreTests/testTitleEditDoesNotEraseSelection"
+      ],
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "forwarding-ios-v1/native-metadata",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "nativeFramework": "UIKit",
+      "family": "native-metadata",
+      "subject": {
+        "path": "code-examples/swiftui/forwarding-ios-v1/evaluation/native-metadata.prompt.md",
+        "text": "Target iOS26, SwiftUI with UIKit.\n\nThe application supplies native card layout; preserve it. This task covers semantic/action configuration, not screen layout. Build a SwiftUI wrapper around a native report card with an independent heading, Open button, Details button and status readout. Its snapshot has id/title/status(optional)/hint(optional)/selected/enabled/landmark fields. On every update, preserve controls and show current contextual names, a non-color selected/not-selected readout, value and optional help; clear obsolete values/help when absent. Preserve unrelated native trait bits and ordered children. Use platform-appropriate scalable text configuration without claiming TV27 Larger Text on TV26.\n\nProvide complete code and focused unit tests; no UI automation.\n",
+        "sha256": "27926d3f994473815198affd5ffef9771030cb2a0e9c2a71d2a1ce0789c169ee"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/forwarding-ios-v1/evaluation/native-metadata.rubric.md",
+        "sha256": "0bf8b9301737a8d97ecc6582127792e76198a716635d5abdafff6f4832de6dd4"
+      },
+      "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+      "testIds": [
+        "ForwardingTests/testInitialExplicitName",
+        "ForwardingTests/testNamesRefreshWithoutReconstruction",
+        "ForwardingTests/testValueMatchesVisibleState",
+        "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+        "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+        "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+        "ForwardingTests/testHintCanBeSet",
+        "ForwardingTests/testNilHintClearsOldHelp",
+        "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+        "ForwardingTests/testDisabledStateForwardedToBothControls",
+        "ForwardingTests/testReenableRestoresBothControls",
+        "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+        "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+        "ForwardingTests/testHeadingIsAddedAndRemoved",
+        "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+        "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+        "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+        "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+      ],
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "forwarding-ios-v1/native-actions",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "nativeFramework": "UIKit",
+      "family": "native-actions",
+      "subject": {
+        "path": "code-examples/swiftui/forwarding-ios-v1/evaluation/native-actions.prompt.md",
+        "text": "Target iOS26, SwiftUI with UIKit.\n\nFor the same SwiftUI native report card, preserve ordinary Open and Details controls. Add one optional Details accessibility shortcut through the same callback. Updates change the stable item ID and handler; old shortcuts or detached native controls must not invoke a rebound item. Respect externally disabled controls, replace rather than accumulate handlers, and stop dispatch on dismantle. Retained actions must not retain the coordinator or card.\n\nProvide complete code and focused unit tests; no UI automation.\n",
+        "sha256": "2136bae371f01f998534b1672816c2f8782fc78df43c5b85b4ecfb90c9e66128"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/forwarding-ios-v1/evaluation/native-actions.rubric.md",
+        "sha256": "dadc5926d88a941bba447e848ffec361d7608ce269ee4a91e3d86af787e2e5c2"
+      },
+      "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+      "testIds": [
+        "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+        "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+        "ForwardingTests/testShortcutUsesSameSecondaryPath",
+        "ForwardingTests/testOldShortcutCannotReachNewItem",
+        "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+        "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+        "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+        "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+        "ForwardingTests/testStopInvalidatesCapturedAction",
+        "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+        "ForwardingTests/testShortcutListDoesNotAccumulate",
+        "ForwardingTests/testCallbackDoesNotRetainOwner",
+        "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+        "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+      ],
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "forwarding-ios-v1/preference-forwarding",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "nativeFramework": "UIKit",
+      "family": "preference-forwarding",
+      "subject": {
+        "path": "code-examples/swiftui/forwarding-ios-v1/evaluation/preference-forwarding.prompt.md",
+        "text": "Target iOS26, SwiftUI with UIKit.\n\nBuild SwiftUI state feeding that native report card through one snapshot. Editing its name must preserve selection. Selection changes update current visible/value state before an optional animation callback; unchanged requests should not notify or animate. Reduced motion must still apply the final state, with no animation. Reentrant callbacks may change selection again. Reduced transparency chooses an opaque background policy and can return to normal later.\n\nProvide complete code and focused unit tests; no UI automation.\n",
+        "sha256": "abbd59371b0491d3014b40ac86edc144e673ee7a14c44c654c35d2f390b76b49"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/forwarding-ios-v1/evaluation/preference-forwarding.rubric.md",
+        "sha256": "fdf3529aa8ffb70b6bb41e9ff8eb2ce458d9e6e443e504a16bd9a2ac714fe281"
+      },
+      "manifest": "code-examples/swiftui/forwarding-ios-v1/manifest.json",
+      "testIds": [
+        "StoreTests/testBindingWritesSameSnapshotConsumedByWrapper",
+        "StoreTests/testSelectionUpdatesBeforeAnimationCallback",
+        "StoreTests/testReducedMotionStillUpdatesFinalState",
+        "StoreTests/testUnchangedSelectionDoesNotNotifyOrAnimate",
+        "StoreTests/testBothSelectionDirectionsUseCurrentStatus",
+        "StoreTests/testReentrantAnimationPreservesLatestState",
+        "StoreTests/testReduceTransparencyPolicyChoosesOpaque",
+        "StoreTests/testPreferenceChangeRestoresNormalPolicy",
+        "StoreTests/testTitleEditDoesNotEraseSelection"
+      ],
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "forwarding-tvos-v1/native-metadata",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "nativeFramework": "UIKit",
+      "family": "native-metadata",
+      "subject": {
+        "path": "code-examples/swiftui/forwarding-tvos-v1/evaluation/native-metadata.prompt.md",
+        "text": "Target tvOS26, SwiftUI with UIKit.\n\nThe application supplies native card layout; preserve it. This task covers semantic/action configuration, not screen layout. Build a SwiftUI wrapper around a native report card with an independent heading, Open button, Details button and status readout. Its snapshot has id/title/status(optional)/hint(optional)/selected/enabled/landmark fields. On every update, preserve controls and show current contextual names, a non-color selected/not-selected readout, value and optional help; clear obsolete values/help when absent. Preserve unrelated native trait bits and ordered children. Use platform-appropriate scalable text configuration without claiming TV27 Larger Text on TV26.\n\nProvide complete code and focused unit tests; no UI automation.\n",
+        "sha256": "a684bb499d9f1afaf00f5cffa1e6ddc652ff0023f955f9c52fb3e8554768a94c"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/forwarding-tvos-v1/evaluation/native-metadata.rubric.md",
+        "sha256": "fac1ab00d36f7577fc5e3f969b2266e35f28c428c491e7466130f98da0cefd14"
+      },
+      "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+      "testIds": [
+        "ForwardingTests/testInitialExplicitName",
+        "ForwardingTests/testNamesRefreshWithoutReconstruction",
+        "ForwardingTests/testValueMatchesVisibleState",
+        "ForwardingTests/testBothSelectionTransitionsClearOldValue",
+        "ForwardingTests/testNilStatusDoesNotLeaveOldText",
+        "ForwardingTests/testEmptyStatusDoesNotAddSpuriousSeparator",
+        "ForwardingTests/testHintCanBeSet",
+        "ForwardingTests/testNilHintClearsOldHelp",
+        "ForwardingTests/testChangedHintReplacesRatherThanAppends",
+        "ForwardingTests/testDisabledStateForwardedToBothControls",
+        "ForwardingTests/testReenableRestoresBothControls",
+        "ForwardingTests/testControlIdentityPreservedAcrossUpdates",
+        "ForwardingTests/testNamedContainerPreservesOrderedChildren",
+        "ForwardingTests/testHeadingIsAddedAndRemoved",
+        "ForwardingTests/testUnrelatedNativeTraitsSurviveSelection",
+        "ForwardingTests/testTextConfigurationUsesScalableNativeFont",
+        "ForwardingTests/testLocalizedAndUnicodeNamesPreserved",
+        "ForwardingTests/testReconfigureDoesNotAccumulateChildren"
+      ],
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "forwarding-tvos-v1/native-actions",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "nativeFramework": "UIKit",
+      "family": "native-actions",
+      "subject": {
+        "path": "code-examples/swiftui/forwarding-tvos-v1/evaluation/native-actions.prompt.md",
+        "text": "Target tvOS26, SwiftUI with UIKit.\n\nFor the same SwiftUI native report card, preserve ordinary Open and Details controls. Add one optional Details accessibility shortcut through the same callback. Updates change the stable item ID and handler; old shortcuts or detached native controls must not invoke a rebound item. Respect externally disabled controls, replace rather than accumulate handlers, and stop dispatch on dismantle. Retained actions must not retain the coordinator or card.\n\nProvide complete code and focused unit tests; no UI automation.\n",
+        "sha256": "aac1829e33a43a12a812217712bd81f7d7e5bd41ed66a98490f04f1552db8c0a"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/forwarding-tvos-v1/evaluation/native-actions.rubric.md",
+        "sha256": "0c499202bbb65d262a4fc13a7b34fcc4d45515a69b8d99857bec49278fa532c7"
+      },
+      "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+      "testIds": [
+        "ForwardingTests/testOrdinaryPrimaryUsesCurrentID",
+        "ForwardingTests/testOrdinarySecondaryRemainsIndependent",
+        "ForwardingTests/testShortcutUsesSameSecondaryPath",
+        "ForwardingTests/testOldShortcutCannotReachNewItem",
+        "ForwardingTests/testOldOrdinaryControlCannotReachReboundSurface",
+        "ForwardingTests/testExternallyDisabledPrimaryRejectsCapturedAction",
+        "ForwardingTests/testExternallyDisabledSecondaryRejectsShortcut",
+        "ForwardingTests/testDisabledSnapshotRejectsBothCallbacks",
+        "ForwardingTests/testStopInvalidatesCapturedAction",
+        "ForwardingTests/testRepeatedConfigureDoesNotDuplicateNativeHandler",
+        "ForwardingTests/testShortcutListDoesNotAccumulate",
+        "ForwardingTests/testCallbackDoesNotRetainOwner",
+        "ForwardingTests/testNativeSurfaceNotRetainedByOwner",
+        "ForwardingTests/testPublicDismantleStopsNativeDispatch"
+      ],
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    },
+    {
+      "id": "forwarding-tvos-v1/preference-forwarding",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "nativeFramework": "UIKit",
+      "family": "preference-forwarding",
+      "subject": {
+        "path": "code-examples/swiftui/forwarding-tvos-v1/evaluation/preference-forwarding.prompt.md",
+        "text": "Target tvOS26, SwiftUI with UIKit.\n\nBuild SwiftUI state feeding that native report card through one snapshot. Editing its name must preserve selection. Selection changes update current visible/value state before an optional animation callback; unchanged requests should not notify or animate. Reduced motion must still apply the final state, with no animation. Reentrant callbacks may change selection again. Reduced transparency chooses an opaque background policy and can return to normal later.\n\nProvide complete code and focused unit tests; no UI automation.\n",
+        "sha256": "882146ff80c2a458c879aa3e7be4894cb8c9a6472ddfdc4e98e8de91fda1647f"
+      },
+      "rubric": {
+        "path": "code-examples/swiftui/forwarding-tvos-v1/evaluation/preference-forwarding.rubric.md",
+        "sha256": "0fa6323d97efbe5181aa11a8406678fe4cfa57b38181089bd56b86874655e6af"
+      },
+      "manifest": "code-examples/swiftui/forwarding-tvos-v1/manifest.json",
+      "testIds": [
+        "StoreTests/testBindingWritesSameSnapshotConsumedByWrapper",
+        "StoreTests/testSelectionUpdatesBeforeAnimationCallback",
+        "StoreTests/testReducedMotionStillUpdatesFinalState",
+        "StoreTests/testUnchangedSelectionDoesNotNotifyOrAnimate",
+        "StoreTests/testBothSelectionDirectionsUseCurrentStatus",
+        "StoreTests/testReentrantAnimationPreservesLatestState",
+        "StoreTests/testReduceTransparencyPolicyChoosesOpaque",
+        "StoreTests/testPreferenceChangeRestoresNormalPolicy",
+        "StoreTests/testTitleEditDoesNotEraseSelection"
+      ],
+      "outputs": {
+        "status": "not-run",
+        "attempts": []
+      },
+      "analysis": null
+    }
+  ]
+}

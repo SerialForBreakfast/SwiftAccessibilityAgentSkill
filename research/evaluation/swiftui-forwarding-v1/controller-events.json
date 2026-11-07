@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "events": [
+    {
+      "kind": "mutant-audit",
+      "finding": "Hint mutation changed AppKit setter only; UIKit assignment stayed unmodified.",
+      "nativeOutcome": "not-run invalid UIKit controls",
+      "repair": "UIKit assignment explicitly retains Old when nil",
+      "oldPlanHash": "ba96a4cd4c50bb6fc2c6a8572f9a4986635941cb7f6818dcc6e07754f2513667",
+      "newPlanHash": "80a40485fc9251b07ca42f7b2cf16b8daa84df4c76857348f6f84d3db9420b3d",
+      "runnerStop": "Inputs changed during campaign",
+      "completedReceipts": "Imported only matching validated Mac manifest/environment receipts; no outcomes overwritten."
+    }
+  ]
+}

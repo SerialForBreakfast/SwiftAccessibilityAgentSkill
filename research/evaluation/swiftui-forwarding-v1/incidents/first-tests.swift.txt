@@ -1,0 +1,139 @@
+import XCTest
+import SwiftUI
+#if os(macOS)
+import AppKit
+#else
+import UIKit
+#endif
+@testable import AccessibilityExamples
+@MainActor final class ForwardingTests: XCTestCase {
+ private var testOwners: [SurfaceOwner] = []
+ func setup(_ s: SurfaceSnapshot = SurfaceSnapshot()) -> (SurfaceOwner, NativeSurface) { let c = SurfaceOwner(), v = NativeSurface(); c.configure(v, snapshot: s, perform: { _,_ in }); testOwners.append(c); return (c,v) }
+ func name(_ v: NativeSurface) -> String? {
+ #if os(macOS)
+ v.primary.accessibilityLabel()
+ #else
+ v.primary.accessibilityLabel
+ #endif
+ }
+ func value(_ v: NativeSurface) -> String? {
+ #if os(macOS)
+ v.primary.accessibilityValue() as? String
+ #else
+ v.primary.accessibilityValue
+ #endif
+ }
+ func hint(_ v: NativeSurface) -> String? {
+ #if os(macOS)
+ v.primary.accessibilityHelp()
+ #else
+ v.primary.accessibilityHint
+ #endif
+ }
+ func text(_ v: NativeSurface) -> String {
+ #if os(macOS)
+ v.status.stringValue
+ #else
+ v.status.text ?? ""
+ #endif
+ }
+ func press(_ v: NativeSurface, secondary: Bool = false) {
+ let b = secondary ? v.details : v.primary
+ #if os(macOS)
+ b.performClick(nil)
+ #else
+ b.sendActions(for: .primaryActionTriggered)
+ #endif
+ }
+ func shortcut(_ v: NativeSurface) -> () -> Bool {
+ #if os(macOS)
+ let a = v.primary.accessibilityCustomActions()!.first!; return { a.handler?() ?? false }
+ #else
+ let a = v.primary.accessibilityCustomActions!.first!; return { a.actionHandler?(a) ?? false }
+ #endif
+ }
+ func testInitialExplicitName() { let (_,v) = setup(); XCTAssertEqual(name(v), "Open Report") }
+ func testNamesRefreshWithoutReconstruction() { let (c,v) = setup(); c.configure(v, snapshot: SurfaceSnapshot(title: "Other"), perform: { _,_ in }); XCTAssertEqual(name(v), "Open Other") }
+ func testValueMatchesVisibleState() { let (_,v) = setup(SurfaceSnapshot(status: "Ready", selected: true)); XCTAssertEqual(value(v), "Ready, Selected"); XCTAssertEqual(text(v), value(v)) }
+ func testBothSelectionTransitionsClearOldValue() { let (c,v) = setup(SurfaceSnapshot(selected: true)); c.configure(v, snapshot: SurfaceSnapshot(status: nil, selected: false), perform: { _,_ in }); XCTAssertEqual(value(v), "Not selected") }
+ func testNilStatusDoesNotLeaveOldText() { let (c,v) = setup(); c.configure(v, snapshot: SurfaceSnapshot(status: nil), perform: { _,_ in }); XCTAssertEqual(text(v), "Not selected") }
+ func testEmptyStatusDoesNotAddSpuriousSeparator() { let (_,v) = setup(SurfaceSnapshot(status: "")); XCTAssertEqual(value(v), "Not selected") }
+ func testHintCanBeSet() { let (_,v) = setup(SurfaceSnapshot(hint: "Opens a separate preview")); XCTAssertEqual(hint(v), "Opens a separate preview") }
+ func testNilHintClearsOldHelp() { let (c,v) = setup(SurfaceSnapshot(hint: "Old")); c.configure(v, snapshot: SurfaceSnapshot(hint: nil), perform: { _,_ in }); XCTAssertNil(hint(v)) }
+ func testChangedHintReplacesRatherThanAppends() { let (c,v) = setup(SurfaceSnapshot(hint: "Old")); c.configure(v, snapshot: SurfaceSnapshot(hint: "New"), perform: { _,_ in }); XCTAssertEqual(hint(v), "New") }
+ func testDisabledStateForwardedToBothControls() { let (_,v) = setup(SurfaceSnapshot(enabled: false)); XCTAssertFalse(v.primary.isEnabled); XCTAssertFalse(v.details.isEnabled) }
+ func testReenableRestoresBothControls() { let (c,v) = setup(SurfaceSnapshot(enabled: false)); c.configure(v, snapshot: SurfaceSnapshot(enabled: true), perform: { _,_ in }); XCTAssertTrue(v.primary.isEnabled); XCTAssertTrue(v.details.isEnabled) }
+ func testControlIdentityPreservedAcrossUpdates() { let (c,v) = setup(); let p = v.primary, d = v.details; c.configure(v, snapshot: SurfaceSnapshot(title: "New"), perform: { _,_ in }); XCTAssertTrue(p === v.primary); XCTAssertTrue(d === v.details) }
+ func testNamedContainerPreservesOrderedChildren() { let (_,v) = setup();
+ #if os(macOS)
+ XCTAssertEqual(v.accessibilityLabel(), "Report"); XCTAssertEqual(v.accessibilityRole(), .group); let children = v.accessibilityChildren()!; XCTAssertTrue((children[0] as? NSTextField) === v.heading); XCTAssertTrue((children[1] as? NSButton) === v.primary); XCTAssertEqual(children.count,4)
+ #else
+ XCTAssertFalse(v.isAccessibilityElement); XCTAssertEqual(v.accessibilityLabel,"Report"); let children = v.accessibilityElements!; XCTAssertTrue((children[0] as? UILabel) === v.heading); XCTAssertTrue((children[1] as? UIButton) === v.primary); XCTAssertEqual(children.count,4)
+ #endif }
+ func testHeadingIsAddedAndRemoved() { let (c,v) = setup();
+ #if os(macOS)
+ XCTAssertEqual(v.heading.accessibilityRole(), .heading)
+ #else
+ XCTAssertTrue(v.heading.accessibilityTraits.contains(.header))
+ #endif
+ c.configure(v, snapshot: SurfaceSnapshot(landmark:false), perform:{ _,_ in });
+ #if os(macOS)
+ XCTAssertEqual(v.heading.accessibilityRole(), .staticText)
+ #else
+ XCTAssertFalse(v.heading.accessibilityTraits.contains(.header))
+ #endif }
+ func testUnrelatedNativeTraitsSurviveSelection() { let (c,v) = setup();
+ #if !os(macOS)
+ v.primary.accessibilityTraits.insert(.updatesFrequently); v.heading.accessibilityTraits.insert(.updatesFrequently)
+ #endif
+ c.configure(v,snapshot:SurfaceSnapshot(selected:true),perform:{_,_ in});c.configure(v,snapshot:SurfaceSnapshot(selected:false,landmark:false),perform:{_,_ in});
+ #if !os(macOS)
+ XCTAssertTrue(v.primary.accessibilityTraits.contains(.updatesFrequently));XCTAssertFalse(v.primary.accessibilityTraits.contains(.selected));XCTAssertTrue(v.heading.accessibilityTraits.contains(.updatesFrequently))
+ #else
+ XCTAssertEqual(value(v),"Ready, Not selected")
+ #endif }
+ func testTextConfigurationUsesScalableNativeFont() { let (_,v) = setup(); XCTAssertNotNil(v.status.font);
+ #if os(macOS)
+ XCTAssertFalse(v.status.usesSingleLineMode)
+ #else
+ XCTAssertTrue(v.status.adjustsFontForContentSizeCategory);XCTAssertEqual(v.status.numberOfLines,0);XCTAssertEqual(v.status.lineBreakMode,.byWordWrapping)
+ #endif }
+ func testLocalizedAndUnicodeNamesPreserved() { let (_,v) = setup(SurfaceSnapshot(title: "Facture été 🧾")); XCTAssertEqual(name(v), "Open Facture été 🧾") }
+ func testReconfigureDoesNotAccumulateChildren() { let (c,v) = setup();for _ in 0..<4 { c.configure(v,snapshot:SurfaceSnapshot(),perform:{_,_ in}) };XCTAssertEqual(v.subviews.count,4) }
+ func testOrdinaryPrimaryUsesCurrentID() { let (c,v) = setup();var ids:[String]=[];c.configure(v,snapshot:SurfaceSnapshot(id:"new"),perform:{ id,_ in ids.append(id) });press(v);XCTAssertEqual(ids,["new"]) }
+ func testOrdinarySecondaryRemainsIndependent() { let (c,v)=setup();var types:[Bool]=[];c.configure(v,snapshot:SurfaceSnapshot(),perform:{ _,secondary in types.append(secondary) });press(v);press(v,secondary:true);XCTAssertEqual(types,[false,true]) }
+ func testShortcutUsesSameSecondaryPath() { let (c,v)=setup();var types:[Bool]=[];c.configure(v,snapshot:SurfaceSnapshot(),perform:{ _,secondary in types.append(secondary) });XCTAssertTrue(shortcut(v)());XCTAssertEqual(types,[true]) }
+ func testOldShortcutCannotReachNewItem() { let (c,v)=setup();let old=shortcut(v);var n=0;c.configure(v,snapshot:SurfaceSnapshot(id:"new"),perform:{_,_ in n += 1});XCTAssertFalse(old());XCTAssertEqual(n,0) }
+ func testOldOrdinaryControlCannotReachReboundSurface() { let (c,old)=setup();let current=NativeSurface();var n=0;c.configure(current,snapshot:SurfaceSnapshot(),perform:{_,_ in n += 1});press(old);press(old,secondary:true);XCTAssertEqual(n,0) }
+ func testExternallyDisabledPrimaryRejectsCapturedAction() { let (c,v)=setup();let a=c.action(v,secondary:false);v.primary.isEnabled=false;XCTAssertFalse(a()) }
+ func testExternallyDisabledSecondaryRejectsShortcut() { let (_,v)=setup();v.details.isEnabled=false;XCTAssertFalse(shortcut(v)()) }
+ func testDisabledSnapshotRejectsBothCallbacks() { let (c,v)=setup(SurfaceSnapshot(enabled:false));XCTAssertFalse(c.action(v,secondary:false)());XCTAssertFalse(c.action(v,secondary:true)()) }
+ func testStopInvalidatesCapturedAction() { let (c,v)=setup();let a=c.action(v,secondary:false);c.stop();XCTAssertFalse(a()) }
+ func testRepeatedConfigureDoesNotDuplicateNativeHandler() { let(c,v)=setup();var n=0;for _ in 0..<5{c.configure(v,snapshot:SurfaceSnapshot(),perform:{_,_ in n += 1})};press(v);XCTAssertEqual(n,1) }
+ func testShortcutListDoesNotAccumulate() { let(c,v)=setup();for _ in 0..<4{c.configure(v,snapshot:SurfaceSnapshot(),perform:{_,_ in})};
+ #if os(macOS)
+ XCTAssertEqual(v.primary.accessibilityCustomActions()?.count,1)
+ #else
+ XCTAssertEqual(v.primary.accessibilityCustomActions?.count,1)
+ #endif }
+ func testCallbackDoesNotRetainOwner() { var c:SurfaceOwner?=SurfaceOwner();let v=NativeSurface();c!.configure(v,snapshot:SurfaceSnapshot(),perform:{_,_ in});weak var owner=c;let a=c!.action(v,secondary:false);c=nil;XCTAssertNil(owner);XCTAssertFalse(a()) }
+ func testNativeSurfaceNotRetainedByOwner() { let c=SurfaceOwner();weak var view:NativeSurface?;autoreleasepool{let v=NativeSurface();view=v;c.configure(v,snapshot:SurfaceSnapshot(),perform:{_,_ in})};XCTAssertNil(view) }
+ func testPublicDismantleStopsNativeDispatch() { let(c,v)=setup();var n=0;c.configure(v,snapshot:SurfaceSnapshot(),perform:{_,_ in n += 1});
+ #if os(macOS)
+ SurfaceExample.dismantleNSView(v,coordinator:c)
+ #else
+ SurfaceExample.dismantleUIView(v,coordinator:c)
+ #endif
+ press(v);XCTAssertEqual(n,0) }
+}
+@MainActor final class StoreTests: XCTestCase {
+ func testBindingWritesSameSnapshotConsumedByWrapper() { let s=SurfaceStore();s.input.wrappedValue="New";XCTAssertEqual(s.snapshot.title,"New") }
+ func testSelectionUpdatesBeforeAnimationCallback() { let s=SurfaceStore();var value:String?;s.setSelected(true){value=s.snapshot.value};XCTAssertEqual(value,"Ready, Selected") }
+ func testReducedMotionStillUpdatesFinalState() { let s=SurfaceStore();s.reducedMotion=true;var n=0;s.setSelected(true){n += 1};XCTAssertTrue(s.snapshot.selected);XCTAssertEqual(s.events,["Ready, Selected"]);XCTAssertEqual(n,0) }
+ func testUnchangedSelectionDoesNotNotifyOrAnimate() { let s=SurfaceStore();var n=0;s.setSelected(false){n += 1};XCTAssertTrue(s.events.isEmpty);XCTAssertEqual(n,0) }
+ func testBothSelectionDirectionsUseCurrentStatus() { let s=SurfaceStore();s.setSelected(true){};s.snapshot.status=nil;s.setSelected(false){};XCTAssertEqual(s.events,["Ready, Selected","Not selected"]) }
+ func testReentrantAnimationPreservesLatestState() { let s=SurfaceStore();s.setSelected(true){s.setSelected(false){}};XCTAssertFalse(s.snapshot.selected);XCTAssertEqual(s.events.count,2) }
+ func testReduceTransparencyPolicyChoosesOpaque() { let s=SurfaceStore();s.reduceTransparency=true;XCTAssertEqual(s.opacity,1) }
+ func testPreferenceChangeRestoresNormalPolicy() { let s=SurfaceStore();s.reduceTransparency=true;s.reduceTransparency=false;XCTAssertEqual(s.opacity,0.5) }
+ func testTitleEditDoesNotEraseSelection() { let s=SurfaceStore();s.setSelected(true){};s.input.wrappedValue="Other";XCTAssertTrue(s.snapshot.selected) }
+}

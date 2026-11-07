@@ -9,6 +9,13 @@ that approval does not promote these library examples.
 
 ## Available now
 
+[SwiftUI native forwarding](../research/evaluation/swiftui-forwarding-v1/README.md)
+adds 41 positive methods per platform, five executed negative controls, nine draft
+question/rubric pairs and preserved compiler/harness difficulties. The original
+SwiftUI campaign and its 217-item ledger remain unchanged; the new coverage overlay
+adds bounded native-property/action evidence without automatically closing broader
+hosting requirements.
+
 [SwiftUI cross-platform campaign](../research/evaluation/swiftui-campaign-v1/README.md)
 adds real SwiftUI composition checks plus binding/state/coordinator units on iOS,
 macOS and tvOS. Its 15-guideline ledger, preserved first failures and 21 draft

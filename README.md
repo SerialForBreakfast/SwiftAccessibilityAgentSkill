@@ -84,6 +84,12 @@ Twenty-one draft developer questions/rubrics accompany the seven families. The
 preserved AppKit stale-target failure and corrected lifetime oracle show why tests,
 source integration and independent review must be evaluated separately.
 
+The [forwarding tranche](research/evaluation/swiftui-forwarding-v1/README.md) adds
+41 passing methods per platform for explicit native metadata, hierarchy, callback
+ownership and preference policy. It preserves build/import and mutant-audit errors
+alongside five intended negative-control rejections. This is additional native-boundary
+evidence, not automatic SwiftUI hosting or generated-tree validation.
+
 **Development status:** the companion's new findings and retrieval changes await
 review and evaluation before inclusion in a future skill release. The installed
 skill remains version `0.2.2`. Test results establish example behavior; paired model

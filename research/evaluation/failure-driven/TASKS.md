@@ -316,3 +316,18 @@ not promotion of the released skill or authorization for new model calls.
   pending; no paid/model runs, UI tests, mandatory manual gates or Git publication.
 - Exact negative-control outcomes and final acceptance are in the campaign report;
   successful units do not establish generated SwiftUI accessibility semantics.
+
+## SwiftUI forwarding continuation
+
+The initial SwiftUI campaign is committed as0177195. The owner requested the next
+tranche; [native forwarding](../swiftui-forwarding-v1/README.md) adds41 positive
+methods on each existing iOS/macOS/tvOS anchor,5 intended negative executions and9
+new draft task/rubric pairs. Preserve three failed builds (test generator, guessed
+Swift role member and prematurely used global spelling), the source-audited inactive
+UIKit mutant and frozen-plan transition. No failed build is a successful rejection.
+
+The overlay links13 earlier gap rows to new native-subset evidence. The original
+217-requirement ledger is not rewritten; none of its broad host requirements is
+silently closed. Final metadata/getter/callback scope and residual assertion gaps
+remain explicit. Technical review is prepared, not sent or accepted; model runs,
+Claude, released skill and frozen baselines are unchanged. New work is uncommitted.
