@@ -95,6 +95,13 @@ review and evaluation before inclusion in a future skill release. The installed
 skill remains version `0.2.2`. Test results establish example behavior; paired model
 evaluations establish whether a skill change improves agent answers.
 
+[Milestone candidate `0.3.0-dev.4`](research/evaluation/failure-driven/candidates/0.3.0-dev.4/README.md)
+consolidates eight task-specific guidance notes, explicit platform/framework lookup,
+opt-in examples, read traces and byte budgets. Its audit preserves 55 known developer
+inputs without relabeling them as holdouts. Offline checks do not establish model
+quality or token savings; frontier evaluation is reserved for an approved milestone,
+not every development version.
+
 [Production-readiness plan](research/evaluation/PRODUCTION-READINESS.md): agents own
 technical review and evaluation; the project owner approves quota, disputed product
 decisions and the release.
@@ -232,6 +239,7 @@ those sources with version-scoped observations; they do not create a new source 
 | [code-examples/](code-examples/) | On-demand example infrastructure and existing UIKit pilots |
 | [UIKit campaign](research/evaluation/failure-driven/uikit-closure-v1/README.md) | Current coverage ledger, new contracts, receipts and review status |
 | [evals/](evals/) | Frozen inputs, runners, grading and model comparison reports |
+| [Local analysis tools](tools/local-analysis/README.md) | Schema validation, Swift syntax/lint checks and captured-text replay without model calls |
 | [Research](research/) | Source audits, design decisions and unpromoted investigations |
 | [Source registry](references/core/sources/registry.md) | Source tiers and provenance |
 | [Contributor instructions](AGENTS.md) | Evidence preservation, test-to-prompt workflow and safety boundaries |

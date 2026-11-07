@@ -331,3 +331,81 @@ The overlay links13 earlier gap rows to new native-subset evidence. The original
 silently closed. Final metadata/getter/callback scope and residual assertion gaps
 remain explicit. Technical review is prepared, not sent or accepted; model runs,
 Claude, released skill and frozen baselines are unchanged. New work is uncommitted.
+
+## Candidate0.3.0-dev.3 - research iteration
+
+Forwarding evidence committed asa56c9a5. The owner requested further skill iteration;
+[dev.3](candidates/0.3.0-dev.3/README.md) is an additive research snapshot, not a
+released entrypoint replacement. Existing candidate files and VERSIONS.json hashes
+remain unchanged. A local manifest registers exact subject and optional asset hashes.
+
+Shared body3286 bytes versus dev.2's4910 (-33.08%); native-only path4628,
+validation-only4511, both5853, excluding task-topic references held constant across
+pairs. Byte checks are not provider token or quality results. Six offline checks
+pass, including rejecting execution arguments on the new offline planner.
+
+The proposed14-cell matched dev.2/dev.3 comparison is not executable or approved:
+exact private wrapper/reference serialization, independent review and fresh provider/
+quota allocation remain pending. Existing AGY answers cannot substitute for newly
+matched baseline calls. No new models, native-answer tests, Claude activity, messaging,
+paid work or skill promotion was performed. Candidate/controller input and grading
+records remain separated; previous known failures do not become new holdouts.
+
+## Substantial milestone bundle0.3.0-dev.4
+
+Owner rejected small frontier evaluation increments and requested a large local
+iteration. [dev.4](candidates/0.3.0-dev.4/README.md) consolidates eight failure-driven
+task notes with explicit metadata routing, opt-in example/contract lookup, real read
+traces, byte limits, source-gap handling and a55-input provenance audit.48 routing
+rows include3 explicit missing-primary mappings; no irrelevant substitute is used.
+
+54 new offline checks pass; these are not model routing/quality scores. Shared body
+3439 bytes; full same-guideline/note static comparison reports median-9.69% bytes,
+not token savings. Earlier dev.3 is retained without triggering its unused14-cell
+proposal. No evaluation calls, quota allocation, model substitution, Claude activity,
+worker message or released skill/baseline change. One future milestone evaluation
+requires independent qualification and explicit scope approval, not per-version runs.
+
+## Consolidated candidate 0.3.0-dev.5
+
+- [x] Draft eight topic families across iOS/UIKit, iOS/SwiftUI, macOS/AppKit,
+  macOS/SwiftUI, tvOS/UIKit and tvOS/SwiftUI (48 applications).
+- [x] Add twelve no-change, ownership, target-scope and evidence-boundary controls.
+- [x] Separate subject inputs from alternative-aware controller rubrics; retain
+  unrun outputs explicitly and keep known scenarios out of holdouts.
+- [x] Strengthen conditional candidate guidance without modifying released files.
+- [x] Validate subject hashes, all route pairs, context boundaries and source gaps.
+- [ ] Independently review each question/rubric and exact claim/assertion links.
+- [ ] Freeze qualified milestone payloads and obtain explicit bounded run approval.
+- [ ] Measure paired answer quality and real token use; no benefit claimed yet.
+
+## Local qualification before distillation
+
+- [x] Account for all 60 dev.5 cases and criterion-level pending review.
+- [x] Join all 36 manifest-linked cases to existing matching native contract receipts,
+  including older package-local UIKit records; preserve first discovery limitation.
+- [x] Add adversarial receipt checks for false passes, missing execution, source drift,
+  environment mismatches and deliberate-assertion versus infrastructure failures.
+- [ ] Review exact assertion bodies and bind each rubric criterion, rather than
+  counting lexical test leads or broad package passes as whole-question coverage.
+- [ ] Resolve three primary-source mappings and qualify source freshness separately.
+- [ ] Freeze representative reviewed cases before approved frontier comparison;
+  distill only after trustworthy contract and answer-quality evidence.
+
+See research/evaluation/local-qualification-v1/README.md. No model/native reruns,
+released skill edits or frozen baseline mutations in this qualification pass.
+
+## Off-the-shelf offline analysis
+
+- [x] Install isolated pinned Ajv, Markdown and Promptfoo tooling with lifecycle
+  scripts disabled; preserve lockfile and keep dependencies out of source tracking.
+- [x] Extract pinned SwiftLint locally; compile syntax probe against installed
+  Xcode SwiftSyntax/SwiftParser without a new Swift package dependency.
+- [x] Validate 15 records, inspect 110 Swift files and replay 26 preserved excerpts
+  with deterministic checks, no model generation and network denial.
+- [x] Add adversarial adapter regression tests and preserve integration failures.
+- [ ] Use syntax observations to propose exact assertion-to-criterion bindings;
+  do not equate syntax counts or excerpt equality with answer-quality improvement.
+
+See research/evaluation/local-analysis-tools-v1/README.md. Full historical answers
+remain unavailable in the public summary; no reconstructed outputs were graded.

@@ -1,0 +1,47 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {spawnSync} from 'node:child_process';
+import {createHash,randomUUID} from 'node:crypto';
+import { lint as markdownlint } from 'markdownlint/promise';
+import {validate} from './schema.mjs';
+import {replay} from './replay.mjs';
+const here=path.dirname(fileURLToPath(import.meta.url)),root=path.resolve(here,'../..');
+process.chdir(root);
+const attempt=new Date().toISOString().replaceAll(':','-')+'-'+randomUUID().slice(0,8);
+const output=path.join(here,'results',attempt,'report.json');
+if(fs.existsSync(output))throw Error('Refusing to overwrite completed report; archive it before rerunning');
+const hash=b=>createHash('sha256').update(b).digest('hex');
+const read=p=>fs.readFileSync(p),json=p=>JSON.parse(read(p));
+const lintVersion=spawnSync(path.join(here,'.cache/swiftlint/0.65.1/bin/swiftlint'),['version'],{encoding:'utf8'});
+if(lintVersion.status!==0||lintVersion.stdout.trim()!=='0.65.1')throw Error('Pinned SwiftLint 0.65.1 required');
+const controllerPath='research/evaluation/failure-driven/candidates/0.3.0-dev.5/evaluation/controller.json';
+const ledgerPath='research/evaluation/local-qualification-v1/evidence-ledger.json';
+const controller=json(controllerPath),ledger=json(ledgerPath);
+const manifestPaths=[...new Set(controller.cases.map(c=>c.controller.exampleManifest).filter(Boolean))];
+const schemaChecks=[['controller',controllerPath],['ledger',ledgerPath],...manifestPaths.map(p=>['manifest',p])].map(([kind,p])=>({kind,path:p,sha256:hash(read(p)),...validate(kind,json(p))}));
+const swiftFiles=[...new Set(manifestPaths.flatMap(p=>json(p).files.filter(f=>f.path.endsWith('.swift')).map(f=>path.posix.join(path.posix.dirname(p),f.path))))].sort();
+const probe=spawnSync(path.join(here,'.cache/syntax-probe'),swiftFiles,{encoding:'utf8',maxBuffer:20*1024*1024,timeout:120000});
+if(probe.status!==0)throw Error('Syntax adapter failed: '+probe.stderr);
+const syntax=JSON.parse(probe.stdout).map(r=>({...r,sha256:hash(read(r.path))}));
+const lint=spawnSync(path.join(here,'.cache/swiftlint/0.65.1/bin/swiftlint'),['lint','--no-cache','--config',path.join(here,'.swiftlint.yml'),'--reporter','json','--quiet','--use-script-input-files'],{encoding:'utf8',timeout:120000,maxBuffer:20*1024*1024,env:{...process.env,SCRIPT_INPUT_FILE_COUNT:String(swiftFiles.length),...Object.fromEntries(swiftFiles.map((p,i)=>['SCRIPT_INPUT_FILE_'+i,path.join(root,p)]))}});
+if(lint.error||![0,2].includes(lint.status))throw Error('SwiftLint adapter failed: '+lint.stderr);
+const swiftLintFindings=JSON.parse(lint.stdout||'[]').map(f=>({...f,file:path.relative(root,f.file)}));
+const mdFiles=['tools/local-analysis/README.md','research/evaluation/local-qualification-v1/README.md','research/evaluation/local-qualification-v1/AUTHORING.md','research/evaluation/failure-driven/candidates/0.3.0-dev.5/README.md'];
+const markdown=await markdownlint({files:mdFiles,config:{default:true,MD013:false,MD024:false,MD033:false}});
+const evidencePath='research/reports/2026-11-05-frontier-coding-evidence/evidence.json',evidence=json(evidencePath);
+const snippets=evidence.incidents.flatMap(c=>[...c.before,...c.after]).concat([evidence.supplemental.before,evidence.supplemental.after,evidence.supplemental.test]);
+for(const s of snippets){if(hash(read(s.path))!==s.fileHash||!read(s.path).toString().includes(s.code))throw Error('Preserved excerpt mismatch: '+s.path);}
+const replayResult=await replay(snippets.map((s,i)=>({id:'preserved-excerpt-'+i,output:s.code,expected:s.code})));
+const historicalSummary=json('evals/reports/local-compact-b-20261106/summary.json');
+const report={schema:1,scope:'Local structural/static analysis; no new model or native unit execution',modelCalls:0,sourcePins:[{path:evidencePath,sha256:hash(read(evidencePath))}],schemaChecks,syntax,swiftLint:{exitCode:lint.status,findings:swiftLintFindings},markdown,replay:{...replayResult,provenance:'26 preserved development excerpts, not complete baseline answers',wholeAnswerReplay:{status:'unavailable-in-public-summary',metadataRows:historicalSummary.rows.length,reason:'Hashes and grades are not original answer text; no reconstruction or silent substitution'}},summary:{schemaRecords:schemaChecks.length,schemaFailures:schemaChecks.filter(c=>!c.pass).length,swiftFiles:syntax.length,syntaxErrors:syntax.filter(r=>r.hasParserError).length,testFunctions:syntax.flatMap(r=>r.functions).filter(f=>f.name.startsWith('test')).length,functionsWithXCTestAssertions:syntax.flatMap(r=>r.functions).filter(f=>f.assertionCalls.length).length,swiftLintFindings:swiftLintFindings.length,markdownFindings:Object.values(markdown).reduce((n,a)=>n+a.length,0),replayedExcerpts:snippets.length,modelCalls:0}};
+fs.mkdirSync(path.dirname(output),{recursive:true});
+report.tools={node:process.version,packageLockSha256:hash(read('tools/local-analysis/package-lock.json')),swiftLintVersion:'0.65.1',swiftLintBinarySha256:hash(read('tools/local-analysis/.cache/swiftlint/0.65.1/bin/swiftlint')),syntaxProbeSourceSha256:hash(read('tools/local-analysis/SyntaxProbe.swift')),syntaxProbeBinarySha256:hash(read('tools/local-analysis/.cache/syntax-probe')),swiftToolchain:spawnSync('xcrun',['swiftc','--version'],{encoding:'utf8'}).stdout.trim()};
+for(const name of ['run.mjs','replay.mjs','schema.mjs','.swiftlint.yml']){
+ const p='tools/local-analysis/'+name;
+ report.sourcePins.push({path:p,sha256:hash(read(p))});
+}
+fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify(report.summary,null,2));
+console.log('Report: '+path.relative(root,output));
+if(report.summary.schemaFailures||report.summary.syntaxErrors||replayResult.results?.some(r=>!r.success))process.exitCode=1;
