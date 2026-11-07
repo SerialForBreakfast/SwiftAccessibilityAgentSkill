@@ -534,3 +534,22 @@ example execution, spend, released-skill edits or frozen-baseline changes.
 
 See research/evaluation/milestone-audit-v1/README.md. No model runs, spend, new native
 example execution, installs, worker messages or released-skill/baseline changes.
+
+## V2 context package and platform applicability
+
+- [x] Commit prior milestone/audit checkpoint locally as 760554c; no push requested.
+- [x] Apply both exact reference corrections in a separate sealed v2, preserving v1.
+- [x] Resolve all six inherited platform-scope questions: five target-specific public
+  SDK cards plus the project-only testing context. Preserve enclosing @available
+  annotations, distinguish module migration dates, and link existing target26 compile
+  receipts without claiming runtime propagation, generated semantics or delivery.
+- [x] Keep all generic arms, requests, candidate body and rubric identities unchanged;
+  seven candidate cells change with explicit C2-sdk-scoped / C2-project-policy-only
+  profiles. No instruction/reference attribution or C3 discovery claim is inferred.
+- [x] Verify original package/source pins, sealed rebuilds, byte ceilings, malformed
+  preflight inputs and zero live authorization. No models, new native runs or spend.
+- [ ] Independent review of v2 evidence limits and alternatives, clean-harness
+  attestation, exact provider identity and bounded quota approval before live work.
+
+See research/evaluation/milestone-package-v2/README.md. Runtime skill, frozen
+baselines, original guides/candidates, native evidence and quarantines are unchanged.
