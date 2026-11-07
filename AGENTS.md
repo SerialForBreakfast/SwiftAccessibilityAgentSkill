@@ -7,6 +7,11 @@ Read `AGENT.md` for the existing repository safety policy.
 
 ## Test-Driven Skill Improvement
 
+For a BigDog evaluation or existing-evidence request, use the
+[single-exchange contract](evals/BIGDOG-SINGLE-EXCHANGE.md): send one authorized
+job and receive one self-contained final return. Include the return checklist
+in the **original** handoff; do not make a separate request for grading evidence.
+
 For unit-library or evaluation planning, first read
 [the failure-driven evaluation plan](research/evaluation/failure-driven/PRD.md).
 Load its task list, audit or worker handoff only when relevant.
@@ -40,7 +45,8 @@ Load its task list, audit or worker handoff only when relevant.
   the user explicitly authorizes that specific destination. Sandbox write access
   does not grant permission to use another directory.
 - Preserve the UIKit baseline. AppKit/macOS and UIKit/tvOS companion development
-  is now authorized; SwiftUI expansion remains deferred. Compile checks and unit
+  is authorized. SwiftUI development is authorized on iOS, macOS and tvOS only.
+  Separate platform expansion (including watchOS and visionOS) remains deferred. Compile checks and unit
   tests only; no UI tests or mandatory manual accessibility verification. Tests
   establish only their directly asserted behavior.
 - Preserve source tiers. Use annual current/previous tested anchors and exact run

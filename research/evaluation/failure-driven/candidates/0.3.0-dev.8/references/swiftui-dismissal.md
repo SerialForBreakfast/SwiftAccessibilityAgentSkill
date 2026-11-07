@@ -1,0 +1,5 @@
+Trace both ways out of the sheet: Close only requests dismissal; interactive dismissal never presses Close. Route actual completion for either path through the presenter's completion handler. A no-op onDismiss paired with a focus assignment in Close loses the interactive path.
+
+Walk the overlap explicitly: A opens from row X; B opens; A's delayed completion arrives. The callback must identify A independently of the current binding. Reading the latest session ID at callback time identifies B and can consume B. Bind the completion to a presentation-specific owner; if the host cannot identify callbacks, serialize presentations and queue B until A actually finishes. Do not claim serialization while allowing B through another entry point.
+
+At completion consume the matching pending owner once, resolve the current eligible origin by stable ID or use the specified fallback (possibly none), and only then issue the focus request. Cancellation without dismissal issues no request. A unit can observe target/count, not delivered focus.

@@ -1,0 +1,3 @@
+Inventory ordinary operations before adding an NSAccessibility custom action. In a new example, initialize each NSButton with an actual target and selector (or an equivalent installed action); a titled Open button with no recipient cannot open anything. In existing code, retain the button and its established target/action. Do not replace the ordinary route with the custom action.
+
+Trace both AppKit entry points through the current represented item and enabled policy after reuse. A stable dispatcher can read current state at activation; otherwise invalidate obsolete callbacks when rebinding. Show the owning object and how it stays alive. Calling the final handler directly bypasses target/action wiring; configured children are not proof of VoiceOver traversal.

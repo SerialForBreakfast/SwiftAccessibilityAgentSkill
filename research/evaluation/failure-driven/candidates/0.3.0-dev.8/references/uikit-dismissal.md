@@ -1,0 +1,5 @@
+Wire successful programmatic dismissal and any supported interactive dismissal to one completion path. The Close handler initiates dismissal; cancellation does not finish it. Capture the presentation's ID before the transition. A delayed completion for A must not act on B just because B is current when the callback runs.
+
+Return an optional restoration decision from the state mutation: reject an old or duplicate ID, consume the matching owner, resolve an eligible origin or declared fallback from current data. Only after mutating access ends should the caller dispatch the focus request. Test a requester that synchronously opens B, then deliver A's completion twice; B survives and A dispatches at most once. A configured preferred target or a request receipt is not evidence that focus moved.
+
+Use the same current eligibility predicate for the opener and fallback. Exercise an opener that still exists but became ineligible: skip it and request the first eligible fallback, or nothing if none qualifies. A reference-type owner may dispatch directly once its state transition is complete; a returned decision is not required.
