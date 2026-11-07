@@ -1,0 +1,5 @@
+import fs from 'node:fs';
+const base='research/evaluation/assertion-bindings-v1/',d=JSON.parse(fs.readFileSync(base+'bindings.json'));
+let text='# Criterion-by-criterion review\n\nAuthor-bound development overlay; not independent gold acceptance. Open the linked\nmethods for setup and exact assertion expressions. Bindings are narrow observations;\nthe JSON retains remaining gaps, source pins, claim leads and matching execution.\nUnbound criteria are visible rather than credited through a nearby package pass.\n\n';
+for(const r of d.rows){text+='## '+r.id+'\n\n| Criterion | Disposition | Exact method evidence |\n| --- | --- | --- |\n';for(const c of r.criteria){const ids=[...new Set(c.bindings.flatMap(b=>b.contractIds))];text+='| '+(c.index+1)+'. '+c.text.replaceAll('|','\\|')+' | '+c.disposition+' | '+(ids.length?ids.map(id=>{const t=d.contracts[id];return '['+t.testId+'](../../../'+t.file+'#L'+t.line+')';}).join('; '):'Source/answer review or missing suitable assertion')+' |\n';}text+='\n';}
+fs.writeFileSync(base+'REVIEW.md',text);

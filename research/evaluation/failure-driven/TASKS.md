@@ -426,3 +426,20 @@ SHA256 a9c28497ae64e46917ea703cccb996adfd1734aca55154e73d5261b2b0f19f14,
 1434/1435 sent once; peer verification/native completion not yet confirmed. No raw
 answers/account records are public. No remote native execution or new AGY calls.
 See candidates/SILLYCON-AGY-DELIVERY-20261106.md and the new Claude report.
+
+## Assertion-level binding continuation
+
+- [x] Commit and push the local-analysis checkpoint, preserving upstream Claude
+  completion findings and leaving unrelated private/AGY working files out.
+- [x] Extend SwiftSyntax observations with owner/method identity, exact UTF-8 source
+  ranges, assertion expressions and conditional-compilation ancestry.
+- [x] Account for 198 criteria across all 60 draft cases in an additive overlay:
+  81 criteria / 35 cases have narrow links to 143 methods and 317 assertion sites.
+- [x] Verify exact historical unit receipts for every selected method, and link 30
+  methods to matching same-manifest negative controls. No new native execution.
+- [x] Preserve scope-control selection failure and test repaired unsupported axes.
+- [ ] Independently review semantic applicability, residual gaps and alternatives;
+  source/answer-only criteria and whole-criterion gold acceptance remain separate.
+
+See research/evaluation/assertion-bindings-v1/README.md. New bindings do not alter
+candidate subject/rubric bytes, released skill files or frozen baselines.

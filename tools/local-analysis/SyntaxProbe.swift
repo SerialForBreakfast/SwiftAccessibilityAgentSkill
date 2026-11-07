@@ -12,12 +12,24 @@ final class Probe: SyntaxVisitor {
         super.init(viewMode: .sourceAccurate)
     }
     override func visit(_ node: FunctionDeclSyntax) -> SyntaxVisitorContinueKind {
-        let calls = Calls(viewMode: .sourceAccurate)
+        let calls = Calls(locations: locations)
         if let body = node.body { calls.walk(body) }
+        var owners: [String] = []
+        var parent = node.parent
+        while let current = parent {
+            if let type = current.as(ClassDeclSyntax.self) { owners.insert(type.name.text, at: 0) }
+            if let type = current.as(StructDeclSyntax.self) { owners.insert(type.name.text, at: 0) }
+            if let type = current.as(ExtensionDeclSyntax.self) { owners.insert(type.extendedType.trimmedDescription, at: 0) }
+            parent = current.parent
+        }
         functions.append([
             "name": node.name.text,
+            "ownerType": owners.joined(separator: "."),
             "line": locations.location(for: node.positionAfterSkippingLeadingTrivia).line,
+            "startByte": node.positionAfterSkippingLeadingTrivia.utf8Offset,
+            "endByte": node.endPositionBeforeTrailingTrivia.utf8Offset,
             "assertionCalls": calls.assertions,
+            "assertionSites": calls.sites,
             "attributes": node.attributes.description.trimmingCharacters(in: .whitespacesAndNewlines)
         ])
         return .visitChildren
@@ -32,9 +44,33 @@ final class Probe: SyntaxVisitor {
 }
 final class Calls: SyntaxVisitor {
     var assertions: [String] = []
+    var sites: [[String: Any]] = []
+    let locations: SourceLocationConverter
+    init(locations: SourceLocationConverter) {
+        self.locations = locations
+        super.init(viewMode: .sourceAccurate)
+    }
     override func visit(_ node: FunctionCallExprSyntax) -> SyntaxVisitorContinueKind {
         let name = node.calledExpression.description.trimmingCharacters(in: .whitespacesAndNewlines)
-        if name.hasPrefix("XCTAssert") || name == "XCTFail" { assertions.append(name) }
+        if name.hasPrefix("XCTAssert") || name == "XCTFail" {
+            assertions.append(name)
+            var conditions: [String] = []
+            var parent = node.parent
+            while let current = parent {
+                if let clause = current.as(IfConfigClauseSyntax.self) {
+                    conditions.insert(clause.poundKeyword.text + " " + (clause.condition?.trimmedDescription ?? ""), at: 0)
+                }
+                parent = current.parent
+            }
+            sites.append([
+                "callee": name,
+                "expression": node.trimmedDescription,
+                "line": locations.location(for: node.positionAfterSkippingLeadingTrivia).line,
+                "startByte": node.positionAfterSkippingLeadingTrivia.utf8Offset,
+                "endByte": node.endPositionBeforeTrailingTrivia.utf8Offset
+                , "conditionalCompilation": conditions
+            ])
+        }
         return .visitChildren
     }
 }
