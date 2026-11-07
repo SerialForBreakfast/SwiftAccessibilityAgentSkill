@@ -1,3 +1,5 @@
 Start with the existing checkout, not a replacement Pay button. Trace initial configuration and a later effective text-size change through the same update path. Scale the original design font from its unscaled base for the relevant text style and trait environment; apply the change where the label or button configuration actually obtains its displayed font. Do not overwrite the existing button configuration, target/action or enabled policy to change the description.
 
 Let localized text wrap with sufficient vertical space. A permanently stacked layout is a valid solution; changing axes is not required. On the same checkout, inspect configured font, multiline settings and unchanged Pay wiring after both updates. An assertion about those properties is not evidence that the rendered translation fits.
+
+When the app's typeface is not supplied, accept the unscaled design font as an input and show it being used on every update. A system font plus a TODO to substitute the design font does not preserve typography.
