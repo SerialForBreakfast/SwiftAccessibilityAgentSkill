@@ -443,3 +443,49 @@ See candidates/SILLYCON-AGY-DELIVERY-20261106.md and the new Claude report.
 
 See research/evaluation/assertion-bindings-v1/README.md. New bindings do not alter
 candidate subject/rubric bytes, released skill files or frozen baselines.
+
+## Consolidated operational rubric gap closure
+
+- [x] Publish assertion-binding checkpoint b9c0a14; unrelated coordinator/AGY files
+  remain outside Git publication.
+- [x] Define pass, gap and insufficient-evidence decisions for all 198 criteria,
+  including the 117 without unit-subset bindings. This closes grading definitions,
+  not missing behavioral evidence or independent gold qualification.
+- [x] Correct accepted alternatives for all 12 controls without editing frozen
+  subject/original controller bytes; separate no-change from ownership clarification.
+- [x] Add three existing checkout revision-2 method/receipt links for native iOS text
+  and Pay preservation, retaining the original oracle failure and other target bounds.
+- [x] Add exact local source/policy anchors and a review-record consistency validator
+  rejecting stale hashes, fabricated excerpts, incomplete criteria and fixture-pass
+  substitution for answer grading. No semantic auto-grading or independent acceptance.
+- [ ] Independently review the operational packet and source applicability; resolve
+  three primary-source mappings before API-specific qualification.
+- [ ] Freeze the approved representative selection before any separate model-run
+  request. No model calls, spend, new native execution or release promotion here.
+
+See research/evaluation/rubric-closure-v1/README.md. Earlier bindings, candidate
+snapshots, released skill, native receipts and frozen baselines remain unchanged.
+
+## Research-backed skill-lift tranche
+
+- [x] Reinterpret preserved comparisons as separate gain/regression/preservation/
+  persistent-failure/inconclusive outcomes without rewriting historical grades.
+- [x] Keep local-model cohorts diagnostic, frontier cohorts separate, compiler
+  outcomes distinct and AGY inconclusive-to-pass out of fail-to-pass gain counts.
+- [x] Add strict matched-input identities, family-clustered quality uncertainty,
+  critical-error and two-point non-inferiority gates. Numeric flags do not authorize
+  runs, publication or promotion; independent/held-out/platform review remains open.
+- [x] Report measured/missing token telemetry separately. Focused input savings do
+  not establish broader efficiency when total tokens are unavailable or worsen.
+- [x] Separate instrumented reads, offline metadata lookup, supplied content and
+  routing-only assertions; do not infer semantic use from a read or file name.
+- [x] Add 24 realistic draft activation inputs (12 relevant, eight near misses,
+  four ambiguous) with labels outside subjects; no holdout/gold promotion or runs.
+- [x] Measure current candidate context bytes against dev.2 using the same guideline:
+  median -4.89% on 45 mapped rows, three source gaps, no provider-token estimate.
+- [ ] Independently review/freeze the representative scenario selection and same
+  rubric before one separately approved bounded frontier milestone. Distill after
+  useful outcomes, not after a higher structural check count.
+
+See research/evaluation/skill-lift-v1/README.md. No skill edits, baseline changes,
+model calls, new native runs, installations, worker messages or spend.
