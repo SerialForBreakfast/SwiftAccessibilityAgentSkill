@@ -611,3 +611,31 @@ Git publication remains separately authorized.
 See [review results](../swiftui-review-v1/RESULTS.md) and
 [candidate dev.6](candidates/0.3.0-dev.6/README.md). Live stream observer lifecycle
 remains outside this extension and explicitly unresolved; no UI/manual gate added.
+
+## Gemini Exact-Message Transport And Approval Preparation
+
+- [x] Materialize the reviewed composite controller separately:78 criteria,3 action
+  overrides,24 source bindings and5 OR-01 controller-only provenance corrections.
+  Preserve all48 original payload bytes and previous experiment identities.
+- [x] Export exact messages-only subject files under opaque names, with operator
+  metadata/controller files separate. Folder layout is not runtime isolation.
+- [x] Add35 offline fixture checks for role/content preservation, hidden context,
+  tool/controller/session leakage, model substitution, malformed evidence and quota
+  thresholds/resets/unknown data. Schema consistency never enables live execution.
+- [x] Capture local AGY help only: stream-JSON documents one turn per line; no
+  undocumented system/tools flags or agent-mode isolation guarantees are inferred.
+- [x] Reobserve all6 installed SDK declarations/hashes without native builds; this
+  does not complete independent source authentication or all domain qualification.
+- [x] Draft one named48-first-attempt subscription-only proposal,5/1/1 proposed
+  percentage-point thresholds, zero retries/probes/fallbacks and explicit unsupported
+  hard provider token/internal-request caps. No debit forecast or allocation claimed.
+- [x] Keep96 exemplar slots/312 judgments visibly not-authored/not-graded. Conceptual
+  examples and serializer tests do not complete FD-04 calibration.
+- [ ] BigDog returns actual supported AGY1.5.3 transport/isolation proof, or one
+  concrete blocked-capability report. Handoff prepared, not sent or accepted.
+- [ ] Complete source/oracle and executed exemplar calibration, then request fresh
+  owner approval for the exact model, observed quota allowances and supported limits.
+
+See [preflight packet](../gemini-preflight-v1/README.md). All1,373 current offline
+checks pass, plus25 historical module checks (overlapping, not independent cases).
+No new subject/provider calls, native runs, worker messages or Git publication.
