@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "id": "explicit-invocation-20261107-r1",
+  "status": "prepared-offline-verified-not-executed",
+  "execution_enabled": false,
+  "model": "claude-haiku-5-5",
+  "sessions": 12,
+  "conditions": [
+    "generic",
+    "0.2.2",
+    "0.3.0-dev.2",
+    "0.3.0-dev.5"
+  ],
+  "question_families": [
+    "GP26-02",
+    "IOS-VALIDATION-OWNERSHIP-R1",
+    "IOS-MEDIA-OWNERSHIP-R1"
+  ],
+  "case_status": "existing independently reviewed development questions; no newholdouts or new60-question matrix in subject context",
+  "new_probe_sessions": 0,
+  "native_loading_fix": "Explicit native Skill-tool request, successful tool receipt AND full matching frozen body required in native user message. No body injection in initial question. First guided subject is the counted loading gate. Stop on failed proof, no retry.",
+  "source_commits": {
+    "current_base": "8319c230d72f4d6870f3bc6ced9bfab35dc882ba",
+    "remote_dev5": "b9c0a142575cb70bf43f49fff2be4e25dadd3b93"
+  },
+  "candidate_assets": "dev.5 adds only8 pinned runtime task notes to the same existing references; version-package comparison, not body-only causal isolation",
+  "estimate": {
+    "five_hour_percentage_points": [
+      2,
+      5
+    ],
+    "weekly_percentage_points": [
+      0,
+      1
+    ],
+    "confidence": "low",
+    "basis": "Same-model preceding12 uninvoked subjects showed no displayed increment; true consumption unresolved.9 guided subjects now load full bodies and relevant references, so budget conservatively for extra context and tool roundtrips. No known token-to-subscription conversion."
+  },
+  "approval_allowance": {
+    "five_hour_percentage_points": 5,
+    "weekly_percentage_points": 1,
+    "checks": "after every subject; stop before next if allowance reached or quota unavailable",
+    "uncertainty": "rounded/delayed readings, concurrent account use, and one-session overshoot possible"
+  },
+  "current_usage": {
+    "windows": [
+      {
+        "bucket": "five_hour",
+        "label": "5-hour",
+        "duration_minutes": 300,
+        "used_percent": 0.0,
+        "reset_at": 1794085200.0
+      },
+      {
+        "bucket": "seven_day",
+        "label": "Weekly",
+        "duration_minutes": 10080,
+        "used_percent": 18.0,
+        "reset_at": 1794452400.0
+      }
+    ],
+    "observed_at": 1794067580.9884596,
+    "provenance": "CLI /usage (no inference)"
+  },
+  "extra_usage": "Most recent owner-off attestation expired; approval must confirm it remains off. No renewal performed.",
+  "operational_bounds": {
+    "per_session_timeout_seconds": 180,
+    "batch_seconds": 3600,
+    "capture_bytes": 2097152,
+    "turn_cap": null,
+    "token_stop": null,
+    "tools": [
+      "Read",
+      "Skill"
+    ],
+    "retries": 0,
+    "fallbacks": 0,
+    "incremental_spend": 0
+  },
+  "validation": {
+    "offline_tests": 26,
+    "metadata_checks": 12,
+    "frozen_baseline_files_verified": 210,
+    "new_inference_calls": 0
+  },
+  "hashes": {
+    "manifest": "8257b4bfef2e095333cd0a61ee2ae21b7691ec3e90e0265cd6913e03e2a568c7",
+    "jobs": "cd09201fee359f4329f4275e4d9743ca3b51ec0609440c1efcabb7588da32979",
+    "executor": "27c7a83b1d2d9bb9d508fba9fe59436c8a7dd06eaf3c06f9b5ea9f59d3890d16",
+    "invocation_module": "a5f9166d8f17942434796c5a415cfbe2d4a8bf2ee02b1ad90e952d30d8d35677",
+    "parser_module": "dcd71b4b67c769234c169aaaf5ee1b0e09dfbecb64a296a479bf88a2a00b0f8b"
+  },
+  "jobs": [
+    {
+      "id": "GP26-02-0.3.0-dev.5",
+      "condition": "0.3.0-dev.5",
+      "developer_question_sha256": "7c26dc1b5208f9f8b1d745d19e200f00c3d3d2c8cd3882ff52bff8fcb75ff055",
+      "actual_request_sha256": "6967d3a9e6e5aa30017b351462fd6c972e0ef67b629b0dae9b4cf4c3d6d0436d",
+      "skill_source_sha256": "2f94600750f6a84c1f9b68fd67bc32703a10286119c14397a577a81e8a83edd2",
+      "skill_body_sha256": "532eb730974b47870825632a520a13e6d351c9690d1d9d175562cff42a5d6975"
+    },
+    {
+      "id": "GP26-02-generic",
+      "condition": "generic",
+      "developer_question_sha256": "7c26dc1b5208f9f8b1d745d19e200f00c3d3d2c8cd3882ff52bff8fcb75ff055",
+      "actual_request_sha256": "7c26dc1b5208f9f8b1d745d19e200f00c3d3d2c8cd3882ff52bff8fcb75ff055",
+      "skill_source_sha256": null,
+      "skill_body_sha256": null
+    },
+    {
+      "id": "GP26-02-0.2.2",
+      "condition": "0.2.2",
+      "developer_question_sha256": "7c26dc1b5208f9f8b1d745d19e200f00c3d3d2c8cd3882ff52bff8fcb75ff055",
+      "actual_request_sha256": "6967d3a9e6e5aa30017b351462fd6c972e0ef67b629b0dae9b4cf4c3d6d0436d",
+      "skill_source_sha256": "2f4ce5ea5a6c8fa7c7cdd08eea620c606eedcc7ae389ac19a493d73078f7c3e3",
+      "skill_body_sha256": "a4282d85f4b1b20f806ac701c04894b9a31e43e72781f54a72ca43ae0f6bc93c"
+    },
+    {
+      "id": "GP26-02-0.3.0-dev.2",
+      "condition": "0.3.0-dev.2",
+      "developer_question_sha256": "7c26dc1b5208f9f8b1d745d19e200f00c3d3d2c8cd3882ff52bff8fcb75ff055",
+      "actual_request_sha256": "6967d3a9e6e5aa30017b351462fd6c972e0ef67b629b0dae9b4cf4c3d6d0436d",
+      "skill_source_sha256": "58ba7f723b39cd68cc7009377140d3adf7859a75d4302c566111360f9ca09dd9",
+      "skill_body_sha256": "b5fc941efa3d39fef16ee28815a2be96833d6246f614b55ea66844720a31ccb9"
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1-generic",
+      "condition": "generic",
+      "developer_question_sha256": "4b42e962414a769189046a2bb08c66f22eee1d6b403e4d1b72bb1396fc8c4083",
+      "actual_request_sha256": "4b42e962414a769189046a2bb08c66f22eee1d6b403e4d1b72bb1396fc8c4083",
+      "skill_source_sha256": null,
+      "skill_body_sha256": null
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1-0.2.2",
+      "condition": "0.2.2",
+      "developer_question_sha256": "4b42e962414a769189046a2bb08c66f22eee1d6b403e4d1b72bb1396fc8c4083",
+      "actual_request_sha256": "02dee98009e3b49f2446a3754925062a3613bfb4092cd95b4ec6dc49147beb33",
+      "skill_source_sha256": "2f4ce5ea5a6c8fa7c7cdd08eea620c606eedcc7ae389ac19a493d73078f7c3e3",
+      "skill_body_sha256": "a4282d85f4b1b20f806ac701c04894b9a31e43e72781f54a72ca43ae0f6bc93c"
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1-0.3.0-dev.2",
+      "condition": "0.3.0-dev.2",
+      "developer_question_sha256": "4b42e962414a769189046a2bb08c66f22eee1d6b403e4d1b72bb1396fc8c4083",
+      "actual_request_sha256": "02dee98009e3b49f2446a3754925062a3613bfb4092cd95b4ec6dc49147beb33",
+      "skill_source_sha256": "58ba7f723b39cd68cc7009377140d3adf7859a75d4302c566111360f9ca09dd9",
+      "skill_body_sha256": "b5fc941efa3d39fef16ee28815a2be96833d6246f614b55ea66844720a31ccb9"
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1-0.3.0-dev.5",
+      "condition": "0.3.0-dev.5",
+      "developer_question_sha256": "4b42e962414a769189046a2bb08c66f22eee1d6b403e4d1b72bb1396fc8c4083",
+      "actual_request_sha256": "02dee98009e3b49f2446a3754925062a3613bfb4092cd95b4ec6dc49147beb33",
+      "skill_source_sha256": "2f94600750f6a84c1f9b68fd67bc32703a10286119c14397a577a81e8a83edd2",
+      "skill_body_sha256": "532eb730974b47870825632a520a13e6d351c9690d1d9d175562cff42a5d6975"
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1-0.2.2",
+      "condition": "0.2.2",
+      "developer_question_sha256": "47068403d980644e9838598453bacaefca727870514faf09f3a62ecd5b7538a0",
+      "actual_request_sha256": "bee865bed8b66e10d09be1b896c74c7f8b5afced5b7e57bb0883285be501f920",
+      "skill_source_sha256": "2f4ce5ea5a6c8fa7c7cdd08eea620c606eedcc7ae389ac19a493d73078f7c3e3",
+      "skill_body_sha256": "a4282d85f4b1b20f806ac701c04894b9a31e43e72781f54a72ca43ae0f6bc93c"
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1-0.3.0-dev.2",
+      "condition": "0.3.0-dev.2",
+      "developer_question_sha256": "47068403d980644e9838598453bacaefca727870514faf09f3a62ecd5b7538a0",
+      "actual_request_sha256": "bee865bed8b66e10d09be1b896c74c7f8b5afced5b7e57bb0883285be501f920",
+      "skill_source_sha256": "58ba7f723b39cd68cc7009377140d3adf7859a75d4302c566111360f9ca09dd9",
+      "skill_body_sha256": "b5fc941efa3d39fef16ee28815a2be96833d6246f614b55ea66844720a31ccb9"
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1-0.3.0-dev.5",
+      "condition": "0.3.0-dev.5",
+      "developer_question_sha256": "47068403d980644e9838598453bacaefca727870514faf09f3a62ecd5b7538a0",
+      "actual_request_sha256": "bee865bed8b66e10d09be1b896c74c7f8b5afced5b7e57bb0883285be501f920",
+      "skill_source_sha256": "2f94600750f6a84c1f9b68fd67bc32703a10286119c14397a577a81e8a83edd2",
+      "skill_body_sha256": "532eb730974b47870825632a520a13e6d351c9690d1d9d175562cff42a5d6975"
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1-generic",
+      "condition": "generic",
+      "developer_question_sha256": "47068403d980644e9838598453bacaefca727870514faf09f3a62ecd5b7538a0",
+      "actual_request_sha256": "47068403d980644e9838598453bacaefca727870514faf09f3a62ecd5b7538a0",
+      "skill_source_sha256": null,
+      "skill_body_sha256": null
+    }
+  ]
+}

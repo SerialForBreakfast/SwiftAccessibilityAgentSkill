@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "status": "offline-verified-awaiting-subscription-approval",
+  "execution_enabled": false,
+  "revision": "r5",
+  "model": "claude-haiku-5-5",
+  "sessions": 12,
+  "new_probe_sessions": 0,
+  "conditions": [
+    "generic",
+    "0.2.2",
+    "0.3.0-dev.2"
+  ],
+  "cases": [
+    "GP26-02",
+    "IOS-VALIDATION-OWNERSHIP-R1",
+    "IOS-MEDIA-OWNERSHIP-R1",
+    "SWIFT-SORT-NEGATIVE-R1"
+  ],
+  "estimated_usage": {
+    "five_hour_percentage_points": [
+      2,
+      5
+    ],
+    "weekly_percentage_points": [
+      0,
+      1
+    ],
+    "confidence": "low; planning estimate, not known token-to-subscription conversion",
+    "basis": "Prior14 same-model injected sessions: rounded5-hour17% to18%, weekly18% to18%; current native fixtures need tool roundtrips and reference reads. Concurrent use, rounding and cache mix prevent exact attribution."
+  },
+  "current_subscription_windows": {
+    "windows": [
+      {
+        "bucket": "five_hour",
+        "label": "5-hour",
+        "duration_minutes": 300,
+        "used_percent": 0.0,
+        "reset_at": 1794054600.0
+      },
+      {
+        "bucket": "seven_day",
+        "label": "Weekly",
+        "duration_minutes": 10080,
+        "used_percent": 18.0,
+        "reset_at": 1794452400.0
+      }
+    ],
+    "observed_at": 1794037173.5045273,
+    "provenance": "CLI /usage (no inference)"
+  },
+  "approval_budget": {
+    "five_hour_percentage_points": 5,
+    "weekly_percentage_points": 1,
+    "checks": "after every session; stop before next if threshold reached or reading unavailable",
+    "uncertainty": "one-session overshoot, rounded/delayed readings and concurrent account activity; not a hard provider cap"
+  },
+  "remaining_operational_bounds": {
+    "batch_seconds": 3600,
+    "session_timeout_seconds": 180,
+    "stream_capture_bytes": 2097152,
+    "extra_spend": 0,
+    "retries": 0,
+    "fallbacks": 0,
+    "tools": [
+      "Read",
+      "Skill"
+    ],
+    "turn_limit": null,
+    "token_stop_threshold": null
+  },
+  "extra_usage": "previous owner-off attestation expired; approval must confirm it remains off",
+  "offline_tests": 18,
+  "probe_replay": "successful synthetic skill invocation, inside read and real outside denial;3 distinct response IDs vs5 assistant events/client num_turns5",
+  "manifest_sha256": "4579bb79608e4b700b4e97c0288d2e6ae7bfd83dd5083995163e046e02f28cd6",
+  "jobs_sha256": "a88aa1af6a858c0831feb36eb7410698bd957d736260daeb621bf6948ebcf3cb",
+  "executor_sha256": "2ba10d9ffa3732d254d96dcea59940288b832fdcbb8503e13902e485da48480e",
+  "trace_module_sha256": "dcd71b4b67c769234c169aaaf5ee1b0e09dfbecb64a296a479bf88a2a00b0f8b",
+  "prior_reserved_sessions": 4,
+  "scored_sessions_executed": 0
+}

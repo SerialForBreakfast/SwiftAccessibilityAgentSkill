@@ -1,0 +1,341 @@
+{
+  "schema": 1,
+  "id": "native-activation-lift-20261106-r3",
+  "status": "metadata-preflight-only-no-inference-authorized",
+  "execution_enabled": false,
+  "source_commit": "8319c230d72f4d6870f3bc6ced9bfab35dc882ba",
+  "model": "claude-haiku-5-5",
+  "model_scope_reason": "installed Claude accepts documented max-turns; AGY native tool-loop qualification is not established",
+  "conditions": [
+    "generic",
+    "0.2.2",
+    "0.3.0-dev.2"
+  ],
+  "scored_sessions": 12,
+  "qualification_sessions": 1,
+  "total_cli_session_cap": 13,
+  "agentic_turns_per_session": 4,
+  "maximum_exposed_agentic_turns": 52,
+  "internal_provider_requests_cap": null,
+  "cases": [
+    {
+      "id": "GP26-02",
+      "lane": "existing UIKit smoke control",
+      "source": "evals/os26/prompts.json",
+      "status": "qualified question, known development case",
+      "prompt_sha256": "7c26dc1b5208f9f8b1d745d19e200f00c3d3d2c8cd3882ff52bff8fcb75ff055"
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1",
+      "lane": "UIKit accessibility ownership",
+      "source": "code-examples/platforms/ios-closure-v1/evaluation/validation-ownership.prompt.md",
+      "original_prompt_sha256": "61f7850a2f1701cdd9d12b6543751631af7c0796f590459e3818420456c08de0",
+      "status": "context-revised development question, independently provisionally reviewed; not holdout",
+      "prompt_sha256": "4b42e962414a769189046a2bb08c66f22eee1d6b403e4d1b72bb1396fc8c4083"
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1",
+      "lane": "UIKit accessible media ownership",
+      "source": "code-examples/platforms/ios-closure-v1/evaluation/media-load-ownership.prompt.md",
+      "original_prompt_sha256": "5cac0e1c6c305829b5612814aa742d174c76eea02ee204ed297d960f66489787",
+      "status": "context-revised development question, independently provisionally reviewed; not holdout",
+      "prompt_sha256": "47068403d980644e9838598453bacaefca727870514faf09f3a62ecd5b7538a0"
+    },
+    {
+      "id": "SWIFT-SORT-NEGATIVE-R1",
+      "lane": "general Swift negative trigger control",
+      "status": "new diagnostic trigger control; independently provisionally reviewed; not holdout",
+      "prompt_sha256": "7e4e4a0453fa836a3093c5a71a43145326cc2460bdd5a61e246060c9daeefbeb"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "qualification-native-boundary",
+      "case": "qualification",
+      "condition": "qualification",
+      "expected_skill": "native-eval:activation-probe",
+      "prompt_sha256": "1c853c5e1c9a0f03e44ca1fad7b5529f2960d169e82459cc49a8ed140811426c",
+      "settings_sha256": "a7a5230017dbf4b0cd571e541495526afae94fec5b735bbab854d6c2301f50dd",
+      "skill_aliases": [
+        "native-eval:activation-probe",
+        "activation-probe"
+      ]
+    },
+    {
+      "id": "GP26-02-generic",
+      "case": "GP26-02",
+      "condition": "generic",
+      "prompt_sha256": "7c26dc1b5208f9f8b1d745d19e200f00c3d3d2c8cd3882ff52bff8fcb75ff055",
+      "turn_cap": 4,
+      "expected_skill": null,
+      "settings_sha256": "0980fb679206cbcd47a18edf45e3ea6a49af256d2f955505fa8f4548ff0f68b7",
+      "skill_aliases": []
+    },
+    {
+      "id": "GP26-02-0.2.2",
+      "case": "GP26-02",
+      "condition": "0.2.2",
+      "prompt_sha256": "7c26dc1b5208f9f8b1d745d19e200f00c3d3d2c8cd3882ff52bff8fcb75ff055",
+      "turn_cap": 4,
+      "expected_skill": "native-eval:swift-accessibility-agent",
+      "settings_sha256": "e49bec63c7a16da7f7a1f2766581c69830f2f86817029671caf8a34776c7afa3",
+      "skill_aliases": [
+        "native-eval:swift-accessibility-agent",
+        "swift-accessibility-agent"
+      ]
+    },
+    {
+      "id": "GP26-02-0.3.0-dev.2",
+      "case": "GP26-02",
+      "condition": "0.3.0-dev.2",
+      "prompt_sha256": "7c26dc1b5208f9f8b1d745d19e200f00c3d3d2c8cd3882ff52bff8fcb75ff055",
+      "turn_cap": 4,
+      "expected_skill": "native-eval:swift-accessibility-agent",
+      "settings_sha256": "e49bec63c7a16da7f7a1f2766581c69830f2f86817029671caf8a34776c7afa3",
+      "skill_aliases": [
+        "native-eval:swift-accessibility-agent",
+        "swift-accessibility-agent"
+      ]
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1-0.2.2",
+      "case": "IOS-VALIDATION-OWNERSHIP-R1",
+      "condition": "0.2.2",
+      "prompt_sha256": "4b42e962414a769189046a2bb08c66f22eee1d6b403e4d1b72bb1396fc8c4083",
+      "turn_cap": 4,
+      "expected_skill": "native-eval:swift-accessibility-agent",
+      "settings_sha256": "e49bec63c7a16da7f7a1f2766581c69830f2f86817029671caf8a34776c7afa3",
+      "skill_aliases": [
+        "native-eval:swift-accessibility-agent",
+        "swift-accessibility-agent"
+      ]
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1-0.3.0-dev.2",
+      "case": "IOS-VALIDATION-OWNERSHIP-R1",
+      "condition": "0.3.0-dev.2",
+      "prompt_sha256": "4b42e962414a769189046a2bb08c66f22eee1d6b403e4d1b72bb1396fc8c4083",
+      "turn_cap": 4,
+      "expected_skill": "native-eval:swift-accessibility-agent",
+      "settings_sha256": "e49bec63c7a16da7f7a1f2766581c69830f2f86817029671caf8a34776c7afa3",
+      "skill_aliases": [
+        "native-eval:swift-accessibility-agent",
+        "swift-accessibility-agent"
+      ]
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1-generic",
+      "case": "IOS-VALIDATION-OWNERSHIP-R1",
+      "condition": "generic",
+      "prompt_sha256": "4b42e962414a769189046a2bb08c66f22eee1d6b403e4d1b72bb1396fc8c4083",
+      "turn_cap": 4,
+      "expected_skill": null,
+      "settings_sha256": "0980fb679206cbcd47a18edf45e3ea6a49af256d2f955505fa8f4548ff0f68b7",
+      "skill_aliases": []
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1-0.3.0-dev.2",
+      "case": "IOS-MEDIA-OWNERSHIP-R1",
+      "condition": "0.3.0-dev.2",
+      "prompt_sha256": "47068403d980644e9838598453bacaefca727870514faf09f3a62ecd5b7538a0",
+      "turn_cap": 4,
+      "expected_skill": "native-eval:swift-accessibility-agent",
+      "settings_sha256": "e49bec63c7a16da7f7a1f2766581c69830f2f86817029671caf8a34776c7afa3",
+      "skill_aliases": [
+        "native-eval:swift-accessibility-agent",
+        "swift-accessibility-agent"
+      ]
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1-generic",
+      "case": "IOS-MEDIA-OWNERSHIP-R1",
+      "condition": "generic",
+      "prompt_sha256": "47068403d980644e9838598453bacaefca727870514faf09f3a62ecd5b7538a0",
+      "turn_cap": 4,
+      "expected_skill": null,
+      "settings_sha256": "0980fb679206cbcd47a18edf45e3ea6a49af256d2f955505fa8f4548ff0f68b7",
+      "skill_aliases": []
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1-0.2.2",
+      "case": "IOS-MEDIA-OWNERSHIP-R1",
+      "condition": "0.2.2",
+      "prompt_sha256": "47068403d980644e9838598453bacaefca727870514faf09f3a62ecd5b7538a0",
+      "turn_cap": 4,
+      "expected_skill": "native-eval:swift-accessibility-agent",
+      "settings_sha256": "e49bec63c7a16da7f7a1f2766581c69830f2f86817029671caf8a34776c7afa3",
+      "skill_aliases": [
+        "native-eval:swift-accessibility-agent",
+        "swift-accessibility-agent"
+      ]
+    },
+    {
+      "id": "SWIFT-SORT-NEGATIVE-R1-generic",
+      "case": "SWIFT-SORT-NEGATIVE-R1",
+      "condition": "generic",
+      "prompt_sha256": "7e4e4a0453fa836a3093c5a71a43145326cc2460bdd5a61e246060c9daeefbeb",
+      "turn_cap": 4,
+      "expected_skill": null,
+      "settings_sha256": "0980fb679206cbcd47a18edf45e3ea6a49af256d2f955505fa8f4548ff0f68b7",
+      "skill_aliases": []
+    },
+    {
+      "id": "SWIFT-SORT-NEGATIVE-R1-0.2.2",
+      "case": "SWIFT-SORT-NEGATIVE-R1",
+      "condition": "0.2.2",
+      "prompt_sha256": "7e4e4a0453fa836a3093c5a71a43145326cc2460bdd5a61e246060c9daeefbeb",
+      "turn_cap": 4,
+      "expected_skill": "native-eval:swift-accessibility-agent",
+      "settings_sha256": "e49bec63c7a16da7f7a1f2766581c69830f2f86817029671caf8a34776c7afa3",
+      "skill_aliases": [
+        "native-eval:swift-accessibility-agent",
+        "swift-accessibility-agent"
+      ]
+    },
+    {
+      "id": "SWIFT-SORT-NEGATIVE-R1-0.3.0-dev.2",
+      "case": "SWIFT-SORT-NEGATIVE-R1",
+      "condition": "0.3.0-dev.2",
+      "prompt_sha256": "7e4e4a0453fa836a3093c5a71a43145326cc2460bdd5a61e246060c9daeefbeb",
+      "turn_cap": 4,
+      "expected_skill": "native-eval:swift-accessibility-agent",
+      "settings_sha256": "e49bec63c7a16da7f7a1f2766581c69830f2f86817029671caf8a34776c7afa3",
+      "skill_aliases": [
+        "native-eval:swift-accessibility-agent",
+        "swift-accessibility-agent"
+      ]
+    }
+  ],
+  "input_source_files": {
+    "SKILL.md": "2f4ce5ea5a6c8fa7c7cdd08eea620c606eedcc7ae389ac19a493d73078f7c3e3",
+    "evals/os26/prompts.json": "677ee62fe529a551fc0b801a60177394426b642062fc579c1a07e8fb925ae797",
+    "evals/os26/acceptance.json": "dccda1b1837d55533c80960bec8bdd444b06df7b703b0dc305b3612ee7883380",
+    "research/evaluation/failure-driven/candidates/0.3.0-dev.2/ENTRYPOINT.md": "827768a53f7ed428354fe37b5941d042bbc6ab6036e35965fcf0fa7424476ffa",
+    "code-examples/platforms/ios-closure-v1/manifest.json": "fba6dae75ae2725da4ca8066df89cbab77ab9f611dcb9f19e18cbadaab185844",
+    "code-examples/platforms/ios-closure-v1/evaluation/validation-ownership.rubric.md": "73f5804af3ad3600ccca4eb2653dc736fce63b8598fb504ced8813e593a335f8",
+    "code-examples/platforms/ios-closure-v1/evaluation/media-load-ownership.rubric.md": "41ae703f40b170b1d87a02d221d4b037615c2b5597bb8140fe7127a873a0e5d2"
+  },
+  "limits": {
+    "per_session_seconds": 180,
+    "batch_seconds": 3600,
+    "initial_user_prompt_bytes": 20480,
+    "captured_stream_bytes": 2097152,
+    "reported_total_token_stop_threshold": 200000,
+    "threshold_is_hard_cap": false,
+    "output_token_target": 2048,
+    "hard_output_token_cap": null,
+    "tool_calls_per_session": 8,
+    "reference_bytes_stop_threshold": 65536,
+    "reference_byte_threshold_can_overshoot_by_one_read": true,
+    "retries": 0,
+    "fallbacks": 0,
+    "concurrency": 1,
+    "incremental_spend": 0
+  },
+  "quality_design": "Same exact developer prompt and common client settings per condition. Generic has no accessibility skill; release and candidate use automatically discoverable native skill plus identical reference snapshots, never inlined bodies/references. Actual discovery/Skill calls/Read results are measured. End-to-end installed workflow comparison, not isolated instruction-body effect.",
+  "metadata_policy": "released0.2.2 is current root snapshot at source_commit with exact hash, not silently substituted archived baseline bytes; candidate name/description same with version/body pinned. No repo release/baseline edits.",
+  "qualification": "One counted synthetic skill+Read roundtrip and outside-root synthetic denial. No host secrets. Fail closed before scored subjects if tool isolation, native skill selection or stream trace fails.",
+  "controls": "Generic control not penalized for no identity/routing. General Swift question should not trigger accessibility skill. Existing known reuse is smoke control. Two ownership questions add explicit natural accessibility context; original draft bytes retained with hashes and independent review required.",
+  "capture": "Raw streamed messages/tool requests/results/finish/usage, exact workspace file bytes/hash, skill catalog and settings retained privately; unavailable provider context explicitly unknown.",
+  "approval_scope": "Pending explicit new allocation; two prior startup reservations remain consumed.",
+  "remaining_gates": [
+    "owner approval for replacement probe and chosen cumulative budget",
+    "fresh subscription checks; retire r2 grant without refund; counted Skill/Read/isolation probe"
+  ],
+  "controller_sha256": "34880ba5533443c171f60cf9ea9f5644fecb0ad6d65ca46044c91d8f371fc177",
+  "jobs_sha256": "949e1c5ee66bca14a67f0a5c089515e79846ebd0db805956488172556137fa37",
+  "workspace_file_counts": [
+    {
+      "id": "qualification-native-boundary",
+      "files": 2
+    },
+    {
+      "id": "GP26-02-generic",
+      "files": 0
+    },
+    {
+      "id": "GP26-02-0.2.2",
+      "files": 130
+    },
+    {
+      "id": "GP26-02-0.3.0-dev.2",
+      "files": 130
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1-0.2.2",
+      "files": 130
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1-0.3.0-dev.2",
+      "files": 130
+    },
+    {
+      "id": "IOS-VALIDATION-OWNERSHIP-R1-generic",
+      "files": 0
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1-0.3.0-dev.2",
+      "files": 130
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1-generic",
+      "files": 0
+    },
+    {
+      "id": "IOS-MEDIA-OWNERSHIP-R1-0.2.2",
+      "files": 130
+    },
+    {
+      "id": "SWIFT-SORT-NEGATIVE-R1-generic",
+      "files": 0
+    },
+    {
+      "id": "SWIFT-SORT-NEGATIVE-R1-0.2.2",
+      "files": 130
+    },
+    {
+      "id": "SWIFT-SORT-NEGATIVE-R1-0.3.0-dev.2",
+      "files": 130
+    }
+  ],
+  "executor_sha256": "df0e49f2ccfce9ec20f11e562f7a5a2b2cbb94c09e9ed38951da329919095343",
+  "controller_review_sha256": "70b49a3c06784b251cfdf400891e223397fd0dd8c0dc74b8f0da0f12c09b78a8",
+  "parent_failed_manifest_sha256": "3dcae5a1c0adacea838587d61555da9cd0e1318fdc84f38ce08ead9be602570c",
+  "cumulative_session_cap": null,
+  "cumulative_exposed_turn_cap": null,
+  "remaining_sessions_in_repair": null,
+  "previous_reserved_session_outcome": "unknown; no assistant/result receipt; usage unavailable",
+  "repair_changes": [
+    "Register only a pinned session-local native-eval plugin while retaining restricted mode",
+    "Accept only documented canonical skill name and alias",
+    "Preserve both earlier failed startup reservations and unknown usage",
+    "Verify all workspaces through initialize-only metadata handshake before live probe"
+  ],
+  "catalog_pins_sha256": "e4cbdc1fac3ad85c70f62dc40bbe2beec379d44a642d5cc6e7c9170d503a99d7",
+  "native_registration": "explicit session-local plugin, auto model invocation; not project-directory auto-discovery",
+  "previous_reserved_attempts": 2,
+  "previous_finish_tokens": "unknown; no model/final events captured",
+  "budget_options": [
+    {
+      "cumulative_session_cap": 14,
+      "cumulative_exposed_turn_cap": 56,
+      "remaining_sessions": 12,
+      "scored_sessions": 11,
+      "omitted_original_cell": "SWIFT-SORT-NEGATIVE-R1-generic",
+      "note": "all9 positive condition cells plus2 guided negative cells retained"
+    },
+    {
+      "cumulative_session_cap": 15,
+      "cumulative_exposed_turn_cap": 60,
+      "remaining_sessions": 13,
+      "scored_sessions": 12,
+      "omitted_original_cell": null
+    }
+  ],
+  "metadata_preflight": {
+    "passed": true,
+    "workspaces": 13,
+    "user_queries_sent": 0,
+    "actual_Skill_Read_roundtrip": "not yet tested"
+  }
+}

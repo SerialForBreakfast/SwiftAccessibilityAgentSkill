@@ -1,5 +1,8 @@
 # Evidence-Backed Evaluation
 
+Working files and private evidence stay inside this project under `evals/results/`.
+See the [local output index](LOCAL-OUTPUTS.md) for their locations.
+
 [November 6 local released-versus-compact-B comparison](reports/local-compact-b-20261106/README.md):
 36 Ollama generations across three installed models. Compact B used 29.9–34.7%
 fewer reported tokens, with mixed source outcomes and new compiler regressions.

@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "checkpoint": "reconciliation-20261107",
+  "base_commit": "ec389c5111ff181b1d4da6b2aa134f0ff2363db5",
+  "python": {
+    "tests": 22,
+    "passed": 22,
+    "failed": 0
+  },
+  "node_runner_and_selected_research": {
+    "tests": 259,
+    "passed": 253,
+    "failed": 0,
+    "skipped": 6,
+    "skip_scope": "Captured external Apple SDK paths absent on this Linux host; no fresh SDK validation claimed."
+  },
+  "historical_reconciliation": {
+    "tests": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "frozen_baseline_files_verified": 210,
+  "v2_package": {
+    "integrityPassed": true,
+    "independentAcceptance": false,
+    "liveRunsAuthorized": false
+  },
+  "comparison_hold_verified": true,
+  "frozen_proposal_bytes_preserved": true,
+  "new_model_calls": 0,
+  "new_native_example_runs": 0,
+  "new_worker_messages": 0,
+  "validation_attempts": [
+    {
+      "attempt": "sandboxed Node suite",
+      "outcome": "15 file suites passed;2 failed from EPERM on local node/git subprocesses; retained privately",
+      "classification": "sandbox execution constraint"
+    },
+    {
+      "attempt": "historical verifier path",
+      "outcome": "Initially referenced a nonexistent script; corrected to the existing reconciliation integrity suite",
+      "classification": "verification command correction; no source changes"
+    },
+    {
+      "attempt": "same offline Node suites with approved subprocess access",
+      "outcome": "253 passed,6 host-SDK skips,zero failures",
+      "artifacts_inside_project": true
+    }
+  ],
+  "log_pins": [
+    {
+      "path": "evals/results/reconciliation-20261107/python-tests.log",
+      "sha256": "4dced8ea8878af0a8b24aeaef1f95be8d365dadb60c2e79b95c4e30ee0b163d7"
+    },
+    {
+      "path": "evals/results/reconciliation-20261107/node-tests.log",
+      "sha256": "837d7430b92859b5e5bb0118653fd5e145efb0c4bf70cb254ff93361d59c2167"
+    },
+    {
+      "path": "evals/results/reconciliation-20261107/node-tests-unrestricted.log",
+      "sha256": "c7062a5237802dab3adddebe28d09ce81c0bf5a8b374bfa2e484769761cb59c1"
+    },
+    {
+      "path": "evals/results/reconciliation-20261107/baseline-check.json",
+      "sha256": "e6f82362d727460c120d4787141232efc02f0c7e29ffb7ef5ed19bc185b07cb2"
+    },
+    {
+      "path": "evals/results/reconciliation-20261107/v2-check.json",
+      "sha256": "816fc3122bc0911661c1b86941d7368db85de1282053849cfd93eb8e43aa9f18"
+    },
+    {
+      "path": "evals/results/reconciliation-20261107/history-check.log",
+      "sha256": "81ac8b2fe1ff2dc5c122604e048ebd4b8ef7f75db5aa3173136a9262d1057202"
+    },
+    {
+      "path": "evals/results/reconciliation-20261107/history-tests.log",
+      "sha256": "09e34398b84525cb01ddde990b0ce51c09286c6ffacabe49f882645888a2c92e"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "status": "metadata-only-feasibility;no-allocation",
+  "requested_next_provider": "Gemini via existing AGY subscription",
+  "client_version": "1.5.3",
+  "available_requested_model_ids": [
+    "gemini-3.8-flash-high",
+    "gemini-3.8-flash-low",
+    "gemini-3.8-flash-medium",
+    "gemini-4-argon-high",
+    "gemini-4-argon-low",
+    "gemini-4-argon-medium"
+  ],
+  "recommended_requested_model_id": "gemini-4-argon-high",
+  "reason": "Peer asks one consolidated Gemini-first frontier comparison, not optimization for earlier small/diagnostic models. This is a new proposed model, never a silent replacement in historical rows.",
+  "quota_observation": {
+    "windows": [
+      {
+        "bucket": "Gemini Models/Weekly Limit Remaining",
+        "label": "Gemini Models \u00b7 Weekly",
+        "duration_minutes": 10080,
+        "used_percent": 0.0,
+        "reset_at": 1794673549.0
+      },
+      {
+        "bucket": "Gemini Models/Five Hour Limit Remaining",
+        "label": "Gemini Models \u00b7 5-hour",
+        "duration_minutes": 300,
+        "used_percent": 0.0,
+        "reset_at": 1794086749.0
+      },
+      {
+        "bucket": "Claude and GPT models/Weekly Limit Remaining",
+        "label": "Claude and GPT models \u00b7 Weekly",
+        "duration_minutes": 10080,
+        "used_percent": 100.0,
+        "reset_at": 1794093768.0
+      },
+      {
+        "bucket": "Claude and GPT models/Five Hour Limit Remaining",
+        "label": "Claude and GPT models \u00b7 5-hour (disabled)",
+        "duration_minutes": 300,
+        "used_percent": null,
+        "reset_at": null
+      },
+      {
+        "bucket": "Gemini 4 Argon/Gemini 4 Argon Weekly Limit",
+        "label": "Gemini 4 Argon \u00b7 Weekly",
+        "duration_minutes": 10080,
+        "used_percent": 0.0,
+        "reset_at": 1794673549.0
+      }
+    ],
+    "observed_at": 1794068749.3751204,
+    "provenance": "CLI /usage (no inference)"
+  },
+  "serving_identity": "not independently qualified by model listing; no serving-revision or immutable-weight claim",
+  "claude_codex": "No new allocation. AGY shared Claude/GPT pool is exhausted/disabled in metadata; direct Claude/Codex transports are not refreshed/qualified for this package. No silent cross-provider fallback.",
+  "evaluation_subject_calls": 0,
+  "source_metadata_sha256": "1581aa5752c3a71a887cc00e7246f4ccc1957fc8983e5a4e91561958042428ca"
+}

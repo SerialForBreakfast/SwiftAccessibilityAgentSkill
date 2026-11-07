@@ -33,6 +33,12 @@ Load its task list, audit or worker handoff only when relevant.
 
 ## Boundaries
 
+- Keep all task-created files inside this project directory, including scratch
+  files, message drafts, request/response records, logs, test artifacts and caches.
+  Use `evals/results/` for private evaluation and messaging artifacts. Do not use
+  `/tmp`, `/private/tmp`, `os.tmpdir()` or another outside-project location unless
+  the user explicitly authorizes that specific destination. Sandbox write access
+  does not grant permission to use another directory.
 - Preserve the UIKit baseline. AppKit/macOS and UIKit/tvOS companion development
   is now authorized; SwiftUI expansion remains deferred. Compile checks and unit
   tests only; no UI tests or mandatory manual accessibility verification. Tests

@@ -69,11 +69,11 @@ Print the bounded local plan or run a separately authorized repeat into a new pr
 
 ```sh
 node evals/runner/local-os26-comparison.mjs
-node evals/runner/local-os26-comparison.mjs --execute /private/tmp/<new-run-directory>
+node evals/runner/local-os26-comparison.mjs --execute evals/results/<new-run-directory>
 node --test evals/runner/local-os26-comparison-test.mjs evals/runner/reviewed-swift-probes-test.mjs
 ```
 
-The default command makes no inference call. Execution allows 36 generations, 180 seconds per request, a one-hour dispatch deadline, no application retries or fallbacks, and serial local Ollama access. Tags must already be installed; their digests are checked before and after generation. Changed pinned inputs stop the batch. A future run uses then-current source bytes and needs its own recorded version; it is not automatically a replay of this frozen payload set.
+The default command makes no inference call. Execution allows 36 generations, 180 seconds per request, a one-hour dispatch deadline, no application retries or fallbacks, and serial local Ollama access. Tags must already be installed; their digests are checked before and after generation. Changed pinned inputs stop the batch. A future run uses then-current source bytes and needs its own recorded version; it is not automatically a replay of this frozen payload set. Current tools require output paths inside the project and default to `evals/results/`; compiler scratch files and caches remain beside the run. Historical captured paths and hashes are preserved as evidence of the original run.
 
 Private raw responses, frozen payloads, exact model metadata, executing controller, reviewed adaptation plans and compiler evidence are retained under ignored `evals/results/local-compact-b-20261106-r1/`. Public files contain sanitized summaries and hashes. Seven new offline runner/probe tests and 28 existing OS26 contract/integrity tests passed. Runtime skill files, frozen baselines and prior reports were preserved.
 
