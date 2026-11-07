@@ -296,3 +296,21 @@ this is accounting, not a claim of100% behavioral coverage.
 Independent agent review should adjudicate one consolidated packet. The maintainer
 is not a mandatory manual-test gate. Model runs still require an approved bounded
 quota/scope, and these questions do not alter frozen gold prompts or create holdouts.
+
+
+## Deferred Claude completion and Sillycon delivery — 2026-11-06
+
+Executed after explicit owner authorization:14 Claude Haiku calls,87,619 tokens,
+no retries/fallback/billing signals. Both0.3.0-dev.1 and dev.2 meet six contracts,
+with checkout layout inconclusive; no established critical flags. Dev.2 total tokens
++1.02%, median+3.34%; no efficiency or promotion claim. Independent grading used a
+fresh context and neutral/version-redacted answers. Both models' original28 cells
+are now executed, with separate token/cache conventions and source-only grades.
+
+Sillycon request1433 was actually read/acknowledged. Existing14 AGY first answers
+and exact relevant input/controller/grade records were delivered on the private share,
+SHA256 a9c28497ae64e46917ea703cccb996adfd1734aca55154e73d5261b2b0f19f14,
+142,782 bytes,101 members; readback verified. Coordinator acceptance/delivery notices
+1434/1435 sent once; peer verification/native completion not yet confirmed. No raw
+answers/account records are public. No remote native execution or new AGY calls.
+See candidates/SILLYCON-AGY-DELIVERY-20261106.md and the new Claude report.

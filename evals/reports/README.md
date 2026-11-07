@@ -11,18 +11,26 @@ measures a bare model against the released skill, and their scores are not poole
 | --- | --- | --- |
 | [AGY candidate comparison](skill-0.3.0-dev.1-vs-0.3.0-dev.2-20261106/README.md) | 14 answers: dev.1 six met plus one inconclusive; dev.2 seven met. Token-efficiency screen missed. | Native answer checks, independent families and release gates |
 | [MaxMini local diagnostic](local-compact-b-20261106/README.md) | 36 answers; 29.9-34.7% token reductions with mixed source/compiler results | Diagnostic evidence, not the release optimization target |
-| Claude candidate comparison | Zero calls; 14 planned cells remain deferred | Login, fresh quota checks and bounded scope confirmation |
+| [Claude candidate comparison](skill-0.3.0-dev.1-vs-0.3.0-dev.2-claude-20261106/README.md) | 14 answers; both versions six met plus one inconclusive; dev.2 total tokens +1.02% | Native answer checks, independent families and release gates |
 | [Native companion](../../research/evaluation/cross-platform-closure-v1/RESULTS.md) | Recorded code contracts across iOS/UIKit, tvOS/UIKit and macOS/AppKit | Separate independent review; not generated-answer grades |
 
 [Read the full v2 review](v2/README.md) · [Review the method](../GRADING.md) ·
 [Next worker pilots](../PILOT-REQUESTS.md) · [New report template](TEMPLATE.md)
+
+## Claude completion
+
+[Skill 0.3.0-dev.1 versus 0.3.0-dev.2 · Claude](skill-0.3.0-dev.1-vs-0.3.0-dev.2-claude-20261106/README.md):
+14 deferred calls completed, 87,619 tokens. Both versions meet six contracts with
+one inconclusive checkout layout. Dev.2 total tokens +1.02%; no demonstrated quality
+or efficiency gain. Together with AGY, the original 28 cells are complete. Sillycon
+has the verified private AGY bundle; receipt/native findings remain pending.
 
 ## Latest frontier development screen
 
 [Skill 0.3.0-dev.1 versus 0.3.0-dev.2 · AGY](skill-0.3.0-dev.1-vs-0.3.0-dev.2-20261106/README.md):
 14 approved calls completed. Source-contract grades: six met plus one inconclusive
 versus seven met; 65,400 tokens total. No efficiency improvement or release
-qualification established. Claude deferred. The small-model report below remains
+qualification established. Claude subsequently completed as linked above. The small-model report below remains
 historical diagnostic evidence with its original limits.
 
 ## Historical v2 Evidence
