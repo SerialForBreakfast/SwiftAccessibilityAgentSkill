@@ -7,6 +7,11 @@ Read `AGENT.md` for the existing repository safety policy.
 
 ## Test-Driven Skill Improvement
 
+For a BigDog evaluation or existing-evidence request, use the
+[single-exchange contract](evals/BIGDOG-SINGLE-EXCHANGE.md): send one authorized
+job and receive one self-contained final return. Include the return checklist
+in the **original** handoff; do not make a separate request for grading evidence.
+
 For unit-library or evaluation planning, first read
 [the failure-driven evaluation plan](research/evaluation/failure-driven/PRD.md).
 Load its task list, audit or worker handoff only when relevant.

@@ -124,7 +124,9 @@ or paid API examples below for this work.
 
 Primary target: capable frontier Swift coding agents. Small local models are a
 diagnostic lane, not the skill's optimization target. See [target strategy](TARGET-EVALUATION.md).
-Current worker action: [commit sanitized existing evidence](RESULTS-HANDOFF.md)
+For new BigDog jobs use the [one-handoff, one-return contract](BIGDOG-SINGLE-EXCHANGE.md).
+
+Historical worker action: [commit sanitized existing evidence](RESULTS-HANDOFF.md)
 through Git before scheduling more local inference.
 
 For complexity/context profiles and remote execution on BigDog or MaxMini, use the
