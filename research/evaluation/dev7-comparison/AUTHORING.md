@@ -1,0 +1,5 @@
+# Authoring provenance (controller only)
+
+Owner request: implement "One Local Candidate, One BigDog Evaluation" in the project chat. Source inputs: the dev.5 comparison and dev.6 media candidate; the portable 24-case audit and Mac public-record reconciliation; the additive preflight controller; independently adjudicated checkout results. Exact input paths/hashes are in seal.json and the scoring rows. The selected historical subject inputs remain available byte-for-byte in milestone-package-v2. The new two-message subject inputs are stored in full, not reconstructed from hashes.
+
+Current artifacts are local author outputs. The current analysis is in DISTINCTIONS.md, SCORING.md and README.md. The request is preserved in REQUEST.md; the full authoring session/tool transcript is not exported in this packet. No subject, grader or repair sessions took place. For the prior comparison, summary.json preserves answer hashes, grades and packet pins, not the complete private answers, prompts and masked grading conversations. These unavailable originals are not reconstructed. No retrospective score changes.
