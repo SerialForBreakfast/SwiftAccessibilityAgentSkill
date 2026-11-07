@@ -11,6 +11,32 @@ make changes that improve the experience of people using Apple-platform software
 [Latest native evidence](research/evaluation/cross-platform-closure-v1/RESULTS.md) ·
 [Evaluation dashboard](evals/reports/README.md)
 
+## Baselines and Current Best at a Glance
+
+**Best measured snapshot in the latest matched comparison: `0.3.0-dev.5`.**
+The latest research candidate is `0.3.0-dev.6`; the installed release remains `0.2.2`.
+
+| Baseline / candidate | Tasks met | What we can conclude |
+| --- | ---: | --- |
+| Generic Swift assistant, no skill context | **9/24** | Matched baseline for the latest controlled-context run |
+| Released `0.2.2` | Not measured in this run | Current installable release; no matched score against dev.5 |
+| **`0.3.0-dev.5`**, supplied instructions and selected context | **13/24** | Best measured snapshot in this comparison; useful gains with remaining regressions |
+| `0.3.0-dev.6`, reviewed media-ownership changes | Not benchmarked yet | Latest research candidate; improved example contracts do not yet establish better agent answers |
+
+The [48-answer comparison](research/evaluation/gemini-controlled-run-20261107/README.md)
+found **6 paired gains, 3 regressions, 6 preserved successes, 5 persistent gaps and
+4 inconclusive pairs**. All 24 candidate answers announced dev.5. References were
+supplied inline: this demonstrates context delivery, not installed skill discovery.
+These are independent source grades on known development scenarios, with no native
+execution of the generated answers or release-qualified superiority claim.
+
+The historical run requested Gemini Argon high: displayed weekly usage rose
+**17 percentage points**, and candidate reported tokens were **5.96% higher** than
+generic. Future evaluations will use cheaper models, subject to quota approval.
+See the [evaluation dashboard](evals/reports/README.md) for separate earlier cohorts
+and the [dev.6 changes](research/evaluation/failure-driven/candidates/0.3.0-dev.6/README.md)
+for the next candidate's scope.
+
 ## What Makes This Different
 
 Apple documentation is the foundation, not the finished product. We investigate

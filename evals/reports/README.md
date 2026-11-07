@@ -1,9 +1,15 @@
 # Does the skill help?
 
 **We have useful diagnostic evidence, but not a release-qualified estimate of skill lift.**
-The latest AGY candidate comparison is promising under source review. MaxMini's
-compact candidate saves tokens but has mixed correctness. Neither new comparison
-measures a bare model against the released skill, and their scores are not pooled.
+The latest matched supplied-context comparison found **13/24 tasks met with
+`0.3.0-dev.5`, versus 9/24 with generic instructions**: six paired gains, three
+regressions and four inconclusive pairs. This is the best measured snapshot in
+that comparison, not a release-qualified winner. Released `0.2.2` was not an arm;
+newer `0.3.0-dev.6` has no measured answer-quality result yet. Earlier cohorts below
+remain separate and are not pooled.
+
+[Latest 48-answer report](../../research/evaluation/gemini-controlled-run-20261107/README.md) ·
+[Baseline/current-best overview](../../README.md#baselines-and-current-best-at-a-glance)
 
 [Current reconciliation and decisions](reconciliation-20261106/README.md)
 
