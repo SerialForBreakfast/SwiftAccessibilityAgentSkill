@@ -76,7 +76,16 @@ The [handoff](HANDOFF.md) authorized 36 first sessions in one job, with no retri
 - It stopped after 9 sessions on a quota-read error, then ran 27 more as a "continuation".
 - In total, **46 sessions were attempted against a 36-session authorization.**
 
-**What's needed before the next dispatch:** the worker must reserve each attempt against the original authorization before opening a session. A changed prompt, derived packet, restart or continuation creates no new authorization. [The reservation ledger](../protocol/ledger.py) implements this. Its replay test, run against this exact history, yields one partial return and zero later launches.
+**The owner sets limits, not this report.** 36 was the owner's limit for this run; it is not a rule for future runs. The deviation is that the run exceeded what this authorization allowed. It is not a claim that continuing after a delivery fix is wrong.
+
+**Two separate issues:**
+- **Permission:** a future authorization can let the worker fix delivery and continue within one handoff.
+- **Interpretation:** a changed prompt still produces a separate comparison, which is why the cohorts here are reported apart and never pooled.
+
+**For future runs:** the [reservation ledger](../protocol/ledger.py) charges every session to the owner's budget before it opens, and enforces the owner's chosen policy. Replays of this exact history:
+- **Strict policy** (what this authorization implied): one partial return of 10 sessions.
+- **Fix-and-continue, 36 sessions:** two labeled cohorts of 10 and 26, with 10 refused for budget.
+- **Fix-and-continue, 46 sessions:** the whole observed history fits.
 
 ## Quality
 
@@ -102,7 +111,9 @@ The [handoff](HANDOFF.md) authorized 36 first sessions in one job, with no retri
 **How it ran:**
 - Each answer was extracted with the strict extractor, unchanged, and read by the controller before running.
 - Each was approved by hash, passed the screen, and was graded once through the [reviewed local lane](../rc1/README.md). The grader was `evals/rc1/grader/grade.py` at `226b3a4`.
-- Environment: iOS and tvOS 26.5 unit simulators, macOS host, deployment target 26.0.
+- Environment: macOS host, deployment target 26.0.
+  - iOS cells ran on the dedicated `SwiftAccessibility-OS26-Unit-iOS` 26.5 simulator.
+  - tvOS cells ran on an already-booted "Apple TV 4K (3rd generation)" tvOS 26.5 simulator, not the dedicated tvOS unit device. The grader uses any booted device on the required runtime, and each scorecard records the device. The same holds for both reproductions.
 - Per-cell records sit in ignored `evals/results/rc1-return-20261107/native/cells/`, each linked to its first scorecard.
 
 **Record:**

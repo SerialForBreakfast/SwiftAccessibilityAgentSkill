@@ -2,7 +2,8 @@
 
 Steps, in order; it stops at the first failure:
   1. sealed packet verifies at its sealing revision        (verify_pinned.py)
-  2. reservation ledger refuses a 37th / changed / continued attempt; rc.1 replay = one partial return
+  2. reservation ledger enforces the owner's budget and policy; rc.1 replayed under strict and
+     fix-and-continue policies (one partial return; two labeled cohorts within the budget)
   3. strict extractor accepts all 36 recorded answers unchanged
   4. fresh native reproduction of all 36 cells in a new folder matches the recorded first results
   5. linked verifier re-derives the summary and the RESULT.md table from private evidence
