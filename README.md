@@ -13,15 +13,21 @@ make changes that improve the experience of people using Apple-platform software
 
 ## Baselines and Current Best at a Glance
 
-**Current benchmark checkpoint: `0.3.0-dev.5`.** The latest candidate, `0.3.0-dev.7`, used 7.8% fewer reported tokens on Flash but met two fewer tasks. The installable release is `0.2.2`.
+**Current benchmark checkpoint: `0.3.0-dev.5`.** In the Flash comparison, `0.3.0-dev.7` used 7.8% fewer reported tokens on Flash but met two fewer tasks. The installable release is `0.2.2`.
+
+**Explicit rc.1 replay — 5/7 passed source review.** Claude Haiku 5.5 loaded `0.3.0-rc.1` on all seven prompts selected for earlier unaided failures. Two cases still failed after Haiku read the relevant references. [Seven-case results](evals/rc1-failure-replay/RESULTS.md)
+
+- **Checkout layout (`GP26-03`)** — The stack view was local to setup. The lifecycle method that updates its layout could not access it.
+- **Media callbacks (`IOS-MEDIA-OWNERSHIP-R1`)** — The completion handler checked a cached item without verifying the player’s current item after an external replacement. The tests also missed duplicate callbacks.
 
 | Matched comparison | Baseline tasks met | Candidate tasks met | Paired gains / regressions |
 | --- | ---: | ---: | ---: |
 | Gemini 3.8 Flash low, 24 questions | dev.5 **11/24** | dev.7 **9/24** | 1 / 3 |
 | Claude Haiku 5.5, first 7 questions | dev.5 **2/7** | dev.7 **3/7** | 2 / 0 |
+| Claude Haiku 5.5, 12 installed-skill chat tasks (diagnostic, native units) | 0.2.2 **11/12** | 0.3.0-rc.1 **11/12** | 0 / 0 |
 | Earlier Gemini Argon high, 24 questions | Generic **9/24** | dev.5 **13/24** | 6 / 3 |
 
-Read each row as a comparison within one model and question set. Three Haiku pairs were inconclusive, and 34 Haiku sessions were unattempted after the subscription meter stopped responding. Reviewers graded the generated source with skill context supplied directly. A matched frontier comparison against installed release `0.2.2` remains open.
+Read each row as a comparison within one model and question set. In the dev.7 comparison, three Haiku pairs were inconclusive, and 34 Haiku sessions were unattempted after the subscription meter stopped responding. Reviewers graded the generated source with skill context supplied directly. The installed-skill comparison used native discovery and a separate set of 12 tasks. With explicit invocation, rc.1 read a reference and announced itself on all three tasks. [Installed-skill results](evals/rc1-comparison/RESULT.md)
 
 [Flash and Haiku results by question](research/evaluation/dev7-flash-haiku-results-20261107/README.md) · [Earlier generic baseline](research/evaluation/gemini-controlled-run-20261107/README.md)
 
