@@ -1,0 +1,19 @@
+{
+  "id": "attachment-chip-remove",
+  "cell": "macos-appkit",
+  "workstream": "W1",
+  "decision": "A Remove accessibility action on a reused, re-parented chip resolves the current attachment and current delegate when it runs, honours read-only state, and leaves the visible buttons reachable.",
+  "split": "transfer",
+  "evidence": {
+    "status": "credible",
+    "inventoryCase": "macos-appkit-actions",
+    "package": "code-examples/platforms/macos-appkit-v1 NegativeFixtures/StaleShortcut.swift, DisabledShortcut.swift",
+    "note": "Transfer of file-row-delete-action: delegate owner instead of closures, didSet rebinding instead of configure, owner reassignment instead of row reuse. Other-model evidence only."
+  },
+  "variants": [
+    {"file": "alternative-forward-to-button.swift", "expect": "pass", "why": "Rebuilds a named selector action on each change and forwards to the Remove button's own action method."},
+    {"file": "mutant-captured-owner.swift", "expect": "contract-failure", "why": "Captures the delegate and attachment when the action is built; after the chip moves windows, removal reaches the old window's controller."},
+    {"file": "mutant-ignores-read-only.swift", "expect": "contract-failure", "why": "DisabledShortcut mechanism: removes attachments from a read-only message through the Actions menu."},
+    {"file": "mutant-hidden-x.swift", "expect": "contract-failure", "why": "Treats the shortcut as a replacement and hides the x button from accessibility."}
+  ]
+}

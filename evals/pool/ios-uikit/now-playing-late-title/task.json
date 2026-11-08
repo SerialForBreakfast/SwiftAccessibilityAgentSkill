@@ -1,0 +1,34 @@
+{
+  "id": "now-playing-late-title",
+  "cell": "ios-uikit",
+  "workstream": "W7",
+  "decision": "A late metadata reply applies only while its item is still the shared player's actual current item and the newest request, including after something outside this owner replaced the item.",
+  "split": "development",
+  "evidence": {
+    "status": "observed",
+    "inventoryCase": "IOS-MEDIA-OWNERSHIP-R1",
+    "note": "Haiku 5.5 failed 3/3 without skill content and 1/1 with; the identity guard read the owner's cached item instead of the player's actual current item, so external replacement was missed."
+  },
+  "variants": [
+    {
+      "file": "alternative-observe-current-item.swift",
+      "expect": "pass",
+      "why": "Observes the player's currentItem and drops the pending lookup when the item changes elsewhere; tracks the pending item instead of a counter."
+    },
+    {
+      "file": "alternative-current-item-only.swift",
+      "expect": "pass",
+      "why": "A single identity check against the player's actual current item covers both newer local starts and external replacement."
+    },
+    {
+      "file": "mutant-cached-item-guard.swift",
+      "expect": "contract-failure",
+      "why": "Observed mechanism: compares with the screen's own cached item, which an external replacement never updates."
+    },
+    {
+      "file": "mutant-generation-only.swift",
+      "expect": "contract-failure",
+      "why": "Rejects replies superseded by this screen only; an external item replacement still lets the stale title through."
+    }
+  ]
+}

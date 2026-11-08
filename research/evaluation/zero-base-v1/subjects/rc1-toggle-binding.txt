@@ -1,0 +1,11 @@
+Our Toggle edits an existing setting. Return a binding that reads the live value and ignores duplicate writes and writes while the setting is locked.
+
+Return only Submission.swift, preserving this interface. Keep correct code as-is.
+
+import SwiftUI
+
+@MainActor
+func editable(_ source: Binding<Bool>, locked: @escaping () -> Bool) -> Binding<Bool> {
+    fatalError("Implement this contract")
+}
+

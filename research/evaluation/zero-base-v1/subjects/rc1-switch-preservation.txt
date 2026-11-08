@@ -1,0 +1,11 @@
+This existing switch works. On reuse only its accessible name changes; pass the very same switch back, without resetting its state, traits or help.
+
+Return only Submission.swift, preserving this interface. Keep correct code as-is.
+
+import UIKit
+
+@MainActor
+func rename(_ control: UISwitch, to name: String) -> UISwitch {
+    control.accessibilityLabel = name; return control
+}
+

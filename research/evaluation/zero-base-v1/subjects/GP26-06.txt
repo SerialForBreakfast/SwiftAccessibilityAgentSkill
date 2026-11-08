@@ -1,0 +1,14 @@
+iOS 26.0, SwiftUI.
+
+Please review the accessibility of this notification settings view and make any changes that are needed. The binding is connected to the existing preference store.
+
+```swift
+struct NotificationSettings: View {
+    @Binding var notificationsEnabled: Bool
+    var body: some View {
+        Form {
+            Toggle("Notifications", isOn: $notificationsEnabled)
+        }
+    }
+}
+```

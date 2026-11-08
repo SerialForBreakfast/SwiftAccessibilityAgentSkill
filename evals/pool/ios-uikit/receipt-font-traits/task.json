@@ -1,0 +1,20 @@
+{
+  "id": "receipt-font-traits",
+  "cell": "ios-uikit",
+  "workstream": "W4",
+  "decision": "Scale a supplied design font for the text-size setting the caller supplies (not the ambient one), wrapping without shrinking and keeping the typeface, colour and wording.",
+  "split": "development",
+  "evidence": {
+    "status": "observed",
+    "inventoryCase": "rc1/checkout-font",
+    "note": "Haiku 5.5: hidden unit contract failed natively in 3 of 5 answers (1 of 3 without skill content, 2 of 2 with); masked source review had said meets each time."
+  },
+  "variants": [
+    {"file": "alternative-scaled-value.swift", "expect": "pass", "why": "Computes the scaled size with scaledValue(for:compatibleWith:) and rebuilds the brand font from its descriptor."},
+    {"file": "alternative-trait-override.swift", "expect": "pass", "why": "Lets the label adjust itself, overriding its own size category to the supplied one."},
+    {"file": "mutant-ambient-traits.swift", "expect": "contract-failure", "why": "Scales with the ambient trait collection and ignores the supplied traits; looks right at the default size only."},
+    {"file": "mutant-system-body.swift", "expect": "contract-failure", "why": "Uses the system body font for the setting and drops the brand typeface."},
+    {"file": "mutant-shrink.swift", "expect": "contract-failure", "why": "Scales correctly but keeps one line and shrinks to fit."},
+    {"file": "mutant-recolored.swift", "expect": "contract-failure", "why": "Fixes size and wrapping but changes the colour and rewrites the accessible name."}
+  ]
+}

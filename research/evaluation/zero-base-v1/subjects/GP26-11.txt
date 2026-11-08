@@ -1,0 +1,19 @@
+iOS 26.0, SwiftUI.
+
+Review this volume setting for a concrete accessibility problem. Its parent owns a persisted volume value in 0…100 and supplies a working two-way binding. Keep that binding, the allowed range and one-point increments. Explain any change you recommend; do not change unrelated settings.
+
+```swift
+import SwiftUI
+
+struct VolumeSettings: View {
+    @Binding var volume: Double
+
+    var body: some View {
+        Form {
+            Slider(value: $volume, in: 0...100, step: 1) {
+                Text("Volume")
+            }
+        }
+    }
+}
+```

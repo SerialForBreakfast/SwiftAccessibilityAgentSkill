@@ -1,0 +1,18 @@
+tvOS 26.0, SwiftUI.
+
+Testers cannot reliably reach and select all the movie tiles with the remote. VoiceOver users also need to identify the movie they are opening. Movie is Identifiable with title and posterName; open(movie) opens its detail screen. Please fix the interaction.
+
+```swift
+ScrollView(.horizontal) {
+    HStack {
+        ForEach(movies) { movie in
+            VStack {
+                Image(movie.posterName)
+                Text(movie.title)
+            }
+            .frame(width: 240, height: 360)
+            .onTapGesture { open(movie) }
+        }
+    }
+}
+```

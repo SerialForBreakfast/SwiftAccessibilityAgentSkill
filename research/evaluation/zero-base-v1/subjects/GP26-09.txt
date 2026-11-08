@@ -1,0 +1,24 @@
+iOS 26.0, UIKit.
+
+This knob is drawn elsewhere and the existing drag recognizer calls `dragChanged(to:)` with an integer percentage. It currently has no usable accessibility adjustment. Make its purpose, current value and adjustments accessible. The product step is 5 percentage points, the range is 0…100, and one real value change must call `onChange` exactly once. Clamped requests that leave the value unchanged must not call it. Preserve the drag path and do not add automatic announcements for every change.
+
+```swift
+import UIKit
+
+final class VolumeKnob: UIView {
+    private(set) var volume = 50
+    var onChange: ((Int) -> Void)?
+
+    func dragChanged(to requested: Int) {
+        setVolume(requested)
+    }
+
+    private func setVolume(_ requested: Int) {
+        let next = min(100, max(0, requested))
+        guard next != volume else { return }
+        volume = next
+        onChange?(next)
+        setNeedsDisplay()
+    }
+}
+```

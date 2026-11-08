@@ -1,0 +1,20 @@
+{
+  "id": "bookmark-editor-return",
+  "cell": "macos-swiftui",
+  "workstream": "W3",
+  "decision": "When a sheet's onDismiss runs, restore focus to the current eligible opener of the presentation that actually ended, ignoring the dismissal of a sheet that a newer presentation replaced.",
+  "split": "development",
+  "evidence": {
+    "status": "credible",
+    "inventoryCase": "macos-swiftui-lifecycle",
+    "package": "swiftui/macos-v1 NegativeFixtures/lifecycle.swift",
+    "note": "No Haiku observation in this cell. Gemini 3.8 Flash low and Gemini 4 Argon high failed 3 of 4 (1 inconclusive); reviewer mechanism: the real sheet callback captured a mutable current presentation ID by lookup at completion. The package fixture drops the presentation-generation check."
+  },
+  "variants": [
+    {"file": "alternative-presentation-queue.swift", "expect": "pass", "why": "Keeps a FIFO of presented requests; each onDismiss retires the oldest and only the last one restores."},
+    {"file": "mutant-lookup-at-completion.swift", "expect": "contract-failure", "why": "Inventory mechanism: the callback reads a mutable current origin at completion, so the swapped-out sheet's late dismissal moves focus behind the copy's editor."},
+    {"file": "mutant-reads-cleared-item.swift", "expect": "contract-failure", "why": "Looks up the sheet item at completion; SwiftUI already cleared it, so every close falls back to Add Bookmark."},
+    {"file": "mutant-eligibility-at-open.swift", "expect": "contract-failure", "why": "Decides the destination when the editor opens, so a bookmark deleted by sync is still targeted."},
+    {"file": "mutant-closes-new-sheet.swift", "expect": "contract-failure", "why": "Treats every onDismiss as the end of editing and clears the copy's editor."}
+  ]
+}

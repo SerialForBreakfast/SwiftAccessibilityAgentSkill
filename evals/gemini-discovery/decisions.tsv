@@ -1,0 +1,77 @@
+# Counting key | check aliases (without -negative) | developer request
+multiline	singleline	When a delivery option wraps to a second line in translation, part of the name disappears. Can you fix the row without shortening the text?
+design-font	fixedfont	Our design font is supposed to follow the text size setting. The typeface and size should both survive repeated updates. What would you change?
+selected-state	staleselection row-selected	The old row can still be described as selected after the selection moves. Can you make both rows reflect the current selection?
+preserve-traits	clobberedtraits losttraits	Marking an item selected seems to remove information it had before. Can we update selection without disturbing its other properties?
+range-coordinate	wrongrange characteroffsets	Navigation to a phrase works for plain English but lands on the wrong text after emoji. Can you repair it without changing the displayed text?
+modal-state	stalemodal modal-restore lostbackground	When a panel closes the background doesn't always return to its previous state. How should this screen handle opening and closing it more than once?
+disabled-action	ignoredenabled ignoreddisabled disabledshortcut keyboard-disabled	A disabled command can still run through another activation path. Can you make the control respect its current enabled state?
+contrast-linear	nolinearization	The contrast report for midtones disagrees with the design team's luminance calculation. Can you correct the computation?
+contrast-space	wrongcolorspace	Our contrast utility gets different answers for equivalent colors in different color spaces. Can you make comparisons consistent?
+contrast-appearance	ignoredtraits	The contrast tool reports the same result even when the selected appearance changes. What path through this code needs updating?
+contrast-alpha	ignoredalpha	Our contrast tool is only supposed to grade opaque pairs. A translucent pair gets a numeric result. What would you change?
+rebound-action	staleaction staleidentity stalebutton staleshortcut generation stale documents	After refreshing a row, an action captured earlier can operate on the wrong record. Can you repair the ownership without losing the current action?
+container-children	hiddencontrols grouping row-actions	A tester can reach the row but not all its individual controls. Can you preserve the grouping and still let people operate the children?
+removed-child	retainedremoved	An item we've removed is still in the container's navigation list. Can you keep the list in sync without changing ordinary controls?
+overlap-policy	ignoredoverlap	Our search offers an overlapping-matches option, but the navigation stops look identical with it on and off. Can you fix the search?
+cursor-restart	missingrestart	After editing the document, the next search jump continues from an unrelated old location. Can you define a safe restart?
+obsolete-rotor	oldrotor	A previously retained navigation shortcut still moves through the document after the query changes. Can you prevent old searches affecting the new one?
+edited-matches	staletext stalematches text-stale	Editing the text outside our search callback leaves old search hits active. Can you make navigation use the current content?
+notification-kind	wrongnotification	The screen sends the same accessibility notification for changes with different navigation consequences. Can you select the appropriate request without resetting unrelated state?
+observer-stop	unstopped stoppeddelivery	An observer keeps reacting after the screen stops listening. Can you make teardown and a subsequent restart reliable?
+range-kind	loadedasseekable ranges	The player says I can seek through an interval that was only buffered. How should the inspector describe these two ranges?
+buffer-readiness	fullmeansready	Our report calls the player ready just because its buffer is full. How should we expose the available status without promising playback?
+live-inference	inferredlive	The inspector labels a stream live when all it knows is that the duration is indefinite. What should it report instead?
+audio-description-tag	allaudiodescribed described	The audio inspector calls ordinary language tracks described audio. How can we identify the marked options?
+unavailable-media	noitemabsent unavailable	Opening the inspector before an item arrives says there are no accessible tracks. Can we distinguish not loaded from a successful empty result?
+inspection-preserves-selection	selectionlost	Opening the track inspector changes the chosen audio or captions. Can you make inspection read-only?
+language-match	wronglanguage	When we ask for one language, this picker can select a different one. Fix matching without silently changing languages.
+forced-vs-full	forcedonly forced	Our captions menu offers a forced-only translation as if it were full subtitles. Can you keep those choices distinct?
+dismissal-completion	earlynotification	Focus is requested as soon as Close is pressed, before dismissal finishes. How would you handle completion and cancellation?
+presentation-owner	stalecompletion lifecycle	A delayed close callback can restore focus for a presentation that has already been replaced. Can you fix that race?
+dismiss-reentry	ignoreddismissguard	A dismissal callback can reenter the close path while the first transition is unfinished. How can we avoid restoring twice?
+eligible-target	detachedtarget foreigntarget invalidfocustarget original-responder-check	After a refresh the original focus target may no longer belong here. Can you restore only to a usable target or fallback?
+decorative-element	exposeddecoration	A decorative part of this view is getting its own navigation stop. Can you remove just that stop?
+refresh-name	stalenames lostname cell-state	A control keeps the old accessible name after its content changes. Can you update the same control rather than replace it?
+motion-policy	ignoredmotion preferences motion	The optional effect still plays when the person asks for reduced motion. Can we honor their setting without changing the normal experience?
+optional-help	stalehint hint	After switching from an item with help text to one without it, the old help is still there. Can you repair the update path?
+ordinary-action	droppedaction lostordinarysave lostordinarydetails	The added shortcut works but the ordinary action no longer does. Can you keep both paths working on the current item?
+rotor-direction	wrongrotordirection	Moving to the previous result jumps in the same direction as Next. Can you correct navigation including the ends of the list?
+speed-metadata	stalemetadata	The speed control changes playback but continues to describe the previous setting. Can you synchronize the displayed and accessible state?
+redundant-notification	repeatedchange duplicatenotice	Reapplying an unchanged value generates another change event. Can we notify once for a real transition?
+text-size-change	text-scaling	People who change their text-size setting while this screen is open don't get the expected update. Can the existing content respond in place?
+request-generation	validation-generation forms media	A late response from an earlier request overwrites a newer result. Can you give the current request ownership of the update?
+input-snapshot	validation-snapshot	The text has changed since validation started, but the old result is still applied. Can you preserve edits and reject that reply?
+player-item-owner	media-identity	The player can replace its item from outside this view. Can you prevent an old lookup from updating the new item's details?
+duplicate-completion	media-duplicate	A service sometimes delivers its completion twice. Can you apply the first valid result only?
+conflicting-state-text	state-text stale-status	The control state changes but its status text tells a different story. Can you keep the two consistent on successive updates?
+preference-redelivery	repeatedpreference repeatedanimation	Receiving the same preference twice restarts work that should only happen on a transition. Can you avoid the repeat?
+missing-choice	missing	A requested option isn't in the available list. Can the picker leave the current choice intact instead of silently picking a replacement?
+description-selection	description	When someone asks for described audio and no matching track exists, keep the previous choice. Does the picker do that?
+off-permission	offpermission	Off is shown even for a group that requires a selection. Can you honor the actual group's permission?
+stable-selection	lostselection selection identity	A rename or reorder moves the selection to a different item. Can you preserve identity and clear a selection only if its item is gone?
+duplicate-id	duplicateids duplicates	The server returned duplicate IDs. Can you reject the ambiguous update without leaving a partially updated screen?
+key-eligibility	disabledkeyview	Tab navigation takes users to an unavailable control. Can you repair the chain when eligibility changes?
+key-link-teardown	leakedkeylinks	Removing a field leaves a stale key-view link. Can you undo links owned by this component?
+external-key-link	original-incoming-link	After eligibility changes, one Tab path still leads to a disabled button. Check the incoming links as well as the outgoing loop.
+invalid-submit	invalidsave	An invalid entry still reaches Save. Can you show the validation result and keep the user's input without submitting it?
+validation-help	stalemessage	Error help remains after the user corrects the field. Can you clear only the transient error and restore the previous help?
+reentrant-submit	reentrant	The save callback can trigger another submit before the first finishes. Can you prevent duplicate submission?
+motion-content	motionhidescontent	With reduced motion enabled the results disappear instead of just losing the animation. Can you preserve the content?
+detached-action	detached	A detached button retained by other code can still act on the shelf. Can you reject it while keeping the current button usable?
+visible-title	original-missing-titles	Our buttons have accessibility metadata but no visible titles. Can you make the ordinary controls identifiable too?
+interop-rebind	interop old-target	The wrapper updates its SwiftUI state but the native button can still send to the previous target. Can you fix the binding and teardown?
+cancel-owner	cancel	An older cancelled load can cancel the current load. Can you keep cancellation local to its request?
+binding-disconnect	disconnect	A change in the track picker doesn't reach the current player item. Can you connect the existing control to the actual selection?
+stale-off	staleoff	Choosing Off from an out-of-date menu clears captions on the replacement item. Can you prevent that?
+unlisted-selection	unmappedoff	The player has a selection that isn't listed in our menu, and we show it as Off. Can you distinguish the states?
+table-span	wrongspan	A merged table cell occupies several coordinates. When users explore the table by coordinate, does each covered position resolve to the right cell?
+edit-action-stale	staleedit	An editor is now read-only. Can you check that its available actions and help change together?
+edit-category	missingcategory	The editor can perform edits but the requested editing actions aren't in the intended category. Can you bring configuration and default behavior into agreement?
+grapheme-boundary	text-boundary	A match covering only part of a composed character should not be offered as a navigation destination. Does this code enforce that?
+custom-action-name	duplicatecallback	The two named shortcuts on this card should invoke different commands. Could you check the names and what each one actually calls?
+container-order	missingelements	Reordering the children should update their navigation order without changing the surviving objects. Does this implementation do that?
+stale-timeline	staleposition	The previous timeline remains visible when information for the next item is unavailable. Can you correct the state transition?
+observer-restart	oldgeneration	After stopping and restarting preference observation, queued work from the old subscription must not change this screen. Does the code handle that?
+stale-tree-node	stalenode	Our refreshed outline can still be queried through an old node object. How can we avoid showing obsolete children?
+duplicate-binding	semantics	Setting the same value through the toggle binding twice should not run its change action twice. Can you check both repeated and changed writes?

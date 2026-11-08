@@ -1,0 +1,19 @@
+{
+  "id": "volume-slider-intact",
+  "cell": "ios-swiftui",
+  "workstream": "W8",
+  "decision": "Recognize that a labeled native Slider bound to a bounded, stepped setter needs no accessibility change; keep its binding, step, range and visible readout.",
+  "split": "development",
+  "evidence": {
+    "status": "observed",
+    "inventoryCase": "GP26-11",
+    "note": "Haiku 5.5 low failed 3/3 unaided and 4 of 5 with skill content by inventing a native-Slider value defect and a mandatory fix; Gemini 3.8 Flash low failed 5 of 6."
+  },
+  "starterExpect": "pass",
+  "variants": [
+    {"file": "alternative-matching-value.swift", "expect": "pass", "why": "Harmless optional refinement: the slider repeats the visible readout as its value and the duplicate visual row is hidden; model behavior unchanged."},
+    {"file": "mutant-normalized-fraction.swift", "expect": "contract-failure", "why": "Invented 'bare number' defect: converts the stored volume to a 0...1 fraction, changing the saved value and range."},
+    {"file": "mutant-spoken-readout.swift", "expect": "contract-failure", "why": "Rewrites the visible readout to spelled-out text support no longer recognizes."},
+    {"file": "mutant-custom-bar.swift", "expect": "contract-failure", "why": "Replaces the native Slider with a custom bar; the rewritten setter loses stepping and saves on every write."}
+  ]
+}

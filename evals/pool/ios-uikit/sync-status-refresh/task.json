@@ -1,0 +1,19 @@
+{
+  "id": "sync-status-refresh",
+  "cell": "ios-uikit",
+  "workstream": "W2",
+  "decision": "Each status update replaces the previous status and help text completely, and only the newest refresh's reply may update the strip, without losing the working Retry control.",
+  "split": "development",
+  "evidence": {
+    "status": "observed",
+    "inventoryCase": "ios-uikit-state",
+    "note": "Haiku 5.5 failed 2/2 with skill content (repeated-request ownership defective; one answer's metadata path applied nothing even for the current reply); another model failed 2/2."
+  },
+  "variants": [
+    {"file": "alternative-token-single-writer.swift", "expect": "pass", "why": "Uses an identity token per request and writes all accessible status from one place, folding the reason into the label."},
+    {"file": "mutant-every-reply.swift", "expect": "contract-failure", "why": "Clears the stale hint but lets any reply, including an older one, overwrite the strip."},
+    {"file": "mutant-stale-hint.swift", "expect": "contract-failure", "why": "Guards replies but leaves the old failure in Retry's hint after recovery."},
+    {"file": "mutant-drops-current.swift", "expect": "contract-failure", "why": "Over-guards: captures the counter before bumping it, so even the current reply is ignored."},
+    {"file": "mutant-reset-retry.swift", "expect": "contract-failure", "why": "Resets Retry by removing its targets, so the ordinary Retry action stops working."}
+  ]
+}

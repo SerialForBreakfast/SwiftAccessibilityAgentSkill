@@ -1,0 +1,18 @@
+iPadOS 26.0, SwiftUI.
+
+Our message row can only delete by swiping. Add an on-screen way to delete that works with VoiceOver and with Full Keyboard Access plus a hardware keyboard. Keep swipe deletion working. onDelete must delete the chosen message once after explicit activation; do not add a confirmation or undo policy. Message has a stable id and subject.
+
+```swift
+struct MessageRow: View {
+    let message: Message
+    let onDelete: (Message) -> Void
+    var body: some View {
+        Text(message.subject)
+            .padding()
+            .contentShape(Rectangle())
+            .gesture(DragGesture().onEnded { value in
+                if value.translation.width < -80 { onDelete(message) }
+            })
+    }
+}
+```

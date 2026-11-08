@@ -1,0 +1,42 @@
+iOS 26.0, UIKit.
+
+The main-thread download callback reports integer percentages (display clamped to 0…100) and may repeat its terminal event. Only one download is active; `begin(id:)` starts a fresh unique ID. Late callbacks from an older ID and progress callbacks after the current operation has finished must be ignored. Keep the current percentage available as the label’s accessibility value without announcing every tick. Announce the first completion or failure once per ID; preserve its terminal state on duplicates. A later download must be able to announce its own outcome. Fix this implementation; no network code needs changing.
+
+```swift
+import UIKit
+
+enum DownloadUpdate {
+    case progress(Int)
+    case completed
+    case failed(String)
+}
+
+final class DownloadStatus {
+    let label: UILabel
+    private var activeID: UUID?
+
+    init(label: UILabel) {
+        self.label = label
+        label.isAccessibilityElement = true
+        label.accessibilityLabel = "Download"
+    }
+
+    func begin(id: UUID) {
+        activeID = id
+        label.text = "0%"
+        label.accessibilityValue = "0%"
+    }
+
+    func receive(id: UUID, update: DownloadUpdate) {
+        let text: String
+        switch update {
+        case .progress(let value): text = "\(value)%"
+        case .completed: text = "Download complete"
+        case .failed(let reason): text = "Download failed: \(reason)"
+        }
+        label.text = text
+        label.accessibilityValue = text
+        UIAccessibility.post(notification: .announcement, argument: text)
+    }
+}
+```

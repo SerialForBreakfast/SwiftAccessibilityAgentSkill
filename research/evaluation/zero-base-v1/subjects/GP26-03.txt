@@ -1,0 +1,14 @@
+iOS 26.0, UIKit.
+
+Customers using larger text cannot read the complete checkout total. The container fills the safe-area width, and formattedTotal can be a long localized currency value. The Pay button already works and its appearance should stay the same. Can you fix this layout?
+
+```swift
+totalLabel.text = formattedTotal
+totalLabel.font = .systemFont(ofSize: 17)
+totalLabel.numberOfLines = 1
+payButton.setTitle("Pay now", for: .normal)
+let summary = UIStackView(arrangedSubviews: [totalLabel, payButton])
+summary.axis = .horizontal
+summary.distribution = .fillEqually
+summary.heightAnchor.constraint(equalToConstant: 44).isActive = true
+```

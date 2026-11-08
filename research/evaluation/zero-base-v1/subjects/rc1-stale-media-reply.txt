@@ -1,0 +1,11 @@
+A delayed stream status reply updates our SwiftUI binding. Accept only the current item's current request, even if two loads were for the same item. Rejected replies must not write the binding.
+
+Return only Submission.swift, preserving this interface. Keep correct code as-is.
+
+import SwiftUI
+
+@MainActor
+func receive(_ status: Binding<String>, current: (String, Int), reply: (String, Int), value: String) {
+    fatalError("Implement this contract")
+}
+

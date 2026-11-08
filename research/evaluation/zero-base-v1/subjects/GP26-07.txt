@@ -1,0 +1,31 @@
+iOS 26.0, UIKit.
+
+Rows may be refreshed or removed while this payment panel is open. `rowButtons` always maps stable IDs to the current attached, visible, enabled buttons; `payButton` is a persistent fallback. All calls happen on the main thread, and only one panel is open at a time. After dismissal, attention should return to the originating row if it still exists, otherwise to `payButton`. The current code sometimes targets an old row before the panel has closed. Fix the code without adding a guessed delay or changing the payment operation.
+
+```swift
+import UIKit
+
+final class PaymentPresenter {
+    let host: UIViewController
+    let payButton: UIButton
+    var rowButtons: [UUID: UIButton] = [:]
+
+    init(host: UIViewController, payButton: UIButton) {
+        self.host = host
+        self.payButton = payButton
+    }
+
+    func open(from id: UUID, panel: UIViewController) {
+        let originalButton = rowButtons[id]
+        host.present(panel, animated: true)
+        // The panel's existing Done action calls this closure once.
+        onDone = {
+            UIAccessibility.post(notification: .layoutChanged,
+                                 argument: originalButton)
+            panel.dismiss(animated: true)
+        }
+    }
+
+    var onDone: (() -> Void)?
+}
+```

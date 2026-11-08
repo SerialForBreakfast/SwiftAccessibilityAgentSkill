@@ -1,0 +1,1765 @@
+{
+  "target": "claude-haiku-5-5 low",
+  "evidenceInventory": "research/evaluation/failure-inventory/inventory.json",
+  "sourceRegistry": [
+    {
+      "id": "S1",
+      "path": "evals/reports/claude-haiku-20261105/README.md",
+      "private": false,
+      "available": true,
+      "note": "84 Haiku answers, 12 code cases x 3 repeats and 6 evidence cases x 1 repeat, each in C0 and C2"
+    },
+    {
+      "id": "S2",
+      "path": "evals/reports/agy-expanded-20261105/README.md",
+      "private": false,
+      "available": true,
+      "note": "Flash low, 12 code cases \u00d73, C0 vs C2; counts only, no per-answer mapping"
+    },
+    {
+      "id": "S3",
+      "path": "evals/results/failure-inventory/bundles/dev7-flash-haiku-controller-return-r1.zip",
+      "private": true,
+      "available": true,
+      "note": "62 answers: Flash 24 cases and Haiku 7 cases, dev.5 vs dev.7 context"
+    },
+    {
+      "id": "S4",
+      "path": "research/evaluation/gemini-controlled-run-20261107/summary.json",
+      "private": false,
+      "available": true,
+      "note": "Argon high, 24 cases, generic vs dev.5 context; transitions only"
+    },
+    {
+      "id": "S5",
+      "path": "evals/reports/skill-0.3.0-dev.1-vs-0.3.0-dev.2-20261106/summary.json",
+      "private": false,
+      "available": true,
+      "note": "Flash and Haiku, 7 cases, dev.1 vs dev.2 context (AGY native re-grades of the same answers not double counted)"
+    },
+    {
+      "id": "S6",
+      "path": "evals/reports/native-activation-lift-20261106/summary.json",
+      "private": false,
+      "available": true,
+      "note": "Haiku, 3 accessibility cases \u00d7 generic, installed 0.2.2, installed dev.2; none invoked"
+    },
+    {
+      "id": "S7",
+      "path": "evals/rc1-comparison/summary.json",
+      "private": false,
+      "available": true,
+      "note": "Haiku, 12 one-function tasks; sealed 9 source-graded, diagnostic 36 natively graded"
+    },
+    {
+      "id": "S8",
+      "path": "evals/results/rc1-failure-replay-20261107/bundles/rc1-failure-replay-seven-return.zip",
+      "private": true,
+      "available": true,
+      "note": "Haiku explicit rc.1 on 7 cases; plus compact-candidate-A controls"
+    },
+    {
+      "id": "S9",
+      "path": "evals/results/failure-inventory/bundles/swift-checkout-first-review-20261106-r1.zip",
+      "private": true,
+      "available": true,
+      "note": "8 GP26-03 answers type-checked natively; mapping to model/condition not opened"
+    }
+  ],
+  "observations": 369,
+  "cases": [
+    {
+      "case": "GP26-03",
+      "decision": "Checkout total wraps at large text; Pay appearance preserved",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "mixed result",
+      "priority": "fix: fails on the target model even with skill guidance",
+      "evidenceSources": [
+        "S1",
+        "S2",
+        "S5",
+        "S8",
+        "S9"
+      ],
+      "question": "evals/os26/prompts.json#GP26-03",
+      "rubric": "evals/os26/acceptance.json#GP26-03",
+      "rules": [
+        "font",
+        "layout"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/GP26-03.txt",
+      "subjectSHA256": "baa71d2443b41a260020c67a89cb4294c5d81a27d7e860d27bedc5d3bbfd17d0",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "GP26-11",
+      "decision": "Already-correct native Slider needs no change",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "disposition": "mixed result",
+      "priority": "fix: fails on the target model even with skill guidance",
+      "evidenceSources": [
+        "S1",
+        "S2",
+        "S8"
+      ],
+      "question": "evals/os26/expansion-1/prompts.json#GP26-11",
+      "rubric": "evals/os26/expansion-1/acceptance.json#GP26-11",
+      "rules": [
+        "restraint"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/GP26-11.txt",
+      "subjectSHA256": "63b9043924c9b44e2972e33c170d973efea275bc6cddbc73ece9529926da63ec",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "GP26-12",
+      "decision": "Existing reduced-motion transition needs no change",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "disposition": "mixed result",
+      "priority": "fix: possible regression (target passes without skill content, fails with it; attribution untested)",
+      "evidenceSources": [
+        "S1",
+        "S2"
+      ],
+      "question": "evals/os26/expansion-1/prompts.json#GP26-12",
+      "rubric": "evals/os26/expansion-1/acceptance.json#GP26-12",
+      "rules": [
+        "restraint"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/GP26-12.txt",
+      "subjectSHA256": "d49ffa6917b05baa08329021035ec3a131d6d52119f68faf6291c0203c221b73",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "rc1/checkout-font",
+      "decision": "Supplied text-size setting owns the label font",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "mixed result",
+      "priority": "fix: fails on the target model even with skill guidance",
+      "evidenceSources": [
+        "S7"
+      ],
+      "question": "evals/rc1-comparison/packet.json#subjectExports/checkout-font",
+      "rubric": "evals/rc1/RUBRIC.md",
+      "rules": [
+        "font"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/rc1-checkout-font.txt",
+      "subjectSHA256": "656b8998e63558b54d3c95c97717eec7b6553865fafc3a63aa0707ca7bddc243",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "IOS-MEDIA-OWNERSHIP-R1",
+      "decision": "Late media callback after external item replacement",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "observed failure",
+      "priority": "fix: fails on the target model even with skill guidance",
+      "evidenceSources": [
+        "S6",
+        "S8"
+      ],
+      "question": "code-examples/platforms/ios-closure-v1/evaluation/media-load-ownership.prompt.md",
+      "rubric": "research/evaluation/native-activation-lift-v1/PROPOSAL.json",
+      "rules": [
+        "callbacks",
+        "media"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/IOS-MEDIA-OWNERSHIP-R1.txt",
+      "subjectSHA256": "5cac0e1c6c305829b5612814aa742d174c76eea02ee204ed297d960f66489787",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "ios-swiftui-media",
+      "decision": "Metadata states distinct; reject stale completions",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "disposition": "mixed result",
+      "priority": "fix: fails on the target model even with skill guidance",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/ios-swiftui-media/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#ios-swiftui-media",
+      "rules": [
+        "media"
+      ],
+      "failedCriteria": {
+        "criterion-1": 3,
+        "criterion-2": 1
+      },
+      "directContracts": [
+        "code-examples/swiftui/ios-v1/manifest.json#FormsMediaTests/testMissingAndEmptyMediaAreDifferentStates",
+        "code-examples/swiftui/ios-v1/manifest.json#FormsMediaTests/testStaleTrackLoadIsIgnored",
+        "code-examples/swiftui/ios-v1/manifest.json#FormsMediaTests/testMediaSelectionSurvivesReorder",
+        "code-examples/swiftui/ios-v1/manifest.json#FormsMediaTests/testMetadataChoiceDoesNotMutatePlayerPreferences"
+      ],
+      "subjectPath": "subjects/ios-swiftui-media.txt",
+      "subjectSHA256": "b12c69f62639d32d35bf72db851861a484dd1aa2436623787a47968be965c948",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "ios-uikit-state",
+      "decision": "Repeated updates replace stale status/help; current reply only",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "observed failure",
+      "priority": "fix: fails on the target model even with skill guidance",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/ios-uikit-state/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#ios-uikit-state",
+      "rules": [
+        "refresh"
+      ],
+      "failedCriteria": {
+        "criterion-2": 2,
+        "criterion-1": 3
+      },
+      "directContracts": [
+        "code-examples/pilots/uikit-semantics-v1/manifest.json#UIKitSemanticsTests/testReconfigurationClearsStaleHintAndValue",
+        "code-examples/platforms/ios-closure-v1/manifest.json#MediaLoadOwnerTests/testReplacementRejectsOldItemCompletion",
+        "code-examples/platforms/ios-closure-v1/manifest.json#MediaLoadOwnerTests/testSameItemNewRequestRejectsOldGeneration",
+        "code-examples/platforms/ios-closure-v1/manifest.json#MediaLoadOwnerTests/testExternalReplacementRejectsOldResult",
+        "code-examples/pilots/uikit-dynamic-v1/manifest.json#DynamicUIKitTests/testOrdinaryButtonsUseCurrentItemAfterReuse"
+      ],
+      "subjectPath": "subjects/ios-uikit-state.txt",
+      "subjectSHA256": "01d940885a29d8915fe75196935ebc5a3d444e111c01f00dad2436dab8b73e3c",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "ios-swiftui-lifecycle",
+      "decision": "Restore to the current eligible origin at completion",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "disposition": "mixed result",
+      "priority": "fix: fails on the target model even with skill guidance",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/ios-swiftui-lifecycle/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#ios-swiftui-lifecycle",
+      "rules": [
+        "dismissal"
+      ],
+      "failedCriteria": {
+        "criterion-1": 2,
+        "criterion-0": 2
+      },
+      "directContracts": [
+        "code-examples/swiftui/ios-v1/manifest.json#LifecycleTests/testDismissResolvesCurrentOrigin",
+        "code-examples/swiftui/ios-v1/manifest.json#LifecycleTests/testEligibleListIsEvaluatedAtCompletion",
+        "code-examples/swiftui/ios-v1/manifest.json#LifecycleTests/testRemovedOriginUsesFallback",
+        "code-examples/swiftui/ios-v1/manifest.json#LifecycleTests/testOldDismissalCannotConsumeNewSession",
+        "code-examples/swiftui/ios-v1/manifest.json#LifecycleTests/testRepeatedDismissIsQuiet",
+        "code-examples/swiftui/ios-v1/manifest.json#LifecycleTests/testReentrantRequestPreservesNewPresentation"
+      ],
+      "subjectPath": "subjects/ios-swiftui-lifecycle.txt",
+      "subjectSHA256": "f981e62bcf7bd1b39dcf57e341e775c3facd5b33d39b2f3409e2ff286dbac1fe",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "ios-uikit-text",
+      "decision": "Scalable checkout text with Pay identity preserved",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "mixed result",
+      "priority": "fix: fails on the target model even with skill guidance",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/ios-uikit-text/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#ios-uikit-text",
+      "rules": [
+        "font",
+        "layout"
+      ],
+      "failedCriteria": {
+        "criterion-1": 3,
+        "criterion-2": 2,
+        "criterion-0": 1
+      },
+      "directContracts": [
+        "code-examples/pilots/uikit-choice-v1/manifest.json#ChoiceUIKitTests/testFontsMatchEffectiveLargeTextEnvironment",
+        "code-examples/pilots/uikit-choice-v1/manifest.json#ChoiceUIKitTests/testRepeatedSizeTransitionsDoNotAccumulateScaling",
+        "research/evaluation/failure-driven/checkout-contract-v1/manifest.json#CheckoutSummaryTests/testFlexibleTextConfigurationAndNoFixedEnclosingHeight",
+        "code-examples/pilots/uikit-choice-v1/manifest.json#ChoiceUIKitTests/testLongLocalizedContentRemainsVerbatim",
+        "code-examples/pilots/uikit-choice-v1/manifest.json#ChoiceUIKitTests/testSelfSizingConfigurationAndVerticalConstraintChain",
+        "research/evaluation/failure-driven/checkout-contract-v1/manifest.json#CheckoutSummaryTests/testPreservesExistingButtonIdentityTypographyAndTitle",
+        "research/evaluation/failure-driven/checkout-contract-v1/manifest.json#CheckoutSummaryTests/testRepeatedUpdatesPreserveExistingActionExactlyOnce"
+      ],
+      "subjectPath": "subjects/ios-uikit-text.txt",
+      "subjectSHA256": "9afcc6a91cfcbb0e11cb21dfd972280bc2d49b1f18a798771c1937e538a150fc",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "ios-uikit-actions",
+      "decision": "Shortcut added; ordinary Open/Delete stay reachable",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "mixed result",
+      "priority": "fix: fails on the target model even with skill guidance",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/ios-uikit-actions/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#ios-uikit-actions",
+      "rules": [
+        "ordinary"
+      ],
+      "failedCriteria": {
+        "criterion-0": 2,
+        "criterion-1": 2
+      },
+      "directContracts": [
+        "code-examples/pilots/uikit-dynamic-v1/manifest.json#DynamicUIKitTests/testOrdinaryButtonsUseCurrentItemAfterReuse",
+        "code-examples/pilots/uikit-dynamic-v1/manifest.json#DynamicUIKitTests/testRetainedOldActionCannotAffectReusedView",
+        "code-examples/pilots/uikit-dynamic-v1/manifest.json#DynamicUIKitTests/testDisableAndReenableRefreshesBothActionPaths",
+        "code-examples/pilots/uikit-dynamic-v1/manifest.json#DynamicUIKitTests/testRetainedCustomActionDoesNotKeepViewAlive",
+        "code-examples/pilots/uikit-dynamic-v1/manifest.json#DynamicUIKitTests/testNativeActionIdentifierReplacesPreviousHandler"
+      ],
+      "subjectPath": "subjects/ios-uikit-actions.txt",
+      "subjectSHA256": "ddf8bad3cbd8d08785f91dfcdb1ed4f6d44a36a2a09d793554ddfe9fb820c882",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "tvos-swiftui-testing",
+      "decision": "Map claims to actual assertions; keep first diagnostics",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "disposition": "observed failure",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/tvos-swiftui-testing/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-swiftui-testing",
+      "rules": [
+        "callbacks"
+      ],
+      "failedCriteria": {
+        "criterion-0": 1,
+        "criterion-1": 2,
+        "criterion-2": 2
+      },
+      "directContracts": [],
+      "subjectPath": "subjects/tvos-swiftui-testing.txt",
+      "subjectSHA256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "macos-appkit-structure",
+      "decision": "Group descriptions without merging Open and Details",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "disposition": "mixed result",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/macos-appkit-structure/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#macos-appkit-structure",
+      "rules": [
+        "children"
+      ],
+      "failedCriteria": {
+        "criterion-1": 2
+      },
+      "directContracts": [
+        "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testContainerDoesNotReplaceControls",
+        "code-examples/platforms/macos-structure-v1/manifest.json#DesktopOutlineTests/testSelectedChildSurvivesSiblingReorder",
+        "code-examples/platforms/macos-structure-v1/manifest.json#DesktopOutlineTests/testRemovedSelectionClears"
+      ],
+      "subjectPath": "subjects/macos-appkit-structure.txt",
+      "subjectSHA256": "7f59da93d717eae764f0baedbd29bead108fefbb158ed0132c1fc8f870b9fc5e",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "macos-appkit-testing",
+      "decision": "Map claims to actual assertions; keep first diagnostics",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "disposition": "mixed result",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/macos-appkit-testing/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#macos-appkit-testing",
+      "rules": [
+        "callbacks",
+        "proof"
+      ],
+      "failedCriteria": {
+        "criterion-0": 1,
+        "criterion-1": 2,
+        "criterion-2": 2
+      },
+      "directContracts": [],
+      "subjectPath": "subjects/macos-appkit-testing.txt",
+      "subjectSHA256": "f853b3b93cb6865771bf542f68da79adeae1d8866607d56103a409848dc1fdd3",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "macos-swiftui-lifecycle",
+      "decision": "Restore to the current eligible origin at completion",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "disposition": "observed failure",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/macos-swiftui-lifecycle/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#macos-swiftui-lifecycle",
+      "rules": [
+        "dismissal"
+      ],
+      "failedCriteria": {
+        "criterion-0": 2,
+        "criterion-1": 1
+      },
+      "directContracts": [
+        "code-examples/swiftui/macos-v1/manifest.json#LifecycleTests/testDismissResolvesCurrentOrigin",
+        "code-examples/swiftui/macos-v1/manifest.json#LifecycleTests/testEligibleListIsEvaluatedAtCompletion",
+        "code-examples/swiftui/macos-v1/manifest.json#LifecycleTests/testRemovedOriginUsesFallback",
+        "code-examples/swiftui/macos-v1/manifest.json#LifecycleTests/testOldDismissalCannotConsumeNewSession",
+        "code-examples/swiftui/macos-v1/manifest.json#LifecycleTests/testRepeatedDismissIsQuiet",
+        "code-examples/swiftui/macos-v1/manifest.json#LifecycleTests/testReentrantRequestPreservesNewPresentation"
+      ],
+      "subjectPath": "subjects/macos-swiftui-lifecycle.txt",
+      "subjectSHA256": "370808352ca7dc1802e67f0aeaab1a2c0248ad6106decbce1fe338371369319e",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "mixed-macos-owner",
+      "decision": "Condition advice on the owning view/coordinator layer",
+      "platform": "macOS",
+      "framework": "mixed",
+      "disposition": "mixed result",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/mixed-macos-owner/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#mixed-macos-owner",
+      "rules": [
+        "children"
+      ],
+      "failedCriteria": {
+        "criterion-1": 2
+      },
+      "directContracts": [],
+      "subjectPath": "subjects/mixed-macos-owner.txt",
+      "subjectSHA256": "5c3d5710d5060f260e752be193c34c0ea11efb7270875478383a014a7ce52ef2",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "tvos-uikit-state",
+      "decision": "Repeated updates replace stale status/help; current reply only",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "disposition": "mixed result",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/tvos-uikit-state/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-uikit-state",
+      "rules": [
+        "refresh"
+      ],
+      "failedCriteria": {
+        "criterion-2": 1,
+        "criterion-1": 1
+      },
+      "directContracts": [
+        "code-examples/platforms/tvos-state-recovery-v1/manifest.json#StateContractTests/testReconfigureClearsStaleSelectionText",
+        "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testReplacementRejectsOldItemCompletion",
+        "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testSameItemNewRequestRejectsOldGeneration",
+        "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testExternalReplacementRejectsOldResult",
+        "code-examples/platforms/tvos-uikit-v1/manifest.json#TelevisionActionsTests/testOrdinaryPlay",
+        "code-examples/platforms/tvos-uikit-v1/manifest.json#TelevisionActionsTests/testOrdinaryDetails"
+      ],
+      "subjectPath": "subjects/tvos-uikit-state.txt",
+      "subjectSHA256": "5f3c8c25e44c4bf4221a9955a44edc50da7fbdf0bad70e933cb752e5440e488d",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "GP26-04",
+      "decision": "Delete without requiring a swipe",
+      "platform": "iPadOS",
+      "framework": "SwiftUI",
+      "disposition": "mixed result",
+      "priority": "fix: fails on the target model even with skill guidance",
+      "evidenceSources": [
+        "S1",
+        "S2",
+        "S8"
+      ],
+      "question": "evals/os26/prompts.json#GP26-04",
+      "rubric": "evals/os26/acceptance.json#GP26-04",
+      "rules": [
+        "ordinary"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/GP26-04.txt",
+      "subjectSHA256": "c98b075af6d807d782d368919a6e6e8267a1966f3b2eeaeccf43bf16a0689fb7",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "macos-swiftui-state",
+      "decision": "Repeated updates replace stale status/help; current reply only",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "disposition": "mixed result",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/macos-swiftui-state/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#macos-swiftui-state",
+      "rules": [
+        "refresh"
+      ],
+      "failedCriteria": {
+        "criterion-1": 1
+      },
+      "directContracts": [
+        "code-examples/swiftui/macos-v1/manifest.json#SemanticsTests/testConfigureClearsPriorStatusAndPriorityWithoutReuse",
+        "code-examples/swiftui/macos-v1/manifest.json#SemanticsTests/testHintTracksCurrentAvailability",
+        "code-examples/swiftui/macos-v1/manifest.json#FormsMediaTests/testStaleTrackLoadIsIgnored",
+        "code-examples/swiftui/macos-v1/manifest.json#FormsMediaTests/testDirectEditRejectsOldSnapshot",
+        "code-examples/swiftui/macos-v1/manifest.json#DocumentTests/testOrdinarySelectionUsesCurrentItem"
+      ],
+      "subjectPath": "subjects/macos-swiftui-state.txt",
+      "subjectSHA256": "93fed5f76679b0f230e01516424aa8dbee8bb46bbc6262b489c8033a7b652400",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "tvos-uikit-lifecycle",
+      "decision": "Restore to the current eligible origin at completion",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "disposition": "mixed result",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/tvos-uikit-lifecycle/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-uikit-lifecycle",
+      "rules": [
+        "dismissal"
+      ],
+      "failedCriteria": {
+        "criterion-0": 1
+      },
+      "directContracts": [
+        "code-examples/platforms/tvos-lifecycle-v1/manifest.json#TelevisionLifecycleTests/testCompletedModalRequestsOriginal",
+        "code-examples/platforms/tvos-lifecycle-v1/manifest.json#TelevisionLifecycleTests/testRemovedOriginalUsesFallback",
+        "code-examples/platforms/tvos-lifecycle-v1/manifest.json#TelevisionLifecycleTests/testOldCompletionCannotConsumeNewSession",
+        "code-examples/platforms/tvos-lifecycle-v1/manifest.json#TelevisionLifecycleTests/testDuplicateCompletionIsQuiet",
+        "code-examples/platforms/tvos-lifecycle-v1/manifest.json#TelevisionLifecycleTests/testReentrantRequestPreservesNewSession"
+      ],
+      "subjectPath": "subjects/tvos-uikit-lifecycle.txt",
+      "subjectSHA256": "9b4965749be4abff154ff82ea2d1442838c50dc19de96d7bf7570c663d41f07c",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "GP26-06",
+      "decision": "Already-correct Toggle needs no change",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "disposition": "mixed result",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S1",
+        "S2"
+      ],
+      "question": "evals/os26/prompts.json#GP26-06",
+      "rubric": "evals/os26/acceptance.json#GP26-06",
+      "rules": [
+        "restraint"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/GP26-06.txt",
+      "subjectSHA256": "1d3ac24d3fc8b0ee1ffd67a8be43f1db735427955603c3c54aec4749201330ed",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "EV02",
+      "decision": "12 clean checks don't justify 'fully accessible'",
+      "platform": "any",
+      "framework": "evidence",
+      "disposition": "mixed result",
+      "priority": "fix-or-confirm: fails unaided on the target model; skill arm passed or untested",
+      "evidenceSources": [
+        "S1",
+        "S8"
+      ],
+      "question": "research/evaluation/failure-driven/compact-candidate-a/BATCH.json#EV02",
+      "rubric": "evals/reports/claude-haiku-20261105/README.md",
+      "rules": [
+        "proof"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "inputStatus": "hash catalog only; retrieve exact subject bytes before use"
+    },
+    {
+      "case": "EV06",
+      "decision": "Direct handler test doesn't prove keyboard/VoiceOver activation",
+      "platform": "any",
+      "framework": "evidence",
+      "disposition": "mixed result",
+      "priority": "fix-or-confirm: fails unaided on the target model; skill arm passed or untested",
+      "evidenceSources": [
+        "S1",
+        "S8"
+      ],
+      "question": "research/evaluation/failure-driven/compact-candidate-a/BATCH.json#EV06",
+      "rubric": "evals/reports/claude-haiku-20261105/README.md",
+      "rules": [
+        "proof"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "inputStatus": "hash catalog only; retrieve exact subject bytes before use"
+    },
+    {
+      "case": "GP26-02",
+      "decision": "Reused cell shows current customer and status",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "mixed result",
+      "priority": "fix-or-confirm: fails unaided on the target model; skill arm passed or untested",
+      "evidenceSources": [
+        "S1",
+        "S2",
+        "S5",
+        "S6",
+        "S8"
+      ],
+      "question": "evals/os26/prompts.json#GP26-02",
+      "rubric": "evals/os26/acceptance.json#GP26-02",
+      "rules": [
+        "refresh"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/GP26-02.txt",
+      "subjectSHA256": "7c26dc1b5208f9f8b1d745d19e200f00c3d3d2c8cd3882ff52bff8fcb75ff055",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "IOS-VALIDATION-OWNERSHIP-R1",
+      "decision": "Validation result ignores newer submissions",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "mixed result",
+      "priority": "fix-or-confirm: fails unaided on the target model; skill arm passed or untested",
+      "evidenceSources": [
+        "S6"
+      ],
+      "question": "code-examples/platforms/ios-closure-v1/evaluation/validation-ownership.prompt.md",
+      "rubric": "research/evaluation/native-activation-lift-v1/PROPOSAL.json",
+      "rules": [
+        "refresh"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/IOS-VALIDATION-OWNERSHIP-R1.txt",
+      "subjectSHA256": "61f7850a2f1701cdd9d12b6543751631af7c0796f590459e3818420456c08de0",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "macos-swiftui-text",
+      "decision": "Scalable checkout text with Pay identity preserved",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "disposition": "observed failure",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/macos-swiftui-text/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#macos-swiftui-text",
+      "rules": [
+        "layout"
+      ],
+      "failedCriteria": {
+        "criterion-0": 2,
+        "criterion-2": 1
+      },
+      "directContracts": [],
+      "subjectPath": "subjects/macos-swiftui-text.txt",
+      "subjectSHA256": "f4d1432a0aa93e63b243dc8b17ee8ac13e621297b7834d530ad3f47d62805b60",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "ios-uikit-no-change",
+      "decision": "Working standard control needs no replacement",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "mixed result",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/ios-uikit-no-change/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#ios-uikit-no-change",
+      "rules": [
+        "restraint"
+      ],
+      "failedCriteria": {
+        "criterion-0": 2,
+        "criterion-2": 2
+      },
+      "directContracts": [],
+      "subjectPath": "subjects/ios-uikit-no-change.txt",
+      "subjectSHA256": "2a184c4680bf73ceae8b229cba3401e82a249515023b04d8eb76130584ff6113",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "macos-appkit-actions",
+      "decision": "Shortcut added; ordinary Open/Delete stay reachable",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "disposition": "mixed result",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/macos-appkit-actions/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#macos-appkit-actions",
+      "rules": [
+        "children"
+      ],
+      "failedCriteria": {
+        "criterion-0": 1,
+        "criterion-1": 1
+      },
+      "directContracts": [
+        "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testOrdinaryOpenOnly",
+        "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testOrdinarySaveOnly",
+        "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testStaleShortcutRejected",
+        "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testDisabledOrdinarySave",
+        "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testDisabledShortcut",
+        "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testRepeatedConfigurationDoesNotDuplicateActions",
+        "code-examples/platforms/macos-appkit-v1/manifest.json#DesktopActionsTests/testShortcutDoesNotRetainRow"
+      ],
+      "subjectPath": "subjects/macos-appkit-actions.txt",
+      "subjectSHA256": "a3221645549ddf2c66f04db5b3d20952a7a1d01607d64463344ea58fc3fb6eee",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "tvos-swiftui-actions",
+      "decision": "Shortcut added; ordinary Select stays reachable",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "disposition": "mixed result",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/tvos-swiftui-actions/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-swiftui-actions",
+      "rules": [
+        "ordinary"
+      ],
+      "failedCriteria": {},
+      "directContracts": [
+        "code-examples/swiftui/tvos-v1/manifest.json#DocumentTests/testOrdinarySelectionUsesCurrentItem",
+        "code-examples/swiftui/tvos-v1/manifest.json#DocumentTests/testDeleteCurrentItemOnceAndClearSelection",
+        "code-examples/swiftui/tvos-v1/manifest.json#DocumentTests/testOldActionDoesNotTargetReboundRow",
+        "code-examples/swiftui/tvos-v1/manifest.json#InteropTests/testCoordinatorReplacesOldCallback",
+        "code-examples/swiftui/tvos-v1/manifest.json#InteropTests/testOldNativeViewCannotDispatchAfterRebind"
+      ],
+      "subjectPath": "subjects/tvos-swiftui-actions.txt",
+      "subjectSHA256": "5e241a2f3c435f9eeb42a9c03d5f261df0735616692dc88b3d409d825b88cc5a",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "tvos-uikit-media",
+      "decision": "Metadata states distinct; reject stale completions",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "disposition": "observed failure",
+      "priority": "credible: fails on another model only; needs a target-model observation",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/tvos-uikit-media/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-uikit-media",
+      "rules": [
+        "media"
+      ],
+      "failedCriteria": {
+        "criterion-1": 2,
+        "criterion-2": 1,
+        "criterion-3": 2
+      },
+      "directContracts": [
+        "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testNilItemDoesNotInvokeLoader",
+        "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testErrorIsNotMissingOrSuccessfulMetadata",
+        "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testSameItemNewRequestRejectsOldGeneration",
+        "code-examples/platforms/tvos-media-v1/manifest.json#MediaMetadataTests/testKnownMissingGroupIsAbsent",
+        "code-examples/platforms/tvos-media-v1/manifest.json#MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent",
+        "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testReplacementRejectsOldItemCompletion",
+        "code-examples/platforms/tvos-closure-v1/manifest.json#MediaLoadOwnerTests/testExternalReplacementRejectsOldResult",
+        "code-examples/platforms/tvos-media-v1/manifest.json#MediaMetadataTests/testInspectionPreservesChosenAudioAndSubtitleOff"
+      ],
+      "subjectPath": "subjects/tvos-uikit-media.txt",
+      "subjectSHA256": "1584405193ce1b13dc1ee1f6fd32a9b1cbd4c81bd7b3622cc585b00753d2a25e",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "EV01",
+      "decision": "Screenshot does not prove VoiceOver activation",
+      "platform": "any",
+      "framework": "evidence",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S1"
+      ],
+      "question": "research/evaluation/failure-driven/compact-candidate-a/BATCH.json#EV01",
+      "rubric": "evals/reports/claude-haiku-20261105/README.md",
+      "rules": [
+        "proof"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "inputStatus": "hash catalog only; retrieve exact subject bytes before use"
+    },
+    {
+      "case": "EV03",
+      "decision": "Unavailable docs can't establish exactly-once activation",
+      "platform": "any",
+      "framework": "evidence",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S1"
+      ],
+      "question": "research/evaluation/failure-driven/compact-candidate-a/BATCH.json#EV03",
+      "rubric": "evals/reports/claude-haiku-20261105/README.md",
+      "rules": [
+        "proof"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "inputStatus": "hash catalog only; retrieve exact subject bytes before use"
+    },
+    {
+      "case": "EV04",
+      "decision": "Forum post can't justify removing a payment workaround",
+      "platform": "any",
+      "framework": "evidence",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S1"
+      ],
+      "question": "research/evaluation/failure-driven/compact-candidate-a/BATCH.json#EV04",
+      "rubric": "evals/reports/claude-haiku-20261105/README.md",
+      "rules": [
+        "proof"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "inputStatus": "hash catalog only; retrieve exact subject bytes before use"
+    },
+    {
+      "case": "EV05",
+      "decision": "Simulator 26.5 doesn't establish 26.0 and later",
+      "platform": "any",
+      "framework": "evidence",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S1"
+      ],
+      "question": "research/evaluation/failure-driven/compact-candidate-a/BATCH.json#EV05",
+      "rubric": "evals/reports/claude-haiku-20261105/README.md",
+      "rules": [
+        "proof"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "inputStatus": "hash catalog only; retrieve exact subject bytes before use"
+    },
+    {
+      "case": "GP26-01",
+      "decision": "Settings row: switch and Help stay independently usable",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S1",
+        "S2",
+        "S5"
+      ],
+      "question": "evals/os26/prompts.json#GP26-01",
+      "rubric": "evals/os26/acceptance.json#GP26-01",
+      "rules": [
+        "ordinary"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/GP26-01.txt",
+      "subjectSHA256": "16c242586359ceebe3a5ebbaf30317f5cb8e688a67e24e051cac1decc77ac618",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "GP26-05",
+      "decision": "tvOS tile navigation keeps controls",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S1",
+        "S2"
+      ],
+      "question": "evals/os26/prompts.json#GP26-05",
+      "rubric": "evals/os26/acceptance.json#GP26-05",
+      "rules": [
+        "ordinary"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/GP26-05.txt",
+      "subjectSHA256": "ec1b2afcfc83383fa8d994362b1015ad8414ecb76284faa71d4850b6bae8dc4d",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "GP26-07",
+      "decision": "Return focus to the current payment origin",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S1",
+        "S2",
+        "S5"
+      ],
+      "question": "evals/os26/expansion-1/prompts.json#GP26-07",
+      "rubric": "evals/os26/expansion-1/acceptance.json#GP26-07",
+      "rules": [
+        "dismissal"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/GP26-07.txt",
+      "subjectSHA256": "8f002c70b8f32d20cb4c5d0615d0e0d30f5e02c6e566e6cba16e07a6bee0a798",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "GP26-08",
+      "decision": "Custom popup contains focus and restores background state",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S1",
+        "S2",
+        "S5"
+      ],
+      "question": "evals/os26/expansion-1/prompts.json#GP26-08",
+      "rubric": "evals/os26/expansion-1/acceptance.json#GP26-08",
+      "rules": [
+        "dismissal"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/GP26-08.txt",
+      "subjectSHA256": "88af90f8b880bbb0f1bc6c28b3df2e95701d71731ae014dcffec8cc28e5daaea",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "GP26-09",
+      "decision": "Custom volume knob is adjustable",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S1",
+        "S2",
+        "S5"
+      ],
+      "question": "evals/os26/expansion-1/prompts.json#GP26-09",
+      "rubric": "evals/os26/expansion-1/acceptance.json#GP26-09",
+      "rules": [
+        "ordinary",
+        "restraint"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/GP26-09.txt",
+      "subjectSHA256": "e2fb79ad47b2c98acbbda3b9a9b6f96e1a1e259bf2637a71ba572dae0fc91fc0",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "GP26-10",
+      "decision": "Download progress without repeated announcements",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S1",
+        "S2",
+        "S5"
+      ],
+      "question": "evals/os26/expansion-1/prompts.json#GP26-10",
+      "rubric": "evals/os26/expansion-1/acceptance.json#GP26-10",
+      "rules": [
+        "media"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/GP26-10.txt",
+      "subjectSHA256": "98ad4b2dc2e17a2c307be161ee19f15f28cae77e75b340a88a4b3ea15e687a40",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "ios-missing-reference",
+      "decision": "Don't claim an unread reference's contract",
+      "platform": "iOS",
+      "framework": "any",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/ios-missing-reference/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#ios-missing-reference",
+      "rules": [
+        "proof"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/ios-missing-reference.txt",
+      "subjectSHA256": "7c78d80e047b9239cf16cb276d1a9437491ecf7d57dfdb86d86057a9ef4f0446",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "ios-swiftui-no-change",
+      "decision": "Working standard control needs no replacement",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/ios-swiftui-no-change/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#ios-swiftui-no-change",
+      "rules": [
+        "restraint"
+      ],
+      "failedCriteria": {
+        "criterion-0": 2,
+        "criterion-2": 1
+      },
+      "directContracts": [],
+      "subjectPath": "subjects/ios-swiftui-no-change.txt",
+      "subjectSHA256": "702058f370f81716a175faa26c5f206edcbcf95941684f9eacec8f1042277de6",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "ios-swiftui-semantics",
+      "decision": "Native switch: change only for a demonstrated defect",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/ios-swiftui-semantics/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#ios-swiftui-semantics",
+      "rules": [
+        "restraint"
+      ],
+      "failedCriteria": {},
+      "directContracts": [
+        "code-examples/swiftui/ios-v1/manifest.json#SemanticsTests/testBindingReadsCurrentNativeToggleState",
+        "code-examples/swiftui/ios-v1/manifest.json#SemanticsTests/testBothToggleTransitionsRefreshValue"
+      ],
+      "subjectPath": "subjects/ios-swiftui-semantics.txt",
+      "subjectSHA256": "63e10b06dd993c30d5d7ff8814eb13eb239dfed5b19c40046aac9d957fa89797",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "macos-appkit-no-change",
+      "decision": "Working standard control needs no replacement",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/macos-appkit-no-change/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#macos-appkit-no-change",
+      "rules": [
+        "children",
+        "restraint"
+      ],
+      "failedCriteria": {
+        "criterion-2": 2
+      },
+      "directContracts": [],
+      "subjectPath": "subjects/macos-appkit-no-change.txt",
+      "subjectSHA256": "5ce9c8f199aeffdf70c26b545910183a41c4878da3f629c27d61099f46cd965e",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "rc1/adjustable-volume",
+      "decision": "Adjustable volume steps within bounds",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S7"
+      ],
+      "question": "evals/rc1-comparison/packet.json#subjectExports/adjustable-volume",
+      "rubric": "evals/rc1/RUBRIC.md",
+      "rules": [
+        "ordinary"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/rc1-adjustable-volume.txt",
+      "subjectSHA256": "d08f88af87696f22fa8970c7fd0b4a67917d173cbac78154e315f3af295606ce",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "rc1/checkout-layout",
+      "decision": "Stack checkout at accessibility sizes",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S7"
+      ],
+      "question": "evals/rc1-comparison/packet.json#subjectExports/checkout-layout",
+      "rubric": "evals/rc1/RUBRIC.md",
+      "rules": [
+        "layout"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/rc1-checkout-layout.txt",
+      "subjectSHA256": "88653d7caa4aa01b34940bd69b7e8842af52d998239bafdd85f5dbf5a3f9046d",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "rc1/landmark-identity",
+      "decision": "Landmarks keep order and stable IDs",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S7"
+      ],
+      "question": "evals/rc1-comparison/packet.json#subjectExports/landmark-identity",
+      "rubric": "evals/rc1/RUBRIC.md",
+      "rules": [
+        "children"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/rc1-landmark-identity.txt",
+      "subjectSHA256": "1d3ff7791fd771858ea619d5a7b3ecf4f8a9d16711ff42fc396602f6840ebd0c",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "rc1/motion-policy",
+      "decision": "Reduce Motion suppresses only the optional effect",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S7"
+      ],
+      "question": "evals/rc1-comparison/packet.json#subjectExports/motion-policy",
+      "rubric": "evals/rc1/RUBRIC.md",
+      "rules": [
+        "restraint"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/rc1-motion-policy.txt",
+      "subjectSHA256": "5b531d45fc581267a3907df392b32273a0e87362a5178379f83d09fef9de76aa",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "rc1/ordinary-buttons",
+      "decision": "Both buttons dispatch to the current owner",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S7"
+      ],
+      "question": "evals/rc1-comparison/packet.json#subjectExports/ordinary-buttons",
+      "rubric": "evals/rc1/RUBRIC.md",
+      "rules": [
+        "ordinary"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/rc1-ordinary-buttons.txt",
+      "subjectSHA256": "84b2cc2bfc8c17b322a3d889e9a6de8ad92b9e9b43552ef0cd4056a81eaeb496",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "rc1/restoration-eligibility",
+      "decision": "Restore to an eligible enabled opener, else fallback",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S7"
+      ],
+      "question": "evals/rc1-comparison/packet.json#subjectExports/restoration-eligibility",
+      "rubric": "evals/rc1/RUBRIC.md",
+      "rules": [
+        "dismissal"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/rc1-restoration-eligibility.txt",
+      "subjectSHA256": "909c4eae5883917d3bbd6a81a60f0bf3adda98a348c2d6e602d21410ec30c599",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "rc1/row-traits",
+      "decision": "Selection preserves unrelated traits",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S7"
+      ],
+      "question": "evals/rc1-comparison/packet.json#subjectExports/row-traits",
+      "rubric": "evals/rc1/RUBRIC.md",
+      "rules": [
+        "refresh"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/rc1-row-traits.txt",
+      "subjectSHA256": "7dacb0f1376e9da52e4e6428a4ecc6f3a40b59aca6dfc1c454238c3999ce4502",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "rc1/stale-media-reply",
+      "decision": "Media reply must match current item and request",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S7"
+      ],
+      "question": "evals/rc1-comparison/packet.json#subjectExports/stale-media-reply",
+      "rubric": "evals/rc1/RUBRIC.md",
+      "rules": [
+        "media"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/rc1-stale-media-reply.txt",
+      "subjectSHA256": "3be29826f52966317155002c72d7a3c5fd66e3819482d4a5411404266e0cfa39",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "rc1/status-change",
+      "decision": "Publish new status before notifying, once per change",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S7"
+      ],
+      "question": "evals/rc1-comparison/packet.json#subjectExports/status-change",
+      "rubric": "evals/rc1/RUBRIC.md",
+      "rules": [
+        "callbacks",
+        "refresh"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/rc1-status-change.txt",
+      "subjectSHA256": "6e8749b50aee41a716329cacbcf50fb506129a10425fd8381488832fd384a06f",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "rc1/switch-preservation",
+      "decision": "Rename returns the original switch unchanged",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S7"
+      ],
+      "question": "evals/rc1-comparison/packet.json#subjectExports/switch-preservation",
+      "rubric": "evals/rc1/RUBRIC.md",
+      "rules": [
+        "ordinary",
+        "refresh"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/rc1-switch-preservation.txt",
+      "subjectSHA256": "4cf9292a0d88a5e10af408a7bdffc3f51508d9aa1459211d8cfb1e677b61cb20",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "rc1/toggle-binding",
+      "decision": "Guarded toggle binding forwards changed writes once",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S7"
+      ],
+      "question": "evals/rc1-comparison/packet.json#subjectExports/toggle-binding",
+      "rubric": "evals/rc1/RUBRIC.md",
+      "rules": [
+        "refresh"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/rc1-toggle-binding.txt",
+      "subjectSHA256": "aa8d901ad1dfaf35ef27662988c9c5c382d037f21cf2d90ce6d73019e01b8c15",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "tvos-swiftui-structure",
+      "decision": "Group descriptions without merging Open and Details",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/tvos-swiftui-structure/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-swiftui-structure",
+      "rules": [
+        "children"
+      ],
+      "failedCriteria": {},
+      "directContracts": [
+        "code-examples/swiftui/tvos-v1/manifest.json#DocumentTests/testLandmarksAreSubsetNotEveryRow",
+        "code-examples/swiftui/tvos-v1/manifest.json#DocumentTests/testSelectionSurvivesReorder",
+        "code-examples/swiftui/tvos-v1/manifest.json#DocumentTests/testRemovedSelectionClears"
+      ],
+      "subjectPath": "subjects/tvos-swiftui-structure.txt",
+      "subjectSHA256": "79d7d5bb05ed7deaf3510b7fb3429fdf9e11d6e651b6f989516e44a306877a3d",
+      "inputStatus": "development export; grading admission separate"
+    },
+    {
+      "case": "tvos-version-boundary",
+      "decision": "Separate SDK, deployment and runtime evidence",
+      "platform": "tvOS",
+      "framework": "any",
+      "disposition": "preserved success",
+      "priority": "preserve: passing control",
+      "evidenceSources": [
+        "S3",
+        "S4"
+      ],
+      "question": "research/evaluation/dev7-comparison/subjects/tvos-version-boundary/dev7.json#messages:last.content.request",
+      "rubric": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-version-boundary",
+      "rules": [
+        "proof"
+      ],
+      "failedCriteria": {},
+      "directContracts": [],
+      "subjectPath": "subjects/tvos-version-boundary.txt",
+      "subjectSHA256": "92cd811da55d55b64373a71eea9ddec21922d305bdef119b51564a58414dec2c",
+      "inputStatus": "development export; grading admission separate"
+    }
+  ],
+  "pool": [
+    {
+      "id": "faq-reduced-motion-intact",
+      "split": "development",
+      "cell": "ios-swiftui",
+      "spec": "evals/pool/ios-swiftui/faq-reduced-motion-intact/task.json",
+      "historicalAnalogue": "GP26-12",
+      "outcome": "not graded by this campaign"
+    },
+    {
+      "id": "volume-slider-intact",
+      "split": "development",
+      "cell": "ios-swiftui",
+      "spec": "evals/pool/ios-swiftui/volume-slider-intact/task.json",
+      "historicalAnalogue": "GP26-11",
+      "outcome": "not graded by this campaign"
+    },
+    {
+      "id": "checkout-integrated",
+      "split": "development",
+      "cell": "ios-uikit",
+      "spec": "evals/pool/ios-uikit/checkout-integrated/task.json",
+      "historicalAnalogue": "GP26-03",
+      "outcome": "not graded by this campaign"
+    },
+    {
+      "id": "now-playing-late-title",
+      "split": "development",
+      "cell": "ios-uikit",
+      "spec": "evals/pool/ios-uikit/now-playing-late-title/task.json",
+      "historicalAnalogue": "IOS-MEDIA-OWNERSHIP-R1",
+      "outcome": "not graded by this campaign"
+    },
+    {
+      "id": "receipt-font-traits",
+      "split": "development",
+      "cell": "ios-uikit",
+      "spec": "evals/pool/ios-uikit/receipt-font-traits/task.json",
+      "historicalAnalogue": "rc1/checkout-font",
+      "outcome": "not graded by this campaign"
+    },
+    {
+      "id": "sync-status-refresh",
+      "split": "development",
+      "cell": "ios-uikit",
+      "spec": "evals/pool/ios-uikit/sync-status-refresh/task.json",
+      "historicalAnalogue": "ios-uikit-state",
+      "outcome": "not graded by this campaign"
+    },
+    {
+      "id": "attachment-chip-remove",
+      "split": "transfer",
+      "cell": "macos-appkit",
+      "spec": "evals/pool/macos-appkit/attachment-chip-remove/task.json",
+      "historicalAnalogue": "macos-appkit-actions",
+      "outcome": "not graded by this campaign"
+    },
+    {
+      "id": "file-row-delete-action",
+      "split": "development",
+      "cell": "macos-appkit",
+      "spec": "evals/pool/macos-appkit/file-row-delete-action/task.json",
+      "historicalAnalogue": "macos-appkit-actions",
+      "outcome": "not graded by this campaign"
+    },
+    {
+      "id": "account-rename-focus",
+      "split": "transfer",
+      "cell": "macos-swiftui",
+      "spec": "evals/pool/macos-swiftui/account-rename-focus/task.json",
+      "historicalAnalogue": "macos-swiftui-lifecycle",
+      "outcome": "not graded by this campaign"
+    },
+    {
+      "id": "bookmark-editor-return",
+      "split": "development",
+      "cell": "macos-swiftui",
+      "spec": "evals/pool/macos-swiftui/bookmark-editor-return/task.json",
+      "historicalAnalogue": "macos-swiftui-lifecycle",
+      "outcome": "not graded by this campaign"
+    }
+  ],
+  "otherPackagePrompts": [
+    "code-examples/audits/availability-v1/evaluation/prompt.json",
+    "code-examples/pilots/uikit-choice-v1/evaluation/prompt.json",
+    "code-examples/pilots/uikit-contrast-v1/evaluation/prompt.json",
+    "code-examples/pilots/uikit-edited-rotor-v1/evaluation/prompt.json",
+    "code-examples/pilots/uikit-media-inspection-v1/evaluation/prompt.json",
+    "code-examples/pilots/uikit-media-metadata-v1/evaluation/prompt.json",
+    "code-examples/pilots/uikit-modal-v1/evaluation/prompt.json",
+    "code-examples/pilots/uikit-naming-v1/evaluation/prompt.json",
+    "code-examples/pilots/uikit-speed-v1/evaluation/prompt.json",
+    "code-examples/platforms/ios-closure-v1/evaluation/media-load-ownership.prompt.md",
+    "code-examples/platforms/ios-closure-v1/evaluation/validation-ownership.prompt.md",
+    "code-examples/platforms/macos-appkit-v1/evaluation/desktop-actions.prompt.md",
+    "code-examples/platforms/macos-appkit-v1/evaluation/desktop-status.prompt.md",
+    "code-examples/platforms/macos-closure-details-v1/evaluation/keyboard-action.prompt.md",
+    "code-examples/platforms/macos-closure-details-v1/evaluation/row-metadata.prompt.md",
+    "code-examples/platforms/macos-closure-v1/evaluation/media-load-ownership.prompt.md",
+    "code-examples/platforms/macos-closure-v1/evaluation/native-state.prompt.md",
+    "code-examples/platforms/macos-closure-v1/evaluation/text-rotor.prompt.md",
+    "code-examples/platforms/macos-closure-v1/evaluation/validation-ownership.prompt.md",
+    "code-examples/platforms/macos-lifecycle-v1/evaluation/display-preferences.prompt.md",
+    "code-examples/platforms/macos-lifecycle-v1/evaluation/modal-restoration.prompt.md",
+    "code-examples/platforms/macos-media-v1/evaluation/media-inspection.prompt.md",
+    "code-examples/platforms/macos-media-v1/evaluation/media-metadata.prompt.md",
+    "code-examples/platforms/macos-media-v1/evaluation/media-selection.prompt.md",
+    "code-examples/platforms/macos-navigation-v1/evaluation/key-order.prompt.md",
+    "code-examples/platforms/macos-navigation-v1/evaluation/table-selection.prompt.md",
+    "code-examples/platforms/macos-structure-v1/evaluation/form-recovery.prompt.md",
+    "code-examples/platforms/macos-structure-v1/evaluation/outline-structure.prompt.md",
+    "code-examples/platforms/tvos-closure-v1/evaluation/media-load-ownership.prompt.md",
+    "code-examples/platforms/tvos-closure-v1/evaluation/native-state.prompt.md",
+    "code-examples/platforms/tvos-closure-v1/evaluation/text-rotor.prompt.md",
+    "code-examples/platforms/tvos-closure-v1/evaluation/validation-ownership.prompt.md",
+    "code-examples/platforms/tvos-lifecycle-v1/evaluation/display-preferences.prompt.md",
+    "code-examples/platforms/tvos-lifecycle-v1/evaluation/modal-restoration.prompt.md",
+    "code-examples/platforms/tvos-media-v1/evaluation/media-inspection.prompt.md",
+    "code-examples/platforms/tvos-media-v1/evaluation/media-metadata.prompt.md",
+    "code-examples/platforms/tvos-media-v1/evaluation/media-selection.prompt.md",
+    "code-examples/platforms/tvos-results-v1/evaluation/filtered-results.prompt.md",
+    "code-examples/platforms/tvos-results-v1/evaluation/motion-status.prompt.md",
+    "code-examples/platforms/tvos-state-recovery-v1/evaluation/state-recovery.prompt.md",
+    "code-examples/platforms/tvos-structure-v1/evaluation/form-recovery.prompt.md",
+    "code-examples/platforms/tvos-structure-v1/evaluation/shelf-structure.prompt.md",
+    "code-examples/platforms/tvos-uikit-v1/evaluation/television-actions.prompt.md",
+    "code-examples/platforms/tvos-uikit-v1/evaluation/television-focus.prompt.md",
+    "code-examples/platforms/tvos-uikit-v1/evaluation/television-traits.prompt.md",
+    "code-examples/swiftui/forwarding-ios-v1/evaluation/native-actions.prompt.md",
+    "code-examples/swiftui/forwarding-ios-v1/evaluation/native-metadata.prompt.md",
+    "code-examples/swiftui/forwarding-ios-v1/evaluation/preference-forwarding.prompt.md",
+    "code-examples/swiftui/forwarding-macos-v1/evaluation/native-actions.prompt.md",
+    "code-examples/swiftui/forwarding-macos-v1/evaluation/native-metadata.prompt.md",
+    "code-examples/swiftui/forwarding-macos-v1/evaluation/preference-forwarding.prompt.md",
+    "code-examples/swiftui/forwarding-tvos-v1/evaluation/native-actions.prompt.md",
+    "code-examples/swiftui/forwarding-tvos-v1/evaluation/native-metadata.prompt.md",
+    "code-examples/swiftui/forwarding-tvos-v1/evaluation/preference-forwarding.prompt.md",
+    "code-examples/swiftui/ios-v1/evaluation/documents.prompt.md",
+    "code-examples/swiftui/ios-v1/evaluation/forms.prompt.md",
+    "code-examples/swiftui/ios-v1/evaluation/interop.prompt.md",
+    "code-examples/swiftui/ios-v1/evaluation/lifecycle.prompt.md",
+    "code-examples/swiftui/ios-v1/evaluation/media.prompt.md",
+    "code-examples/swiftui/ios-v1/evaluation/preferences.prompt.md",
+    "code-examples/swiftui/ios-v1/evaluation/semantics.prompt.md",
+    "code-examples/swiftui/macos-v1/evaluation/documents.prompt.md",
+    "code-examples/swiftui/macos-v1/evaluation/forms.prompt.md",
+    "code-examples/swiftui/macos-v1/evaluation/interop.prompt.md",
+    "code-examples/swiftui/macos-v1/evaluation/lifecycle.prompt.md",
+    "code-examples/swiftui/macos-v1/evaluation/media.prompt.md",
+    "code-examples/swiftui/macos-v1/evaluation/preferences.prompt.md",
+    "code-examples/swiftui/macos-v1/evaluation/semantics.prompt.md",
+    "code-examples/swiftui/media-ios-v1/evaluation/ownership.prompt.md",
+    "code-examples/swiftui/media-ios-v1/evaluation/selection.prompt.md",
+    "code-examples/swiftui/media-ios-v1/evaluation/wiring.prompt.md",
+    "code-examples/swiftui/media-ios-v2/evaluation/ownership.prompt.md",
+    "code-examples/swiftui/media-ios-v2/evaluation/selection.prompt.md",
+    "code-examples/swiftui/media-ios-v2/evaluation/wiring.prompt.md",
+    "code-examples/swiftui/media-macos-v1/evaluation/ownership.prompt.md",
+    "code-examples/swiftui/media-macos-v1/evaluation/selection.prompt.md",
+    "code-examples/swiftui/media-macos-v1/evaluation/wiring.prompt.md",
+    "code-examples/swiftui/media-macos-v2/evaluation/ownership.prompt.md",
+    "code-examples/swiftui/media-macos-v2/evaluation/selection.prompt.md",
+    "code-examples/swiftui/media-macos-v2/evaluation/wiring.prompt.md",
+    "code-examples/swiftui/media-tvos-v1/evaluation/ownership.prompt.md",
+    "code-examples/swiftui/media-tvos-v1/evaluation/selection.prompt.md",
+    "code-examples/swiftui/media-tvos-v1/evaluation/wiring.prompt.md",
+    "code-examples/swiftui/media-tvos-v2/evaluation/ownership.prompt.md",
+    "code-examples/swiftui/media-tvos-v2/evaluation/selection.prompt.md",
+    "code-examples/swiftui/media-tvos-v2/evaluation/wiring.prompt.md",
+    "code-examples/swiftui/tvos-v1/evaluation/documents.prompt.md",
+    "code-examples/swiftui/tvos-v1/evaluation/forms.prompt.md",
+    "code-examples/swiftui/tvos-v1/evaluation/interop.prompt.md",
+    "code-examples/swiftui/tvos-v1/evaluation/lifecycle.prompt.md",
+    "code-examples/swiftui/tvos-v1/evaluation/media.prompt.md",
+    "code-examples/swiftui/tvos-v1/evaluation/preferences.prompt.md",
+    "code-examples/swiftui/tvos-v1/evaluation/semantics.prompt.md"
+  ],
+  "ungradedDevelopmentScenarios": [
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D05",
+    "D06",
+    "D07",
+    "D08",
+    "D09",
+    "D10",
+    "D11",
+    "D12",
+    "D13",
+    "D14",
+    "D15",
+    "D16",
+    "D17",
+    "D18",
+    "D19",
+    "D20",
+    "D21",
+    "D22",
+    "D23",
+    "D24",
+    "D25",
+    "D26",
+    "D27",
+    "D28",
+    "D29",
+    "D30",
+    "D31",
+    "D32",
+    "D33",
+    "D34",
+    "D35",
+    "D36",
+    "D37",
+    "D38",
+    "D39",
+    "D40"
+  ],
+  "rules": [
+    {
+      "id": "restraint",
+      "revision": "a5e0f7569b0ebf5ec155e67d339d35b1a2cf169264e3c9ecc90f729cea498194",
+      "target": "GP26-11",
+      "contrast": "GP26-09",
+      "neighbor": "GP26-12",
+      "contrastDecision": "A native adjustable control already works; a custom knob without an adjustment path needs a change.",
+      "witness": "evals/rc1-failure-replay/RESULTS.md",
+      "status": "candidate hypothesis; marginal effect unmeasured"
+    },
+    {
+      "id": "ordinary",
+      "revision": "d630531dcf8b045a0a7af035445ce35fb54079d39d59655f7527b6cccce6df18",
+      "target": "ios-uikit-actions",
+      "contrast": "GP26-01",
+      "neighbor": "tvos-swiftui-actions",
+      "contrastDecision": "An auxiliary shortcut is additive; an exclusively gestural command needs an ordinary alternative.",
+      "witness": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+      "status": "candidate hypothesis; marginal effect unmeasured"
+    },
+    {
+      "id": "children",
+      "revision": "66b58b2c4c1f6f3e8329750471714e00c2ca4e0fe377af00d700cb51fe1360cb",
+      "target": "macos-appkit-structure",
+      "contrast": "macos-appkit-no-change",
+      "neighbor": "mixed-macos-owner",
+      "contrastDecision": "A descriptive row may be grouped; two actionable children must still dispatch independently.",
+      "witness": "code-examples/platforms/macos-structure-v1/manifest.json",
+      "status": "candidate hypothesis; marginal effect unmeasured"
+    },
+    {
+      "id": "refresh",
+      "revision": "90c06f81809674ec6a808c7dcb59c0d44d4987d5b91008de0d4acebc5bd583ae",
+      "target": "ios-uikit-state",
+      "contrast": "rc1/switch-preservation",
+      "neighbor": "macos-swiftui-state",
+      "contrastDecision": "Clear an absent status previously owned by the card; preserve help or traits owned elsewhere.",
+      "witness": "code-examples/pilots/uikit-semantics-v1/manifest.json",
+      "status": "candidate hypothesis; marginal effect unmeasured"
+    },
+    {
+      "id": "dismissal",
+      "revision": "d19bdab6ccc263eb7bd0f7f7636fbf1eff23a282cf15c6a3ed05894d4dc036a1",
+      "target": "ios-swiftui-lifecycle",
+      "contrast": "GP26-07",
+      "neighbor": "tvos-uikit-lifecycle",
+      "contrastDecision": "A matching completion may request focus; a close request, cancellation or old completion cannot.",
+      "witness": "code-examples/platforms/tvos-lifecycle-v1/manifest.json",
+      "status": "candidate hypothesis; marginal effect unmeasured"
+    },
+    {
+      "id": "layout",
+      "revision": "f4ba182ffc0956c2a36934111f69c74cf1eeb32faca7ded16ea801df0f3c6157",
+      "target": "GP26-03",
+      "contrast": "rc1/checkout-layout",
+      "neighbor": "macos-swiftui-text",
+      "contrastDecision": "A label that wraps inside a fixed-height row is not the same as a row that can grow.",
+      "witness": "research/evaluation/failure-driven/checkout-contract-v1/manifest.json",
+      "status": "candidate hypothesis; marginal effect unmeasured"
+    },
+    {
+      "id": "font",
+      "revision": "5afd2b4be86865db778a9c28abacfbb2d9497587d1e0d3f40b3f9bf48e23eae5",
+      "target": "rc1/checkout-font",
+      "contrast": "GP26-03",
+      "neighbor": "ios-uikit-text",
+      "contrastDecision": "Supplied traits differ from the label's live environment; automatic tracking can be right for one and wrong for the other.",
+      "witness": "evals/headroom/checkout-font/scorecard.json",
+      "status": "candidate hypothesis; marginal effect unmeasured"
+    },
+    {
+      "id": "media",
+      "revision": "4271a238bc7022784236a8a434d0becc182b86402f6b0e2cb90d3ac6f009e52b",
+      "target": "IOS-MEDIA-OWNERSHIP-R1",
+      "contrast": "rc1/stale-media-reply",
+      "neighbor": "tvos-uikit-media",
+      "contrastDecision": "Replacing the player item and superseding a request on the same item are different invalidations.",
+      "witness": "code-examples/platforms/ios-closure-v1/manifest.json",
+      "status": "candidate hypothesis; marginal effect unmeasured"
+    },
+    {
+      "id": "proof",
+      "revision": "043c83a373d96990092810d956cbf36a1497345f28a2a9307a87fc094dc2a138",
+      "target": "EV06",
+      "contrast": "EV01",
+      "neighbor": "macos-appkit-testing",
+      "contrastDecision": "Direct handler invocation proves that handler's effect; exercising target/action also establishes wiring, not input delivery.",
+      "witness": "evals/rc1-failure-replay/RESULTS.md",
+      "status": "candidate hypothesis; marginal effect unmeasured"
+    },
+    {
+      "id": "callbacks",
+      "revision": "168683dffc3e7c071ff610bb2ee90e8e233538383c483ac1a82f17aee2348e44",
+      "target": "IOS-MEDIA-OWNERSHIP-R1",
+      "contrast": "rc1/status-change",
+      "neighbor": "tvos-swiftui-testing",
+      "contrastDecision": "A once-resuming async fake cannot demonstrate a double callback; a duplicate-capable boundary can.",
+      "witness": "evals/rc1-failure-replay/RESULTS.md",
+      "status": "candidate hypothesis; marginal effect unmeasured"
+    }
+  ]
+}

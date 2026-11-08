@@ -102,10 +102,12 @@ The ledger enforces exactly those settings.
 |---|---|---|
 | D1 | Which run option, budget and stopping policy | Open; zero extra spend stands until changed |
 | D2 | Native grading lane | **Decided November 7:** reviewed local lane, no VM or separate user ([rule](evals/rc1/README.md)) |
-| D3 | Release target: Haiku low only, or also a frontier model such as Sonnet 5.5 | Open |
+| D3 | Development target model | **Decided November 7:** Claude Haiku 5.5 at low effort. It is the most likely to need the skill, so it gives the clearest signal. Frontier models (Sonnet, Opus) come after value is shown on Haiku. The [failure inventory](research/evaluation/failure-inventory/README.md) ranks cases on this model |
 
 ## Next offline actions
 
 1. Draft the rc.2 text-size card and confirm it against both checkout-font contracts.
 2. Write the first transfer cases for checkout-font ownership and GP26-03 control preservation.
 3. Prepare option B + D as a packet for review, without dispatching it.
+
+**Clean-start research track:** [ADR-005](research/adr/ADR-005-failure-derived-skill.md) and the [zero-base challenger](research/evaluation/zero-base-v1/README.md) implement the alternate candidate strategy. Use the recovered pool receipts and contrasts before selecting the head-to-head cases. The earlier rc.2 options are alternatives, not concurrent execution grants.

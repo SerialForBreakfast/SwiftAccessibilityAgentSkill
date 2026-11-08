@@ -1,0 +1,35 @@
+iOS 26.0, SwiftUI.
+
+Review this three-page view for a concrete accessibility problem. The user can change Reduce Motion while it is open; the next page change should follow the current preference without resetting the selected page. Content and next-page behavior must stay the same. No other animations or parent transactions are applied. Explain any change you recommend.
+
+```swift
+import SwiftUI
+
+enum PageMotionPolicy {
+    static func shouldAnimate(reduceMotion: Bool) -> Bool {
+        !reduceMotion
+    }
+}
+
+struct PageView: View {
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var page = 0
+    private let pages = ["Account", "Playback", "Downloads"]
+
+    var body: some View {
+        VStack {
+            Text(pages[page])
+                .id(page)
+                .transition(.slide)
+            Button("Next page") {
+                page = (page + 1) % pages.count
+            }
+        }
+        .animation(
+            PageMotionPolicy.shouldAnimate(reduceMotion: reduceMotion)
+                ? .easeInOut(duration: 0.2) : nil,
+            value: page
+        )
+    }
+}
+```

@@ -1,0 +1,19 @@
+{
+  "id": "account-rename-focus",
+  "cell": "macos-swiftui",
+  "workstream": "W3",
+  "decision": "An asynchronous save completion restores focus to its own account if it is still listed, and does nothing to a popover that a cancel or newer rename replaced.",
+  "split": "transfer",
+  "evidence": {
+    "status": "credible",
+    "inventoryCase": "macos-swiftui-lifecycle",
+    "package": "swiftui/macos-v1 NegativeFixtures/lifecycle.swift",
+    "note": "Transfer of bookmark-editor-return: a popover closed by a slow service reply instead of a sheet onDismiss. No Haiku observation; Gemini Flash/Argon failed the source decision 3 of 4 by looking up the mutable current presentation at completion."
+  },
+  "variants": [
+    {"file": "alternative-save-token.swift", "expect": "pass", "why": "Gives each save its own UUID token, drops it on cancel or a new popover, and restores only for the token owner."},
+    {"file": "mutant-current-popover-lookup.swift", "expect": "contract-failure", "why": "Inventory mechanism transferred: the late reply reads whichever popover is current, closing it and focusing the wrong row."},
+    {"file": "mutant-accepts-stale-reply.swift", "expect": "contract-failure", "why": "Restores to the right account but accepts every reply, so a slow save closes the newer popover."},
+    {"file": "mutant-target-at-commit.swift", "expect": "contract-failure", "why": "Chooses the destination when Rename is pressed, so an account removed by refresh is still targeted."}
+  ]
+}

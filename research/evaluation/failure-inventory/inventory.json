@@ -1,0 +1,1892 @@
+{
+  "schema": 1,
+  "targetModel": "claude-haiku-5-5",
+  "modelTiers": {
+    "claude-haiku-5-5": "target (low effort)",
+    "gemini-3.8-flash-low": "peer",
+    "gemini-4-argon-high": "stronger",
+    "unmapped": "unknown (mapping not opened)"
+  },
+  "totals": {
+    "cases": 56,
+    "observations": 369,
+    "targetFixCases": 11,
+    "targetUnaidedOnlyCases": 4,
+    "otherModelOnlyCases": 14,
+    "passingControls": 27,
+    "insufficient": 0,
+    "nativeConfirmedCases": 2
+  },
+  "cases": [
+    {
+      "case": "GP26-03",
+      "title": "Checkout total wraps at large text; Pay appearance preserved",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W4",
+      "tags": [
+        "C",
+        "integration"
+      ],
+      "disposition": "fix: fails on the target model even with skill guidance",
+      "targetUnaided": {
+        "fail": 3
+      },
+      "targetWithSkill": {
+        "fail": 4,
+        "pass": 1,
+        "inconclusive": 2
+      },
+      "otherModels": {
+        "pass": 6,
+        "fail": 9,
+        "inconclusive": 1
+      },
+      "nativeFailure": true,
+      "modelsFailing": [
+        "claude-haiku-5-5",
+        "gemini-3.8-flash-low",
+        "unmapped"
+      ],
+      "rank": 28,
+      "failingCriteria": {},
+      "exampleReasons": [
+        "haiku unaided: Correct scaling/wrapping intent but local summary/updateSummaryAxis then self.updateSummaryAxis in registered callback is inconsistent scope, as in AGY failure. Notes also confuse ",
+        "haiku context:0.2.2+reference: Keeps Pay styling and fixes label, but local summary in replacement and separate controller member updateSummaryAxis referencing summary require undeclared storage/integration. Sam",
+        "haiku unaided: Keeps Pay appearance and enables wrapping/scaling, but offers font shrinking for long unbroken totals instead of a usable reflow path; largest-size/long-total requirement remains u",
+        "haiku context:0.2.2+reference: Provides dynamic axis callback but local summary and separate controller methods have undeclared storage integration; stretches Pay full-width and adds height constraint despite ap"
+      ],
+      "observations": 26,
+      "sources": [
+        "S1",
+        "S2",
+        "S5",
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "case": "GP26-11",
+      "title": "Already-correct native Slider needs no change",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "workstream": "W8",
+      "tags": [
+        "D"
+      ],
+      "disposition": "fix: fails on the target model even with skill guidance",
+      "targetUnaided": {
+        "fail": 3
+      },
+      "targetWithSkill": {
+        "fail": 4,
+        "pass": 1
+      },
+      "otherModels": {
+        "fail": 5,
+        "pass": 1
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "claude-haiku-5-5",
+        "gemini-3.8-flash-low"
+      ],
+      "rank": 21,
+      "failingCriteria": {},
+      "exampleReasons": [
+        "haiku context:0.2.2+reference: Invents explicit-value requirement for native Slider and asserts default lacks useful state without evidence. Later admits default and percent are assumptions; does not retract uns",
+        "haiku unaided: Fabricates native Slider bare-number deficiency and mandatory safe fix; additionally false claim rounded avoids Int conversion failure for nonfinite values.",
+        "haiku unaided: Calls unobserved native value output a concrete bare-number defect and asserts unit without evidence. Preserves binding/range but fails requested defect grounding.",
+        "haiku context:0.2.2+reference: Asserts native Slider lacks meaningful value, then admits assumed bare-number output is unsupported by SwiftUI source. Verification request does not establish claimed concrete defe"
+      ],
+      "observations": 14,
+      "sources": [
+        "S1",
+        "S2",
+        "S8"
+      ]
+    },
+    {
+      "case": "GP26-12",
+      "title": "Existing reduced-motion transition needs no change",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "workstream": "W8",
+      "tags": [
+        "D"
+      ],
+      "disposition": "fix: possible regression (target passes without skill content, fails with it; attribution untested)",
+      "targetUnaided": {
+        "pass": 3
+      },
+      "targetWithSkill": {
+        "pass": 2,
+        "fail": 1
+      },
+      "otherModels": {
+        "fail": 6
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "claude-haiku-5-5",
+        "gemini-3.8-flash-low"
+      ],
+      "rank": 10,
+      "failingCriteria": {},
+      "exampleReasons": [
+        "haiku context:0.2.2+reference: Invents hard-cut/no-transition as concrete accessibility defect despite supplied guidance explicitly allowing immediate state updates. Replaces valid nil animation with fade; live ",
+        "3.8 unaided: Both claim a defect without evidence under the supplied transaction assumptions.",
+        "3.8 unaided: Both claim a defect without evidence under the supplied transaction assumptions.",
+        "3.8 unaided: Both claim a defect without evidence under the supplied transaction assumptions."
+      ],
+      "observations": 12,
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "case": "rc1/checkout-font",
+      "title": "Supplied text-size setting owns the label font",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W4",
+      "tags": [
+        "C"
+      ],
+      "disposition": "fix: fails on the target model even with skill guidance",
+      "targetUnaided": {
+        "pass": 2,
+        "fail": 1
+      },
+      "targetWithSkill": {
+        "fail": 2
+      },
+      "otherModels": {},
+      "nativeFailure": true,
+      "modelsFailing": [
+        "claude-haiku-5-5"
+      ],
+      "rank": 9,
+      "failingCriteria": {},
+      "exampleReasons": [
+        "haiku installed-auto:0.2.2: hidden unit contract failed natively; masked source review had said meets",
+        "haiku installed-auto:0.3.0-rc.1: hidden unit contract failed natively; masked source review had said meets",
+        "haiku installed-auto:0.2.2 (not invoked): hidden unit contract failed natively; masked source review had said meets"
+      ],
+      "observations": 5,
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "case": "IOS-MEDIA-OWNERSHIP-R1",
+      "title": "Late media callback after external item replacement",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W7",
+      "tags": [
+        "H",
+        "G"
+      ],
+      "disposition": "fix: fails on the target model even with skill guidance",
+      "targetUnaided": {
+        "fail": 3
+      },
+      "targetWithSkill": {
+        "fail": 1
+      },
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [
+        "claude-haiku-5-5"
+      ],
+      "rank": 8,
+      "failingCriteria": {},
+      "exampleReasons": [
+        "haiku installed-explicit:0.3.0-rc.1: The identity guard reads the owner's cached item, without wiring external player changes or checking the actual current item. A one-return async loader replaces a possibly duplicat"
+      ],
+      "observations": 4,
+      "sources": [
+        "S6",
+        "S8"
+      ]
+    },
+    {
+      "case": "ios-swiftui-media",
+      "title": "Metadata states distinct; reject stale completions",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "workstream": "W7",
+      "tags": [
+        "H"
+      ],
+      "disposition": "fix: fails on the target model even with skill guidance",
+      "targetUnaided": {},
+      "targetWithSkill": {
+        "pass": 1,
+        "fail": 1
+      },
+      "otherModels": {
+        "fail": 4
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "claude-haiku-5-5",
+        "gemini-3.8-flash-low",
+        "gemini-4-argon-high"
+      ],
+      "rank": 8,
+      "failingCriteria": {
+        "criterion-1": 3,
+        "criterion-2": 1
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.7: Inspector helper is wired to a supplied item only. Required actual current-player replacement invalidation is not implemented or specified as an enforceable owner hook.",
+        "3.8 context:0.3.0-dev.5: View item-input changes start new inspection but no actual player.currentItem hook/guard. Detached model Task is not a child of SwiftUI .task; cancellation statement overstates lin",
+        "haiku context:0.3.0-dev.5: Read-only sample loader is valid, but broader recommendation authorizes an unrequested default-selection path. Existing actual options must remain untouched absent explicit user re"
+      ],
+      "observations": 6,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "ios-uikit-state",
+      "title": "Repeated updates replace stale status/help; current reply only",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W2",
+      "tags": [
+        "F"
+      ],
+      "disposition": "fix: fails on the target model even with skill guidance",
+      "targetUnaided": {},
+      "targetWithSkill": {
+        "fail": 2
+      },
+      "otherModels": {
+        "fail": 2,
+        "inconclusive": 2
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "claude-haiku-5-5",
+        "gemini-3.8-flash-low"
+      ],
+      "rank": 8,
+      "failingCriteria": {
+        "criterion-2": 2,
+        "criterion-1": 3
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.5: Current callback and trait logic are otherwise sound, but accessible leaf owner has no Open activation route; independent accessibility action is lost in the shown composition.",
+        "3.8 context:0.3.0-dev.7: Native Open callback remains wired. Same-ID supersession is a concrete supported configure path; selected metadata on otherwise non-element container is a further bounded integrati",
+        "haiku context:0.3.0-dev.5: Configure/metadata methods are connected, but repeated request ownership and preservation of ordinary accessible Open are defective.",
+        "haiku context:0.3.0-dev.7: Complete update request is not fulfilled: applyMetadata does nothing even for current valid metadata. This is distinct from the correct stale-A guard and complete initial configure"
+      ],
+      "observations": 6,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "ios-swiftui-lifecycle",
+      "title": "Restore to the current eligible origin at completion",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "workstream": "W3",
+      "tags": [
+        "B",
+        "F"
+      ],
+      "disposition": "fix: fails on the target model even with skill guidance",
+      "targetUnaided": {},
+      "targetWithSkill": {
+        "fail": 1,
+        "inconclusive": 1
+      },
+      "otherModels": {
+        "fail": 3,
+        "pass": 1
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "claude-haiku-5-5",
+        "gemini-3.8-flash-low",
+        "gemini-4-argon-high"
+      ],
+      "rank": 7,
+      "failingCriteria": {
+        "criterion-1": 2,
+        "criterion-0": 2
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.5: Coordinator rejects supplied old tokens, but actual sheet callback substitutes mutable currentSessionID; onChange also does not reemit unchanged target on repeated restorations.",
+        "3.8 context:0.3.0-dev.7: Helper correct for matched completions, but actual sheet onDismiss empty and Done calls helper early. System/non-button dismiss clears active session and never restores.",
+        "haiku context:0.3.0-dev.5: Actual completion adapter, not a native run, is the gap. Captured session identity and live first-eligible policy otherwise sound."
+      ],
+      "observations": 6,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "ios-uikit-text",
+      "title": "Scalable checkout text with Pay identity preserved",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W4",
+      "tags": [
+        "C",
+        "integration"
+      ],
+      "disposition": "fix: fails on the target model even with skill guidance",
+      "targetUnaided": {},
+      "targetWithSkill": {
+        "inconclusive": 1,
+        "fail": 1
+      },
+      "otherModels": {
+        "pass": 1,
+        "fail": 3
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "claude-haiku-5-5",
+        "gemini-3.8-flash-low",
+        "gemini-4-argon-high"
+      ],
+      "rank": 7,
+      "failingCriteria": {
+        "criterion-1": 3,
+        "criterion-2": 2,
+        "criterion-0": 1
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.7: Integrated layout alternative valid, but typeface preservation remains unfinished in code. Exact API spelling uncertainty separate from that source gap; no mandatory UI gate.",
+        "haiku context:0.3.0-dev.5: Concrete missing view.addSubview(scrollView) disconnects the entire text hierarchy. Trait handler is empty; labels use automatic font adjustment but no live result is claimed. Nati"
+      ],
+      "observations": 6,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "ios-uikit-actions",
+      "title": "Shortcut added; ordinary Open/Delete stay reachable",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W1",
+      "tags": [
+        "A"
+      ],
+      "disposition": "fix: fails on the target model even with skill guidance",
+      "targetUnaided": {},
+      "targetWithSkill": {
+        "fail": 1,
+        "pass": 1
+      },
+      "otherModels": {
+        "fail": 2,
+        "inconclusive": 2
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "claude-haiku-5-5",
+        "gemini-3.8-flash-low"
+      ],
+      "rank": 6,
+      "failingCriteria": {
+        "criterion-0": 2,
+        "criterion-1": 2
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.7: Source contradicts stated preservation of ordinary accessible controls. Tests of direct target action do not establish their ordinary accessibility reachability.",
+        "3.8 context:0.3.0-dev.5: Necessary Open activation wiring omitted, not merely a different helper name. Parent-only custom-action exposure remains unverified separately; no definite SDK failure inferred.",
+        "haiku context:0.3.0-dev.5: Deletion shortcut and ordinary path are wired once, but local disabled policy is inconsistent. Open is preserved by stated interface rather than implemented in the minimal delete s"
+      ],
+      "observations": 6,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "tvos-swiftui-testing",
+      "title": "Map claims to actual assertions; keep first diagnostics",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "workstream": "W9",
+      "tags": [
+        "G"
+      ],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "fail": 4
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-3.8-flash-low",
+        "gemini-4-argon-high"
+      ],
+      "rank": 6,
+      "failingCriteria": {
+        "criterion-0": 1,
+        "criterion-1": 2,
+        "criterion-2": 2
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.5: Useful no-speech-from-model conclusion is undermined by audit-as-speech evidence and incomplete exact-failure/SDK provenance. View instantiation and model tests cannot establish se",
+        "3.8 context:0.3.0-dev.7: The no-speech claim and bounded plan are useful, but its mutation test does not demonstrate failure sensitivity and first-source/repair history remains incomplete. Compilation of t"
+      ],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "macos-appkit-structure",
+      "title": "Group descriptions without merging Open and Details",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "workstream": "W5",
+      "tags": [
+        "A"
+      ],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "fail": 3,
+        "pass": 1
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-3.8-flash-low",
+        "gemini-4-argon-high"
+      ],
+      "rank": 5,
+      "failingCriteria": {
+        "criterion-1": 2
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.5: No subviews added or layout/ordinary target-actions supplied; explicit AX children help grouping but do not implement functioning ordinary tasks. Conceptual grouping is sound; mini",
+        "3.8 context:0.3.0-dev.7: Both target/actions wired, but removal no-op obligation is not linked to a live model lookup/invalidation. Optional heading API details not compiler-verified; no unsupported API cr"
+      ],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "macos-appkit-testing",
+      "title": "Map claims to actual assertions; keep first diagnostics",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "workstream": "W9",
+      "tags": [
+        "G"
+      ],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "fail": 3,
+        "pass": 1
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-3.8-flash-low",
+        "gemini-4-argon-high"
+      ],
+      "rank": 5,
+      "failingCriteria": {
+        "criterion-0": 1,
+        "criterion-1": 2,
+        "criterion-2": 2
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.5: Native getter/action example has a concrete direct-dispatch path, but evidence interpretation overclaims discoverability and first-source/repair preservation is incomplete. No new ",
+        "3.8 context:0.3.0-dev.7: The test plan contains a concrete oracle defect in its negative control; real native attribute assignment is proposed but not declaration- or compile-verified. All tests are unrun."
+      ],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "macos-swiftui-lifecycle",
+      "title": "Restore to the current eligible origin at completion",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "workstream": "W3",
+      "tags": [
+        "B",
+        "F"
+      ],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "fail": 3,
+        "inconclusive": 1
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-3.8-flash-low",
+        "gemini-4-argon-high"
+      ],
+      "rank": 5,
+      "failingCriteria": {
+        "criterion-0": 2,
+        "criterion-1": 1
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.7: Real sheet callback is installed but captures mutable currentPresentationID by lookup at completion. This is a concrete integration failure despite correct direct helper tests."
+      ],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "mixed-macos-owner",
+      "title": "Condition advice on the owning view/coordinator layer",
+      "platform": "macOS",
+      "framework": "mixed",
+      "workstream": "W1",
+      "tags": [],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "fail": 3,
+        "pass": 1
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-3.8-flash-low",
+        "gemini-4-argon-high"
+      ],
+      "rank": 5,
+      "failingCriteria": {
+        "criterion-1": 2
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.7: Requested inspection list adequate; no patch supplied or required. Overall gap is incorrect AppKit causal assertion, not missing implementation.",
+        "3.8 context:0.3.0-dev.5: No patch required; inspection request sufficient, but categorical AppKit causal explanation materially wrong under pinned distinction."
+      ],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "tvos-uikit-state",
+      "title": "Repeated updates replace stale status/help; current reply only",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "workstream": "W2",
+      "tags": [
+        "F"
+      ],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "fail": 3,
+        "pass": 1
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-3.8-flash-low",
+        "gemini-4-argon-high"
+      ],
+      "rank": 5,
+      "failingCriteria": {
+        "criterion-2": 1,
+        "criterion-1": 1
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.5: The claimed simultaneous single-card accessibility leaf and independently accessible embedded button are not the shown UIKit composition. Source activation path missing; no actual ",
+        "3.8 context:0.3.0-dev.7: Explicit accessible native button metadata owner is correct. Stale same-item request ownership missing; no additional native execution prerequisite."
+      ],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "GP26-04",
+      "title": "Delete without requiring a swipe",
+      "platform": "iPadOS",
+      "framework": "SwiftUI",
+      "workstream": "W6",
+      "tags": [
+        "E"
+      ],
+      "disposition": "fix: fails on the target model even with skill guidance",
+      "targetUnaided": {
+        "pass": 2,
+        "fail": 1
+      },
+      "targetWithSkill": {
+        "pass": 4,
+        "fail": 1
+      },
+      "otherModels": {
+        "pass": 6
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "claude-haiku-5-5"
+      ],
+      "rank": 4,
+      "failingCriteria": {},
+      "exampleReasons": [
+        "haiku unaided: Primary iPadOS snippet adds onDeleteCommand, which Apple documentation lists macOS10.15+ only; no availability guard. Optional removal of visible button would also lose requested k"
+      ],
+      "observations": 14,
+      "sources": [
+        "S1",
+        "S2",
+        "S8"
+      ]
+    },
+    {
+      "case": "macos-swiftui-state",
+      "title": "Repeated updates replace stale status/help; current reply only",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "workstream": "W2",
+      "tags": [
+        "F"
+      ],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "fail": 2,
+        "pass": 2
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-3.8-flash-low",
+        "gemini-4-argon-high"
+      ],
+      "rank": 4,
+      "failingCriteria": {
+        "criterion-1": 1
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.5: Complete current metadata update cannot be used through the provided public request interface: the valid token is private and not returned or handed to a loader. The helper guard i"
+      ],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "tvos-uikit-lifecycle",
+      "title": "Restore to the current eligible origin at completion",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "workstream": "W3",
+      "tags": [
+        "B",
+        "F"
+      ],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "pass": 2,
+        "fail": 2
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-3.8-flash-low",
+        "gemini-4-argon-high"
+      ],
+      "rank": 4,
+      "failingCriteria": {
+        "criterion-0": 1
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.7: Class-based callback decision is valid alternative and supports reentrancy. Current opener eligibility omission is the concrete source defect; no requirement to match particular to"
+      ],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "GP26-06",
+      "title": "Already-correct Toggle needs no change",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "workstream": "W8",
+      "tags": [
+        "D"
+      ],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {
+        "pass": 3
+      },
+      "targetWithSkill": {
+        "pass": 3
+      },
+      "otherModels": {
+        "fail": 3,
+        "pass": 3
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-3.8-flash-low"
+      ],
+      "rank": 3,
+      "failingCriteria": {},
+      "exampleReasons": [
+        "3.8 unaided: Clear repeatable skill benefit: preserves valid control instead of inventing behavior.",
+        "3.8 unaided: Clear repeatable skill benefit: preserves valid control instead of inventing behavior.",
+        "3.8 unaided: Clear repeatable skill benefit: preserves valid control instead of inventing behavior."
+      ],
+      "observations": 12,
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "case": "EV02",
+      "title": "12 clean checks don't justify 'fully accessible'",
+      "platform": "any",
+      "framework": "evidence",
+      "workstream": "W8",
+      "tags": [],
+      "disposition": "fix-or-confirm: fails unaided on the target model; skill arm passed or untested",
+      "targetUnaided": {
+        "fail": 1
+      },
+      "targetWithSkill": {
+        "pass": 3
+      },
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [
+        "claude-haiku-5-5"
+      ],
+      "rank": 2,
+      "failingCriteria": {},
+      "exampleReasons": [
+        "haiku unaided: Correctly bounds 12-element label/contrast audit and names missing checks, but proposed release note invents accessibility improvements in this release; report only states checks/n"
+      ],
+      "observations": 4,
+      "sources": [
+        "S1",
+        "S8"
+      ]
+    },
+    {
+      "case": "EV06",
+      "title": "Direct handler test doesn't prove keyboard/VoiceOver activation",
+      "platform": "any",
+      "framework": "evidence",
+      "workstream": "W8",
+      "tags": [
+        "G"
+      ],
+      "disposition": "fix-or-confirm: fails unaided on the target model; skill arm passed or untested",
+      "targetUnaided": {
+        "fail": 1
+      },
+      "targetWithSkill": {
+        "pass": 3
+      },
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [
+        "claude-haiku-5-5"
+      ],
+      "rank": 2,
+      "failingCriteria": {},
+      "exampleReasons": [
+        "haiku unaided: Correctly distinguishes handler and UI wiring, requests actual keyboard activation, but proposed VoiceOver evidence is audit/hierarchy ideally enabled plus reachability, not an exp"
+      ],
+      "observations": 4,
+      "sources": [
+        "S1",
+        "S8"
+      ]
+    },
+    {
+      "case": "GP26-02",
+      "title": "Reused cell shows current customer and status",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W2",
+      "tags": [],
+      "disposition": "fix-or-confirm: fails unaided on the target model; skill arm passed or untested",
+      "targetUnaided": {
+        "pass": 5,
+        "fail": 1
+      },
+      "targetWithSkill": {
+        "pass": 7
+      },
+      "otherModels": {
+        "pass": 8
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "claude-haiku-5-5"
+      ],
+      "rank": 2,
+      "failingCriteria": {},
+      "exampleReasons": [
+        "haiku unaided: Primary nonpriority branch clears status instead of exposing current processing value required by frozen reconfiguration criterion. Mentions optional current status but primary fix"
+      ],
+      "observations": 21,
+      "sources": [
+        "S1",
+        "S2",
+        "S5",
+        "S6",
+        "S8"
+      ]
+    },
+    {
+      "case": "IOS-VALIDATION-OWNERSHIP-R1",
+      "title": "Validation result ignores newer submissions",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W7",
+      "tags": [],
+      "disposition": "fix-or-confirm: fails unaided on the target model; skill arm passed or untested",
+      "targetUnaided": {
+        "fail": 1,
+        "pass": 2
+      },
+      "targetWithSkill": {},
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [
+        "claude-haiku-5-5"
+      ],
+      "rank": 2,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 3,
+      "sources": [
+        "S6"
+      ]
+    },
+    {
+      "case": "macos-swiftui-text",
+      "title": "Scalable checkout text with Pay identity preserved",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "workstream": "W4",
+      "tags": [
+        "C"
+      ],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "inconclusive": 2,
+        "fail": 2
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-4-argon-high"
+      ],
+      "rank": 2,
+      "failingCriteria": {
+        "criterion-0": 2,
+        "criterion-2": 1
+      },
+      "exampleReasons": [],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "ios-uikit-no-change",
+      "title": "Working standard control needs no replacement",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W8",
+      "tags": [
+        "D"
+      ],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "pass": 3,
+        "fail": 1
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-4-argon-high"
+      ],
+      "rank": 1,
+      "failingCriteria": {
+        "criterion-0": 2,
+        "criterion-2": 2
+      },
+      "exampleReasons": [],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "macos-appkit-actions",
+      "title": "Shortcut added; ordinary Open/Delete stay reachable",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "workstream": "W1",
+      "tags": [
+        "A"
+      ],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {},
+      "targetWithSkill": {
+        "pass": 1,
+        "inconclusive": 1
+      },
+      "otherModels": {
+        "pass": 1,
+        "fail": 1,
+        "inconclusive": 2
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-3.8-flash-low"
+      ],
+      "rank": 1,
+      "failingCriteria": {
+        "criterion-0": 1,
+        "criterion-1": 1
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.7: Delete integrated; newly created Open remains inert. No supplied omitted project exists to supply its missing action."
+      ],
+      "observations": 6,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "tvos-swiftui-actions",
+      "title": "Shortcut added; ordinary Select stays reachable",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "workstream": "W1",
+      "tags": [
+        "A"
+      ],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "pass": 3,
+        "fail": 1
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-4-argon-high"
+      ],
+      "rank": 1,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "tvos-uikit-media",
+      "title": "Metadata states distinct; reject stale completions",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "workstream": "W7",
+      "tags": [
+        "H"
+      ],
+      "disposition": "credible: fails on another model only; needs a target-model observation",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "fail": 1,
+        "inconclusive": 3
+      },
+      "nativeFailure": false,
+      "modelsFailing": [
+        "gemini-3.8-flash-low"
+      ],
+      "rank": 1,
+      "failingCriteria": {
+        "criterion-1": 2,
+        "criterion-2": 1,
+        "criterion-3": 2
+      },
+      "exampleReasons": [
+        "3.8 context:0.3.0-dev.7: Read-only policy concept sound, but unconditional production selection-invariance assertion can reject valid concurrent user choice. Actual metadata characteristic and external pla"
+      ],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "EV01",
+      "title": "Screenshot does not prove VoiceOver activation",
+      "platform": "any",
+      "framework": "evidence",
+      "workstream": "W8",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 1
+      },
+      "targetWithSkill": {
+        "pass": 1
+      },
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 2,
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "case": "EV03",
+      "title": "Unavailable docs can't establish exactly-once activation",
+      "platform": "any",
+      "framework": "evidence",
+      "workstream": "W8",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 1
+      },
+      "targetWithSkill": {
+        "pass": 1
+      },
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 2,
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "case": "EV04",
+      "title": "Forum post can't justify removing a payment workaround",
+      "platform": "any",
+      "framework": "evidence",
+      "workstream": "W8",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 1
+      },
+      "targetWithSkill": {
+        "pass": 1
+      },
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 2,
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "case": "EV05",
+      "title": "Simulator 26.5 doesn't establish 26.0 and later",
+      "platform": "any",
+      "framework": "evidence",
+      "workstream": "W8",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 1
+      },
+      "targetWithSkill": {
+        "pass": 1
+      },
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 2,
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "case": "GP26-01",
+      "title": "Settings row: switch and Help stay independently usable",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W1",
+      "tags": [
+        "A"
+      ],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 3
+      },
+      "targetWithSkill": {
+        "pass": 5
+      },
+      "otherModels": {
+        "pass": 8
+      },
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 16,
+      "sources": [
+        "S1",
+        "S2",
+        "S5"
+      ]
+    },
+    {
+      "case": "GP26-05",
+      "title": "tvOS tile navigation keeps controls",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "workstream": "W1",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 3
+      },
+      "targetWithSkill": {
+        "pass": 3
+      },
+      "otherModels": {
+        "pass": 6
+      },
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 12,
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "case": "GP26-07",
+      "title": "Return focus to the current payment origin",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W3",
+      "tags": [
+        "B",
+        "F"
+      ],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 3
+      },
+      "targetWithSkill": {
+        "pass": 5
+      },
+      "otherModels": {
+        "pass": 8
+      },
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 16,
+      "sources": [
+        "S1",
+        "S2",
+        "S5"
+      ]
+    },
+    {
+      "case": "GP26-08",
+      "title": "Custom popup contains focus and restores background state",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W3",
+      "tags": [
+        "B"
+      ],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 3
+      },
+      "targetWithSkill": {
+        "pass": 5
+      },
+      "otherModels": {
+        "pass": 8
+      },
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 16,
+      "sources": [
+        "S1",
+        "S2",
+        "S5"
+      ]
+    },
+    {
+      "case": "GP26-09",
+      "title": "Custom volume knob is adjustable",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W1",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 3
+      },
+      "targetWithSkill": {
+        "pass": 5
+      },
+      "otherModels": {
+        "pass": 8
+      },
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 16,
+      "sources": [
+        "S1",
+        "S2",
+        "S5"
+      ]
+    },
+    {
+      "case": "GP26-10",
+      "title": "Download progress without repeated announcements",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W7",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 3
+      },
+      "targetWithSkill": {
+        "pass": 5
+      },
+      "otherModels": {
+        "pass": 8
+      },
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 16,
+      "sources": [
+        "S1",
+        "S2",
+        "S5"
+      ]
+    },
+    {
+      "case": "ios-missing-reference",
+      "title": "Don't claim an unread reference's contract",
+      "platform": "iOS",
+      "framework": "any",
+      "workstream": "W8",
+      "tags": [
+        "E"
+      ],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "pass": 4
+      },
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "ios-swiftui-no-change",
+      "title": "Working standard control needs no replacement",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "workstream": "W8",
+      "tags": [
+        "D"
+      ],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "pass": 4
+      },
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {
+        "criterion-0": 2,
+        "criterion-2": 1
+      },
+      "exampleReasons": [],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "ios-swiftui-semantics",
+      "title": "Native switch: change only for a demonstrated defect",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "workstream": "W8",
+      "tags": [
+        "D"
+      ],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {},
+      "targetWithSkill": {
+        "pass": 2
+      },
+      "otherModels": {
+        "pass": 4
+      },
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 6,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "macos-appkit-no-change",
+      "title": "Working standard control needs no replacement",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "workstream": "W8",
+      "tags": [
+        "D"
+      ],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "pass": 4
+      },
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {
+        "criterion-2": 2
+      },
+      "exampleReasons": [],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "rc1/adjustable-volume",
+      "title": "Adjustable volume steps within bounds",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "workstream": "W1",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 2
+      },
+      "targetWithSkill": {},
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 2,
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "case": "rc1/checkout-layout",
+      "title": "Stack checkout at accessibility sizes",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "workstream": "W4",
+      "tags": [
+        "C"
+      ],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 3
+      },
+      "targetWithSkill": {},
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 3,
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "case": "rc1/landmark-identity",
+      "title": "Landmarks keep order and stable IDs",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "workstream": "W5",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 2
+      },
+      "targetWithSkill": {},
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 2,
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "case": "rc1/motion-policy",
+      "title": "Reduce Motion suppresses only the optional effect",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "workstream": "W6",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 2
+      },
+      "targetWithSkill": {},
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 2,
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "case": "rc1/ordinary-buttons",
+      "title": "Both buttons dispatch to the current owner",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "workstream": "W1",
+      "tags": [
+        "A"
+      ],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 5
+      },
+      "targetWithSkill": {
+        "pass": 2
+      },
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 7,
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "case": "rc1/restoration-eligibility",
+      "title": "Restore to an eligible enabled opener, else fallback",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "workstream": "W3",
+      "tags": [
+        "F"
+      ],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 5
+      },
+      "targetWithSkill": {
+        "pass": 2
+      },
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 7,
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "case": "rc1/row-traits",
+      "title": "Selection preserves unrelated traits",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "workstream": "W2",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 2
+      },
+      "targetWithSkill": {},
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 2,
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "case": "rc1/stale-media-reply",
+      "title": "Media reply must match current item and request",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "workstream": "W7",
+      "tags": [
+        "H"
+      ],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 3
+      },
+      "targetWithSkill": {},
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 3,
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "case": "rc1/status-change",
+      "title": "Publish new status before notifying, once per change",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "workstream": "W2",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 3
+      },
+      "targetWithSkill": {},
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 3,
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "case": "rc1/switch-preservation",
+      "title": "Rename returns the original switch unchanged",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "workstream": "W1",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 4
+      },
+      "targetWithSkill": {},
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 4,
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "case": "rc1/toggle-binding",
+      "title": "Guarded toggle binding forwards changed writes once",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "workstream": "W2",
+      "tags": [],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {
+        "pass": 3
+      },
+      "targetWithSkill": {
+        "pass": 2
+      },
+      "otherModels": {},
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 5,
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "case": "tvos-swiftui-structure",
+      "title": "Group descriptions without merging Open and Details",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "workstream": "W5",
+      "tags": [
+        "A"
+      ],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "pass": 4
+      },
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "case": "tvos-version-boundary",
+      "title": "Separate SDK, deployment and runtime evidence",
+      "platform": "tvOS",
+      "framework": "any",
+      "workstream": "W8",
+      "tags": [
+        "E"
+      ],
+      "disposition": "preserve: passing control",
+      "targetUnaided": {},
+      "targetWithSkill": {},
+      "otherModels": {
+        "pass": 4
+      },
+      "nativeFailure": false,
+      "modelsFailing": [],
+      "rank": 0,
+      "failingCriteria": {},
+      "exampleReasons": [],
+      "observations": 4,
+      "sources": [
+        "S3",
+        "S4"
+      ]
+    }
+  ],
+  "coverage": {
+    "any evidence": {
+      "observed failure (target)": 2,
+      "passing control": 4
+    },
+    "iOS SwiftUI": {
+      "observed failure (target)": 4,
+      "other-model failure only": 1,
+      "passing control": 4,
+      "package prompt, not yet run (credible risk)": 16
+    },
+    "iOS UIKit": {
+      "observed failure (target)": 8,
+      "other-model failure only": 1,
+      "passing control": 6,
+      "package prompt, not yet run (credible risk)": 2
+    },
+    "iOS any": {
+      "passing control": 1
+    },
+    "iPadOS SwiftUI": {
+      "observed failure (target)": 1
+    },
+    "macOS AppKit": {
+      "other-model failure only": 3,
+      "passing control": 3,
+      "package prompt, not yet run (credible risk)": 17
+    },
+    "macOS SwiftUI": {
+      "other-model failure only": 3,
+      "passing control": 2,
+      "package prompt, not yet run (credible risk)": 16
+    },
+    "macOS mixed": {
+      "other-model failure only": 1
+    },
+    "tvOS SwiftUI": {
+      "other-model failure only": 2,
+      "passing control": 4,
+      "package prompt, not yet run (credible risk)": 16
+    },
+    "tvOS UIKit": {
+      "other-model failure only": 3,
+      "passing control": 2,
+      "package prompt, not yet run (credible risk)": 17
+    },
+    "tvOS any": {
+      "passing control": 1
+    }
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "path": "evals/reports/claude-haiku-20261105/README.md",
+      "private": false,
+      "available": true,
+      "note": "84 Haiku answers, 12 code cases x 3 repeats and 6 evidence cases x 1 repeat, each in C0 and C2"
+    },
+    {
+      "id": "S2",
+      "path": "evals/reports/agy-expanded-20261105/README.md",
+      "private": false,
+      "available": true,
+      "note": "Flash low, 12 code cases \u00d73, C0 vs C2; counts only, no per-answer mapping"
+    },
+    {
+      "id": "S3",
+      "path": "evals/results/failure-inventory/bundles/dev7-flash-haiku-controller-return-r1.zip",
+      "private": true,
+      "available": true,
+      "note": "62 answers: Flash 24 cases and Haiku 7 cases, dev.5 vs dev.7 context"
+    },
+    {
+      "id": "S4",
+      "path": "research/evaluation/gemini-controlled-run-20261107/summary.json",
+      "private": false,
+      "available": true,
+      "note": "Argon high, 24 cases, generic vs dev.5 context; transitions only"
+    },
+    {
+      "id": "S5",
+      "path": "evals/reports/skill-0.3.0-dev.1-vs-0.3.0-dev.2-20261106/summary.json",
+      "private": false,
+      "available": true,
+      "note": "Flash and Haiku, 7 cases, dev.1 vs dev.2 context (AGY native re-grades of the same answers not double counted)"
+    },
+    {
+      "id": "S6",
+      "path": "evals/reports/native-activation-lift-20261106/summary.json",
+      "private": false,
+      "available": true,
+      "note": "Haiku, 3 accessibility cases \u00d7 generic, installed 0.2.2, installed dev.2; none invoked"
+    },
+    {
+      "id": "S7",
+      "path": "evals/rc1-comparison/summary.json",
+      "private": false,
+      "available": true,
+      "note": "Haiku, 12 one-function tasks; sealed 9 source-graded, diagnostic 36 natively graded"
+    },
+    {
+      "id": "S8",
+      "path": "evals/results/rc1-failure-replay-20261107/bundles/rc1-failure-replay-seven-return.zip",
+      "private": true,
+      "available": true,
+      "note": "Haiku explicit rc.1 on 7 cases; plus compact-candidate-A controls"
+    },
+    {
+      "id": "S9",
+      "path": "evals/results/failure-inventory/bundles/swift-checkout-first-review-20261106-r1.zip",
+      "private": true,
+      "available": true,
+      "note": "8 GP26-03 answers type-checked natively; mapping to model/condition not opened"
+    }
+  ],
+  "observationsSHA256": "d296765a906907c096b07434a067fbad080f645442706d466ce24918adb722d7"
+}

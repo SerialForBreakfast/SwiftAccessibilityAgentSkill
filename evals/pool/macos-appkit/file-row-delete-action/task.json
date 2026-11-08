@@ -1,0 +1,20 @@
+{
+  "id": "file-row-delete-action",
+  "cell": "macos-appkit",
+  "workstream": "W1",
+  "decision": "Add a Delete accessibility action to a reused row while keeping the ordinary Open/Delete buttons reachable, acting once on the row's current file and respecting the disabled Delete.",
+  "split": "development",
+  "evidence": {
+    "status": "credible",
+    "inventoryCase": "macos-appkit-actions",
+    "package": "code-examples/platforms/macos-appkit-v1 NegativeFixtures/StaleShortcut.swift, DisabledShortcut.swift, LostOrdinarySave.swift",
+    "note": "Other-model failures only (Gemini Flash 1/1 with context, 1/1 graded failure with 2 disputed): shortcut supplied but ordinary activation wiring lost or unverified. No Haiku observation in this cell yet."
+  },
+  "variants": [
+    {"file": "alternative-selector-per-file.swift", "expect": "pass", "why": "Selector-based action rebuilt on every configure with the file name; locked files expose no Delete action at all."},
+    {"file": "mutant-captured-file.swift", "expect": "contract-failure", "why": "StaleShortcut mechanism: the handler captures the configured file, so a retained action deletes the previously shown file, and it ignores the lock."},
+    {"file": "mutant-ignores-lock.swift", "expect": "contract-failure", "why": "DisabledShortcut mechanism: the shortcut deletes a locked file whose Delete button is disabled."},
+    {"file": "mutant-appended-actions.swift", "expect": "contract-failure", "why": "Each reuse appends another Delete action, so the Actions menu accumulates entries for earlier files."},
+    {"file": "mutant-merged-row.swift", "expect": "contract-failure", "why": "Merges the row into one element and empties its accessibility children, so Open and the Delete button are no longer reachable for VoiceOver."}
+  ]
+}

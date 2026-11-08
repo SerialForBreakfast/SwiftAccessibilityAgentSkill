@@ -1,0 +1,19 @@
+{
+  "id": "faq-reduced-motion-intact",
+  "cell": "ios-swiftui",
+  "workstream": "W8",
+  "decision": "Recognize that an existing Reduce Motion path (no animation, immediate state change) is already correct; keep the full-motion spring and immediate expansion state.",
+  "split": "development",
+  "evidence": {
+    "status": "observed",
+    "inventoryCase": "GP26-12",
+    "note": "Skill-induced regression: Haiku 5.5 low passed 3/3 unaided but failed 1 of 3 with skill content by calling the nil animation a defect and replacing it; Gemini 3.8 Flash low failed 6/6."
+  },
+  "starterExpect": "pass",
+  "variants": [
+    {"file": "alternative-crossfade.swift", "expect": "pass", "why": "Harmless optional refinement: under Reduce Motion the answer cross-fades in place instead of appearing; full motion and state unchanged."},
+    {"file": "mutant-always-spring.swift", "expect": "contract-failure", "why": "Treats the hard cut as a defect and forces the bouncy spring and moving transition even with Reduce Motion on."},
+    {"file": "mutant-gentle-for-everyone.swift", "expect": "contract-failure", "why": "Removes the working full-motion spring for every user to avoid a separate path."},
+    {"file": "mutant-deferred-state.swift", "expect": "contract-failure", "why": "Defers the expansion state to a commit step after the animation, so toggle(_:) no longer changes state or reports analytics."}
+  ]
+}

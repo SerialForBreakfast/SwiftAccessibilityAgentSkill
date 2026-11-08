@@ -1,0 +1,29 @@
+iOS 26.0, UIKit.
+
+This custom popup and `content` are siblings under `root`. `popup` is a container, not a single accessibility element; it contains a labeled Close button with its callback already wired. Both views already have valid layout. VoiceOver can reach background controls while the popup is open, and some screens remain inaccessible after closing it. Fix show/close behavior, preserving the value of `content.accessibilityElementsHidden` that existed before each opening. Repeated show or close calls must be harmless; assume no other component changes that flag while this popup is open. Do not replace the Close action or turn the whole popup into one leaf element.
+
+```swift
+import UIKit
+
+final class PopupPresenter {
+    let root: UIView
+    let content: UIView
+    let popup: UIView
+
+    init(root: UIView, content: UIView, popup: UIView) {
+        self.root = root
+        self.content = content
+        self.popup = popup
+    }
+
+    func show() {
+        root.addSubview(popup)
+        popup.accessibilityViewIsModal = false
+    }
+
+    func close() {
+        popup.removeFromSuperview()
+        content.accessibilityElementsHidden = true
+    }
+}
+```

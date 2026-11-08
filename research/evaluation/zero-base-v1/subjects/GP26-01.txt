@@ -1,0 +1,12 @@
+iOS 26.0, UIKit.
+
+VoiceOver only stops on “Downloads” in this settings row. People cannot change the setting or open Help. The existing callbacks are already wired. Can you fix it?
+
+```swift
+let row = UIStackView(arrangedSubviews: [titleLabel, downloadSwitch, helpButton])
+titleLabel.text = "Downloads"
+helpButton.setTitle("Help", for: .normal)
+row.isAccessibilityElement = true
+row.accessibilityLabel = titleLabel.text
+row.accessibilityElementsHidden = true
+```

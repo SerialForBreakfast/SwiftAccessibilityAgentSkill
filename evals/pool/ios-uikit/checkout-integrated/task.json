@@ -1,0 +1,19 @@
+{
+  "id": "checkout-integrated",
+  "cell": "ios-uikit",
+  "workstream": "W4",
+  "decision": "Integrate a text-size fix into the existing owner: scale and wrap the total, let the row grow, keep the same working Pay control.",
+  "split": "development",
+  "evidence": {
+    "status": "observed",
+    "inventoryCase": "GP26-03",
+    "note": "Haiku 5.5 low failed 3/3 unaided and 4 of 5 graded with skill content; scope is a recurring defect, not the reason for every failure; native type-checks of preserved answers failed 4/8."
+  },
+  "variants": [
+    {"file": "alternative-vertical.swift", "expect": "pass", "why": "A permanently vertical stack is valid; no axis switching required."},
+    {"file": "mutant-local-stack-scope.swift", "expect": "compile-failure", "why": "Observed defect: a lifecycle override references a stack that is local to viewDidLoad."},
+    {"file": "mutant-shrink-to-fit.swift", "expect": "contract-failure", "why": "Shrinks the total instead of wrapping it."},
+    {"file": "mutant-fixed-height.swift", "expect": "contract-failure", "why": "Scales and wraps, but the fixed 44 pt row clips the wrapped total."},
+    {"file": "mutant-pay-rewired.swift", "expect": "contract-failure", "why": "Changes Pay's appearance and loses its action."}
+  ]
+}
