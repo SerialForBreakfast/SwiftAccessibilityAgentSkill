@@ -1,0 +1,3 @@
+Treat the input snapshot and the owner of pending UI state as separate checks. After an edit, the old result may no longer describe the text. If that request still owns the pending state, retire it without applying its result and let the user submit again. If a newer request owns the pending state, the old completion must change neither its feedback nor its busy flag. Apply the same ownership check to errors and cancellation. An edit may instead retire the request synchronously; do not require a particular token type.
+
+When asked for a check, drive both paths through the form: edit during A without submitting B, then submit B before A finishes. Deliver the old completion and observe submit eligibility and feedback; finish B and verify its own outcome takes effect.
