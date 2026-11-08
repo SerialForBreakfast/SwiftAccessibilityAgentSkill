@@ -16,6 +16,14 @@ does not imply correct code or accessible user outcomes.]
 [Case comparisons](#case-comparisons) · [Failures](#what-to-fix-next) ·
 [Method and evidence](#method-and-evidence)
 
+## At a glance
+
+| Model and task set | Baseline / approach | First answers passed / planned | Reported tokens (total / answer) | Paired gains / regressions / inconclusive |
+|---|---|---:|---:|---|
+| [Model, matched question set] | [Version or unaided] | [n/N] | [total / mean] | [counts or unmeasured] |
+
+Lead with this comparison in each results update and refresh the repository and dashboard scorecards when a new headline result lands. Label partial coverage and missing telemetry. Keep separate cohorts on separate rows. For Gemini Flash, update the result summary and regenerate the [chart](../gemini-discovery/render_scorecard.py).
+
 ## Run identity
 
 | Scope | Recorded value |

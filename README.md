@@ -1,19 +1,12 @@
 # Swift Accessibility Agent
 
-**Evidence-backed accessibility guidance for Swift developers and AI coding agents.**
-
-This project turns documented Apple-platform behavior, executable examples, and
-observed agent mistakes into focused guidance that can be evaluated. The objective
-is practical: help agents preserve working accessibility, find real defects, and
-make changes that improve the experience of people using Apple-platform software.
-
-**Released skill: `0.2.2`** · [Install or upgrade](INSTALLATION.md) ·
-[Latest native evidence](research/evaluation/cross-platform-closure-v1/RESULTS.md) ·
-[Evaluation dashboard](evals/reports/README.md)
-
 ## Baselines and Current Best at a Glance
 
-**Current benchmark checkpoint: `0.3.0-dev.5`.** In the Flash comparison, `0.3.0-dev.7` used 7.8% fewer reported tokens on Flash but met two fewer tasks. The installable release is `0.2.2`.
+![Gemini Flash Low scorecard showing task passes, primary behavior and tokens on the 17 matched questions, the 384-question unaided baseline and the earlier version comparison.](docs/images/gemini-scorecard.png)
+
+**On 17 revised questions, one review sentence earned the only additional whole-task pass.** Gemini passed 1/17 unaided, 2/17 with the sentence, 1/17 with the UIKit text note and 2/17 with both. Reviewers flagged unnecessary rework in 10 unaided answers and three with the sentence. Only 8 of the 68 answers supplied an adequate focused check. [Matched results and token use](evals/gemini-discovery/audit-revision-1/RESULTS.md)
+
+**Current Flash checkpoint: `0.3.0-dev.5`.** On 24 matched questions, dev.7 saved **8,471 tokens (7.8%)**, gained one answer and regressed on three. Skill lift on the new 384-question baseline is **unmeasured**. [Paired results](research/evaluation/dev7-flash-haiku-results-20261107/README.md) · [Blind audit](evals/gemini-discovery/BLIND-AUDIT-V1.md) · [Revised evaluation cases](evals/gemini-discovery/audit-revision-1/README.md)
 
 **Explicit rc.1 replay — 5/7 passed source review.** Claude Haiku 5.5 loaded `0.3.0-rc.1` on all seven prompts selected for earlier unaided failures. Two cases still failed after Haiku read the relevant references. [Seven-case results](evals/rc1-failure-replay/RESULTS.md)
 
@@ -30,6 +23,17 @@ make changes that improve the experience of people using Apple-platform software
 Read each row as a comparison within one model and question set. In the dev.7 comparison, three Haiku pairs were inconclusive, and 34 Haiku sessions were unattempted after the subscription meter stopped responding. Reviewers graded the generated source with skill context supplied directly. The installed-skill comparison used native discovery and a separate set of 12 tasks. With explicit invocation, rc.1 read a reference and announced itself on all three tasks. [Installed-skill results](evals/rc1-comparison/RESULT.md)
 
 [Flash and Haiku results by question](research/evaluation/dev7-flash-haiku-results-20261107/README.md) · [Earlier generic baseline](research/evaluation/gemini-controlled-run-20261107/README.md)
+
+**Evidence-backed accessibility guidance for Swift developers and AI coding agents.**
+
+This project turns documented Apple-platform behavior, executable examples, and
+observed agent mistakes into focused guidance that can be evaluated. The objective
+is practical: help agents preserve working accessibility, find real defects, and
+make changes that improve the experience of people using Apple-platform software.
+
+**Released skill: `0.2.2`** · [Install or upgrade](INSTALLATION.md) ·
+[Latest native evidence](research/evaluation/cross-platform-closure-v1/RESULTS.md) ·
+[Evaluation dashboard](evals/reports/README.md)
 
 ## What Makes This Different
 

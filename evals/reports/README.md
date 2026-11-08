@@ -1,5 +1,11 @@
 # Does the skill help?
 
+![Flash Low baseline and matched skill versions, including reported tokens, gains and regressions](../../docs/images/gemini-scorecard.png)
+
+**On 17 revised questions**, Gemini passed one whole task unaided, two with the review sentence, one with the UIKit text note and two with both. Unnecessary rework fell from ten answers unaided to three with the sentence. [Four-condition results](../gemini-discovery/audit-revision-1/RESULTS.md)
+
+The 384-question unaided baseline used 1,721,241 reported tokens and passed 263 questions. The earlier dev.5 and dev.7 comparison used a separate set of 24 questions. [Baseline and blind audit](../gemini-discovery/BLIND-AUDIT-V1.md)
+
 **Gemini 3.8 Flash completed all 24 paired questions.** Dev.5 met 11 tasks and dev.7 met nine. Dev.7 gained one, regressed on three, and used 7.8% fewer reported tokens. Reviewers flagged a disconnected Open action and dismissal callbacks that could disrupt navigation.
 
 **Claude Haiku completed seven pairs.** Dev.5 met two tasks and dev.7 met three. Dev.7 gained two, regressed on zero, and three pairs were inconclusive. The quota meter stopped returning complete readings after 14 answers, leaving 34 sessions unattempted. All 62 completed answers across both models received masked source review. [Full results and subscription usage](../../research/evaluation/dev7-flash-haiku-results-20261107/README.md)

@@ -1,0 +1,409 @@
+{
+  "scope": "Offline controller-only calibration fragments, one acceptable and one near miss per prompt. Grades refer to primary behavior. Both reviewers were blind to the author key.",
+  "controller_sha256": "76d1cc52fb58ce1f7967d630f736a3ddb1dcbfcaf5b9b152eee8aedbb18aebe3",
+  "cases": {
+    "reentry": {
+      "prompt_sha256": "962c84e7dac4903b957d7b298cd78994128146a8a4bf699a187bcdc04f550f0e",
+      "fragments": {
+        "A": "Keep dismiss(). On a panel opened with an eligible target, have performDismissal retain its completion. Close twice before calling it. Only the first call enters .closing. Invoke the saved completion twice. The first sets .closed and posts .screenChanged with the original target, so the second finds .closed. Assert one transition and one post.",
+        "B": "Keep the transition guard, but move the restoration post into the animation completion after the state check and finish block so the target can be captured at dismissal time. Both completion invocations then request focus on the same target, which leaves focus in the intended place."
+      },
+      "author_expected": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_1": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_2": {
+        "A": "pass",
+        "B": "fail"
+      }
+    },
+    "dismiss-permission": {
+      "prompt_sha256": "f5e43cf9b379e0958f00355c4138d389d827a2d4df7c22a74014bf1397954086",
+      "fragments": {
+        "A": "Add canDismiss to the .open guard in dismiss(). With canDismiss false send .touchUpInside to close and call accessibilityPerformEscape(). Expect false from Escape, .open and zero transitions. On separate open panels enable permission and use each entry point, expecting one transition per panel.",
+        "B": "Set close.isEnabled from canDismiss when opening. The Escape implementation already forwards to dismiss(), where the open-state guard decides whether the gesture is handled. Check that the button is disabled and no transition starts when opening with permission off."
+      },
+      "author_expected": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_1": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_2": {
+        "A": "pass",
+        "B": "fail"
+      }
+    },
+    "button-removal": {
+      "prompt_sha256": "c501f5a0e3b874dd99004be7390bb6f6991ab235df5a60f4ddd6a46b41a624b1",
+      "fragments": {
+        "A": "Add button.superview != nil to the action guard. Retain the first button, call removeFromSuperview() on it and send .primaryActionTriggered. Check no callback or selection change. Dispatch the same event to its still-attached sibling and expect just that sibling's key.",
+        "B": "Use shelf.buttons.contains(where: { $0 === button }) in the action guard. After removing a button from its superview, membership in the shelf's button collection verifies the sender still belongs to the current application of the sections."
+      },
+      "author_expected": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_1": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_2": {
+        "A": "pass",
+        "B": "fail"
+      }
+    },
+    "button-reparent": {
+      "prompt_sha256": "0e07c4992bf76fe89cc777404fdb3bd52ee8982217f8aab170dbf812e47c615b",
+      "fragments": {
+        "A": "Guard button.superview is Shelf before selecting the captured key. This permits clicks during layout while ensuring that a button outside the shelf hierarchy cannot choose a key. Move it to a second owner's shelf and dispatch the event using the retained button.",
+        "B": "Capture the originating shelf weakly. Require that shelf.superview === self and button.superview === shelf along with the revision and enabled checks. Move the old button into another owner's shelf and dispatch it. Assert zero former-owner callbacks, then dispatch an unmoved current button and assert its key arrives once."
+      },
+      "author_expected": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_1": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_2": {
+        "A": "fail",
+        "B": "pass"
+      }
+    },
+    "node-removal": {
+      "prompt_sha256": "0e6a6401c2dbb290d94b051d2cf8d1ac65c97f830d57f685361ee3303edfe8dd",
+      "fragments": {
+        "A": "Change current(_:) to return nodes[node.id] after the cast. With IDs never reused, removing a group drops that key. Retain a group that had a child, apply an empty tree and ask the data source about the retained group. Expect count zero and expandable false.",
+        "B": "Leave current(_:) returning the node argument. Removing its dictionary entry releases the data source's ownership of its subtree. Check that querying the root after applying an empty list reports zero and that looking up the removed ID returns nil."
+      },
+      "author_expected": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_1": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_2": {
+        "A": "pass",
+        "B": "fail"
+      }
+    },
+    "node-replacement": {
+      "prompt_sha256": "e617cbf1b6e10b1e81556276976a49b8b4a26bb15ac7bd833c2e6a28b9337325",
+      "fragments": {
+        "A": "Require nodes[node.id] === node in current(_:). Retain a group, remove it, insert a different group with its ID and a new child. Query both handles. The old yields zero and nonexpandable, while the replacement yields one child with the new title.",
+        "B": "Resolve current(_:) as nodes[node.id] so delayed callers see a consistent snapshot. Remove group X, create another X with child Y and verify that asking for child zero using either handle returns Y from the current tree."
+      },
+      "author_expected": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_1": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_2": {
+        "A": "pass",
+        "B": "fail"
+      }
+    },
+    "current-order": {
+      "prompt_sha256": "96d08b63ed720fde5a53599643a38b5be1e9768a85ce6c05b1990d725035c246",
+      "fragments": {
+        "A": "Clear accessibilityValue in the ordinary branch. Verify that the priority cell displays Alice and announces Shipped, then configure Bob on the same cell and verify the visible and accessible names are Bob and the obsolete Shipped value is gone. Leave focus alone.",
+        "B": "Set accessibilityValue = order.status on every configure. On one cell configure priority Alice/Shipped and then ordinary Bob/Processing. Check (Alice, Priority order for Alice, Shipped) then (Bob, Bob, Processing) across titleLabel.text, accessibilityLabel and accessibilityValue. Both configurations use property assignments with no focus request."
+      },
+      "author_expected": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_1": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_2": {
+        "A": "fail",
+        "B": "pass"
+      }
+    },
+    "chapter-boundaries": {
+      "prompt_sha256": "f93bec690ad5409c6e332f0248cee41db58b8ef8ccb3077214f95940c4f87b32",
+      "fragments": {
+        "A": "Keep tap and drag handlers and add an adjustable action that looks up the current chapter in the sorted starts. Seek once to the adjacent start if it exists. From 35 test decrement to 0 and increment to 107 in separate runs. At 0 decrement, at 107 increment and with no chapters record zero seeks. Tap calls play once and drag seeks to its actual position.",
+        "B": "Keep tap and drag and use the next greater or previous smaller chapter start. When there is no later start, seek to the episode duration so the final increment finishes playback. Check 35 to 107, 107 to 160, a lower clamp at zero and no seek with no chapters."
+      },
+      "author_expected": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_1": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_2": {
+        "A": "pass",
+        "B": "fail"
+      }
+    },
+    "full-captions": {
+      "prompt_sha256": "fa021f875710046d43602fd00e04c11abda29b9f1b46b9ab700295bfa07d7b6f",
+      "fragments": {
+        "A": "Keep filtering the choices, then if selectedID is nil in .ready, select the first full option so the picker has a matching tag. Use a group with forced and full options, start with forced selected and assert the full option is the sole visible row and is now selected.",
+        "B": "Keep the existing filter and refresh path. Seed the group with full and forced-only options and select forced-only on the item. After loading, choices contains only the full option. selectedID is nil because the active option is hidden. Read the item's selected option separately and expect the same forced-only object."
+      },
+      "author_expected": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_1": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_2": {
+        "A": "fail",
+        "B": "pass"
+      }
+    },
+    "selected-status": {
+      "prompt_sha256": "3b430debee9c25f9185727311f090b3ddb655ec26b9dc845f2ae5df00bca4116",
+      "fragments": {
+        "A": "Move the selected-trait update into the true branch to avoid rewriting traits on each bind. Configure true, false, true and compare the status and value on each call, then confirm the button has the selected trait at the end.",
+        "B": "Keep configure. It sets status.text, copies it to accessibilityValue, and inserts or removes .selected. Reconfigure the same RegionState true, false, true. Expect both strings to read Selected, Not selected, Selected and the trait membership to follow true, false, true."
+      },
+      "author_expected": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_1": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_2": {
+        "A": "fail",
+        "B": "pass"
+      }
+    },
+    "total-text": {
+      "prompt_sha256": "1b95b3186a1d25ec277e9da8fe836c0d8ffaa66519346be0625bd617e969cb3e",
+      "fragments": {
+        "A": "Keep the body preferred font, adjustsFontForContentSizeCategory and unlimited lines. Check those settings against the current trait environment, the Pay now title, and one callback from .touchUpInside. They establish configuration for wrapping and Dynamic Type. To claim a measured size change, drive two effective categories on this mounted instance and compare point sizes.",
+        "B": "Keep unlimited lines and assign preferredFont(forTextStyle: .body) once in init. Turn off automatic category adjustment to keep Pay styling independent of the total. Verify the initial preferred point size, wrapping, Pay now and one onPay callback."
+      },
+      "author_expected": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_1": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_2": {
+        "A": "pass",
+        "B": "fail"
+      }
+    },
+    "dismiss-owner": {
+      "prompt_sha256": "da7833399aac7f87e6aeb8b024b7cabd9070538240dc06c282a195ce61f65b95",
+      "fragments": {
+        "A": "Keep onDismiss reading ticket from @State. The generation check in dismissed(_:) rejects a stale presentation. Begin A then B and call state.dismissed(aTicket), expecting showing true and focus close. The same check protects the view's delayed callback.",
+        "B": "Bind each presentation's onDismiss to a closure created with that presentation's immutable ticket. Before changing showing, requesting focus or assigning focused, verify the ticket still owns the presentation. Save A's actual wired completion, present B, invoke the saved closure and check B stays showing with close focused and no restoration request."
+      },
+      "author_expected": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_1": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_2": {
+        "A": "fail",
+        "B": "pass"
+      }
+    },
+    "captured-action": {
+      "prompt_sha256": "89b1442c72a8db4b02f97c89ebc366fb348fe943ef8cc0dad6d76ba6a637fcc1",
+      "fragments": {
+        "A": "Read self.revision and self.itemID inside the shortcut closure as the ordinary buttons do. Keep Archive from A, configure B, invoke it and expect (B, archive). Press Delete and expect (B, delete) so both entry points operate on the displayed item.",
+        "B": "Keep the configured shortcut's captured token and id. Retain and require the installed Archive action and its handler while A is bound, configure B enabled, then invoke that saved handler. Expect false and no callbacks. Send .touchUpInside to deleteButton and expect exactly (B, delete)."
+      },
+      "author_expected": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_1": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_2": {
+        "A": "fail",
+        "B": "pass"
+      }
+    },
+    "description-tags": {
+      "prompt_sha256": "d76c1ea3d7c9a58026dfa8b8b4b38f6b92eaf48db6d381c0967d7bd08562a62f",
+      "fragments": {
+        "A": "Keep the direct .describesVideoForAccessibility characteristic check. Load an audible fixture containing a known ordinary alternate and a known described option. Require both rows by independent fixture identities, assert false and true respectively, and compare the native selected option before and after inspection.",
+        "B": "Classify any nonprimary-language option as described audio, with .describesVideoForAccessibility covering the primary-language case. Use an English main track and suitably tagged alternate to verify the positive result, and compare native selection before and after inspection."
+      },
+      "author_expected": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_1": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_2": {
+        "A": "pass",
+        "B": "fail"
+      }
+    },
+    "text-range-38": {
+      "prompt_sha256": "e3aff8db31a2184453dc133a1eeb5860255d78974df6ede7d0a2a78983c33de3",
+      "fragments": {
+        "A": "Keep the extra start offset because a supplementary emoji occupies two UTF-16 units. For “😀 cat!” drive the next action and assert the result targets the text view and its end equals NSMaxRange of the NSString hit. Retain ordinary text selection.",
+        "B": "For “😀 cat!” searching “cat”, the +1 starts at the a, returning “at”. Change the start offset to match.location and keep the existing exclusive end. Invoke the installed rotor's next search, unwrap its native targetRange and assert textView.text(in: range) == \"cat\". Keep normal selection enabled."
+      },
+      "author_expected": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_1": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_2": {
+        "A": "fail",
+        "B": "pass"
+      }
+    },
+    "text-range-46": {
+      "prompt_sha256": "9f39cd35a9f2f247b2da5de09046b0d63f7e814a851dfcf6d7e89b7964fd75de",
+      "fragments": {
+        "A": "Convert the prefix before the NSString hit into a Swift String and use prefix.count for the start position, then advance by match.length. For “😀 cat!” this puts the start at 2. Leave selection enabled and check that the rotor returns a three-unit range.",
+        "B": "Leave the range construction alone. The NSString result for “😀 cat!” starts at UTF-16 offset 3 and ends at 6. The installed rotor uses those exact positions. Drive next, unwrap the native range and assert its text equals “cat”. The text view remains selectable."
+      },
+      "author_expected": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_1": {
+        "A": "fail",
+        "B": "pass"
+      },
+      "reviewer_2": {
+        "A": "fail",
+        "B": "pass"
+      }
+    },
+    "text-range-47": {
+      "prompt_sha256": "c78d8734c4a9ab84be3c84e99aad288c15d97f273911ee98b9796b4a9be4f69a",
+      "fragments": {
+        "A": "Keep the implementation. LiteralMatches accumulates UTF-16 lengths at character boundaries. The installed handler starts at match.location and advances by match.length. Replace with “🐈 red fox”, query “red”, drive next and read “red” from the returned native range. isSelectable stays true independently of isEditable.",
+        "B": "Use the index of the hit's start in the boundaries array as the text-view offset. This uses one offset per complete character to avoid splitting an emoji. On “🐈 red fox” check the search stores one result, the returned range has length three and the reader remains selectable."
+      },
+      "author_expected": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_1": {
+        "A": "pass",
+        "B": "fail"
+      },
+      "reviewer_2": {
+        "A": "pass",
+        "B": "fail"
+      }
+    }
+  },
+  "supplemental": [
+    {
+      "id": "X1",
+      "case": "captured-action",
+      "fragment": "The transport receipt says the session ended before any answer body was retained. No answer bytes are available.",
+      "reviewer_1": {
+        "primary": "inconclusive",
+        "evidence": "Missing answer bytes. The transport receipt establishes no subject behavior."
+      },
+      "reviewer_2": {
+        "primary": "inconclusive",
+        "evidence": "No captured answer. A transport receipt cannot establish shortcut behavior."
+      }
+    },
+    {
+      "id": "X2",
+      "case": "node-replacement",
+      "fragment": "Keep a dictionary keyed by ObjectIdentifier of the currently installed nodes. Invalidate the retired instance on removal. With the same logical ID reinserted, querying the retained old object yields no children while the new object returns its new child.",
+      "reviewer_1": {
+        "primary": "pass",
+        "evidence": "Object identity membership with invalidation handles same-ID replacement. The described stale/new checks are discriminating; no executed test or integrated patch is shown in this fragment."
+      },
+      "reviewer_2": {
+        "primary": "pass",
+        "evidence": "Object identity and explicit invalidation are valid alternatives. The scenario identifies both query outcomes. No executable assertion or run receipt supplied."
+      }
+    },
+    {
+      "id": "X3",
+      "case": "description-tags",
+      "fragment": "The production mapping reads the declared description characteristic and only inspects current selection. My proposed test filters the results to the ones reported as described, then asserts each is described; it has no required positive or negative fixture.",
+      "reviewer_1": {
+        "primary": "pass",
+        "evidence": "Correct source diagnosis. Proposed filtered test is circular and can pass empty. It establishes neither classification nor preserved selection."
+      },
+      "reviewer_2": {
+        "primary": "pass",
+        "evidence": "Correct production source trace; proposed evidence insufficient. Filtering by the predicate under test is circular and the collection may be empty. Native selection preservation is untested."
+      }
+    },
+    {
+      "id": "X4",
+      "case": "text-range-46",
+      "fragment": "The original callback returns the range of the literal match from its native text view. I keep it, then drive the callback with an emoji prefix and check text(in: result.targetRange!) equals the literal query. Only a label screenshot is missing from my test environment.",
+      "reviewer_1": {
+        "primary": "pass",
+        "evidence": "Ties installed callback to native range and independent query; no screenshot needed. Explicit ordinary-selection assertion and native execution are absent."
+      },
+      "reviewer_2": {
+        "primary": "pass",
+        "evidence": "Direct installed callback and literal substring comparison address the defect class. Prose test sketch, no runtime evidence. A screenshot is unnecessary."
+      }
+    },
+    {
+      "id": "X5",
+      "case": "chapter-boundaries",
+      "fragment": "Limit the adjustment to 0...160 seconds. Each swipe moves by 35 seconds, leaving play and drag intact. From the second chapter a forward swipe seeks to 70.",
+      "reviewer_1": {
+        "primary": "fail",
+        "evidence": "Concrete second-start counterexample: required 107, proposed 70. Fixed time increments do not navigate chapters."
+      },
+      "reviewer_2": {
+        "primary": "fail",
+        "evidence": "Concrete wrong destination from 35 (70 instead of 107). Preserved tap/drag does not recover chapter semantics."
+      }
+    },
+    {
+      "id": "X6",
+      "case": "current-order",
+      "fragment": "I can run XCTest, but the logs and answer file were lost in transport. The evaluator has only the process exit status of zero.",
+      "reviewer_1": {
+        "primary": "inconclusive",
+        "evidence": "Exit zero lacks answer, assertions, and test log. Unknown whether a relevant test ran."
+      },
+      "reviewer_2": {
+        "primary": "inconclusive",
+        "evidence": "Missing answer and test log. Exit code alone identifies neither the assertions nor the cell's behavior."
+      }
+    }
+  ]
+}

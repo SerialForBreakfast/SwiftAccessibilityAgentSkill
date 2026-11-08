@@ -1,0 +1,121 @@
+{
+  "reentry": {
+    "parent": "G-333de6e92ef584",
+    "parent_sha256": "333de6e92ef584c463db576db133d20b20263a4e23cf887d50a443b978cbebb3",
+    "opening": "iOS 26.0, UIKit. Close can be requested again during a dismissal animation, and its completion can arrive twice. With an eligible return target, when and how many times should the panel request restoration?",
+    "prompt_sha256": "962c84e7dac4903b957d7b298cd78994128146a8a4bf699a187bcdc04f550f0e",
+    "criterion": "Start from an open panel above an initially accessible background with a retained eligible return target. Exercise a second close while closing and call the saved production completion twice. Exactly one transition starts; no early request; exactly one completion-time restoration request carries the target. An inert implementation fails."
+  },
+  "dismiss-permission": {
+    "parent": "G-333de6e92ef584",
+    "parent_sha256": "333de6e92ef584c463db576db133d20b20263a4e23cf887d50a443b978cbebb3",
+    "opening": "iOS 26.0, UIKit. When dismissal is disabled, both the Close button and accessibility Escape should leave this panel open. When enabled, either should start dismissal. Does the current implementation do that?",
+    "prompt_sha256": "f5e43cf9b379e0958f00355c4138d389d827a2d4df7c22a74014bf1397954086",
+    "criterion": "Exercise the installed Close action and accessibility Escape independently with permission off and on. Both leave the panel open with zero starts when forbidden; each starts exactly one dismissal from a fresh open state when allowed. Escape reports whether it handled the request. Accept a shared policy gate or equivalent wiring."
+  },
+  "button-removal": {
+    "parent": "G-c69928988c0e26",
+    "parent_sha256": "c69928988c0e26bc269d19afd866cb20077937d1124ab2a54b4768868cdc293b",
+    "opening": "tvOS 26.0, UIKit. If other code retains the button and removes it directly from its superview, can it still choose an item? The current attached button must still work.",
+    "prompt_sha256": "c501f5a0e3b874dd99004be7390bb6f6991ab235df5a60f4ddd6a46b41a624b1",
+    "criterion": "Retain and directly remove a current button without applying new sections. Dispatch its primary action: selection and callback log remain unchanged. Dispatch an attached current button: its key is selected and delivered once. A superview check can satisfy this narrow contract."
+  },
+  "button-reparent": {
+    "parent": "G-c69928988c0e26",
+    "parent_sha256": "c69928988c0e26bc269d19afd866cb20077937d1124ab2a54b4768868cdc293b",
+    "opening": "tvOS 26.0, UIKit. A live button moves into a shelf belonging to a second TelevisionShelves instance, without either owner reapplying its sections. Could the moved button still select an item on its former owner? Its former owner’s remaining buttons should still work.",
+    "prompt_sha256": "0e07c4992bf76fe89cc777404fdb3bd52ee8982217f8aab170dbf812e47c615b",
+    "criterion": "Reparent before dispatch with generation unchanged. Old owner neither selects nor emits the key. A legitimate still-attached button selects its own key and emits it once. The moved button may become inert. Do not require support for an unspecified sibling-reorganization policy."
+  },
+  "node-removal": {
+    "parent": "G-352803701b8f4a",
+    "parent_sha256": "352803701b8f4aec05289bb46c7850ce7ae7d93fe768a6a596cdc70e3fe2156c",
+    "opening": "macOS 26.0, AppKit. After an outline node is removed, a delayed query still passes the old object. What children does that query see? IDs are never reused in this workflow.",
+    "prompt_sha256": "0e6a6401c2dbb290d94b051d2cf8d1ac65c97f830d57f685361ee3303edfe8dd",
+    "criterion": "Retain a populated parent, remove it, and query count and expandability via the data source. Expect zero and false; a current populated parent still exposes its children. Avoid indexing after a zero count. ID lookup, identity validation and retirement of old nodes are valid under no ID reuse."
+  },
+  "node-replacement": {
+    "parent": "G-352803701b8f4a",
+    "parent_sha256": "352803701b8f4aec05289bb46c7850ce7ae7d93fe768a6a596cdc70e3fe2156c",
+    "opening": "macOS 26.0, AppKit. An outline group disappears, then a different group reuses its ID. What child counts, expandability and children should delayed callers see through the old handle and the new one?",
+    "prompt_sha256": "e617cbf1b6e10b1e81556276976a49b8b4a26bb15ac7bd833c2e6a28b9337325",
+    "criterion": "Install a populated group, remove it, then install a distinct same-ID group with a new child. Query both handles through the data source. Old has count zero and is not expandable. New is expandable and exposes the new child. Do not request child zero from an empty handle."
+  },
+  "current-order": {
+    "parent": "G-895e740bc6ddd9",
+    "parent_sha256": "895e740bc6ddd937c5e932f2878797342243d8ac99e32352e9295a9cf73d5e83",
+    "opening": "iOS 26.0, UIKit. The same visible cell changes from a priority order to an ordinary order without dequeuing. Both need their current customer name and current order status. Can you check those updates without moving focus?",
+    "prompt_sha256": "96d08b63ed720fde5a53599643a38b5be1e9768a85ce6c05b1990d725035c246",
+    "criterion": "Reconfigure the same live cell from priority to ordinary with distinct customers and statuses. Verify visible names, meaningful priority cue on the first accessible name, current accessible name and status value on both. Example strings are interchangeable. Trace absence of an explicit focus request separately from actual delivered focus."
+  },
+  "chapter-boundaries": {
+    "parent": "G-18fda1e5d3c168",
+    "parent_sha256": "18fda1e5d3c1685c7205d25370bdcbe7acb7498c011de320687214a740b9090e",
+    "opening": "iOS, SwiftUI. Our episode has chapters starting at 0, 35 and 107 seconds and ends at 160. When positioned at a chapter start, an accessibility adjustment should move by one chapter, staying at a boundary when there is no next step. Episodes can also have no chapters. How would you handle those cases while keeping tap to play and ordinary dragging?",
+    "prompt_sha256": "f93bec690ad5409c6e332f0248cee41db58b8ef8ccb3077214f95940c4f87b32",
+    "criterion": "A behavioral explanation suffices. From 35, forward reaches 107 and backward reaches 0. Outward requests at 0 or 107 leave the position there; idempotent seek is acceptable. Empty means zero seeks. Preserve separate tap and drag paths. No unstated between-start rule or executable unit is required."
+  },
+  "full-captions": {
+    "parent": "G-65558ea85abec1",
+    "parent_sha256": "65558ea85abec1743bf125c94524e6a5fd70575e04965f1e26dd99055c1fa049",
+    "opening": "macOS 26.0, SwiftUI. This macOS SwiftUI menu offers full subtitles only. If a forced-only track is already active, opening the menu must leave it active. Does this code preserve that policy?",
+    "prompt_sha256": "fa021f875710046d43602fd00e04c11abda29b9f1b46b9ab700295bfa07d7b6f",
+    "criterion": "Use a known full option and a different forced-only option already selected in the same item/group. Through production refresh and reading the picker, full is offered, forced-only excluded, actual native selection unchanged. Do not infer Off from a nil display ID. No display redesign required."
+  },
+  "selected-status": {
+    "parent": "G-0d69f79fef78e5",
+    "parent_sha256": "0d69f79fef78e5336d3b3d4f599b9af2ec35c73214c774d7069ae78702bf8a44",
+    "opening": "tvOS 26.0, UIKit. On each selected or unselected update, we need readable status text, the button accessibility value, and its selected accessibility trait to agree. Does this tvOS implementation keep those three in sync?",
+    "prompt_sha256": "3b430debee9c25f9185727311f090b3ddb655ec26b9dc845f2ae5df00bca4116",
+    "criterion": "On the same instance configure selected, unselected and selected again or equivalent set/clear transitions. For each input compare visible status text, accessible value and selected trait independently with expected state. Accept equivalent localized wording. Scope is configure, not search or native isSelected."
+  },
+  "total-text": {
+    "parent": "G-9f59180da322fa",
+    "parent_sha256": "9f59180da322fa7d06cbbb2c3d0a913805726ab23fbeca0705328ca40c39076d",
+    "opening": "iOS 26.0, UIKit. The checkout total should support changing text size while the screen is open. Keep the Pay button appearance and action. Which prerequisites does this UIKit setup supply, and what can a unit check establish?",
+    "prompt_sha256": "1b95b3186a1d25ec277e9da8fe836c0d8ffaa66519346be0625bd617e969cb3e",
+    "criterion": "Check body-style scalable font, content-size adjustment, wrapping and flexible height as configured. Preserve Pay appearance and callback using the unchanged production path or equivalent check. Static prerequisites establish neither runtime size changes nor rendered fit. Accept equivalent configuration."
+  },
+  "dismiss-owner": {
+    "parent": "G-79fa7510bdf4bc",
+    "parent_sha256": "79fa7510bdf4bc9f2f3a7d7fd12204488d87a4816d60a594c51878e91287d1ad",
+    "opening": "macOS 26.0, SwiftUI. Sheet A starts closing, then this view presents B. A delayed dismissal from A arrives. Can it change focus or close B?",
+    "prompt_sha256": "da7833399aac7f87e6aeb8b024b7cabd9070538240dc06c282a195ce61f65b95",
+    "criterion": "Exercise a retained A dismissal from the view wiring or its production-used seam after B opens. A cannot close B, alter B focus or issue a restoration request. A valid B completion must still restore once. Accept equivalent per-presentation ownership; a direct model test supplying the correct old ticket bypasses the issue."
+  },
+  "captured-action": {
+    "parent": "G-a1aff76682fe0a",
+    "parent_sha256": "a1aff76682fe0a604a0dcd775c6038687c51162d3f93a2cc06b71880d914a7db",
+    "opening": "iOS 26.0, UIKit. After the same view is reconfigured, what happens if a client retains and invokes the old accessibility shortcut? The ordinary buttons should operate on the currently displayed item.",
+    "prompt_sha256": "89b1442c72a8db4b02f97c89ebc366fb348fe943ef8cc0dad6d76ba6a637fcc1",
+    "criterion": "Configure two distinct enabled items on one view. Retain an actual installed shortcut or the exact handler used to create it. After rebind it must report failure and dispatch nothing. The current shortcut and ordinary Archive/Delete must still target the current ID with their corresponding operation once per invocation. A test-only parallel handler or skipped invocation gives insufficient evidence."
+  },
+  "description-tags": {
+    "parent": "G-03942c8939b2cc",
+    "parent_sha256": "03942c8939b2cc978185f5b7f65c1f380d2228550cb85175ff1097d7487506b6",
+    "opening": "tvOS 26.0, UIKit. Can this inspector tell an ordinary alternate-language track from one explicitly tagged as described audio? Keep the current player selection.",
+    "prompt_sha256": "d76c1ea3d7c9a58026dfa8b8b4b38f6b92eaf48db6d381c0967d7bd08562a62f",
+    "criterion": "Use known independently identified audible options: ordinary alternate false, explicitly described true. Exercise the production inspector or its real mapping seam, require both fixtures, compare native selected option before/after. Names, language and an empty filtered list cannot establish tagging."
+  },
+  "text-range-38": {
+    "parent": "G-840924fec7426a",
+    "parent_sha256": "840924fec7426aa61e2b93da492fb45d436bca288199d0a033bbc5c26fb79d0b",
+    "opening": "iOS 26.0, UIKit. In this UIKit reader, search for “cat” in “😀 cat!”. What text range will the rotor return, and can people still select ordinary text in the reader?",
+    "prompt_sha256": "e3aff8db31a2184453dc133a1eeb5860255d78974df6ede7d0a2a78983c33de3",
+    "criterion": "The supplied start is shifted by one and currently returns “at”; recover “cat”. Drive the installed rotor callback or its production search seam. Require the reader text view as target and compare text(in: returnedRange) with the independent literal “cat”. Ordinary selection remains available. A rotor need not change selectedTextRange."
+  },
+  "text-range-46": {
+    "parent": "G-8eafbd1521124e",
+    "parent_sha256": "8eafbd1521124e32f4307891c870e8f2a0dc06fae3b788839da0b186189c0ad3",
+    "opening": "iOS 26.0, UIKit. In this UIKit reader, search for “cat” in “😀 cat!”. What text range will the rotor return, and can people still select ordinary text in the reader?",
+    "prompt_sha256": "9f39cd35a9f2f247b2da5de09046b0d63f7e814a851dfcf6d7e89b7964fd75de",
+    "criterion": "The supplied path already returns “cat”. An equivalent implementation is acceptable. Drive the installed rotor callback or its production search seam. Require the reader text view as target and compare text(in: returnedRange) with the independent literal “cat”. Ordinary selection remains available. A rotor need not change selectedTextRange."
+  },
+  "text-range-47": {
+    "parent": "G-e24e3f394ea182",
+    "parent_sha256": "e24e3f394ea182e6fe0223ee4ea2a2ed856929c87bb0a5859d3e1914e789eec4",
+    "opening": "iOS 26.0, UIKit. In this UIKit reader, search for “cat” in “😀 cat!”. What text range will the rotor return, and can people still select ordinary text in the reader?",
+    "prompt_sha256": "c78d8734c4a9ab84be3c84e99aad288c15d97f273911ee98b9796b4a9be4f69a",
+    "criterion": "The supplied path already returns “cat”. An equivalent implementation is acceptable. Drive the installed rotor callback or its production search seam. Require the reader text view as target and compare text(in: returnedRange) with the independent literal “cat”. Ordinary selection remains available. A rotor need not change selectedTextRange."
+  }
+}

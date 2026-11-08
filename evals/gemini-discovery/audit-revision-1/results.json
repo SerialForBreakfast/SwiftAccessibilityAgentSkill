@@ -1,0 +1,984 @@
+{
+  "model": "gemini-3.8-flash-low",
+  "cohort": "flash-factorial-68",
+  "n": 17,
+  "arms": {
+    "unaided": {
+      "whole": {
+        "F": 16,
+        "P": 1
+      },
+      "primary": {
+        "P": 13,
+        "F": 4
+      },
+      "preservation": {
+        "P": 11,
+        "F": 6
+      },
+      "evidence": {
+        "F": 14,
+        "P": 3
+      },
+      "unnecessaryRework": 10,
+      "textWhole": {
+        "F": 3
+      },
+      "textPrimary": {
+        "P": 3
+      },
+      "offTopicWhole": {
+        "F": 13,
+        "P": 1
+      },
+      "tokens": {
+        "input_tokens": 46363,
+        "output_tokens": 22777,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 0,
+        "total_tokens": 69140
+      },
+      "pairedVsUnaided": {
+        "persistent": 16,
+        "preserved": 1
+      }
+    },
+    "review": {
+      "whole": {
+        "F": 15,
+        "P": 2
+      },
+      "primary": {
+        "P": 14,
+        "F": 3
+      },
+      "preservation": {
+        "P": 13,
+        "F": 4
+      },
+      "evidence": {
+        "F": 15,
+        "P": 2
+      },
+      "unnecessaryRework": 3,
+      "textWhole": {
+        "F": 3
+      },
+      "textPrimary": {
+        "P": 3
+      },
+      "offTopicWhole": {
+        "F": 12,
+        "P": 2
+      },
+      "tokens": {
+        "input_tokens": 46836,
+        "output_tokens": 18385,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 0,
+        "total_tokens": 65221
+      },
+      "pairedVsUnaided": {
+        "persistent": 15,
+        "preserved": 1,
+        "gain": 1
+      }
+    },
+    "text": {
+      "whole": {
+        "F": 16,
+        "P": 1
+      },
+      "primary": {
+        "P": 13,
+        "F": 4
+      },
+      "preservation": {
+        "P": 13,
+        "F": 4
+      },
+      "evidence": {
+        "F": 16,
+        "P": 1
+      },
+      "unnecessaryRework": 11,
+      "textWhole": {
+        "F": 3
+      },
+      "textPrimary": {
+        "P": 3
+      },
+      "offTopicWhole": {
+        "F": 13,
+        "P": 1
+      },
+      "tokens": {
+        "input_tokens": 47267,
+        "output_tokens": 18295,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 0,
+        "total_tokens": 65562
+      },
+      "pairedVsUnaided": {
+        "persistent": 16,
+        "preserved": 1
+      }
+    },
+    "both": {
+      "whole": {
+        "F": 15,
+        "P": 2
+      },
+      "primary": {
+        "P": 15,
+        "F": 2
+      },
+      "preservation": {
+        "P": 15,
+        "F": 2
+      },
+      "evidence": {
+        "F": 15,
+        "P": 2
+      },
+      "unnecessaryRework": 2,
+      "textWhole": {
+        "F": 3
+      },
+      "textPrimary": {
+        "P": 3
+      },
+      "offTopicWhole": {
+        "F": 12,
+        "P": 2
+      },
+      "tokens": {
+        "input_tokens": 47736,
+        "output_tokens": 16028,
+        "thinking_tokens": 0,
+        "cache_read_tokens": 0,
+        "total_tokens": 63764
+      },
+      "pairedVsUnaided": {
+        "persistent": 15,
+        "preserved": 1,
+        "gain": 1
+      }
+    }
+  },
+  "conditionalComparisons": {
+    "review to both": {
+      "persistent": 15,
+      "preserved": 2
+    },
+    "text to both": {
+      "persistent": 15,
+      "preserved": 1,
+      "gain": 1
+    }
+  },
+  "ledger": "9e358f79c4be7d8276def46749c84d5fef174e0dbbfbebec45f9b1520521b73c",
+  "criteria": "76d1cc52fb58ce1f7967d630f736a3ddb1dcbfcaf5b9b152eee8aedbb18aebe3",
+  "manifest": "8a8ea13bc58eb029ddfd20970b9f7bdd334958c76708434853b26e2146063bc5",
+  "gradeFiles": {
+    "first": "a1a7c04f6f3ee7aacb33f9b29ddcd82ae4d700c68382134e7d4c816a9fd01403",
+    "second": "6f53f09a78920ce7202e70a2ce94868a344396c934fcf7776e4b8f559fd47fd6",
+    "third": "a76007532be75cd38292c056c3bcbfda54ec05d0d92e8a0d68a091cf97f00714"
+  },
+  "quota": {
+    "Gemini Models · Weekly": {
+      "before": 22.0,
+      "after": 22.0,
+      "sameReset": true
+    },
+    "Gemini Models · 5-hour": {
+      "before": 1.0,
+      "after": 4.0,
+      "sameReset": true
+    }
+  },
+  "cases": {
+    "reentry": {
+      "unaided": {
+        "id": "T07d",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "completionBlock = completion",
+        "reason": "Retains the correct implementation and checks early silence, notification kind, target identity and duplicate completion. A second transition that calls performDismissal again and returns false overwrites the original callback and passes the check; the test never counts starts.",
+        "answerSHA256": "1b92a2e900d11b862da8e1c8e5b4de20dd1b5f61ed118c42a84c30cbff870326"
+      },
+      "review": {
+        "id": "T07b",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "completionHandler = completion",
+        "reason": "Correctly explains the production state transitions and leaves them intact. The test never counts starts or observes postCount before completion. An early target post and silent finish would pass.",
+        "answerSHA256": "881d9dd257aca7ba9f67d76dfcf4aa0d15c2ab2c7fded2d53d2979d4e4944394"
+      },
+      "text": {
+        "id": "T07a",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "completionBlock = completion",
+        "reason": "Correctly locates the single target request in finish and the duplicate-callback guard. The test accepts an early target post followed by silent close, and a second transition overwriting the saved callback while returning false. The optional canDismiss change adds unrelated dismissal policy.",
+        "answerSHA256": "8758ed26f211e22e052619c9986368651a1497b8cb6f5ccb77392fa5503b5f01"
+      },
+      "both": {
+        "id": "T07c",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "XCTAssertTrue(postedNotifications.first?.1 as? UIView === target)",
+        "reason": "Correctly explains the guards and checks timing and target identity. A different notification carrying that target passes, as does a second animation start that overwrites the callback and returns false. Existing code is retained.",
+        "answerSHA256": "8622a8032e6161fc85a33b2f0efdcacfae7ef900c61bcf9bf5a160f8634961e9"
+      }
+    },
+    "dismiss-permission": {
+      "unaided": {
+        "id": "T08a",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "panel.canDismiss = false",
+        "reason": "The shared gate keeps both routes and the generation guard. Both tested actions run only with permission off, so a fix that permanently refuses dismissal passes. Disabled starts are not counted. Repeating the file adds no functional rework.",
+        "answerSHA256": "f64eaa9867ad40e5ff90337d45a8ea6571c7ec46c03aae10c1419c28a8782ea8"
+      },
+      "review": {
+        "id": "T08b",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "let escapeHandled = panel.accessibilityPerformEscape()",
+        "reason": "The shared gate preserves enabled dismissal and Escape's return value. The only allowed action tested is Escape; a disconnected Close action passes. No starts are counted. Only the required gate is changed.",
+        "answerSHA256": "c56ccafe2304642a0b435c7cbae2ec294e03047018b4eea5dc5973ec83c562af"
+      },
+      "text": {
+        "id": "T08c",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "`dismiss()` proceeds, sets `state = .closing`, calls `performDismissal`, and returns `true`.",
+        "reason": "The shared guard preserves both callers. The enabled check addresses the helper alone, so it cannot distinguish a disconnected Close action or independently verify one start per route. Optional hiding/disabling of Close is extra UI rework.",
+        "answerSHA256": "d3c9029417d81bbdb601b80d7ec0f9d9f19de5e856192a63afe555fbc20d2b5a"
+      },
+      "both": {
+        "id": "T08d",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "assert(!panel.dismiss(), \"dismiss() should return false when canDismiss is false\")",
+        "reason": "The change gates both installed routes and preserves completion handling. The test substitutes a direct dismiss call for Close and never dispatches its installed action. A disconnected Close still passes. Only the required guard changes.",
+        "answerSHA256": "f0367d26bec050a028a0e3d8e6be92a75512f045adcb9f330d8fe92f1bef49a3"
+      }
+    },
+    "button-removal": {
+      "unaided": {
+        "id": "T11c",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "guard button.isDescendant(of: self) else { return }",
+        "reason": "The ancestry check preserves attached buttons and rejects detached ones. The proposed check inspects membership only, without observing the action outputs; an implementation that suppresses onChoose on attached buttons would go undetected. Only the necessary guard is integrated.",
+        "answerSHA256": "51c15a39e25f8cac405bb70e494124eb3529d6c31a60331cbcf6b109474fe0f4"
+      },
+      "review": {
+        "id": "T11a",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "view.onChoose = { chosen = $0 }",
+        "reason": "The ancestry guard rejects directly removed buttons and preserves attached action delivery. The test exercises both installed actions and both keys/states, but it records only the last callback. Delivering the attached key twice passes. The integrated change is limited to attachment.",
+        "answerSHA256": "57fe67d676ca50ab7776b7e1e11c3e435f45d0206fd483c1e31ff4aa7f87f8b0"
+      },
+      "text": {
+        "id": "T11b",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "button.superview != nil,",
+        "reason": "The chosen superview check suffices for direct removal and allows an attached button in an off-window test hierarchy. The focused check repeats the guard without dispatching either action or observing selection and callback delivery; removing all installed actions would escape detection. The integrated guard is narrow.",
+        "answerSHA256": "98ad10276a67ff3d467e59080f5a697581061df6bee2fa0d1807b877a9dd2c2c"
+      },
+      "both": {
+        "id": "T11d",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "button.superview != nil // or button.window != nil",
+        "reason": "The integrated superview guard preserves attached buttons and handles direct removal. Describes dispatch under the original code but supplies no before/after check of selection and exactly one attached callback under the fix. An inert attached handler passes the proposed guard inspection. No extra change is integrated.",
+        "answerSHA256": "d8bf2ba7bc7bcf043ce95f1acb473c0c3bb5e636ffc40692a4eaf525f622f7c0"
+      }
+    },
+    "button-reparent": {
+      "unaided": {
+        "id": "T05c",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "assert(shelves1.selected == nil, \"Moved button should not select on former owner.\")",
+        "reason": "The guard precedes both effects and leaves the attached button working. The check observes selection and traits only. A moved button that emits without selecting, or an attached button emitting twice, passes. Two maps, including an unread reverse lookup, are unnecessary for this case.",
+        "answerSHA256": "c018d5e21ac853e91e6b212d7c845fa2100eeea61faadaef48a8bc44bac4a0d9"
+      },
+      "review": {
+        "id": "T05a",
+        "primary": "F",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "Because this satisfies the requested behavior under the current code, **no Swift modifications are needed**.",
+        "reason": "Accurately diagnoses the stale action and preserves still-attached buttons, but leaves the defect intact. The moved button selects item1 and emits its key, and the test requires that incorrect result. There is no unnecessary rewrite.",
+        "answerSHA256": "3b2345e73be245f00fc3778d688c3d96caa53dce542d9163d2c3ba60f5c061c4"
+      },
+      "text": {
+        "id": "T05d",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "Any unmoved buttons continue to pass `button.isDescendant(of: self) == true` and execute their original selection logic as expected.",
+        "reason": "The guard prevents both old-owner effects and preserves remaining actions. The explanation traces the guard but gives no independent observation of selected and emitted keys for the two dispatches. A remaining handler that emits twice would satisfy its stated membership check. The trait guard also keeps the former owner from updating the moved control.",
+        "answerSHA256": "6feb227142de82a5e2874cad7d6415c48e23b6e81c0661c1b18f65f6badfa4ec"
+      },
+      "both": {
+        "id": "T05b",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "// 1. Trigger moved button: selects on ownerA",
+        "reason": "The descendant guard correctly blocks the moved button and preserves ordinary button dispatch. The proposed assertions instead require selection and emission on the former owner, so the fix would fail its test. No unrelated rewrite.",
+        "answerSHA256": "4b71cff21f470b03a0cb757cf378b94c65ac7ac8c6d6d176590c08186920c540"
+      }
+    },
+    "node-removal": {
+      "unaided": {
+        "id": "T14a",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "print(\"Reported children count for removed node: \\(countAfterRemoval)\")",
+        "reason": "The production identity guard correctly rejects removed nodes and retains active children. Prints the post-removal count with an expected value in comments and checks the initially live count, but never queries stale expandability. A callback that always returns true for expandability would escape this check. No unrelated production rewrite is required.",
+        "answerSHA256": "8beefd3ab2c5294f6ad20eaa4acd4e65d37e72c8933a0d64d3745682bf23303d"
+      },
+      "review": {
+        "id": "T14d",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "assert(countAfterRemoval == 0, \"Stale node should report 0 children after removal\")",
+        "reason": "The production identity guard correctly rejects removed nodes and retains active children. Verifies a populated count before removal and zero after, but the check never queries expandability. The check would pass with an always-true expandability callback. No unrelated production rewrite is required.",
+        "answerSHA256": "3ee581c52221d0af2da0f959d4f3052dc5fcaad52aed56cbf571d23bdd4137df"
+      },
+      "text": {
+        "id": "T14b",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "assert(outline.outlineView(outline.outline, numberOfChildrenOfItem: oldNode) == 0)",
+        "reason": "The production identity guard correctly rejects removed nodes and retains active children. Checks only the retired count. An always-nonexpandable or always-expandable callback, or a data source that gives zero children for every parent, would evade this check. No unrelated production rewrite is required.",
+        "answerSHA256": "17d443f6ad786b183f2f6fcb5356c97c05c61adb7e8aeeff7e34906531d217d0"
+      },
+      "both": {
+        "id": "T14c",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "assert(childCount == 1,",
+        "reason": "The production identity guard correctly rejects removed nodes and retains active children. The check asserts the original stale count of one, which fails on the repaired implementation. It also omits stale expandability and a live populated control. No unrelated production rewrite is required.",
+        "answerSHA256": "94bac6b7209bfe1406c1f005a70f9b79adb99e81e301a2568845900145ad6dbe"
+      }
+    },
+    "node-replacement": {
+      "unaided": {
+        "id": "T13a",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "P",
+        "whole": "P",
+        "rework": false,
+        "quote": "assert(child.id == \"c3\")",
+        "reason": "The registry identity guard rejects the retired group and preserves the active group and root behavior. The three-snapshot data-source check verifies both counts and expansion flags after ID reuse and reads only the new child (c3). The illustrative check needs main-actor context if compiled. No unrelated behavioral redesign.",
+        "answerSHA256": "ccb8ff825bb2aa0257ef306c4b691a205b3bcc918f9f9f17533ddf4c1acadb0b"
+      },
+      "review": {
+        "id": "T13b",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "P",
+        "whole": "P",
+        "rework": false,
+        "quote": "assert(oldHandle !== newHandle)",
+        "reason": "The registry identity guard rejects the retired group and preserves the active group and root behavior. The three-snapshot data-source check verifies both counts and expansion flags after ID reuse and reads only the new child (c3). The illustrative check needs main-actor context if compiled. No unrelated behavioral redesign.",
+        "answerSHA256": "d27b49049c49b64d219deb2934789fbde0191a8ec6429a878c755f777bdfa889"
+      },
+      "text": {
+        "id": "T13d",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "P",
+        "whole": "P",
+        "rework": false,
+        "quote": "assert(firstChild?.id == \"C3\")",
+        "reason": "The registry identity guard rejects the retired group and preserves the active group and root behavior. The three-snapshot data-source check verifies both counts and expansion flags after ID reuse and reads only the new child (C3). No unrelated behavioral redesign.",
+        "answerSHA256": "3078dbbb6b5e424e5a0d882350274a1e08a52b1a0e0d467fe50c55d7278ece9d"
+      },
+      "both": {
+        "id": "T13c",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "P",
+        "whole": "P",
+        "rework": false,
+        "quote": "assert(firstChild.id == \"c2\")",
+        "reason": "The registry identity guard rejects the retired group and preserves the active group and root behavior. The three-snapshot data-source check verifies both counts and expansion flags after ID reuse and reads only the new child (c2). No unrelated behavioral redesign.",
+        "answerSHA256": "b7065c5deb9c8d0e363e773ca44a3f505f5822f445c1056796b9709a315b6f83"
+      }
+    },
+    "current-order": {
+      "unaided": {
+        "id": "T01b",
+        "primary": "P",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "UIAccessibility.post(notification: .layoutChanged, argument: nil)",
+        "reason": "Both orders receive their current status. The added notification on every configuration and unrelated Equatable conformance are unnecessary. A nil argument does not prove delivered focus stays put. Both orders use Alice and neither visible title is checked, allowing a stale customer to pass.",
+        "answerSHA256": "20df10bf6b3fa57ec4d34e2c96f3acb163fc082a59b2d0751868afdaaabb86a7"
+      },
+      "review": {
+        "id": "T01c",
+        "primary": "P",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "UIAccessibility.post(notification: .layoutChanged, argument: self)",
+        "reason": "The unconditional status assignment fixes the data. Every configuration now requests the cell as a focus target, including when another cell has focus. The check omits both visible titles and would accept a blank title throughout.",
+        "answerSHA256": "3b4950090e636c55effd67c2e4f5d5d41f262df7de14c143e247a313842dad1f"
+      },
+      "text": {
+        "id": "T01a",
+        "primary": "P",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "UIAccessibility.post(notification: .layoutChanged, argument: cell)",
+        "reason": "The assignment fixes stale status and preserves both name variants. The runtime advice unnecessarily targets the cell and claims focus preservation even when focus starts elsewhere. Both accessible names could pass with a permanently blank visible title.",
+        "answerSHA256": "08cdf712c39c1bdb9503acec23d34dc042bc28a126b3abd67c0ab54235767a74"
+      },
+      "both": {
+        "id": "T01d",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "XCTAssertEqual(cell.accessibilityLabel, \"Order for Bob\")",
+        "reason": "The implemented path updates both statuses and names without requesting focus. The ordinary-label wording change and notification advice are unnecessary. Neither visible title is asserted, so stale visible text passes, and property reads do not establish delivered focus.",
+        "answerSHA256": "ba5e06bd04d5799b80c6b9e158d595a2cffe49d3be0ea6526fce81c4d842cd85"
+      }
+    },
+    "chapter-boundaries": {
+      "unaided": {
+        "id": "T06c",
+        "primary": "F",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "currentTime = duration",
+        "reason": "The code increments from 107 to 160 and seeks ten seconds for an empty list; presenting holding at 107 as an option does not repair those outcomes. The explicit sibling-button tap path and normal drag are a valid design. The endpoint and fallback behavior are unnecessary and the walkthrough endorses them.",
+        "answerSHA256": "f58d761e175b839486a11793ad2aa4f2340f3f773ba44912ef1c50a669625d58"
+      },
+      "review": {
+        "id": "T06b",
+        "primary": "F",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "list.append(duration)",
+        "reason": "The added endpoint takes 107 to 160; the empty fallback seeks 10% instead of making zero seeks. Ordinary touches enter a zero-distance drag and only accessibility activation calls the play handler. The behavioral walkthrough accepts these added behaviors.",
+        "answerSHA256": "bbebd75bcef3fdd1053e444a195193f5e8f03bbea32598172177b9ae662f3720"
+      },
+      "text": {
+        "id": "T06d",
+        "primary": "F",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "private let defaultStep: TimeInterval = 15",
+        "reason": "Tap invokes play and drag seeks independently. Increment from 107 sets 160 and an empty-list adjustment changes time by 15 seconds. The reasoned examples explicitly endorse these unwanted seeks. Adding a fallback and end jump is unnecessary.",
+        "answerSHA256": "e17f45c2cd8fbf788643d109b58f5da20c0fcab721f75137fea20571f08ad17d"
+      },
+      "both": {
+        "id": "T06a",
+        "primary": "F",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "points.insert(duration)",
+        "reason": "From 35 the middle steps work, but from 107 increment seeks to 160, and empty chapters cause a ten-second seek. A zero-distance drag turns a physical tap into seeking with no ordinary play callback. The new snap endpoints and empty fallback add unrequested behavior; the summary endorses both wrong destinations.",
+        "answerSHA256": "92fa305b47aa3fb07e5ab45208659eed5c66ad57a0ecf8e7968fb251b4eff9a8"
+      }
+    },
+    "full-captions": {
+      "unaided": {
+        "id": "T10a",
+        "primary": "F",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "#expect(store.selectedID != nil || !store.isOffSelected)",
+        "reason": "Assumes reading the picker invokes its setter. The original refresh and getter contain no select. The rewrite adds a forced-only row and changes explicit Off into automatic selection. The test uses a nonexistent property and could not establish either native identity or full-option inclusion.",
+        "answerSHA256": "a7c34f5c03026b72d9311f888a9199bc950ac3016a892ffa6e63b165b010af91"
+      },
+      "review": {
+        "id": "T10d",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "XCTAssertFalse(store.choices.contains { $0.option == forcedOption })",
+        "reason": "Correctly retains the native selection and leaves the production code alone. The test compares native identity across refresh but uses a placeholder asset and never requires a known full option. It could skip or pass with every choice filtered out.",
+        "answerSHA256": "28e7935e21347359d98f58e1a5dd996b9a74e8496b215f4d6e2826c79bd4f398"
+      },
+      "text": {
+        "id": "T10c",
+        "primary": "F",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "store.choose(nil)",
+        "reason": "Claims the read path may deselect the track and tests an explicit write instead of opening/reading. It never checks a full option is offered and adds a visible Auto / Forced picker entry outside the original menu policy. In an empty-selectable group, explicit Off correctly changes selection even when opening alone leaves it untouched.",
+        "answerSHA256": "703bfa6d9d4b49cfe779426bc1a577d73c17eedf303929c1a3f43a5b0e9b70a2"
+      },
+      "both": {
+        "id": "T10b",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "XCTAssertFalse(store.choices.contains { $0.option == forcedOption })",
+        "reason": "Correctly distinguishes the display ID from native selection and leaves selection behavior intact. It verifies the preselected forced track before and after refresh but never requires a known full track to appear. Returning an empty choices array passes.",
+        "answerSHA256": "8c80d62cd5e67ec596b550ff3eee6ebc664be6b286dba8c9e16db6de8d5c08a9"
+      }
+    },
+    "selected-status": {
+      "unaided": {
+        "id": "T04b",
+        "primary": "F",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "self.isSelectedState.toggle()",
+        "reason": "The original configure already synchronizes all three on either input. Calling search is a different event and cannot refute that result. The check never configures false. New primary-action toggling and altered search output change existing behavior unnecessarily.",
+        "answerSHA256": "15d8c44456f71b3763319fa37221fa480b18f5b44bfc45079413774d4ca81cae"
+      },
+      "review": {
+        "id": "T04c",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "P",
+        "whole": "P",
+        "rework": false,
+        "quote": "XCTAssertFalse(view.button.accessibilityTraits.contains(.selected))",
+        "reason": "The source trace and same-instance selected-to-unselected check cover each independent observable and both trait directions. It leaves the existing path intact.",
+        "answerSHA256": "25bf6f432c04c3f9ff46d13683246552da842bacf1543dc981c2e5b0054c0ccb"
+      },
+      "text": {
+        "id": "T04d",
+        "primary": "F",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "region.search(\"test\", count: 3)",
+        "reason": "The proposed counterexample exercises search, although configure itself sets all three correctly. It never checks a false configuration. Replacing visible search results with an announcement removes existing behavior and adding native selection is unnecessary.",
+        "answerSHA256": "4f19452a655053b2d42c901a7fe07a3030793db7bf73c5dd68b0b795a43246e0"
+      },
+      "both": {
+        "id": "T04a",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "P",
+        "whole": "P",
+        "rework": false,
+        "quote": "XCTAssertEqual(region.button.accessibilityValue, \"Not selected\")",
+        "reason": "Correctly explains configure and independently checks visible text, value and trait on the same instance for set and clear transitions. Existing configure behavior is preserved without rework.",
+        "answerSHA256": "3cb1cd9d7dac2185817bb148d40b03b67d54c75329638983ec5a0e89f6831874"
+      }
+    },
+    "total-text": {
+      "unaided": {
+        "id": "T02d",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "XCTAssertNotEqual(standardExpectedSize, largeExpectedSize)",
+        "reason": "Recognizes scalable body font, opt-in and wrapping, with Pay unchanged. It compares two reference sizes and samples the real label only at the end, so a label initially stuck at that large size can pass. It does not inspect stack flexibility, and unlimited lines alone do not rule out a fixed height. No production rework.",
+        "answerSHA256": "20a9aa6e9662477038420348eea25e4879d7094401f7a301d4cf3f26fcf6d391"
+      },
+      "review": {
+        "id": "T02c",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "let largeFont = UIFontMetrics(forTextStyle: .body).scaledFont",
+        "reason": "Correctly identifies body, adjustment, wrapping and vertical stack growth and leaves Pay intact. The scaling comparison constructs independent fonts. It would pass for a multiline label constrained to a fixed height or one whose actual font never updates. No production rework.",
+        "answerSHA256": "acc056e098b1b2b07a71052e66910e44cd3d609acbc436352476ed38f7d7d73b"
+      },
+      "text": {
+        "id": "T02b",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "view.totalLabel.font = .preferredFont(forTextStyle: .body, compatibleWith: largeTraits)",
+        "reason": "Recognizes body, automatic resizing and wrapping, preserves Pay and dispatches its action. The proposed hierarchy override targets the parent as its own child and the test writes both fonts itself. A label that never updates automatically could appear to scale. Flexible height is not examined. No production rework.",
+        "answerSHA256": "aab972b1da46379b4bf91f8ed35cdde55796d369d4044b39f614e9ac0cd5d790"
+      },
+      "both": {
+        "id": "T02a",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "accommodates vertical expansion without clipping when text scales up.",
+        "reason": "Identifies body, automatic adjustment, wrapping and stack layout, keeps Pay intact and drives its callback. Its window test measures the real font, but it never checks fit and claims no clipping even if an enclosing layout imposes insufficient height. No production rework.",
+        "answerSHA256": "0d388943123fc4f23184f6fe058751a7f1b13d48eafeb7bd5c52a06de1746462"
+      }
+    },
+    "dismiss-owner": {
+      "unaided": {
+        "id": "T09b",
+        "primary": "F",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "if let ticket, state.dismissed(ticket) {",
+        "reason": "Making dismissal return its acceptance is relevant but insufficient. A's delayed closure reads shared @State after B overwrites ticket. It consumes B, posts B's restoration early and prevents B's real completion from restoring. Supplying ticketA directly in the test bypasses the defect.",
+        "answerSHA256": "f1e83d3a9b7adc2bb90f7693b3d636ef454617028edd89c1315b19796b300465"
+      },
+      "review": {
+        "id": "T09d",
+        "primary": "F",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "state.dismissed(ticketA)",
+        "reason": "Identifies the model guard but omits the view's read of the current ticket. A can consume B's generation and issue its request early even though it does not write the sheet binding. B's own completion then does nothing. The test bypasses the callback and omits B's completion. Proposes no rework.",
+        "answerSHA256": "7b8e8ef33a28fa571cb42a10af06e8588ebdb454a95df4b001ea0bf11b461a92"
+      },
+      "text": {
+        "id": "T09a",
+        "primary": "F",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "let handled = state.dismissed(ticket)",
+        "reason": "Adds an unrelated nested B instead of assigning each presentation its own retained callback. Opening B never begins a generation; A can still send a restoration request while B is open. B has no restoring dismissal. The check looks only at focus and misses that request and B's missing restoration.",
+        "answerSHA256": "223e9d5345b31a240a9b907165a4b83b1c248702bf884dd46eefabd28051062b"
+      },
+      "both": {
+        "id": "T09c",
+        "primary": "F",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "state.dismissed(ticketA)",
+        "reason": "Retains the mutable view ticket and assumes A supplies its old value. A's actual callback can read B's ticket, clear showing, request restoration and suppress B's later legitimate completion. The test passes the correct old ticket directly and never counts requests. Proposes no rework.",
+        "answerSHA256": "50c29db6cdfee5e32edec1611754435dc5cba46566bdc125bdaaa7d2a314b678"
+      }
+    },
+    "captured-action": {
+      "unaided": {
+        "id": "T15d",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "let handled = oldCustomAction.actionHandler?(oldCustomAction) ?? false",
+        "reason": "The explanation correctly traces the stale generation and the buttons' live ID. Optional handler invocation can report false without invoking anything. The check exercises a current shortcut but omits its operation and the ordinary Delete path. Optional polish restates the full working class and suggests a contrary fallback, although the supplied code retains the guard. A Delete button dispatching Archive would pass.",
+        "answerSHA256": "41eaff6992ab2e736eb4809d83ca5d2f25e16be4d0728717864940a6ac39384b"
+      },
+      "review": {
+        "id": "T15b",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "let executed = oldArchiveShortcut.actionHandler?(oldArchiveShortcut) ?? false",
+        "reason": "The explanation correctly traces the stale generation and the buttons' live ID. Optional handler invocation can report false without invoking anything. The check exercises only the ordinary Archive button, skipping the current shortcut and Delete. Keeping production code is appropriate. A Delete button dispatching Archive would pass.",
+        "answerSHA256": "3535c15eca673d22c4330d075105c4d12d979c16930850bf62157f58f4d09b36"
+      },
+      "text": {
+        "id": "T15a",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "let handledStale = staleAction.actionHandler?(staleAction) ?? false",
+        "reason": "The explanation correctly traces the stale generation and the buttons' live ID. Optional handler invocation can report false without invoking anything. The check exercises only the ordinary Archive button, skipping the current shortcut and Delete. Keeping production code is appropriate. A Delete button dispatching Archive would pass.",
+        "answerSHA256": "95bcac04b2a7cd5e727a8b4d6f19f02f14f7c49fb371a8010086e1566c2f0ff0"
+      },
+      "both": {
+        "id": "T15c",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "let oldActionResult = staleAction.actionHandler?(staleAction) ?? false",
+        "reason": "The explanation correctly traces the stale generation and the buttons' live ID. Optional handler invocation can report false without invoking anything. The check exercises only the ordinary Archive button, skipping the current shortcut and Delete. Keeping production code is appropriate. A Delete button dispatching Archive would pass.",
+        "answerSHA256": "c964456687db54217e4a0bed74cefe320db554817b7c64403091752383798a91"
+      }
+    },
+    "description-tags": {
+      "unaided": {
+        "id": "T16a",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "if case .loaded(let options) = audibleEvidence {",
+        "reason": "The audible option mapping reads the explicit characteristic and the native selection without mutating it. The proposed check classifies its own output, never requires two independently identified fixture options, and does not compare native selection before and after. An empty group or an always-false mapping would escape it. Optional classification helpers and conformances add unnecessary production changes.",
+        "answerSHA256": "0edffdb4d4f222316b703b544868db61210e33185dc7eff78e75f20816eab626"
+      },
+      "review": {
+        "id": "T16d",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "let describedAudioTracks = options.filter { $0.describesVideo }",
+        "reason": "The audible option mapping reads the explicit characteristic and the native selection without mutating it. The proposed check classifies its own output, never requires two independently identified fixture options, and does not compare native selection before and after. An empty group or an always-false mapping would escape it. Appropriately leaves working code in place.",
+        "answerSHA256": "cd8ab20851a0339ef58a2cb5edaee3b2e5d4fe3030af17b39d2f5e34cfa639c1"
+      },
+      "text": {
+        "id": "T16c",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "let alternateAudioTracks = options.filter { !$0.describesVideo }",
+        "reason": "The audible option mapping reads the explicit characteristic and the native selection without mutating it. The proposed check classifies its own output, never requires two independently identified fixture options, and does not compare native selection before and after. An empty group or an always-false mapping would escape it. Optional classification helpers and conformances add unnecessary production changes.",
+        "answerSHA256": "f5e114fd7d4b06fb417c5e463737031af4a3fded5344602c4dd322a3d674bd91"
+      },
+      "both": {
+        "id": "T16b",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "if case .loaded(let options) = audioEvidence {",
+        "reason": "The audible option mapping reads the explicit characteristic and the native selection without mutating it. The proposed check classifies its own output, never requires two independently identified fixture options, and does not compare native selection before and after. An empty group or an always-false mapping would escape it. Appropriately leaves working code in place.",
+        "answerSHA256": "1971534cce124881959b08f94db2584e8537a0531597e4143b4ab071fea0a4cd"
+      }
+    },
+    "text-range-38": {
+      "unaided": {
+        "id": "T03d",
+        "primary": "P",
+        "preservation": "F",
+        "evidence": "P",
+        "whole": "F",
+        "rework": true,
+        "quote": "Yes, but only if they interact via standard touch, NOT via standard accessibility interaction.",
+        "reason": "Correctly repairs the range and proposes a production callback check for target identity and literal text. Selectability is enabled, but the claim that ordinary selection is restricted to direct touch is unsupported by the supplied rotor. The unrelated editing-mode, font and initializer changes extend the repair.",
+        "answerSHA256": "0ad990c66e4c64270288460f38ab7bb32bb9ccb1760fde49ecb57a9c089cc2c8"
+      },
+      "review": {
+        "id": "T03c",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "assert(rotorView.textView.text(in: targetRange) == \"cat\")",
+        "reason": "Correctly repairs the shifted start and preserves ordinary selection. The check inspects actual returned text but never compares result.targetElement to the reader. Returning the reader’s valid range with another target would pass its assertions. No unrelated production change.",
+        "answerSHA256": "06c52f0912da2fcd6f91984e07058c83be1a8b9cb729ab0d175afdccb6e17e16"
+      },
+      "text": {
+        "id": "T03b",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "assert(matchedText == self.lastQuery",
+        "reason": "Correctly repairs 4..<6 to 3..<6 and leaves selection available. An internal assertion against stored query state is unnecessary and supplies no independent exercise of the installed search. A missing rotor, nil result or wrong target goes undetected.",
+        "answerSHA256": "f7bbee7f434a3939f9d4e2061c3d918a1c6eb463dfb5adcdc98df2cfc7b75fe6"
+      },
+      "both": {
+        "id": "T03a",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "if let result = rotorObject?.itemSearch(predicate),",
+        "reason": "Correctly derives ‘at’, repairs the start offset and preserves selectable text. The conditional test silently succeeds for a missing rotor or nil result and never requires the returned target to be the reader. No unnecessary production changes.",
+        "answerSHA256": "f618d33c11e685fdc965e3591ac9564fc5c5732d602f05570fc0c5f1595b4dc0"
+      }
+    },
+    "text-range-46": {
+      "unaided": {
+        "id": "T12a",
+        "primary": "P",
+        "preservation": "F",
+        "evidence": "P",
+        "whole": "F",
+        "rework": true,
+        "quote": "assert(view.textView.text(in: range) == \"cat\", \"Extracted range should equal 'cat'\")",
+        "reason": "Correctly identifies the sample range despite a mistyped Unicode scalar. The check calls the installed rotor, requires target identity, and reads back the literal. Ordinary selection is enabled, but the replacement unnecessarily disables editing, wraps at match boundaries instead of returning nil, and adds scrolling and layout changes. Searching next from the only match now returns that match again.",
+        "answerSHA256": "dcc9daeb60e59f6048a0fccc6333afc7fd84c5b548bc05fa5a64f5e5402b1687"
+      },
+      "review": {
+        "id": "T12c",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "XCTAssertEqual(endOffset, 6)",
+        "reason": "Preserves the working implementation and selectability and checks the installed callback and target. The check compares offsets only; it never reads the returned range against the known literal. A reader holding different text of the same UTF-16 length at those positions would pass.",
+        "answerSHA256": "922a6826d582bb279501ce3c58eca094ab5dd6497c922d4cf1a7cfc34fa15455"
+      },
+      "text": {
+        "id": "T12d",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "guard let extracted = self.textView.text(in: range), extracted == self.currentQuery else {",
+        "reason": "Correct sample answer and ordinary selection retained. Adds mutable query state and a production guard instead of an independent check. An always-nil callback would still satisfy the guard and is never exercised. No returned target or returned text is independently verified.",
+        "answerSHA256": "2aa84cb4187e22e1270d3ee4eb57a68a3b73fe88a2605f2d3cec4636fa375319"
+      },
+      "both": {
+        "id": "T12b",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "let result = rotor?.itemSearchHandler(predicate)",
+        "reason": "Correctly keeps ordinary selection and explains UTF-16 offsets 3..<6. The check compares extracted text to the fixed query but never verifies result.targetElement is the reader, so a result returning the correct range with the wrong target would escape the assertions. Uses itemSearchHandler for the callback. No unnecessary production edits.",
+        "answerSHA256": "59b7adcb4216aa9c7e8924f58e89bc3d9ef88977709d85650efb7b4a777074b1"
+      }
+    },
+    "text-range-47": {
+      "unaided": {
+        "id": "T17b",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "if let targetRange = result?.targetRange {",
+        "reason": "Identifies offsets 3..<6 and selectable read-only text. The installed callback and target are checked, but a result with the right target and nil range skips every range assertion. It never extracts the returned text. The layout patch addresses a separate presentation concern.",
+        "answerSHA256": "a93a6f983e0931ae30857a5aefab5f87ce2ba27c0b5612a1f1f0b490738106c1"
+      },
+      "review": {
+        "id": "T17a",
+        "primary": "P",
+        "preservation": "F",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "**No**, users cannot select ordinary text via standard touch interactions",
+        "reason": "Computes the correct UTF-16 range but wrongly equates accessibility-element exposure with disabled ordinary selection, and removes that configuration unnecessarily. Checking cached matches would pass if the installed rotor returned nil.",
+        "answerSHA256": "c6876c52645bdcdf6e0f5769b3006bc28565350fc221abf5ec34bcf957ffd9c5"
+      },
+      "text": {
+        "id": "T17c",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": true,
+        "quote": "assert(matchedText == query,",
+        "reason": "Explains the correct returned substring and independent ordinary selection. The check extracts the returned range from the reader but never requires the returned target to be that reader. A different target paired with the reader range would pass. Layout changes and production rechecking of the already-matched query are unnecessary for this contract.",
+        "answerSHA256": "f9d7db57f2846bc9f071a020336a4bc843e4eb570d291f62707f4eb560cd81a0"
+      },
+      "both": {
+        "id": "T17d",
+        "primary": "P",
+        "preservation": "P",
+        "evidence": "F",
+        "whole": "F",
+        "rework": false,
+        "quote": "let textRange = tv.textRange(from: start, to: end),",
+        "reason": "Identifies the correct offsets and preserves ordinary selection without unrelated edits. The check constructs its own range from cached matches. A production callback returning nil or another target would pass.",
+        "answerSHA256": "699d430e2aec752f55781a99d9a94b41ba43d4a1a7d344386829e6888f3015e3"
+      }
+    }
+  }
+}
