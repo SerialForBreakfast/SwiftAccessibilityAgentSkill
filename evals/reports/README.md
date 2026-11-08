@@ -1,5 +1,9 @@
 # Does the skill help?
 
+**Installed signal-v2 on Gemini 3.8 Flash Low.** Unaided answers passed 4/56 scheduled tasks and the installed candidate passed 13/56. On matched questions the candidate gained 9 and lost 0, with 3 inconclusive. [Paired results](signal-panel-v2-flash/README.md)
+
+![Installed signal-v2 comparison of whole-task passes, paired outcomes and tokens](signal-panel-v2-flash/scorecard.png)
+
 ![Flash Low baseline and matched skill versions, including reported tokens, gains and regressions](../../docs/images/gemini-scorecard.png)
 
 **On 17 revised questions**, Gemini passed one whole task unaided, two with the review sentence, one with the UIKit text note and two with both. Unnecessary rework fell from ten answers unaided to three with the sentence. [Four-condition results](../gemini-discovery/audit-revision-1/RESULTS.md)

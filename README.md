@@ -2,6 +2,10 @@
 
 ## Baselines and Current Best at a Glance
 
+**Installed signal-v2 on Gemini 3.8 Flash Low.** Unaided answers passed 4/56 scheduled tasks and the installed candidate passed 13/56. On matched questions the candidate gained 9 and lost 0, with 3 inconclusive. [Paired results](evals/reports/signal-panel-v2-flash/README.md)
+
+![Installed signal-v2 comparison of whole-task passes, paired outcomes and tokens](evals/reports/signal-panel-v2-flash/scorecard.png)
+
 ![Gemini Flash Low scorecard showing task passes, primary behavior and tokens on the 17 matched questions, the 384-question unaided baseline and the earlier version comparison.](docs/images/gemini-scorecard.png)
 
 **On 17 revised questions, one review sentence earned the only additional whole-task pass.** Gemini passed 1/17 unaided, 2/17 with the sentence, 1/17 with the UIKit text note and 2/17 with both. Reviewers flagged unnecessary rework in 10 unaided answers and three with the sentence. Only 8 of the 68 answers supplied an adequate focused check. [Matched results and token use](evals/gemini-discovery/audit-revision-1/RESULTS.md)
