@@ -1,0 +1,1 @@
+An editor sheet can be replaced while its dismissal is finishing. I open one from row A and then another from row B. A dismissal callback can arrive late, and sometimes the same completion is delivered twice. How should I wire focus restoration, and what unit test would show which row actually requested it? Both rows remain eligible.

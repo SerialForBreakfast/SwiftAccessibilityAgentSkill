@@ -1,0 +1,10 @@
+# When an implementation depends on a platform distinction
+
+- **UIKit button:** an automation identifier identifies an element to a test. It does not configure a visible title. Check the displayed title for each relevant state.
+- **State across updates:** apply both inputs in succession to the same control. Check visible wording, accessibility value and selected state separately when the product uses all three; one correct property does not establish the others. Reconfiguring a cell clears a stale selected trait without dropping its other traits. Clear optional AppKit help with nil; substituting an empty string changes the observable value.
+- **UIKit text-edit custom actions:** for optional edit grouping assign `action.category = grouped ? UIAccessibilityCustomAction.editCategory : nil`. The category is a string, not an enum with a .edit case. Exercise both explicit settings on the returned action. Preserve the caller's established default; an example factory with another default is not the contract.
+- **AppKit custom actions:** use `NSAccessibilityCustomAction(name:handler:)` or `(name:target:selector:)` assigned to `accessibilityCustomActions`; the handler returns Bool. Do not invent a UIKit-style API on AppKit.
+- **AppKit rows:** a row role and independently exposed child controls can coexist. Inspect the parent's role and the children people operate before flattening the row.
+- **SwiftUI on macOS editable child:** keep one editable owner, such as the native TextField, not a static combined label over it. Forwarding to it or a non-actionable wrapper are both fine.
+- **SwiftUI Slider:** a native Slider already exposes its value and adjustment. If it works, keep its range, step, readout and binding; do not replace it with a custom adjustable element. Likewise review an existing Reduce Motion transaction before replacing it.
+- **tvOS:** Apple's WWDC26 session 221 describes system Larger Text for tvOS 27. On tvOS 26, preserve readable layout and reachable controls without promising that preference. Gate new APIs by their own declarations.
