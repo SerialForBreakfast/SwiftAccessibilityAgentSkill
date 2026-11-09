@@ -1,0 +1,1 @@
+For a representable update, retain the action from the native control itself before binding B. Invoke that retained action after the update, then dispatch the current ordinary buttons and shortcut. If the installed closure asks the coordinator to mint a new ticket at event time, an old registration can operate on B even if the coordinator's helper checks generations correctly.

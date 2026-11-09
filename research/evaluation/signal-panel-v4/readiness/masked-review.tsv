@@ -1,0 +1,11 @@
+mask	proofVerdict	decisive substring	rationale
+B01	supported	setAccessibilityHelp(snapshot.hint)	Configures the same primary view with help and then nil and inspects help. Optional tooltip synchronization is not required for this verdict.
+B02	supported	testHelpUpdatesAndClearsOnSameView	Reads assigned help then nil after updating the same view; uses a different assertion style without creating a new obligation.
+B03	insufficient	coordinator.completeDismissal(token: token)	Close itself calls completion. The coordinator check exercises a return target but does not distinguish requesting dismissal from completed dismissal.
+B04	insufficient	testRestoresToOriginatingItemWhenStillAvailable	The test opens and directly resolves; the production Close clears presented state first. A passing direct completion misses that path.
+B05	insufficient	owner.edit("name", "New Name")	The helper cancels the request; this cannot establish the result of a direct edit with the request still live.
+B06	not-applicable	.accessibilityValue	The question asks for a review, not tests. Score the proposed change and any speech claim independently.
+B07	insufficient	owner.edit("name", "Bob")	The edit under test cancels first. Checking the old reply afterward cannot distinguish a missing live snapshot guard.
+B08	not-applicable	.accessibilityAdjustableAction	No test was requested. Whether adding an adjustment was justified belongs to primary and rework.
+B09	insufficient	primary.removeFromSuperview()	Tests disappearance, not the still-attached ineligible original. Both buttons can stay mounted and require a different decision.
+B10	missing	No code modifications are required	The existing checks omit responder eligibility. The answer asserts no fix is needed and supplies no unit witness for the ineligible original.

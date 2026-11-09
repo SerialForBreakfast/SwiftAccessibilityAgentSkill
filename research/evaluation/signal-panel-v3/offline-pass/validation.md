@@ -1,0 +1,3 @@
+Drive the native field's editing path. Retire a pending request on edit or compare the live input to its submitted snapshot on completion. If obsolete A still owns busy state, retire it without publishing stale feedback; if B owns it, A changes neither feedback nor eligibility, including on cancellation or error. Test edit-during-A with and without a newer submission; complete B and observe its result.
+
+For progress or queued observations, distinguish task identity from terminal state. To test a retired observer, change the value before draining its queued delivery so equality-based deduplication cannot mask a stale update; show that the current observer still works.

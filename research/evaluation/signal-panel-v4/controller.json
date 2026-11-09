@@ -1,0 +1,1466 @@
+[
+  {
+    "id": "P-7d8c12fe30bd49a4",
+    "questionSHA256": "7d8c12fe30bd49a453a27ea175a11b024c3217331b5dce057c158cde2486421b",
+    "platform": "iOS",
+    "framework": "SwiftUI",
+    "family": "retained-native-target",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "InteropTests/testCoordinatorReplacesOldCallback",
+    "caseSpecificCriterion": "Grade primary (old target silent, current dispatches), regression risk (teardown cannot clear a newer binding), rework, and evidence (require a positive current-dispatch assertion before asserting the old one is silent) separately.",
+    "source": "code-examples/swiftui/ios-v1/manifest.json",
+    "assertions": [
+      "InteropTests/testCoordinatorReplacesOldCallback"
+    ],
+    "contrast": "Use a registration retained before rebinding; dispatch the current installed action too. Compare recipient and count.",
+    "insufficientAlone": "Calling a factory or helper with the right stale token.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "contradicted",
+        "proofExecution": "passed",
+        "proofAdequacy": "missed-contract-failure"
+      },
+      "unaided": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-d76c1ea3d7c9a580",
+    "questionSHA256": "d76c1ea3d7c9a58026dfa8b8b4b38f6b92eaf48db6d381c0967d7bd08562a62f",
+    "platform": "tvOS",
+    "framework": "UIKit",
+    "family": "tagged-audio-positive-fixture",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "Use known independently identified audible options: ordinary alternate false, explicitly described true. Exercise the production inspector or its real mapping seam, require both fixtures, compare native selected option before/after. Names, language and an empty filtered list cannot establish tagging.",
+    "caseSpecificCriterion": "Grade primary, preservation and evidence separately. Evidence requires both fixtures (ordinary alternate false, tagged described true) through the production mapping and compares the native selected option before and after; a filtered empty list cannot pass.",
+    "source": "code-examples/platforms/tvos-media-v1/manifest.json",
+    "assertions": [
+      "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription"
+    ],
+    "contrast": "Use independently identified tagged and ordinary options; inspect the result and preserve selection when inspection is read-only.",
+    "insufficientAlone": "Pick the positive fixture with the predicate being tested.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "missing-fixture",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "does-not-build",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-0a2cd6519778f4c7",
+    "questionSHA256": "0a2cd6519778f4c7666df6f9b5dfd56bc1253ad26fc0416298c56732320d235a",
+    "platform": "tvOS",
+    "framework": "UIKit",
+    "family": "stale-observer-witness",
+    "historicalTransition": "inconclusive",
+    "verificationScope": "only-if-fix-needed",
+    "originalCriterion": "TelevisionLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart",
+    "caseSpecificCriterion": "Grade primary (stale queued delivery after restart is rejected, new observer applies) separately from evidence: the test must change the preference between stop and drain so dedup cannot mask rejection, and must fail on the oldgeneration mutant.",
+    "source": "code-examples/platforms/tvos-lifecycle-v1/manifest.json",
+    "assertions": [
+      "TelevisionLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart"
+    ],
+    "contrast": "Change the observed value, drain the old queued callback after restart, then deliver a current update.",
+    "insufficientAlone": "Replay an identical value whose effect is deduplicated.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-f28c1ae4058d31a8",
+    "questionSHA256": "f28c1ae4058d31a82fc3d4e197f9c923fd1e004118941dfcdb77e0c413f1cb2c",
+    "platform": "macOS",
+    "framework": "AppKit",
+    "family": "tagged-audio-positive-fixture",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription",
+    "caseSpecificCriterion": "Report primary and evidence separately. The evidence criterion requires a positive fixture: assert the group has at least one untagged audio option before asserting it is not described, and fail when loading never completes.",
+    "source": "code-examples/platforms/macos-media-v1/manifest.json",
+    "assertions": [
+      "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription"
+    ],
+    "contrast": "Use independently identified tagged and ordinary options; inspect the result and preserve selection when inspection is read-only.",
+    "insufficientAlone": "Pick the positive fixture with the predicate being tested.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "supported",
+        "proofExecution": "does-not-build",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-1079cff7faaab5b2",
+    "questionSHA256": "1079cff7faaab5b2dc316d777b7fe4f2c96b809c495a90eaaec10e0e3f7a163e",
+    "platform": "iOS",
+    "framework": "UIKit",
+    "family": "duplicate-dispatch-on-reuse",
+    "historicalTransition": "inconclusive",
+    "verificationScope": "supply-tests",
+    "originalCriterion": "code-examples/pilots/uikit-naming-v1/evaluation/controller.md",
+    "caseSpecificCriterion": "Grade decoration, contextual names, single dispatch to the current invoice after rebind, and test validity separately; single dispatch is the critical component.",
+    "source": "code-examples/pilots/uikit-naming-v1/evaluation/prompt.json",
+    "assertions": [],
+    "contrast": "Configure twice; exercise the ordinary controls and shortcut independently under the current binding and permission.",
+    "insufficientAlone": "A callback count without its recipient, or only exercising the shortcut.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-7622f1aa06d7a35b",
+    "questionSHA256": "7622f1aa06d7a35b6c388e2aa254690b7dbb8f4a9bf75c9cfdbc614d102832c3",
+    "platform": "iOS",
+    "framework": "SwiftUI",
+    "family": "retained-native-target",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "InteropTests/testCoordinatorReplacesOldCallback",
+    "caseSpecificCriterion": "Keep stale, current and dismantled callback cases; drive the installed native action, not a parallel closure.",
+    "source": "code-examples/swiftui/ios-v1/manifest.json",
+    "assertions": [
+      "InteropTests/testCoordinatorReplacesOldCallback"
+    ],
+    "contrast": "Use a registration retained before rebinding; dispatch the current installed action too. Compare recipient and count.",
+    "insufficientAlone": "Calling a factory or helper with the right stale token.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-48400f490808a2cf",
+    "questionSHA256": "48400f490808a2cf32dbe79262b07ce7d651c831916c44fe9923395bcb16e6a9",
+    "platform": "macOS",
+    "framework": "SwiftUI",
+    "family": "restore-only-owned-sheet",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "Exercise a retained A dismissal from the view wiring or its production-used seam after B opens. A cannot close B, alter B focus or issue a restoration request. A valid B completion must still restore once. Accept equivalent per-presentation ownership; a direct model test supplying the correct old ticket bypasses the issue.",
+    "caseSpecificCriterion": "Re-grade with the factorial criterion: drive A's retained dismissal through the view's installed callback after B opens; a pass on a model-only test with the old ticket supplied manually is evidence-insufficient.",
+    "source": "code-examples/swiftui/macos-v1/manifest.json",
+    "assertions": [
+      "LifecycleTests/testOldDismissalCannotConsumeNewSession"
+    ],
+    "contrast": "Request Close before completion; resolve the surviving or removed origin. For overlapping presentations distinguish A's completion from B's.",
+    "insufficientAlone": "Invoking a helper with the correct generation without showing how the installed callback obtained it.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "supported",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-f93bec690ad5409c",
+    "questionSHA256": "f93bec690ad5409c6e332f0248cee41db58b8ef8ccb3077214f95940c4f87b32",
+    "platform": "iOS",
+    "framework": "SwiftUI",
+    "family": "chapter-boundary",
+    "historicalTransition": "persistent",
+    "verificationScope": "no-added-proof-requirement",
+    "originalCriterion": "A behavioral explanation suffices. From 35, forward reaches 107 and backward reaches 0. Outward requests at 0 or 107 leave the position there; idempotent seek is acceptable. Empty means zero seeks. Preserve separate tap and drag paths. No unstated between-start rule or executable unit is required.",
+    "caseSpecificCriterion": "Assert resulting chapter positions from 35 (forward 107, backward 0), no movement past 0 or 107, defined empty behavior, and preserved Play; comparing clamped times alone misses the error. Record the regrade of the original pass.",
+    "source": "references/swiftui/guidelines/g-008-custom-controls-representation.md",
+    "assertions": [],
+    "contrast": "Compare an interior step, boundary and empty chapter sequence while retaining ordinary controls.",
+    "insufficientAlone": "Use the end timestamp as if it were another chapter start.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "does-not-build",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "does-not-build",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-2865458d46b0d1a4",
+    "questionSHA256": "2865458d46b0d1a4ba3608b36374b6922b234a925e0fafc77250b906954f8c7b",
+    "platform": "iOS",
+    "framework": "SwiftUI",
+    "family": "selection-before-validation",
+    "historicalTransition": "persistent",
+    "verificationScope": "no-added-proof-requirement",
+    "originalCriterion": "code-examples/swiftui/media-ios-v1/evaluation/selection.rubric.md",
+    "caseSpecificCriterion": "Grade actual item selection, preserved audio selection, full-only offering, and Off against allowsEmptySelection separately.",
+    "source": "code-examples/swiftui/media-ios-v1/evaluation/selection.prompt.md",
+    "assertions": [],
+    "contrast": "Compare actual selection before and after the requested choice; preserve unrelated selection and distinguish unlisted from Off when relevant.",
+    "insufficientAlone": "A selected menu ID changes without a player-item write.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "does-not-build",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "does-not-build",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-7d27aad438a1d70b",
+    "questionSHA256": "7d27aad438a1d70b9da8fd03a2347b54102e2999a19bc3fc7abeafe2f6cee4c4",
+    "platform": "macOS",
+    "framework": "SwiftUI",
+    "family": "clear-optional-help",
+    "historicalTransition": "rescue",
+    "verificationScope": "focused-check",
+    "originalCriterion": "ForwardingTests/testNilHintClearsOldHelp",
+    "caseSpecificCriterion": "Assert accessibilityHelp() is nil (not empty) after B; grade unsupported API claims as evidence errors separate from primary.",
+    "source": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+    "assertions": [
+      "ForwardingTests/testNilHintClearsOldHelp"
+    ],
+    "contrast": "Reconfigure the same control with two distinguishable values; inspect the particular fields and ordinary behavior requested.",
+    "insufficientAlone": "Rebuild a fresh view or inspect a trait as proof that a different property changed.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-db6ab4c551e67aca",
+    "questionSHA256": "db6ab4c551e67aca42f27601a71fe81be038738c2af70124582d76fb32476804",
+    "platform": "iOS",
+    "framework": "UIKit",
+    "family": "validation-busy-recovery",
+    "historicalTransition": "persistent",
+    "verificationScope": "only-if-fix-needed",
+    "originalCriterion": "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot",
+    "caseSpecificCriterion": "Grade separately: stale reply rejected (primary), ownership state ends (busy false, no active ticket) after rejection, and proof that drives a native field change between submit and reply.",
+    "source": "code-examples/platforms/ios-closure-v1/manifest.json",
+    "assertions": [
+      "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot"
+    ],
+    "contrast": "Change live input during a request before delivering it; check acceptance, eligibility and subsequent current success.",
+    "insufficientAlone": "Use only the helper which cancels the request as a side effect.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "contradicted",
+        "proofExecution": "passed",
+        "proofAdequacy": "missed-contract-failure"
+      },
+      "unaided": {
+        "behavior": "contradicted",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {
+      "unaided": "no-executable-proof",
+      "skill": "missed-qualified-mutant"
+    }
+  },
+  {
+    "id": "P-f6c77faf11d5ad05",
+    "questionSHA256": "f6c77faf11d5ad05be2bfe3937a6ec76d6a4031b03866a70cdaa23ddfa9d438d",
+    "platform": "macOS",
+    "framework": "SwiftUI",
+    "family": "stale-action-capture",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "DocumentTests/testOldActionDoesNotTargetReboundRow",
+    "caseSpecificCriterion": "Assert the retained action is a no-op on the replacement and the current action deletes once. A test expecting the stale action to succeed is an evidence failure that reverses the contract.",
+    "source": "code-examples/swiftui/macos-v1/manifest.json",
+    "assertions": [
+      "DocumentTests/testOldActionDoesNotTargetReboundRow"
+    ],
+    "contrast": "Use a registration retained before rebinding; dispatch the current installed action too. Compare recipient and count.",
+    "insufficientAlone": "Calling a factory or helper with the right stale token.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-34541ce79ee3d519",
+    "questionSHA256": "34541ce79ee3d519bf3e7c3d8fe2b60d4cd74885936e13753bab779fb6533c8e",
+    "platform": "iOS",
+    "framework": "UIKit",
+    "family": "restore-accessibility-background",
+    "historicalTransition": "persistent",
+    "verificationScope": "supply-tests",
+    "originalCriterion": "code-examples/pilots/uikit-modal-v1/evaluation/controller.md",
+    "caseSpecificCriterion": "Grade background accessibility restoration, stale-callback rejection, eligible return target with fallback, escape support and teardown separately.",
+    "source": "code-examples/pilots/uikit-modal-v1/evaluation/prompt.json",
+    "assertions": [],
+    "contrast": "After overlapping dismissals finish the replacement and compare final suppression with the original background.",
+    "insufficientAlone": "Show only that suppression is active while the replacement is open.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "contradicted",
+        "proofExecution": "passed",
+        "proofAdequacy": "missed-contract-failure"
+      },
+      "unaided": {
+        "behavior": "does-not-build",
+        "proofExecution": "blocked",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-35ee522327907bd8",
+    "questionSHA256": "35ee522327907bd8e3a9a47b53e62250ea362353b8b7231ef3598badb7c67398",
+    "platform": "iOS",
+    "framework": "SwiftUI",
+    "family": "preserve-native-slider",
+    "historicalTransition": "persistent",
+    "verificationScope": "no-added-proof-requirement",
+    "originalCriterion": "evals/os26/expansion-1/acceptance.json#GP26-11",
+    "caseSpecificCriterion": "Grade separately: binding/range/step preserved, unsupported defect claim, and whether the added value changes what VoiceOver reports versus the default.",
+    "source": "research/evaluation/zero-base-v1/subjects/GP26-11.txt",
+    "assertions": [],
+    "contrast": "Trace the existing binding or transaction and its ordinary effect before proposing changes.",
+    "insufficientAlone": "A rewrite or new test simply because this is an accessibility review.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "unmeasured",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "unmeasured",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-db32e60bc16c19a8",
+    "questionSHA256": "db32e60bc16c19a88c21f95850425c5b978786cd45b9f87bcdddb4e762b81c41",
+    "platform": "iOS",
+    "framework": "UIKit",
+    "family": "selected-trait-vs-selection",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "ReuseUIKitTests/testReconfigureClearsSelectedStateWithoutLosingOtherTraits",
+    "caseSpecificCriterion": "Grade trait correctness (primary), collection-selection preservation (regression) and rework separately; record the primary regrade.",
+    "source": "code-examples/pilots/uikit-reuse-v1/manifest.json",
+    "assertions": [
+      "ReuseUIKitTests/testReconfigureClearsSelectedStateWithoutLosingOtherTraits"
+    ],
+    "contrast": "Reconfigure the same control with two distinguishable values; inspect the particular fields and ordinary behavior requested.",
+    "insufficientAlone": "Rebuild a fresh view or inspect a trait as proof that a different property changed.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-51e9f52794c2efdf",
+    "questionSHA256": "51e9f52794c2efdfa2d7616164d44af7ecf2ef571bfe7849c7820221cb334f4c",
+    "platform": "iOS",
+    "framework": "UIKit",
+    "family": "dispatch-current-and-retired",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "Configure two distinct enabled items on one view. Retain an actual installed shortcut or the exact handler used to create it. After rebind it must report failure and dispatch nothing. The current shortcut and ordinary Archive/Delete must still target the current ID with their corresponding operation once per invocation. A test-only parallel handler or skipped invocation gives insufficient evidence.",
+    "caseSpecificCriterion": "Keep call-count and ID assertions; require the retained installed action, not a re-created one.",
+    "source": "code-examples/pilots/uikit-dynamic-v1/manifest.json",
+    "assertions": [
+      "DynamicUIKitTests/testRetainedOldActionCannotAffectReusedView"
+    ],
+    "contrast": "Use a registration retained before rebinding; dispatch the current installed action too. Compare recipient and count.",
+    "insufficientAlone": "Calling a factory or helper with the right stale token.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-10464d860f6802b2",
+    "questionSHA256": "10464d860f6802b26e3aa814109ed40d23e797de8a14fe4757b627c7b6607e89",
+    "platform": "tvOS",
+    "framework": "UIKit",
+    "family": "visible-selected-status",
+    "historicalTransition": "inconclusive",
+    "verificationScope": "focused-check",
+    "originalCriterion": "On the same instance configure selected, unselected and selected again or equivalent set/clear transitions. For each input compare visible status text, accessible value and selected trait independently with expected state. Accept equivalent localized wording. Scope is configure, not search or native isSelected.",
+    "caseSpecificCriterion": "For each input assert non-empty visible selected/not-selected text, a matching accessibility value and the selected trait; the result count must not replace the selection value. Accept equivalent localized wording.",
+    "source": "code-examples/platforms/tvos-closure-v1/manifest.json",
+    "assertions": [
+      "StateContractTests/testSelectedStateHasNonColorTextAndValue"
+    ],
+    "contrast": "Reconfigure the same control with two distinguishable values; inspect the particular fields and ordinary behavior requested.",
+    "insufficientAlone": "Rebuild a fresh view or inspect a trait as proof that a different property changed.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-3f811eea610d0c32",
+    "questionSHA256": "3f811eea610d0c323c31211d12f76fe7ff45b4d0e6812d634a90ac83af12a645",
+    "platform": "macOS",
+    "framework": "AppKit",
+    "family": "native-custom-action-api",
+    "historicalTransition": "persistent",
+    "verificationScope": "describe-check",
+    "originalCriterion": "code-examples/platforms/macos-appkit-v1/evaluation/desktop-actions.rubric.md",
+    "caseSpecificCriterion": "Assert Open's accessibilityCustomActions contains a named Save action whose handler dispatches the current Save callback and returns false when Save is disabled.",
+    "source": "code-examples/platforms/macos-appkit-v1/evaluation/desktop-actions.prompt.md",
+    "assertions": [],
+    "contrast": "Configure twice; exercise the ordinary controls and shortcut independently under the current binding and permission.",
+    "insufficientAlone": "A callback count without its recipient, or only exercising the shortcut.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "does-not-build",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-a5c8091cdffa651a",
+    "questionSHA256": "a5c8091cdffa651ac1c1c18e0b61dfb199aa6760d02b5592fc2b29b04c4e5f52",
+    "platform": "iOS",
+    "framework": "UIKit",
+    "family": "name-without-focus-reset",
+    "historicalTransition": "rescue",
+    "verificationScope": "focused-check",
+    "originalCriterion": "Reconfigure the same live cell from priority to ordinary with distinct customers and statuses. Verify visible names, meaningful priority cue on the first accessible name, current accessible name and status value on both. Example strings are interchangeable. Trace absence of an explicit focus request separately from actual delivered focus.",
+    "caseSpecificCriterion": "Grade name and status refresh (primary), unsolicited focus requests (regression), and rework separately.",
+    "source": "code-examples/pilots/uikit-v1/manifest.json",
+    "assertions": [
+      "UIKitTests/testReconfigurationWithoutPrepareForReuse"
+    ],
+    "contrast": "Reconfigure the same control with two distinguishable values; inspect the particular fields and ordinary behavior requested.",
+    "insufficientAlone": "Rebuild a fresh view or inspect a trait as proof that a different property changed.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-852a6aafb1bd0b6f",
+    "questionSHA256": "852a6aafb1bd0b6f35fe9b4a8db13d5f89c72bea970d6b6bae2af740d830c864",
+    "platform": "tvOS",
+    "framework": "UIKit",
+    "family": "stale-action-capture",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "TelevisionResultsTests/testStaleButtonDoesNotSelectReboundItem",
+    "caseSpecificCriterion": "Score the causal explanation, ordinary current action and behavior after rebinding separately for both pair sessions; report both-correct pairs as the headline.",
+    "source": "code-examples/platforms/tvos-results-v1/manifest.json",
+    "assertions": [
+      "TelevisionResultsTests/testStaleButtonDoesNotSelectReboundItem"
+    ],
+    "contrast": "Use a registration retained before rebinding; dispatch the current installed action too. Compare recipient and count.",
+    "insufficientAlone": "Calling a factory or helper with the right stale token.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "contradicted",
+        "proofExecution": "failed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "supported",
+        "proofExecution": "failed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-777d08cb675db900",
+    "questionSHA256": "777d08cb675db9004847ace6f12ea539f7838a37443811e4e7597e95be6b29e8",
+    "platform": "macOS",
+    "framework": "AppKit",
+    "family": "duplicate-ordinary-command",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "DesktopActionsTests/testOrdinarySaveOnly",
+    "caseSpecificCriterion": "Grade primary (ordinary press and shortcut both reach the current item), rework (extra custom actions) and evidence (the test must perform the native button's action) separately.",
+    "source": "code-examples/platforms/macos-appkit-v1/manifest.json",
+    "assertions": [
+      "DesktopActionsTests/testOrdinarySaveOnly"
+    ],
+    "contrast": "Configure twice; exercise the ordinary controls and shortcut independently under the current binding and permission.",
+    "insufficientAlone": "A callback count without its recipient, or only exercising the shortcut.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "does-not-build",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-4ec92962591872fa",
+    "questionSHA256": "4ec92962591872fabca8bb0ab6faacf07ad76da6968ceadb8a178257cd8aed3c",
+    "platform": "iOS",
+    "framework": "SwiftUI",
+    "family": "missing-item-vs-no-options",
+    "historicalTransition": "persistent",
+    "verificationScope": "supply-tests",
+    "originalCriterion": "code-examples/swiftui/media-ios-v2/evaluation/wiring.rubric.md",
+    "caseSpecificCriterion": "Grade each state (missing item, loading, empty, failure) and retry separately, plus the real selection shown from the player item.",
+    "source": "code-examples/swiftui/media-ios-v2/evaluation/wiring.prompt.md",
+    "assertions": [],
+    "contrast": "Contrast no item with a loaded, inspected group containing no eligible options.",
+    "insufficientAlone": "Use empty arrays for both and infer availability.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "unmeasured",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "unmeasured",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-4328fa34debd8d92",
+    "questionSHA256": "4328fa34debd8d92d1c89a8e32b97c20c4a43ddc300b501c9469bf465e9f923a",
+    "platform": "tvOS",
+    "framework": "UIKit",
+    "family": "ordinary-action-survives",
+    "historicalTransition": "rescue",
+    "verificationScope": "focused-check",
+    "originalCriterion": "TelevisionActionsTests/testOrdinaryDetails",
+    "caseSpecificCriterion": "Grade primary (existing ordinary and shortcut paths reach the current item), validity (proposed code compiles against UIKit), rework and evidence separately; an invalid override is both rework and a compile failure.",
+    "source": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+    "assertions": [
+      "TelevisionActionsTests/testOrdinaryDetails"
+    ],
+    "contrast": "Configure twice; exercise the ordinary controls and shortcut independently under the current binding and permission.",
+    "insufficientAlone": "A callback count without its recipient, or only exercising the shortcut.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-7766a23217bfa0c3",
+    "questionSHA256": "7766a23217bfa0c3d871af886275e58a8e31af0f4339221b14fb874ff8ca4231",
+    "platform": "tvOS",
+    "framework": "SwiftUI",
+    "family": "retained-native-target",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "InteropTests/testCoordinatorReplacesOldCallback",
+    "caseSpecificCriterion": "Separate primary (old native control and old callback cannot reach the new handler; dismantle stops dispatch), rework (unrequested teardown or cross-platform edits) and evidence (a negative-only test that also passes the original counts as weak proof). Grade a harmless equivalent rewrite as pass with rework noted.",
+    "source": "code-examples/swiftui/tvos-v1/manifest.json",
+    "assertions": [
+      "InteropTests/testCoordinatorReplacesOldCallback"
+    ],
+    "contrast": "Use a registration retained before rebinding; dispatch the current installed action too. Compare recipient and count.",
+    "insufficientAlone": "Calling a factory or helper with the right stale token.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "contradicted",
+        "proofExecution": "failed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-4099aaf89ec377cf",
+    "questionSHA256": "4099aaf89ec377cfca4ddd3f28a88775276d5fdd310724af94ce9ffd38e1f930",
+    "platform": "tvOS",
+    "framework": "UIKit",
+    "family": "input-snapshot-after-edit",
+    "historicalTransition": "persistent",
+    "verificationScope": "only-if-fix-needed",
+    "originalCriterion": "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot",
+    "caseSpecificCriterion": "Keep, and assert directly: change the field's text without calling the helper, then complete the old validation; errors are not applied and the edited text remains.",
+    "source": "code-examples/platforms/tvos-closure-v1/manifest.json",
+    "assertions": [
+      "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot"
+    ],
+    "contrast": "Change live input during a request before delivering it; check acceptance, eligibility and subsequent current success.",
+    "insufficientAlone": "Use only the helper which cancels the request as a side effect.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "contradicted",
+        "proofExecution": "passed",
+        "proofAdequacy": "missed-contract-failure"
+      },
+      "unaided": {
+        "behavior": "contradicted",
+        "proofExecution": "passed",
+        "proofAdequacy": "missed-contract-failure"
+      }
+    },
+    "qualifiedProofComparison": {
+      "unaided": "missed-qualified-mutant",
+      "skill": "missed-qualified-mutant"
+    }
+  },
+  {
+    "id": "P-5d121776613655db",
+    "questionSHA256": "5d121776613655db44b2e7aa2249c90a70d8fa995b2d0e42b167bf3c968299bb",
+    "platform": "tvOS",
+    "framework": "SwiftUI",
+    "family": "selection-before-validation",
+    "historicalTransition": "persistent",
+    "verificationScope": "supply-tests",
+    "originalCriterion": "code-examples/swiftui/media-tvos-v2/evaluation/selection.rubric.md",
+    "caseSpecificCriterion": "Grade separately: (1) known choice writes the player item's legible selection; (2) unknown request leaves displayed and native selection unchanged; (3) an unlisted current selection is shown as such, not Off; (4) audio and playback settings unchanged.",
+    "source": "code-examples/swiftui/media-tvos-v2/evaluation/selection.prompt.md",
+    "assertions": [],
+    "contrast": "Compare actual selection before and after the requested choice; preserve unrelated selection and distinguish unlisted from Off when relevant.",
+    "insufficientAlone": "A selected menu ID changes without a player-item write.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "unmeasured",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "unmeasured",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-9c455b0bd4be71db",
+    "questionSHA256": "9c455b0bd4be71db26d128d8dab0b89a2f0ccf3e50810ab3b22c47872c91061b",
+    "platform": "iOS",
+    "framework": "UIKit",
+    "family": "unavailable-result-check",
+    "historicalTransition": "preserved",
+    "verificationScope": "only-if-fix-needed",
+    "originalCriterion": "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent",
+    "caseSpecificCriterion": "Grade primary behavior separately from a non-compiling test; evidence credit requires a pattern match or a stated Equatable conformance.",
+    "source": "code-examples/pilots/uikit-media-metadata-v1/manifest.json",
+    "assertions": [
+      "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent"
+    ],
+    "contrast": "Contrast no item with a loaded, inspected group containing no eligible options.",
+    "insufficientAlone": "Use empty arrays for both and infer availability.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-a12bcd8ed20f1256",
+    "questionSHA256": "a12bcd8ed20f125660f78c99f4c02bfa15b7463b77b2d888a196c7ba4bb55373",
+    "platform": "tvOS",
+    "framework": "UIKit",
+    "family": "stale-action-capture",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "TelevisionResultsTests/testStaleButtonDoesNotSelectReboundItem",
+    "caseSpecificCriterion": "Grade primary (stale action rejected, current works), preservation (no re-enabling of obsolete actions), evidence (a test expecting stale selection is invalid) and rework separately; mark this as critical regression.",
+    "source": "code-examples/platforms/tvos-results-v1/manifest.json",
+    "assertions": [
+      "TelevisionResultsTests/testStaleButtonDoesNotSelectReboundItem"
+    ],
+    "contrast": "Use a registration retained before rebinding; dispatch the current installed action too. Compare recipient and count.",
+    "insufficientAlone": "Calling a factory or helper with the right stale token.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "does-not-build",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-6bfef2bcad970d58",
+    "questionSHA256": "6bfef2bcad970d58d0a3874990b106d738df175d07832f1d915ea76b5010b6c6",
+    "platform": "macOS",
+    "framework": "AppKit",
+    "family": "origin-window-membership",
+    "historicalTransition": "persistent",
+    "verificationScope": "no-added-proof-requirement",
+    "originalCriterion": "Bind restoration to the particular window and presentation; verify current membership and eligibility, not just global most recent field.",
+    "caseSpecificCriterion": "none; the criterion already requires current window membership and eligibility. Optionally list them as separate checks: same window, eligible, current presentation.",
+    "source": "references/macos/guidelines/m-007-modal-window-focus-containment.md",
+    "assertions": [],
+    "contrast": "Check origin membership and eligibility separately. A still-attached ineligible original should not outrank an eligible fallback when fallback is requested.",
+    "insufficientAlone": "Remove the original and infer attached refusal or window acceptance.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "unmeasured",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "unmeasured",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-6d2dd61c5ac4abfc",
+    "questionSHA256": "6d2dd61c5ac4abfc9e173ab8322ad9810107fb9fe648041424285d83a909fa76",
+    "platform": "iOS",
+    "framework": "SwiftUI",
+    "family": "media-off-write",
+    "historicalTransition": "persistent",
+    "verificationScope": "supply-tests",
+    "originalCriterion": "code-examples/swiftui/media-ios-v2/evaluation/selection.rubric.md",
+    "caseSpecificCriterion": "Grade full-only offering, actual item selection, Off via supported API, preserved audio, and out-of-list current choice separately.",
+    "source": "code-examples/swiftui/media-ios-v2/evaluation/selection.prompt.md",
+    "assertions": [],
+    "contrast": "Compare actual selection before and after the requested choice; preserve unrelated selection and distinguish unlisted from Off when relevant.",
+    "insufficientAlone": "A selected menu ID changes without a player-item write.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "unmeasured",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "unmeasured",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-da7833399aac7f87",
+    "questionSHA256": "da7833399aac7f87e6aeb8b024b7cabd9070538240dc06c282a195ce61f65b95",
+    "platform": "macOS",
+    "framework": "SwiftUI",
+    "family": "restore-only-owned-sheet",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "Exercise a retained A dismissal from the view wiring or its production-used seam after B opens. A cannot close B, alter B focus or issue a restoration request. A valid B completion must still restore once. Accept equivalent per-presentation ownership; a direct model test supplying the correct old ticket bypasses the issue.",
+    "caseSpecificCriterion": "Exercise a retained A dismissal from the view wiring (or its production-used seam) after B opens: A cannot close B, alter focus or request restoration; a valid B completion restores once. A model test passing the old ticket by hand is not evidence.",
+    "source": "code-examples/swiftui/macos-v1/manifest.json",
+    "assertions": [
+      "LifecycleTests/testOldDismissalCannotConsumeNewSession"
+    ],
+    "contrast": "Request Close before completion; resolve the surviving or removed origin. For overlapping presentations distinguish A's completion from B's.",
+    "insufficientAlone": "Invoking a helper with the correct generation without showing how the installed callback obtained it.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-7cc5d89371a12a35",
+    "questionSHA256": "7cc5d89371a12a35fa28d381f411f6dab4c11090485984995a2eac96540fcda8",
+    "platform": "tvOS",
+    "framework": "UIKit",
+    "family": "positive-media-choice",
+    "historicalTransition": "persistent",
+    "verificationScope": "only-if-fix-needed",
+    "originalCriterion": "MediaChoiceTests/testDescriptionUnavailablePreservesChoice",
+    "caseSpecificCriterion": "Grade the proof separately: require a fixture with an audible group and a known current option; assert that a described-audio request with no match leaves that option selected. A test that can return before selection fails evidence only.",
+    "source": "code-examples/platforms/tvos-media-v1/manifest.json",
+    "assertions": [
+      "MediaChoiceTests/testDescriptionUnavailablePreservesChoice"
+    ],
+    "contrast": "Use independently identified tagged and ordinary options; inspect the result and preserve selection when inspection is read-only.",
+    "insufficientAlone": "Pick the positive fixture with the predicate being tested.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "does-not-build",
+        "proofExecution": "blocked",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "does-not-build",
+        "proofExecution": "blocked",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-a00ec36c978640fc",
+    "questionSHA256": "a00ec36c978640fc386f34487a98b7fdb74c1d140406600286b8615517003fb1",
+    "platform": "tvOS",
+    "framework": "SwiftUI",
+    "family": "retained-native-target",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "InteropTests/testCoordinatorReplacesOldCallback",
+    "caseSpecificCriterion": "Score the causal explanation of which callback is reached before and after rebinding, current dispatch, and post-dismantle silence; grade both working and defective sessions with the same criterion.",
+    "source": "code-examples/swiftui/tvos-v1/manifest.json",
+    "assertions": [
+      "InteropTests/testCoordinatorReplacesOldCallback"
+    ],
+    "contrast": "Use a registration retained before rebinding; dispatch the current installed action too. Compare recipient and count.",
+    "insufficientAlone": "Calling a factory or helper with the right stale token.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "contradicted",
+        "proofExecution": "passed",
+        "proofAdequacy": "missed-contract-failure"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-90629dd9d60ff906",
+    "questionSHA256": "90629dd9d60ff9063e86301fadc4998f412c5b06214fd2ef241ad7e1ee33d310",
+    "platform": "iOS",
+    "framework": "SwiftUI",
+    "family": "restore-only-owned-sheet",
+    "historicalTransition": "persistent",
+    "verificationScope": "supply-tests",
+    "originalCriterion": "code-examples/swiftui/ios-v1/evaluation/lifecycle.rubric.md",
+    "caseSpecificCriterion": "Grade completion ownership (duplicate and stale ignored), eligible target at completion, fallback, and reentrant open separately.",
+    "source": "code-examples/swiftui/ios-v1/evaluation/lifecycle.prompt.md",
+    "assertions": [],
+    "contrast": "Request Close before completion; resolve the surviving or removed origin. For overlapping presentations distinguish A's completion from B's.",
+    "insufficientAlone": "Invoking a helper with the correct generation without showing how the installed callback obtained it.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "contradicted",
+        "proofExecution": "passed",
+        "proofAdequacy": "missed-contract-failure"
+      },
+      "unaided": {
+        "behavior": "unmeasured",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {
+      "unaided": "interface-gap",
+      "skill": "interface-gap"
+    }
+  },
+  {
+    "id": "P-76d9fe6a4d351668",
+    "questionSHA256": "76d9fe6a4d351668f6edc8ea6eba78b10e0ff7320b43ad0501760e397b3538ec",
+    "platform": "macOS",
+    "framework": "AppKit",
+    "family": "row-role-and-children",
+    "historicalTransition": "rescue",
+    "verificationScope": "focused-check",
+    "originalCriterion": "DesktopContractTests/testExplicitRowRoleAndChildSemantics",
+    "caseSpecificCriterion": "Assert isAccessibilityElement() is true, role is .row, selected and expanded reflect configure, and accessibilityChildren contains the Open button with its contextual label. Getter values on an ignored element do not establish exposure.",
+    "source": "code-examples/platforms/macos-closure-details-v1/manifest.json",
+    "assertions": [
+      "DesktopContractTests/testExplicitRowRoleAndChildSemantics"
+    ],
+    "contrast": "Distinguish the parent representation from each child action or native editing path.",
+    "insufficientAlone": "A parent label or role alone establishes child operability.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-89b1442c72a8db4b",
+    "questionSHA256": "89b1442c72a8db4b02f97c89ebc366fb348fe943ef8cc0dad6d76ba6a637fcc1",
+    "platform": "iOS",
+    "framework": "UIKit",
+    "family": "dispatch-current-and-retired",
+    "historicalTransition": "persistent",
+    "verificationScope": "focused-check",
+    "originalCriterion": "Configure two distinct enabled items on one view. Retain an actual installed shortcut or the exact handler used to create it. After rebind it must report failure and dispatch nothing. The current shortcut and ordinary Archive/Delete must still target the current ID with their corresponding operation once per invocation. A test-only parallel handler or skipped invocation gives insufficient evidence.",
+    "caseSpecificCriterion": "Grade primary, ordinary-button preservation, rework, and evidence separately; evidence requires invoking the actual installed shortcut and pressing the real buttons, with no conditional skip.",
+    "source": "code-examples/pilots/uikit-dynamic-v1/manifest.json",
+    "assertions": [
+      "DynamicUIKitTests/testRetainedOldActionCannotAffectReusedView"
+    ],
+    "contrast": "Use a registration retained before rebinding; dispatch the current installed action too. Compare recipient and count.",
+    "insufficientAlone": "Calling a factory or helper with the right stale token.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "supported",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-a32f106f0aa1cc85",
+    "questionSHA256": "a32f106f0aa1cc85949dca086f8843230af2b71f0bcdc2b319daa0c511fa4246",
+    "platform": "iOS",
+    "framework": "SwiftUI",
+    "family": "reduced-motion-scope",
+    "historicalTransition": "persistent",
+    "verificationScope": "no-added-proof-requirement",
+    "originalCriterion": "evals/os26/expansion-1/acceptance.json#GP26-12",
+    "caseSpecificCriterion": "Grade separately: selected page and next-page behavior preserved, motion under the current preference, unsupported claim, and inert rework.",
+    "source": "research/evaluation/zero-base-v1/subjects/GP26-12.txt",
+    "assertions": [],
+    "contrast": "Trace the existing binding or transaction and its ordinary effect before proposing changes.",
+    "insufficientAlone": "A rewrite or new test simply because this is an accessibility review.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "unmeasured",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "unmeasured",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-b12c69f62639d32d",
+    "questionSHA256": "b12c69f62639d32d35bf72db851861a484dd1aa2436623787a47968be965c948",
+    "platform": "iOS",
+    "framework": "SwiftUI",
+    "family": "inspect-without-selection-write",
+    "historicalTransition": "rescue",
+    "verificationScope": "describe-check",
+    "originalCriterion": "research/evaluation/dev7-comparison/controller/scoring.json#ios-swiftui-media",
+    "caseSpecificCriterion": "Grade metadata state (loading, empty, failure, item change) separately from selection preservation; any write to the player item during inspection is a regression.",
+    "source": "research/evaluation/zero-base-v1/subjects/ios-swiftui-media.txt",
+    "assertions": [],
+    "contrast": "Use independently identified tagged and ordinary options; inspect the result and preserve selection when inspection is read-only.",
+    "insufficientAlone": "Pick the positive fixture with the predicate being tested.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-be25d510c5ffe50f",
+    "questionSHA256": "be25d510c5ffe50faf6b810a80d067ff0354cffb4c0e6eb6a37a9ae6badd4b9d",
+    "platform": "macOS",
+    "framework": "AppKit",
+    "family": "refusing-focus-target",
+    "historicalTransition": "persistent",
+    "verificationScope": "only-if-fix-needed",
+    "originalCriterion": "DesktopLifecycleTests/testRefusingOriginalUsesFallback",
+    "caseSpecificCriterion": "Fixture: original attached, visible, enabled but acceptsFirstResponder false; assert the request goes once to the eligible fallback. A test with a removed original does not count as evidence for this case.",
+    "source": "code-examples/platforms/macos-lifecycle-v1/manifest.json",
+    "assertions": [
+      "DesktopLifecycleTests/testRefusingOriginalUsesFallback"
+    ],
+    "contrast": "Check origin membership and eligibility separately. A still-attached ineligible original should not outrank an eligible fallback when fallback is requested.",
+    "insufficientAlone": "Remove the original and infer attached refusal or window acceptance.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "contradicted",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "contradicted",
+        "proofExecution": "passed",
+        "proofAdequacy": "missed-contract-failure"
+      }
+    },
+    "qualifiedProofComparison": {
+      "unaided": "missed-qualified-mutant",
+      "skill": "no-executable-proof"
+    }
+  },
+  {
+    "id": "P-c04cc5d4aa6f82d2",
+    "questionSHA256": "c04cc5d4aa6f82d29e1217246c88eb8152abbe74a045b902fbd51d2837657936",
+    "platform": "iOS",
+    "framework": "SwiftUI",
+    "family": "stale-off-capture",
+    "historicalTransition": "persistent",
+    "verificationScope": "supply-tests",
+    "originalCriterion": "code-examples/swiftui/media-ios-v2/evaluation/ownership.rubric.md",
+    "caseSpecificCriterion": "Grade separately: old load results ignored, old option callback (including Off) rejected after reload or item change, current choice applied to the item, and cancellation semantics.",
+    "source": "code-examples/swiftui/media-ios-v2/evaluation/ownership.prompt.md",
+    "assertions": [],
+    "contrast": "Retain the old setter across reload; compare a stale change against a valid current change on the same item.",
+    "insufficientAlone": "Test only replacement by a different item.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "unmeasured",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "unmeasured",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-c55650380597efd4",
+    "questionSHA256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461",
+    "platform": "tvOS",
+    "framework": "SwiftUI",
+    "family": "swiftui-evidence-boundary",
+    "historicalTransition": "persistent",
+    "verificationScope": "describe-check",
+    "originalCriterion": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-swiftui-testing",
+    "caseSpecificCriterion": "Criterion: the plan must state that compile and unit checks establish only extracted state and wiring, that spoken output and rotor behavior are unestablished, and must not offer reflection as accessibility evidence.",
+    "source": "research/evaluation/zero-base-v1/subjects/tvos-swiftui-testing.txt",
+    "assertions": [],
+    "contrast": "Separate the compile result and asserted state from interaction behavior; record environment and first failure.",
+    "insufficientAlone": "Treat view construction or model assertions as observation of assistive interaction.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "unmeasured",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "unmeasured",
+        "proofExecution": "does-not-build",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-c6b25ad753e6a2d2",
+    "questionSHA256": "c6b25ad753e6a2d2dc4451dbfdb211a58676df4895119ecd568242e3dc9e1676",
+    "platform": "tvOS",
+    "framework": "SwiftUI",
+    "family": "same-item-new-request",
+    "historicalTransition": "persistent",
+    "verificationScope": "supply-tests",
+    "originalCriterion": "code-examples/swiftui/media-tvos-v2/evaluation/ownership.rubric.md",
+    "caseSpecificCriterion": "Grade separately: item change, same-item reload, stale Off, current choice, cancellation. Assert against the player item's legible selection after an old Off fires.",
+    "source": "code-examples/swiftui/media-tvos-v2/evaluation/ownership.prompt.md",
+    "assertions": [],
+    "contrast": "Retain the old setter across reload; compare a stale change against a valid current change on the same item.",
+    "insufficientAlone": "Test only replacement by a different item.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "does-not-build",
+        "proofExecution": "blocked",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "unmeasured",
+        "proofExecution": "failed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-d4bd274c3a345669",
+    "questionSHA256": "d4bd274c3a345669a1e01f5fecb2bfbbb4c48fe0e0850d9267e5fb2dba6536d8",
+    "platform": "iOS",
+    "framework": "SwiftUI",
+    "family": "write-actual-player-selection",
+    "historicalTransition": "persistent",
+    "verificationScope": "supply-tests",
+    "originalCriterion": "code-examples/swiftui/media-ios-v1/evaluation/wiring.rubric.md",
+    "caseSpecificCriterion": "Grade the four states and retry separately from actual item selection; local-state-only selection fails the selection component.",
+    "source": "code-examples/swiftui/media-ios-v1/evaluation/wiring.prompt.md",
+    "assertions": [],
+    "contrast": "Compare actual selection before and after the requested choice; preserve unrelated selection and distinguish unlisted from Off when relevant.",
+    "insufficientAlone": "A selected menu ID changes without a player-item write.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "contradicted",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "contradicted",
+        "proofExecution": "failed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-d82c5ccce8e33f3e",
+    "questionSHA256": "d82c5ccce8e33f3e2f65d3e2f02285f49757851ffb927d61901141d13f139d20",
+    "platform": "macOS",
+    "framework": "SwiftUI",
+    "family": "native-editable-child",
+    "historicalTransition": "persistent",
+    "verificationScope": "no-added-proof-requirement",
+    "originalCriterion": "Expose one editable owner rather than replacing it with a static wrapper; accept native forwarding or leaving the wrapper non-actionable. Preserve editing, current value and ordinary input.",
+    "caseSpecificCriterion": "none; optionally state that a fix hiding the hosted NSSearchField fails the single-editable-owner check even if one stop remains.",
+    "source": "references/macos/guidelines/m-005-swiftui-appkit-interop-forwarding.md",
+    "assertions": [],
+    "contrast": "Distinguish the parent representation from each child action or native editing path.",
+    "insufficientAlone": "A parent label or role alone establishes child operability.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "unmeasured",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "unmeasured",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-9ae50d3a7e4bb9e8",
+    "questionSHA256": "9ae50d3a7e4bb9e804ed39a9cdfdf39249288cf0e9997d5a1c1bd45d5aad15b3",
+    "platform": "iOS",
+    "framework": "UIKit",
+    "family": "edit-category",
+    "historicalTransition": "rescue",
+    "verificationScope": "only-if-fix-needed",
+    "originalCriterion": "TextUIKitTests/testEditCategoryConfigurationAndDefault",
+    "caseSpecificCriterion": "Keep compile-level assertion on the SDK constant and an ordinary action's nil category.",
+    "source": "code-examples/pilots/uikit-text-v1/manifest.json",
+    "assertions": [
+      "TextUIKitTests/testEditCategoryConfigurationAndDefault"
+    ],
+    "contrast": "Use the exact property, framework and availability the question asks about; contrast the supported alternative.",
+    "insufficientAlone": "Substitute an identifier for visible text or SDK availability for runtime behavior.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-d2dd979143402b3b",
+    "questionSHA256": "d2dd979143402b3b9f060645227057c54f27d236b965d38f5dcac53e3e8ed09c",
+    "platform": "iOS",
+    "framework": "UIKit",
+    "family": "dismissal-completion",
+    "historicalTransition": "rescue",
+    "verificationScope": "only-if-fix-needed",
+    "originalCriterion": "ModalUIKitTests/testNotificationWaitsForCompletionAndUsesCurrentTarget",
+    "caseSpecificCriterion": "Keep the assertion that the notification is sent only from completion and to the current target; add a cancelled-dismissal case asserting no post.",
+    "source": "code-examples/pilots/uikit-modal-v1/manifest.json",
+    "assertions": [
+      "ModalUIKitTests/testNotificationWaitsForCompletionAndUsesCurrentTarget"
+    ],
+    "contrast": "Distinguish a request from completion and cancellation; observe which restoration request is emitted and when.",
+    "insufficientAlone": "Assume requesting dismissal proves focus moved.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-dc1e54ce99c97729",
+    "questionSHA256": "dc1e54ce99c97729718ca2a3ab0cbb3b7e4d4852578ab284be68b5818cbd66f9",
+    "platform": "tvOS",
+    "framework": "SwiftUI",
+    "family": "write-actual-player-selection",
+    "historicalTransition": "persistent",
+    "verificationScope": "supply-tests",
+    "originalCriterion": "code-examples/swiftui/media-tvos-v1/evaluation/wiring.rubric.md",
+    "caseSpecificCriterion": "Grade states (missing video, loading, empty, error, retry) separately from wiring: a choice must change the shared item's media selection, asserted on the item.",
+    "source": "code-examples/swiftui/media-tvos-v1/evaluation/wiring.prompt.md",
+    "assertions": [],
+    "contrast": "Compare actual selection before and after the requested choice; preserve unrelated selection and distinguish unlisted from Off when relevant.",
+    "insufficientAlone": "A selected menu ID changes without a player-item write.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "contradicted",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "contradicted",
+        "proofExecution": "does-not-build",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-dd7ee77a4e81a08e",
+    "questionSHA256": "dd7ee77a4e81a08eafcfde90c16e27860592baffa3d934777f5615ee0a9ada3e",
+    "platform": "macOS",
+    "framework": "AppKit",
+    "family": "retired-outline-handle",
+    "historicalTransition": "persistent",
+    "verificationScope": "supply-tests",
+    "originalCriterion": "code-examples/platforms/macos-structure-v1/evaluation/outline-structure.rubric.md",
+    "caseSpecificCriterion": "Grade removed-node child count and expandability (0/false) separately from duplicate rejection and selection; a test that certifies stale children is an evidence failure.",
+    "source": "code-examples/platforms/macos-structure-v1/evaluation/outline-structure.prompt.md",
+    "assertions": [],
+    "contrast": "Distinguish removed handles from surviving expanded or selected nodes after reload.",
+    "insufficientAlone": "A stable ID alone establishes restored visible state.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "unmeasured",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "unmeasured",
+        "proofExecution": "passed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-ddf8bad3cbd8d087",
+    "questionSHA256": "ddf8bad3cbd8d08785f91dfcdb1ed4f6d44a36a2a09d793554ddfe9fb820c882",
+    "platform": "iOS",
+    "framework": "UIKit",
+    "family": "stale-action-capture",
+    "historicalTransition": "persistent",
+    "verificationScope": "describe-check",
+    "originalCriterion": "research/evaluation/dev7-comparison/controller/scoring.json#ios-uikit-actions",
+    "caseSpecificCriterion": "Grade shortcut addition, ordinary buttons preserved, invocation-time validation (current file, enabled) and tests separately.",
+    "source": "research/evaluation/zero-base-v1/subjects/ios-uikit-actions.txt",
+    "assertions": [],
+    "contrast": "Use a registration retained before rebinding; dispatch the current installed action too. Compare recipient and count.",
+    "insufficientAlone": "Calling a factory or helper with the right stale token.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "contradicted",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "contradicted",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-debf8047cd9f4e4a",
+    "questionSHA256": "debf8047cd9f4e4a6ffaae8337102d7e80198cfde4f6292f7c5821f32b1e7005",
+    "platform": "iOS",
+    "framework": "UIKit",
+    "family": "progress-after-terminal",
+    "historicalTransition": "preserved",
+    "verificationScope": "no-added-proof-requirement",
+    "originalCriterion": "evals/os26/expansion-1/acceptance.json#GP26-10",
+    "caseSpecificCriterion": "Grade per-ID stale rejection, post-terminal progress rejection, single announcement, and value preservation as separate checks.",
+    "source": "research/evaluation/zero-base-v1/subjects/GP26-10.txt",
+    "assertions": [],
+    "contrast": "Compare duplicate completion of one task with first completion of the next.",
+    "insufficientAlone": "Count terminal announcements without tracking task identity.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-b43542c4e476c154",
+    "questionSHA256": "b43542c4e476c154678b65860d0808ae673fbf1bf21e4f77bb0ef4e3267b49ad",
+    "platform": "macOS",
+    "framework": "AppKit",
+    "family": "row-role-and-children",
+    "historicalTransition": "rescue",
+    "verificationScope": "focused-check",
+    "originalCriterion": "DesktopContractTests/testExplicitRowRoleAndChildSemantics",
+    "caseSpecificCriterion": "Same exposure assertions as the twin.",
+    "source": "code-examples/platforms/macos-closure-details-v1/manifest.json",
+    "assertions": [
+      "DesktopContractTests/testExplicitRowRoleAndChildSemantics"
+    ],
+    "contrast": "Distinguish the parent representation from each child action or native editing path.",
+    "insufficientAlone": "A parent label or role alone establishes child operability.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-e505d95d8bc6f761",
+    "questionSHA256": "e505d95d8bc6f761c0f75ce3bcc69ac5e50fdb3af8b21b334357b7d09e79bf1a",
+    "platform": "iOS",
+    "framework": "SwiftUI",
+    "family": "preserve-native-slider",
+    "historicalTransition": "persistent",
+    "verificationScope": "no-added-proof-requirement",
+    "originalCriterion": "evals/pool/ios-swiftui/volume-slider-intact/test.swift",
+    "caseSpecificCriterion": "Run the test; accept alternative-matching-value; grade binding/range/step/readout preservation separately from added wrappers.",
+    "source": "evals/pool/ios-swiftui/volume-slider-intact/task.json",
+    "assertions": [],
+    "contrast": "Trace the existing binding or transaction and its ordinary effect before proposing changes.",
+    "insufficientAlone": "A rewrite or new test simply because this is an accessibility review.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "supported",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "supported",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-e56a902ef372a290",
+    "questionSHA256": "e56a902ef372a2909407bd94a8bd370176c7feb33ed84809448c41f7dbf8b921",
+    "platform": "tvOS",
+    "framework": "SwiftUI",
+    "family": "tv-text-availability",
+    "historicalTransition": "rescue",
+    "verificationScope": "no-added-proof-requirement",
+    "originalCriterion": "Preserve both actions and readable content via flexible layout; distinguish supported behavior on the deployment target from later tvOS facilities; avoid importing iOS availability assumptions.",
+    "caseSpecificCriterion": "Grade separately: (1) deployment-target layout keeps Play and Details reachable with the long German title; (2) availability: no gate below the deployment target, any later API carries a verified boundary or an explicit unverified note; (3) no misattributed API behavior. The current verdict should record (1) pass and (2) fail.",
+    "source": "references/tvos/guidelines/t-011-larger-text.md",
+    "assertions": [],
+    "contrast": "Use the exact property, framework and availability the question asks about; contrast the supported alternative.",
+    "insufficientAlone": "Substitute an identifier for visible text or SDK availability for runtime behavior.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-7b8cff8f7531bd8f",
+    "questionSHA256": "7b8cff8f7531bd8f810aaaece515834704b5eb23e5fb92feb3de1a3763abba7f",
+    "platform": "tvOS",
+    "framework": "UIKit",
+    "family": "visible-title-vs-identifier",
+    "historicalTransition": "preserved",
+    "verificationScope": "only-if-fix-needed",
+    "originalCriterion": "TelevisionActionsTests/testVisibleActionNames",
+    "caseSpecificCriterion": "Keep, and assert the rendered title (configuration title or title(for:)) is non-empty and matches the accessible name; identifiers do not count.",
+    "source": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+    "assertions": [
+      "TelevisionActionsTests/testVisibleActionNames"
+    ],
+    "contrast": "Use the exact property, framework and availability the question asks about; contrast the supported alternative.",
+    "insufficientAlone": "Substitute an identifier for visible text or SDK availability for runtime behavior.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-f48375292f98ee5c",
+    "questionSHA256": "f48375292f98ee5c3d82de97ff1be062e334571fe10dcd03b38a5b9ba1737e59",
+    "platform": "macOS",
+    "framework": "SwiftUI",
+    "family": "stale-off-capture",
+    "historicalTransition": "persistent",
+    "verificationScope": "supply-tests",
+    "originalCriterion": "code-examples/swiftui/media-macos-v2/evaluation/ownership.rubric.md",
+    "caseSpecificCriterion": "Exercise a retained binding from the old item after replacement; assert the new item's legible selection is unchanged, and a current Off still applies when allowed.",
+    "source": "code-examples/swiftui/media-macos-v2/evaluation/ownership.prompt.md",
+    "assertions": [],
+    "contrast": "Retain the old setter across reload; compare a stale change against a valid current change on the same item.",
+    "insufficientAlone": "Test only replacement by a different item.",
+    "originalReplay": {
+      "skill": {
+        "behavior": "unmeasured",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      },
+      "unaided": {
+        "behavior": "unmeasured",
+        "proofExecution": "not-executed",
+        "proofAdequacy": "unestablished"
+      }
+    },
+    "qualifiedProofComparison": {}
+  },
+  {
+    "id": "P-f776360cf78dd3e2",
+    "questionSHA256": "f776360cf78dd3e2771fc6df54772d469da2998b7163ace82c4cbdce56dc2a62",
+    "platform": "iOS",
+    "framework": "UIKit",
+    "family": "supplied-vs-live-font",
+    "historicalTransition": "preserved",
+    "verificationScope": "no-added-proof-requirement",
+    "originalCriterion": "evals/pool/ios-uikit/receipt-font-traits/test.swift",
+    "caseSpecificCriterion": "none",
+    "source": "evals/pool/ios-uikit/receipt-font-traits/task.json",
+    "assertions": [],
+    "contrast": "Determine whether supplied traits or the live environment own size; preserve brand, wrapping and signature.",
+    "insufficientAlone": "Check only the environment's default size.",
+    "originalReplay": {},
+    "qualifiedProofComparison": {}
+  }
+]

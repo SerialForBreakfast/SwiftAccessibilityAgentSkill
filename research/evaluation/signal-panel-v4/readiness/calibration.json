@@ -1,0 +1,112 @@
+[
+  {
+    "id": "P-7d27aad438a1d70b",
+    "arm": "unaided",
+    "answerSHA256": "bfdadc4c4b004d72c9502485e976d281a7a7690d13a4751ab8a3b17bcabf9139",
+    "maskedSHA256": "bfdadc4c4b004d72c9502485e976d281a7a7690d13a4751ab8a3b17bcabf9139",
+    "mask": "B01",
+    "proofVerdict": "supported",
+    "decisive substring": "setAccessibilityHelp(snapshot.hint)",
+    "rationale": "Configures the same primary view with help and then nil and inspects help. Optional tooltip synchronization is not required for this verdict.",
+    "nativeComparison": "not-compared"
+  },
+  {
+    "id": "P-7d27aad438a1d70b",
+    "arm": "skill",
+    "answerSHA256": "1c0f6b289fdaee81503c8b9dc24d93a45000cc19e201937c8fd01f6ca35c74e5",
+    "maskedSHA256": "5283eeb255a8d19004e11ceb9ba7355fcf9e3983c228dfff5b37e2b22c8e151c",
+    "mask": "B02",
+    "proofVerdict": "supported",
+    "decisive substring": "testHelpUpdatesAndClearsOnSameView",
+    "rationale": "Reads assigned help then nil after updating the same view; uses a different assertion style without creating a new obligation.",
+    "nativeComparison": "not-compared"
+  },
+  {
+    "id": "P-90629dd9d60ff906",
+    "arm": "unaided",
+    "answerSHA256": "8445dfa10f95754323b3e619b8d1bbb498db937832d94b7dc4c730a327dbd5a0",
+    "maskedSHA256": "8445dfa10f95754323b3e619b8d1bbb498db937832d94b7dc4c730a327dbd5a0",
+    "mask": "B03",
+    "proofVerdict": "insufficient",
+    "decisive substring": "coordinator.completeDismissal(token: token)",
+    "rationale": "Close itself calls completion. The coordinator check exercises a return target but does not distinguish requesting dismissal from completed dismissal.",
+    "nativeComparison": "interface-gap"
+  },
+  {
+    "id": "P-90629dd9d60ff906",
+    "arm": "skill",
+    "answerSHA256": "8f381e4f03b27794626b934a258592ed416a9ab5b991ec80a25a244a9f6db9e5",
+    "maskedSHA256": "f112880155920cd4bd14248fbe6fbf1f7f2e535b984660caecc7ebd8d2e60b6a",
+    "mask": "B04",
+    "proofVerdict": "insufficient",
+    "decisive substring": "testRestoresToOriginatingItemWhenStillAvailable",
+    "rationale": "The test opens and directly resolves; the production Close clears presented state first. A passing direct completion misses that path.",
+    "nativeComparison": "interface-gap"
+  },
+  {
+    "id": "P-4099aaf89ec377cf",
+    "arm": "skill",
+    "answerSHA256": "6cf5b77c7b7f4f6f98e780ab9d453cbc22c99b11dec8460345e56aa6d7e5b3a8",
+    "maskedSHA256": "6cf5b77c7b7f4f6f98e780ab9d453cbc22c99b11dec8460345e56aa6d7e5b3a8",
+    "mask": "B05",
+    "proofVerdict": "insufficient",
+    "decisive substring": "owner.edit(\"name\", \"New Name\")",
+    "rationale": "The helper cancels the request; this cannot establish the result of a direct edit with the request still live.",
+    "nativeComparison": "missed-qualified-mutant"
+  },
+  {
+    "id": "P-35ee522327907bd8",
+    "arm": "unaided",
+    "answerSHA256": "28def5fcba49f025ccc67d48b55d40091c0b3349d0ce7c689853b2ae67785010",
+    "maskedSHA256": "28def5fcba49f025ccc67d48b55d40091c0b3349d0ce7c689853b2ae67785010",
+    "mask": "B06",
+    "proofVerdict": "not-applicable",
+    "decisive substring": ".accessibilityValue",
+    "rationale": "The question asks for a review, not tests. Score the proposed change and any speech claim independently.",
+    "nativeComparison": "not-compared"
+  },
+  {
+    "id": "P-4099aaf89ec377cf",
+    "arm": "unaided",
+    "answerSHA256": "cdb13df752f7a5eb4a324bb72e956a5c1c5300d5ede4ea35b3f1fefe638ceaa0",
+    "maskedSHA256": "cdb13df752f7a5eb4a324bb72e956a5c1c5300d5ede4ea35b3f1fefe638ceaa0",
+    "mask": "B07",
+    "proofVerdict": "insufficient",
+    "decisive substring": "owner.edit(\"name\", \"Bob\")",
+    "rationale": "The edit under test cancels first. Checking the old reply afterward cannot distinguish a missing live snapshot guard.",
+    "nativeComparison": "missed-qualified-mutant"
+  },
+  {
+    "id": "P-35ee522327907bd8",
+    "arm": "skill",
+    "answerSHA256": "69f71869c24e5878fb057897306e6a82cd4b9bbdd28f4255b02620bbca76abcc",
+    "maskedSHA256": "d0386ca9232fbe4540634388421d733d68753dc3580bb9c984175819c7ca3e62",
+    "mask": "B08",
+    "proofVerdict": "not-applicable",
+    "decisive substring": ".accessibilityAdjustableAction",
+    "rationale": "No test was requested. Whether adding an adjustment was justified belongs to primary and rework.",
+    "nativeComparison": "not-compared"
+  },
+  {
+    "id": "P-be25d510c5ffe50f",
+    "arm": "unaided",
+    "answerSHA256": "3d9f4ef4e86aff97c6172287798815ffe2ee9e27b69d895efa8b34d37101019e",
+    "maskedSHA256": "3d9f4ef4e86aff97c6172287798815ffe2ee9e27b69d895efa8b34d37101019e",
+    "mask": "B09",
+    "proofVerdict": "insufficient",
+    "decisive substring": "primary.removeFromSuperview()",
+    "rationale": "Tests disappearance, not the still-attached ineligible original. Both buttons can stay mounted and require a different decision.",
+    "nativeComparison": "missed-qualified-mutant"
+  },
+  {
+    "id": "P-be25d510c5ffe50f",
+    "arm": "skill",
+    "answerSHA256": "66f00f7cdce16839cc2fa1c26fe56f0a3fcded98138798efa333ac50577003e5",
+    "maskedSHA256": "66f00f7cdce16839cc2fa1c26fe56f0a3fcded98138798efa333ac50577003e5",
+    "mask": "B10",
+    "proofVerdict": "missing",
+    "decisive substring": "No code modifications are required",
+    "rationale": "The existing checks omit responder eligibility. The answer asserts no fix is needed and supplies no unit witness for the ineligible original.",
+    "nativeComparison": "no-executable-proof"
+  }
+]

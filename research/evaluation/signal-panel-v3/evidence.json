@@ -1,0 +1,193 @@
+[
+  {
+    "attempt": "iOS-positive-rkqvh7ty",
+    "platform": "iOS",
+    "variant": "positive",
+    "accepted": true,
+    "runtime": "26.5",
+    "sdk": "27.0",
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "deployment": "26.0",
+    "tests": {
+      "testPickerWritesPlayerItem": [
+        "passed"
+      ],
+      "testPanelReopen": [
+        "passed"
+      ],
+      "testSheetCallback": [
+        "passed"
+      ],
+      "testRetainedWrapperAction": [
+        "passed"
+      ]
+    },
+    "inputs": {
+      "Package.swift": "7ed958dc8e7e3168f74fbbac1f048c24d9890350516626782a565d2421224979",
+      "Sources/Contracts/MediaSelection.swift": "d79ef28146634bea46a34a54d1020c62ac837b8b8e7a4d36f05af5f7c92388bd",
+      "Sources/Contracts/NativeSurface.swift": "d8c79b69fe36abee34aaa0aca3b1ccae690cc4d3d72667c89498a2e991c6e807",
+      "Sources/Contracts/Presentation.swift": "c57489da503005061c7fc636802e509b107ed05ea6402c559865ca15f86aade4",
+      "Sources/Contracts/ModalUIKit.swift": "0a1b2fa1fa420044467fd4024b030831e6d8fee4d0074d0de5f2c921402a29b3",
+      "Tests/ContractsTests/sample.mov": "c08c9e5d23f035221aedfd9004dde8873a1b9edeff1d21b45a73a4b5626f76f3",
+      "Tests/ContractsTests/ContractTests.swift": "7c39f5d73e68a6ffae2f9e687c9b7b70f810de6d5832b3084af52f3c39fb9625"
+    },
+    "diagnostics": [],
+    "logSHA256": "fb971f681b1a8674557a7854a52851105772700d0f410e82613d40da93c66f2b",
+    "receiptSHA256": "aad4cdb469396c301cb79a664887d95c5648b6bcb95acfa8aec88c44cdc07861"
+  },
+  {
+    "attempt": "iOS-mutant-terk6jif",
+    "platform": "iOS",
+    "variant": "mutant",
+    "accepted": true,
+    "runtime": "26.5",
+    "sdk": "27.0",
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "deployment": "26.0",
+    "tests": {
+      "testPickerWritesPlayerItem": [
+        "failed"
+      ],
+      "testPanelReopen": [
+        "failed"
+      ],
+      "testSheetCallback": [
+        "failed"
+      ],
+      "testRetainedWrapperAction": [
+        "failed"
+      ]
+    },
+    "inputs": {
+      "Package.swift": "7ed958dc8e7e3168f74fbbac1f048c24d9890350516626782a565d2421224979",
+      "Sources/Contracts/MediaSelection.swift": "78d583a47d6d36fd660da2c5ab8be936a3bfe3079e620365cb07aa683ce9eb74",
+      "Sources/Contracts/NativeSurface.swift": "3a99b1ec0925bbf7ba050076e792f39ad030cf0c85e48a11463de7ed1aef3cfe",
+      "Sources/Contracts/Presentation.swift": "3cc1633898266faab89b8d421f06f341a843a3013269ca710e92982bfaf91756",
+      "Sources/Contracts/ModalUIKit.swift": "55a9bd73caa5a172396340a6a110a93171a0cd5f478386c0f69c2cec61ec41ef",
+      "Tests/ContractsTests/sample.mov": "c08c9e5d23f035221aedfd9004dde8873a1b9edeff1d21b45a73a4b5626f76f3",
+      "Tests/ContractsTests/ContractTests.swift": "7c39f5d73e68a6ffae2f9e687c9b7b70f810de6d5832b3084af52f3c39fb9625"
+    },
+    "diagnostics": [
+      "XCTAssertEqual failed: (\"true\") is not equal to (\"false\") - final background snapshot",
+      "XCTAssertEqual failed: (\"nil\") is not equal to (\"Optional(<AVMediaSelectionTrackOption: 0x104a76ee0, language = en, mediaType = 'sbtl', associated forced-only option = <AVMediaSelectionTrackOption: 0x104a76e90>>)\") - native caption write",
+      "XCTAssertEqual failed: (\"nil\") is not equal to (\"Optional(<AVMediaSelectionTrackOption: 0x104a76ee0, language = en, mediaType = 'sbtl', associated forced-only option = <AVMediaSelectionTrackOption: 0x104a76e90>>)\")",
+      "XCTAssertEqual failed: (\"Optional(true)\") is not equal to (\"Optional(false)\") - old installed action",
+      "XCTAssertEqual failed: (\"[\"B:details\", \"B:details\", \"B:open\", \"B:details\"]\") is not equal to (\"[\"B:details\", \"B:open\", \"B:details\"]\")",
+      "XCTAssertTrue failed - obsolete modifier callback",
+      "XCTAssertEqual failed: (\"[\"A\"]\") is not equal to (\"[\"B\"]\")"
+    ],
+    "logSHA256": "23eb45a5ab0592de0da9d28dfa8d398159d852df67372c57f2c9ffeb268d1842",
+    "receiptSHA256": "2c7e5a7083b5cc6ecdd3d5254da0f99d6a9ba1e79d70dfcfa3f5eff4ef7ed334"
+  },
+  {
+    "attempt": "tvOS-positive-vju6ylgg",
+    "platform": "tvOS",
+    "variant": "positive",
+    "accepted": true,
+    "runtime": "26.5",
+    "sdk": "27.0",
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "deployment": "26.0",
+    "tests": {
+      "testPickerWritesPlayerItem": [
+        "passed"
+      ]
+    },
+    "inputs": {
+      "Package.swift": "7ed958dc8e7e3168f74fbbac1f048c24d9890350516626782a565d2421224979",
+      "Sources/Contracts/MediaSelection.swift": "d79ef28146634bea46a34a54d1020c62ac837b8b8e7a4d36f05af5f7c92388bd",
+      "Tests/ContractsTests/sample.mov": "c08c9e5d23f035221aedfd9004dde8873a1b9edeff1d21b45a73a4b5626f76f3",
+      "Tests/ContractsTests/ContractTests.swift": "7c39f5d73e68a6ffae2f9e687c9b7b70f810de6d5832b3084af52f3c39fb9625"
+    },
+    "diagnostics": [],
+    "logSHA256": "b2842e1c8152ca0a42c938ad1e436fe1e1a0e05b7d40c13e6f97c7a1085a990a",
+    "receiptSHA256": "465897d303a025938a269d0c71e3434ffad74550a15ff9e458c4546acbdcbcf2"
+  },
+  {
+    "attempt": "tvOS-mutant-dfi90nrj",
+    "platform": "tvOS",
+    "variant": "mutant",
+    "accepted": true,
+    "runtime": "26.5",
+    "sdk": "27.0",
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "deployment": "26.0",
+    "tests": {
+      "testPickerWritesPlayerItem": [
+        "failed"
+      ]
+    },
+    "inputs": {
+      "Package.swift": "7ed958dc8e7e3168f74fbbac1f048c24d9890350516626782a565d2421224979",
+      "Sources/Contracts/MediaSelection.swift": "78d583a47d6d36fd660da2c5ab8be936a3bfe3079e620365cb07aa683ce9eb74",
+      "Tests/ContractsTests/sample.mov": "c08c9e5d23f035221aedfd9004dde8873a1b9edeff1d21b45a73a4b5626f76f3",
+      "Tests/ContractsTests/ContractTests.swift": "7c39f5d73e68a6ffae2f9e687c9b7b70f810de6d5832b3084af52f3c39fb9625"
+    },
+    "diagnostics": [
+      "XCTAssertEqual failed: (\"nil\") is not equal to (\"Optional(<AVMediaSelectionTrackOption: 0x10cc04240, language = en, mediaType = 'sbtl', associated forced-only option = <AVMediaSelectionTrackOption: 0x10cc042e0>>)\") - native caption write",
+      "XCTAssertEqual failed: (\"nil\") is not equal to (\"Optional(<AVMediaSelectionTrackOption: 0x10cc04240, language = en, mediaType = 'sbtl', associated forced-only option = <AVMediaSelectionTrackOption: 0x10cc042e0>>)\")"
+    ],
+    "logSHA256": "2d077c171b7d4d2573882ae6a3ff378e16d77c984563da941c22df6e794081dc",
+    "receiptSHA256": "8fc82418173b3dba7c802b05d68e5ec29af0ef227b4f6e4f201093c05a843c73"
+  },
+  {
+    "attempt": "iOS-alternative-etp51_t4",
+    "platform": "iOS",
+    "variant": "alternative",
+    "accepted": true,
+    "runtime": "26.5",
+    "sdk": "27.0",
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "deployment": "26.0",
+    "tests": {
+      "testPickerWritesPlayerItem": [
+        "passed"
+      ],
+      "testPanelReopen": [
+        "passed"
+      ],
+      "testSheetCallback": [
+        "passed"
+      ],
+      "testRetainedWrapperAction": [
+        "passed"
+      ]
+    },
+    "inputs": {
+      "Package.swift": "7ed958dc8e7e3168f74fbbac1f048c24d9890350516626782a565d2421224979",
+      "Sources/Contracts/MediaSelection.swift": "ba2a328e36d4d01d401fb85b5fe96261620dd408884080bed8ac21c8cfb2ed61",
+      "Sources/Contracts/NativeSurface.swift": "124ebbff8214c247afc9b967ee661a8d4fd1d2a93be5f43945777b8a6e943777",
+      "Sources/Contracts/Presentation.swift": "cd1edcdefa3b868a695f3e0b4f18feec9d28bae57052c787e8e2c1d238907ee8",
+      "Sources/Contracts/ModalUIKit.swift": "472c252e12710432b361237718b36e50ba7f70313d0374ad8a38ee8fb51cf3ba",
+      "Tests/ContractsTests/sample.mov": "c08c9e5d23f035221aedfd9004dde8873a1b9edeff1d21b45a73a4b5626f76f3",
+      "Tests/ContractsTests/ContractTests.swift": "7c39f5d73e68a6ffae2f9e687c9b7b70f810de6d5832b3084af52f3c39fb9625"
+    },
+    "diagnostics": [],
+    "logSHA256": "75538c43944c725f21152eec1cb8e8bb89b0d6445592c3cdf0658cb242f41629",
+    "receiptSHA256": "7db8052dd7462a24bb7299586f64f8bd18a966b8c90e8da57c2c62dfe7ec627e"
+  },
+  {
+    "attempt": "tvOS-alternative-_rfrjcr8",
+    "platform": "tvOS",
+    "variant": "alternative",
+    "accepted": true,
+    "runtime": "26.5",
+    "sdk": "27.0",
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "deployment": "26.0",
+    "tests": {
+      "testPickerWritesPlayerItem": [
+        "passed"
+      ]
+    },
+    "inputs": {
+      "Package.swift": "7ed958dc8e7e3168f74fbbac1f048c24d9890350516626782a565d2421224979",
+      "Sources/Contracts/MediaSelection.swift": "ba2a328e36d4d01d401fb85b5fe96261620dd408884080bed8ac21c8cfb2ed61",
+      "Tests/ContractsTests/sample.mov": "c08c9e5d23f035221aedfd9004dde8873a1b9edeff1d21b45a73a4b5626f76f3",
+      "Tests/ContractsTests/ContractTests.swift": "7c39f5d73e68a6ffae2f9e687c9b7b70f810de6d5832b3084af52f3c39fb9625"
+    },
+    "diagnostics": [],
+    "logSHA256": "5f0141d50fca56b6346e6d840db8d76fe6212f79ac4f9413d65f5775947e5911",
+    "receiptSHA256": "f51017aa72450d40c783c0e0501cb1713d15e69ad5f4c81a80e51124049a09e2"
+  }
+]
