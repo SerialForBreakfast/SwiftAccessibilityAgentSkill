@@ -1,5 +1,15 @@
 # Does the skill help?
 
+**Stable: 0.2.2. Opt-in candidate: [0.3.0-rc.2](../rc2/README.md).** The candidate is based on signal-v6, with focused corrections for editable Mac search fields, ordinary tap-to-play, and media-inspector results. [Try it in a separate project](../../INSTALLATION.md#try-the-release-candidate). The normal install still selects the stable skill.
+
+**Gemini Flash Low head-to-head.** On 56 matched questions, installed signal-v2 passed 14/56 and installed signal-v4 passed 14/56. Signal-v4 gained 5 whole-task passes, lost 5, and had 0 inconclusive pairs. [Source review, usage and paired outcomes](signal-v4-head-to-head/README.md)
+
+![Signal-v2 and signal-v4 whole-task passes and tokens](signal-v4-head-to-head/scorecard.png)
+
+**Installed signal-v2 on Gemini 3.8 Flash Low.** Unaided answers passed 4/56 scheduled tasks and the installed candidate passed 13/56. On matched questions the candidate gained 9 and lost 0, with 3 inconclusive. [Paired results](signal-panel-v2-flash/README.md)
+
+![Installed signal-v2 comparison of whole-task passes, paired outcomes and tokens](signal-panel-v2-flash/scorecard.png)
+
 ![Flash Low baseline and matched skill versions, including reported tokens, gains and regressions](../../docs/images/gemini-scorecard.png)
 
 **On 17 revised questions**, Gemini passed one whole task unaided, two with the review sentence, one with the UIKit text note and two with both. Unnecessary rework fell from ten answers unaided to three with the sentence. [Four-condition results](../gemini-discovery/audit-revision-1/RESULTS.md)
