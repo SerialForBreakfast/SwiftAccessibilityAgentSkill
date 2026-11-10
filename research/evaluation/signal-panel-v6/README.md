@@ -24,15 +24,15 @@
 
 **Not yet done:** any model measurement. These cards were written from development cases, which are not holdouts, so a panel gain alone does not justify promotion.
 
-## Run 1 (held, not dispatched)
+## Run 1 (submitted; worker acceptance pending)
 
-**Packet:** [readiness/held.zip](readiness/held.zip), seal `11466ad5…`, rebuilt by `readiness/seal.py --check`.
-- **Arms:** unaided, signal-v2, signal-v6.
+**Packet:** [readiness/held.zip](readiness/held.zip), seal `1b865cef…`, rebuilt by `readiness/seal.py --check`.
+- **Arms:** unaided, released 0.2.2, signal-v6.
 - **Questions:** 56.
 - **Trials:** 3, so 504 cells, with counterbalanced arm order.
 - **Grading:** one source pass per component, with twins hidden from the grader.
 - **Checker:** `readiness/check_return.py` rejects missing cells and component reasons copied across components. It was rehearsed on synthetic returns.
-- **Analysis:** `analyze.py` covers trial-majority verdicts, exact sign tests against v2 and against unaided, per-arm self-agreement across trials, the exposure split, tokens, critical flags, and the panel gate. A planted synthetic effect is recovered exactly.
+- **Analysis:** `analyze.py` covers trial-majority verdicts, exact sign tests against the release and against unaided, per-arm self-agreement across trials, the exposure split, tokens, critical flags, and the panel gate. A planted synthetic effect is recovered exactly.
 
 **After return:**
 - `evals/qualification-56/grade_run.py RETURN SHA` stages every cell with one arm-blind selection rule, and `research/evaluation/signal-panel-v4/replay/native.py` runs the qualified controls.
@@ -43,8 +43,8 @@
 - **Native coverage:** only 45/112 v4 cells reached a compiled contract verdict. Native grading therefore checks roughly 40% of answers; the 47 qualified controls validate the oracles, not answers directly.
 - **Collecting results:** `grade_run.py --collect BATCH` writes `native.json` for `analyze.py`.
 
-**Draft dispatch:** `evals/results/signal-v6-dispatch/send.py`. It has not been run.
+**Dispatch:** Coordinator receipt 1507, operation `signal-v6-run1-1b865cef-r1`, stored once. This receipt does not establish delivery, worker acceptance or completed sessions.
 
 [Decision log](DECISIONS.md)
 
-**Decision before dispatch:** This 504-cell schedule measures v6 against v2 and unaided Gemini. It cannot establish improvement over released 0.2.2. If the next decision is promotion, replace the v2 arm with the release and reseal before using quota; do not add a fourth arm by default. The quoted quota percentage is an estimate, not a reservation. The revised synthetic rehearsal detected the planted 20 whole-task gains against v2 but blocked the gate after exchanging a resolved and a newly critical case at equal totals. No model was involved.
+**Release comparison:** 56 development questions across three arms and three trials, with subscription quota only. The former v2 packet remains archived; it was not sent. Return one consolidated report. No transfer or release claim from this panel alone.

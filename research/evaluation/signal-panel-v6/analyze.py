@@ -17,7 +17,7 @@ sys.path.insert(0, str(D / "readiness"))
 from check_return import verify
 
 COMPONENTS = ("primary", "preservation", "integration", "verification", "rework", "whole")
-CANDIDATE, BASELINES = "signal-v6", ("signal-v2", "unaided")
+CANDIDATE, BASELINES = "signal-v6", ("release-0.2.2", "unaided")
 
 
 def sign_test(gains, losses):
@@ -92,26 +92,26 @@ def analyze(held, seal, ret_path, native=None):
                       "gainIds": gains, "lossIds": losses}
         out["paired"][f"{CANDIDATE} vs {base}"] = res
     # Exposure split for v6 vs v2: did the skill open in a majority of v6 trials?
-    if CANDIDATE in arms and "signal-v2" in arms:
+    if CANDIDATE in arms and "release-0.2.2" in arms:
         split = defaultdict(Counter)
         for i in ids:
-            if any((i,a) not in maj or maj[i,a]["whole"] not in ("pass","fail") for a in (CANDIDATE,"signal-v2")):
+            if any((i,a) not in maj or maj[i,a]["whole"] not in ("pass","fail") for a in (CANDIDATE,"release-0.2.2")):
                 continue
-            n6, n2 = len(verdict[i, CANDIDATE]["whole"]), len(verdict[i, "signal-v2"]["whole"])
-            e = ("v6" if opened[i, CANDIDATE] * 2 > n6 else "") + ("v2" if opened[i, "signal-v2"] * 2 > n2 else "")
-            b, c = maj[i, "signal-v2"]["whole"], maj[i, CANDIDATE]["whole"]
+            n6, n2 = len(verdict[i, CANDIDATE]["whole"]), len(verdict[i, "release-0.2.2"]["whole"])
+            e = ("v6" if opened[i, CANDIDATE] * 2 > n6 else "") + ("release" if opened[i, "release-0.2.2"] * 2 > n2 else "")
+            b, c = maj[i, "release-0.2.2"]["whole"], maj[i, CANDIDATE]["whole"]
             split[e or "neither"][{("fail", "pass"): "gain", ("pass", "fail"): "loss"}.get((b, c), "same")] += 1
         out["exposureWhole"] = {k: dict(v) for k, v in split.items()}
-    gate = out["paired"].get(f"{CANDIDATE} vs signal-v2", {}).get("whole", {})
+    gate = out["paired"].get(f"{CANDIDATE} vs release-0.2.2", {}).get("whole", {})
     gate_u = out["paired"].get(f"{CANDIDATE} vs unaided", {}).get("whole", {})
     losses = sorted((i,t) for (i,t,a), flagged in critical_by_cell.items()
-                    if a == CANDIDATE and flagged and critical_by_cell.get((i,t,"signal-v2")) is False)
-    out["newCriticalVsV2"] = losses
+                    if a == CANDIDATE and flagged and critical_by_cell.get((i,t,"release-0.2.2")) is False)
+    out["newCriticalVsRelease"] = losses
     out["nativeByArmSourcePrimaryAndNative"] = {"|".join(k):v for k,v in sorted(native_agreement.items())}
     decided = all(maj.get((i,a),{}).get("whole") in ("pass","fail") for i in ids for a in (*BASELINES,CANDIDATE))
     out["panelGate"] = bool(check["status"]=="complete" and decided and not losses and gate and gate_u and gate["gains"] > gate["losses"] and gate["p"] < 0.05
                             and gate_u["gains"] > gate_u["losses"] and gate_u["p"] < 0.05
-                            and critical[CANDIDATE] <= critical.get("signal-v2", 0))
+                            and critical[CANDIDATE] <= critical.get("release-0.2.2", 0))
     return out
 
 

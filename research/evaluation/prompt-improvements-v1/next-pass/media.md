@@ -1,0 +1,3 @@
+Distinguish the offered options, the actual current selection and permission to select nothing. An active option omitted by a full-subtitles-only picker is not Off. Use the marked media characteristic rather than language or display name to distinguish described audio. Opening an inspector should not write a new selection.
+
+When the user requests a selection change, follow the operation to the actual player item and intended group; confirm unrelated selections survive. Check both item ownership and which outstanding request owns the result. A stale Off action on a replaced item and a late result for the same item have different guards.

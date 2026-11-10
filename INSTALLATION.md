@@ -2,6 +2,25 @@
 
 [Back to project overview](README.md)
 
+## Try the Release Candidate
+
+For the stable skill, skip to [Install As a Skill](#install-as-a-skill). To try **0.3.0-rc.2** instead:
+
+1. Download the [candidate ZIP](evals/rc2/swift-accessibility-agent-0.3.0-rc.2.zip) and unzip it **outside** your test project. The extracted folder is named `swift-accessibility-agent`.
+2. Open Terminal in the root of a separate project that does not already have this skill. Use the full path to the extracted folder as the source. For example, if it is in Downloads:
+
+   ```sh
+   npx skills add "$HOME/Downloads/swift-accessibility-agent" --skill swift-accessibility-agent
+   ```
+
+3. Choose your agent and a **project-local** install. Verify that the installed `SKILL.md` says `version: 0.3.0-rc.2`. For Codex:
+
+   ```sh
+   grep 'version: 0.3.0-rc.2' .agents/skills/swift-accessibility-agent/SKILL.md
+   ```
+
+For manual installation, place the extracted folder in the project-local skills directory used by your agent; for Codex that is `.agents/skills/`. Refresh the session if necessary. The candidate uses the same skill name as stable: keep it in the test project rather than overwriting your existing installation. The normal repository install below remains **0.2.2**.
+
 ## Install As a Skill
 
 Most users should install this skill from the root of the project where they want their agent to use it.

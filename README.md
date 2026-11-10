@@ -1,5 +1,7 @@
 # Swift Accessibility Agent
 
+**Stable: 0.2.2. Opt-in candidate: [0.3.0-rc.2](evals/rc2/README.md).** The candidate is based on signal-v6, with focused corrections for editable Mac search fields, ordinary tap-to-play, and media-inspector results. [Try it in a separate project](INSTALLATION.md#try-the-release-candidate). The normal install still selects the stable skill.
+
 ## Baselines and Current Best at a Glance
 
 ![Gemini Flash Low scorecard showing task passes, primary behavior and tokens on the 17 matched questions, the 384-question unaided baseline and the earlier version comparison.](docs/images/gemini-scorecard.png)

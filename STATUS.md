@@ -1,6 +1,6 @@
 # Current release decision
 
-**0.2.2 is released. 0.3.0-rc.1 is the one installable candidate.** SwiftUI development is open on iOS, macOS and tvOS. iPadOS-specific expansion, watchOS and visionOS are deferred. Existing historical material stays in place.
+**0.2.2 is released. [0.3.0-rc.2](evals/rc2/README.md) is the current opt-in candidate.** It derives from measured signal-v6; its three corrections have not been evaluated on model answers. The rc.1 archive and comparisons below remain historical evidence. SwiftUI development is open on iOS, macOS and tvOS. iPadOS-specific expansion, watchOS and visionOS are deferred.
 
 | Question | Current evidence |
 |---|---|
@@ -13,3 +13,9 @@
 **Delivery path rehearsed offline (November 7):** `python3 -B evals/protocol/rehearse.py` passes on the preserved returns. It covers the attempt ledger (which enforces the owner's chosen budget and stopping policy), the answer contract, the native reproduction (33/3), the linked verifier and the decision-first report. Two checkout-font contracts are [qualified](evals/headroom/checkout-font/README.md).
 
 **Next decision (owner):** which run option, budget and stopping policy, if any; zero extra spend stands until changed. rc.1 is not promoted. Offline next steps are in [ROADMAP-0.3.md](ROADMAP-0.3.md): draft the rc.2 text-size card against both checkout-font contracts, write transfer cases, and prepare option B + D (60 sessions) for review without dispatching it.
+
+**Prompt review for the next Gemini pass (November 8):** [all 384 discovery prompts reviewed](research/evaluation/prompt-improvements-v1/PROMPT-IMPROVEMENTS.md) against their unaided Flash Low grades, the blind audit and the factorial. Each prompt has a diagnosis, a disposition and replacement wording where needed. The review finds 28 P0 items and 122 proposed question changes, and confirms two first-grade errors. These are proposals only: no prompt, grade or skill changed.
+
+**Skill development strategy and gold-prompt audit (November 8):** [best practices, a process and skill audit, and per-prompt recommendations](research/evaluation/skill-strategy-v1/SKILL-DEVELOPMENT-STRATEGY.md). It covers 56 signal-panel questions, 27 OS26 and gold-parity prompts, and the other 302 discovery prompts by decision key. Signal-v2 gained only in sessions that read the skill (19 of 54 never did). The return card's "consume" wording coincides with all three of its critical flags, and the media card was read but not applied. These are proposals only: nothing in the skill, prompts or baselines changed, and no model ran.
+
+**56-question offline grading packet:** [Before-and-after skill scores](evals/qualification-56/CHART.md) | [qualification scope and release decision](evals/qualification-56/README.md). Keep 0.2.2 released; grader qualification is not a measured v5 improvement.

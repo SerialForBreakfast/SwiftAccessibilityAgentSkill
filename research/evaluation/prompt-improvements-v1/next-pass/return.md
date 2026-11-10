@@ -1,0 +1,3 @@
+A close request is not a completed dismissal. Consume the matching presentation's restoration request once before invoking a callback that can reenter. A late completion from the old presentation must leave the new presentation able to finish normally.
+
+At completion check membership and eligibility in the originating owner, not merely a non-nil window. A visible enabled AppKit view can still refuse first responder. Use the requested eligible fallback if needed. In SwiftUI distinguish updating the focus binding from observing where focus was delivered; on tvOS do not treat a preferred focus request as delivered focus.

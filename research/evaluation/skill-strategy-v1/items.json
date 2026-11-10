@@ -1,0 +1,6414 @@
+{
+ "schema": 1,
+ "summary": {
+  "distinctItems": 385,
+  "inputs": {
+   "held": "51bf28327715ad63929a107b9c8b3e3c364669916e3f2c0107f61b6300b45acd",
+   "return": "9929eb1bddb1eb850bdc6ff026bb0469852e8ecab19ef7100689595788990368"
+  },
+  "tier1": 56,
+  "tier1Opened": 35,
+  "tier1SkillAnswers": 54,
+  "tier1Whole": {
+   "both-fail": 40,
+   "both-pass": 4,
+   "gain": 9,
+   "unpaired": 3
+  },
+  "tier2": 27,
+  "tier3Decisions": 93,
+  "tier3Items": 302
+ },
+ "tier1": [
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "verification",
+   "blindAudit": null,
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "TelevisionLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart",
+   "family": "stale-observer-witness",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-0a2cd6519778f4c7",
+   "opening": "I'm reviewing a UIKit change for tvOS 26.0. After stopping and restarting preference observation, queued work from the old subscription must not change this screen. Does the code handle that? Review the supplied implemen",
+   "parent": "G-0a2cd6519778f4",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": "observer-restart",
+    "disposition": "grade-components",
+    "lane": "repair",
+    "primary": "pass",
+    "priority": "P2",
+    "problem": "evidence-only",
+    "skill": [
+     "S2"
+    ],
+    "verdict": "fail"
+   },
+   "skill": null,
+   "skillOpened": false,
+   "source": "code-examples/platforms/tvos-lifecycle-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "unpaired",
+    "preservation": "unpaired",
+    "primary": "unpaired",
+    "rework": "unpaired",
+    "verification": "unpaired",
+    "whole": "unpaired"
+   },
+   "unaided": null
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": "Q49",
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "On the same instance configure selected, unselected and selected again or equivalent set/clear transitions. For each input compare visible status text, accessible value and selected trait independently with expected state. Accept equivalent localized wording. Scope is configure, not search or native isSelected.",
+   "family": "visible-selected-status",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-10464d860f6802b2",
+   "opening": "tvOS 26.0, UIKit. On each selected or unselected update, we need readable status text, the button accessibility value, and its selected accessibility trait to agree. Does this tvOS implementation keep those three in sync",
+   "parent": "G-3eecace7f0b93c",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": "conflicting-state-text",
+    "disposition": "specify-policy",
+    "lane": "repair",
+    "primary": "fail",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S5"
+    ],
+    "verdict": "fail"
+   },
+   "skill": null,
+   "skillOpened": false,
+   "source": "code-examples/platforms/tvos-closure-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "unpaired",
+    "preservation": "unpaired",
+    "primary": "unpaired",
+    "rework": "unpaired",
+    "verification": "unpaired",
+    "whole": "unpaired"
+   },
+   "unaided": null
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md"
+   ],
+   "counterpart": null,
+   "criterion": "code-examples/pilots/uikit-naming-v1/evaluation/controller.md",
+   "family": "duplicate-dispatch-on-reuse",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-1079cff7faaab5b2",
+   "opening": "I'm building reusable UIKit cards for invoices, supporting iOS 26 and later. Each card shows a decorative star, an invoice title, and separate Open and Save buttons. Every card has the same visible button titles. The sam",
+   "parent": "G-1079cff7faaab5",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S3",
+     "S2"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": true,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "pass",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/pilots/uikit-naming-v1/evaluation/prompt.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "unpaired",
+    "preservation": "unpaired",
+    "primary": "unpaired",
+    "rework": "unpaired",
+    "verification": "unpaired",
+    "whole": "unpaired"
+   },
+   "unaided": null
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "code-examples/swiftui/media-ios-v1/evaluation/selection.rubric.md",
+   "family": "selection-before-validation",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-2865458d46b0d1a4",
+   "opening": "iOS developer request My SwiftUI player shows caption choices, but choosing one currently only changes local state. Connect this to the media item so choosing captions really works without disturbing the audio the viewer",
+   "parent": "G-2865458d46b0d1",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S7"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "na",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/swiftui/media-ios-v1/evaluation/selection.prompt.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-fail",
+    "verification": "both-na",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "na",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/return.md"
+   ],
+   "counterpart": null,
+   "criterion": "code-examples/pilots/uikit-modal-v1/evaluation/controller.md",
+   "family": "restore-accessibility-background",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-34541ce79ee3d519",
+   "opening": "Our UIKit app has a custom panel with a heading, Apply and Cancel buttons. Cancel animates the panel away asynchronously. Sometimes closing it leaves the background unavailable, or a late callback from an earlier opening",
+   "parent": "G-34541ce79ee3d5",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S4",
+     "S5"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": true,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/pilots/uikit-modal-v1/evaluation/prompt.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-fail",
+    "primary": "both-fail",
+    "rework": "gain",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": "GP26-11",
+   "axis": "rework",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md",
+    "references/facts.md"
+   ],
+   "counterpart": null,
+   "criterion": "evals/os26/expansion-1/acceptance.json#GP26-11",
+   "family": "preserve-native-slider",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-35ee522327907bd8",
+   "opening": "iOS 26.0, SwiftUI. Review this volume setting for a concrete accessibility problem. Its parent owns a persisted volume value in 0\u2026100 and supplies a working two-way binding. Keep that binding, the allowed range and one-p",
+   "parent": "G-35ee522327907b",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P2",
+    "problem": "rework-only",
+    "skill": [
+     "S8",
+     "S1"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "na",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "research/evaluation/zero-base-v1/subjects/GP26-11.txt",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-fail",
+    "verification": "both-na",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "na",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md"
+   ],
+   "counterpart": null,
+   "criterion": "code-examples/platforms/macos-appkit-v1/evaluation/desktop-actions.rubric.md",
+   "family": "native-custom-action-api",
+   "framework": "AppKit",
+   "historicalWhole": "fail",
+   "id": "P-3f811eea610d0c32",
+   "opening": "Our AppKit invoice list reuses an NSStackView row containing a title, Open button and Save button. Implement a programmatic row that can be configured repeatedly with a new title, complete localized control names and cal",
+   "parent": "G-3f811eea610d0c",
+   "platform": "macOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S5",
+     "S3"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/platforms/macos-appkit-v1/evaluation/desktop-actions.prompt.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": "Q54",
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot",
+   "family": "input-snapshot-after-edit",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-4099aaf89ec377cf",
+   "opening": "tvOS 26.0, UIKit. Start validation, change the text, then deliver the original reply. Which text and result does this form show? Review the supplied implementation against that requirement. If it already works, say why a",
+   "parent": "G-5b313c25cc544a",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": "input-snapshot",
+    "disposition": "keep-control",
+    "lane": "repair",
+    "primary": "fail",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S3"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/platforms/tvos-closure-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "preservation",
+   "blindAudit": "Q44",
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md"
+   ],
+   "counterpart": null,
+   "criterion": "TelevisionActionsTests/testOrdinaryDetails",
+   "family": "ordinary-action-survives",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-4328fa34debd8d92",
+   "opening": "tvOS 26.0, UIKit. Which item do the ordinary controls and the supplementary shortcut operate on after this view refreshes? Explain your conclusion and give a focused check. Include integrated Swift changes if the request",
+   "parent": "G-506996f8af1af4",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": "ordinary-action",
+    "disposition": "grade-components",
+    "lane": "preservation",
+    "primary": "fail",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S1",
+     "S8",
+     "S5"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "pass",
+    "whole": "pass"
+   },
+   "skillOpened": true,
+   "source": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "gain",
+    "verification": "gain",
+    "whole": "gain"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "sentinel",
+   "blindAudit": null,
+   "cardsRead": [],
+   "counterpart": "G-79fa7510bdf4bc",
+   "criterion": "Exercise a retained A dismissal from the view wiring or its production-used seam after B opens. A cannot close B, alter B focus or issue a restoration request. A valid B completion must still restore once. Accept equivalent per-presentation ownership; a direct model test supplying the correct old ticket bypasses the issue.",
+   "family": "restore-only-owned-sheet",
+   "framework": "SwiftUI",
+   "historicalWhole": "pass",
+   "id": "P-48400f490808a2cf",
+   "opening": "macOS 26.0, SwiftUI. Sheet A starts closing, then this view presents B. A delayed dismissal from A arrives. Can it change focus or close B? Explain your conclusion and give a focused check. Include integrated Swift chang",
+   "parent": "G-16de77ef3240aa",
+   "platform": "macOS",
+   "prior384": {
+    "decision": "presentation-owner",
+    "disposition": "repair-oracle",
+    "lane": "repair",
+    "primary": "pass",
+    "priority": "P1",
+    "problem": "oracle-mismatch",
+    "skill": [
+     "S3",
+     "S2"
+    ],
+    "verdict": "pass"
+   },
+   "skill": {
+    "critical": true,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/swiftui/macos-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-fail",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": true,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/media.md"
+   ],
+   "counterpart": null,
+   "criterion": "code-examples/swiftui/media-ios-v2/evaluation/wiring.rubric.md",
+   "family": "missing-item-vs-no-options",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-4ec92962591872fa",
+   "opening": "iOS developer question Build a SwiftUI media-option picker using the same player as the video view. It should show the real selection, distinguish loading, absent options and failure, and allow retry. Keep normal player ",
+   "parent": "G-4ec92962591872",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S7",
+     "S2"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/swiftui/media-ios-v2/evaluation/wiring.prompt.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "sentinel",
+   "blindAudit": null,
+   "cardsRead": [],
+   "counterpart": "G-a1aff76682fe0a",
+   "criterion": "Configure two distinct enabled items on one view. Retain an actual installed shortcut or the exact handler used to create it. After rebind it must report failure and dispatch nothing. The current shortcut and ordinary Archive/Delete must still target the current ID with their corresponding operation once per invocation. A test-only parallel handler or skipped invocation gives insufficient evidence.",
+   "family": "dispatch-current-and-retired",
+   "framework": "UIKit",
+   "historicalWhole": "pass",
+   "id": "P-51e9f52794c2efdf",
+   "opening": "iOS 26.0, UIKit. After the same view is reconfigured, what happens if a client retains and invokes the old accessibility shortcut? The ordinary buttons should operate on the currently displayed item. Explain your conclus",
+   "parent": "G-3bad84db2e37fb",
+   "platform": "iOS",
+   "prior384": {
+    "decision": "rebound-action",
+    "disposition": "rewrite-neutral",
+    "lane": "repair",
+    "primary": "pass",
+    "priority": "P1",
+    "problem": "no-headroom",
+    "skill": [
+     "S3",
+     "S2"
+    ],
+    "verdict": "pass"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/pilots/uikit-dynamic-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/media.md"
+   ],
+   "counterpart": null,
+   "criterion": "code-examples/swiftui/media-tvos-v2/evaluation/selection.rubric.md",
+   "family": "selection-before-validation",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-5d121776613655db",
+   "opening": "tvOS developer question My SwiftUI video screen only changes a local selected value when someone chooses captions. Connect the choices to the real media item without resetting audio or playback settings. Offer complete c",
+   "parent": "G-5d121776613655",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S7"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/swiftui/media-tvos-v2/evaluation/selection.prompt.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "gain",
+    "preservation": "both-pass",
+    "primary": "gain",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": "Q37",
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "Bind restoration to the particular window and presentation; verify current membership and eligibility, not just global most recent field.",
+   "family": "origin-window-membership",
+   "framework": "AppKit",
+   "historicalWhole": "fail",
+   "id": "P-6bfef2bcad970d58",
+   "opening": "macOS, AppKit. Two document windows can each open their own inspector. Closing the inspector in one window sometimes sends keyboard input to the other document. How would you structure ownership of the return destination",
+   "parent": "G-6bfef2bcad970d",
+   "platform": "macOS",
+   "prior384": {
+    "decision": "window-focus-isolation",
+    "disposition": "keep-control",
+    "lane": "workflow",
+    "primary": "fail",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S4",
+     "S3"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "na",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "references/macos/guidelines/m-007-modal-window-focus-containment.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "gain",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-na",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "na",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/media.md"
+   ],
+   "counterpart": null,
+   "criterion": "code-examples/swiftui/media-ios-v2/evaluation/selection.rubric.md",
+   "family": "media-off-write",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-6d2dd61c5ac4abfc",
+   "opening": "iOS developer question My SwiftUI video screen only changes a local selected value when someone chooses captions. Connect the choices to the real media item without resetting audio or playback settings. Offer complete ca",
+   "parent": "G-6d2dd61c5ac4ab",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S7",
+     "S5"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/swiftui/media-ios-v2/evaluation/selection.prompt.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "sentinel",
+   "blindAudit": null,
+   "cardsRead": [],
+   "counterpart": "G-01c10c6a8573fa",
+   "criterion": "InteropTests/testCoordinatorReplacesOldCallback",
+   "family": "retained-native-target",
+   "framework": "SwiftUI",
+   "historicalWhole": "pass",
+   "id": "P-7622f1aa06d7a35b",
+   "opening": "iOS 26.0, SwiftUI. After this wrapper updates its native control, which target receives its next action? What happens after teardown? Explain your conclusion and give a focused check. Include integrated Swift changes if ",
+   "parent": "G-10cf3d04a66de0",
+   "platform": "iOS",
+   "prior384": {
+    "decision": "interop-rebind",
+    "disposition": "rewrite-neutral",
+    "lane": "repair",
+    "primary": "pass",
+    "priority": "P1",
+    "problem": "no-headroom",
+    "skill": [
+     "S3",
+     "S2"
+    ],
+    "verdict": "pass"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/swiftui/ios-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "preservation",
+   "blindAudit": "Q12",
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md"
+   ],
+   "counterpart": "G-e3e80d94c9386e",
+   "criterion": "DesktopContractTests/testExplicitRowRoleAndChildSemantics",
+   "family": "row-role-and-children",
+   "framework": "AppKit",
+   "historicalWhole": "fail",
+   "id": "P-76d9fe6a4d351668",
+   "opening": "macOS 26.0, AppKit. How does the row report its role and selection, and can people still operate its actionable children separately? Explain your conclusion and give a focused check. Include integrated Swift changes if t",
+   "parent": "G-9ce845a566d425",
+   "platform": "macOS",
+   "prior384": {
+    "decision": "row-role",
+    "disposition": "repair-oracle",
+    "lane": "preservation",
+    "primary": "fail",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S5",
+     "S1"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "pass",
+    "whole": "pass"
+   },
+   "skillOpened": true,
+   "source": "code-examples/platforms/macos-closure-details-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "gain",
+    "verification": "both-pass",
+    "whole": "gain"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "pass",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "rework",
+   "blindAudit": "Q43",
+   "cardsRead": [],
+   "counterpart": "G-845a5decac01e1",
+   "criterion": "InteropTests/testCoordinatorReplacesOldCallback",
+   "family": "retained-native-target",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-7766a23217bfa0c3",
+   "opening": "tvOS 26.0, SwiftUI. After this wrapper updates its native control, which target receives its next action? What happens after teardown? Explain your conclusion and give a focused check. Include integrated Swift changes if",
+   "parent": "G-51c53f30543cc0",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": "interop-rebind",
+    "disposition": "grade-components",
+    "lane": "preservation",
+    "primary": "pass",
+    "priority": "P1",
+    "problem": "rework-only",
+    "skill": [
+     "S1",
+     "S8"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "pass",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/swiftui/tvos-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "gain",
+    "preservation": "gain",
+    "primary": "gain",
+    "rework": "both-fail",
+    "verification": "gain",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "rework",
+   "blindAudit": "Q09",
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md"
+   ],
+   "counterpart": null,
+   "criterion": "DesktopActionsTests/testOrdinarySaveOnly",
+   "family": "duplicate-ordinary-command",
+   "framework": "AppKit",
+   "historicalWhole": "fail",
+   "id": "P-777d08cb675db900",
+   "opening": "macOS 26.0, AppKit. Which item do the ordinary controls and the supplementary shortcut operate on after this view refreshes? Explain your conclusion and give a focused check. Include integrated Swift changes if the reque",
+   "parent": "G-488bc12a7f090e",
+   "platform": "macOS",
+   "prior384": {
+    "decision": "ordinary-action",
+    "disposition": "grade-components",
+    "lane": "preservation",
+    "primary": "fail",
+    "priority": "P1",
+    "problem": "rework-only",
+    "skill": [
+     "S8",
+     "S2",
+     "S1"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/platforms/macos-appkit-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "gain",
+    "verification": "loss",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "pass",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": "Q21",
+   "cardsRead": [
+    "SKILL.md",
+    "references/facts.md"
+   ],
+   "counterpart": null,
+   "criterion": "TelevisionActionsTests/testVisibleActionNames",
+   "family": "visible-title-vs-identifier",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-7b8cff8f7531bd8f",
+   "opening": "tvOS 26.0, UIKit. Someone using the remote wants to tell these two buttons apart by looking at the screen. What titles does this setup show? Review the supplied implementation against that requirement. If it already work",
+   "parent": "G-ed8bff5491ab72",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": "visible-title",
+    "disposition": "keep-control",
+    "lane": "repair",
+    "primary": "fail",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S5"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "pass",
+    "whole": "pass"
+   },
+   "skillOpened": true,
+   "source": "code-examples/platforms/tvos-uikit-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "both-pass",
+    "verification": "both-pass",
+    "whole": "both-pass"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "pass",
+    "whole": "pass"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "verification",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/media.md"
+   ],
+   "counterpart": null,
+   "criterion": "MediaChoiceTests/testDescriptionUnavailablePreservesChoice",
+   "family": "positive-media-choice",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-7cc5d89371a12a35",
+   "opening": "I'm reviewing a UIKit change for tvOS 26.0. When someone asks for described audio and no matching track exists, keep the previous choice. Does the picker do that? Review the supplied implementation against that requireme",
+   "parent": "G-7cc5d89371a12a",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": "description-selection",
+    "disposition": "grade-components",
+    "lane": "repair",
+    "primary": "pass",
+    "priority": "P2",
+    "problem": "evidence-only",
+    "skill": [
+     "S2",
+     "S7"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/platforms/tvos-media-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "preservation",
+   "blindAudit": "Q22",
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md",
+    "references/facts.md"
+   ],
+   "counterpart": null,
+   "criterion": "ForwardingTests/testNilHintClearsOldHelp",
+   "family": "clear-optional-help",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-7d27aad438a1d70b",
+   "opening": "macOS 26.0, SwiftUI. Configure the same view with help text, then with none. What help is exposed after each update? Explain your conclusion and give a focused check. Include integrated Swift changes if the requested beh",
+   "parent": "G-288d76b52153df",
+   "platform": "macOS",
+   "prior384": {
+    "decision": "optional-help",
+    "disposition": "rewrite-neutral",
+    "lane": "preservation",
+    "primary": "fail",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S1",
+     "S5"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "pass",
+    "whole": "pass"
+   },
+   "skillOpened": true,
+   "source": "code-examples/swiftui/forwarding-macos-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "gain",
+    "verification": "both-pass",
+    "whole": "gain"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "pass",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "rework",
+   "blindAudit": "Q41",
+   "cardsRead": [],
+   "counterpart": "G-10cf3d04a66de0",
+   "criterion": "InteropTests/testCoordinatorReplacesOldCallback",
+   "family": "retained-native-target",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-7d8c12fe30bd49a4",
+   "opening": "iOS 26.0, SwiftUI. After this wrapper updates its native control, which target receives its next action? What happens after teardown? Explain your conclusion and give a focused check. Include integrated Swift changes if ",
+   "parent": "G-01c10c6a8573fa",
+   "platform": "iOS",
+   "prior384": {
+    "decision": "interop-rebind",
+    "disposition": "grade-components",
+    "lane": "preservation",
+    "primary": "pass",
+    "priority": "P1",
+    "problem": "rework-only",
+    "skill": [
+     "S1",
+     "S8",
+     "S2"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/swiftui/ios-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "loss",
+    "preservation": "loss",
+    "primary": "loss",
+    "rework": "both-fail",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "sentinel",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md"
+   ],
+   "counterpart": "G-61cfbceeb763f0",
+   "criterion": "TelevisionResultsTests/testStaleButtonDoesNotSelectReboundItem",
+   "family": "stale-action-capture",
+   "framework": "UIKit",
+   "historicalWhole": "pass",
+   "id": "P-852a6aafb1bd0b6f",
+   "opening": "tvOS 26.0, UIKit. Keep an action from before a refresh, then invoke it after the row represents a different record. What does it do? What do the current ordinary controls do? Explain your conclusion and give a focused ch",
+   "parent": "G-46f5727d65e9f2",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": "rebound-action",
+    "disposition": "rewrite-neutral",
+    "lane": "repair",
+    "primary": "pass",
+    "priority": "P1",
+    "problem": "symptom-as-fact",
+    "skill": [
+     "S1",
+     "S3"
+    ],
+    "verdict": "pass"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "pass",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/platforms/tvos-results-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "both-fail",
+    "verification": "both-pass",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "pass",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "verification",
+   "blindAudit": "Q13",
+   "cardsRead": [],
+   "counterpart": "G-3bad84db2e37fb",
+   "criterion": "Configure two distinct enabled items on one view. Retain an actual installed shortcut or the exact handler used to create it. After rebind it must report failure and dispatch nothing. The current shortcut and ordinary Archive/Delete must still target the current ID with their corresponding operation once per invocation. A test-only parallel handler or skipped invocation gives insufficient evidence.",
+   "family": "dispatch-current-and-retired",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-89b1442c72a8db4b",
+   "opening": "iOS 26.0, UIKit. After the same view is reconfigured, what happens if a client retains and invokes the old accessibility shortcut? The ordinary buttons should operate on the currently displayed item. Explain your conclus",
+   "parent": "G-a1aff76682fe0a",
+   "platform": "iOS",
+   "prior384": {
+    "decision": "rebound-action",
+    "disposition": "grade-components",
+    "lane": "preservation",
+    "primary": "pass",
+    "priority": "P1",
+    "problem": "evidence-only",
+    "skill": [
+     "S2",
+     "S1",
+     "S8"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/pilots/uikit-dynamic-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "loss",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/return.md"
+   ],
+   "counterpart": null,
+   "criterion": "code-examples/swiftui/ios-v1/evaluation/lifecycle.rubric.md",
+   "family": "restore-only-owned-sheet",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-90629dd9d60ff906",
+   "opening": "Target iOS26, SwiftUI. Our SwiftUI details sheet needs a clear entry target and a return target after dismissal. Keep the ordinary Open and Close controls. The originating item may disappear while the sheet is open; use ",
+   "parent": "G-90629dd9d60ff9",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S3",
+     "S4"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": true,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/swiftui/ios-v1/evaluation/lifecycle.prompt.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-fail",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": "Q58",
+   "cardsRead": [
+    "SKILL.md",
+    "references/facts.md"
+   ],
+   "counterpart": null,
+   "criterion": "TextUIKitTests/testEditCategoryConfigurationAndDefault",
+   "family": "edit-category",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-9ae50d3a7e4bb9e8",
+   "opening": "iOS 26.0, UIKit. For an editor with optional edit-action grouping, how are the actions categorized with the option on and off? Review the supplied implementation against that requirement. If it already works, say why and",
+   "parent": "G-d95da35e90afc0",
+   "platform": "iOS",
+   "prior384": {
+    "decision": "edit-category",
+    "disposition": "keep-control",
+    "lane": "repair",
+    "primary": "fail",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S5"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "pass",
+    "whole": "pass"
+   },
+   "skillOpened": true,
+   "source": "code-examples/pilots/uikit-text-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "gain",
+    "preservation": "both-pass",
+    "primary": "gain",
+    "rework": "both-pass",
+    "verification": "gain",
+    "whole": "gain"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "verification",
+   "blindAudit": null,
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent",
+   "family": "unavailable-result-check",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-9c455b0bd4be71db",
+   "opening": "iOS 26.0, UIKit. Open the inspector before assigning a player item, then inspect an item with no matching tracks. What result does the caller receive each time? Review the supplied implementation against that requirement",
+   "parent": "G-60133c52c4694a",
+   "platform": "iOS",
+   "prior384": {
+    "decision": "unavailable-media",
+    "disposition": "grade-components",
+    "lane": "repair",
+    "primary": "pass",
+    "priority": "P2",
+    "problem": "evidence-only",
+    "skill": [
+     "S2"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "pass",
+    "whole": "pass"
+   },
+   "skillOpened": false,
+   "source": "code-examples/pilots/uikit-media-metadata-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "both-pass",
+    "verification": "both-pass",
+    "whole": "both-pass"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "pass",
+    "whole": "pass"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "sentinel",
+   "blindAudit": null,
+   "cardsRead": [],
+   "counterpart": "G-51c53f30543cc0",
+   "criterion": "InteropTests/testCoordinatorReplacesOldCallback",
+   "family": "retained-native-target",
+   "framework": "SwiftUI",
+   "historicalWhole": "pass",
+   "id": "P-a00ec36c978640fc",
+   "opening": "tvOS 26.0, SwiftUI. After this wrapper updates its native control, which target receives its next action? What happens after teardown? Explain your conclusion and give a focused check. Include integrated Swift changes if",
+   "parent": "G-845a5decac01e1",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": "interop-rebind",
+    "disposition": "rewrite-neutral",
+    "lane": "repair",
+    "primary": "pass",
+    "priority": "P2",
+    "problem": "no-headroom",
+    "skill": [
+     "S1",
+     "S3"
+    ],
+    "verdict": "pass"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/swiftui/tvos-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "gain",
+    "preservation": "gain",
+    "primary": "gain",
+    "rework": "both-fail",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "preservation",
+   "blindAudit": "Q45",
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md"
+   ],
+   "counterpart": "G-46f5727d65e9f2",
+   "criterion": "TelevisionResultsTests/testStaleButtonDoesNotSelectReboundItem",
+   "family": "stale-action-capture",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-a12bcd8ed20f1256",
+   "opening": "tvOS 26.0, UIKit. Keep an action from before a refresh, then invoke it after the row represents a different record. What does it do? What do the current ordinary controls do? Explain your conclusion and give a focused ch",
+   "parent": "G-61cfbceeb763f0",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": "rebound-action",
+    "disposition": "rewrite-neutral",
+    "lane": "preservation",
+    "primary": "fail",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S1",
+     "S3"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/platforms/tvos-results-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "gain",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": "GP26-12",
+   "axis": "rework",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md"
+   ],
+   "counterpart": null,
+   "criterion": "evals/os26/expansion-1/acceptance.json#GP26-12",
+   "family": "reduced-motion-scope",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-a32f106f0aa1cc85",
+   "opening": "iOS 26.0, SwiftUI. Review this three-page view for a concrete accessibility problem. The user can change Reduce Motion while it is open; the next page change should follow the current preference without resetting the sel",
+   "parent": "G-a32f106f0aa1cc",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P2",
+    "problem": "rework-only",
+    "skill": [
+     "S1",
+     "S8"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "na",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "research/evaluation/zero-base-v1/subjects/GP26-12.txt",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-fail",
+    "verification": "both-na",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "na",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "rework",
+   "blindAudit": "Q01",
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md",
+    "references/return.md"
+   ],
+   "counterpart": null,
+   "criterion": "Reconfigure the same live cell from priority to ordinary with distinct customers and statuses. Verify visible names, meaningful priority cue on the first accessible name, current accessible name and status value on both. Example strings are interchangeable. Trace absence of an explicit focus request separately from actual delivered focus.",
+   "family": "name-without-focus-reset",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-a5c8091cdffa651a",
+   "opening": "iOS 26.0, UIKit. The same visible cell changes from a priority order to an ordinary order without dequeuing. Both need their current customer name and current order status. Can you check those updates without moving focu",
+   "parent": "G-458042d0f6f06f",
+   "platform": "iOS",
+   "prior384": {
+    "decision": "refresh-name",
+    "disposition": "grade-components",
+    "lane": "preservation",
+    "primary": "pass",
+    "priority": "P1",
+    "problem": "rework-only",
+    "skill": [
+     "S1",
+     "S8"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "pass",
+    "whole": "pass"
+   },
+   "skillOpened": true,
+   "source": "code-examples/pilots/uikit-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "gain",
+    "preservation": "both-pass",
+    "primary": "gain",
+    "rework": "gain",
+    "verification": "gain",
+    "whole": "gain"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": "ios-swiftui-media",
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/media.md"
+   ],
+   "counterpart": null,
+   "criterion": "research/evaluation/dev7-comparison/controller/scoring.json#ios-swiftui-media",
+   "family": "inspect-without-selection-write",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-b12c69f62639d32d",
+   "opening": "I am using SwiftUI on iOS 26 deployment target; available validation anchor iOS 26.5. A video card can show whether audio description is available. Loading track information may succeed with no match, fail, or still be i",
+   "parent": "G-b12c69f62639d3",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S7"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "pass",
+    "whole": "pass"
+   },
+   "skillOpened": true,
+   "source": "research/evaluation/zero-base-v1/subjects/ios-swiftui-media.txt",
+   "tier": 1,
+   "transitions": {
+    "integration": "gain",
+    "preservation": "gain",
+    "primary": "gain",
+    "rework": "gain",
+    "verification": "gain",
+    "whole": "gain"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "sentinel",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md",
+    "references/facts.md"
+   ],
+   "counterpart": "G-9ce845a566d425",
+   "criterion": "DesktopContractTests/testExplicitRowRoleAndChildSemantics",
+   "family": "row-role-and-children",
+   "framework": "AppKit",
+   "historicalWhole": "pass",
+   "id": "P-b43542c4e476c154",
+   "opening": "macOS 26.0, AppKit. How does the row report its role and selection, and can people still operate its actionable children separately? Explain your conclusion and give a focused check. Include integrated Swift changes if t",
+   "parent": "G-e3e80d94c9386e",
+   "platform": "macOS",
+   "prior384": {
+    "decision": "row-role",
+    "disposition": "pair-variant",
+    "lane": "repair",
+    "primary": "pass",
+    "priority": "P2",
+    "problem": "no-headroom",
+    "skill": [
+     "S5"
+    ],
+    "verdict": "pass"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "pass",
+    "whole": "pass"
+   },
+   "skillOpened": true,
+   "source": "code-examples/platforms/macos-closure-details-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "gain",
+    "verification": "gain",
+    "whole": "gain"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": "Q07",
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "DesktopLifecycleTests/testRefusingOriginalUsesFallback",
+   "family": "refusing-focus-target",
+   "framework": "AppKit",
+   "historicalWhole": "fail",
+   "id": "P-be25d510c5ffe50f",
+   "opening": "I'm reviewing a AppKit change for macOS 26.0. After a refresh the original focus target may no longer belong here. Can you restore only to a usable target or fallback? Review the supplied implementation against that requ",
+   "parent": "G-be25d510c5ffe5",
+   "platform": "macOS",
+   "prior384": {
+    "decision": "eligible-target",
+    "disposition": "pair-variant",
+    "lane": "repair",
+    "primary": "fail",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S4",
+     "S2"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": true,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/platforms/macos-lifecycle-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-fail",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": true,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "code-examples/swiftui/media-ios-v2/evaluation/ownership.rubric.md",
+   "family": "stale-off-capture",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-c04cc5d4aa6f82d2",
+   "opening": "iOS developer question People can change videos or reload caption choices while this SwiftUI screen is open. Old callbacks sometimes affect the new selection, including turning captions off. Make these operations belong ",
+   "parent": "G-c04cc5d4aa6f82",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S3",
+     "S7"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/swiftui/media-ios-v2/evaluation/ownership.prompt.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": "tvos-swiftui-testing",
+   "alsoOS26": null,
+   "axis": "verification",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/facts.md"
+   ],
+   "counterpart": null,
+   "criterion": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-swiftui-testing",
+   "family": "swiftui-evidence-boundary",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-c55650380597efd4",
+   "opening": "I am using SwiftUI on tvOS 26 deployment target; available validation anchor tvOS 26.5. A new accessibility example compiles on my machine and its extracted state model passes unit tests. Can I say the control has the ri",
+   "parent": "G-c55650380597ef",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "evidence-only",
+    "skill": [
+     "S2"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "research/evaluation/zero-base-v1/subjects/tvos-swiftui-testing.txt",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "code-examples/swiftui/media-tvos-v2/evaluation/ownership.rubric.md",
+   "family": "same-item-new-request",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-c6b25ad753e6a2d2",
+   "opening": "tvOS developer question People can change videos or reload caption choices while this SwiftUI screen is open. Old callbacks sometimes affect the new selection, including turning captions off. Make these operations belong",
+   "parent": "G-c6b25ad753e6a2",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S3",
+     "S7"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/swiftui/media-tvos-v2/evaluation/ownership.prompt.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": "Q14",
+   "cardsRead": [
+    "SKILL.md",
+    "references/return.md"
+   ],
+   "counterpart": null,
+   "criterion": "ModalUIKitTests/testNotificationWaitsForCompletionAndUsesCurrentTarget",
+   "family": "dismissal-completion",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-d2dd979143402b3b",
+   "opening": "iOS 26.0, UIKit. Close a panel, then finish or cancel dismissal. At which points does this implementation request focus? Review the supplied implementation against that requirement. If it already works, say why and leave",
+   "parent": "G-da89005c6d3613",
+   "platform": "iOS",
+   "prior384": {
+    "decision": "dismissal-completion",
+    "disposition": "keep-control",
+    "lane": "repair",
+    "primary": "fail",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S4",
+     "S3"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "pass",
+    "whole": "pass"
+   },
+   "skillOpened": true,
+   "source": "code-examples/pilots/uikit-modal-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "both-pass",
+    "verification": "gain",
+    "whole": "gain"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/media.md"
+   ],
+   "counterpart": null,
+   "criterion": "code-examples/swiftui/media-ios-v1/evaluation/wiring.rubric.md",
+   "family": "write-actual-player-selection",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-d4bd274c3a345669",
+   "opening": "iOS developer request Build a SwiftUI media-option picker that uses the same player and selection state as the video view. Distinguish a missing video, options still loading, no options and a load error. Provide a retry ",
+   "parent": "G-d4bd274c3a3456",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S7"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/swiftui/media-ios-v1/evaluation/wiring.prompt.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "verification",
+   "blindAudit": "Q25",
+   "cardsRead": [
+    "SKILL.md",
+    "references/media.md"
+   ],
+   "counterpart": null,
+   "criterion": "Use known independently identified audible options: ordinary alternate false, explicitly described true. Exercise the production inspector or its real mapping seam, require both fixtures, compare native selected option before/after. Names, language and an empty filtered list cannot establish tagging.",
+   "family": "tagged-audio-positive-fixture",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-d76c1ea3d7c9a580",
+   "opening": "tvOS 26.0, UIKit. Can this inspector tell an ordinary alternate-language track from one explicitly tagged as described audio? Keep the current player selection. Explain your conclusion and give a focused check. Include i",
+   "parent": "G-03942c8939b2cc",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": "audio-description-tag",
+    "disposition": "grade-components",
+    "lane": "preservation",
+    "primary": "pass",
+    "priority": "P1",
+    "problem": "evidence-only",
+    "skill": [
+     "S2",
+     "S7"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/platforms/tvos-media-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "gain",
+    "preservation": "both-pass",
+    "primary": "gain",
+    "rework": "gain",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "preservation",
+   "blindAudit": "Q51",
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md"
+   ],
+   "counterpart": null,
+   "criterion": "Expose one editable owner rather than replacing it with a static wrapper; accept native forwarding or leaving the wrapper non-actionable. Preserve editing, current value and ordinary input.",
+   "family": "native-editable-child",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-d82c5ccce8e33f3e",
+   "opening": "macOS, SwiftUI. The sidebar hosts an AppKit search field in SwiftUI. Both the wrapper and the editable field announce Search and people encounter two stops. The AppKit field handles selection and insertion. What would yo",
+   "parent": "G-d82c5ccce8e33f",
+   "platform": "macOS",
+   "prior384": {
+    "decision": "interop-double-exposure",
+    "disposition": "keep-control",
+    "lane": "workflow",
+    "primary": "fail",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S8",
+     "S5"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": true,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "na",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "references/macos/guidelines/m-005-swiftui-appkit-interop-forwarding.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-fail",
+    "primary": "both-fail",
+    "rework": "both-fail",
+    "verification": "both-na",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": true,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "na",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": "Q10",
+   "cardsRead": [
+    "SKILL.md",
+    "references/return.md"
+   ],
+   "counterpart": "G-16de77ef3240aa",
+   "criterion": "Exercise a retained A dismissal from the view wiring or its production-used seam after B opens. A cannot close B, alter B focus or issue a restoration request. A valid B completion must still restore once. Accept equivalent per-presentation ownership; a direct model test supplying the correct old ticket bypasses the issue.",
+   "family": "restore-only-owned-sheet",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-da7833399aac7f87",
+   "opening": "macOS 26.0, SwiftUI. Sheet A starts closing, then this view presents B. A delayed dismissal from A arrives. Can it change focus or close B? Explain your conclusion and give a focused check. Include integrated Swift chang",
+   "parent": "G-79fa7510bdf4bc",
+   "platform": "macOS",
+   "prior384": {
+    "decision": "presentation-owner",
+    "disposition": "rewrite-neutral",
+    "lane": "preservation",
+    "primary": "pass",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S3",
+     "S2",
+     "S4"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": true,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/swiftui/macos-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-fail",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": true,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "rework",
+   "blindAudit": "Q04",
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "ReuseUIKitTests/testReconfigureClearsSelectedStateWithoutLosingOtherTraits",
+   "family": "selected-trait-vs-selection",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-db32e60bc16c19a8",
+   "opening": "iOS 26.0, UIKit. Move selection between two rows. How is selection represented on each row after the move? Explain your conclusion and give a focused check. Include integrated Swift changes if the requested behavior need",
+   "parent": "G-3728319099e01c",
+   "platform": "iOS",
+   "prior384": {
+    "decision": "selected-state",
+    "disposition": "grade-components",
+    "lane": "preservation",
+    "primary": "fail",
+    "priority": "P1",
+    "problem": "rework-only",
+    "skill": [
+     "S1",
+     "S5",
+     "S8"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/pilots/uikit-reuse-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-fail",
+    "primary": "both-fail",
+    "rework": "both-fail",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot",
+   "family": "validation-busy-recovery",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-db6ab4c551e67aca",
+   "opening": "iOS 26.0, UIKit. Edit the entry while a validation request is outstanding. After the reply, can I submit the current entry? Review the supplied implementation against that requirement. If it already works, say why and le",
+   "parent": "G-2ae6e6631d0d54",
+   "platform": "iOS",
+   "prior384": {
+    "decision": "input-snapshot",
+    "disposition": "grade-components",
+    "lane": "repair",
+    "primary": "pass",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S3",
+     "S2"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/platforms/ios-closure-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/media.md"
+   ],
+   "counterpart": null,
+   "criterion": "code-examples/swiftui/media-tvos-v1/evaluation/wiring.rubric.md",
+   "family": "write-actual-player-selection",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-dc1e54ce99c97729",
+   "opening": "tvOS developer request Build a SwiftUI media-option picker that uses the same player and selection state as the video view. Distinguish a missing video, options still loading, no options and a load error. Provide a retry",
+   "parent": "G-dc1e54ce99c977",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S7"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/swiftui/media-tvos-v1/evaluation/wiring.prompt.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md"
+   ],
+   "counterpart": null,
+   "criterion": "code-examples/platforms/macos-structure-v1/evaluation/outline-structure.rubric.md",
+   "family": "retired-outline-handle",
+   "framework": "AppKit",
+   "historicalWhole": "fail",
+   "id": "P-dd7ee77a4e81a08e",
+   "opening": "We use a programmatic AppKit NSOutlineView for a nested library. Entries have stable IDs, titles and child arrays. Show Name and Kind columns. Updates can rename, reorder or remove entries; keep surviving item identity, ",
+   "parent": "G-dd7ee77a4e81a0",
+   "platform": "macOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S3",
+     "S2"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "code-examples/platforms/macos-structure-v1/evaluation/outline-structure.prompt.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-fail",
+    "primary": "both-pass",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": "ios-uikit-actions",
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md",
+    "references/facts.md"
+   ],
+   "counterpart": null,
+   "criterion": "research/evaluation/dev7-comparison/controller/scoring.json#ios-uikit-actions",
+   "family": "stale-action-capture",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-ddf8bad3cbd8d087",
+   "opening": "I am using UIKit on iOS 26 deployment target; available validation anchor iOS 26.5. A file row already has Open and Delete buttons. Experienced VoiceOver users asked for a quicker Delete action. Rows are reused and can b",
+   "parent": "G-ddf8bad3cbd8d0",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S3"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "research/evaluation/zero-base-v1/subjects/ios-uikit-actions.txt",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-fail",
+    "primary": "both-fail",
+    "rework": "gain",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": true,
+    "integration": "fail",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": "GP26-10",
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md"
+   ],
+   "counterpart": null,
+   "criterion": "evals/os26/expansion-1/acceptance.json#GP26-10",
+   "family": "progress-after-terminal",
+   "framework": "UIKit",
+   "historicalWhole": "fail",
+   "id": "P-debf8047cd9f4e4a",
+   "opening": "iOS 26.0, UIKit. The main-thread download callback reports integer percentages (display clamped to 0\u2026100) and may repeat its terminal event. Only one download is active; `begin(id:)` starts a fresh unique ID. Late callba",
+   "parent": "G-debf8047cd9f4e",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S3"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "na",
+    "whole": "pass"
+   },
+   "skillOpened": true,
+   "source": "research/evaluation/zero-base-v1/subjects/GP26-10.txt",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "both-pass",
+    "verification": "both-na",
+    "whole": "both-pass"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "na",
+    "whole": "pass"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "rework",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md"
+   ],
+   "counterpart": null,
+   "criterion": "evals/pool/ios-swiftui/volume-slider-intact/test.swift",
+   "family": "preserve-native-slider",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-e505d95d8bc6f761",
+   "opening": "iOS 26.0, SwiftUI. Our release checklist has an accessibility pass for every settings screen, and the Listening screen is next. Can you go over the volume slider for VoiceOver and make whatever changes it needs? It saves",
+   "parent": "G-e505d95d8bc6f7",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "integration",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "rework-only",
+    "skill": [
+     "S8",
+     "S1"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "na",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "evals/pool/ios-swiftui/volume-slider-intact/task.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "gain",
+    "primary": "both-fail",
+    "rework": "both-fail",
+    "verification": "both-na",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "fail",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "na",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": "Q32",
+   "cardsRead": [
+    "SKILL.md",
+    "references/facts.md"
+   ],
+   "counterpart": null,
+   "criterion": "Preserve both actions and readable content via flexible layout; distinguish supported behavior on the deployment target from later tvOS facilities; avoid importing iOS availability assumptions.",
+   "family": "tv-text-availability",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-e56a902ef372a290",
+   "opening": "tvOS, SwiftUI. Product wants titles readable from a couch. A long German title in our tvOS SwiftUI detail header crowds out Play and Details. What would you change on a 26.0 deployment target, and what would you conditio",
+   "parent": "G-e56a902ef372a2",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": "tv-text-reflow",
+    "disposition": "grade-components",
+    "lane": "workflow",
+    "primary": "fail",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S5"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "na",
+    "whole": "pass"
+   },
+   "skillOpened": true,
+   "source": "references/tvos/guidelines/t-011-larger-text.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "gain",
+    "rework": "gain",
+    "verification": "both-na",
+    "whole": "gain"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "fail",
+    "verification": "na",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "verification",
+   "blindAudit": null,
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription",
+   "family": "tagged-audio-positive-fixture",
+   "framework": "AppKit",
+   "historicalWhole": "fail",
+   "id": "P-f28c1ae4058d31a8",
+   "opening": "macOS 26.0, AppKit. Which tracks does this inspector identify as described audio when the asset has both ordinary alternate languages and a described track? Explain your conclusion and give a focused check. Include integ",
+   "parent": "G-0efc69b6139819",
+   "platform": "macOS",
+   "prior384": {
+    "decision": "audio-description-tag",
+    "disposition": "grade-components",
+    "lane": "repair",
+    "primary": "pass",
+    "priority": "P1",
+    "problem": "evidence-only",
+    "skill": [
+     "S2"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/platforms/macos-media-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "code-examples/swiftui/media-macos-v2/evaluation/ownership.rubric.md",
+   "family": "stale-off-capture",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-f48375292f98ee5c",
+   "opening": "macOS developer question People can change videos or reload caption choices while this SwiftUI screen is open. Old callbacks sometimes affect the new selection, including turning captions off. Make these operations belon",
+   "parent": "G-f48375292f98ee",
+   "platform": "macOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "implementation",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "real-model-gap",
+    "skill": [
+     "S3",
+     "S7"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/swiftui/media-macos-v2/evaluation/ownership.prompt.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-fail",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "fail",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "preservation",
+   "blindAudit": "Q35",
+   "cardsRead": [],
+   "counterpart": null,
+   "criterion": "DocumentTests/testOldActionDoesNotTargetReboundRow",
+   "family": "stale-action-capture",
+   "framework": "SwiftUI",
+   "historicalWhole": "fail",
+   "id": "P-f6c77faf11d5ad05",
+   "opening": "macOS 26.0, SwiftUI. Keep an action from before a refresh, then invoke it after the row represents a different record. What does it do? What do the current ordinary controls do? Explain your conclusion and give a focused",
+   "parent": "G-32019e51844cc7",
+   "platform": "macOS",
+   "prior384": {
+    "decision": "rebound-action",
+    "disposition": "rewrite-neutral",
+    "lane": "preservation",
+    "primary": "fail",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S3",
+     "S1",
+     "S2"
+    ],
+    "verdict": "fail"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "pass",
+    "whole": "fail"
+   },
+   "skillOpened": false,
+   "source": "code-examples/swiftui/macos-v1/manifest.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "both-fail",
+    "verification": "both-pass",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "fail",
+    "verification": "pass",
+    "whole": "fail"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": null,
+   "cardsRead": [
+    "SKILL.md",
+    "references/font.md"
+   ],
+   "counterpart": null,
+   "criterion": "evals/pool/ios-uikit/receipt-font-traits/test.swift",
+   "family": "supplied-vs-live-font",
+   "framework": "UIKit",
+   "historicalWhole": "pass",
+   "id": "P-f776360cf78dd3e2",
+   "opening": "iOS 26.0, UIKit. In our \"Preview text size\" sheet the receipt descriptions never get bigger when a customer picks a larger size, and long descriptions are cut off with \"\u2026\". The descriptions should keep our brand font, si",
+   "parent": "G-f776360cf78dd3",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "integration",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [
+     "S5"
+    ],
+    "verdict": "pass"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "na",
+    "whole": "pass"
+   },
+   "skillOpened": true,
+   "source": "evals/pool/ios-uikit/receipt-font-traits/task.json",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-pass",
+    "preservation": "both-pass",
+    "primary": "both-pass",
+    "rework": "both-pass",
+    "verification": "both-na",
+    "whole": "both-pass"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "pass",
+    "preservation": "pass",
+    "primary": "pass",
+    "rework": "pass",
+    "verification": "na",
+    "whole": "pass"
+   }
+  },
+  {
+   "alsoGoldParity": null,
+   "alsoOS26": null,
+   "axis": "primary",
+   "blindAudit": "Q19",
+   "cardsRead": [
+    "SKILL.md",
+    "references/actions.md"
+   ],
+   "counterpart": null,
+   "criterion": "A behavioral explanation suffices. From 35, forward reaches 107 and backward reaches 0. Outward requests at 0 or 107 leave the position there; idempotent seek is acceptable. Empty means zero seeks. Preserve separate tap and drag paths. No unstated between-start rule or executable unit is required.",
+   "family": "chapter-boundary",
+   "framework": "SwiftUI",
+   "historicalWhole": "pass",
+   "id": "P-f93bec690ad5409c",
+   "opening": "iOS, SwiftUI. Our episode has chapters starting at 0, 35 and 107 seconds and ends at 160. When positioned at a chapter start, an accessibility adjustment should move by one chapter, staying at a boundary when there is no",
+   "parent": "G-18fda1e5d3c168",
+   "platform": "iOS",
+   "prior384": {
+    "decision": "custom-control-increments",
+    "disposition": "specify-policy",
+    "lane": "workflow",
+    "primary": "pass",
+    "priority": "P0",
+    "problem": "real-model-gap",
+    "skill": [
+     "S2"
+    ],
+    "verdict": "pass"
+   },
+   "skill": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "na",
+    "whole": "fail"
+   },
+   "skillOpened": true,
+   "source": "references/swiftui/guidelines/g-008-custom-controls-representation.md",
+   "tier": 1,
+   "transitions": {
+    "integration": "both-fail",
+    "preservation": "both-pass",
+    "primary": "both-fail",
+    "rework": "both-pass",
+    "verification": "both-na",
+    "whole": "both-fail"
+   },
+   "unaided": {
+    "critical": false,
+    "integration": "fail",
+    "preservation": "pass",
+    "primary": "fail",
+    "rework": "pass",
+    "verification": "na",
+    "whole": "fail"
+   }
+  }
+ ],
+ "tier2": [
+  {
+   "control": false,
+   "family": "settings-actions",
+   "framework": "UIKit",
+   "gates": [
+    "source-review",
+    "compile-host",
+    "known-good",
+    "mutation-1",
+    "mutation-2",
+    "switch-state",
+    "help-action"
+   ],
+   "goldReady": "gold-ready",
+   "id": "GP26-01",
+   "inPanel": false,
+   "opening": "VoiceOver only stops on \u201cDownloads\u201d in this settings row. People cannot change the setting or open Help. The existing callbacks are already wired. Can you fix it?",
+   "parent": "G-f25c0e60d13675",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [],
+    "verdict": "pass"
+   },
+   "set": "os26",
+   "tier": 2
+  },
+  {
+   "control": false,
+   "family": "cell-reconfiguration",
+   "framework": "UIKit",
+   "gates": [
+    "source-review",
+    "compile-host",
+    "known-good",
+    "mutation-1",
+    "mutation-2",
+    "reconfiguration"
+   ],
+   "goldReady": "gold-ready",
+   "id": "GP26-02",
+   "inPanel": false,
+   "opening": "After scrolling and refreshing orders, a cell sometimes announces the previous customer or status. Here is its configuration code; the model has customer/status strings and an isPriority flag, and titleLabel is already l",
+   "parent": "G-e9d082b712f90b",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [
+     "S1"
+    ],
+    "verdict": "pass"
+   },
+   "set": "os26",
+   "tier": 2
+  },
+  {
+   "control": false,
+   "family": "checkout-resize",
+   "framework": "UIKit",
+   "gates": [
+    "source-review",
+    "compile-host",
+    "known-good",
+    "mutation-1",
+    "mutation-2",
+    "live-resize",
+    "payment-action"
+   ],
+   "goldReady": "gold-ready",
+   "id": "GP26-03",
+   "inPanel": false,
+   "opening": "Customers using larger text cannot read the complete checkout total. The container fills the safe-area width, and formattedTotal can be a long localized currency value. The Pay button already works and its appearance sho",
+   "parent": "G-b32973d721c21d",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "retire-duplicate",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "duplicate",
+    "skill": [
+     "S1"
+    ],
+    "verdict": "pass"
+   },
+   "set": "os26",
+   "tier": 2
+  },
+  {
+   "control": false,
+   "family": "deletion-input-modes",
+   "framework": "SwiftUI",
+   "gates": [
+    "source-review",
+    "compile-host",
+    "known-good",
+    "mutation-1",
+    "mutation-2",
+    "explicit-delete",
+    "voiceover-delete",
+    "keyboard-delete"
+   ],
+   "goldReady": "gold-ready",
+   "id": "GP26-04",
+   "inPanel": false,
+   "opening": "Our message row can only delete by swiping. Add an on-screen way to delete that works with VoiceOver and with Full Keyboard Access plus a hardware keyboard. Keep swipe deletion working. onDelete must delete the chosen me",
+   "parent": null,
+   "platform": "iPadOS",
+   "prior384": null,
+   "set": "os26",
+   "tier": 2
+  },
+  {
+   "control": false,
+   "family": "tv-remote-shelf",
+   "framework": "SwiftUI",
+   "gates": [
+    "source-review",
+    "compile-host",
+    "known-good",
+    "mutation-1",
+    "mutation-2",
+    "remote-activation",
+    "voiceover-name"
+   ],
+   "goldReady": "gold-ready",
+   "id": "GP26-05",
+   "inPanel": false,
+   "opening": "Testers cannot reliably reach and select all the movie tiles with the remote. VoiceOver users also need to identify the movie they are opening. Movie is Identifiable with title and posterName; open(movie) opens its detai",
+   "parent": "G-f4ec597a9a2e91",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [],
+    "verdict": "pass"
+   },
+   "set": "os26",
+   "tier": 2
+  },
+  {
+   "control": true,
+   "family": "native-toggle-control",
+   "framework": "SwiftUI",
+   "gates": [
+    "source-review",
+    "compile-host",
+    "known-good",
+    "mutation-1",
+    "mutation-2",
+    "native-toggle",
+    "scope-control"
+   ],
+   "goldReady": "gold-ready",
+   "id": "GP26-06",
+   "inPanel": false,
+   "opening": "Please review the accessibility of this notification settings view and make any changes that are needed. The binding is connected to the existing preference store.",
+   "parent": "G-96a828dd7e79b7",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "raise-to-integration",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P2",
+    "problem": "rework-only",
+    "skill": [
+     "S8",
+     "S1"
+    ],
+    "verdict": "fail"
+   },
+   "set": "os26",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Separate semantics, media-owner and ordinary-action examples cover pieces, not one download-card update path.",
+   "control": false,
+   "coverage": {
+    "partial_evidence": 3
+   },
+   "criteria": [
+    {
+     "coverage": "partial_evidence",
+     "id": "ios-uikit-state/criterion-0"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "ios-uikit-state/criterion-1"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "ios-uikit-state/criterion-2"
+    }
+   ],
+   "family": "topic/state",
+   "framework": "UIKit",
+   "id": "ios-uikit-state",
+   "parent": "G-01d940885a29d8",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [
+     "S3"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Useful preservation and font receipts exist; total-plus-button checkout contract lacks the question's long description and integrated design-font update path.",
+   "control": false,
+   "coverage": {
+    "partial_evidence": 2,
+    "review_only": 2
+   },
+   "criteria": [
+    {
+     "coverage": "partial_evidence",
+     "id": "ios-uikit-text/criterion-0"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "ios-uikit-text/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "ios-uikit-text/criterion-2"
+    },
+    {
+     "coverage": "review_only",
+     "id": "ios-uikit-text/criterion-3"
+    }
+   ],
+   "family": "topic/text",
+   "framework": "UIKit",
+   "id": "ios-uikit-text",
+   "parent": "G-9afcc6a91cfcbb",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "grade-components",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P2",
+    "problem": "rework-only",
+    "skill": [
+     "S8",
+     "S1"
+    ],
+    "verdict": "fail"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Review-scoped no-defect question with supporting Binding units; do not impose an invented implementation or require native semantic-tree tests.",
+   "control": false,
+   "coverage": {
+    "partial_evidence": 1,
+    "review_only": 2
+   },
+   "criteria": [
+    {
+     "coverage": "review_only",
+     "id": "ios-swiftui-semantics/criterion-0"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "ios-swiftui-semantics/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "ios-swiftui-semantics/criterion-2"
+    }
+   ],
+   "family": "topic/semantics",
+   "framework": "SwiftUI",
+   "id": "ios-swiftui-semantics",
+   "parent": "G-63e10b06dd993c",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [
+     "S8"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "State ownership is tested; actual completion-to-ticket wiring and safe fallback interpretation remain integration review work.",
+   "control": false,
+   "coverage": {
+    "partial_evidence": 2,
+    "review_only": 1
+   },
+   "criteria": [
+    {
+     "coverage": "partial_evidence",
+     "id": "ios-swiftui-lifecycle/criterion-0"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "ios-swiftui-lifecycle/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "ios-swiftui-lifecycle/criterion-2"
+    }
+   ],
+   "family": "topic/lifecycle",
+   "framework": "SwiftUI",
+   "id": "ios-swiftui-lifecycle",
+   "parent": "G-f981e62bcf7bd1",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [
+     "S3",
+     "S4"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Direct native action pieces exist, but Save is an analogue for Delete and stable dispatcher acceptance needs its own reviewed grading witness.",
+   "control": false,
+   "coverage": {
+    "partial_evidence": 3
+   },
+   "criteria": [
+    {
+     "coverage": "partial_evidence",
+     "id": "macos-appkit-actions/criterion-0"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "macos-appkit-actions/criterion-1"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "macos-appkit-actions/criterion-2"
+    }
+   ],
+   "family": "topic/actions",
+   "framework": "AppKit",
+   "id": "macos-appkit-actions",
+   "parent": "G-a3221645549ddf",
+   "platform": "macOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "retire-duplicate",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "duplicate",
+    "skill": [
+     "S3",
+     "S8"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Native action row and outline examples are different source sets. Do not equate a container flag or outline selection with full report-row grouping.",
+   "control": false,
+   "coverage": {
+    "partial_evidence": 2,
+    "review_only": 1
+   },
+   "criteria": [
+    {
+     "coverage": "partial_evidence",
+     "id": "macos-appkit-structure/criterion-0"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "macos-appkit-structure/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "macos-appkit-structure/criterion-2"
+    }
+   ],
+   "family": "topic/structure",
+   "framework": "AppKit",
+   "id": "macos-appkit-structure",
+   "parent": "G-7f59da93d717ea",
+   "platform": "macOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "raise-to-integration",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P2",
+    "problem": "weak-endpoint",
+    "skill": [
+     "S8",
+     "S5"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Project-policy review lane. No native execution required to answer the bounded evidence question; calibration and import/source evidence remain distinct.",
+   "control": false,
+   "coverage": {
+    "review_only": 4
+   },
+   "criteria": [
+    {
+     "coverage": "review_only",
+     "id": "macos-appkit-testing/criterion-0"
+    },
+    {
+     "coverage": "review_only",
+     "id": "macos-appkit-testing/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "macos-appkit-testing/criterion-2"
+    },
+    {
+     "coverage": "review_only",
+     "id": "macos-appkit-testing/criterion-3"
+    }
+   ],
+   "family": "topic/testing",
+   "framework": "AppKit",
+   "id": "macos-appkit-testing",
+   "parent": "G-f853b3b93cb686",
+   "platform": "macOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [
+     "S2"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Settings, form and document helpers are separate examples. Declaration card does not prove a composed card's updates or callbacks.",
+   "control": false,
+   "coverage": {
+    "partial_evidence": 3
+   },
+   "criteria": [
+    {
+     "coverage": "partial_evidence",
+     "id": "macos-swiftui-state/criterion-0"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "macos-swiftui-state/criterion-1"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "macos-swiftui-state/criterion-2"
+    }
+   ],
+   "family": "topic/state",
+   "framework": "SwiftUI",
+   "id": "macos-swiftui-state",
+   "parent": "G-93fed5f76679b0",
+   "platform": "macOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "raise-to-integration",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P2",
+    "problem": "weak-endpoint",
+    "skill": [
+     "S3",
+     "S8"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Main implementation-evidence gap: available text preference composition is not the requested checkout/Pay/design-font contract. A permanent flexible layout remains valid.",
+   "control": false,
+   "coverage": {
+    "genuine_gap": 2,
+    "review_only": 2
+   },
+   "criteria": [
+    {
+     "coverage": "genuine_gap",
+     "id": "macos-swiftui-text/criterion-0"
+    },
+    {
+     "coverage": "genuine_gap",
+     "id": "macos-swiftui-text/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "macos-swiftui-text/criterion-2"
+    },
+    {
+     "coverage": "review_only",
+     "id": "macos-swiftui-text/criterion-3"
+    }
+   ],
+   "family": "topic/text",
+   "framework": "SwiftUI",
+   "id": "macos-swiftui-text",
+   "parent": "G-f4d1432a0aa93e",
+   "platform": "macOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "raise-to-integration",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P2",
+    "problem": "weak-endpoint",
+    "skill": [],
+    "verdict": "inconclusive"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Same helper/integration boundary as iOS; a focus declaration does not validate callback ownership, fallback validity or delivered focus.",
+   "control": false,
+   "coverage": {
+    "partial_evidence": 2,
+    "review_only": 1
+   },
+   "criteria": [
+    {
+     "coverage": "partial_evidence",
+     "id": "macos-swiftui-lifecycle/criterion-0"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "macos-swiftui-lifecycle/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "macos-swiftui-lifecycle/criterion-2"
+    }
+   ],
+   "family": "topic/lifecycle",
+   "framework": "SwiftUI",
+   "id": "macos-swiftui-lifecycle",
+   "parent": "G-370808352ca7dc",
+   "platform": "macOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "retire-duplicate",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "duplicate",
+    "skill": [
+     "S4",
+     "S3"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Region selection, media load owner and Play/Details examples are partial analogues; optional status/help and existing Open need a coherent contract.",
+   "control": false,
+   "coverage": {
+    "partial_evidence": 3
+   },
+   "criteria": [
+    {
+     "coverage": "partial_evidence",
+     "id": "tvos-uikit-state/criterion-0"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "tvos-uikit-state/criterion-1"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "tvos-uikit-state/criterion-2"
+    }
+   ],
+   "family": "topic/state",
+   "framework": "UIKit",
+   "id": "tvos-uikit-state",
+   "parent": "G-5f3c8c25e44c4b",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "specify-policy",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P1",
+    "problem": "oracle-mismatch",
+    "skill": [
+     "S3"
+    ],
+    "verdict": "fail"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Old ledger says no manifest, but reviewed bindings already identify media and closure receipts. Reuse those before proposing new tests.",
+   "control": false,
+   "coverage": {
+    "partial_evidence": 3,
+    "review_only": 1
+   },
+   "criteria": [
+    {
+     "coverage": "partial_evidence",
+     "id": "tvos-uikit-media/criterion-0"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "tvos-uikit-media/criterion-1"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "tvos-uikit-media/criterion-2"
+    },
+    {
+     "coverage": "review_only",
+     "id": "tvos-uikit-media/criterion-3"
+    }
+   ],
+   "family": "topic/media",
+   "framework": "UIKit",
+   "id": "tvos-uikit-media",
+   "parent": "G-1584405193ce1b",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "repair-oracle",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P2",
+    "problem": "grader-uncertain",
+    "skill": [
+     "S3",
+     "S7"
+    ],
+    "verdict": "inconclusive"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Existing native helper contract covers current target and reentrancy at direct invocation. Keep actual dismissal completion wiring and generated-answer verification separate.",
+   "control": false,
+   "coverage": {
+    "direct_evidence": 2,
+    "review_only": 1
+   },
+   "criteria": [
+    {
+     "coverage": "direct_evidence",
+     "id": "tvos-uikit-lifecycle/criterion-0"
+    },
+    {
+     "coverage": "direct_evidence",
+     "id": "tvos-uikit-lifecycle/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "tvos-uikit-lifecycle/criterion-2"
+    }
+   ],
+   "family": "topic/lifecycle",
+   "framework": "UIKit",
+   "id": "tvos-uikit-lifecycle",
+   "parent": "G-9b4965749be4ab",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [
+     "S4"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Document-state and native-bridge units do not by themselves prove installation or enabled-state handling of both SwiftUI action paths.",
+   "control": false,
+   "coverage": {
+    "partial_evidence": 3
+   },
+   "criteria": [
+    {
+     "coverage": "partial_evidence",
+     "id": "tvos-swiftui-actions/criterion-0"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "tvos-swiftui-actions/criterion-1"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "tvos-swiftui-actions/criterion-2"
+    }
+   ],
+   "family": "topic/actions",
+   "framework": "SwiftUI",
+   "id": "tvos-swiftui-actions",
+   "parent": "G-5e241a2f3c435f",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "repair-oracle",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P2",
+    "problem": "grader-uncertain",
+    "skill": [
+     "S3",
+     "S8"
+    ],
+    "verdict": "inconclusive"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Compiled document composition and model landmark/selection tests support a partial grouping contract; the requested descriptive heading/balance and Open/Details composition still need source review.",
+   "control": false,
+   "coverage": {
+    "partial_evidence": 2,
+    "review_only": 1
+   },
+   "criteria": [
+    {
+     "coverage": "partial_evidence",
+     "id": "tvos-swiftui-structure/criterion-0"
+    },
+    {
+     "coverage": "partial_evidence",
+     "id": "tvos-swiftui-structure/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "tvos-swiftui-structure/criterion-2"
+    }
+   ],
+   "family": "topic/structure",
+   "framework": "SwiftUI",
+   "id": "tvos-swiftui-structure",
+   "parent": "G-79d7d5bb05ed7d",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [
+     "S8"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Existing independently accepted task/alternative contract; retain review-only status until source and actual calibration records are reconciled.",
+   "control": true,
+   "coverage": {
+    "review_only": 3
+   },
+   "criteria": [
+    {
+     "coverage": "review_only",
+     "id": "ios-uikit-no-change/criterion-0"
+    },
+    {
+     "coverage": "review_only",
+     "id": "ios-uikit-no-change/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "ios-uikit-no-change/criterion-2"
+    }
+   ],
+   "family": "control/preservation",
+   "framework": "UIKit",
+   "id": "ios-uikit-no-change",
+   "parent": "G-2a184c4680bf73",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [
+     "S8"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Existing independently accepted no-change contract; similar to GP26-06 but not the same prompt/fixture contract.",
+   "control": true,
+   "coverage": {
+    "review_only": 3
+   },
+   "criteria": [
+    {
+     "coverage": "review_only",
+     "id": "ios-swiftui-no-change/criterion-0"
+    },
+    {
+     "coverage": "review_only",
+     "id": "ios-swiftui-no-change/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "ios-swiftui-no-change/criterion-2"
+    }
+   ],
+   "family": "control/preservation",
+   "framework": "SwiftUI",
+   "id": "ios-swiftui-no-change",
+   "parent": "G-702058f370f817",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "retire-duplicate",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "duplicate",
+    "skill": [
+     "S8"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Existing accepted task/alternative contract; preserve AppKit-specific role/children distinctions and avoid applying UIKit hiding assumptions.",
+   "control": true,
+   "coverage": {
+    "review_only": 3
+   },
+   "criteria": [
+    {
+     "coverage": "review_only",
+     "id": "macos-appkit-no-change/criterion-0"
+    },
+    {
+     "coverage": "review_only",
+     "id": "macos-appkit-no-change/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "macos-appkit-no-change/criterion-2"
+    }
+   ],
+   "family": "control/preservation",
+   "framework": "AppKit",
+   "id": "macos-appkit-no-change",
+   "parent": "G-5ce9c8f199aeff",
+   "platform": "macOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [
+     "S8"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Existing accepted ownership-question contract; completed comparison regression makes conditional advice and AppKit role/children alternatives a priority.",
+   "control": true,
+   "coverage": {
+    "review_only": 3
+   },
+   "criteria": [
+    {
+     "coverage": "review_only",
+     "id": "mixed-macos-owner/criterion-0"
+    },
+    {
+     "coverage": "review_only",
+     "id": "mixed-macos-owner/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "mixed-macos-owner/criterion-2"
+    }
+   ],
+   "family": "control/ownership",
+   "framework": "mixed",
+   "id": "mixed-macos-owner",
+   "parent": "G-5c3d5710d5060f",
+   "platform": "macOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [
+     "S1",
+     "S8"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Existing accepted epistemic-control contract; a listed reference is not a retrieval trace.",
+   "control": true,
+   "coverage": {
+    "review_only": 3
+   },
+   "criteria": [
+    {
+     "coverage": "review_only",
+     "id": "ios-missing-reference/criterion-0"
+    },
+    {
+     "coverage": "review_only",
+     "id": "ios-missing-reference/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "ios-missing-reference/criterion-2"
+    }
+   ],
+   "family": "control/unavailable-reference",
+   "framework": "UIKit",
+   "id": "ios-missing-reference",
+   "parent": "G-7c78d80e047b92",
+   "platform": "iOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  },
+  {
+   "caseDecision": "Existing accepted evidence-boundary contract; target 26, SDK 27 and observed runtime are separate facts, not a feature-introduction inference.",
+   "control": true,
+   "coverage": {
+    "review_only": 3
+   },
+   "criteria": [
+    {
+     "coverage": "review_only",
+     "id": "tvos-version-boundary/criterion-0"
+    },
+    {
+     "coverage": "review_only",
+     "id": "tvos-version-boundary/criterion-1"
+    },
+    {
+     "coverage": "review_only",
+     "id": "tvos-version-boundary/criterion-2"
+    }
+   ],
+   "family": "control/version-boundary",
+   "framework": "UIKit",
+   "id": "tvos-version-boundary",
+   "parent": "G-92cd811da55d55",
+   "platform": "tvOS",
+   "prior384": {
+    "decision": null,
+    "disposition": "keep-control",
+    "lane": "historical",
+    "primary": "inconclusive",
+    "priority": "P3",
+    "problem": "good-as-is",
+    "skill": [
+     "S5"
+    ],
+    "verdict": "pass"
+   },
+   "set": "gold-parity",
+   "tier": 2
+  }
+ ],
+ "tier3": [
+  {
+   "decision": "open:implementation",
+   "disposition": {
+    "grade-components": 13,
+    "keep-control": 38,
+    "raise-to-integration": 3,
+    "repair-oracle": 14,
+    "retire-duplicate": 4,
+    "rewrite-neutral": 1,
+    "specify-policy": 1,
+    "split-criteria": 4
+   },
+   "items": 78,
+   "platforms": {
+    "iOS": 18,
+    "macOS": 30,
+    "tvOS": 30
+   },
+   "priority": {
+    "P1": 11,
+    "P2": 25,
+    "P3": 42
+   },
+   "skill": {
+    "S1": 1,
+    "S2": 21,
+    "S3": 32,
+    "S4": 5,
+    "S5": 12,
+    "S6": 3,
+    "S7": 17,
+    "S8": 10
+   },
+   "verdict": {
+    "fail": 8,
+    "inconclusive": 16,
+    "pass": 54
+   }
+  },
+  {
+   "decision": "open:historical",
+   "disposition": {
+    "keep-control": 14,
+    "retire-duplicate": 1
+   },
+   "items": 15,
+   "platforms": {
+    "iOS": 7,
+    "macOS": 4,
+    "tvOS": 4
+   },
+   "priority": {
+    "P3": 15
+   },
+   "skill": {
+    "S1": 1,
+    "S2": 1,
+    "S3": 2,
+    "S4": 3,
+    "S5": 1,
+    "S8": 2
+   },
+   "verdict": {
+    "pass": 15
+   }
+  },
+  {
+   "decision": "request-generation",
+   "disposition": {
+    "keep-control": 6,
+    "pair-variant": 1,
+    "retire-duplicate": 3
+   },
+   "items": 10,
+   "platforms": {
+    "iOS": 2,
+    "macOS": 6,
+    "tvOS": 2
+   },
+   "priority": {
+    "P2": 1,
+    "P3": 9
+   },
+   "skill": {
+    "S1": 3,
+    "S2": 1,
+    "S3": 6
+   },
+   "verdict": {
+    "pass": 10
+   }
+  },
+  {
+   "decision": "forced-vs-full",
+   "disposition": {
+    "repair-oracle": 2,
+    "rewrite-neutral": 1,
+    "specify-policy": 4
+   },
+   "items": 7,
+   "platforms": {
+    "iOS": 1,
+    "macOS": 4,
+    "tvOS": 2
+   },
+   "priority": {
+    "P0": 1,
+    "P1": 5,
+    "P2": 1
+   },
+   "skill": {
+    "S1": 2,
+    "S2": 5,
+    "S7": 7,
+    "S8": 1
+   },
+   "verdict": {
+    "fail": 2,
+    "inconclusive": 4,
+    "pass": 1
+   }
+  },
+  {
+   "decision": "eligible-target",
+   "disposition": {
+    "keep-control": 5,
+    "pair-variant": 1
+   },
+   "items": 6,
+   "platforms": {
+    "iOS": 1,
+    "macOS": 2,
+    "tvOS": 3
+   },
+   "priority": {
+    "P2": 1,
+    "P3": 5
+   },
+   "skill": {
+    "S1": 2,
+    "S4": 6
+   },
+   "verdict": {
+    "pass": 6
+   }
+  },
+  {
+   "decision": "motion-policy",
+   "disposition": {
+    "grade-components": 1,
+    "keep-control": 1,
+    "pair-variant": 1,
+    "retire-duplicate": 1,
+    "rewrite-neutral": 2
+   },
+   "items": 6,
+   "platforms": {
+    "iOS": 2,
+    "macOS": 4
+   },
+   "priority": {
+    "P1": 3,
+    "P2": 1,
+    "P3": 2
+   },
+   "skill": {
+    "S1": 5,
+    "S8": 2
+   },
+   "verdict": {
+    "fail": 2,
+    "pass": 4
+   }
+  },
+  {
+   "decision": "optional-help",
+   "disposition": {
+    "grade-components": 1,
+    "keep-control": 2,
+    "reserve-transfer": 2,
+    "retire-duplicate": 1
+   },
+   "items": 6,
+   "platforms": {
+    "iOS": 3,
+    "macOS": 1,
+    "tvOS": 2
+   },
+   "priority": {
+    "P2": 1,
+    "P3": 5
+   },
+   "skill": {
+    "S1": 4,
+    "S2": 1,
+    "S5": 1,
+    "S8": 2
+   },
+   "verdict": {
+    "inconclusive": 1,
+    "pass": 5
+   }
+  },
+  {
+   "decision": "range-kind",
+   "disposition": {
+    "grade-components": 2,
+    "pair-variant": 1,
+    "rewrite-neutral": 3
+   },
+   "items": 6,
+   "platforms": {
+    "iOS": 2,
+    "macOS": 2,
+    "tvOS": 2
+   },
+   "priority": {
+    "P1": 4,
+    "P2": 2
+   },
+   "skill": {
+    "S1": 5,
+    "S2": 1,
+    "S8": 3
+   },
+   "verdict": {
+    "fail": 3,
+    "pass": 3
+   }
+  },
+  {
+   "decision": "rebound-action",
+   "disposition": {
+    "pair-variant": 1,
+    "reserve-transfer": 2,
+    "retire-duplicate": 1,
+    "rewrite-neutral": 2
+   },
+   "items": 6,
+   "platforms": {
+    "iOS": 1,
+    "macOS": 3,
+    "tvOS": 2
+   },
+   "priority": {
+    "P2": 3,
+    "P3": 3
+   },
+   "skill": {
+    "S2": 1,
+    "S3": 6
+   },
+   "verdict": {
+    "pass": 6
+   }
+  },
+  {
+   "decision": "container-children",
+   "disposition": {
+    "pair-variant": 2,
+    "repair-oracle": 1,
+    "rewrite-neutral": 2
+   },
+   "items": 5,
+   "platforms": {
+    "iOS": 3,
+    "tvOS": 2
+   },
+   "priority": {
+    "P0": 1,
+    "P1": 1,
+    "P2": 3
+   },
+   "skill": {
+    "S1": 4,
+    "S8": 3
+   },
+   "verdict": {
+    "fail": 1,
+    "pass": 4
+   }
+  },
+  {
+   "decision": "disabled-action",
+   "disposition": {
+    "pair-variant": 2,
+    "reserve-transfer": 1,
+    "rewrite-neutral": 2
+   },
+   "items": 5,
+   "platforms": {
+    "iOS": 2,
+    "macOS": 3
+   },
+   "priority": {
+    "P1": 2,
+    "P2": 2,
+    "P3": 1
+   },
+   "skill": {
+    "S1": 4,
+    "S2": 2,
+    "S8": 1
+   },
+   "verdict": {
+    "fail": 1,
+    "pass": 4
+   }
+  },
+  {
+   "decision": "duplicate-id",
+   "disposition": {
+    "keep-control": 1,
+    "reserve-transfer": 3,
+    "rewrite-neutral": 1
+   },
+   "items": 5,
+   "platforms": {
+    "macOS": 3,
+    "tvOS": 2
+   },
+   "priority": {
+    "P2": 1,
+    "P3": 4
+   },
+   "skill": {
+    "S1": 4
+   },
+   "verdict": {
+    "pass": 5
+   }
+  },
+  {
+   "decision": "modal-state",
+   "disposition": {
+    "keep-control": 2,
+    "pair-variant": 1,
+    "reserve-transfer": 1,
+    "retire-duplicate": 1
+   },
+   "items": 5,
+   "platforms": {
+    "iOS": 3,
+    "macOS": 1,
+    "tvOS": 1
+   },
+   "priority": {
+    "P2": 1,
+    "P3": 4
+   },
+   "skill": {
+    "S1": 1,
+    "S4": 2
+   },
+   "verdict": {
+    "pass": 5
+   }
+  },
+  {
+   "decision": "open:integration",
+   "disposition": {
+    "grade-components": 1,
+    "keep-control": 2,
+    "repair-oracle": 2
+   },
+   "items": 5,
+   "platforms": {
+    "iOS": 3,
+    "macOS": 2
+   },
+   "priority": {
+    "P0": 1,
+    "P1": 1,
+    "P2": 1,
+    "P3": 2
+   },
+   "skill": {
+    "S1": 2,
+    "S2": 1,
+    "S3": 3,
+    "S4": 1,
+    "S8": 3
+   },
+   "verdict": {
+    "fail": 2,
+    "inconclusive": 1,
+    "pass": 2
+   }
+  },
+  {
+   "decision": "refresh-name",
+   "disposition": {
+    "grade-components": 1,
+    "keep-control": 2,
+    "pair-variant": 1,
+    "split-criteria": 1
+   },
+   "items": 5,
+   "platforms": {
+    "iOS": 2,
+    "macOS": 1,
+    "tvOS": 2
+   },
+   "priority": {
+    "P0": 1,
+    "P1": 1,
+    "P2": 1,
+    "P3": 2
+   },
+   "skill": {
+    "S1": 5,
+    "S8": 3
+   },
+   "verdict": {
+    "fail": 2,
+    "pass": 3
+   }
+  },
+  {
+   "decision": "audio-description-tag",
+   "disposition": {
+    "keep-control": 1,
+    "repair-oracle": 1,
+    "rewrite-neutral": 2
+   },
+   "items": 4,
+   "platforms": {
+    "iOS": 2,
+    "macOS": 1,
+    "tvOS": 1
+   },
+   "priority": {
+    "P1": 1,
+    "P2": 2,
+    "P3": 1
+   },
+   "skill": {
+    "S1": 1,
+    "S2": 4,
+    "S7": 1,
+    "S8": 2
+   },
+   "verdict": {
+    "fail": 1,
+    "inconclusive": 1,
+    "pass": 2
+   }
+  },
+  {
+   "decision": "edited-matches",
+   "disposition": {
+    "pair-variant": 2,
+    "rewrite-neutral": 1,
+    "specify-policy": 1
+   },
+   "items": 4,
+   "platforms": {
+    "iOS": 2,
+    "macOS": 1,
+    "tvOS": 1
+   },
+   "priority": {
+    "P1": 1,
+    "P2": 3
+   },
+   "skill": {
+    "S1": 1,
+    "S2": 1,
+    "S3": 1,
+    "S6": 4
+   },
+   "verdict": {
+    "inconclusive": 1,
+    "pass": 3
+   }
+  },
+  {
+   "decision": "grapheme-boundary",
+   "disposition": {
+    "keep-control": 4
+   },
+   "items": 4,
+   "platforms": {
+    "macOS": 2,
+    "tvOS": 2
+   },
+   "priority": {
+    "P3": 4
+   },
+   "skill": {
+    "S1": 1,
+    "S6": 4
+   },
+   "verdict": {
+    "pass": 4
+   }
+  },
+  {
+   "decision": "invalid-submit",
+   "disposition": {
+    "keep-control": 2,
+    "reserve-transfer": 2
+   },
+   "items": 4,
+   "platforms": {
+    "macOS": 2,
+    "tvOS": 2
+   },
+   "priority": {
+    "P3": 4
+   },
+   "skill": {
+    "S1": 2,
+    "S2": 1
+   },
+   "verdict": {
+    "pass": 4
+   }
+  },
+  {
+   "decision": "preserve-traits",
+   "disposition": {
+    "pair-variant": 1,
+    "reserve-transfer": 1,
+    "retire-duplicate": 2
+   },
+   "items": 4,
+   "platforms": {
+    "iOS": 2,
+    "tvOS": 2
+   },
+   "priority": {
+    "P2": 1,
+    "P3": 3
+   },
+   "skill": {
+    "S5": 2
+   },
+   "verdict": {
+    "pass": 4
+   }
+  },
+  {
+   "decision": "range-coordinate",
+   "disposition": {
+    "rewrite-neutral": 4
+   },
+   "items": 4,
+   "platforms": {
+    "iOS": 4
+   },
+   "priority": {
+    "P0": 3,
+    "P1": 1
+   },
+   "skill": {
+    "S1": 1,
+    "S2": 3,
+    "S6": 4
+   },
+   "verdict": {
+    "fail": 3,
+    "pass": 1
+   }
+  },
+  {
+   "decision": "stable-selection",
+   "disposition": {
+    "keep-control": 2,
+    "reserve-transfer": 1,
+    "retire-duplicate": 1
+   },
+   "items": 4,
+   "platforms": {
+    "macOS": 4
+   },
+   "priority": {
+    "P3": 4
+   },
+   "skill": {
+    "S1": 1,
+    "S2": 1
+   },
+   "verdict": {
+    "pass": 4
+   }
+  },
+  {
+   "decision": "conflicting-state-text",
+   "disposition": {
+    "pair-variant": 1,
+    "rewrite-neutral": 1,
+    "specify-policy": 1
+   },
+   "items": 3,
+   "platforms": {
+    "macOS": 2,
+    "tvOS": 1
+   },
+   "priority": {
+    "P0": 1,
+    "P1": 1,
+    "P2": 1
+   },
+   "skill": {
+    "S1": 3,
+    "S5": 2,
+    "S8": 1
+   },
+   "verdict": {
+    "fail": 2,
+    "pass": 1
+   }
+  },
+  {
+   "decision": "duplicate-completion",
+   "disposition": {
+    "keep-control": 1,
+    "reserve-transfer": 1,
+    "retire-duplicate": 1
+   },
+   "items": 3,
+   "platforms": {
+    "iOS": 1,
+    "macOS": 1,
+    "tvOS": 1
+   },
+   "priority": {
+    "P3": 3
+   },
+   "skill": {
+    "S3": 3
+   },
+   "verdict": {
+    "pass": 3
+   }
+  },
+  {
+   "decision": "interop-rebind",
+   "disposition": {
+    "pair-variant": 1,
+    "reserve-transfer": 1,
+    "rewrite-neutral": 1
+   },
+   "items": 3,
+   "platforms": {
+    "macOS": 3
+   },
+   "priority": {
+    "P1": 1,
+    "P2": 1,
+    "P3": 1
+   },
+   "skill": {
+    "S1": 1,
+    "S3": 3,
+    "S8": 1
+   },
+   "verdict": {
+    "fail": 1,
+    "pass": 2
+   }
+  },
+  {
+   "decision": "observer-stop",
+   "disposition": {
+    "pair-variant": 2,
+    "reserve-transfer": 1
+   },
+   "items": 3,
+   "platforms": {
+    "iOS": 1,
+    "macOS": 1,
+    "tvOS": 1
+   },
+   "priority": {
+    "P2": 2,
+    "P3": 1
+   },
+   "skill": {
+    "S2": 1,
+    "S3": 2
+   },
+   "verdict": {
+    "pass": 3
+   }
+  },
+  {
+   "decision": "player-item-owner",
+   "disposition": {
+    "keep-control": 1,
+    "pair-variant": 1,
+    "retire-duplicate": 1
+   },
+   "items": 3,
+   "platforms": {
+    "iOS": 1,
+    "macOS": 1,
+    "tvOS": 1
+   },
+   "priority": {
+    "P2": 1,
+    "P3": 2
+   },
+   "skill": {
+    "S3": 3,
+    "S7": 1
+   },
+   "verdict": {
+    "pass": 3
+   }
+  },
+  {
+   "decision": "preference-redelivery",
+   "disposition": {
+    "pair-variant": 1,
+    "retire-duplicate": 2
+   },
+   "items": 3,
+   "platforms": {
+    "macOS": 1,
+    "tvOS": 2
+   },
+   "priority": {
+    "P3": 3
+   },
+   "skill": {},
+   "verdict": {
+    "pass": 3
+   }
+  },
+  {
+   "decision": "presentation-owner",
+   "disposition": {
+    "keep-control": 1,
+    "pair-variant": 1,
+    "reserve-transfer": 1
+   },
+   "items": 3,
+   "platforms": {
+    "iOS": 1,
+    "macOS": 1,
+    "tvOS": 1
+   },
+   "priority": {
+    "P2": 1,
+    "P3": 2
+   },
+   "skill": {
+    "S3": 3,
+    "S4": 3
+   },
+   "verdict": {
+    "pass": 3
+   }
+  },
+  {
+   "decision": "contrast-linear",
+   "disposition": {
+    "repair-oracle": 1,
+    "rewrite-neutral": 1
+   },
+   "items": 2,
+   "platforms": {
+    "iOS": 2
+   },
+   "priority": {
+    "P0": 1,
+    "P2": 1
+   },
+   "skill": {
+    "S1": 1,
+    "S2": 1
+   },
+   "verdict": {
+    "fail": 1,
+    "pass": 1
+   }
+  },
+  {
+   "decision": "decorative-element",
+   "disposition": {
+    "grade-components": 1,
+    "rewrite-neutral": 1
+   },
+   "items": 2,
+   "platforms": {
+    "iOS": 2
+   },
+   "priority": {
+    "P1": 2
+   },
+   "skill": {
+    "S1": 2,
+    "S8": 1
+   },
+   "verdict": {
+    "fail": 1,
+    "pass": 1
+   }
+  },
+  {
+   "decision": "duplicate-binding",
+   "disposition": {
+    "keep-control": 2
+   },
+   "items": 2,
+   "platforms": {
+    "macOS": 2
+   },
+   "priority": {
+    "P3": 2
+   },
+   "skill": {
+    "S1": 1,
+    "S2": 1
+   },
+   "verdict": {
+    "pass": 2
+   }
+  },
+  {
+   "decision": "missing-choice",
+   "disposition": {
+    "pair-variant": 1,
+    "rewrite-neutral": 1
+   },
+   "items": 2,
+   "platforms": {
+    "macOS": 1,
+    "tvOS": 1
+   },
+   "priority": {
+    "P2": 2
+   },
+   "skill": {
+    "S7": 2
+   },
+   "verdict": {
+    "pass": 2
+   }
+  },
+  {
+   "decision": "motion-notification",
+   "disposition": {
+    "keep-control": 2
+   },
+   "items": 2,
+   "platforms": {
+    "iOS": 2
+   },
+   "priority": {
+    "P3": 2
+   },
+   "skill": {
+    "S1": 2
+   },
+   "verdict": {
+    "pass": 2
+   }
+  },
+  {
+   "decision": "multiline",
+   "disposition": {
+    "grade-components": 1,
+    "rewrite-neutral": 1
+   },
+   "items": 2,
+   "platforms": {
+    "iOS": 2
+   },
+   "priority": {
+    "P1": 2
+   },
+   "skill": {
+    "S1": 2,
+    "S8": 1
+   },
+   "verdict": {
+    "fail": 1,
+    "pass": 1
+   }
+  },
+  {
+   "decision": "off-permission",
+   "disposition": {
+    "pair-variant": 1,
+    "rewrite-neutral": 1
+   },
+   "items": 2,
+   "platforms": {
+    "macOS": 1,
+    "tvOS": 1
+   },
+   "priority": {
+    "P1": 1,
+    "P2": 1
+   },
+   "skill": {
+    "S7": 2
+   },
+   "verdict": {
+    "pass": 2
+   }
+  },
+  {
+   "decision": "ordinary-action",
+   "disposition": {
+    "pair-variant": 1,
+    "rewrite-neutral": 1
+   },
+   "items": 2,
+   "platforms": {
+    "macOS": 1,
+    "tvOS": 1
+   },
+   "priority": {
+    "P2": 2
+   },
+   "skill": {
+    "S1": 1,
+    "S2": 1,
+    "S8": 1
+   },
+   "verdict": {
+    "pass": 2
+   }
+  },
+  {
+   "decision": "player-controls",
+   "disposition": {
+    "keep-control": 2
+   },
+   "items": 2,
+   "platforms": {
+    "iOS": 2
+   },
+   "priority": {
+    "P3": 2
+   },
+   "skill": {
+    "S7": 1,
+    "S8": 2
+   },
+   "verdict": {
+    "pass": 2
+   }
+  },
+  {
+   "decision": "redundant-notification",
+   "disposition": {
+    "pair-variant": 1,
+    "specify-policy": 1
+   },
+   "items": 2,
+   "platforms": {
+    "iOS": 1,
+    "macOS": 1
+   },
+   "priority": {
+    "P2": 2
+   },
+   "skill": {
+    "S1": 1,
+    "S8": 1
+   },
+   "verdict": {
+    "fail": 1,
+    "pass": 1
+   }
+  },
+  {
+   "decision": "reentrant-submit",
+   "disposition": {
+    "pair-variant": 1,
+    "reserve-transfer": 1
+   },
+   "items": 2,
+   "platforms": {
+    "macOS": 1,
+    "tvOS": 1
+   },
+   "priority": {
+    "P3": 2
+   },
+   "skill": {},
+   "verdict": {
+    "pass": 2
+   }
+  },
+  {
+   "decision": "selected-state",
+   "disposition": {
+    "retire-duplicate": 1,
+    "rewrite-neutral": 1
+   },
+   "items": 2,
+   "platforms": {
+    "iOS": 2
+   },
+   "priority": {
+    "P1": 1,
+    "P3": 1
+   },
+   "skill": {
+    "S1": 1,
+    "S5": 1
+   },
+   "verdict": {
+    "pass": 2
+   }
+  },
+  {
+   "decision": "shortcut-dispatch",
+   "disposition": {
+    "keep-control": 1,
+    "repair-oracle": 1
+   },
+   "items": 2,
+   "platforms": {
+    "iOS": 2
+   },
+   "priority": {
+    "P0": 1,
+    "P3": 1
+   },
+   "skill": {
+    "S1": 1,
+    "S2": 1
+   },
+   "verdict": {
+    "fail": 1,
+    "pass": 1
+   }
+  },
+  {
+   "decision": "speed-metadata",
+   "disposition": {
+    "keep-control": 2
+   },
+   "items": 2,
+   "platforms": {
+    "iOS": 2
+   },
+   "priority": {
+    "P3": 2
+   },
+   "skill": {
+    "S1": 1,
+    "S5": 1
+   },
+   "verdict": {
+    "pass": 2
+   }
+  },
+  {
+   "decision": "stale-off",
+   "disposition": {
+    "grade-components": 1,
+    "pair-variant": 1
+   },
+   "items": 2,
+   "platforms": {
+    "macOS": 2
+   },
+   "priority": {
+    "P1": 2
+   },
+   "skill": {
+    "S1": 1,
+    "S2": 1,
+    "S3": 1,
+    "S7": 2,
+    "S8": 1
+   },
+   "verdict": {
+    "fail": 1,
+    "pass": 1
+   }
+  },
+  {
+   "decision": "table-span",
+   "disposition": {
+    "keep-control": 2
+   },
+   "items": 2,
+   "platforms": {
+    "iOS": 2
+   },
+   "priority": {
+    "P3": 2
+   },
+   "skill": {
+    "S1": 1,
+    "S2": 1
+   },
+   "verdict": {
+    "pass": 2
+   }
+  },
+  {
+   "decision": "text-size-change",
+   "disposition": {
+    "rewrite-neutral": 1,
+    "specify-policy": 1
+   },
+   "items": 2,
+   "platforms": {
+    "iOS": 2
+   },
+   "priority": {
+    "P0": 1,
+    "P1": 1
+   },
+   "skill": {
+    "S1": 2,
+    "S8": 1
+   },
+   "verdict": {
+    "fail": 1,
+    "pass": 1
+   }
+  },
+  {
+   "decision": "unavailable-media",
+   "disposition": {
+    "pair-variant": 1,
+    "reserve-transfer": 1
+   },
+   "items": 2,
+   "platforms": {
+    "macOS": 1,
+    "tvOS": 1
+   },
+   "priority": {
+    "P2": 1,
+    "P3": 1
+   },
+   "skill": {
+    "S2": 1,
+    "S7": 1
+   },
+   "verdict": {
+    "pass": 2
+   }
+  },
+  {
+   "decision": "validation-help",
+   "disposition": {
+    "pair-variant": 1,
+    "reserve-transfer": 1
+   },
+   "items": 2,
+   "platforms": {
+    "macOS": 1,
+    "tvOS": 1
+   },
+   "priority": {
+    "P3": 2
+   },
+   "skill": {},
+   "verdict": {
+    "pass": 2
+   }
+  },
+  {
+   "decision": "binding-disconnect",
+   "disposition": {
+    "rewrite-neutral": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P1": 1
+   },
+   "skill": {
+    "S2": 1,
+    "S7": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "buffer-readiness",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S1": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "cancel-owner",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S1": 1,
+    "S3": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "color-only-live",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "tvOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {},
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "container-order",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S1": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "contrast-alpha",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S2": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "contrast-appearance",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S1": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "contrast-space",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S1": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "cursor-restart",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S3": 1,
+    "S6": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "custom-action-name",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S1": 1,
+    "S2": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "description-selection",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S1": 1,
+    "S7": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "design-font",
+   "disposition": {
+    "specify-policy": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P1": 1
+   },
+   "skill": {
+    "S2": 1,
+    "S5": 1
+   },
+   "verdict": {
+    "inconclusive": 1
+   }
+  },
+  {
+   "decision": "detached-action",
+   "disposition": {
+    "split-criteria": 1
+   },
+   "items": 1,
+   "platforms": {
+    "tvOS": 1
+   },
+   "priority": {
+    "P0": 1
+   },
+   "skill": {
+    "S2": 1,
+    "S3": 1
+   },
+   "verdict": {
+    "fail": 1
+   }
+  },
+  {
+   "decision": "directional-escape",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "tvOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {},
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "dismiss-reentry",
+   "disposition": {
+    "split-criteria": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P0": 1
+   },
+   "skill": {
+    "S1": 1,
+    "S4": 1
+   },
+   "verdict": {
+    "fail": 1
+   }
+  },
+  {
+   "decision": "edit-action-stale",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S1": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "external-key-link",
+   "disposition": {
+    "rewrite-neutral": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P1": 1
+   },
+   "skill": {},
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "filter-focus-fallback",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "tvOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {
+    "S4": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "form-error-association",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {
+    "S8": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "initial-focus-once",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "tvOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {
+    "S4": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "input-snapshot",
+   "disposition": {
+    "specify-policy": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P1": 1
+   },
+   "skill": {
+    "S2": 1,
+    "S3": 1
+   },
+   "verdict": {
+    "fail": 1
+   }
+  },
+  {
+   "decision": "inspection-preserves-selection",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S7": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "key-eligibility",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {},
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "key-link-teardown",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {},
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "language-match",
+   "disposition": {
+    "grade-components": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S2": 1,
+    "S7": 1
+   },
+   "verdict": {
+    "inconclusive": 1
+   }
+  },
+  {
+   "decision": "live-inference",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S1": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "material-fallback",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {
+    "S8": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "motion-content",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "tvOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S8": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "notification-kind",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S8": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "observer-restart",
+   "disposition": {
+    "repair-oracle": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S2": 1,
+    "S3": 1
+   },
+   "verdict": {
+    "inconclusive": 1
+   }
+  },
+  {
+   "decision": "obsolete-rotor",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S3": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "outline-expand-state",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {
+    "S5": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "overlap-policy",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S6": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "progress-bucketing",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {
+    "S8": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "redundant-hint",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {
+    "S8": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "removed-child",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S3": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "rotor-direction",
+   "disposition": {
+    "repair-oracle": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S2": 1
+   },
+   "verdict": {
+    "inconclusive": 1
+   }
+  },
+  {
+   "decision": "rotor-fallback",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {
+    "S8": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "selected-vs-focused",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "tvOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {
+    "S5": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "stale-timeline",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S2": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "stale-tree-node",
+   "disposition": {
+    "split-criteria": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P0": 1
+   },
+   "skill": {
+    "S2": 1,
+    "S3": 1
+   },
+   "verdict": {
+    "fail": 1
+   }
+  },
+  {
+   "decision": "status-no-focus-theft",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {
+    "S4": 1,
+    "S8": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "unlisted-selection",
+   "disposition": {
+    "pair-variant": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P2": 1
+   },
+   "skill": {
+    "S7": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "visible-name-alignment",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "iOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {
+    "S5": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  },
+  {
+   "decision": "voice-command-name",
+   "disposition": {
+    "keep-control": 1
+   },
+   "items": 1,
+   "platforms": {
+    "macOS": 1
+   },
+   "priority": {
+    "P3": 1
+   },
+   "skill": {
+    "S5": 1
+   },
+   "verdict": {
+    "pass": 1
+   }
+  }
+ ]
+}

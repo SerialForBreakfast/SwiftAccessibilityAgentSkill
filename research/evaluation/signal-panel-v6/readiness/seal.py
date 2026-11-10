@@ -1,4 +1,4 @@
-"""Deterministic held packet for signal-v6-run1: unaided, signal-v2, signal-v6; three trials."""
+"""Deterministic held packet for signal-v6-run1: unaided, release-0.2.2, signal-v6; three trials."""
 from pathlib import Path
 import json,sys,hashlib,io
 from zipfile import ZipFile,ZipInfo,ZIP_DEFLATED
@@ -6,14 +6,24 @@ D=Path(__file__).resolve().parent
 V=D.parent
 ROOT=D.parents[3]
 H=lambda b: hashlib.sha256(b).hexdigest()
-ARMS=('unaided','signal-v2','signal-v6'); TRIALS=3
+ARMS=('unaided','release-0.2.2','signal-v6'); TRIALS=3
 def dump(obj): return (json.dumps(obj,indent=2)+'\n').encode()
 def build():
     packet=(V.parent/'signal-panel-v4/readiness/held.zip').read_bytes()
     assert H(packet)=='5e73c208ef105df6a93364a7925363178dd527b3b7d5c8e7cbd5ed1c9180f103'
     with ZipFile(io.BytesIO(packet)) as z:
-        files={n:z.read(n) for n in z.namelist() if n.startswith(('subjects/','controller/repository/','arms/signal-v2'))}
+        files={n:z.read(n) for n in z.namelist() if n.startswith(('subjects/','controller/repository/'))}
         v4criteria=json.loads(z.read('controller/criteria.json'))
+    pinfile=(ROOT/'evals/rc1-comparison/packet.json').read_bytes()
+    assert H(pinfile)=='496c51e084498d3eb164cc5a74b0c6398ec654d9acc686212b526f6e492f69c2'
+    pins=json.loads(pinfile)['releaseRuntime']
+    out=io.BytesIO()
+    with ZipFile(out,'w') as release:
+        for name,expected in sorted(pins.items()):
+            data=(ROOT/name).read_bytes()
+            assert H(data)==expected,name
+            release.writestr(ZipInfo('swift-accessibility-agent/'+name,(2026,1,1,0,0,0)),data,compress_type=ZIP_DEFLATED)
+    files['arms/release-0.2.2.zip']=out.getvalue()
     files['arms/signal-v6.zip']=(V/'candidate.zip').read_bytes()
     for n in ['HANDOFF.md','GRADING.md','check_return.py','RETURN.md']:
         files[n if n=='HANDOFF.md' else 'controller/'+n]=(D/n).read_bytes()

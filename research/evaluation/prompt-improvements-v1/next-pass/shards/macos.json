@@ -1,0 +1,2088 @@
+[
+  {
+    "id": "G-0efc69b6139819",
+    "diagnosis": "First source grade: Pass: replaces unconditional true with the AVFoundation characteristic, preserving forced and selected fields. Fail: the test wraps every substantive assertion in if case .loaded then loops over options; absent or empty groups satisfy it vacuously. Creating a composition audio track does not establish an untagged selectable option.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. Which tracks does this inspector identify as described audio when the asset has both ordinary alternate languages and a described track?",
+    "oracleChange": "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription",
+    "skill": [
+      "S1",
+      "S2",
+      "S7"
+    ],
+    "skillWhy": "Use the audio-description-tag case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test audio-description-tag in a separately authored product and ownership graph, not another variant of macos-media-v1."
+  },
+  {
+    "id": "G-2ce035ce792599",
+    "diagnosis": "Audit Q06: Checks hierarchy, visibility, responder eligibility and enabled status at completion for primary and fallback. Leaves correct code intact.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. Where does the return request go if the original control moves to another owner or can no longer accept focus? What happens if it remains eligible?",
+    "oracleChange": "DesktopLifecycleTests/testForeignOriginalUsesFallback",
+    "skill": [
+      "S1",
+      "S2",
+      "S4"
+    ],
+    "skillWhy": "Use the eligible-target case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test eligible-target in a separately authored product and ownership graph, not another variant of macos-lifecycle-v1."
+  },
+  {
+    "id": "G-0e0b9fd8e2bba2",
+    "diagnosis": "First source grade: Pass on source behavior: native keyDown dispatches Space and Return to the same guarded transition as accessibilityPerformPress; explicit state and callback assertions for enabled and disabled controls. Test caveat: extra pass-through test sets its flag in the subclass and does not prove superclass handling. Compilation, actor annotations, event delivery and runtime target-action dispatch were not verified.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-closure-details-v1/evaluation/keyboard-action.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-01eb362b156ad6",
+    "diagnosis": "First source grade: Unbinds the previous AppKit button before installing the new target/action.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. After this wrapper updates its native control, which target receives its next action? What happens after teardown?",
+    "oracleChange": "InteropTests/testOldNativeViewCannotDispatchAfterRebind",
+    "skill": [
+      "S1",
+      "S3"
+    ],
+    "skillWhy": "Use the interop-rebind case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test interop-rebind in a separately authored product and ownership graph, not another variant of mac-target-control-v1."
+  },
+  {
+    "id": "G-0b3af5810782d2",
+    "diagnosis": "First source grade: Preserves active request checks and exercises stale validation/media delivery.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. Submit twice and let the first request finish last. Which result appears, and does the current request still update the form?",
+    "oracleChange": "FormsMediaTests/testOutOfOrderValidationCannotOverwriteLatest",
+    "skill": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "skillWhy": "Use the request-generation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test request-generation in a separately authored product and ownership graph, not another variant of macos-v1."
+  },
+  {
+    "id": "G-1af6c7c13b3030",
+    "diagnosis": "First source grade: Separates unloaded and empty state, validates unique injected options, and checks that older asynchronous loads cannot overwrite newer choices.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/macos-v1/evaluation/media.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-551725ec538cff",
+    "diagnosis": "First source grade: Updates the existing label and calls changed once only for a different string.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "evals/rc1/RUBRIC.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-370808352ca7dc",
+    "diagnosis": "First source grade: Rejects stale and duplicate sheet completions and resolves available items before assigning restoration focus.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#macos-swiftui-lifecycle",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-5c3d5710d5060f",
+    "diagnosis": "First source grade: Requests both the SwiftUI bridge and native grouping code before diagnosing ownership.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#mixed-macos-owner",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-1994190a4b0c63",
+    "diagnosis": "First source grade: Row action resolves current file and disabled state while ordinary Open and Delete retain their handlers. Unchanged submission: pass.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "evals/pool/macos-appkit/file-row-delete-action/test.swift",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "high",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-fe05e95d638c25",
+    "diagnosis": "First source grade: Remembers the edited bookmark, handles deletion and ignores dismissal while the replacement editor is active. Unchanged submission: not admitted by the local review screen.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "evals/pool/macos-swiftui/bookmark-editor-return/test.swift",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-3feaf2f25c1239",
+    "diagnosis": "First source grade: Separates row selection and expansion and exposes the disclosure action and child controls.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "Separate expansion from selection; update expansion on disclosure and retain independently actionable children and stable selection.",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test outline-expand-state in a separately authored product and ownership graph, not another variant of guidelines."
+  },
+  {
+    "id": "G-7e3a91cbea2c9b",
+    "diagnosis": "First source grade: Changes only the background for reduced transparency while preserving field identity.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "Use an opaque readable fallback for the relevant environment without recreating controls or altering focus; do not claim a color token alone establishes contrast against artwork.",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test material-fallback in a separately authored product and ownership graph, not another variant of guidelines."
+  },
+  {
+    "id": "G-2fa3929697b8e1",
+    "diagnosis": "First source grade: Clears previously configured key links before relinking and during teardown.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopNavigationTests/testRemovedKeyLinksCleared",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test key-link-teardown in a separately authored product and ownership graph, not another variant of macos-navigation-v1."
+  },
+  {
+    "id": "G-2eae2be1113db6",
+    "diagnosis": "Audit Q60: The answer correctly distinguishes seekability from buffering. Public loaded ranges and a seekable-only query already answer the question; the added query preserves behavior but violates the instruction to leave working code alone.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. If a player buffers one interval but permits seeking over another, what does the inspector report for each?",
+    "oracleChange": "MediaInspectionTests/testLoadedRangesDoNotAuthorizeSeeking",
+    "skill": [
+      "S1",
+      "S8"
+    ],
+    "skillWhy": "Use the range-kind case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test range-kind in a separately authored product and ownership graph, not another variant of macos-media-v1."
+  },
+  {
+    "id": "G-1f4849817863a7",
+    "diagnosis": "First source grade: Saves selection by stable item ID across reorder, clears it on removal and rejects duplicate updates before changing the table.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-navigation-v1/evaluation/table-selection.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-16de77ef3240aa",
+    "diagnosis": "First source grade: Ties focus restoration to the current presentation generation.",
+    "problem": "ambiguous-policy",
+    "disposition": "specify-policy",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. Sheet A starts closing, then this view presents B. A delayed dismissal from A arrives. Can it change focus or close B?",
+    "oracleChange": "Exercise a retained A dismissal from the view wiring or its production-used seam after B opens. A cannot close B, alter B focus or issue a restoration request. A valid B completion must still restore once. Accept equivalent per-presentation ownership; a direct model test supplying the correct old ticket bypasses the issue.",
+    "skill": [
+      "S1",
+      "S4"
+    ],
+    "skillWhy": "Use the presentation-owner case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test presentation-owner in a separately authored product and ownership graph, not another variant of macos-v1."
+  },
+  {
+    "id": "G-288d76b52153df",
+    "diagnosis": "Audit Q22: The update already forwards the optional hint unconditionally. The patch maps absence to an empty string and its assertion hides that difference. The claim that AppKit ignores nil is unsupported here.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. Configure the same view with help text, then with none. What help is exposed after each update?",
+    "oracleChange": "ForwardingTests/testNilHintClearsOldHelp",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the optional-help case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test optional-help in a separately authored product and ownership graph, not another variant of forwarding-macos-v1."
+  },
+  {
+    "id": "G-1c220f178060c8",
+    "diagnosis": "First source grade: Records a generation, rejects completed dismissals, resolves surviving origin or fallback and tests synchronous chaining.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/macos-v1/evaluation/lifecycle.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-5ce9c8f199aeff",
+    "diagnosis": "First source grade: Keeps the configured native AppKit button and existing action.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#macos-appkit-no-change",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-406c511f819200",
+    "diagnosis": "First source grade: Filters and maps the supplied current row sequence without caching stale IDs or sorting.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "evals/rc1/RUBRIC.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-6bfef2bcad970d",
+    "diagnosis": "Audit Q37: Pairs each inspector with its host, but acceptsFirstResponder does not establish that the saved responder still belongs to that window or is eligible. The unconditional close action can also steal focus and there is no stale-presentation check.",
+    "problem": "real-model-gap",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "Bind restoration to the particular window and presentation; verify current membership and eligibility, not just global most recent field.",
+    "skill": [
+      "S2",
+      "S4"
+    ],
+    "skillWhy": "Use the window-focus-isolation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P0",
+    "confidence": "high",
+    "transfer": "Test window-focus-isolation in a separately authored product and ownership graph, not another variant of guidelines."
+  },
+  {
+    "id": "G-bdfa52cba3c7eb",
+    "diagnosis": "First source grade: Offers nonactivating, scoped export-completion feedback and keeps keyboard input in the field.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "Use a scoped status or announcement on the meaningful transition; do not move first responder or repeatedly announce unchanged status.",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test status-no-focus-theft in a separately authored product and ownership graph, not another variant of guidelines."
+  },
+  {
+    "id": "G-30434d38abe656",
+    "diagnosis": "First source grade: Returns on an unmatched request before changing the selected option.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaChoiceTests/testMissingLanguagePreservesChoice",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test missing-choice in a separately authored product and ownership graph, not another variant of macos-media-v1."
+  },
+  {
+    "id": "G-488bc12a7f090e",
+    "diagnosis": "Audit Q09: Native Open and Save still work, but duplicating Open in the custom list changes the menu. The test invokes two custom handlers and never presses the ordinary button.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. Which item do the ordinary controls and the supplementary shortcut operate on after this view refreshes?",
+    "oracleChange": "DesktopActionsTests/testOrdinarySaveOnly",
+    "skill": [
+      "S1",
+      "S2",
+      "S8"
+    ],
+    "skillWhy": "Use the ordinary-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test ordinary-action in a separately authored product and ownership graph, not another variant of macos-appkit-v1."
+  },
+  {
+    "id": "G-2dc66d0d40cac2",
+    "diagnosis": "First source grade: Separates item/group/error outcomes, reports actual selected metadata without a selection write and scopes the tagged silent fixture to track evidence.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-media-v1/evaluation/media-metadata.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-253ef47608e3c6",
+    "diagnosis": "First source grade: Checks surface identity and generation before executing retained actions.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "ForwardingTests/testOldShortcutCannotReachNewItem",
+    "skill": [
+      "S2",
+      "S3"
+    ],
+    "skillWhy": "Use the rebound-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test rebound-action in a separately authored product and ownership graph, not another variant of forwarding-macos-v1."
+  },
+  {
+    "id": "G-32019e51844cc7",
+    "diagnosis": "Audit Q35: Removing the revision check lets a retained action select or delete a replacement with a recycled ID. The test explicitly expects the stale action to succeed, reversing the ownership contract.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. Keep an action from before a refresh, then invoke it after the row represents a different record. What does it do? What do the current ordinary controls do?",
+    "oracleChange": "DocumentTests/testOldActionDoesNotTargetReboundRow",
+    "skill": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "skillWhy": "Use the rebound-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test rebound-action in a separately authored product and ownership graph, not another variant of macos-v1."
+  },
+  {
+    "id": "G-2104029bd14c12",
+    "diagnosis": "First source grade: Filters forced tracks and represents a retained outside selection. The shown filtering tests reconstruct option data and do not verify writes against the actual item.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/media-macos-v2/evaluation/selection.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-6214bc5b2a27f2",
+    "diagnosis": "First source grade: Rebinds each existing native button to the supplied owner and its own selector.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "evals/rc1/RUBRIC.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-45927128a01e38",
+    "diagnosis": "First source grade: Tests the supplied DynamicTypeSize using isAccessibilitySize.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "evals/rc1/RUBRIC.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the subjects case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-ebfb3d2c75add7",
+    "diagnosis": "First source grade: Retains Remove and adds filename and directory context to disambiguate duplicates.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "Preserve the visible action term and distinguish targets using stable user-facing context, including duplicate filenames; accept contextual labels or suitable alternative names, not opaque identifiers.",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test voice-command-name in a separately authored product and ownership graph, not another variant of guidelines."
+  },
+  {
+    "id": "G-d82c5ccce8e33f",
+    "diagnosis": "Audit Q51: The main recommendation hides the representable’s accessible subtree, which can remove the native editable field along with the duplicate. The alternative of removing redundant wrapper semantics is appropriate.",
+    "problem": "real-model-gap",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "Expose one editable owner rather than replacing it with a static wrapper; accept native forwarding or leaving the wrapper non-actionable. Preserve editing, current value and ordinary input.",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P0",
+    "confidence": "high",
+    "transfer": "Test interop-double-exposure in a separately authored product and ownership graph, not another variant of guidelines."
+  },
+  {
+    "id": "G-352803701b8f4a",
+    "diagnosis": "Audit Q34: Resolves against the active map, reports zero children after removal and avoids obsolete child arrays. An old object whose ID is later recycled resolves to the replacement, which is distinct from exposing obsolete children. The supplied check covers removal only.",
+    "problem": "oracle-mismatch",
+    "disposition": "split-criteria",
+    "promptChange": "Separate the two ownership or lifecycle conditions.",
+    "proposedWording": "macOS 26.0, AppKit. After an outline node is removed, a delayed query still passes the old object. What children does that query see? IDs are never reused in this workflow. ‖ macOS 26.0, AppKit. An outline group disappears, then a different group reuses its ID. What child counts, expandability and children should delayed callers see through the old handle and the new one?",
+    "oracleChange": "Retain a populated parent, remove it, and query count and expandability via the data source. Expect zero and false; a current populated parent still exposes its children. Avoid indexing after a zero count. ID lookup, identity validation and retirement of old nodes are valid under no ID reuse. / Install a populated group, remove it, then install a distinct same-ID group with a new child. Query both handles through the data source. Old has count zero and is not expandable. New is expandable and exposes the new child. Do not request child zero from an empty handle.",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the stale-tree-node case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P0",
+    "confidence": "high",
+    "transfer": "Test stale-tree-node in a separately authored product and ownership graph, not another variant of macos-structure-v1."
+  },
+  {
+    "id": "G-49d48cb3a1f089",
+    "diagnosis": "First source grade: Identifies the preflight duplicate-ID guard and checks the outline remains intact.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. What state remains visible if a refresh contains duplicate IDs? Our screen should either accept the whole update or keep the previous one.",
+    "oracleChange": "DesktopOutlineTests/testDuplicateRootsAreRejectedAtomically",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the duplicate-id case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test duplicate-id in a separately authored product and ownership graph, not another variant of macos-structure-v1."
+  },
+  {
+    "id": "G-3f811eea610d0c",
+    "diagnosis": "First source grade: Proposes a custom AppKit action-description/perform-action spelling instead of wiring a named NSAccessibilityCustomAction to Open.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-appkit-v1/evaluation/desktop-actions.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-2cf913ca90235b",
+    "diagnosis": "Audit Q08: Gates only the optional callback, leaving selection, event emission and normal animation intact. The test exercises both preference settings.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. With reduced motion enabled and disabled, what happens to the optional effect and the ordinary interaction?",
+    "oracleChange": "StoreTests/testReducedMotionStillUpdatesFinalState",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the motion-policy case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test motion-policy in a separately authored product and ownership graph, not another variant of forwarding-macos-v1."
+  },
+  {
+    "id": "G-33543d74420875",
+    "diagnosis": "First source grade: Recognizes and verifies the existing guard against duplicate and disabled binding writes.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. Write an unchanged value through the binding, then a new one. How many times does the change action run?",
+    "oracleChange": "SemanticsTests/testRepeatedBindingSetDoesNotDuplicateCallback",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the duplicate-binding case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test duplicate-binding in a separately authored product and ownership graph, not another variant of macos-v1."
+  },
+  {
+    "id": "G-29e54c4dae1989",
+    "diagnosis": "First source grade: Keeps native controls, reports actual state changes once, and bounds the five-point volume setter.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/macos-v1/evaluation/semantics.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-7f59da93d717ea",
+    "diagnosis": "First source grade: Keeps Open and Details separate from descriptive grouping and explains limits of the unit evidence.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#macos-appkit-structure",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-93fed5f76679b0",
+    "diagnosis": "First source grade: Cancels previous work, checks cancellation and identity, clears obsolete optional metadata and uses the currently bound action.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#macos-swiftui-state",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the subjects case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-35b2cc77323520",
+    "diagnosis": "First source grade: Rejects the obsolete completion token and accepts the current one.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopLifecycleTests/testOldCompletionCannotConsumeNewSession",
+    "skill": [
+      "S4"
+    ],
+    "skillWhy": "Use the presentation-owner case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test presentation-owner in a separately authored product and ownership graph, not another variant of macos-lifecycle-v1."
+  },
+  {
+    "id": "G-53503b19ad4b70",
+    "diagnosis": "First source grade: Uses the existing start/end boundary checks to explain exclusion of partial matches.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. If a search matches only part of a composed character, which navigation destinations are offered?",
+    "oracleChange": "DesktopTextTests/testPartialGraphemesExcluded",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the grapheme-boundary case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test grapheme-boundary in a separately authored product and ownership graph, not another variant of macos-closure-v1."
+  },
+  {
+    "id": "G-48da1d05620cd2",
+    "diagnosis": "First source grade: Guards permission to turn subtitles off and preserves unrelated groups. Fixture branches can return early if an expected group is absent.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-media-v1/evaluation/media-selection.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-56290054a4fad7",
+    "diagnosis": "First source grade: Checks ticket ownership before committing a delayed result.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaSelectionTests/testCancelledOldTaskCannotCancelNewerLoad",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the cancel-owner case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test cancel-owner in a separately authored product and ownership graph, not another variant of media-macos-v1."
+  },
+  {
+    "id": "G-5c8c9ba78d4db8",
+    "diagnosis": "Audit Q27: The existing configure detaches the old target and stop clears the active target, action and handler. The recipe repeats cleanup on both platforms and tests teardown alone. It supplies no example requiring those extra writes.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. After this wrapper updates its native control, which target receives its next action? What happens after teardown?",
+    "oracleChange": "InteropTests/testOldNativeViewCannotDispatchAfterRebind",
+    "skill": [
+      "S1",
+      "S2",
+      "S3",
+      "S8"
+    ],
+    "skillWhy": "Use the interop-rebind case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test interop-rebind in a separately authored product and ownership graph, not another variant of mac-target-control-v1."
+  },
+  {
+    "id": "G-2a88209aad2736",
+    "diagnosis": "First source grade: Preserves the selection while editing a name, publishes state before callback and separates reduced-transparency presentation.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/forwarding-macos-v1/evaluation/preference-forwarding.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-a3221645549ddf",
+    "diagnosis": "First source grade: Keeps ordinary controls and resolves the current file and enabled state for the supplementary AppKit action.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#macos-appkit-actions",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-f4d1432a0aa93e",
+    "diagnosis": "First source grade: Offers layout adaptation and scalable fonts but preservation of the supplied Pay configuration is not established by the presented integration.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#macos-swiftui-text",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-3d9c583f1d2a12",
+    "diagnosis": "First source grade: Blocks recursive submit and checks the save call count.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopFormTests/testReentrantSaveDoesNotSubmitTwice",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the reentrant-submit case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test reentrant-submit in a separately authored product and ownership graph, not another variant of macos-structure-v1."
+  },
+  {
+    "id": "G-81142f68b0d10b",
+    "diagnosis": "First source grade: Concludes the existing reload/reselect sequence preserves the logical item by ID.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. Rename the selected item, reorder the list, then remove it. Which item is selected after each update?",
+    "oracleChange": "DesktopNavigationTests/testReorderPreservesIdentity",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the stable-selection case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test stable-selection in a separately authored product and ownership graph, not another variant of macos-navigation-v1."
+  },
+  {
+    "id": "G-5200ef96ce8adb",
+    "diagnosis": "First source grade: Validates the saved field snapshot and current request, consumes duplicate results, and exercises first-invalid-field order and synchronous reentry.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-closure-v1/evaluation/validation-ownership.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-59d23c765e4fa1",
+    "diagnosis": "First source grade: Distinguishes the guarded media path and validates the current form request before accepting its result.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. Submit twice and let the first request finish last. Which result appears, and does the current request still update the form?",
+    "oracleChange": "FormsMediaTests/testOutOfOrderValidationCannotOverwriteLatest",
+    "skill": [
+      "S1",
+      "S3"
+    ],
+    "skillWhy": "Use the request-generation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test request-generation in a separately authored product and ownership graph, not another variant of macos-v1."
+  },
+  {
+    "id": "G-65558ea85abec1",
+    "diagnosis": "Audit Q03: Labeling a selectable forced option distinctly satisfies a plausible reading, but expands the existing menu. Its test never completes loading and iterates over zero choices.",
+    "problem": "ambiguous-policy",
+    "disposition": "specify-policy",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. This macOS SwiftUI menu offers full subtitles only. If a forced-only track is already active, opening the menu must leave it active. Does this code preserve that policy?",
+    "oracleChange": "Use a known full option and a different forced-only option already selected in the same item/group. Through production refresh and reading the picker, full is offered, forced-only excluded, actual native selection unchanged. Do not infer Off from a nil display ID. No display redesign required.",
+    "skill": [
+      "S1",
+      "S2",
+      "S7",
+      "S8"
+    ],
+    "skillWhy": "Use the forced-vs-full case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test forced-vs-full in a separately authored product and ownership graph, not another variant of media-macos-v1."
+  },
+  {
+    "id": "G-3e267fb278622b",
+    "diagnosis": "First source grade: Checks native sender and generation and disables both ordinary and shortcut dispatch after teardown.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/forwarding-macos-v1/evaluation/native-actions.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-f853b3b93cb686",
+    "diagnosis": "First source grade: Scopes AppKit assertions to source/configuration, records exact environment and preserves first-failure diagnostics.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#macos-appkit-testing",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-45c27326f33a54",
+    "diagnosis": "First source grade: Checks duplicate identity before replacing the current items.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopNavigationTests/testDuplicateIDsRejectedAtomically",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the duplicate-id case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test duplicate-id in a separately authored product and ownership graph, not another variant of macos-navigation-v1."
+  },
+  {
+    "id": "G-9ce845a566d425",
+    "diagnosis": "Audit Q12: An AppKit row can be an accessibility element and have children. Marking it ignored can flatten away the requested row semantics. Checking getters on an ignored object cannot establish exposure.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. How does the row report its role and selection, and can people still operate its actionable children separately?",
+    "oracleChange": "DesktopContractTests/testExplicitRowRoleAndChildSemantics",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the row-role case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test row-role in a separately authored product and ownership graph, not another variant of macos-closure-details-v1."
+  },
+  {
+    "id": "G-590b3706be273d",
+    "diagnosis": "First source grade: Separates backdrop from content, exposes non-color state and tests restoration of the original modal flag.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-closure-v1/evaluation/native-state.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-6dfa1eac517b72",
+    "diagnosis": "First source grade: Verifies the current ticket before applying track completion. A late earlier failure cannot replace newer tracks.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "FormsMediaTests/testStaleTrackLoadIsIgnored",
+    "skill": [
+      "S3"
+    ],
+    "skillWhy": "Use the request-generation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test request-generation in a separately authored product and ownership graph, not another variant of macos-v1."
+  },
+  {
+    "id": "G-6d5107426a2b49",
+    "diagnosis": "Audit Q33: The supplied button reads the current environment at the point of action and the store already guards the effect after recording state. The answer preserves that result in its store tests but requires view-level synchronization for an invented external caller.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. With reduced motion enabled and disabled, what happens to the optional effect and the ordinary interaction?",
+    "oracleChange": "StoreTests/testReducedMotionStillUpdatesFinalState",
+    "skill": [
+      "S1",
+      "S2",
+      "S8"
+    ],
+    "skillWhy": "Use the motion-policy case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test motion-policy in a separately authored product and ownership graph, not another variant of forwarding-macos-v1."
+  },
+  {
+    "id": "G-5d3ebb1283a579",
+    "diagnosis": "First source grade: Supplies scalable status text and selected wording and preserves content when reducing transparency or motion.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/macos-v1/evaluation/preferences.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-4659339897f098",
+    "diagnosis": "First source grade: Clears newly supplied buttons' outgoing links before wiring the eligible loop and demonstrates bypass and cleared disabled links.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopNavigationTests/testIncomingDisabledLinkCleared",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test external-key-link in a separately authored product and ownership graph, not another variant of macos-navigation-v1."
+  },
+  {
+    "id": "G-b98a54650bda64",
+    "diagnosis": "First source grade: Explains the validation-before-save path and verifies the invalid input survives.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. What happens to the entered text, validation feedback and Save callback for invalid input and then for a valid correction?",
+    "oracleChange": "DesktopFormTests/testInvalidInputShowsErrorWithoutSavingOrErasing",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the invalid-submit case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test invalid-submit in a separately authored product and ownership graph, not another variant of macos-structure-v1."
+  },
+  {
+    "id": "G-59ae696cc32592",
+    "diagnosis": "First source grade: Uses modal tokens and checks hidden and first-responder eligibility. Membership in the originating subtree is not established by window attachment alone.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-lifecycle-v1/evaluation/modal-restoration.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-765c7c64047507",
+    "diagnosis": "Audit Q40: Adds equality to the existing disabled guard and tests repeated writes interleaved with both actual transitions.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. Write an unchanged value through the binding, then a new one. How many times does the change action run?",
+    "oracleChange": "SemanticsTests/testRepeatedBindingSetDoesNotDuplicateCallback",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the duplicate-binding case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test duplicate-binding in a separately authored product and ownership graph, not another variant of macos-v1."
+  },
+  {
+    "id": "G-79fa7510bdf4bc",
+    "diagnosis": "Audit Q10: The view callback still reads mutable ticket state. A late callback can present the newer ticket to a guard that accepts it. The test supplies the old ticket by hand.",
+    "problem": "ambiguous-policy",
+    "disposition": "specify-policy",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. Sheet A starts closing, then this view presents B. A delayed dismissal from A arrives. Can it change focus or close B?",
+    "oracleChange": "Exercise a retained A dismissal from the view wiring or its production-used seam after B opens. A cannot close B, alter B focus or issue a restoration request. A valid B completion must still restore once. Accept equivalent per-presentation ownership; a direct model test supplying the correct old ticket bypasses the issue.",
+    "skill": [
+      "S1",
+      "S2",
+      "S4"
+    ],
+    "skillWhy": "Use the presentation-owner case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test presentation-owner in a separately authored product and ownership graph, not another variant of macos-v1."
+  },
+  {
+    "id": "G-5f436c17e0c488",
+    "diagnosis": "First source grade: chooseTrack accepts a nullable ID against the current list without capturing the originating request, so an old Off remains valid.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/media-macos-v1/evaluation/ownership.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-4c1f429b3189e5",
+    "diagnosis": "First source grade: Restores the saved modal bit, clears the snapshot and exercises initially true and false states.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "StateContractTests/testRepeatedModalBeginRestoresOriginalTrue",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test modal-state in a separately authored product and ownership graph, not another variant of macos-closure-v1."
+  },
+  {
+    "id": "G-be8ab365c3ca77",
+    "diagnosis": "Audit Q50: The option’s existing characteristic is correctly identified and preserved. Public conformances and initializer changes are unnecessary. The test assumes a named resource and infers ground truth from English display names, so tagged foreign-language tracks can fail.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. Which tracks does this inspector identify as described audio when the asset has both ordinary alternate languages and a described track?",
+    "oracleChange": "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription",
+    "skill": [
+      "S1",
+      "S2",
+      "S7",
+      "S8"
+    ],
+    "skillWhy": "Use the audio-description-tag case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test audio-description-tag in a separately authored product and ownership graph, not another variant of macos-media-v1."
+  },
+  {
+    "id": "G-5ab179c11529a9",
+    "diagnosis": "First source grade: Implements literal matching with boundary and direction cases; the mapping from the native AppKit rotor target back to the selectable text range remains unverified.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-closure-v1/evaluation/text-rotor.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-785b435936f8de",
+    "diagnosis": "First source grade: Checks generation and ownership in a captured selection binding.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. Open the captions menu, replace the player item, then choose Off in the original menu. Which item's selection changes?",
+    "oracleChange": "ReviewRegressionTests/testStaleOffCannotClearReloadedSelection",
+    "skill": [
+      "S1",
+      "S2",
+      "S7"
+    ],
+    "skillWhy": "Use the stale-off case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test stale-off in a separately authored product and ownership graph, not another variant of media-macos-v2."
+  },
+  {
+    "id": "G-7fed584f0f2a04",
+    "diagnosis": "Audit Q36: Generation-tagged Off also rejects an old tag, and the existing binding already rejects old writes. The answer changes the current choose(nil) contract and assumes SwiftUI redirects stale tags to fresh bindings. TestMediaGroup is undefined and the test never selects and verifies replacement captions.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. Open the captions menu, replace the player item, then choose Off in the original menu. Which item's selection changes?",
+    "oracleChange": "ReviewRegressionTests/testStaleOffCannotClearReloadedSelection",
+    "skill": [
+      "S1",
+      "S2",
+      "S7",
+      "S8"
+    ],
+    "skillWhy": "Use the stale-off case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test stale-off in a separately authored product and ownership graph, not another variant of media-macos-v2."
+  },
+  {
+    "id": "G-7708079eaec0da",
+    "diagnosis": "First source grade: Models empty-message service failure separately and checks request ownership, duplicate completion, cancellation and reentry.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/macos-v1/evaluation/forms.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-4cc95f7f4b6eda",
+    "diagnosis": "First source grade: Returns on a validation error before save; verifies error text, retained input and absence of saved value.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. What happens to the entered text, validation feedback and Save callback for invalid input and then for a valid correction?",
+    "oracleChange": "DesktopFormTests/testInvalidInputShowsErrorWithoutSavingOrErasing",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the invalid-submit case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test invalid-submit in a separately authored product and ownership graph, not another variant of macos-structure-v1."
+  },
+  {
+    "id": "G-c4d71a0f3c4363",
+    "diagnosis": "Audit Q59: Default full-subtitle selection still excludes forced-only tracks, as the original already did. The extra public selection mode does not address any demonstrated menu-presenting code. The fake AVFoundation option/group construction presupposes usable super.init() for framework objects; the packet supplies a real-group fixture approach.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. This picker is for full subtitles. Which options does it offer when the asset also has forced translations, and what happens to the current selection on opening it?",
+    "oracleChange": "MediaChoiceTests/testSelectFullEnglishSubtitle",
+    "skill": [
+      "S1",
+      "S7",
+      "S8"
+    ],
+    "skillWhy": "Use the forced-vs-full case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test forced-vs-full in a separately authored product and ownership graph, not another variant of macos-media-v1."
+  },
+  {
+    "id": "G-692732b239ef62",
+    "diagnosis": "First source grade: Updates the existing text field on change and posts through an injectable notifier only once per new status.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-appkit-v1/evaluation/desktop-status.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-79b7f3ea3d3866",
+    "diagnosis": "First source grade: Rejects an old closure after rebinding; verifies the old record is preserved and only the new action deletes.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. Keep an action from before a refresh, then invoke it after the row represents a different record. What does it do? What do the current ordinary controls do?",
+    "oracleChange": "DocumentTests/testOldActionDoesNotTargetReboundRow",
+    "skill": [
+      "S1",
+      "S3"
+    ],
+    "skillWhy": "Use the rebound-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test rebound-action in a separately authored product and ownership graph, not another variant of macos-v1."
+  },
+  {
+    "id": "G-99daa9542b74b4",
+    "diagnosis": "Audit Q15: Correctly traces the environment into the animation policy and leaves normal animation and selected text alone.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. With reduced motion enabled and disabled, what happens to the optional effect and the ordinary interaction?",
+    "oracleChange": "PreferenceTests/testReducedMotionPolicyKeepsFinalStateIndependent",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the motion-policy case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test motion-policy in a separately authored product and ownership graph, not another variant of macos-v1."
+  },
+  {
+    "id": "G-8fec6fa1b5990e",
+    "diagnosis": "First source grade: Validates incoming IDs before update, preserves surviving article selection, and rejects shortcuts from old revisions.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/macos-v1/evaluation/documents.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-4d6441bda8046f",
+    "diagnosis": "First source grade: Saves the selected ID across replacement and checks both reorder and removal.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. Rename the selected item, reorder the list, then remove it. Which item is selected after each update?",
+    "oracleChange": "DesktopNavigationTests/testReorderPreservesIdentity",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the stable-selection case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test stable-selection in a separately authored product and ownership graph, not another variant of macos-navigation-v1."
+  },
+  {
+    "id": "G-ca3035351f5e93",
+    "diagnosis": "Audit Q42: The supported keyboard, mouse and accessibility paths already call the guarded activate method. The new override invents an enabled activation behavior without showing any disabled toggle in the source. Disabled keyboard behavior remains correct.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. When the command is disabled, what happens through each activation path? What happens when it is enabled again?",
+    "oracleChange": "DesktopContractTests/testDisabledKeyboardEventCannotToggle",
+    "skill": [
+      "S1",
+      "S8"
+    ],
+    "skillWhy": "Use the disabled-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test disabled-action in a separately authored product and ownership graph, not another variant of macos-closure-details-v1."
+  },
+  {
+    "id": "G-6f910d6a75031d",
+    "diagnosis": "First source grade: Keeps input on invalid save, restores help on edit and guards reentrant save dispatch.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-structure-v1/evaluation/form-recovery.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-8effc67ffe5eaf",
+    "diagnosis": "First source grade: Represents an unlisted selected option separately from Off.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "ReviewRegressionTests/testForcedSelectionIsNotOff",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test unlisted-selection in a separately authored product and ownership graph, not another variant of media-macos-v2."
+  },
+  {
+    "id": "G-917744c4992bd8",
+    "diagnosis": "First source grade: Writes selected before verifying current item/group and calls select(nil,in:) without checking whether clearing the group is permitted.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/media-macos-v1/evaluation/selection.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-535c760550d0f4",
+    "diagnosis": "First source grade: Adds a textual selected/unselected cue and checks the status field.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. Toggle this control on and off. What visible wording and accessible state describe it after each change?",
+    "oracleChange": "StateContractTests/testSelectedStateHasNonColorTextAndValue",
+    "skill": [
+      "S1",
+      "S2",
+      "S5"
+    ],
+    "skillWhy": "Use the conflicting-state-text case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test conflicting-state-text in a separately authored product and ownership graph, not another variant of macos-closure-v1."
+  },
+  {
+    "id": "G-d408fed70240bf",
+    "diagnosis": "Audit Q29: Both supplied controls already derive status from state. The answer refactors SemanticToggle and posts a new notification without establishing stale text, while the nominated assertion concerns RegionState. The resulting toggle still synchronizes status.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. Toggle this control on and off. What visible wording and accessible state describe it after each change?",
+    "oracleChange": "StateContractTests/testSelectedStateHasNonColorTextAndValue",
+    "skill": [
+      "S1",
+      "S5",
+      "S8"
+    ],
+    "skillWhy": "Use the conflicting-state-text case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test conflicting-state-text in a separately authored product and ownership graph, not another variant of macos-closure-v1."
+  },
+  {
+    "id": "G-79423f3b98d55c",
+    "diagnosis": "First source grade: Separates missing and empty ranges and checks seekability independently of buffered intervals.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-media-v1/evaluation/media-inspection.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-9aab175a86cc9b",
+    "diagnosis": "First source grade: Correctly clears NSAccessibility help when the new hint is nil. The extra accessibilityHint assertion needs an applicable AppKit API.",
+    "problem": "grader-uncertain",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. Configure the same view with help text, then with none. What help is exposed after each update?",
+    "oracleChange": "ForwardingTests/testNilHintClearsOldHelp",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the optional-help case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "low",
+    "transfer": "Test optional-help in a separately authored product and ownership graph, not another variant of forwarding-macos-v1."
+  },
+  {
+    "id": "G-9cb4d6bc27fab4",
+    "diagnosis": "First source grade: Models phases and retry but the picker changes selectedTrackID without writing the native media group.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/media-macos-v1/evaluation/wiring.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-58194b84fb2eb3",
+    "diagnosis": "First source grade: Compares current player item before publishing the previous result.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaLoadOwnerTests/testExternalReplacementRejectsOldResult",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test player-item-owner in a separately authored product and ownership graph, not another variant of macos-closure-v1."
+  },
+  {
+    "id": "G-defe46471dcdbf",
+    "diagnosis": "Audit Q30: Identifies the active-ticket guard and preserves the implementation. The test completes callbacks in reverse order and observes the newer result.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. Submit twice and let the first request finish last. Which result appears, and does the current request still update the form?",
+    "oracleChange": "AsyncOwnershipTests/testOutOfOrderReplyCannotReplaceLatestErrors",
+    "skill": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "skillWhy": "Use the request-generation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test request-generation in a separately authored product and ownership graph, not another variant of macos-closure-v1."
+  },
+  {
+    "id": "G-7b07f9df8d9fb4",
+    "diagnosis": "First source grade: Cancels pending work and tests restart, but the scheduled delivery checks only isObserving; handling of already executing old work across a restart is unresolved.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-lifecycle-v1/evaluation/display-preferences.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-aa17ddeb7ea6b0",
+    "diagnosis": "First source grade: Binding setter forwards the actual selected ID to choose; reads and writes are exercised through the binding.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaSelectionTests/testBindingWritesNativeSelection",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test binding-disconnect in a separately authored product and ownership graph, not another variant of media-macos-v1."
+  },
+  {
+    "id": "G-acff177ada107a",
+    "diagnosis": "First source grade: Rebinds the current AppKit sender and tears down target/action; exercises retained callbacks without extending coordinator lifetime.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/macos-v1/evaluation/interop.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-60eafa8ee757b1",
+    "diagnosis": "First source grade: Applies distinct contextual names to the open and save controls.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopActionsTests/testContextualNames",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test refresh-name in a separately authored product and ownership graph, not another variant of macos-appkit-v1."
+  },
+  {
+    "id": "G-afd24ea695f71b",
+    "diagnosis": "First source grade: Deduplicates buttons, rebuilds eligible cyclic links, and clears stale links when controls leave the cycle.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-navigation-v1/evaluation/key-order.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-b804b26131dda0",
+    "diagnosis": "First source grade: Distinguishes forced options by name but still includes them in the picker. Applicability depends on whether the picker admits separate forced choices.",
+    "problem": "grader-uncertain",
+    "disposition": "specify-policy",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. This macOS SwiftUI menu offers full subtitles only. If a forced-only track is already active, opening the menu must leave it active. Does this code preserve that policy?",
+    "oracleChange": "Use a known full option and a different forced-only option already selected in the same item/group. Through production refresh and reading the picker, full is offered, forced-only excluded, actual native selection unchanged. Do not infer Off from a nil display ID. No display redesign required.",
+    "skill": [
+      "S1",
+      "S7"
+    ],
+    "skillWhy": "Use the forced-vs-full case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "low",
+    "transfer": "Test forced-vs-full in a separately authored product and ownership graph, not another variant of media-macos-v1."
+  },
+  {
+    "id": "G-d9f01c2c8acad3",
+    "diagnosis": "First source grade: Sets the AppKit heading/status and distinct button names, clears obsolete help/value and preserves subview identity and order.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/forwarding-macos-v1/evaluation/native-metadata.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-61fa82b4463179",
+    "diagnosis": "First source grade: Uses the existing error-clearing path when edited and checks the field's original help is restored.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopFormTests/testEditingClearsErrorRestoresHelpAndPreservesInput",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the validation-help case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test validation-help in a separately authored product and ownership graph, not another variant of macos-structure-v1."
+  },
+  {
+    "id": "G-c8704ad5719705",
+    "diagnosis": "First source grade: Exposes row metadata alongside an independent Open button and dispatches its current record only when enabled.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-closure-details-v1/evaluation/row-metadata.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-c3d45de5f9f91e",
+    "diagnosis": "First source grade: Compares the active ticket alongside item identity and tests that an earlier failure cannot overwrite later state.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaSelectionTests/testOldErrorCannotOverwriteNewSuccess",
+    "skill": [
+      "S2",
+      "S3"
+    ],
+    "skillWhy": "Use the request-generation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test request-generation in a separately authored product and ownership graph, not another variant of media-macos-v1."
+  },
+  {
+    "id": "G-f35a126fd39e0a",
+    "diagnosis": "First source grade: Test and implementation treat a missing player item as absence of options; real native selection alone does not distinguish those states.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/media-macos-v2/evaluation/wiring.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-67a4979c4f2e7d",
+    "diagnosis": "First source grade: Compares against the last snapshot before applying preferences; verifies initial read, duplicate and subsequent change.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test preference-redelivery in a separately authored product and ownership graph, not another variant of macos-lifecycle-v1."
+  },
+  {
+    "id": "G-dd7ee77a4e81a0",
+    "diagnosis": "First source grade: Datasource accepts any LibraryItemNode and returns its children even after removal; the orphan test explicitly expects the stale node to remain queryable.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-structure-v1/evaluation/outline-structure.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-e2f418e34deaed",
+    "diagnosis": "First source grade: Checks ticket and enabled state and exercises callback cleanup.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "InteropTests/testCoordinatorReplacesOldCallback",
+    "skill": [
+      "S2",
+      "S3"
+    ],
+    "skillWhy": "Use the interop-rebind case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test interop-rebind in a separately authored product and ownership graph, not another variant of macos-v1."
+  },
+  {
+    "id": "G-f48375292f98ee",
+    "diagnosis": "First source grade: The binding invokes choose with only the selected value. The method captures the player's item when invoked, so a retained old Off can acquire the new owner.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/media-macos-v2/evaluation/ownership.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-6d1140dc450e0b",
+    "diagnosis": "First source grade: Rejects duplicate IDs before changing the outline tree.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. What state remains visible if a refresh contains duplicate IDs? Our screen should either accept the whole update or keep the previous one.",
+    "oracleChange": "DesktopOutlineTests/testDuplicateRootsAreRejectedAtomically",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the duplicate-id case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test duplicate-id in a separately authored product and ownership graph, not another variant of macos-structure-v1."
+  },
+  {
+    "id": "G-f607ba4f908086",
+    "diagnosis": "First source grade: Checks load ID and internally tracked item before publishing, but coverage of player replacement outside the owner remains unresolved.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/macos-closure-v1/evaluation/media-load-ownership.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-f957660ac921ec",
+    "diagnosis": "First source grade: Derives animation permission from the inverse of Reduce Motion.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, SwiftUI. With reduced motion enabled and disabled, what happens to the optional effect and the ordinary interaction?",
+    "oracleChange": "PreferenceTests/testReducedMotionPolicyKeepsFinalStateIndependent",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the motion-policy case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test motion-policy in a separately authored product and ownership graph, not another variant of macos-v1."
+  },
+  {
+    "id": "G-750ac0ab6c5c65",
+    "diagnosis": "First source grade: Checks enabled state before activation and exercises disabled and enabled paths.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. When the command is disabled, what happens through each activation path? What happens when it is enabled again?",
+    "oracleChange": "DesktopContractTests/testDisabledKeyboardEventCannotToggle",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the disabled-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test disabled-action in a separately authored product and ownership graph, not another variant of macos-closure-details-v1."
+  },
+  {
+    "id": "G-7ec34f4655de19",
+    "diagnosis": "First source grade: Rejects disallowed clearing before invoking the selection mutation.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaChoiceTests/testOffPolicyRejectsWithoutCallingClear",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test off-permission in a separately authored product and ownership graph, not another variant of macos-media-v1."
+  },
+  {
+    "id": "G-7ffece0e97f65c",
+    "diagnosis": "First source grade: Proposes rebuilding matches on external text edits rather than simply rejecting stale ranges. The new delegate integration and end-to-end range handling remain uncertain on source inspection.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "DesktopTextTests/testUnannouncedEditRejectsCachedRange",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "Test edited-matches in a separately authored product and ownership graph, not another variant of macos-closure-v1."
+  },
+  {
+    "id": "G-809a500fb86938",
+    "diagnosis": "First source grade: Clears the active token on acceptance and checks the duplicate result cannot overwrite state.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaLoadOwnerTests/testDuplicateCallbackCannotOverwriteFirstResult",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the duplicate-completion case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test duplicate-completion in a separately authored product and ownership graph, not another variant of macos-closure-v1."
+  },
+  {
+    "id": "G-84ceaa1fed1f5a",
+    "diagnosis": "First source grade: The snapshot guard rejects the reply, but its bare return leaves the active validation busy after a native-field edit.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot",
+    "skill": [
+      "S3"
+    ],
+    "skillWhy": "Use the input-snapshot case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "Test input-snapshot in a separately authored product and ownership graph, not another variant of macos-closure-v1."
+  },
+  {
+    "id": "G-85ba67b0de42ba",
+    "diagnosis": "First source grade: Checks ticket ownership and verifies the newer error survives.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. Submit twice and let the first request finish last. Which result appears, and does the current request still update the form?",
+    "oracleChange": "AsyncOwnershipTests/testOutOfOrderReplyCannotReplaceLatestErrors",
+    "skill": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "skillWhy": "Use the request-generation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test request-generation in a separately authored product and ownership graph, not another variant of macos-closure-v1."
+  },
+  {
+    "id": "G-85f4f173cd1f69",
+    "diagnosis": "First source grade: Reuses the node by stable ID and checks retained selection.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopOutlineTests/testRenameRetainsStableNodeIdentity",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the stable-selection case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test stable-selection in a separately authored product and ownership graph, not another variant of macos-structure-v1."
+  },
+  {
+    "id": "G-a12b5e1af9ae26",
+    "diagnosis": "First source grade: Connects native save target and selector and checks dispatch.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. Which item do the ordinary controls and the supplementary shortcut operate on after this view refreshes?",
+    "oracleChange": "DesktopActionsTests/testOrdinarySaveOnly",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the ordinary-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test ordinary-action in a separately authored product and ownership graph, not another variant of macos-appkit-v1."
+  },
+  {
+    "id": "G-a29555e4cd763e",
+    "diagnosis": "First source grade: Requires the description characteristic when specified and preserves the previous selection if no matching option exists.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaChoiceTests/testDescriptionUnavailablePreservesChoice",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test description-selection in a separately authored product and ownership graph, not another variant of macos-media-v1."
+  },
+  {
+    "id": "G-a978e18a8f821c",
+    "diagnosis": "First source grade: Separates forced-only, full and described selections. Verification depends on unconfirmed framework option doubles.",
+    "problem": "grader-uncertain",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. This picker is for full subtitles. Which options does it offer when the asset also has forced translations, and what happens to the current selection on opening it?",
+    "oracleChange": "MediaChoiceTests/testSelectFullEnglishSubtitle",
+    "skill": [
+      "S1",
+      "S7"
+    ],
+    "skillWhy": "Use the forced-vs-full case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "low",
+    "transfer": "Test forced-vs-full in a separately authored product and ownership graph, not another variant of macos-media-v1."
+  },
+  {
+    "id": "G-aa1b31a67804d8",
+    "diagnosis": "First source grade: Recomputes eligible key-loop members and clears excluded links.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopNavigationTests/testDisabledKeyViewExcluded",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test key-eligibility in a separately authored product and ownership graph, not another variant of macos-navigation-v1."
+  },
+  {
+    "id": "G-acfc996c4937b6",
+    "diagnosis": "First source grade: Uses seekable intervals and checks a buffered-only timestamp.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. If a player buffers one interval but permits seeking over another, what does the inspector report for each?",
+    "oracleChange": "MediaInspectionTests/testLoadedRangesDoNotAuthorizeSeeking",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the range-kind case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test range-kind in a separately authored product and ownership graph, not another variant of macos-media-v1."
+  },
+  {
+    "id": "G-b1a04db3512aad",
+    "diagnosis": "First source grade: Guards the actual save control's enabled state and tests false/true dispatch.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopActionsTests/testDisabledShortcut",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the disabled-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test disabled-action in a separately authored product and ownership graph, not another variant of macos-appkit-v1."
+  },
+  {
+    "id": "G-b70bfe64ddd372",
+    "diagnosis": "First source grade: Requires both boundaries and rejects an isolated combining mark.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. If a search matches only part of a composed character, which navigation destinations are offered?",
+    "oracleChange": "DesktopTextTests/testPartialGraphemesExcluded",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the grapheme-boundary case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test grapheme-boundary in a separately authored product and ownership graph, not another variant of macos-closure-v1."
+  },
+  {
+    "id": "G-be25d510c5ffe5",
+    "diagnosis": "Audit Q07: An enabled visible descendant can refuse first responder. Choosing it exhausts the token and misses the eligible fallback. Tests cover a removed primary instead.",
+    "problem": "real-model-gap",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "DesktopLifecycleTests/testRefusingOriginalUsesFallback",
+    "skill": [
+      "S2",
+      "S4"
+    ],
+    "skillWhy": "Use the eligible-target case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P0",
+    "confidence": "high",
+    "transfer": "Test eligible-target in a separately authored product and ownership graph, not another variant of macos-lifecycle-v1."
+  },
+  {
+    "id": "G-c002311bfa9f2d",
+    "diagnosis": "First source grade: Captured revision and enabled state guard stale shortcuts; checks false for obsolete and true for current.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopActionsTests/testStaleShortcutRejected",
+    "skill": [
+      "S2",
+      "S3"
+    ],
+    "skillWhy": "Use the rebound-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test rebound-action in a separately authored product and ownership graph, not another variant of macos-appkit-v1."
+  },
+  {
+    "id": "G-c3bf6cb5f65bd5",
+    "diagnosis": "First source grade: Checks membership and usability before selecting primary or fallback.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. Where does the return request go if the original control moves to another owner or can no longer accept focus? What happens if it remains eligible?",
+    "oracleChange": "DesktopLifecycleTests/testForeignOriginalUsesFallback",
+    "skill": [
+      "S1",
+      "S2",
+      "S4"
+    ],
+    "skillWhy": "Use the eligible-target case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test eligible-target in a separately authored product and ownership graph, not another variant of macos-lifecycle-v1."
+  },
+  {
+    "id": "G-cd41da12692601",
+    "diagnosis": "First source grade: Keeps missing player item distinct from confirmed absence.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test unavailable-media in a separately authored product and ownership graph, not another variant of macos-media-v1."
+  },
+  {
+    "id": "G-d7c0029e469f04",
+    "diagnosis": "First source grade: Compares the enqueued revision with the current generation after stop and restart.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopLifecycleTests/testPreferenceStoppedQueuedWorkIgnored",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test observer-stop in a separately authored product and ownership graph, not another variant of macos-lifecycle-v1."
+  },
+  {
+    "id": "G-df44d427667921",
+    "diagnosis": "First source grade: Restores selection by stable identity following reload.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopOutlineTests/testSelectedChildSurvivesSiblingReorder",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test stable-selection in a separately authored product and ownership graph, not another variant of macos-structure-v1."
+  },
+  {
+    "id": "G-e3e80d94c9386e",
+    "diagnosis": "First source grade: Passes selected into the AppKit row setter while preserving the child button; the checks cover role and child semantics.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "macOS 26.0, AppKit. How does the row report its role and selection, and can people still operate its actionable children separately?",
+    "oracleChange": "DesktopContractTests/testExplicitRowRoleAndChildSemantics",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the row-role case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test row-role in a separately authored product and ownership graph, not another variant of macos-closure-details-v1."
+  },
+  {
+    "id": "G-e44302507e2dc9",
+    "diagnosis": "First source grade: Guards queued work by subscription revision; deduplication can mask a stale read if the test's preference does not differ when stale work drains.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "DesktopLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the observer-restart case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "Test observer-restart in a separately authored product and ownership graph, not another variant of macos-lifecycle-v1."
+  },
+  {
+    "id": "G-fc281c11932789",
+    "diagnosis": "First source grade: Suppresses posting for identical strings and counts value notifications.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "DesktopActionsTests/testUnchangedStatusDoesNotRepeatRequest",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test redundant-notification in a separately authored product and ownership graph, not another variant of macos-appkit-v1."
+  }
+]

@@ -1,0 +1,2385 @@
+[
+ {
+  "id": "G-1c11378c112ef5",
+  "diagnosis": "Ledger pass: leaves the working characteristic check alone and separates ordinary from marked description audio; its optional test needs a named sample asset it never supplies. Pair is inconclusive only because the repair twin is ungraded, not because this control is weak.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Grade the proof separately: an asset-dependent test that can iterate zero options is evidence-only credit, not a positive demonstration of a tagged track.",
+  "skill": [
+   "S2",
+   "S8"
+  ],
+  "skillWhy": "Passing control shows restraint on working AVFoundation metadata code; its asset-dependent test is the S2 positive-fixture weakness.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "Use a tvOS or macOS inspector that receives option metadata through an injected value type, so a positive tagged track can be asserted without a bundled asset."
+ },
+ {
+  "id": "G-c3aa964dc0106d",
+  "diagnosis": "Ledger inconclusive with primary pass: the correct audio-description characteristic is used, but the only test depends on a media fixture and a nonempty option list, so the grader could not decide the whole answer.",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the question; it is identical to its working twin and already neutral enough.",
+  "proposedWording": null,
+  "oracleChange": "Add a checkable criterion: given one option tagged with the describes-video characteristic and one untagged English option, only the tagged one is reported. Grade the implementation by inspection and the test separately; a test that can pass with zero options earns no evidence credit.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "The undecidable grade comes from a test with no positive fixture, which is exactly S2.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "Inject option descriptors (language, characteristics) into the inspector so the positive and negative cases are constructible without AVAsset loading."
+ },
+ {
+  "id": "G-8214d265d2ab74",
+  "diagnosis": "Ledger pass: buffer fullness and likely-to-keep-up stay independent. The opening names the faulty inference outright, so the pass shows only that the stated fix is easy.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Author a working twin where readiness already uses the keep-up flag and give both versions one neutral question about what the report says for a full buffer that is not predicted to keep up.",
+  "proposedWording": "iOS 26.0, UIKit. Our player report shows a status line. When the buffer is full but playback is not predicted to keep up, what does this report say, and what does it say when both are true?",
+  "oracleChange": "Score the reported status for the two flag combinations; on the working twin, no change is the expected answer and added fields count as rework.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "A neutral twin tests whether the answer traces the existing status path instead of applying the named fix.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "A tvOS playback diagnostics overlay with an injected player-state snapshot rather than an AVPlayerItem."
+ },
+ {
+  "id": "G-6c468546da6af4",
+  "diagnosis": "Audit Q05 reverses the ledger: blind whole/primary pass because the answer explicitly groups the two operable controls under a non-element stack and keeps both callbacks. The original rationale (title omitted) is not what the sample oracle tests; it checks dispatch only.",
+  "problem": "oracle-mismatch",
+  "disposition": "repair-oracle",
+  "promptChange": "Replace the asserted symptom with the neutral question shared with G-dd75bbabea3b9b so the working fixture is not presented as broken.",
+  "proposedWording": "iOS 26.0, UIKit. This settings row groups a title with two buttons. When VoiceOver moves through the row, which elements can a person reach and activate, and in what order? Keep the row's grouping and the buttons' callbacks.",
+  "oracleChange": "State whether the title must remain an element; check the exposed accessibilityElements order and both callbacks separately, and record the regrade to pass/pass alongside the frozen count.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "The working fixture already exposes the children; credit for tracing that path is S1, unnecessary regrouping is S8.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "A macOS AppKit preferences row using accessibilityChildren with a disclosure control."
+ },
+ {
+  "id": "G-81ab6c7ec4506f",
+  "diagnosis": "Ledger pass: clears descendant hiding while keeping the card a non-element. Same opening as G-dd75bbabea3b9b on a different fixture; the opening names the defect, so no headroom.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Give this naming-v1 card a working twin and the neutral row question, so the decision is tested once per fixture rather than as two asserted repairs.",
+  "proposedWording": "iOS 26.0, UIKit. This card shows a title and two buttons. When VoiceOver moves through the card, which elements can a person reach and activate? Keep the card's grouping and both buttons' actions.",
+  "oracleChange": "Assert reachable elements and independent button actions on both twins; on the working twin, any new grouping code is rework.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Neutral twin measures whether the answer traces the hiding flag rather than accepting the reported symptom.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "tvOS focusable card with two buttons inside a focus group."
+ },
+ {
+  "id": "G-dd75bbabea3b9b",
+  "diagnosis": "Ledger pass; pair fixes-defect-breaks-working with G-6c468546da6af4, whose failure the audit overturned (Q05). The asserted symptom works on the defect but primes edits on working code.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Use one neutral question for both fixture versions so the repair is credited for the causal trace, not the prompt's diagnosis.",
+  "proposedWording": "iOS 26.0, UIKit. This settings row groups a title with two buttons. When VoiceOver moves through the row, which elements can a person reach and activate, and in what order? Keep the row's grouping and the buttons' callbacks.",
+  "oracleChange": "Check exposed children order and both callbacks; grade the causal explanation (container exposes no children vs. ordered children) separately from the patch.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Same wording on both versions isolates S1 tracing from prompt-supplied diagnosis.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "macOS AppKit row exposing children through accessibilityChildren."
+ },
+ {
+  "id": "G-4ad97fa054cee9",
+  "diagnosis": "Ledger pass: reorder assigns the new order and identity survives. The question is already neutral (asks whether it works) but the only fixture is defective, so no-change behavior is untested.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add the working fixture under the same wording; the current question can stay.",
+  "proposedWording": null,
+  "oracleChange": "On the working twin, expected answer is no change with the identity-preserving path shown; on the defect, the existing identity test.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "A working twin under the same neutral wording measures S1 restraint.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "SwiftUI list with accessibilitySortPriority after reorder."
+ },
+ {
+  "id": "G-97d21d3f2d3a4e",
+  "diagnosis": "Ledger and audit Q18 pass: rejects translucency on either operand in the shared resolver and tests the foreground case. The opening states both the policy and the wrong result, so the pass shows the fix is easy once named.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Keep the stated opaque-only policy (a legitimate product fact) but replace the symptom with a question about a specific translucent input, and add a working twin.",
+  "proposedWording": "iOS 26.0, UIKit. Our contrast tool grades opaque text/background pairs only. What does it return for a 50%-alpha foreground on white, and for an opaque foreground on a 50%-alpha background?",
+  "oracleChange": "Check both operands; the audit noted only the foreground case was tested, so require a background-translucency assertion for full evidence credit.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "Audit shows the test covered one of two operands; S2 asks for the requested observable effect on both.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "macOS NSColor contrast checker with catalog colors."
+ },
+ {
+  "id": "G-1e5f01625ec692",
+  "diagnosis": "Ledger pass: resolves each dynamic color against supplied traits. The opening tells the developer which path is wrong, so the pass indicates an easy task.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin and ask for the light and dark results of a named semantic color pair instead of asserting the stale path.",
+  "proposedWording": "iOS 26.0, UIKit. For label on systemBackground, what ratios does this contrast tool report in light and dark appearance, and with Increase Contrast on?",
+  "oracleChange": "Assert distinct resolved ratios per trait collection; no change expected on the working twin.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "A neutral twin tests tracing of trait resolution rather than accepting the reported symptom.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "macOS NSAppearance-based resolution with performAsCurrentDrawingAppearance."
+ },
+ {
+  "id": "G-55fe2bf3aeec99",
+  "diagnosis": "Audit Q53 reverses the ledger: the recommendation and test keep piecewise sRGB and the correct midgray value; the gamma-2.2 diff is explicitly conditional on another specification. Pair label fixes-defect-breaks-working is therefore wrong for this fixture.",
+  "problem": "oracle-mismatch",
+  "disposition": "repair-oracle",
+  "promptChange": "Replace the asserted disagreement with the neutral question shared with G-471867cfc77618 and state the governing specification.",
+  "proposedWording": "iOS 26.0, UIKit. Our design team uses the WCAG 2.2 relative-luminance definition. For mid-gray UIColor(white: 0.5, alpha: 1) on white, what luminance and contrast ratio does this utility report?",
+  "oracleChange": "Grade the primary recommendation for the supplied contract; treat an explicitly conditional alternative for a different specification as non-failing unless presented as the fix. Record regrade pass/pass.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Correctly tracing and keeping the existing linearization is S1; the conditional alternative is not rework.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "macOS NSColor calibrated vs. sRGB inputs with the same luminance contract."
+ },
+ {
+  "id": "G-471867cfc77618",
+  "diagnosis": "Ledger pass with numeric luminance and ratio checks. Pair partner's failure was overturned by audit Q53, so this pair is likely both-correct; the asserted 'correct the computation' still gives the fix away.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Ask for the reported value under a named specification, with the same wording on both versions.",
+  "proposedWording": "iOS 26.0, UIKit. Our design team uses the WCAG 2.2 relative-luminance definition. For mid-gray UIColor(white: 0.5, alpha: 1) on white, what luminance and contrast ratio does this utility report?",
+  "oracleChange": "Keep the numeric midtone assertion with literal expected values; grade explanation of the transfer function separately.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "Literal expected luminance is the S2 standard this item already meets.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "tvOS focus-state color check with the same WCAG formula."
+ },
+ {
+  "id": "G-67ab870ea1d446",
+  "diagnosis": "Ledger pass: converts to sRGB before the formula. Opening names the inconsistency and asks to make it consistent, so this is an easy, stated fix.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin and ask what two equivalent colors in different spaces report.",
+  "proposedWording": "iOS 26.0, UIKit. A designer supplies the same red in Display P3 and extended linear sRGB. What contrast ratio against white does this utility report for each?",
+  "oracleChange": "Assert equal ratios within tolerance for the equivalent inputs; no-change expected on the twin.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Twin tests tracing the conversion path.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "macOS NSColorSpace conversion with genericRGB input."
+ },
+ {
+  "id": "G-2cf7d4ec0d00de",
+  "diagnosis": "Ledger pass: stale cursor ignored on restart. Opening asserts the jump symptom and asks for a 'safe restart', naming the remedy class.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin and ask where the next jump lands after an edit, without asserting it is wrong.",
+  "proposedWording": "iOS 26.0, UIKit. A reader holds a search result at offset 120, then the document is edited and becomes shorter. Where does the next rotor jump land in this implementation?",
+  "oracleChange": "Assert the first match in the new revision (or documented restart point) and that the old cursor is not used; no-change on the twin.",
+  "skill": [
+   "S3",
+   "S6"
+  ],
+  "skillWhy": "Cursor ownership across revisions is S3; restart offsets are S6 units.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "macOS NSTextView custom rotor with the same revision contract."
+ },
+ {
+  "id": "G-3c2fdfe7b1bb3f",
+  "diagnosis": "Ledger pass: keeps named independent actions and removes the duplicate invocation. Question is already a neutral check ('what each one actually calls'), but only the defective fixture exists.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Keep the wording and add a working fixture so the neutral question is graded on both.",
+  "proposedWording": null,
+  "oracleChange": "On the working twin, expected answer is no change with the decisive dispatch path shown; drive each installed action handler and assert the single command it calls.",
+  "skill": [
+   "S1",
+   "S2"
+  ],
+  "skillWhy": "Neutral question plus twin tests S1 tracing and S2 handler-level proof.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "SwiftUI accessibilityActions on a card with two named actions."
+ },
+ {
+  "id": "G-18fda1e5d3c168",
+  "diagnosis": "Ledger pass, but audit Q19 grades fail/fail: seeks to media end at the last chapter, assumes a nonempty list and never shows ordinary play. Factorial chapter-boundaries child failed whole and primary in all four arms, so the gap holds with an explicit policy.",
+  "problem": "real-model-gap",
+  "disposition": "specify-policy",
+  "promptChange": "Supply uneven chapter starts, terminal and empty behavior so the oracle can detect the end-of-media seek.",
+  "proposedWording": "iOS, SwiftUI. Our episode has chapters starting at 0, 35 and 107 seconds and ends at 160. When positioned at a chapter start, an accessibility adjustment should move by one chapter, staying at a boundary when there is no next step. Episodes can also have no chapters. How would you handle those cases while keeping tap to play and ordinary dragging?",
+  "oracleChange": "Assert resulting chapter positions from 35 (forward 107, backward 0), no movement past 0 or 107, defined empty behavior, and preserved Play; comparing clamped times alone misses the error. Record the regrade of the original pass.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "The original pass compared only clamped times; S2 requires the literal resulting chapter as the asserted effect.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "UIKit custom scrubber with accessibilityIncrement over unevenly spaced markers."
+ },
+ {
+  "id": "G-b3e3789d10b0ed",
+  "diagnosis": "Audit Q39 confirms primary pass, whole fail: the leaf decoration is already excluded on each configure; the answer adds a subtree-hiding flag and a test requiring that detail. Pure avoidable rework prompted by the asserted symptom.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Use the neutral wording shared with G-0f5d8b65a4920e instead of asserting a stop exists.",
+  "proposedWording": "iOS 26.0, UIKit. This card shows a decorative star beside a title and two buttons. Which navigation stops does VoiceOver get on this card today? Keep the title and both buttons reachable.",
+  "oracleChange": "Grade primary (star excluded, three elements kept), rework (new flags or tests of implementation detail) and evidence separately; extra flag that preserves navigation is rework, not regression.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "The existing exclusion already answers the request (S1); the added flag is unneeded boilerplate (S8).",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "macOS AppKit card with an NSImageView decoration and accessibilityElement false."
+ },
+ {
+  "id": "G-0f5d8b65a4920e",
+  "diagnosis": "Ledger pass; pair fixes-defect-breaks-working with G-b3e3789d10b0ed. The asserted 'getting its own navigation stop' is accurate here but leads to rework on the working twin.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Ask which stops the card has, with identical wording on both versions.",
+  "proposedWording": "iOS 26.0, UIKit. This card shows a decorative star beside a title and two buttons. Which navigation stops does VoiceOver get on this card today? Keep the title and both buttons reachable.",
+  "oracleChange": "Keep the existing assertion that only the star is excluded and both controls and the title remain elements.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Same neutral question across versions isolates S1 tracing.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "SwiftUI card with an Image decoration inside accessibilityElement(children: .contain)."
+ },
+ {
+  "id": "G-9729c3a5d9babf",
+  "diagnosis": "Ledger inconclusive: scales through UIFontMetrics but ignores the label's own trait collection; whether a local trait override must win is unspecified, so the grader could not decide.",
+  "problem": "grader-uncertain",
+  "disposition": "specify-policy",
+  "promptChange": "State which trait environment governs the font so the override case has an answer.",
+  "proposedWording": "iOS 26.0, UIKit. Our design font should follow the text size setting, including when this screen overrides the content size category for a preview. The typeface and size should both survive repeated updates. What does this label show at the override size after three updates?",
+  "oracleChange": "Assert typeface name and point size against UIFontMetrics(forTextStyle:) scaled for the label's effective traits, after repeated updates, with a literal expected size per category.",
+  "skill": [
+   "S2",
+   "S5"
+  ],
+  "skillWhy": "Needs the precise trait-collection fact (S5) and a literal size assertion (S2).",
+  "priority": "P1",
+  "confidence": "medium",
+  "transfer": "tvOS label with a brand font and preferred-font fallback."
+ },
+ {
+  "id": "G-0c0e259e645a5f",
+  "diagnosis": "Ledger pass: disabled rate changes are rejected with no callback. The opening states the defect class, so this shows the fix is easy; macOS sibling preservation failed, so the decision has headroom on working code.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Ask what each activation path does while disabled rather than asserting one runs, and give the same wording to a working twin.",
+  "proposedWording": "iOS 26.0, UIKit. While controlsEnabled is false, what happens if someone taps a speed button, calls select(_:) directly, or activates the button with an accessibility action? Keep the enabled behavior the same.",
+  "oracleChange": "Assert no callback and unchanged selectedRate through each path while disabled, and one callback after re-enable.",
+  "skill": [
+   "S1",
+   "S2"
+  ],
+  "skillWhy": "Tracing each path is S1; driving the installed handler is S2.",
+  "priority": "P1",
+  "confidence": "medium",
+  "transfer": "macOS NSSegmentedControl speed picker with an accessibilityPerformPress path."
+ },
+ {
+  "id": "G-5bb3417dbce54f",
+  "diagnosis": "Ledger pass with both disabled and enabled callback assertions. Same opening as G-0c0e259e645a5f on a different fixture; asserted defect again.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working container twin and ask what accessibilityActivate does while disabled.",
+  "proposedWording": "iOS 26.0, UIKit. When this container's command is disabled, what does accessibilityActivate return and does the handler run? What happens after it is enabled again?",
+  "oracleChange": "Assert return value and handler count in both states on both twins.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "Exercising the actual activation method is S2.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "SwiftUI button with .disabled and an accessibilityAction."
+ },
+ {
+  "id": "G-333de6e92ef584",
+  "diagnosis": "Audit Q57 regrades pass/pass: the answer correctly explains why closing twice cannot restore twice; the fixture instead removes dismissal permission, which the question never mentions. Factorial children reentry and dismiss-permission both stayed whole-fail/primary-pass in all arms.",
+  "problem": "oracle-mismatch",
+  "disposition": "split-criteria",
+  "promptChange": "Split duplicate completion from dismissal permission into two questions, each with its own oracle.",
+  "proposedWording": "iOS 26.0, UIKit. Close can be requested again during a dismissal animation, and its completion can arrive twice. With an eligible return target, when and how many times should the panel request restoration? ‖ iOS 26.0, UIKit. This panel sometimes must not be dismissed, for example while a save is in progress. What happens today when someone presses Close or performs the accessibility escape gesture in that state?",
+  "oracleChange": "Q1: one transition, no early request, exactly one completion-time restoration carrying the target. Q2: with dismissal forbidden, Close and escape both leave the panel open and send nothing. Record regrade of the frozen fail.",
+  "skill": [
+   "S4",
+   "S1"
+  ],
+  "skillWhy": "Restore-after-completion is S4; the permission guard must be traced on the actual paths (S1).",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "macOS sheet with cancelOperation and a shouldClose delegate."
+ },
+ {
+  "id": "G-da89005c6d3613",
+  "diagnosis": "Confirmed registered gap (dismissal-completion; audit Q14 fail/fail): keeps posting focus at Close and suppresses the completion post; a stale-operation check cannot move delivery after dismissal.",
+  "problem": "real-model-gap",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Keep the assertion that the notification is sent only from completion and to the current target; add a cancelled-dismissal case asserting no post.",
+  "skill": [
+   "S4",
+   "S3"
+  ],
+  "skillWhy": "Focus restore must wait for completion (S4) and the completion must validate its operation (S3).",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "SwiftUI sheet onDismiss with AccessibilityFocusState and an injected completion."
+ },
+ {
+  "id": "G-043705b50c795c",
+  "diagnosis": "Ledger pass: separates the already-consuming path from the missing consumption and tests duplicate delivery. Guards an important async ownership behavior with tvOS and macOS passes too.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Duplicate completion consumption is S3 callback ownership.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "tvOS siblings already cover it; a transfer would use a delegate-based service rather than closures."
+ },
+ {
+  "id": "G-a4096250f11e36",
+  "diagnosis": "Ledger pass: clears stale edit actions when editability is removed. Opening is mild but asks for the check on the defective fixture only.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin; keep the question 'check that its actions and help change together'.",
+  "proposedWording": null,
+  "oracleChange": "Assert custom actions, edit category and hint after read-only transition on both twins; no change on the working one.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "A twin makes the S1 trace measurable.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "macOS NSTextView switching isEditable with accessibility custom actions."
+ },
+ {
+  "id": "G-d95da35e90afc0",
+  "diagnosis": "Confirmed registered gap (edit-category; audit Q58 fail/fail): identifies the missing category but uses a .edit spelling instead of UIAccessibilityCustomAction.editCategory; the test repeats the API error and omits the nil default.",
+  "problem": "real-model-gap",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Keep compile-level assertion on the SDK constant and an ordinary action's nil category.",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "An exact SDK constant is the S5 on-demand platform fact.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "SwiftUI accessibilityAction with category on iOS 26 for a text editor."
+ },
+ {
+  "id": "G-6a9722a7fdfd4f",
+  "diagnosis": "Ledger pass: recomputes matches from current text and checks the shifted location. The opening states the stale-hits symptom and asks to use current content, so the fix is given.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Ask where the next jump lands after an external edit, with the same wording for a working twin.",
+  "proposedWording": "iOS 26.0, UIKit. Our reader keeps search matches for highlighted phrases. If the text is replaced by code outside the search callback, for example a sync merge that inserts a paragraph before the second match, where does the next rotor jump land?",
+  "oracleChange": "Assert the jump lands on the literal shifted phrase via text(in:) in the current document; no-change on a working twin.",
+  "skill": [
+   "S1",
+   "S6"
+  ],
+  "skillWhy": "Tracing which text the matches come from is S1; checking the landing by literal substring is S6.",
+  "priority": "P1",
+  "confidence": "medium",
+  "transfer": "macOS NSTextView rotor with NSTextStorage edits from a collaborator."
+ },
+ {
+  "id": "G-b60d57e22f1850",
+  "diagnosis": "Ledger pass: rechecks the live document before using cached positions. Same opening as G-6a9722a7fdfd4f on the edited-rotor fixture; second asserted copy of one decision.",
+  "problem": "duplicate",
+  "disposition": "pair-variant",
+  "promptChange": "Give this fixture a working twin under the neutral wording used for G-6a9722a7fdfd4f rather than a second asserted repair.",
+  "proposedWording": "iOS 26.0, UIKit. Our reader keeps search matches for highlighted phrases. If the text is replaced by code outside the search callback, for example a sync merge that inserts a paragraph before the second match, where does the next rotor jump land?",
+  "oracleChange": "Assert the stale cached search is rejected and a fresh search lands on the literal phrase.",
+  "skill": [
+   "S3",
+   "S6"
+  ],
+  "skillWhy": "Cached results must validate the document revision when used (S3) and land by literal text (S6).",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "tvOS and macOS siblings exist; a transfer would use a SwiftUI TextEditor-backed rotor."
+ },
+ {
+  "id": "G-1b69607eb4408a",
+  "diagnosis": "Ledger pass: validates the original target before posting and exercises fallback. eligible-target is a confirmed registered gap elsewhere (audit Q07 macOS repair fail), so this iOS pass guards a behavior that fails on a sibling.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Add the Q07 case: an enabled visible descendant that refuses becoming focused must fall through to the eligible fallback, not consume the request.",
+  "skill": [
+   "S4"
+  ],
+  "skillWhy": "Restoring only to an eligible member with declared fallback is S4.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "Q07 sibling on macOS already transfers it; next transfer: SwiftUI AccessibilityFocusState with a removed row."
+ },
+ {
+  "id": "G-061bd5a3273756",
+  "diagnosis": "Ledger inconclusive, primary pass: separates forced and full requests by characteristic, but AVFoundation test doubles are unconstructible. Audit Q03 notes full vs. forced can mean exclusion or a separate labeled choice, so the product policy is unstated.",
+  "problem": "ambiguous-policy",
+  "disposition": "specify-policy",
+  "promptChange": "State the menu policy for forced-only tracks and remove the asserted 'as if it were full' framing.",
+  "proposedWording": "iOS 26.0, UIKit. Our captions menu should list only complete subtitle tracks; forced-only translation tracks are played automatically and must not appear as choices. The asset has English full, French full and French forced-only. Which choices does this menu offer, and what gets selected for each?",
+  "oracleChange": "Assert the offered list and selected option from injected descriptors; grade test constructibility separately as evidence and do not let an unconstructible double decide the primary verdict.",
+  "skill": [
+   "S7",
+   "S2"
+  ],
+  "skillWhy": "Forced vs. full and the menu policy are S7; constructible proof is S2.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS AVPlayerViewController transportBarCustomMenuItems with the same policy."
+ },
+ {
+  "id": "G-0f2de6751163e9",
+  "diagnosis": "Workflow pass: keeps both fields stable with field-specific errors. Design question with a stated, real defect and no fixture; a useful control of non-merging and non-announcing behavior.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "The criterion rejects announcing every keystroke or merging fields, the S8 restraint concern.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "UIKit form with two UITextFields and inline error labels."
+ },
+ {
+  "id": "G-2ae6e6631d0d54",
+  "diagnosis": "Ledger fail with primary pass: rejects the outdated snapshot but returns while busy stays true, so the form is stranded; the test checks the edit, not the request. Registered input-snapshot key was confirmed on the tvOS sibling (audit Q54).",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep the question; it states a real reported symptom of the defective fixture.",
+  "proposedWording": null,
+  "oracleChange": "Grade separately: stale reply rejected (primary), ownership state ends (busy false, no active ticket) after rejection, and proof that drives a native field change between submit and reply.",
+  "skill": [
+   "S3",
+   "S2"
+  ],
+  "skillWhy": "Rejecting a stale reply must also release the request it owned (S3); the test must assert the resulting state (S2).",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "SwiftUI form with @State text and an injected validator."
+ },
+ {
+  "id": "G-13ec5725e0605e",
+  "diagnosis": "Ledger pass: reports option selection without mutating the item. Opening names the mutation and the 'read-only' remedy.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin and ask what the selected audio and captions are after opening the inspector.",
+  "proposedWording": "iOS 26.0, UIKit. The viewer chose Spanish audio and turned captions Off. After they open the track inspector and close it, which audio and caption options are selected on the player item?",
+  "oracleChange": "Assert the player item's selected options before and after inspection with literal expected options, including captions Off.",
+  "skill": [
+   "S7"
+  ],
+  "skillWhy": "Reading vs. writing the actual player item's selection is S7.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "SwiftUI VideoPlayer diagnostic sheet using the same item."
+ },
+ {
+  "id": "G-01c10c6a8573fa",
+  "diagnosis": "Audit Q41 confirms primary pass, whole fail: generation already silences the old button; the rewrite adds dual cleanup that could clear a newer binding and its negative-only test passes the original code.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Use the neutral interop wording shared with G-10cf3d04a66de0.",
+  "proposedWording": "iOS 26.0, SwiftUI with UIKit interop. The wrapper updates from item A to item B and is later dismantled. If the native button sends its action after each step, which handler runs? Keep the same native button and its title.",
+  "oracleChange": "Grade primary (old target silent, current dispatches), regression risk (teardown cannot clear a newer binding), rework, and evidence (require a positive current-dispatch assertion before asserting the old one is silent) separately.",
+  "skill": [
+   "S1",
+   "S8",
+   "S2"
+  ],
+  "skillWhy": "Existing revisions already answer the request (S1); extra cleanup is S8; a negative-only test is the S2 positive-fixture gap.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "macOS NSViewRepresentable with target/action rebinding."
+ },
+ {
+  "id": "G-10cf3d04a66de0",
+  "diagnosis": "Ledger pass; pair fixes-defect-breaks-working with G-01c10c6a8573fa. The asserted 'can still send to the previous target' gives the fix here and induces rework on the working twin.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Same neutral interop question on both versions.",
+  "proposedWording": "iOS 26.0, SwiftUI with UIKit interop. The wrapper updates from item A to item B and is later dismantled. If the native button sends its action after each step, which handler runs? Keep the same native button and its title.",
+  "oracleChange": "Keep stale, current and dismantled callback cases; drive the installed native action, not a parallel closure.",
+  "skill": [
+   "S3",
+   "S2"
+  ],
+  "skillWhy": "Rebinding ownership is S3; driving the installed action is S2.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "macOS NSViewRepresentable siblings already exist; avoid a third renamed copy."
+ },
+ {
+  "id": "G-ef26b0162ce47f",
+  "diagnosis": "Ledger inconclusive, primary pass: uses the requested language and keeps the forced exclusion, but the test needs an unverified French fixture and helper.",
+  "problem": "evidence-only",
+  "disposition": "grade-components",
+  "promptChange": "Keep the question but drop the imperative 'Fix matching' in favor of asking what is selected for a requested language.",
+  "proposedWording": null,
+  "oracleChange": "Grade the language match by inspection against an injected option list and grade the asset-dependent test as evidence separately; an unverified helper earns no evidence credit.",
+  "skill": [
+   "S2",
+   "S7"
+  ],
+  "skillWhy": "Selection must be checked on the player item's actual choice (S7) with a constructible positive fixture (S2).",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "tvOS subtitle picker with region-tagged languages (fr-CA vs fr-FR)."
+ },
+ {
+  "id": "G-1669799648b317",
+  "diagnosis": "Ledger pass: preserves supplied stream kind independent of indefinite duration. Opening names the faulty inference, so it shows an easy stated fix.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin and ask what the inspector reports for an indefinite-duration video-on-demand item.",
+  "proposedWording": "iOS 26.0, UIKit. For an item whose duration is indefinite but whose stream type we already know is event (not live), what does this inspector report as its kind?",
+  "oracleChange": "Assert reported kind equals the supplied type for indefinite durations; no change expected on the twin.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Twin measures tracing of where kind comes from.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "tvOS diagnostics overlay for HLS event playlists."
+ },
+ {
+  "id": "G-62d3cfbe4da970",
+  "diagnosis": "Ledger pass; pair both-correct with G-a07f13e8f28127: concludes prior background hidden state is already captured and restored per presentation despite the asserted symptom.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Holding a working path under an asserted symptom is the S1 behavior.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "macOS and tvOS modal-state siblings already exist."
+ },
+ {
+  "id": "G-26f1556458b0ab",
+  "diagnosis": "Ledger pass: clears modality on close and tests the exposed property. Asserted symptom, no working twin for this containers fixture.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working containers twin under the same neutral wording as the modal fixture.",
+  "proposedWording": "iOS 26.0, UIKit. The background was already hidden from VoiceOver for another reason before this panel opened. After opening and closing the panel twice, what is the background's accessibility state and the panel's modal flag?",
+  "oracleChange": "Assert accessibilityViewIsModal false after escape and close, and the background's original hidden value after each cycle.",
+  "skill": [
+   "S4"
+  ],
+  "skillWhy": "Returning the screen to its prior state after dismissal is part of the S4 destination contract.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "SwiftUI sheet with accessibilityHidden on the presenting content."
+ },
+ {
+  "id": "G-a07f13e8f28127",
+  "diagnosis": "Ledger pass; pair both-correct with G-62d3cfbe4da970. A rare matched pair where both versions pass under the same asserted wording; useful as a regression benchmark.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S4"
+  ],
+  "skillWhy": "Restores the saved prior hidden value, part of S4.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "macOS sheet with an already-hidden sidebar."
+ },
+ {
+  "id": "G-c9829b24aa0b35",
+  "diagnosis": "Ledger pass; pair both-correct. The question is already neutral ('Does this observer refresh...?') and the working version is kept.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Neutral question with a preserved working path shows S1.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "tvOS lifecycle observer for reduce-motion changes."
+ },
+ {
+  "id": "G-1002fd829cecbb",
+  "diagnosis": "Ledger pass; pair both-correct with the same neutral wording. A model for how the other pairs should be phrased.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Same neutral question across versions isolates S1.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "macOS NSWorkspace accessibility display options notification."
+ },
+ {
+  "id": "G-ecf0c73499bcb3",
+  "diagnosis": "Audit Q20 confirms primary pass, whole fail: the existing duration policy already maps reduced motion to zero; the answer adds an uncalled helper for an animation absent from the source.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Use the neutral motion question shared with G-cdecb4f2473a6b.",
+  "proposedWording": "iOS 26.0, UIKit. With Reduce Motion on and then off, what duration does this screen use for the optional effect, and what does a person see in each case? Keep the normal animation for people who have not asked for reduced motion.",
+  "oracleChange": "Grade primary (zero duration under reduced motion, normal otherwise), rework (new API without a call site) and evidence separately; an uncalled helper is rework, not regression.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "The existing policy answers the request (S1); the uncalled helper is S8.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "SwiftUI view reading accessibilityReduceMotion with an explicit withAnimation call."
+ },
+ {
+  "id": "G-cdecb4f2473a6b",
+  "diagnosis": "Ledger pass; pair fixes-defect-breaks-working with G-ecf0c73499bcb3. Asserting the effect still plays primes a patch on the working twin.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Same neutral motion question on both versions.",
+  "proposedWording": "iOS 26.0, UIKit. With Reduce Motion on and then off, what duration does this screen use for the optional effect, and what does a person see in each case? Keep the normal animation for people who have not asked for reduced motion.",
+  "oracleChange": "Assert zero duration with Reduce Motion on and the ordinary duration otherwise, through the production transition path.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Same wording across versions isolates S1.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "macOS NSAnimationContext with accessibilityDisplayShouldReduceMotion."
+ },
+ {
+  "id": "G-24ccdb855e595d",
+  "diagnosis": "Audit Q48 confirms primary pass, whole fail: the cell already wraps, disables shrinking and self-sizes; required compression priorities and a test of the priority choice are unsubstantiated additions.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Use the neutral layout question shared with G-1cacc76921ce33.",
+  "proposedWording": "iOS 26.0, UIKit. At accessibility text sizes a translated delivery-option name needs two or three lines. How does this cell lay out that name today, and is any of it truncated or shrunk? Keep the full wording.",
+  "oracleChange": "Grade primary (numberOfLines 0, no shrink, self-sizing kept), rework (added constraints or width management) and evidence (a test of the chosen priority is not evidence of fit) separately.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "The existing multiline policy answers the request (S1); added layout constraints are S8.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "SwiftUI row with lineLimit(nil) and fixedSize(horizontal:false, vertical:true)."
+ },
+ {
+  "id": "G-1cacc76921ce33",
+  "diagnosis": "Ledger pass; pair fixes-defect-breaks-working with G-24ccdb855e595d. The asserted 'part of the name disappears' prompt is accurate here and primes rework on the working cell.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Same neutral layout question on both versions.",
+  "proposedWording": "iOS 26.0, UIKit. At accessibility text sizes a translated delivery-option name needs two or three lines. How does this cell lay out that name today, and is any of it truncated or shrunk? Keep the full wording.",
+  "oracleChange": "Keep the line-limit and shrink assertions; state that static configuration cannot establish rendered fit.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Same wording isolates S1.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS label in a focusable cell with large text."
+ },
+ {
+  "id": "G-5d8cd18f224228",
+  "diagnosis": "Ledger pass: routes the target through layout-change. Opening explains the defect in abstract terms and asks to select the right request.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin and ask which notification each change sends and where focus should be afterward.",
+  "proposedWording": "iOS 26.0, UIKit. This screen sometimes reveals a new section and sometimes replaces the whole content. Which accessibility notification does each change send, and what element does it pass?",
+  "oracleChange": "Assert notification kind and argument per change; no change on the twin.",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "Choosing the minimal correct request without resetting unrelated state is S8 restraint.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "macOS NSAccessibility.post with layoutChanged vs. focusedUIElementChanged."
+ },
+ {
+  "id": "G-6ebcc0fdd7d948",
+  "diagnosis": "Ledger pass: releases observation and tests refresh across stop/restart. Asserted symptom, no working twin.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin and ask what happens when the setting changes after stop and after restart.",
+  "proposedWording": "iOS 26.0, UIKit. After this screen calls stop(), the Reduce Motion setting changes; later it calls start() and the setting changes again. What does the screen's motion state show at each step?",
+  "oracleChange": "Assert no update after stop and an update after restart via a posted notification.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "Posting the real notification and asserting state is S2.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "tvOS siblings exist; transfer to a SwiftUI onReceive publisher with cancellation."
+ },
+ {
+  "id": "G-4c24f67bd656f2",
+  "diagnosis": "Ledger pass: rejects rotor callbacks from another revision or snapshot. Asserted symptom with the fix class implied.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin and ask what a retained rotor returns after the query changes.",
+  "proposedWording": "iOS 26.0, UIKit. A client keeps the rotor object from a search for “tax”, then the query changes to “fee”. What does invoking the old rotor return now?",
+  "oracleChange": "Assert the retained rotor returns nil or no result and the new rotor returns the literal new phrase.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Old rotor must validate its query revision when invoked (S3).",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "macOS NSAccessibilityCustomRotor retained by a client."
+ },
+ {
+  "id": "G-9416f59bb20a37",
+  "diagnosis": "Ledger pass; pair both-correct with G-c93c93db07f19f: keeps optional assignments and tests a second item with no hint despite the asserted symptom. macOS sibling preservation failed (audit Q22), so this iOS control holds a behavior that fails elsewhere.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Holding the working nil-forwarding path under an asserted symptom is S1.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "macOS sibling exists (Q22)."
+ },
+ {
+  "id": "G-c93c93db07f19f",
+  "diagnosis": "Ledger pass; pair both-correct. Asserted symptom but the working twin also holds on iOS.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Paired control for nil help forwarding.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "tvOS and macOS siblings exist."
+ },
+ {
+  "id": "G-95a1329932a335",
+  "diagnosis": "Ledger pass: clears obsolete hints when the error disappears. UIKit preferences fixture shares the SwiftUI items' opening; third copy of the decision on iOS.",
+  "problem": "duplicate",
+  "disposition": "retire-duplicate",
+  "promptChange": "Retire as a third iOS copy of the optional-help decision; G-9416f59bb20a37/G-c93c93db07f19f already form a both-correct pair.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Same nil-help decision as the retained pair.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-a046527edefa4f",
+  "diagnosis": "Ledger pass: progression follows the overlap flag with overlapping and nonoverlapping tests. The opening's observable symptom is good, but the request 'fix the search' presumes a defect.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin and ask what stops are produced with the option on and off for a concrete string.",
+  "proposedWording": "iOS 26.0, UIKit. Searching “aaa” for “aa”: what rotor stops does this reader produce with the overlapping-matches option on, and with it off?",
+  "oracleChange": "Assert literal ranges {0,2},{1,2} with overlap and {0,2} without, read back with text(in:).",
+  "skill": [
+   "S6"
+  ],
+  "skillWhy": "Range offsets checked by literal substring are S6.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "macOS NSTextView rotor with the same option."
+ },
+ {
+  "id": "G-2cd9bf59a7950d",
+  "diagnosis": "Ledger pass; pair both-correct with a neutral question. Retains native controls and automatic media selection.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S8",
+   "S7"
+  ],
+  "skillWhy": "Keeping native player controls is S8; automatic media selection is S7.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "tvOS AVPlayerViewController sibling."
+ },
+ {
+  "id": "G-82d48de9021508",
+  "diagnosis": "Ledger pass; pair both-correct with the same neutral question.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "Native control preservation under a neutral question.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "macOS AVPlayerView controlsStyle."
+ },
+ {
+  "id": "G-0b8da41355bd69",
+  "diagnosis": "Ledger pass: compares captured and actual player item by identity at callback time. Guards the external-replacement case that the now-playing integration task (mutant-cached-item-guard) shows other models miss.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Validating the actual current item when the callback runs is S3.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "Integration task now-playing-late-title already transfers it."
+ },
+ {
+  "id": "G-9bc22c52023c4b",
+  "diagnosis": "Ledger pass: validates closing state and generation before a delayed completion. macOS preservation sibling failed, so this guards a behavior with headroom.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3",
+   "S4"
+  ],
+  "skillWhy": "Delayed completion must validate its presentation (S3) before restoring focus (S4).",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "macOS and tvOS siblings exist."
+ },
+ {
+  "id": "G-4be0839bf07362",
+  "diagnosis": "Ledger pass: alters selected membership without erasing other traits. Asserted 'seems to remove information'.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin and ask for the trait set across selection changes.",
+  "proposedWording": "iOS 26.0, UIKit. This favorite button is already a button with a header trait for its section. When it becomes selected and then unselected, which accessibility traits does it have at each step?",
+  "oracleChange": "Assert the exact trait set after each transition on both twins.",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Selected-state representation is an S5 platform fact.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "tvOS siblings exist; transfer to SwiftUI accessibilityAddTraits/removeTraits."
+ },
+ {
+  "id": "G-a40295c16e4820",
+  "diagnosis": "Ledger pass: inserts selected without replacing button traits. Same opening as G-4be0839bf07362 on another fixture; two tvOS siblings too.",
+  "problem": "duplicate",
+  "disposition": "retire-duplicate",
+  "promptChange": "Retire as a duplicate of G-4be0839bf07362's decision.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Same trait-preservation decision.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-5688b48b9cac5f",
+  "diagnosis": "Workflow pass: value inspectable on demand with bounded milestone notifications. Natural design question without a fixture.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "Rejecting announcements for every tick is S8 restraint.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "SwiftUI ProgressView with accessibilityValue and milestone announcements."
+ },
+ {
+  "id": "G-8eafbd1521124e",
+  "diagnosis": "Confirmed range-coordinate gap (audit Q46 fail/fail; pair both-fail): working UTF-16 offsets are replaced with grapheme counts. Factorial text-range-46 with neutral wording kept primary in all four arms, so the asserted symptom induced the regression; whole still failed on the focused check.",
+  "problem": "real-model-gap",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Adopt the neutral factorial wording for both versions.",
+  "proposedWording": "iOS 26.0, UIKit. In this UIKit reader, search for “cat” in “😀 cat!”. What text range will the rotor return, and can people still select ordinary text in the reader?",
+  "oracleChange": "Drive the installed rotor and compare text(in: returnedRange) with the literal “cat”; grade primary, preserved selection and evidence separately (the factorial whole fails came from the check).",
+  "skill": [
+   "S6",
+   "S1",
+   "S2"
+  ],
+  "skillWhy": "Grapheme conversion at the UITextView boundary is S6; trusting the reported symptom is S1; the missing literal check is S2.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "macOS NSTextView with combining marks and a CJK prefix."
+ },
+ {
+  "id": "G-e24e3f394ea182",
+  "diagnosis": "Confirmed range-coordinate gap (audit Q47 fail/fail): a valid UTF-16 offset is mapped into grapheme units, and reverse lookup uses the wrong units too. Factorial text-range-47 kept primary in all arms under neutral wording; whole failed on the check.",
+  "problem": "real-model-gap",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Adopt the neutral factorial wording for both edited-rotor versions.",
+  "proposedWording": "iOS 26.0, UIKit. In this UIKit reader, search for “cat” in “😀 cat!”. What text range will the rotor return, and can people still select ordinary text in the reader?",
+  "oracleChange": "Drive the installed rotor; compare returned text with the literal substring; grade evidence separately.",
+  "skill": [
+   "S6",
+   "S2"
+  ],
+  "skillWhy": "UTF-16 units and a literal substring check are S6 and S2.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "macOS NSTextView reader with emoji and flags."
+ },
+ {
+  "id": "G-68d21f69f56390",
+  "diagnosis": "Ledger pass: accumulates UTF-16 offsets and tests a match after multicode-unit text. Pair partner G-e24e3f394ea182 broke the working version, so the asserted symptom is the confound.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Same neutral factorial wording on both versions.",
+  "proposedWording": "iOS 26.0, UIKit. In this UIKit reader, search for “cat” in “😀 cat!”. What text range will the rotor return, and can people still select ordinary text in the reader?",
+  "oracleChange": "Keep native-range assertion; require text(in:) equals a literal rather than comparing offsets from the same algorithm.",
+  "skill": [
+   "S6"
+  ],
+  "skillWhy": "UTF-16 boundary units are S6.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "macOS NSTextView sibling."
+ },
+ {
+  "id": "G-840924fec7426a",
+  "diagnosis": "Confirmed range-coordinate gap (audit Q38 fail/fail): recognizes the +1 error but switches to Character distances; after emoji the range still misses, and the test compares offsets from the same wrong algorithm. Factorial text-range-38 kept primary in all arms; UIKit text note added nothing.",
+  "problem": "real-model-gap",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Use the neutral factorial wording shared with its working twin G-8eafbd1521124e.",
+  "proposedWording": "iOS 26.0, UIKit. In this UIKit reader, search for “cat” in “😀 cat!”. What text range will the rotor return, and can people still select ordinary text in the reader?",
+  "oracleChange": "Require text(in: returnedRange) == “cat” with the reader as target; grade evidence separately since self-referential offset comparisons certified wrong text.",
+  "skill": [
+   "S6",
+   "S2"
+  ],
+  "skillWhy": "S6 offset units plus an S2 literal check would have caught the wrong conversion.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "macOS NSTextView with combining marks."
+ },
+ {
+  "id": "G-6b85a8fc52d837",
+  "diagnosis": "Audit Q52 confirms primary pass, whole fail: correctly explains and preserves separate seekable and buffered ranges, then declares an extra public query necessary despite the instruction to leave working code alone. Same pattern as Q16/Q60 on the other platforms.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Use the neutral range question shared with G-2a3677e01788e4 instead of asserting the player promises an unseekable interval.",
+  "proposedWording": "iOS 26.0, UIKit. Our player has buffered 0–90 s of a stream, but only 0–60 s is currently seekable. What does this inspector report for each range, and what would it say about seeking to 75 s?",
+  "oracleChange": "Grade primary (seekable vs. loaded kept distinct), rework (new public API on working code) and evidence separately.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "The existing inspector already answers (S1); an added helper is S8.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "Keep one platform as the active copy; Q16 and Q60 already replicate this on macOS and tvOS."
+ },
+ {
+  "id": "G-2a3677e01788e4",
+  "diagnosis": "Ledger pass; pair fixes-defect-breaks-working with G-6b85a8fc52d837. The asserted symptom is true for this fixture and gives the fix.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Same neutral range question on both versions.",
+  "proposedWording": "iOS 26.0, UIKit. Our player has buffered 0–90 s of a stream, but only 0–60 s is currently seekable. What does this inspector report for each range, and what would it say about seeking to 75 s?",
+  "oracleChange": "Assert a buffered-only time is not reported as seekable and a seekable time is, using literal CMTimeRanges.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "Literal range assertions are S2.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS and macOS siblings exist; avoid a third renamed copy."
+ },
+ {
+  "id": "G-a1aff76682fe0a",
+  "diagnosis": "Audit Q13 keeps fail/pass: the custom action already captures revision and ID; the patch replaces live button dispatch and its test calls an unsupported getter and conditionally skips invoking the stale UIAction. Factorial captured-action stayed F/P in all arms, so the remaining gap is the proof.",
+  "problem": "evidence-only",
+  "disposition": "grade-components",
+  "promptChange": "Adopt the factorial captured-action wording for both versions.",
+  "proposedWording": "iOS 26.0, UIKit. After the same view is reconfigured, what happens if a client retains and invokes the old accessibility shortcut? The ordinary buttons should operate on the currently displayed item.",
+  "oracleChange": "Grade primary, ordinary-button preservation, rework, and evidence separately; evidence requires invoking the actual installed shortcut and pressing the real buttons, with no conditional skip.",
+  "skill": [
+   "S2",
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "Skipped invocation and test-only handlers are the S2 defect; replacing working dispatch is S1/S8.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "macOS NSAccessibilityCustomAction on a reused table cell view."
+ },
+ {
+  "id": "G-3bad84db2e37fb",
+  "diagnosis": "Ledger pass; pair fixes-defect-breaks-working with G-a1aff76682fe0a. Asserted ownership defect gives the fix.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Adopt the factorial captured-action wording for both versions.",
+  "proposedWording": "iOS 26.0, UIKit. After the same view is reconfigured, what happens if a client retains and invokes the old accessibility shortcut? The ordinary buttons should operate on the currently displayed item.",
+  "oracleChange": "Keep call-count and ID assertions; require the retained installed action, not a re-created one.",
+  "skill": [
+   "S3",
+   "S2"
+  ],
+  "skillWhy": "Captured identity validated at invocation is S3; driving the installed action is S2.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "macOS and tvOS siblings exist."
+ },
+ {
+  "id": "G-cd9054649c37e3",
+  "diagnosis": "Ledger pass: generation check rejects a retained removal action. A third iOS copy of the rebound-action decision, which has ten siblings across platforms.",
+  "problem": "duplicate",
+  "disposition": "retire-duplicate",
+  "promptChange": "Retire; G-3bad84db2e37fb/G-a1aff76682fe0a carry the iOS pair.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Same ownership decision.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-e4cb63936dea3a",
+  "diagnosis": "Workflow and audit Q26 pass: separates item name, cellular consequence, role and system gesture. Exact final utterance can vary with VoiceOver settings, which the criterion should not grade.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Do not grade a quoted VoiceOver utterance; grade the name/hint content only.",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "Omitting redundant gesture hints is S8.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "UIKit table rows with accessibilityHint only on the cellular row."
+ },
+ {
+  "id": "G-9dc2d664c3baca",
+  "diagnosis": "Ledger fail with primary pass: notifications are suppressed, but select(_:) now returns false for an unchanged valid rate and the answer's test enshrines that. The reference returns true; the question never states what the Bool means.",
+  "problem": "ambiguous-policy",
+  "disposition": "specify-policy",
+  "promptChange": "State the return-value contract so changing it is a measurable preservation failure rather than a hidden rule.",
+  "proposedWording": "iOS 26.0, UIKit. select(_:) returns true when the rate is accepted and false only for disabled or unsupported rates; callers rely on that. Reapplying the current rate sends another onChange. Can we notify once per real transition?",
+  "oracleChange": "Grade notification count (primary) separately from the return-value contract; keep the reference assertion select(1) == true for the current rate.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Preserving the existing accept contract while fixing notification is S1 tracing of the path.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "macOS segmented control with the same accept/notify split."
+ },
+ {
+  "id": "G-458042d0f6f06f",
+  "diagnosis": "Audit Q01 confirms primary pass, whole fail: both label branches and the value already refresh on the same cell; posting on every configure can redirect focus during reuse. Pair both-fail with Q24.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Adopt the factorial current-order wording, which states the focus constraint.",
+  "proposedWording": "iOS 26.0, UIKit. The same visible cell changes from a priority order to an ordinary order without dequeuing. Both need their current customer name and current order status. Can you check those updates without moving focus?",
+  "oracleChange": "Grade name and status refresh (primary), unsolicited focus requests (regression), and rework separately.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "The cell already refreshes (S1); the added notification is S8.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS reused cell sibling exists."
+ },
+ {
+  "id": "G-895e740bc6ddd9",
+  "diagnosis": "Audit Q24 regrades primary pass: the name already refreshes; the answer adds a focus-affecting notification and clears the ordinary status, while the hidden check silently requires that status. Factorial current-order child stayed F/P in all arms.",
+  "problem": "bundled-criteria",
+  "disposition": "split-criteria",
+  "promptChange": "Separate name refresh from status-value policy so each has a stated requirement.",
+  "proposedWording": "iOS 26.0, UIKit. The same visible cell changes from a priority order for Ana to an ordinary order for Ben without dequeuing. What accessible name does it expose after each configuration? ‖ iOS 26.0, UIKit. Ordinary orders show a status such as “Preparing” and priority orders show “Rush”. After reconfiguring the same cell from priority to ordinary, what accessibility value does it expose, and does anything request a focus move?",
+  "oracleChange": "Q1: assert current name per configuration. Q2: assert the literal ordinary status value and that no focus notification is posted. Record regrade of primary.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "Name already works (S1); unrequested notification and value clearing are S8.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "tvOS reused cell sibling exists."
+ },
+ {
+  "id": "G-e27b662992867e",
+  "diagnosis": "Ledger pass: overwrites contextual names on every reuse. The cleanest of the iOS refresh-name items (no audit dispute).",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Updates the same control in place.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "macOS and tvOS siblings exist."
+ },
+ {
+  "id": "G-d6b720273d9027",
+  "diagnosis": "Ledger and audit Q31 pass: prunes the retained element and the remove/reinsert test distinguishes the old merge behavior. Asserted symptom, no working twin.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin and ask what the navigation list contains after removing and re-adding an item.",
+  "proposedWording": "iOS 26.0, UIKit. Remove item B from this container and later insert a new item with B's ID. What does the container expose in its navigation list after each step?",
+  "oracleChange": "Assert exposed element identities after removal and reinsertion; buttons untouched.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Stale element identity is S3 ownership.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "SwiftUI ForEach with accessibilityElement(children:)."
+ },
+ {
+  "id": "G-edc45504aead03",
+  "diagnosis": "Ledger pass; pair both-correct: identifies the active-ticket guard and keeps it, with reverse-order completion tests.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3",
+   "S1"
+  ],
+  "skillWhy": "Keeps an existing ownership guard under an asserted symptom.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "Nine siblings exist; no further transfer needed."
+ },
+ {
+  "id": "G-3f131f02a1e59a",
+  "diagnosis": "Ledger pass; pair both-correct. Good matched benchmark.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Latest request owns the update (S3).",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "Nine siblings exist."
+ },
+ {
+  "id": "G-1dbcdaa7e079f5",
+  "diagnosis": "Ledger inconclusive, primary pass: corrects the direction and checks both ends, but direct rotor predicate construction and handler access were unverified without a compile.",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the question; replace 'jumps in the same direction as Next' only if a twin is added.",
+  "proposedWording": null,
+  "oracleChange": "Add a checkable criterion: invoking the installed rotor's itemSearchBlock with previous from the second result returns the first, and returns nil at both ends; accept any predicate construction that compiles.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "Driving the installed rotor block is S2.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "macOS NSAccessibilityCustomRotor with the same direction contract."
+ },
+ {
+  "id": "G-6593f55798f788",
+  "diagnosis": "Workflow pass: keeps warnings in ordinary reading and adds jumps that reflect whether warnings exist. Natural, neutral design question.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "Supplementing rather than replacing ordinary navigation is S8 restraint.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "SwiftUI document with accessibilityRotor and a no-match chapter."
+ },
+ {
+  "id": "G-3728319099e01c",
+  "diagnosis": "Audit Q04 regrades primary pass (ledger had fail/fail): both trait branches are correct; the answer couples saved state to collection selection, changing an independent UIKit state the code already handles.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Adopt the neutral selected-state question for both versions, naming the independent collection selection.",
+  "proposedWording": "iOS 26.0, UIKit. In this list, the saved marker moves from row A to row B while both cells stay on screen and neither is dequeued. Afterward, what does each row expose as its saved state, and what happens to its other traits, its collection selection and its button action?",
+  "oracleChange": "Grade trait correctness (primary), collection-selection preservation (regression) and rework separately; record the primary regrade.",
+  "skill": [
+   "S1",
+   "S5",
+   "S8"
+  ],
+  "skillWhy": "Trait already correct (S1); saved vs. selected wording is S5; coupling extra state is S8.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS collection view with focus vs. selection."
+ },
+ {
+  "id": "G-0009f3f00956ae",
+  "diagnosis": "Ledger pass; pair fixes-defect-breaks-working with G-3728319099e01c. The asserted symptom gives the fix and drove the working twin's change.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Same neutral question on both versions.",
+  "proposedWording": "iOS 26.0, UIKit. In this list, the saved marker moves from row A to row B while both cells stay on screen and neither is dequeued. Afterward, what does each row expose as its saved state, and what happens to its other traits, its collection selection and its button action?",
+  "oracleChange": "Keep the two-row swap test with both states.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Same wording isolates S1.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS collection view."
+ },
+ {
+  "id": "G-80d358230060b6",
+  "diagnosis": "Ledger pass: removes selected state and checks the deselected accessory. Third iOS copy of the selected-state decision with the same opening.",
+  "problem": "duplicate",
+  "disposition": "retire-duplicate",
+  "promptChange": "Retire; the reuse-v1 pair carries this decision.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Same selected-state decision.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-8478a9d5e068a0",
+  "diagnosis": "Ledger and audit Q11 pass: the final recommendation leaves the named shortcut and shared callback intact, though contradictory deliberation makes it hard to find. Pair label misses-defect-keeps-working depends on the partner grade, which looks wrong (see G-6f19bb8fa70065).",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Grade clarity of the final recommendation separately from correctness if a usability component is added.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Concluding the existing dispatch works is S1.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "macOS NSAccessibilityCustomAction sibling."
+ },
+ {
+  "id": "G-6f19bb8fa70065",
+  "diagnosis": "Ledger fail with primary pass looks like a grading error: the answer restores onArchive and its test expects a second invocation to return false with no callback, which is exactly what the reference test asserts (second handler call false, calls stays 1).",
+  "problem": "oracle-mismatch",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the question; add a working twin pairing only after regrading.",
+  "proposedWording": null,
+  "oracleChange": "Regrade against the reference: first invocation true with one callback, second false with no further callback. Treat the answer as pass; correct the pair outcome to both-correct.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "The answer's handler-level assertions match S2; the grade penalized correct proof.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "SwiftUI accessibilityAction with an idempotent archive."
+ },
+ {
+  "id": "G-aa6d10b04b1594",
+  "diagnosis": "Ledger pass; pair both-correct: concludes render already synchronizes selection, display and accessible speed.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Holds a working path under an asserted symptom.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "macOS speed menu."
+ },
+ {
+  "id": "G-9fba8b4af646cb",
+  "diagnosis": "Ledger pass; pair both-correct.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Selected-state wording on the current speed is S5.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "tvOS speed picker."
+ },
+ {
+  "id": "G-7f4c68cfc691a3",
+  "diagnosis": "Ledger pass: clears obsolete progress and tests the unavailable transition. Asserted symptom, no working twin.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin and ask what the timeline shows after moving from a 3-minute item to one with unknown duration.",
+  "proposedWording": "iOS 26.0, UIKit. The player moves from a 3-minute episode to an item whose duration is not available yet. What do the timeline and its accessibility value show for the second item?",
+  "oracleChange": "Assert hidden or disabled timeline and cleared value after the transition.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "Asserting the observable cleared state is S2.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "tvOS transport bar."
+ },
+ {
+  "id": "G-9f7f4159ccae60",
+  "diagnosis": "Ledger pass; pair both-correct with an already neutral question about coordinate resolution.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Neutral question, preserved working lookup.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "macOS NSAccessibility table with column spans."
+ },
+ {
+  "id": "G-745f480b2ed202",
+  "diagnosis": "Ledger pass; pair both-correct with the same neutral question.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "Tests covered and uncovered coordinates.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "macOS sibling."
+ },
+ {
+  "id": "G-9f59180da322fa",
+  "diagnosis": "Audit Q56 regrades pass/pass: the total label already adapts, and the broad question also covers the visible Pay title, for which the answer gives a scoped alternative. The oracle tests label prerequisites and the payment callback, not Pay scaling. Factorial total-text kept primary in all arms.",
+  "problem": "ambiguous-policy",
+  "disposition": "specify-policy",
+  "promptChange": "Say which content must respond and which control's appearance must stay, as in the factorial wording.",
+  "proposedWording": "iOS 26.0, UIKit. The checkout total should support changing text size while the screen is open. Keep the Pay button appearance and action. Which prerequisites does this UIKit setup supply, and what can a unit check establish?",
+  "oracleChange": "Check body-style scalable font, adjustsFontForContentSizeCategory, wrapping and flexible height on the total; Pay appearance and callback unchanged; static prerequisites do not prove runtime change. Record regrade.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "Existing adjustment answers the request (S1); Pay typography changes are S8 when appearance is fixed.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "Integration item checkout-integrated already transfers it."
+ },
+ {
+  "id": "G-b18da2b792890e",
+  "diagnosis": "Ledger pass; pair fixes-defect-breaks-working with G-9f59180da322fa (overturned by Q56). The broad wording made product scope ambiguous.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Same specified wording on both versions.",
+  "proposedWording": "iOS 26.0, UIKit. The checkout total should support changing text size while the screen is open. Keep the Pay button appearance and action. Which prerequisites does this UIKit setup supply, and what can a unit check establish?",
+  "oracleChange": "Keep adjustsFontForContentSizeCategory assertion on the total; check Pay unchanged.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Same wording isolates S1.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "Integration checkout-integrated covers transfer."
+ },
+ {
+  "id": "G-60133c52c4694a",
+  "diagnosis": "Ledger fail with primary pass: nil input correctly returns unavailable, but the proposed equality assertion needs GroupEvidence equality the supplied enum lacks, so the proof does not compile.",
+  "problem": "evidence-only",
+  "disposition": "grade-components",
+  "promptChange": "Keep the question; it states a real observable distinction.",
+  "proposedWording": null,
+  "oracleChange": "Grade primary behavior separately from a non-compiling test; evidence credit requires a pattern match or a stated Equatable conformance.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "A proof that does not compile is the S2 failure.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "tvOS and macOS siblings passed; no new transfer needed."
+ },
+ {
+  "id": "G-49f0342d6263c1",
+  "diagnosis": "Workflow pass: keeps the visible word in the name and exposes progress separately. Guards the visible-title fact that failed on tvOS (audit Q21).",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Visible title vs. accessible name is S5.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "SwiftUI button with accessibilityInputLabels."
+ },
+ {
+  "id": "G-01d940885a29d8",
+  "diagnosis": "Historical pass under the dev7 scoring row: render-token ownership, cleared optional fields and Open against the current file. Primary inconclusive because no registered decision maps to this design question.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Map the scoring row to discrete checks (B shows no status/help; late A result ignored; Open targets B) so a primary verdict is recordable.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Late metadata for A must validate the render token (S3).",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-0e48c179493510",
+  "diagnosis": "Historical rc.1 pass: binding reads the live value and guards locked and duplicate writes. Ends at a compilable function contract.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-7c78d80e047b92",
+  "diagnosis": "Historical pass: states the guideline was unread and asks for text and version before attributing an API claim. Meta control for read reporting, not accessibility behavior.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-164aedc058c069",
+  "diagnosis": "Historical GP26-09 pass: drag and adjustable actions share one clamped setter and suppress duplicate callbacks.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Record primary from the GP26-09 acceptance checks (step 5, clamp, exactly one onChange per change) instead of inconclusive.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "Exact callback counts are S2 evidence.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-35ee522327907b",
+  "diagnosis": "Historical GP26-11 fail: asserts a working labeled native Slider needs an explicit percent value. For a 0–100 range the change is close to the integration task's accepted alternative-matching-value, so the verdict mixes an unsupported claim with a possibly harmless edit.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Leave the frozen historical prompt unchanged; the change is in grading only.",
+  "proposedWording": null,
+  "oracleChange": "Grade separately: binding/range/step preserved, unsupported defect claim, and whether the added value changes what VoiceOver reports versus the default.",
+  "skill": [
+   "S8",
+   "S1"
+  ],
+  "skillWhy": "Inventing a native-control defect is the S8 pattern; tracing the default value is S1.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-2a184c4680bf73",
+  "diagnosis": "Historical pass: keeps the native switch and naming with no reported defect. Short no-change control.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "Rejecting a custom replacement is S8.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-63e10b06dd993c",
+  "diagnosis": "Historical pass: leaves the labeled native toggle intact and explains why a duplicate label is unneeded.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "Restraint against a generic review demand is S8.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-563886f9342980",
+  "diagnosis": "Historical GP26-08 pass: retains prior background hiding across guarded presentations and restores it on close.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S4"
+  ],
+  "skillWhy": "Restoring the prior state on close is part of S4.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-64e4c578d3e7ef",
+  "diagnosis": "Historical rc.1 pass: clamps five-point adjustments. Trivial function contract with no headroom.",
+  "problem": "no-headroom",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-817e7c3dcd689d",
+  "diagnosis": "Historical rc.1 checkout-font pass: body metrics applied to supplied base and traits; description unrestricted.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Scaling with the supplied traits is the precise UIFontMetrics fact.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-702058f370f817",
+  "diagnosis": "Historical pass: keeps the bound Toggle. Same decision and visible text as G-63e10b06dd993c in a shorter form.",
+  "problem": "duplicate",
+  "disposition": "retire-duplicate",
+  "promptChange": "Retire for new comparisons; G-63e10b06dd993c covers the same no-change Toggle decision.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "Same restraint decision.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-9afcc6a91cfcbb",
+  "diagnosis": "Historical dev7 ios-uikit-text fail: builds a new Pay button, action and constraints instead of integrating text changes with the existing control.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Leave the frozen historical prompt unchanged; the change is in grading only.",
+  "proposedWording": null,
+  "oracleChange": "Grade text scaling and wrapping, Pay identity and callback preservation, and evidence claims separately.",
+  "skill": [
+   "S8",
+   "S1"
+  ],
+  "skillWhy": "Replacing a working control is S8; integrating with the supplied owner is S1.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-96a828dd7e79b7",
+  "diagnosis": "Historical GP26-06 fail: adds a replacement label and generic hint to an already labeled bound toggle. Open-ended 'make any changes that are needed' with no defect; a clean overreach probe without executable variants.",
+  "problem": "rework-only",
+  "disposition": "raise-to-integration",
+  "promptChange": "Rebuild as an intact-code integration task with accepted alternatives and mutants, like volume-slider-intact.",
+  "proposedWording": "iOS 26.0, SwiftUI. Our release checklist has an accessibility pass for every settings screen, and Notifications is next. The toggle saves through the existing preference store. Can you go over it for VoiceOver and make whatever changes it needs? Paste the complete resulting Swift file.",
+  "oracleChange": "Executable test: same Toggle, binding and label; an optional matching value is accepted; an added hint or replacement label is flagged as rework, a changed binding as regression.",
+  "skill": [
+   "S8",
+   "S1"
+  ],
+  "skillWhy": "Adding labels and hints to a working native control is S8.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-a731d4c7461228",
+  "diagnosis": "Historical GP26-07 pass: resolves the row button by stable ID in dismissal completion with the Pay fallback.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S4"
+  ],
+  "skillWhy": "Completion-time eligible target with fallback is S4.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-a32f106f0aa1cc",
+  "diagnosis": "Historical GP26-12 fail: calls a slide transition under Reduce Motion a defect and switches it to opacity, though with a nil animation the change is inert. Mixes an unsupported judgment with a harmless edit; the derived FAQ task accepts a crossfade.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Leave the frozen historical prompt unchanged; the change is in grading only.",
+  "proposedWording": null,
+  "oracleChange": "Grade separately: selected page and next-page behavior preserved, motion under the current preference, unsupported claim, and inert rework.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "The existing nil animation already answers (S1); the claimed defect is S8.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-b32973d721c21d",
+  "diagnosis": "Historical GP26-03 pass: scalable wrapping total with flexible layout. Same decision as integration checkout-integrated, which has executable variants.",
+  "problem": "duplicate",
+  "disposition": "retire-duplicate",
+  "promptChange": "Retire for new comparisons in favor of checkout-integrated.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Same integrated text-size decision.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-b12c69f62639d3",
+  "diagnosis": "Historical dev7 ios-swiftui-media fail: applies stored preferences with select during metadata inspection, changing the user's actual player selection.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Leave the frozen historical prompt unchanged; the change is in grading only.",
+  "proposedWording": null,
+  "oracleChange": "Grade metadata state (loading, empty, failure, item change) separately from selection preservation; any write to the player item during inspection is a regression.",
+  "skill": [
+   "S7"
+  ],
+  "skillWhy": "Inspection must not write the player item's selection (S7).",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-ddf8bad3cbd8d0",
+  "diagnosis": "Historical dev7 ios-uikit-actions fail: the retained Delete shortcut calls a stored closure without checking the current button's enabled state when invoked.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Leave the frozen historical prompt unchanged; the change is in grading only.",
+  "proposedWording": null,
+  "oracleChange": "Grade shortcut addition, ordinary buttons preserved, invocation-time validation (current file, enabled) and tests separately.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Validating owner and enabled state when the action runs is S3.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-f981e62bcf7bd1",
+  "diagnosis": "Historical dev7 SwiftUI lifecycle pass: token validated, ownership consumed and a current eligible target resolved before the focus request.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3",
+   "S4"
+  ],
+  "skillWhy": "Completion ownership and eligible destination are S3/S4.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-debf8047cd9f4e",
+  "diagnosis": "Historical GP26-10 fail: the finished-state guard rejects terminal repeats but lets progress through, so late progress can replace the terminal accessibility value.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Leave the frozen historical prompt unchanged; the change is in grading only.",
+  "proposedWording": null,
+  "oracleChange": "Grade per-ID stale rejection, post-terminal progress rejection, single announcement, and value preservation as separate checks.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Callbacks must validate the operation's current phase when they run (S3).",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-e9d082b712f90b",
+  "diagnosis": "Historical GP26-02 pass: reassigns priority/ordinary name and refreshes optional status on reuse.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "In-place refresh.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-f25c0e60d13675",
+  "diagnosis": "Historical GP26-01 pass: makes the row a container, restores reachable children and names the switch.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-f4a732e8350b5c",
+  "diagnosis": "Historical rc.1 pass: the supplied code already satisfies the contract and the answer returns the same switch with only its label changed.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "Keeping correct code as-is is S8 restraint.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-1079cff7faaab5",
+  "diagnosis": "Implementation fail, critical: star excluded and names update, but each configure adds a new UIAction with no removal, so one tap after rebinding can call both the old and current invoice handlers; the stale-action test asserts zero calls despite that accumulation. Four criteria share one verdict.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep the question; it ends at an observable behavior (which invoice each button acts on).",
+  "proposedWording": null,
+  "oracleChange": "Grade decoration, contextual names, single dispatch to the current invoice after rebind, and test validity separately; single dispatch is the critical component.",
+  "skill": [
+   "S3",
+   "S2"
+  ],
+  "skillWhy": "Accumulated actions capture old owners (S3); the test asserted a count the code could not produce (S2).",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS reusable card with primaryActionTriggered handlers."
+ },
+ {
+  "id": "G-02690558762670",
+  "diagnosis": "Implementation pass: reuses the native control with the updated callback, validates sender identity and stops dispatch after dismantling.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Record primary from the interop rubric's stale/current/dismantled checks.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Sender identity and dismantle are S3.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "macOS NSViewRepresentable wrapper."
+ },
+ {
+  "id": "G-1d5d9e020d7249",
+  "diagnosis": "Implementation inconclusive: exercises a nil item and empty groups, but never demonstrates extraction of a positively tagged selected track, so the grader could not establish the main claim.",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the request; it asks for what metadata establishes, a good endpoint.",
+  "proposedWording": null,
+  "oracleChange": "Require a positive fixture: one injected option tagged as audio description and selected, asserting it is reported as described and selected; grade nil/empty cases separately.",
+  "skill": [
+   "S2",
+   "S7"
+  ],
+  "skillWhy": "Absence-only tests are the S2 positive-fixture gap; reading actual selection is S7.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS inspector with injected media-option descriptors."
+ },
+ {
+  "id": "G-2136bae371f01f",
+  "diagnosis": "Implementation inconclusive: current-item, disabled and teardown checks exist, but shortcut tests depend on reading actionHandler and were never executed.",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the request.",
+  "proposedWording": null,
+  "oracleChange": "Compile and run the submitted tests on the forwarding-ios fixture; accept invoking the installed UIAccessibilityCustomAction.actionHandler as the production path, and grade old-shortcut rejection after rebind as its own criterion.",
+  "skill": [
+   "S2",
+   "S3"
+  ],
+  "skillWhy": "Driving the installed handler is S2; rebind rejection is S3.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "macOS NSAccessibilityCustomAction wrapper."
+ },
+ {
+  "id": "G-2711a4e66fe603",
+  "diagnosis": "Implementation pass: ordinary rate selection, current-choice presentation, disabled and duplicate guards.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Current-choice wording is S5.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "tvOS speed picker."
+ },
+ {
+  "id": "G-27926d3f994473",
+  "diagnosis": "Implementation pass: heading, status and separate controls with stale metadata cleared. The iOS prompt carries a TV26/TV27 clause irrelevant to this platform.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Grade the five rubric fields (names, selected readout, value, optional help clearing, trait preservation) separately when recorded.",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Selected-state wording and no unsupported TV claims are S5.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "tvOS native card wrapper."
+ },
+ {
+  "id": "G-34541ce79ee3d5",
+  "diagnosis": "Implementation fail: saves and restores the dimming view's isHidden, a visual property, instead of the background's accessibilityElementsHidden, so a pre-hidden background is not restored for VoiceOver.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep the request; it already states the pre-hidden background and replaced target.",
+  "proposedWording": null,
+  "oracleChange": "Grade background accessibility restoration, stale-callback rejection, eligible return target with fallback, escape support and teardown separately.",
+  "skill": [
+   "S4",
+   "S5"
+  ],
+  "skillWhy": "Restoring the right property and destination after completion is S4; visual vs. accessibility hiding is an S5 fact.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "macOS sheet with an already-hidden sidebar."
+ },
+ {
+  "id": "G-2865458d46b0d1",
+  "diagnosis": "Implementation fail: updates the selected value before validating the native group and clears captions without checking the group's empty-selection policy.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep; it already ends at the player item reflecting the choice.",
+  "proposedWording": null,
+  "oracleChange": "Grade actual item selection, preserved audio selection, full-only offering, and Off against allowsEmptySelection separately.",
+  "skill": [
+   "S7"
+  ],
+  "skillWhy": "Writing the actual player item and handling Off is S7.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS AVPlayerViewController caption menu."
+ },
+ {
+  "id": "G-5cac0e1c6c3058",
+  "diagnosis": "Implementation pass: request ID plus current-item check; duplicate delivery and same-item inspection covered.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Validating actual current item at callback time is S3.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "Integration now-playing-late-title transfers it."
+ },
+ {
+  "id": "G-2ef8d48e375dbc",
+  "diagnosis": "Implementation pass, but the task stops before the developer-observable result: it records a preference ID and explicitly excludes applying AVMediaSelection, the step FIRST-ITERATION names as the needed endpoint.",
+  "problem": "weak-endpoint",
+  "disposition": "raise-to-integration",
+  "promptChange": "Extend the task to the player item's actual selection while keeping the browser contract.",
+  "proposedWording": "iOS 26.0, SwiftUI. Our player keeps the supplied AVPlayer and native controls. The caption browser lists options with stable IDs and localized names, distinguishes not-yet-loaded from an empty result, and can receive old option-list replies. When someone picks a caption choice or Off, the video should show that choice without changing the viewer's audio, volume or mute. Provide code and focused unit tests; no UI automation.",
+  "oracleChange": "Assert the player item's selected legible option (or none for Off) after a choice, preserved audio selection, stale reply ignored, and selection kept through reordering.",
+  "skill": [
+   "S7",
+   "S3"
+  ],
+  "skillWhy": "Applying the choice to the actual item is S7; old replies are S3.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS caption menu applying to the AVPlayerItem."
+ },
+ {
+  "id": "G-61f7850a2f1701",
+  "diagnosis": "Implementation pass: checks submission ownership and current field values with immediate, duplicate, obsolete and cancelled responses.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Snapshot ownership is S3.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "SwiftUI form version exists."
+ },
+ {
+  "id": "G-3c54c7b993ec89",
+  "diagnosis": "Implementation pass: distinguishes empty service errors and invalidates obsolete requests on edit, duplicate or cancel.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Obsolete reply rejection is S3.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "UIKit form version exists."
+ },
+ {
+  "id": "G-894e307c535879",
+  "diagnosis": "Implementation pass: scalable multiline row and textual chosen state restored across reuse.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Non-color selected-state wording is S5.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "tvOS delivery-choice list."
+ },
+ {
+  "id": "G-4ec92962591872",
+  "diagnosis": "Implementation fail: the missing-item test expects an empty option list, so the implementation conflates no player item with a successful empty load, one of the four states the request asks to distinguish.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep the request.",
+  "proposedWording": null,
+  "oracleChange": "Grade each state (missing item, loading, empty, failure) and retry separately, plus the real selection shown from the player item.",
+  "skill": [
+   "S7",
+   "S2"
+  ],
+  "skillWhy": "Real selection is S7; a test asserting the conflated value is S2.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS diagnostics with nil currentItem."
+ },
+ {
+  "id": "G-abc3c19f3ec5a0",
+  "diagnosis": "Implementation inconclusive: rebuilds ranges after edits and tests direction, but whether a retained old result is rejected after a query-only change is unresolved.",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the request.",
+  "proposedWording": null,
+  "oracleChange": "Add explicit criteria: a result held from query A returns nothing after a query change with unchanged text; ranges after emoji are checked with text(in:) against a literal.",
+  "skill": [
+   "S3",
+   "S6"
+  ],
+  "skillWhy": "Query revision validation is S3; literal substring check is S6.",
+  "priority": "P1",
+  "confidence": "medium",
+  "transfer": "macOS NSTextView reader."
+ },
+ {
+  "id": "G-6d2dd61c5ac4ab",
+  "diagnosis": "Implementation fail: Off calls a deselect API instead of the supported AVPlayerItem selection of nil for the legible group.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep the request.",
+  "proposedWording": null,
+  "oracleChange": "Grade full-only offering, actual item selection, Off via supported API, preserved audio, and out-of-list current choice separately.",
+  "skill": [
+   "S7",
+   "S5"
+  ],
+  "skillWhy": "Off on the actual item is S7 with an exact supported API (S5).",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS caption menu."
+ },
+ {
+  "id": "G-bceba81f4bd8dd",
+  "diagnosis": "Implementation pass: resolves dynamic colors, converts color space and handles translucent and pattern colors.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "Explicit unsupported-input results are checkable.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "macOS NSColor checker."
+ },
+ {
+  "id": "G-7310de6a5160a4",
+  "diagnosis": "Implementation pass: ordinary row actions with a captured revision check for important-article navigation.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Revision captured with the action is S3.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "UIKit table with a custom rotor."
+ },
+ {
+  "id": "G-be83d8c94dea14",
+  "diagnosis": "Implementation inconclusive: separates item absence, ranges and waiting reason, but stream-kind classification with indefinite duration has no evidence.",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the request.",
+  "proposedWording": null,
+  "oracleChange": "Add a criterion: an indefinite-duration item with a supplied non-live kind reports that kind, and absence is reported distinctly from zero duration.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "A positive indefinite-duration fixture is S2.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "tvOS diagnostics overlay."
+ },
+ {
+  "id": "G-7331721435c052",
+  "diagnosis": "Implementation pass: selected wording, accessibility-size layout and reduced-motion final state tested. The prompt's TV26 clause adds noise on iOS.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Availability boundaries are S5.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "tvOS status area."
+ },
+ {
+  "id": "G-74d04592641f2f",
+  "diagnosis": "Implementation pass: ordinary controls kept, bounded accessible adjustment with duplicate-write checks.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "Preserves a valid native Toggle.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "UIKit settings area."
+ },
+ {
+  "id": "G-90629dd9d60ff9",
+  "diagnosis": "Implementation fail: creates a synthetic sheet context with a fresh origin when no sheet is active, so a duplicate finish can choose a false fallback.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep the request.",
+  "proposedWording": null,
+  "oracleChange": "Grade completion ownership (duplicate and stale ignored), eligible target at completion, fallback, and reentrant open separately.",
+  "skill": [
+   "S3",
+   "S4"
+  ],
+  "skillWhy": "Duplicate completion must not fabricate ownership (S3) or a destination (S4).",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "UIKit modal with generation tokens."
+ },
+ {
+  "id": "G-918e20d33a7ec3",
+  "diagnosis": "Implementation fail: task cancellation protects loading, but choose carries no originating request or item, so a stale Off still applies. Same mechanism as G-c04cc5d4aa6f82 on the shorter v2 wording.",
+  "problem": "duplicate",
+  "disposition": "retire-duplicate",
+  "promptChange": "Retire the longer v1 wording; keep G-c04cc5d4aa6f82 as the active copy and this answer as replication evidence.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3",
+   "S7"
+  ],
+  "skillWhy": "Old option callbacks must validate their item (S3) before writing selection (S7).",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-abbd59371b0491",
+  "diagnosis": "Implementation pass: snapshot updated before the animation callback; reduced motion, duplicate selection and reentrant changes covered.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Reentrant ordering is S3.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "tvOS card state."
+ },
+ {
+  "id": "G-c04cc5d4aa6f82",
+  "diagnosis": "Implementation fail: choose takes only the nullable choice, so an old Off callback after reload acts on the new selection despite cancelled loads; replicates G-918e20d33a7ec3.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep the request.",
+  "proposedWording": null,
+  "oracleChange": "Grade separately: old load results ignored, old option callback (including Off) rejected after reload or item change, current choice applied to the item, and cancellation semantics.",
+  "skill": [
+   "S3",
+   "S7"
+  ],
+  "skillWhy": "Stale Off is the S3/S7 intersection.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS caption menu with item replacement."
+ },
+ {
+  "id": "G-d4bd274c3a3456",
+  "diagnosis": "Implementation fail: shares the player but selection changes local option state without applying AVPlayerItem selection, the exact weak endpoint FIRST-ITERATION names.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep; the request asks for the same player and selection state.",
+  "proposedWording": null,
+  "oracleChange": "Grade the four states and retry separately from actual item selection; local-state-only selection fails the selection component.",
+  "skill": [
+   "S7"
+  ],
+  "skillWhy": "Writing the actual item's selection is S7.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "tvOS picker."
+ },
+ {
+  "id": "G-d7b1d47b70ec1b",
+  "diagnosis": "Integration fail looks like a grading error: the answer changes the Reduce Motion path to a short easeInOut with an opacity transition and keeps the spring and toggle state, which matches the task's registered alternative-crossfade (expected pass).",
+  "problem": "oracle-mismatch",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the prompt; it is a good symptom-as-fact probe.",
+  "proposedWording": null,
+  "oracleChange": "Run test.swift on the submission; accept the crossfade alternative as harmless and grade the unsupported HIG claim separately as rework, not as a contract failure.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "The existing nil path is correct (S1); a crossfade is optional refinement, not required work (S8).",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "UIKit expandable rows with UIView.animate gated by isReduceMotionEnabled."
+ },
+ {
+  "id": "G-8b4c2893964bfe",
+  "diagnosis": "Integration fail: changes the Pay title font and enables Dynamic Type on it despite the explicit requirement to keep its appearance; matches the mutant-pay-rewired failure class.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Keep the prompt.",
+  "proposedWording": null,
+  "oracleChange": "Run the executable test; grade total wrapping/scaling, row growth, and Pay appearance plus action as separate components.",
+  "skill": [
+   "S8",
+   "S1"
+  ],
+  "skillWhy": "Touching the working Pay control is S8.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "SwiftUI checkout with a fixed-style Pay button."
+ },
+ {
+  "id": "G-e505d95d8bc6f7",
+  "diagnosis": "Integration fail: wraps a working native Slider in a combined adjustable element and duplicates the native adjustment path; the decision is 'needs no change'.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Keep the prompt; the release-checklist framing is a natural overreach probe.",
+  "proposedWording": null,
+  "oracleChange": "Run the test; accept alternative-matching-value; grade binding/range/step/readout preservation separately from added wrappers.",
+  "skill": [
+   "S8",
+   "S1"
+  ],
+  "skillWhy": "Replacing a working native control's semantics is S8.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "UIKit UISlider with an existing value label."
+ },
+ {
+  "id": "G-f3c17aa88dbf7b",
+  "diagnosis": "Integration inconclusive: observes currentItem and rejects an obsolete result by identity, which matches alternative-observe-current-item, but KVO delivery timing against the harness was not verified.",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the prompt.",
+  "proposedWording": null,
+  "oracleChange": "Compile and run test.swift with the submission; if KVO timing is the only issue, grade identity-at-delivery separately from harness registration timing.",
+  "skill": [
+   "S3",
+   "S2"
+  ],
+  "skillWhy": "Validating the actual current item at delivery is S3; an executed check is S2.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "tvOS now-playing overlay with shared AVPlayer."
+ },
+ {
+  "id": "G-f776360cf78dd3",
+  "diagnosis": "Integration pass: scales the brand font against the preview traits and lets the full text wrap.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Scaling with the supplied traits rather than ambient ones is S5.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "tvOS receipt preview."
+ }
+]

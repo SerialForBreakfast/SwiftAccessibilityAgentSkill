@@ -1,0 +1,1678 @@
+[
+ {
+  "id": "G-0a2cd6519778f4",
+  "diagnosis": "Ledger: primary passes (generation compared inside the queued callback) but the whole answer fails because its test resets reduceMotion before restart, so the existing equality guard suppresses apply in the mutant too. The defect is the proof, not the fix.",
+  "problem": "evidence-only",
+  "disposition": "grade-components",
+  "promptChange": "Keep the question; it already asks whether the code handles the case. Add one sentence asking what test would fail on the unguarded version, so the proof is requested explicitly rather than inferred.",
+  "proposedWording": null,
+  "oracleChange": "Grade primary (stale queued delivery after restart is rejected, new observer applies) separately from evidence: the test must change the preference between stop and drain so dedup cannot mask rejection, and must fail on the oldgeneration mutant.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "The test counts applies without a changed value, which is exactly the absent-positive-fixture pattern S2 targets.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "An iOS/tvOS settings screen restarting a Reduce Transparency observer, where the stale value differs from the current one; same-value redelivery as a separate control."
+ },
+ {
+  "id": "G-000ddc4f9a5ec5",
+  "diagnosis": "Audit Q16: primary pass held (buffered vs seekable distinguished) but the answer adds two public helpers despite the leave-working-code instruction; pair: partner repair passes, so this is avoidable rework, not a seek regression. Same pattern in Q52 (iOS) and Q60 (macOS).",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Replace the asserted symptom (the player says I can seek a buffered-only interval) with the neutral observation question used for its repair partner, so both sessions get identical wording.",
+  "proposedWording": null,
+  "oracleChange": "Score separately: primary (seek decision consults seekable ranges only), preservation (existing inspector API unchanged), rework (new public helpers or queries counted as rework, not as failure of primary), evidence. Whole pass should not require zero edits when the edit is harmless, but must flag unrequested public API.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "The existing containsSeekableTime path already answers the request, so tracing it (S1) and not adding helpers (S8) is the whole decision.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "An AVPlayer HLS live-window inspector on tvOS where the seekable window slides; working code reports both ranges and the question asks what the scrub bar should allow."
+ },
+ {
+  "id": "G-19d3be9a5d1d73",
+  "diagnosis": "Ledger rationale is attempt-error: no gradable answer exists, so the inconclusive is a harness failure, not a model or prompt outcome. The prompt itself is well specified (section-qualified selection, atomic duplicate rejection, detached buttons).",
+  "problem": "grader-uncertain",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Record this cell as a harness error, exclude it from model denominators, and rerun once under the frozen wording; then grade with the shelf-structure rubric split into structure, atomic rejection and stale-button criteria.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "The detached and retained button requirement is a callback-ownership contract, once a real answer exists.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS shelf grid with repeated item IDs across rows and a retained focusable cell from a removed row."
+ },
+ {
+  "id": "G-7a28c9cbfc6681",
+  "diagnosis": "Pair both-correct with G-5f1114d75bd50c and the iOS SwiftUI repair also passes; the prompt states the stale-hint symptom and asks for the repair, so the pass shows the task is easy, not headroom. Nothing in the fixture is tvOS-specific.",
+  "problem": "duplicate",
+  "disposition": "reserve-transfer",
+  "promptChange": "Remove from the development panel; the macOS preservation copy (Q22, failed) is the informative development case for this decision.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "The working partner shows that the optional assignment already clears help; S8 protects against mapping absence to an empty string as Q22 did.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A tvOS focus-driven detail panel where help appears only for some rows, delivered by a reused UIKit cell rather than SwiftUI."
+ },
+ {
+  "id": "G-51c53f30543cc0",
+  "diagnosis": "Audit Q43: primary pass held; the answer rewrites coordinator cleanup and changes macOS and teardown for an unshown view mismatch even though rebinding already invalidates the old callback. Pair: repair partner passes, so the fixture fixes the defect and reworks the working copy. Q27 (macOS) and Q41 (iOS) repeat the pattern.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Use the same neutral wording as its repair partner instead of asserting that the native button still sends to the previous target.",
+  "proposedWording": null,
+  "oracleChange": "Separate primary (old native control and old callback cannot reach the new handler; dismantle stops dispatch), rework (unrequested teardown or cross-platform edits) and evidence (a negative-only test that also passes the original counts as weak proof). Grade a harmless equivalent rewrite as pass with rework noted.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "Tracing configure and dismantle shows the existing path already satisfies the request; the rework is the failure.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "A UIViewRepresentable wrapping a native UISegmentedControl on tvOS where the coordinator is rebound across list rows."
+ },
+ {
+  "id": "G-0ad013a4877500",
+  "diagnosis": "Ledger: whole fail because old option callbacks call choose with a nullable ID and no captured owner, so a stale Off can clear a later selection; primary is inconclusive because the rubric bundles result ownership, option callbacks, cancellation and retry. The same stale-Off mechanism recurs in G-c6b25ad753e6a2.",
+  "problem": "real-model-gap",
+  "disposition": "split-criteria",
+  "promptChange": "Split the bundled ownership request into a late-result question and a stale-menu-action question, so the Off failure can be graded on its own.",
+  "proposedWording": "tvOS 26.0, SwiftUI player using one shared AVPlayer. People can leave and come back, or switch videos, while caption options are still loading, and they can retry a failed load. When a load started for an earlier video finishes late, what does the current screen show? ‖ tvOS 26.0, SwiftUI player using one shared AVPlayer. A caption menu built for an earlier video is still presented when the video changes, and the viewer chooses Off or a track from it. What happens to the current video's captions? Please include focused unit tests.",
+  "oracleChange": "Criterion A: late success or error for an earlier video leaves the current video's state unchanged; retry for the current video applies. Criterion B: an Off or track choice captured for an earlier video or request does not change the current item's legible selection; a current Off does. Assert on the player item's selection, not local state.",
+  "skill": [
+   "S3",
+   "S7"
+  ],
+  "skillWhy": "A nullable-ID callback with no captured owner is the S3 pattern, and Off as a distinct selection on the real item is S7.",
+  "priority": "P1",
+  "confidence": "medium",
+  "transfer": "A UIKit tvOS player with an AVPlayerViewController transport-bar menu where audio-track choices from the previous episode remain installed."
+ },
+ {
+  "id": "G-044112eec58beb",
+  "diagnosis": "rc1 contract: the prompt states the rule (accept only the current item's current request, even for the same item) and the signature; the pass shows the model can implement a stated rule, not that it would find it. Primary inconclusive only because historical rc1 grades are not unaided results.",
+  "problem": "no-headroom",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Run the rc1 unit contract on the unchanged submission (two requests for the same item, the earlier reply arriving last) and record primary from that assertion rather than leaving it inconclusive.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Guards the same-item request identity that G-5f3c8c25e44c4b and G-c6b25ad753e6a2 missed when the rule was not stated.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-1584405193ce1b",
+  "diagnosis": "Dev7 design question: ledger finds cancellation and item identity handled on success, but same-item retry and error ownership are not established; inconclusive because the scoring key has no checkable criterion for those branches.",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the wording (it already lists no-match, failure, in-progress and item change); add one sentence that a load can be retried for the same item, so the graded same-item branch is stated.",
+  "proposedWording": null,
+  "oracleChange": "Add explicit criteria: (1) a retry on the same item makes the first request's late error or success inert; (2) item change before completion leaves the new item's state untouched; (3) the user's selected audio and captions are read, never written. Accept any token scheme that satisfies all three.",
+  "skill": [
+   "S3",
+   "S7"
+  ],
+  "skillWhy": "The gap is what the completion validates when it runs (S3) and preserving the user's media selection (S7).",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-92cd811da55d55",
+  "diagnosis": "Dev7 boundary question passes: separates compile SDK from deployment capability and asks for an availability source. Primary inconclusive only because the key has no literal check. It is the conceptual twin of the confirmed tv-text-reflow failure (Q32), which shows the model knows the principle but misapplies it in code.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Make the criterion checkable: the answer must not claim system Larger Text support from SDK version alone, and must name the deployment-target behavior separately from any later-SDK branch.",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Directly protects the tvOS availability-boundary fact S5 would supply.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-58e05a888e5745",
+  "diagnosis": "Workflow pass: separates the focused tile under the remote from the committed language and updates selected traits only on Select. The prompt states two symptoms but they are observations, not a fix; this is a tvOS-specific control for focus vs selection.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Keep, and assert two observable effects: moving focus away does not change the committed language, and the selected trait appears only after Select.",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Selected-state wording and the focus-vs-selection distinction on tvOS are platform facts in S5.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS audio-language row where focus effects use .focused state and a separate committed choice."
+ },
+ {
+  "id": "G-0a672785e8c227",
+  "diagnosis": "Workflow pass: adds a non-color Live cue independent of the focus border and leaves Select unchanged. The prompt names the need without giving the fix; useful color-only control.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A UIKit tvOS EPG grid where a red dot marks recording and focus scaling also changes tint."
+ },
+ {
+  "id": "G-1a9904d1e929f2",
+  "diagnosis": "Repair passes by checking the active presentation token; the prompt asserts the race and asks for the fix, so it shows no headroom. The macOS preservation sibling (Q10) failed because a late view callback reads mutable state, which this tvOS item cannot detect without a working-code twin.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Author a working-code twin with identical wording (token already checked at completion) so the tvOS fixture measures both fixing and preserving.",
+  "proposedWording": null,
+  "oracleChange": "Exercise the captured production close callback after a second presentation starts; assert the second presentation keeps focus and the stale close requests nothing. Do not accept a test that passes the old token by hand.",
+  "skill": [
+   "S3",
+   "S4"
+  ],
+  "skillWhy": "Restoration only after the owning presentation completes is S4; validating the captured token at run time is S3.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS fullScreenCover chain where Menu dismisses one cover while the next is already presenting."
+ },
+ {
+  "id": "G-03942c8939b2cc",
+  "diagnosis": "Audit Q25: primary pass (main code keeps the explicit description characteristic) but an alternative proposes an unsupported property and the test filters by its own output, so it can pass with no ordinary track. Factorial description-tags: all four arms F/P; neither addition fixes the proof.",
+  "problem": "evidence-only",
+  "disposition": "grade-components",
+  "promptChange": "Adopt the factorial child's neutral wording (ordinary alternate-language vs explicitly tagged described audio, keep the current selection) for both pair members.",
+  "proposedWording": null,
+  "oracleChange": "Grade primary, preservation and evidence separately. Evidence requires both fixtures (ordinary alternate false, tagged described true) through the production mapping and compares the native selected option before and after; a filtered empty list cannot pass.",
+  "skill": [
+   "S2",
+   "S7"
+  ],
+  "skillWhy": "The persistent failure across all arms is the missing positive fixture (S2) on a media characteristic distinction (S7).",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "An iOS/tvOS audio menu built from AVAsset legible and audible groups where SDH captions must be distinguished from ordinary subtitles."
+ },
+ {
+  "id": "G-1ae8568fe43fd6",
+  "diagnosis": "Implementation pass with primary inconclusive: the answer keeps separate Play/Details callbacks and guards the Details shortcut on current availability, but the rubric gives no executable check for reuse or disabled Details.",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the request; add that the unit tests should reuse the card for a second episode and disable Details, so the inconclusive branches become the asked-for checks.",
+  "proposedWording": null,
+  "oracleChange": "Add focused assertions: after configuring episode B, Play's Details custom action reports B; with Details disabled the action returns false and calls nothing; ordinary Details still dispatches via primaryActionTriggered.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "The shortcut must read the current episode and enabled state at invocation, an S3 ownership check.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS episode tile with .accessibilityAction(named:) and a reused view model."
+ },
+ {
+  "id": "G-845a5decac01e1",
+  "diagnosis": "Repair passes (stale and disabled dispatch check ticket and control, with teardown assertions); the prompt states the defect, so the pass is expected. Pair: fixes the defect here and reworks the working copy (G-51c53f30543cc0).",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Give both pair members the same neutral question about which callback a press reaches after update and after dismantle, instead of asserting the stale target.",
+  "proposedWording": "tvOS 26.0, SwiftUI wrapping a native UIButton through a coordinator. Each update can change the item and its callback, the coordinator can be rebound to another button, and the view can be dismantled. After an update, which callback does pressing Select on the native button reach, and what happens if an earlier button or captured action fires after dismantle? Please include focused unit tests.",
+  "oracleChange": "Score the causal explanation of which callback is reached before and after rebinding, current dispatch, and post-dismantle silence; grade both working and defective sessions with the same criterion.",
+  "skill": [
+   "S1",
+   "S3"
+  ],
+  "skillWhy": "Neutral wording tests whether the model traces the installed target (S1) and what the action validates when it runs (S3).",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "An AppKit NSViewRepresentable on macOS with a rebound NSButton target-action pair."
+ },
+ {
+  "id": "G-5f1114d75bd50c",
+  "diagnosis": "Pair both-correct: correctly concludes that the optional assignment already clears the old hint and exercises the nil transition. Strong preservation control, but redundant with the iOS SwiftUI preservation copy that also passes.",
+  "problem": "duplicate",
+  "disposition": "reserve-transfer",
+  "promptChange": "Move the tvOS SwiftUI optional-help pair to the transfer reserve; keep the iOS pair and failing macOS preservation (Q22) for development.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "The pass is the behavior S1 and S8 aim for; keep it unseen as a transfer control.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A UIKit tvOS reused cell where accessibilityHint is set from an optional and must clear when nil."
+ },
+ {
+  "id": "G-22af858f9af21f",
+  "diagnosis": "Implementation pass with primary inconclusive: uses sheet generation and active state, rejects stale dismissal and tests a synchronous next presentation. The rubric bundles entry target, return target, fallback, stale completion and reentry.",
+  "problem": "bundled-criteria",
+  "disposition": "grade-components",
+  "promptChange": "Keep the wording; ask that each requirement get its own named test so components can be graded independently.",
+  "proposedWording": null,
+  "oracleChange": "Grade components: (1) entry focus target; (2) return request resolves at completion to origin or persistent fallback; (3) stale or repeated completion requests nothing; (4) a restoration that opens another sheet is not undone. Score focus requests, not delivered focus, since unit tests cannot observe the focus engine.",
+  "skill": [
+   "S4"
+  ],
+  "skillWhy": "Every component is a restore-after-completion destination rule from S4.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "A UIKit tvOS modal with UIFocusEnvironment preferredFocusEnvironments and setNeedsFocusUpdate after dismissal."
+ },
+ {
+  "id": "G-5e241a2f3c435f",
+  "diagnosis": "Dev7 design question inconclusive: ordinary Open and Delete are kept and a supplementary Delete action added, but the shortcut's enabled-state and current-owner checks are not substantiated in the example.",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the wording; ask the example to show the shortcut after the row is reused for a different file and while disabled.",
+  "proposedWording": null,
+  "oracleChange": "Criterion: the self-contained example's Delete accessibility action reads the row's current file at invocation, does nothing while the row is disabled, and leaves ordinary Open and Delete buttons in place. Unit check calls the installed action after reuse.",
+  "skill": [
+   "S3",
+   "S8"
+  ],
+  "skillWhy": "The open question is what the action validates when it runs (S3), while S8 guards against removing ordinary buttons.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-169764b693c452",
+  "diagnosis": "rc1 contract: the prompt spells out the restoration rule (opener if eligible and enabled, else first enabled, else nil); the pass shows rule execution only.",
+  "problem": "no-headroom",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Run the rc1 unit contract and record primary from it: removed opener, disabled opener, all disabled returns nil.",
+  "skill": [
+   "S4"
+  ],
+  "skillWhy": "Encodes the eligible-destination fallback in S4 as a literal contract.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-90ab2116d21630",
+  "diagnosis": "Workflow pass: removes the horizontal loopback, gives a Down exit to the next shelf, and preserves Select. The prompt describes remote-navigation observations without the fix; a good tvOS focus-engine control.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Assert two outcomes: Right at the last tile does not wrap to the first, Down reaches the next shelf; Select still opens each tile.",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A UIKit UICollectionView shelf with a custom focus guide that traps focus at the trailing edge."
+ },
+ {
+  "id": "G-9e4dfb3fc78f7f",
+  "diagnosis": "Workflow pass: chooses initial focus on entry and preserves button identity through artwork updates. The prompt asks when to choose the target, not what to change; good tvOS control.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S4"
+  ],
+  "skillWhy": "Guards against re-requesting focus after an async update, a destination-timing rule.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A UIKit tvOS details screen whose preferredFocusEnvironments is reevaluated by setNeedsFocusUpdate when the poster loads."
+ },
+ {
+  "id": "G-24227b92717364",
+  "diagnosis": "Repair passes by consuming the active ticket; the iOS and macOS copies of the same decision also pass. The prompt names the fix (apply the first valid result only), so it shows no headroom and nothing tvOS-specific.",
+  "problem": "duplicate",
+  "disposition": "reserve-transfer",
+  "promptChange": "Withdraw from the development panel; hold as an unseen transfer control for duplicate completion.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Consuming the ticket at first delivery is the S3 run-time validation.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS metadata loader whose async continuation can be resumed twice by a legacy callback API."
+ },
+ {
+  "id": "G-06049073ef34c8",
+  "diagnosis": "Pair both-correct: concludes the existing validation path shows the error, keeps input and stops before Save. The macOS pair also passes, so this tvOS copy adds no new evidence.",
+  "problem": "duplicate",
+  "disposition": "reserve-transfer",
+  "promptChange": "Move the tvOS invalid-submit pair to the transfer reserve; keep the macOS pair as the development control.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "A correct no-change conclusion from tracing the existing path.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A tvOS SwiftUI sign-in form using the on-screen keyboard where Save is a focusable Button."
+ },
+ {
+  "id": "G-369095f8f4ecec",
+  "diagnosis": "Implementation pass with primary inconclusive: checks request and actual player item and exercises same-item reinspection, duplicate callback and teardown. Well-specified prompt ending at an observable state; inconclusive only because the review is source-only.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Run the unit contract on the unchanged submission where possible: external replaceCurrentItem before completion, reinspection of the same item, duplicate callback, and playback rate unchanged.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Guards validation of both request token and actual current item at callback time.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS view model loading chapter titles for AVPlayer.currentItem with async/await and Task cancellation."
+ },
+ {
+  "id": "G-231795c762c2e0",
+  "diagnosis": "Implementation pass, but the prompt excludes applying AVMediaSelection (records a preference only), so the task stops before the developer-observable result. FIRST-ITERATION names exactly this: changing a local selected ID is insufficient when the player item must reflect the choice.",
+  "problem": "weak-endpoint",
+  "disposition": "raise-to-integration",
+  "promptChange": "Extend the task to the player item so the outcome is the selection the viewer actually hears and sees, keeping the async options list and stability requirements.",
+  "proposedWording": "tvOS 26.0, SwiftUI player that must keep the supplied AVPlayer and its native controls. Our own caption menu lists options that load asynchronously and can reorder, disappear or arrive late. After someone picks a caption track or Off, the current player item should play with that choice, and audio, volume and mute should stay as they were. The current item can also already have a caption selection that is not in our list. Provide complete code and focused compile/unit tests; no UI automation.",
+  "oracleChange": "Assert on the item's current legible selection after choose, Off, a late list reply and a removed option; assert audible selection, volume and mute unchanged; a current selection outside the list is reported as such, not as Off.",
+  "skill": [
+   "S7"
+  ],
+  "skillWhy": "Writing the actual player item's selection and distinguishing Off and an unlisted current choice is S7.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "A UIKit tvOS AVPlayerViewController with transportBarCustomMenuItems driving the same selection."
+ },
+ {
+  "id": "G-79d7d5bb05ed7d",
+  "diagnosis": "Dev7 design pass: groups descriptive text without absorbing Open and Details and identifies entries by current report. Primary inconclusive only from the source-only key.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "Guards grouping that keeps ordinary buttons reachable instead of combining them away.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-3c9d02537a525d",
+  "diagnosis": "rc1 contract: update only the selected trait; passes. G-8786cf0f8c1bca asks for the same behavior with unit tests and both preserve-traits repairs pass, so this adds nothing.",
+  "problem": "duplicate",
+  "disposition": "retire-duplicate",
+  "promptChange": "Retire from the active portfolio; keep the historical record unchanged.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-ec1532605b0eae",
+  "diagnosis": "Workflow pass: separates playback from focus and computes a surviving fallback, including an empty list. The prompt asks how to choose the target, not what to change; good tvOS control.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Check that the answer requests focus on a surviving channel or a declared container fallback when empty, and that no channel opens.",
+  "skill": [
+   "S4"
+  ],
+  "skillWhy": "A declared fallback when the focused item is removed is S4.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS LazyHGrid with .focused bindings when a genre filter empties a row."
+ },
+ {
+  "id": "G-e56a902ef372a2",
+  "diagnosis": "Audit Q32 confirmed (registered key tv-text-reflow): the vertical layout protects Play and Details, but the newer-SDK section gates at tvOS 18 on a 26.0 deployment, treats scrollTargetLayout as marquee, and gives no valid later availability boundary.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep the wording frozen as the confirmed development case; the deployment-target and newer-SDK halves are already separate and need separate grades.",
+  "proposedWording": null,
+  "oracleChange": "Grade separately: (1) deployment-target layout keeps Play and Details reachable with the long German title; (2) availability: no gate below the deployment target, any later API carries a verified boundary or an explicit unverified note; (3) no misattributed API behavior. The current verdict should record (1) pass and (2) fail.",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "The precise tvOS availability boundary is the S5 fact that was missing.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "A UIKit tvOS product page with a UILabel title and UIStackView of buttons where the team asks what tvOS 27 text-size settings would change."
+ },
+ {
+  "id": "G-29109948779ad1",
+  "diagnosis": "Repair passes by wiring and testing the ordinary Details button; the prompt states which path broke. Pair: its working partner (Q44) breaks the existing path with an invalid activation override, so this fixture is a fix-one-break-the-other case.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Use a neutral path question for both pair members instead of asserting that the ordinary action no longer works.",
+  "proposedWording": "tvOS 26.0, UIKit. An episode cell has an ordinary Details button, and Play also offers Details as an accessibility shortcut. The cell is reused for other episodes. When someone presses Select on Details, and when a VoiceOver user uses the shortcut on Play, which episode does each reach? Please show how you would check both.",
+  "oracleChange": "Score both sessions on the same criterion: ordinary Details and the shortcut each reach the current episode once; no edit is required when the paths already work; rework is graded separately.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "The working partner failed by adding an activation override; tracing the path (S1) and not adding one (S8) is the tested behavior.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "An AppKit table row on macOS with an ordinary Open button and an Open custom action on the row."
+ },
+ {
+  "id": "G-0d69f79fef78e5",
+  "diagnosis": "Audit Q23 reversed the grade: status, accessibility value and selected trait already follow the input; the answer's one-line native isSelected sync satisfies a plausible reading of control state, and the oracle ignores isSelected. Factorial selected-status with specified scope: unaided F/F, review sentence P/P, both P/P.",
+  "problem": "ambiguous-policy",
+  "disposition": "specify-policy",
+  "promptChange": "Name which state the user observes (status text, accessibility value, selected trait) and scope out native isSelected, as the factorial child did; that wording produced the only review-sentence gain.",
+  "proposedWording": "tvOS 26.0, UIKit. On each selected or unselected update, our tile needs its readable status text, the button's accessibility value and its selected accessibility trait to agree. Native button selection is managed elsewhere. Does this implementation keep those three in sync across successive updates?",
+  "oracleChange": "On one instance configure selected, unselected, selected; compare status text, accessibility value and selected trait independently with expected state; accept equivalent localized wording; do not require or penalize native isSelected. Grade rework separately.",
+  "skill": [
+   "S1",
+   "S5"
+  ],
+  "skillWhy": "Factorial shows the review sentence (S1) earns the pass; S5 supplies selected-state wording.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS filter chip with .accessibilityValue and .isSelected trait and a visible checkmark label."
+ },
+ {
+  "id": "G-3f40dc5a5d6e80",
+  "diagnosis": "Implementation pass with primary inconclusive: reads tagged metadata and current native selection without mutation and separates an absent group from a load error. The prompt asks what a tagged silent asset can establish, which keeps the evidence honest.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Require a positive tagged fixture before any absence assertion, and compare selected options before and after inspection.",
+  "skill": [
+   "S2",
+   "S7"
+  ],
+  "skillWhy": "Positive fixtures (S2) for forced and described flags (S7).",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS diagnostics overlay reading AVAsset media selection groups with load(.availableMediaCharacteristicsWithMediaSelectionOptions)."
+ },
+ {
+  "id": "G-365faed8f7362b",
+  "diagnosis": "Ledger: Off is written with the Objective-C spelling selectMediaOption(nil,in:) while tracks use the Swift select(_:in:), so the Off path is likely not valid Swift; primary is inconclusive because nothing compiled. An API-spelling miss like the edit-category key.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep the wording; add that the submission must compile against the tvOS 26 SDK, so API spelling is in scope rather than inferred.",
+  "proposedWording": null,
+  "oracleChange": "Compile the submission against the tvOS 26 SDK. Grade separately: (1) track choice writes the item's legible group; (2) Off writes no legible option through a valid API; (3) audible selection unchanged; (4) forced-only options not offered.",
+  "skill": [
+   "S5",
+   "S7"
+  ],
+  "skillWhy": "The exact Swift API for Off (S5) on the actual player item (S7).",
+  "priority": "P1",
+  "confidence": "medium",
+  "transfer": "A UIKit tvOS caption menu where Off must be written to the current AVPlayerItem through the Swift overlay."
+ },
+ {
+  "id": "G-c55650380597ef",
+  "diagnosis": "Dev7 testing question fails: proposes Mirror reflection as evidence that accessibility modifiers are attached and treats model chapter counts as rotor behavior. The question is itself about evidence, so this is a substantive verification misconception.",
+  "problem": "evidence-only",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Criterion: the plan must state that compile and unit checks establish only extracted state and wiring, that spoken output and rotor behavior are unestablished, and must not offer reflection as accessibility evidence.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "Defines what a unit test can and cannot assert, the S2 boundary.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-5f3c8c25e44c4b",
+  "diagnosis": "Ledger fails the answer because file identity alone lets an earlier load for the same file replace newer metadata. The prompt's stated race is A arriving after B; it never says the same file can be loaded twice, so the oracle demands an unstated requirement.",
+  "problem": "oracle-mismatch",
+  "disposition": "specify-policy",
+  "promptChange": "State whether a file can be reloaded while an earlier load is pending; the current wording only establishes the A-after-B race.",
+  "proposedWording": "tvOS 26.0, UIKit. I reuse one download card for different files. It has a title, optional status, optional help text, selected state and an Open button. Updates can arrive without reconstructing the card: A has status Ready and help Opens offline; B has neither. Metadata for a file can be requested again while an earlier request for it is still pending, and a late result for A may arrive after B is shown. Describe a complete update strategy and focused unit checks, and keep Open working.",
+  "oracleChange": "Grade A-after-B rejection and stale help/status clearing as primary; grade same-file reload ownership only under the amended wording. Re-grade the frozen answer under the original wording without the reload requirement.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "What a late completion validates (file plus request) is S3.",
+  "priority": "P1",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-3eecace7f0b93c",
+  "diagnosis": "Audit Q49 confirmed (registered key conflicting-state-text): selected and unselected configurations still show identical empty state text, and search counts are assigned as the control's value. Pair both-fail with Q23.",
+  "problem": "real-model-gap",
+  "disposition": "specify-policy",
+  "promptChange": "Give the pair the factorial child's scoped wording so the confirmed miss is measured against an explicit list of observed cues; keep the original as the frozen development case.",
+  "proposedWording": "tvOS 26.0, UIKit. On each selected or unselected update, our tile needs its readable status text, the button's accessibility value and its selected accessibility trait to agree. Native button selection is managed elsewhere. The tile also shows a search result count. Does this implementation keep those three in sync across successive updates?",
+  "oracleChange": "For each input assert non-empty visible selected/not-selected text, a matching accessibility value and the selected trait; the result count must not replace the selection value. Accept equivalent localized wording.",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Visible selected-state wording is the S5 fact this answer lacked.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "An AppKit toggle-like list row on macOS with a status label and NSAccessibility value."
+ },
+ {
+  "id": "G-19b9622db7d85f",
+  "diagnosis": "Pair both-correct: identifies the preflight section and item checks and tests atomic rejection. macOS copies also pass, so the tvOS pair is redundant.",
+  "problem": "duplicate",
+  "disposition": "reserve-transfer",
+  "promptChange": "Hold the tvOS duplicate-ID pair for transfer.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "A correct no-change trace.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS grid with NSDiffableDataSourceSnapshot-like duplicate identifiers."
+ },
+ {
+  "id": "G-41dc4d2f1594dd",
+  "diagnosis": "Implementation pass with primary inconclusive: checks containment and enabled, visible state before preferring Play or Details, and the prompt asks whether the unit result shows which view got focus. This targets the tvOS gap between focus preference and delivered focus.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Assert preferredFocusEnvironments for hidden, alpha-zero, disabled and removed Play; and require the answer to say that a unit test shows candidates only, not delivered focus.",
+  "skill": [
+   "S4",
+   "S2"
+  ],
+  "skillWhy": "Eligible destination selection (S4) and the limit of what unit tests can assert (S2).",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS card using .prefersDefaultFocus within a focusScope where Play can be hidden."
+ },
+ {
+  "id": "G-375ea9d9a373c3",
+  "diagnosis": "Implementation pass with primary inconclusive: updates the retained native button and replaces its handler across rebind and dismantle. Overlaps G-aac1829e33a43a and the interop-rebind fixtures.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Run a rebind test: fire the old button's target after coordinator rebinding and after dismantle, asserting the new handler count is zero; check no retain cycle via weak reference.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Captured action validation at run time.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "An AppKit NSViewRepresentable wrapping NSButton on macOS."
+ },
+ {
+  "id": "G-e686599aab0959",
+  "diagnosis": "rc1 contract: return the optional animation unchanged unless Reduce Motion; the prompt states the full rule, so the pass shows execution only.",
+  "problem": "no-headroom",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Run the rc1 unit contract (nil stays nil, reduced returns nil, allowed returns the same value).",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-9b4965749be4ab",
+  "diagnosis": "Dev7 lifecycle pass: resolves the current opener or eligible fallback and marks the session resolved before external focus dispatch. Primary inconclusive only from the source-only key.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Make the criterion checkable: duplicate completion requests once; an older completion after a new panel opens requests nothing; deleted opener falls back to the first eligible item or no request.",
+  "skill": [
+   "S4"
+  ],
+  "skillWhy": "Restore after completion to an eligible destination with a declared fallback.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-459bf5e7dca58e",
+  "diagnosis": "Repair passes by requiring the group's empty-selection permission before clearing; the prompt names the fix (honor the actual group's permission). The macOS sibling also passes; no working-code twin exists.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working-code twin where Off is already hidden for groups that disallow empty selection, using the same wording, so a model that adds a second check is distinguishable.",
+  "proposedWording": null,
+  "oracleChange": "Use a real or fixture group with allowsEmptySelection false and one with true; assert Off is offered only for the second and that choosing it clears only that group.",
+  "skill": [
+   "S7"
+  ],
+  "skillWhy": "Off permission is a property of the actual media selection group (S7).",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS audio menu where the audible group never allows empty selection and the legible group does."
+ },
+ {
+  "id": "G-3b6a6a3d39e6de",
+  "diagnosis": "Pair both-correct on a neutral question (does this code enforce it?): explains both grapheme boundaries and checks a partial match. A sound UIKit text-boundary control on tvOS, where the iOS range-coordinate failures did not recur.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S6"
+  ],
+  "skillWhy": "Checks UTF-16 endpoints against composed-character boundaries with a literal partial match.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "An AppKit NSTextView on macOS with a regional-indicator flag and a combining accent in the search text."
+ },
+ {
+  "id": "G-568f3cf50e437f",
+  "diagnosis": "Implementation inconclusive: presentation tokens and visibility checks are present, but attachment to a window does not establish membership in the owning view, which is the eligible-target distinction confirmed as a gap on macOS (Q07).",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the wording; add that the original button can be moved into another view of the same window while the modal is open, so the membership case is stated.",
+  "proposedWording": null,
+  "oracleChange": "Add a checkable case: the original button is moved into another view in the same window while the modal is open; completion must use the owning-view fallback. Also assert duplicate completion requests once and a replaced modal's cancellation requests nothing.",
+  "skill": [
+   "S4"
+  ],
+  "skillWhy": "Membership in the correct owner, not just a window, is the S4 rule.",
+  "priority": "P1",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS sheet whose originating tile is moved to a different shelf while the sheet is up."
+ },
+ {
+  "id": "G-55c3b232938702",
+  "diagnosis": "Implementation inconclusive: the answer encodes a missing current item as a particular failure message, and the rubric cannot tell whether that is separable from a retryable load failure. The prompt lists loading, absent options and failure but not a missing item.",
+  "problem": "ambiguous-policy",
+  "disposition": "specify-policy",
+  "promptChange": "State the no-current-item case as its own developer-visible state and say whether retry applies to it.",
+  "proposedWording": "tvOS 26.0, SwiftUI. Build a caption and audio picker that uses the same AVPlayer as the video view and shows the item's real current selection. The screen can appear before the player has an item. People should be able to tell apart: no video yet, options still loading, a video with no options, and a load that failed and can be retried. Keep normal player controls and include focused unit tests. Here is the complete current file:",
+  "oracleChange": "Separate criteria for each of the four states; retry is offered for failure only; the picker reads selection from the player item, not local state.",
+  "skill": [
+   "S7"
+  ],
+  "skillWhy": "Reading selection from the actual item and distinguishing its states is S7.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "A UIKit tvOS AVPlayerViewController custom menu populated from AVAsset loading states."
+ },
+ {
+  "id": "G-f4ec597a9a2e91",
+  "diagnosis": "OS26 acceptance pass: replaces a tap gesture with a remote-operable named control bound to the corresponding movie. Primary inconclusive only because historical grades are not unaided results. A useful guard against iOS touch assumptions on tvOS.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Criterion: each tile is a focusable Button (or equivalent) operable with Select, its name includes the movie title, and open receives the matching movie.",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A UIKit tvOS collection view where cells use a UITapGestureRecognizer instead of didSelectItemAt."
+ },
+ {
+  "id": "G-46f5727d65e9f2",
+  "diagnosis": "Named shelf fixture (FIRST-ITERATION): repair passes by rejecting disabled or obsolete callbacks, while the identical working-code session (Q45) re-enables obsolete actions. Both prompts assert the symptom as fact and ask for repair.",
+  "problem": "symptom-as-fact",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Replace the asserted wrong-record symptom with the neutral before-and-after question from FIRST-ITERATION and give working and defective code the same wording.",
+  "proposedWording": "tvOS 26.0, UIKit shelf. Rows can refresh while a button from before the refresh is still retained by other code. If someone presses Select on that earlier button, which record does it affect, and which record does a current button affect after the refresh?",
+  "oracleChange": "Score the causal explanation, ordinary current action and behavior after rebinding separately for both pair sessions; report both-correct pairs as the headline.",
+  "skill": [
+   "S1",
+   "S3"
+  ],
+  "skillWhy": "Tracing the existing path (S1) and validating the captured owner at run time (S3) decide both versions.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS LazyVStack of rows where a retained closure from a previous snapshot fires after diffing."
+ },
+ {
+  "id": "G-506996f8af1af4",
+  "diagnosis": "Audit Q44 confirmed a behavior failure: the ordinary Details button and shortcut already dispatch, yet the answer treats Play's accessibilityActivate method as an assignable closure, so the patch and test are unusable. Pair: partner repair passes.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Use the same neutral path question as its repair partner (G-29109948779ad1) rather than asserting the ordinary action is broken.",
+  "proposedWording": null,
+  "oracleChange": "Grade primary (existing ordinary and shortcut paths reach the current item), validity (proposed code compiles against UIKit), rework and evidence separately; an invalid override is both rework and a compile failure.",
+  "skill": [
+   "S1",
+   "S8",
+   "S5"
+  ],
+  "skillWhy": "No override was needed (S1, S8); accessibilityActivate is an overridable method, not a property (S5).",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "An AppKit row on macOS where the model is tempted to override accessibilityPerformPress on a working NSButton."
+ },
+ {
+  "id": "G-659283ab576494",
+  "diagnosis": "Implementation inconclusive: literal match, boundary and retained-rotor tests are present, but exact native text-range handling on tvOS is unresolved in source review. Grading needs a decisive substring check.",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the wording; ask the tests to read the selected text at the returned range, so the native range question is answerable.",
+  "proposedWording": null,
+  "oracleChange": "Add assertions that the rotor's returned range, applied to the text view, selects the literal query after an emoji and combining mark; and that a retained rotor from old text returns nothing.",
+  "skill": [
+   "S6",
+   "S2"
+  ],
+  "skillWhy": "UTF-16 ranges checked by literal substring (S6) through the installed rotor callback (S2).",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "An iOS UITextView reader with the same rotor and a mixed-script document."
+ },
+ {
+  "id": "G-5d121776613655",
+  "diagnosis": "Implementation fail: selected is assigned before options are checked, so an unknown ID changes displayed state while the native choice is unchanged. The prompt explicitly asks to preserve a current choice outside the list without pretending it is Off; the mismatch is substantive.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep the wording; it already states the unlisted-current-choice policy, which is what the answer missed.",
+  "proposedWording": null,
+  "oracleChange": "Grade separately: (1) known choice writes the player item's legible selection; (2) unknown request leaves displayed and native selection unchanged; (3) an unlisted current selection is shown as such, not Off; (4) audio and playback settings unchanged.",
+  "skill": [
+   "S7"
+  ],
+  "skillWhy": "Unlisted current selection and real-item writes are S7.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "A UIKit tvOS caption menu where the current item starts with an SDH track not offered by the menu's filter."
+ },
+ {
+  "id": "G-471ca0f68993a7",
+  "diagnosis": "Repair passes by validating generation and button before dispatch from an old shelf. Same wording as the shelf pair and G-972553a39e3fd2 but a different mutant (old shelf generation), and no working twin.",
+  "problem": "symptom-as-fact",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Ask neutrally about an action from a shelf that has since been replaced, matching the old-generation mutant.",
+  "proposedWording": "tvOS 26.0, UIKit shelf. After the shelves are replaced by a new update, a button from the previous shelf generation is still retained elsewhere. If it receives Select, what happens to the current selection, and does a button on the new shelf still work?",
+  "oracleChange": "Assert the old-generation button changes nothing and a current button selects its own key once.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Validating generation at invocation is S3.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "An AppKit outline view whose rebuilt rows leave old NSButton targets live."
+ },
+ {
+  "id": "G-61cfbceeb763f0",
+  "diagnosis": "Audit Q45 confirmed an actual regression on working code: a detached old button can select when its ID persists, and the answer's test expects that stale selection. This is the shelf example of fixing one version and breaking the working one.",
+  "problem": "real-model-gap",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Use the same neutral before-and-after wording as G-46f5727d65e9f2 so the symptom stated as fact no longer invites a patch to correct code.",
+  "proposedWording": "tvOS 26.0, UIKit shelf. Rows can refresh while a button from before the refresh is still retained by other code. If someone presses Select on that earlier button, which record does it affect, and which record does a current button affect after the refresh?",
+  "oracleChange": "Grade primary (stale action rejected, current works), preservation (no re-enabling of obsolete actions), evidence (a test expecting stale selection is invalid) and rework separately; mark this as critical regression.",
+  "skill": [
+   "S1",
+   "S3"
+  ],
+  "skillWhy": "The review sentence (S1) targets exactly this; the stale-capture rule is S3.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS shelf where the existing code already validates a revision token in the button action."
+ },
+ {
+  "id": "G-70ad36b8473f50",
+  "diagnosis": "Implementation pass with primary inconclusive: refreshes selection and search metadata both ways and keeps native controls and modal flag. The prompt preserves five unrelated behaviors in one verdict.",
+  "problem": "bundled-criteria",
+  "disposition": "grade-components",
+  "promptChange": "Keep the fixture; list the five preserved behaviors as separate expected checks so rework and preservation are graded one by one.",
+  "proposedWording": null,
+  "oracleChange": "Grade the stale label in both update orders as primary; grade each preserved behavior (ordinary controls, selected traits, reduced transparency, native player controls, modal flag) as its own preservation item; flag unrelated edits as rework.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "Most of the component already works; restraint is graded per preserved behavior.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS result tile with .accessibilityLabel derived from two models updated in either order."
+ },
+ {
+  "id": "G-882146ff80c2a4",
+  "diagnosis": "Implementation pass with primary inconclusive: publishes final selection before callbacks, keeps it across name edits and retains content under reduced transparency. Many behaviors share one verdict.",
+  "problem": "bundled-criteria",
+  "disposition": "grade-components",
+  "promptChange": "Keep the wording; ask for one named test per behavior so each can be graded separately.",
+  "proposedWording": null,
+  "oracleChange": "Separate selection-before-callback, unchanged-request suppression, reduced motion final state, reentrant change and reduced transparency, each with its own assertion.",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "An AppKit SwiftUI-hosted card on macOS with the same snapshot model."
+ },
+ {
+  "id": "G-5b313c25cc544a",
+  "diagnosis": "Audit Q54 confirmed (registered key input-snapshot): the answer follows only edit(), which cancels; a native text field can change independently, after which the completion accepts old input or applies obsolete errors. iOS and macOS copies also fail.",
+  "problem": "real-model-gap",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Keep, and assert directly: change the field's text without calling the helper, then complete the old validation; errors are not applied and the edited text remains.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Validating the input snapshot when the completion runs is S3.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS TextField bound to state that changes via the system keyboard while an async validator is pending."
+ },
+ {
+  "id": "G-b786b16b81d406",
+  "diagnosis": "Audit Q28 pass confirmed: preserves membership and ancestor eligibility checks and verifies fallback and no eligible destination. Pair both-correct; a strong preservation control for the registered eligible-target key.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S4",
+   "S1"
+  ],
+  "skillWhy": "Correct no-change outcome on the S4 destination rule.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS focus restoration using @FocusState after a list refresh."
+ },
+ {
+  "id": "G-758be0954385e0",
+  "diagnosis": "Implementation pass with primary inconclusive: reports seekability and buffer state separately and tests inside and outside times. Overlaps the range-kind fixtures but ends at a usable snapshot.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Require fixture ranges where loaded and seekable differ, so the helper's answer for a buffered-only time is decisive.",
+  "skill": [
+   "S2"
+  ],
+  "skillWhy": "A positive differing fixture makes the range check meaningful.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-9f59e96226e92f",
+  "diagnosis": "Implementation pass with primary inconclusive: atomic duplicate rejection, surviving selection and revision-guarded actions. Several behaviors share one verdict.",
+  "problem": "bundled-criteria",
+  "disposition": "grade-components",
+  "promptChange": "Keep the wording; ask for one named test per listed requirement.",
+  "proposedWording": null,
+  "oracleChange": "Grade duplicate rejection, selection survival, deleted-selection clearing, shortcut navigation and revision-guarded actions separately.",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Revision-guarded captured actions are S3.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A UIKit tvOS article table with custom rotor for important rows."
+ },
+ {
+  "id": "G-6051c70977bd19",
+  "diagnosis": "Repair passes, updating content for both motion settings and asserting text and animation count. The prompt states the symptom and the goal, so there is no headroom, and no working twin exists.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working-code twin where Reduce Motion already only skips animation, with identical wording.",
+  "proposedWording": null,
+  "oracleChange": "Assert final visible text under both settings and animation count only when motion is allowed.",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "In the working twin the correct answer adds nothing.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS results list using withAnimation gated by accessibilityReduceMotion."
+ },
+ {
+  "id": "G-c7ecafc1f5d659",
+  "diagnosis": "Audit Q02 pass held (selection filter already excludes forced-only), but its optional test needs an asset and can pass if no full option is ever selected. Pair is inconclusive with G-76f5ee001339bc, and Q03 shows full vs forced can mean exclusion or a separate labeled choice.",
+  "problem": "ambiguous-policy",
+  "disposition": "specify-policy",
+  "promptChange": "State the menu's product policy for forced-only tracks so exclusion and labeled-choice designs are not both plausible.",
+  "proposedWording": "tvOS 26.0, UIKit. Our captions menu is meant to list complete subtitle tracks only; forced-only translations are played automatically by the player and are not menu choices. A tester thinks a forced-only translation appeared in the menu as if it were full subtitles. For an asset with English full, English forced-only and French full subtitles, which choices does this menu offer?",
+  "oracleChange": "Use a real or fixture group with all three options; assert the offered list literally; require the full English option to be present before asserting forced is absent; grade the proposed test separately.",
+  "skill": [
+   "S7",
+   "S2"
+  ],
+  "skillWhy": "Forced vs full and menu policy is S7; the positive fixture requirement is S2.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS caption Picker where the policy instead labels forced-only tracks as a separate choice."
+ },
+ {
+  "id": "G-7b7cd43b77e209",
+  "diagnosis": "Implementation pass with primary inconclusive: keeps invalid input, avoids Save, restores help on edit and guards synchronous reentry. Well-scoped.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS form with a validator closure and .accessibilityHint for help."
+ },
+ {
+  "id": "G-a684bb499d9f1a",
+  "diagnosis": "Implementation pass with primary inconclusive: updates heading, status, names and optional hint in place and checks order and scalable fonts; the prompt also forbids claiming the TV27 Larger Text feature. Many behaviors share one verdict.",
+  "problem": "bundled-criteria",
+  "disposition": "grade-components",
+  "promptChange": "Keep the wording; ask for one named test per listed requirement, including a statement of what the text-size configuration does and does not promise on tvOS 26.0.",
+  "proposedWording": null,
+  "oracleChange": "Separate in-place refresh, absent-value clearing, non-color selected readout, preserved trait bits and children order, and the text-size claim (no TV27 promise on a 26.0 target).",
+  "skill": [
+   "S5",
+   "S8"
+  ],
+  "skillWhy": "The text-size boundary is S5; preserving unrelated trait bits is S8.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A UIKit tvOS report card without SwiftUI where the same snapshot drives UILabel and UIButton."
+ },
+ {
+  "id": "G-71a1b613f050e3",
+  "diagnosis": "Repair passes by guarding the submit transition and counting save callbacks; the prompt names the fix. The macOS sibling also passes.",
+  "problem": "duplicate",
+  "disposition": "reserve-transfer",
+  "promptChange": "Hold for transfer.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS Save button whose action triggers a synchronous re-submit through a delegate."
+ },
+ {
+  "id": "G-d960994bd1947a",
+  "diagnosis": "Pair both-correct: old form and media responses cannot replace newer outcomes. The decision has ten siblings, nearly all passing, including four preservation controls.",
+  "problem": "duplicate",
+  "disposition": "retire-duplicate",
+  "promptChange": "Retire the tvOS copy from the active panel; keep one iOS and one macOS pair.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-8786cf0f8c1bca",
+  "diagnosis": "Implementation pass: inserts or removes the selected trait and checks unrelated traits. The prompt names the behavior; it is the representative selected-trait unit task on tvOS.",
+  "problem": "no-headroom",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS chip using .accessibilityAddTraits(.isSelected) conditionally."
+ },
+ {
+  "id": "G-aac1829e33a43a",
+  "diagnosis": "Implementation pass with primary inconclusive: checks ordinary and shortcut dispatch, rebinding, disabled controls and post-dismantle callbacks. Well specified.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Run the rebind and dismantle assertions on the installed shortcut closure rather than a reconstructed one.",
+  "skill": [
+   "S3",
+   "S2"
+  ],
+  "skillWhy": "The installed-action check is S2; ownership is S3.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "An AppKit NSViewRepresentable card on macOS."
+ },
+ {
+  "id": "G-747c4cbe0af921",
+  "diagnosis": "Repair passes by filtering unusable preferred targets and exercising fallback after disabling the previous target; the prompt states the requirement. Its sibling checks have working twins but this mutant does not.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin where the restoration already filters disabled or unfocusable targets, using the same wording.",
+  "proposedWording": null,
+  "oracleChange": "Assert on the focus request: a target that cannot become focused falls back to the declared eligible target; a usable one is kept.",
+  "skill": [
+   "S4"
+  ],
+  "skillWhy": "Eligibility at completion is S4.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS restoration where the previous @FocusState target becomes disabled."
+ },
+ {
+  "id": "G-f0de252053bcbb",
+  "diagnosis": "Audit Q17: blind primary pass (explicit assignment yields the right label; clearing the override already restores the text-derived name), original primary fail; the answer's stale-cache claim lacks evidence. Pair: repair partner passes.",
+  "problem": "rework-only",
+  "disposition": "grade-components",
+  "promptChange": "Keep the question; it is already neutral (is the status reported without the previous label?).",
+  "proposedWording": null,
+  "oracleChange": "Grade primary on the effective label after selection, separately from rework (unneeded explicit assignment) and unsupported claims. Correct the frozen primary judgment in a versioned regrade.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "Tracing the override-clearing path shows no change is needed.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS result row where .accessibilityLabel is conditionally applied and removal should restore the Text-derived name."
+ },
+ {
+  "id": "G-8e63e559f86929",
+  "diagnosis": "Implementation pass with primary inconclusive: submission ownership, validated field IDs and messages, ordering, edit and cancellation. Well-specified.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Completion validates the submission token at run time.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS two-field form with an async/await validator."
+ },
+ {
+  "id": "G-c6b25ad753e6a2",
+  "diagnosis": "Implementation fail: the option setter receives item identity but no request revision, so after reloading the same item an old Off callback still applies. Second observation of the stale-Off ownership gap after G-0ad013a4877500.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep the wording; add that the same video can be reloaded while an earlier caption list is on screen, so the same-item reload is stated rather than implied.",
+  "proposedWording": null,
+  "oracleChange": "Grade separately: item change, same-item reload, stale Off, current choice, cancellation. Assert against the player item's legible selection after an old Off fires.",
+  "skill": [
+   "S3",
+   "S7"
+  ],
+  "skillWhy": "Validating both item and request (S3) for the Off selection (S7).",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "A UIKit tvOS AVPlayerViewController menu rebuilt on reload of the same asset."
+ },
+ {
+  "id": "G-76f5ee001339bc",
+  "diagnosis": "Repair inconclusive: separates full and forced via the option characteristic, but fake option creation and test integration are unverified. Pair inconclusive with the Q02 preservation case.",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Adopt the same product-policy wording as its preservation partner.",
+  "proposedWording": null,
+  "oracleChange": "Provide a real-group fixture seam (as the packet supplies for Q59) instead of accepting subclassed AVMediaSelectionOption; grade selection logic separately from fixture executability.",
+  "skill": [
+   "S7",
+   "S2"
+  ],
+  "skillWhy": "Forced vs full is S7; a real positive fixture is S2.",
+  "priority": "P1",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS caption Picker over a bundled HLS test asset with forced and full tracks."
+ },
+ {
+  "id": "G-a424d7b520fd26",
+  "diagnosis": "Implementation fail: the answer asks clarifying questions instead of building. The prompt bundles about nine requirements (names, selection text, reuse, transparency, AVKit, modal scope, search group, multiline text), which invites deferral in a tool-free setting.",
+  "problem": "bundled-criteria",
+  "disposition": "split-criteria",
+  "promptChange": "Split into a reusable Downloads row task and a separate search-and-modal task so each has a developer-observable result.",
+  "proposedWording": "tvOS 26.0, UIKit Downloads area. Each reused row has an ordinary Open control and readable status, and shows whether it is selected. When a row is reused for another download, its name and state should describe the new one, and Reduce Transparency should affect only the backdrop. Please implement the row with focused unit tests. ‖ tvOS 26.0, UIKit Downloads area. Above the list is a labeled search field with a result-count status and a filter. A modal can open and close more than once over this area while the native AVKit player keeps running. Implement the search group and modal metadata scope with focused unit tests.",
+  "oracleChange": "Grade each split question on its own criteria; record a clarification-only answer as non-attempt, attributed to harness and model rather than accessibility knowledge.",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "Smaller scoped tasks reduce generic boilerplate and invented scope.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS Downloads list with the same split."
+ },
+ {
+  "id": "G-d9e53ce2b01786",
+  "diagnosis": "Implementation inconclusive: selected-state text and preference modifiers are present, but tests reflect a view, which cannot show how the policy handles motion or text size at the target version.",
+  "problem": "evidence-only",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the wording; ask that motion, transparency and text-size decisions be returned from a testable policy, so evidence can be a literal value.",
+  "proposedWording": null,
+  "oracleChange": "Require an extracted policy function (inputs: reduce motion, reduce transparency, size category) with literal expected outputs; reject reflection as evidence; check no TV27 Larger Text promise.",
+  "skill": [
+   "S2",
+   "S5"
+  ],
+  "skillWhy": "Asserting the returned policy value is S2; the TV26/TV27 boundary is S5.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "A UIKit tvOS status view with the same preference policy object."
+ },
+ {
+  "id": "G-79ac18bcb89215",
+  "diagnosis": "Pair both-correct: requires both UTF-16 endpoints to be grapheme boundaries and checks a partial and a whole composed character.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S6"
+  ],
+  "skillWhy": "UTF-16 boundary check with literal fixtures.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "An iOS UITextView with ZWJ emoji sequences."
+ },
+ {
+  "id": "G-aa46615d2f4cd8",
+  "diagnosis": "Implementation pass with primary inconclusive: gates old button dispatch by render generation and tests duplicates, filtering and selected removal. Same fixture family as the shelf pair, so it shows the model can build the guard when the requirement is explicit.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Generation validation at dispatch.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS search results grid."
+ },
+ {
+  "id": "G-dc1e54ce99c977",
+  "diagnosis": "Implementation fail: tests missing video, empty load and retry, but picker selection stays local instead of writing to the shared player's media group, although the prompt says it uses the same player and selection state.",
+  "problem": "real-model-gap",
+  "disposition": "grade-components",
+  "promptChange": "Keep the wording; it already says the picker uses the same player and selection state, which the answer ignored.",
+  "proposedWording": null,
+  "oracleChange": "Grade states (missing video, loading, empty, error, retry) separately from wiring: a choice must change the shared item's media selection, asserted on the item.",
+  "skill": [
+   "S7"
+  ],
+  "skillWhy": "Writing the actual player item's selection is S7.",
+  "priority": "P1",
+  "confidence": "high",
+  "transfer": "A UIKit tvOS player with a custom subtitle panel sharing AVPlayer with AVPlayerViewController."
+ },
+ {
+  "id": "G-7cc5d89371a12a",
+  "diagnosis": "Repair fail with primary pass: checks the description characteristic, but the test returns early without exercising selection when no media group exists.",
+  "problem": "evidence-only",
+  "disposition": "grade-components",
+  "promptChange": "Keep the neutral question; add that the test must start from an item that has an audible group and a selected option.",
+  "proposedWording": null,
+  "oracleChange": "Grade the proof separately: require a fixture with an audible group and a known current option; assert that a described-audio request with no match leaves that option selected. A test that can return before selection fails evidence only.",
+  "skill": [
+   "S2",
+   "S7"
+  ],
+  "skillWhy": "A positive fixture before asserting no change (S2) on a media selection (S7).",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS audio Picker with an Audio Description toggle."
+ },
+ {
+  "id": "G-c60353787b2df0",
+  "diagnosis": "Implementation pass with primary inconclusive: checks execution token and started state at delivery and deduplicates snapshots. The prompt asks for correct platform notification registration, a tvOS fact worth checking literally.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Check the notification names used exist on tvOS 26 for each of the three settings.",
+  "skill": [
+   "S5",
+   "S3"
+  ],
+  "skillWhy": "Notification availability on tvOS (S5); token at delivery (S3).",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "An iOS UIKit screen with the same observer and restart race."
+ },
+ {
+  "id": "G-ecaf99703fde8f",
+  "diagnosis": "Implementation pass with primary inconclusive: keeps ordinary settings controls and implements five-point adjustments through the bounded setter. The prompt already warns not to invent a Toggle defect.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "Preserving a valid native Toggle is restraint.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A UIKit tvOS settings screen with accessibilityIncrement on a custom volume view."
+ },
+ {
+  "id": "G-8667bcae087a4e",
+  "diagnosis": "Pair both-correct: rejects invalid submit and keeps input. Redundant with the macOS pair.",
+  "problem": "duplicate",
+  "disposition": "reserve-transfer",
+  "promptChange": "Hold for transfer with its preservation partner.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A tvOS SwiftUI sign-in form."
+ },
+ {
+  "id": "G-f180f315211c36",
+  "diagnosis": "Implementation pass with primary inconclusive: suppresses duplicate status and selects effects from the current motion preference.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS status overlay with contentTransition gated by reduce motion."
+ },
+ {
+  "id": "G-fe5ec3a625e9f0",
+  "diagnosis": "Implementation pass with primary inconclusive: keeps entered text and covers service failure, duplicates, delayed results and cancellation.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Obsolete replies validated at delivery.",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A UIKit tvOS email form with the same validator contract."
+ },
+ {
+  "id": "G-876810bde2cad1",
+  "diagnosis": "Repair passes by exposing the individual operable children alongside the supplementary action; the prompt states the symptom and goal. The iOS working copy (Q05) was a blind pass, so a tvOS working twin is missing.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a tvOS working twin where the row is already a non-element container exposing its buttons, with identical wording.",
+  "proposedWording": null,
+  "oracleChange": "Assert accessibilityElements order and that each button's primary action still dispatches; do not require removing the supplementary action.",
+  "skill": [
+   "S8"
+  ],
+  "skillWhy": "In the working twin, adding grouping APIs is unnecessary.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS row using .accessibilityElement(children: .contain)."
+ },
+ {
+  "id": "G-fb3f74a9ac6641",
+  "diagnosis": "Implementation inconclusive: empty-selection permission and language and description matching are implemented, but executability of synthetic AVMediaSelectionGroup subclasses is unresolved.",
+  "problem": "grader-uncertain",
+  "disposition": "repair-oracle",
+  "promptChange": "Keep the wording; state that a bundled tagged test asset is available, so tests need not subclass AVFoundation groups.",
+  "proposedWording": null,
+  "oracleChange": "Supply a real-group fixture seam or bundled tagged asset; grade matching logic separately from fixture executability; assert audio selection unchanged after subtitle change and missing choice leaves selection alone.",
+  "skill": [
+   "S7",
+   "S2"
+  ],
+  "skillWhy": "Forced vs full, Off permission and preserved audio are S7; a real fixture is S2.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS selection helper over a bundled HLS asset."
+ },
+ {
+  "id": "G-89482b39d6712d",
+  "diagnosis": "Repair passes by exposing children through a non-element shelf with the heading and buttons independently accessible. Same wording as G-876810bde2cad1 for a different mutant (grouping).",
+  "problem": "symptom-as-fact",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Ask which elements VoiceOver can reach individually rather than asserting that some controls are unreachable.",
+  "proposedWording": "tvOS 26.0, UIKit. A shelf row has a heading, two buttons and a Details accessibility shortcut on the row. Which of these can a VoiceOver user reach individually with the remote, and can each button still be operated with Select?",
+  "oracleChange": "Assert the exposed element order (heading, buttons) and that each button dispatches; grade the explanation separately.",
+  "skill": [
+   "S1",
+   "S8"
+  ],
+  "skillWhy": "Neutral wording tests tracing the existing exposure before adding APIs.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "An iOS UIKit table row with a grouped label and two buttons."
+ },
+ {
+  "id": "G-9076fc660dc5e1",
+  "diagnosis": "Pair both-correct: rejects duplicate section IDs before altering shelves. Redundant with the macOS duplicate-ID set.",
+  "problem": "duplicate",
+  "disposition": "reserve-transfer",
+  "promptChange": "Hold for transfer with its preservation partner.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS shelf grid."
+ },
+ {
+  "id": "G-955e952e1c1b59",
+  "diagnosis": "Repair passes by evaluating seekable ranges independently of loaded ranges. Pair: the working partner (Q16) adds unneeded helpers, so the same asserted symptom yields fix-here, rework-there.",
+  "problem": "symptom-as-fact",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Use one neutral observation question for both pair members.",
+  "proposedWording": "tvOS 26.0, UIKit player inspector. For an item whose buffered and seekable ranges differ, what does the inspector report for a time that has been buffered but is not seekable, and for one that is seekable? Please show how you would check it.",
+  "oracleChange": "Same criterion for both sessions: seek decision uses seekable only, both ranges reported separately; rework graded separately.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Tracing containsSeekableTime decides both versions.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "An iOS AVPlayer live stream with a DVR window."
+ },
+ {
+  "id": "G-972553a39e3fd2",
+  "diagnosis": "Repair passes by rejecting a saved Details action after the generation changes. Same wording as the shelf pair for a different mutant (stale shortcut), no working twin.",
+  "problem": "symptom-as-fact",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Ask neutrally what a saved shortcut does after refresh.",
+  "proposedWording": "tvOS 26.0, UIKit. Each shelf row offers a Details accessibility shortcut. Rows can refresh while a VoiceOver user still has an earlier row's shortcut available. If that earlier shortcut runs after the refresh, which record does it open, and does the current row's shortcut still work?",
+  "oracleChange": "Invoke the installed custom action captured before refresh; assert no details callback; then invoke the current one and assert the current key.",
+  "skill": [
+   "S3",
+   "S2"
+  ],
+  "skillWhy": "Run the captured production closure (S2) that must validate its owner (S3).",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS row with .accessibilityAction(named:) capturing an item."
+ },
+ {
+  "id": "G-9a70e4a2e9714c",
+  "diagnosis": "Repair passes by re-evaluating matches for the current document and exercising a live text change. The prompt names the defect and the goal; no working twin.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin where navigation already recomputes against current text, with identical wording.",
+  "proposedWording": null,
+  "oracleChange": "Assert by literal substring at the returned range after an external edit.",
+  "skill": [
+   "S6"
+  ],
+  "skillWhy": "Literal substring check at the UIKit text boundary.",
+  "priority": "P2",
+  "confidence": "medium",
+  "transfer": "An iOS UITextView with external setText while a rotor is retained."
+ },
+ {
+  "id": "G-9cabdd49c15b29",
+  "diagnosis": "Repair passes by checking observer lifetime and revision at queued delivery. iOS and macOS copies also pass; no headroom.",
+  "problem": "duplicate",
+  "disposition": "reserve-transfer",
+  "promptChange": "Hold for transfer.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S3"
+  ],
+  "skillWhy": "Revision check at delivery.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS onReceive publisher retained past disappearance."
+ },
+ {
+  "id": "G-9eaa902d2ca751",
+  "diagnosis": "Repair passes; the prompt nearly states the fix (leave the current choice intact instead of picking a replacement). macOS copy also passes.",
+  "problem": "no-headroom",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Ask what is selected afterward rather than proposing the expected outcome.",
+  "proposedWording": "tvOS 26.0, UIKit. Someone asks our picker for a subtitle language that the current item does not offer. What is selected afterward, both on the player item and in our menu?",
+  "oracleChange": "Assert the item's previous legible selection and the menu's selected entry are unchanged.",
+  "skill": [
+   "S7"
+  ],
+  "skillWhy": "Missing choice must not alter the actual item selection.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS audio picker given a language from a previous episode."
+ },
+ {
+  "id": "G-a6868ceeecdc4e",
+  "diagnosis": "Repair passes; clears the prior validation presentation and restores help. macOS copy passes.",
+  "problem": "duplicate",
+  "disposition": "reserve-transfer",
+  "promptChange": "Hold for transfer.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS field with .accessibilityHint switching between help and error."
+ },
+ {
+  "id": "G-af7d70d999dee2",
+  "diagnosis": "Repair passes by skipping identical readings and checking a changed Reduce Motion still propagates; the prompt names the fix.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin with existing dedup, same wording.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "A SwiftUI tvOS view reacting to accessibilityReduceTransparency changes."
+ },
+ {
+  "id": "G-b3e3e24da9d1a2",
+  "diagnosis": "Repair passes by returning unavailable for a missing item. The iOS copy fails, making it the development case; the tvOS copy adds no tvOS-specific content.",
+  "problem": "duplicate",
+  "disposition": "reserve-transfer",
+  "promptChange": "Hold for transfer; develop on the failing iOS copy.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S7"
+  ],
+  "skillWhy": "Not-loaded vs empty is a media state distinction.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS inspector opened before AVPlayer.currentItem is set."
+ },
+ {
+  "id": "G-b4cbbde46d6d6f",
+  "diagnosis": "Repair passes, restoring the recorded prior value and exercising repeated begin. All siblings pass.",
+  "problem": "duplicate",
+  "disposition": "reserve-transfer",
+  "promptChange": "Hold for transfer.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS sheet toggling accessibilityViewIsModal on the presenter."
+ },
+ {
+  "id": "G-c69928988c0e26",
+  "diagnosis": "Audit Q55 reversed the grade: directly removing the retained button now rejects it and an attached button still acts; the oracle also demanded rejection after reparenting, which the example never specified. Factorial split: removal all arms F/P; reparent arms F/P except review F/F.",
+  "problem": "oracle-mismatch",
+  "disposition": "split-criteria",
+  "promptChange": "Split direct removal and reparenting into separate questions, as the factorial children did.",
+  "proposedWording": "tvOS 26.0, UIKit. If other code retains a shelf button and removes it directly from its superview, can it still choose an item? The current attached button must still work. ‖ tvOS 26.0, UIKit. A live button moves into a shelf belonging to a second shelves instance, without either owner reapplying its sections. Could the moved button still select an item on its former owner? The former owner's remaining buttons should still work.",
+  "oracleChange": "Removal: dispatch the removed button (no selection, no callback) and an attached one (its key once); a superview check suffices. Reparent: old owner neither selects nor emits; remaining buttons work; the moved button may be inert. Regrade the frozen answer as a removal pass.",
+  "skill": [
+   "S3",
+   "S2"
+  ],
+  "skillWhy": "Owner validation at invocation (S3), exercised through the actual primary action (S2).",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS shelf where a UIKit-hosted cell is moved between two hosting controllers."
+ },
+ {
+  "id": "G-ce876ee37b4251",
+  "diagnosis": "Pair both-correct: requires a candidate under the current root and exercises fallback.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [
+   "S4"
+  ],
+  "skillWhy": "Membership in the current owner.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS @FocusState restore after the origin moves to a different section."
+ },
+ {
+  "id": "G-d175aa87437cc0",
+  "diagnosis": "Repair passes by reading the explicit description characteristic. Pair: the working partner fails on proof and an unsupported alternative; the factorial child supplies neutral wording.",
+  "problem": "symptom-as-fact",
+  "disposition": "rewrite-neutral",
+  "promptChange": "Use the factorial child's neutral wording for both pair members.",
+  "proposedWording": "tvOS 26.0, UIKit. Can this inspector tell an ordinary alternate-language audio track from one explicitly tagged as described audio? Keep the current player selection.",
+  "oracleChange": "Require both fixtures through the production mapping and compare native selected option before and after.",
+  "skill": [
+   "S7",
+   "S2"
+  ],
+  "skillWhy": "Description tagging (S7), positive fixtures (S2).",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "An AppKit macOS media inspector listing audible options."
+ },
+ {
+  "id": "G-d314ae4053b207",
+  "diagnosis": "Repair passes, mutating only the selected trait. Same check and wording as G-e4ff6e9fdfb106, with two iOS copies and an implementation twin also passing.",
+  "problem": "duplicate",
+  "disposition": "retire-duplicate",
+  "promptChange": "Retire; keep G-e4ff6e9fdfb106 for transfer and G-8786cf0f8c1bca as the tvOS unit task.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-e4ff6e9fdfb106",
+  "diagnosis": "Repair passes, removing only the selected trait and checking preserved button traits. Redundant with iOS copies.",
+  "problem": "duplicate",
+  "disposition": "reserve-transfer",
+  "promptChange": "Hold for transfer.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS chip whose traits are set by a modifier chain."
+ },
+ {
+  "id": "G-e5f494a161721e",
+  "diagnosis": "Repair passes by refreshing the explicit status label. Pair: the working partner (Q17) adds unneeded assignment. The question is already neutral, so this pair is a clean preservation test.",
+  "problem": "good-as-is",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Grade both pair members on the effective label after selection; rework separately.",
+  "skill": [
+   "S1"
+  ],
+  "skillWhy": "Tracing the label path decides both versions.",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS row with a conditional accessibilityLabel override."
+ },
+ {
+  "id": "G-eb72137f254296",
+  "diagnosis": "Repair passes, checking the actual player's item as well as the active ticket after external replacement. No working twin.",
+  "problem": "no-headroom",
+  "disposition": "pair-variant",
+  "promptChange": "Add a working twin with the player-item check present, identical wording.",
+  "proposedWording": null,
+  "oracleChange": "Exercise the old completion after replaceCurrentItem; assert new item details unchanged.",
+  "skill": [
+   "S3",
+   "S7"
+  ],
+  "skillWhy": "Validating the actual current player item at completion.",
+  "priority": "P2",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS view model observing AVPlayer.currentItem via KVO."
+ },
+ {
+  "id": "G-ed8bff5491ab72",
+  "diagnosis": "Audit Q21 confirmed (registered key visible-title): both controls still have no visible title; the change and test address automation identifiers.",
+  "problem": "real-model-gap",
+  "disposition": "keep-control",
+  "promptChange": "none",
+  "proposedWording": null,
+  "oracleChange": "Keep, and assert the rendered title (configuration title or title(for:)) is non-empty and matches the accessible name; identifiers do not count.",
+  "skill": [
+   "S5"
+  ],
+  "skillWhy": "Visible title vs automation identifier is the S5 fact missed.",
+  "priority": "P0",
+  "confidence": "high",
+  "transfer": "A SwiftUI tvOS toolbar of image-only Buttons with accessibilityIdentifier but no Label text."
+ },
+ {
+  "id": "G-edf906eca78e51",
+  "diagnosis": "Pair both-correct: rejects stale validation. Ten-sibling decision with near-universal passes.",
+  "problem": "duplicate",
+  "disposition": "retire-duplicate",
+  "promptChange": "Retire the tvOS copy with its preservation partner.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "high",
+  "transfer": "n/a"
+ },
+ {
+  "id": "G-ffb1a82a74699a",
+  "diagnosis": "Repair passes by short-circuiting identical status before animation. Same wording and decision as G-af7d70d999dee2.",
+  "problem": "duplicate",
+  "disposition": "retire-duplicate",
+  "promptChange": "Retire; G-af7d70d999dee2 carries the tvOS redelivery decision.",
+  "proposedWording": null,
+  "oracleChange": "none",
+  "skill": [],
+  "skillWhy": "none",
+  "priority": "P3",
+  "confidence": "medium",
+  "transfer": "n/a"
+ }
+]

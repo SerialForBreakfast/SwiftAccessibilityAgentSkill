@@ -1,0 +1,1632 @@
+[
+  {
+    "id": "G-0a2cd6519778f4",
+    "diagnosis": "First source grade: Pass: compares the captured generation to the active one inside the queued callback, preserving newly installed observers. Fail: the proposed test restores reduceMotion to false before restart and does not change it before draining stale work. The original refresh equality guard can suppress apply even in the mutant. The counter therefore cannot distinguish rejection from a deduplicated refresh; the Sendable enqueue also captures a mutable local array.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "TelevisionLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the observer-restart case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "Test observer-restart in a separately authored product and ownership graph, not another variant of tvos-lifecycle-v1."
+  },
+  {
+    "id": "G-000ddc4f9a5ec5",
+    "diagnosis": "Audit Q16: Correctly distinguishes buffered and seekable evidence but adds public helpers to an inspector that already captures them separately and guards seeks on seekable alone.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. If a player buffers one interval but permits seeking over another, what does the inspector report for each?",
+    "oracleChange": "MediaInspectionTests/testLoadedRangesDoNotAuthorizeSeeking",
+    "skill": [
+      "S1",
+      "S8"
+    ],
+    "skillWhy": "Use the range-kind case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test range-kind in a separately authored product and ownership graph, not another variant of tvos-media-v1."
+  },
+  {
+    "id": "G-19d3be9a5d1d73",
+    "diagnosis": "The transport returned an attempt error; there is no answer to grade.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-structure-v1/evaluation/shelf-structure.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-7a28c9cbfc6681",
+    "diagnosis": "First source grade: Propagates optional native help or hint through refresh, including clearing.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, SwiftUI. Configure the same view with help text, then with none. What help is exposed after each update?",
+    "oracleChange": "ForwardingTests/testNilHintClearsOldHelp",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the optional-help case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test optional-help in a separately authored product and ownership graph, not another variant of forwarding-tvos-v1."
+  },
+  {
+    "id": "G-51c53f30543cc0",
+    "diagnosis": "Audit Q43: Rebinding already invalidates the previous callback and teardown already detaches the tracked action. The rewrite still passes ordinary stale/current dispatch, but also changes macOS and modifies teardown for an unshown view mismatch. The text claims to detach both views while the implementation chooses one.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, SwiftUI. After this wrapper updates its native control, which target receives its next action? What happens after teardown?",
+    "oracleChange": "InteropTests/testCoordinatorReplacesOldCallback",
+    "skill": [
+      "S1",
+      "S3",
+      "S8"
+    ],
+    "skillWhy": "Use the interop-rebind case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test interop-rebind in a separately authored product and ownership graph, not another variant of tvos-v1."
+  },
+  {
+    "id": "G-0ad013a4877500",
+    "diagnosis": "First source grade: Old option callbacks call choose with a nullable ID and no captured owner. A stale Off can clear a later selection.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/media-tvos-v1/evaluation/ownership.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-044112eec58beb",
+    "diagnosis": "First source grade: Verifies both item and request identity before writing the binding.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "evals/rc1/RUBRIC.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-1584405193ce1b",
+    "diagnosis": "First source grade: Checks cancellation and item identity on successful inspection. Same-item retry/error ownership is not fully established.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-uikit-media",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the subjects case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-92cd811da55d55",
+    "diagnosis": "First source grade: Separates deployment capability from compile SDK and calls for availability evidence for new settings.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-version-boundary",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-58e05a888e5745",
+    "diagnosis": "First source grade: Separates focused tile from committed choice and updates selected traits on activation.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "Keep transient focus/highlight distinct from committed selection; activation changes the choice. Preserve accurate accessible state on old and new tiles.",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test selected-vs-focused in a separately authored product and ownership graph, not another variant of guidelines."
+  },
+  {
+    "id": "G-0a672785e8c227",
+    "diagnosis": "First source grade: Uses a non-color Live cue and accessible state independently of focus and selection.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "Add a non-color live cue and accessible state independent of focus styling, retain ordinary activation and update the cue when the event ends.",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test color-only-live in a separately authored product and ownership graph, not another variant of guidelines."
+  },
+  {
+    "id": "G-1a9904d1e929f2",
+    "diagnosis": "First source grade: Checks active presentation token before accepting finish.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionLifecycleTests/testOldCompletionCannotConsumeNewSession",
+    "skill": [
+      "S2",
+      "S4"
+    ],
+    "skillWhy": "Use the presentation-owner case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test presentation-owner in a separately authored product and ownership graph, not another variant of tvos-lifecycle-v1."
+  },
+  {
+    "id": "G-03942c8939b2cc",
+    "diagnosis": "Audit Q25: The main recommendation retains the correct characteristic check. An alternative adds an unsupported property and the remote test filters by its own output before asserting that same output. It can pass without observing an ordinary track.",
+    "problem": "ambiguous-policy",
+    "disposition": "specify-policy",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. Can this inspector tell an ordinary alternate-language track from one explicitly tagged as described audio? Keep the current player selection.",
+    "oracleChange": "Use known independently identified audible options: ordinary alternate false, explicitly described true. Exercise the production inspector or its real mapping seam, require both fixtures, compare native selected option before/after. Names, language and an empty filtered list cannot establish tagging.",
+    "skill": [
+      "S1",
+      "S2",
+      "S7",
+      "S8"
+    ],
+    "skillWhy": "Use the audio-description-tag case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test audio-description-tag in a separately authored product and ownership graph, not another variant of tvos-media-v1."
+  },
+  {
+    "id": "G-1ae8568fe43fd6",
+    "diagnosis": "First source grade: Preserves Play and Details callbacks, updates contextual names, and guards the supplementary action on current Details availability.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-uikit-v1/evaluation/television-actions.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-845a5decac01e1",
+    "diagnosis": "First source grade: Stale and disabled dispatch check ticket and control, with assertions before and after teardown.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, SwiftUI. After this wrapper updates its native control, which target receives its next action? What happens after teardown?",
+    "oracleChange": "InteropTests/testCoordinatorReplacesOldCallback",
+    "skill": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "skillWhy": "Use the interop-rebind case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test interop-rebind in a separately authored product and ownership graph, not another variant of tvos-v1."
+  },
+  {
+    "id": "G-5f1114d75bd50c",
+    "diagnosis": "First source grade: Concludes the optional assignment already clears the old hint and exercises the nil transition.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, SwiftUI. Configure the same view with help text, then with none. What help is exposed after each update?",
+    "oracleChange": "ForwardingTests/testNilHintClearsOldHelp",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the optional-help case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test optional-help in a separately authored product and ownership graph, not another variant of forwarding-tvos-v1."
+  },
+  {
+    "id": "G-22af858f9af21f",
+    "diagnosis": "First source grade: Uses sheet generation and active state for restoration, rejects a stale dismissal and tests a synchronous next presentation.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/tvos-v1/evaluation/lifecycle.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-5e241a2f3c435f",
+    "diagnosis": "First source grade: Retains ordinary buttons and a supplementary action, but the retained shortcut's enabled-state and current-owner checks are not fully substantiated.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-swiftui-actions",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the subjects case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-169764b693c452",
+    "diagnosis": "First source grade: Checks opener membership and enabled state and returns the first enabled fallback.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "evals/rc1/RUBRIC.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the subjects case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-90ab2116d21630",
+    "diagnosis": "First source grade: Removes horizontal loopback, provides a directional exit, and preserves ordinary Select.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "Examine directional destinations and intervening guides or overrides, preserve an exit and ordinary select; do not treat array order alone as directional navigation proof.",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test directional-escape in a separately authored product and ownership graph, not another variant of guidelines."
+  },
+  {
+    "id": "G-9e4dfb3fc78f7f",
+    "diagnosis": "First source grade: Chooses initial focus on entry and preserves button identity through asynchronous artwork updates.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "Apply initial focus for a new presentation once; incidental content refresh must not reassert it over a valid user choice.",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test initial-focus-once in a separately authored product and ownership graph, not another variant of guidelines."
+  },
+  {
+    "id": "G-24227b92717364",
+    "diagnosis": "First source grade: Consumes the active ticket and tests a repeated completion.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaLoadOwnerTests/testDuplicateCallbackCannotOverwriteFirstResult",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the duplicate-completion case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test duplicate-completion in a separately authored product and ownership graph, not another variant of tvos-closure-v1."
+  },
+  {
+    "id": "G-06049073ef34c8",
+    "diagnosis": "First source grade: Concludes the existing validation path presents the error, retains input and stops before saving.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. What happens to the entered text, validation feedback and Save callback for invalid input and then for a valid correction?",
+    "oracleChange": "TelevisionFormTests/testInvalidInputShowsErrorWithoutSavingOrErasing",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the invalid-submit case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test invalid-submit in a separately authored product and ownership graph, not another variant of tvos-structure-v1."
+  },
+  {
+    "id": "G-369095f8f4ecec",
+    "diagnosis": "First source grade: Checks request and actual player item and exercises same-item reinspection, duplicate callback, teardown and unchanged playback.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-closure-v1/evaluation/media-load-ownership.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-231795c762c2e0",
+    "diagnosis": "First source grade: Distinguishes unloaded and loaded state, validates stable choices and rejects superseded asynchronous responses.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/tvos-v1/evaluation/media.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-79d7d5bb05ed7d",
+    "diagnosis": "First source grade: Groups descriptive text independently of Open and Details and identifies entries by current report.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-swiftui-structure",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-3c9d02537a525d",
+    "diagnosis": "First source grade: Inserts or removes only the selected trait.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "evals/rc1/RUBRIC.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-ec1532605b0eae",
+    "diagnosis": "First source grade: Separates playback from focus and computes a surviving fallback when filtering empties the shelf.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "Resolve a surviving eligible target or persistent empty-state/filter control; separate focus from activation. Do not request a removed item.",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test filter-focus-fallback in a separately authored product and ownership graph, not another variant of guidelines."
+  },
+  {
+    "id": "G-e56a902ef372a2",
+    "diagnosis": "Audit Q32: The vertical layout protects the actions. The newer-SDK section gates at tvOS 18 on a 26.0 deployment, mistakes scrollTargetLayout for marquee behavior, and gives no valid later availability boundary for text scaling.",
+    "problem": "real-model-gap",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "Preserve both actions and readable content via flexible layout; distinguish supported behavior on the deployment target from later tvOS facilities; avoid importing iOS availability assumptions.",
+    "skill": [
+      "S5"
+    ],
+    "skillWhy": "Use the tv-text-reflow case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P0",
+    "confidence": "high",
+    "transfer": "Test tv-text-reflow in a separately authored product and ownership graph, not another variant of guidelines."
+  },
+  {
+    "id": "G-29109948779ad1",
+    "diagnosis": "First source grade: Wires and tests the ordinary Details button.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. Which item do the ordinary controls and the supplementary shortcut operate on after this view refreshes?",
+    "oracleChange": "TelevisionActionsTests/testOrdinaryDetails",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the ordinary-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test ordinary-action in a separately authored product and ownership graph, not another variant of tvos-uikit-v1."
+  },
+  {
+    "id": "G-0d69f79fef78e5",
+    "diagnosis": "Audit Q23: The status, accessibility value and selected trait already follow the input. The native UIButton.isSelected never does. The one-line change directly satisfies a plausible literal reading of control state and the test covers both transitions. The oracle only checks one state and ignores isSelected.",
+    "problem": "ambiguous-policy",
+    "disposition": "specify-policy",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. On each selected or unselected update, we need readable status text, the button accessibility value, and its selected accessibility trait to agree. Does this tvOS implementation keep those three in sync?",
+    "oracleChange": "On the same instance configure selected, unselected and selected again or equivalent set/clear transitions. For each input compare visible status text, accessible value and selected trait independently with expected state. Accept equivalent localized wording. Scope is configure, not search or native isSelected.",
+    "skill": [
+      "S1",
+      "S2",
+      "S5"
+    ],
+    "skillWhy": "Use the conflicting-state-text case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test conflicting-state-text in a separately authored product and ownership graph, not another variant of tvos-closure-v1."
+  },
+  {
+    "id": "G-3f40dc5a5d6e80",
+    "diagnosis": "First source grade: Reads tagged metadata and current native selection without mutation and distinguishes absent group from failed load.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-media-v1/evaluation/media-metadata.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-365faed8f7362b",
+    "diagnosis": "First source grade: Off uses item.selectMediaOption(nil,in:) while selecting a track uses the Swift select(_:in:) API.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/media-tvos-v1/evaluation/selection.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-c55650380597ef",
+    "diagnosis": "First source grade: Proposes reflection as evidence of attached accessibility modifiers; model chapter counts do not establish generated rotor behavior.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-swiftui-testing",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-5f3c8c25e44c4b",
+    "diagnosis": "First source grade: Uses file identity alone for late replies; an earlier load for the same file can still replace newer metadata.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-uikit-state",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-3eecace7f0b93c",
+    "diagnosis": "Audit Q49: Selected and unselected configurations still display identical empty state text. Search result counts are also assigned as the control’s value, even though they do not describe its selection.",
+    "problem": "ambiguous-policy",
+    "disposition": "specify-policy",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. On each selected or unselected update, we need readable status text, the button accessibility value, and its selected accessibility trait to agree. Does this tvOS implementation keep those three in sync?",
+    "oracleChange": "On the same instance configure selected, unselected and selected again or equivalent set/clear transitions. For each input compare visible status text, accessible value and selected trait independently with expected state. Accept equivalent localized wording. Scope is configure, not search or native isSelected.",
+    "skill": [
+      "S1",
+      "S5"
+    ],
+    "skillWhy": "Use the conflicting-state-text case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test conflicting-state-text in a separately authored product and ownership graph, not another variant of tvos-closure-v1."
+  },
+  {
+    "id": "G-19b9622db7d85f",
+    "diagnosis": "First source grade: Identifies the preflight section and item checks and tests atomic rejection.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. What state remains visible if a refresh contains duplicate IDs? Our screen should either accept the whole update or keep the previous one.",
+    "oracleChange": "TelevisionShelvesTests/testDuplicateSectionIDsRejectedAtomically",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the duplicate-id case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test duplicate-id in a separately authored product and ownership graph, not another variant of tvos-structure-v1."
+  },
+  {
+    "id": "G-41dc4d2f1594dd",
+    "diagnosis": "First source grade: Checks containment and enabled/visible state before preferring a focus target; exercises removed Play with available Details.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-uikit-v1/evaluation/television-focus.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-375ea9d9a373c3",
+    "diagnosis": "First source grade: Updates the retained native button and replaces its handler, including rebind and dismantle behavior.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/tvos-v1/evaluation/interop.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-e686599aab0959",
+    "diagnosis": "First source grade: Returns the supplied optional animation unchanged unless reduced motion is active.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "evals/rc1/RUBRIC.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-9b4965749be4ab",
+    "diagnosis": "First source grade: Resolves the current opener or eligible fallback and marks the session resolved before external focus dispatch.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "research/evaluation/dev7-comparison/controller/scoring.json#tvos-uikit-lifecycle",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-459bf5e7dca58e",
+    "diagnosis": "First source grade: Requires permission before clearing the selection.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaChoiceTests/testOffPolicyRejectsWithoutCallingClear",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test off-permission in a separately authored product and ownership graph, not another variant of tvos-media-v1."
+  },
+  {
+    "id": "G-3b6a6a3d39e6de",
+    "diagnosis": "First source grade: Explains both extended-grapheme boundaries and checks a partial match.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. If a search matches only part of a composed character, which navigation destinations are offered?",
+    "oracleChange": "EditedRotorUIKitTests/testPartialGraphemeMatchesAreExcluded",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the grapheme-boundary case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test grapheme-boundary in a separately authored product and ownership graph, not another variant of tvos-closure-v1."
+  },
+  {
+    "id": "G-568f3cf50e437f",
+    "diagnosis": "First source grade: Uses presentation tokens and visibility checks; attachment to a window alone does not establish membership in the owning view.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-lifecycle-v1/evaluation/modal-restoration.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-55c3b232938702",
+    "diagnosis": "First source grade: Represents missing item using a particular failure message and tests it; clear separation from ordinary retryable load failures is uncertain.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/media-tvos-v2/evaluation/wiring.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-f4ec597a9a2e91",
+    "diagnosis": "First source grade: Supplies a named remote-operable movie control and binds its ordinary action to the corresponding movie.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "evals/os26/acceptance.json#GP26-05",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-46f5727d65e9f2",
+    "diagnosis": "First source grade: Rejects disabled or obsolete button callbacks before mutating selection.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. Keep an action from before a refresh, then invoke it after the row represents a different record. What does it do? What do the current ordinary controls do?",
+    "oracleChange": "TelevisionResultsTests/testStaleButtonDoesNotSelectReboundItem",
+    "skill": [
+      "S1",
+      "S3"
+    ],
+    "skillWhy": "Use the rebound-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test rebound-action in a separately authored product and ownership graph, not another variant of tvos-results-v1."
+  },
+  {
+    "id": "G-506996f8af1af4",
+    "diagnosis": "Audit Q44: The ordinary details button and shortcut already dispatch onDetails. The replacement treats the play button’s accessibilityActivate method as an assignable closure, making both the patch and its test unusable.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. Which item do the ordinary controls and the supplementary shortcut operate on after this view refreshes?",
+    "oracleChange": "TelevisionActionsTests/testOrdinaryDetails",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the ordinary-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test ordinary-action in a separately authored product and ownership graph, not another variant of tvos-uikit-v1."
+  },
+  {
+    "id": "G-659283ab576494",
+    "diagnosis": "First source grade: Provides literal match and boundary tests with retained rotor coverage. Exact native text-range handling on tvOS remains unresolved in source review.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-closure-v1/evaluation/text-rotor.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-5d121776613655",
+    "diagnosis": "First source grade: Assigns selected to the requested ID before checking options, so an unknown ID changes displayed state even though the native choice remains unchanged.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/media-tvos-v2/evaluation/selection.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-471ca0f68993a7",
+    "diagnosis": "First source grade: Validates generation and button before dispatch from an old shelf.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionShelvesTests/testOldGenerationRejectedEvenWhenButtonReattached",
+    "skill": [
+      "S3"
+    ],
+    "skillWhy": "Use the rebound-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test rebound-action in a separately authored product and ownership graph, not another variant of tvos-structure-v1."
+  },
+  {
+    "id": "G-61cfbceeb763f0",
+    "diagnosis": "Audit Q45: A detached old button can select when its captured ID persists in the refreshed list. The proposed test explicitly expects that stale selection.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. Keep an action from before a refresh, then invoke it after the row represents a different record. What does it do? What do the current ordinary controls do?",
+    "oracleChange": "TelevisionResultsTests/testStaleButtonDoesNotSelectReboundItem",
+    "skill": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "skillWhy": "Use the rebound-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test rebound-action in a separately authored product and ownership graph, not another variant of tvos-results-v1."
+  },
+  {
+    "id": "G-70ad36b8473f50",
+    "diagnosis": "First source grade: Refreshes selection and search metadata in both directions, retains native playback controls and restores the prior modal flag.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-state-recovery-v1/evaluation/state-recovery.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-882146ff80c2a4",
+    "diagnosis": "First source grade: Publishes final selection before callbacks, preserves it across name edits and retains content under reduced transparency.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/forwarding-tvos-v1/evaluation/preference-forwarding.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-5b313c25cc544a",
+    "diagnosis": "Audit Q54: The answer only follows edit(), which cancels. A native text field can change independently while the ticket is active, after which the completion still accepts the old input or applies obsolete errors.",
+    "problem": "real-model-gap",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot",
+    "skill": [
+      "S3"
+    ],
+    "skillWhy": "Use the input-snapshot case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P0",
+    "confidence": "high",
+    "transfer": "Test input-snapshot in a separately authored product and ownership graph, not another variant of tvos-closure-v1."
+  },
+  {
+    "id": "G-b786b16b81d406",
+    "diagnosis": "Audit Q28: Correctly preserves membership and ancestor eligibility checks and verifies fallback and no eligible destination.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. Where does the return request go if the original control moves to another owner or can no longer accept focus? What happens if it remains eligible?",
+    "oracleChange": "TelevisionLifecycleTests/testForeignOriginalUsesFallback",
+    "skill": [
+      "S1",
+      "S2",
+      "S4"
+    ],
+    "skillWhy": "Use the eligible-target case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test eligible-target in a separately authored product and ownership graph, not another variant of tvos-lifecycle-v1."
+  },
+  {
+    "id": "G-758be0954385e0",
+    "diagnosis": "First source grade: Reports seekability and buffer state separately and exercises inside and outside interval times.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-media-v1/evaluation/media-inspection.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-9f59e96226e92f",
+    "diagnosis": "First source grade: Validates duplicates before updating, preserves surviving selected identity and guards captured actions by revision.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/tvos-v1/evaluation/documents.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-6051c70977bd19",
+    "diagnosis": "First source grade: Updates content for both motion settings while suppressing animation under Reduce Motion. Asserts text and animation count.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionResultsTests/testReducedMotionStillUpdatesContent",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test motion-content in a separately authored product and ownership graph, not another variant of tvos-results-v1."
+  },
+  {
+    "id": "G-c7ecafc1f5d659",
+    "diagnosis": "Audit Q02: Correctly leaves the selection filter intact. The optional test needs an asset and can pass if no full option is ever selected.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. This picker is for full subtitles. Which options does it offer when the asset also has forced translations, and what happens to the current selection on opening it?",
+    "oracleChange": "MediaChoiceTests/testSelectFullEnglishSubtitle",
+    "skill": [
+      "S1",
+      "S2",
+      "S7"
+    ],
+    "skillWhy": "Use the forced-vs-full case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test forced-vs-full in a separately authored product and ownership graph, not another variant of tvos-media-v1."
+  },
+  {
+    "id": "G-7b7cd43b77e209",
+    "diagnosis": "First source grade: Preserves invalid input and avoids saving, restores help on edit, and guards synchronous reentry.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-structure-v1/evaluation/form-recovery.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-a684bb499d9f1a",
+    "diagnosis": "First source grade: Updates heading, status, distinct names and optional hint in place and checks preserved order and scalable font configuration.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/forwarding-tvos-v1/evaluation/native-metadata.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-71a1b613f050e3",
+    "diagnosis": "First source grade: Guards the submit transition against reentry and counts save callbacks.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionFormTests/testReentrantSaveDoesNotSubmitTwice",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test reentrant-submit in a separately authored product and ownership graph, not another variant of tvos-structure-v1."
+  },
+  {
+    "id": "G-d960994bd1947a",
+    "diagnosis": "First source grade: Verifies old form and media responses cannot replace newer outcomes.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. Submit twice and let the first request finish last. Which result appears, and does the current request still update the form?",
+    "oracleChange": "AsyncOwnershipTests/testOutOfOrderReplyCannotReplaceLatestErrors",
+    "skill": [
+      "S1",
+      "S3"
+    ],
+    "skillWhy": "Use the request-generation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test request-generation in a separately authored product and ownership graph, not another variant of tvos-closure-v1."
+  },
+  {
+    "id": "G-8786cf0f8c1bca",
+    "diagnosis": "First source grade: Inserts or removes the selected trait and directly checks preservation of unrelated traits.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-uikit-v1/evaluation/television-traits.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-aac1829e33a43a",
+    "diagnosis": "First source grade: Checks ordinary and shortcut dispatch, rebinding, externally disabled controls and post-dismantle callbacks.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/forwarding-tvos-v1/evaluation/native-actions.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-747c4cbe0af921",
+    "diagnosis": "First source grade: Filters unusable preferred targets and exercises fallback after disabling the previous target.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionActionsTests/testDisabledPreferredTargetExcluded",
+    "skill": [
+      "S4"
+    ],
+    "skillWhy": "Use the eligible-target case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test eligible-target in a separately authored product and ownership graph, not another variant of tvos-uikit-v1."
+  },
+  {
+    "id": "G-f0de252053bcbb",
+    "diagnosis": "Audit Q17: Explicit assignment produces the right current label but clearing the override already restores the text-derived name. Claims of stale caching lack evidence.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. After selecting a search result, what status and label does the control expose?",
+    "oracleChange": "StateContractTests/testSearchThenSelectionDoesNotLeaveStaleLabel",
+    "skill": [
+      "S1",
+      "S8"
+    ],
+    "skillWhy": "Use the refresh-name case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "high",
+    "transfer": "Test refresh-name in a separately authored product and ownership graph, not another variant of tvos-state-recovery-v1."
+  },
+  {
+    "id": "G-8e63e559f86929",
+    "diagnosis": "First source grade: Uses submission ownership, validates returned field IDs and message content, and exercises ordering, edit and cancellation.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-closure-v1/evaluation/validation-ownership.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-c6b25ad753e6a2",
+    "diagnosis": "First source grade: The option setter receives item identity but no request revision. Reloading the same item leaves an old Off callback authorized.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/media-tvos-v2/evaluation/ownership.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-76f5ee001339bc",
+    "diagnosis": "First source grade: Separates requested full versus forced subtitles using the option characteristic. Native fake-option creation and test integration are unverified.",
+    "problem": "grader-uncertain",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. This picker is for full subtitles. Which options does it offer when the asset also has forced translations, and what happens to the current selection on opening it?",
+    "oracleChange": "MediaChoiceTests/testSelectFullEnglishSubtitle",
+    "skill": [
+      "S1",
+      "S2",
+      "S7"
+    ],
+    "skillWhy": "Use the forced-vs-full case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "low",
+    "transfer": "Test forced-vs-full in a separately authored product and ownership graph, not another variant of tvos-media-v1."
+  },
+  {
+    "id": "G-a424d7b520fd26",
+    "diagnosis": "First source grade: Requests additional model and modal design information instead of supplying the requested component or tests.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-closure-v1/evaluation/native-state.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-d9e53ce2b01786",
+    "diagnosis": "First source grade: Exposes selected state text and uses preference modifiers, but reflecting a view in tests does not demonstrate how its policy handles motion or text size at the target version.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/tvos-v1/evaluation/preferences.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-79ac18bcb89215",
+    "diagnosis": "First source grade: Requires both UTF-16 endpoints to be grapheme boundaries. The focused examples check a partial match and a whole composed character.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. If a search matches only part of a composed character, which navigation destinations are offered?",
+    "oracleChange": "EditedRotorUIKitTests/testPartialGraphemeMatchesAreExcluded",
+    "skill": [
+      "S1",
+      "S2"
+    ],
+    "skillWhy": "Use the grapheme-boundary case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test grapheme-boundary in a separately authored product and ownership graph, not another variant of tvos-closure-v1."
+  },
+  {
+    "id": "G-aa46615d2f4cd8",
+    "diagnosis": "First source grade: Gates old button dispatch by render generation and tests duplicate rejection, filtering and removal of selected items.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-results-v1/evaluation/filtered-results.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-dc1e54ce99c977",
+    "diagnosis": "First source grade: Tests missing video, empty load and retry, but picker selection stays local instead of writing to the shared player's media group.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/media-tvos-v1/evaluation/wiring.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-7cc5d89371a12a",
+    "diagnosis": "First source grade: Checks the description characteristic but permits the check to return without exercising selection when no media group exists.",
+    "problem": "bundled-criteria",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "MediaChoiceTests/testDescriptionUnavailablePreservesChoice",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the description-selection case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P2",
+    "confidence": "medium",
+    "transfer": "Test description-selection in a separately authored product and ownership graph, not another variant of tvos-media-v1."
+  },
+  {
+    "id": "G-c60353787b2df0",
+    "diagnosis": "First source grade: Checks current execution token and started state at delivery and deduplicates identical preference snapshots.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-lifecycle-v1/evaluation/display-preferences.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-ecaf99703fde8f",
+    "diagnosis": "First source grade: Retains ordinary settings actions and implements bounded five-point increments through the unified setter.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/tvos-v1/evaluation/semantics.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-8667bcae087a4e",
+    "diagnosis": "First source grade: Rejects invalid submit before the save callback and preserves the invalid field contents for correction.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. What happens to the entered text, validation feedback and Save callback for invalid input and then for a valid correction?",
+    "oracleChange": "TelevisionFormTests/testInvalidInputShowsErrorWithoutSavingOrErasing",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the invalid-submit case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test invalid-submit in a separately authored product and ownership graph, not another variant of tvos-structure-v1."
+  },
+  {
+    "id": "G-f180f315211c36",
+    "diagnosis": "First source grade: Suppresses duplicate status and chooses effects from the current motion preference; tests count the transitions.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-results-v1/evaluation/motion-status.rubric.md",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the evaluation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-fe5ec3a625e9f0",
+    "diagnosis": "First source grade: Retains entered text and covers service failure, duplicate callbacks, delayed results and cancellation.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "code-examples/swiftui/tvos-v1/evaluation/forms.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-876810bde2cad1",
+    "diagnosis": "First source grade: Exposes the individual operable children alongside the supplementary action.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionActionsTests/testContainerPreservesControls",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test container-children in a separately authored product and ownership graph, not another variant of tvos-uikit-v1."
+  },
+  {
+    "id": "G-fb3f74a9ac6641",
+    "diagnosis": "First source grade: Implements empty-selection permission and language/description matching. Executability of the synthetic AVMediaSelectionGroup subclasses is unresolved.",
+    "problem": "grader-uncertain",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "code-examples/platforms/tvos-media-v1/evaluation/media-selection.rubric.md",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P2",
+    "confidence": "low",
+    "transfer": "n/a"
+  },
+  {
+    "id": "G-89482b39d6712d",
+    "diagnosis": "First source grade: Exposes children through a non-element shelf, keeping heading and buttons independently accessible; checks their order.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionShelvesTests/testShelvesPreserveIndependentHeadingAndButtons",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the container-children case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test container-children in a separately authored product and ownership graph, not another variant of tvos-structure-v1."
+  },
+  {
+    "id": "G-9076fc660dc5e1",
+    "diagnosis": "First source grade: Rejects duplicate section IDs before altering the shelves; exercises unchanged heading, subview count and keys.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. What state remains visible if a refresh contains duplicate IDs? Our screen should either accept the whole update or keep the previous one.",
+    "oracleChange": "TelevisionShelvesTests/testDuplicateSectionIDsRejectedAtomically",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the duplicate-id case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test duplicate-id in a separately authored product and ownership graph, not another variant of tvos-structure-v1."
+  },
+  {
+    "id": "G-955e952e1c1b59",
+    "diagnosis": "First source grade: Evaluates seekable ranges independently of loaded ranges.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. If a player buffers one interval but permits seeking over another, what does the inspector report for each?",
+    "oracleChange": "MediaInspectionTests/testLoadedRangesDoNotAuthorizeSeeking",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the range-kind case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test range-kind in a separately authored product and ownership graph, not another variant of tvos-media-v1."
+  },
+  {
+    "id": "G-972553a39e3fd2",
+    "diagnosis": "First source grade: Rejects a saved details action after generation changes.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionActionsTests/testStaleActionRejected",
+    "skill": [
+      "S3"
+    ],
+    "skillWhy": "Use the rebound-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test rebound-action in a separately authored product and ownership graph, not another variant of tvos-uikit-v1."
+  },
+  {
+    "id": "G-9a70e4a2e9714c",
+    "diagnosis": "First source grade: Re-evaluates matches for the current document and exercises a live text change.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "EditedRotorUIKitTests/testUnannouncedTextChangeRejectsCachedSearch",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test edited-matches in a separately authored product and ownership graph, not another variant of tvos-closure-v1."
+  },
+  {
+    "id": "G-9cabdd49c15b29",
+    "diagnosis": "First source grade: Checks observer lifetime and revision at queued delivery.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionLifecycleTests/testPreferenceStoppedQueuedWorkIgnored",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the observer-stop case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test observer-stop in a separately authored product and ownership graph, not another variant of tvos-lifecycle-v1."
+  },
+  {
+    "id": "G-9eaa902d2ca751",
+    "diagnosis": "First source grade: Leaves the active selection in place when no candidate matches.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaChoiceTests/testMissingLanguagePreservesChoice",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test missing-choice in a separately authored product and ownership graph, not another variant of tvos-media-v1."
+  },
+  {
+    "id": "G-a6868ceeecdc4e",
+    "diagnosis": "First source grade: Clears the prior validation presentation on edit and checks the restored field state.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionFormTests/testEditingClearsErrorRestoresHelpAndPreservesInput",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the validation-help case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test validation-help in a separately authored product and ownership graph, not another variant of tvos-structure-v1."
+  },
+  {
+    "id": "G-af7d70d999dee2",
+    "diagnosis": "First source grade: Skips identical readings after the initial apply and checks a changed Reduce Motion preference still propagates.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionLifecycleTests/testPreferenceIdenticalValuesAreDeduplicated",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the preference-redelivery case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test preference-redelivery in a separately authored product and ownership graph, not another variant of tvos-lifecycle-v1."
+  },
+  {
+    "id": "G-b3e3e24da9d1a2",
+    "diagnosis": "First source grade: Returns unavailable for a missing item before inspecting tracks.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaMetadataTests/testMissingItemIsUnavailableRatherThanAbsent",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test unavailable-media in a separately authored product and ownership graph, not another variant of tvos-media-v1."
+  },
+  {
+    "id": "G-b4cbbde46d6d6f",
+    "diagnosis": "First source grade: Ends by restoring the recorded prior value. Exercises repeated begin and initially true state.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "StateContractTests/testRepeatedModalBeginRestoresOriginalTrue",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test modal-state in a separately authored product and ownership graph, not another variant of tvos-closure-v1."
+  },
+  {
+    "id": "G-c69928988c0e26",
+    "diagnosis": "Audit Q55: Directly removing the retained button now rejects it and another attached button can still act. The test exercises both. This condition alone does not cover reparenting or removal of an ancestor, neither specified by the example.",
+    "problem": "oracle-mismatch",
+    "disposition": "split-criteria",
+    "promptChange": "Separate the two ownership or lifecycle conditions.",
+    "proposedWording": "tvOS 26.0, UIKit. If other code retains the button and removes it directly from its superview, can it still choose an item? The current attached button must still work. ‖ tvOS 26.0, UIKit. A live button moves into a shelf belonging to a second TelevisionShelves instance, without either owner reapplying its sections. Could the moved button still select an item on its former owner? Its former owner’s remaining buttons should still work.",
+    "oracleChange": "Retain and directly remove a current button without applying new sections. Dispatch its primary action: selection and callback log remain unchanged. Dispatch an attached current button: its key is selected and delivered once. A superview check can satisfy this narrow contract. / Reparent before dispatch with generation unchanged. Old owner neither selects nor emits the key. A legitimate still-attached button selects its own key and emits it once. The moved button may become inert. Do not require support for an unspecified sibling-reorganization policy.",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the detached-action case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P0",
+    "confidence": "high",
+    "transfer": "Test detached-action in a separately authored product and ownership graph, not another variant of tvos-structure-v1."
+  },
+  {
+    "id": "G-ce876ee37b4251",
+    "diagnosis": "First source grade: Requires a candidate under the current root and exercises fallback.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. Where does the return request go if the original control moves to another owner or can no longer accept focus? What happens if it remains eligible?",
+    "oracleChange": "TelevisionLifecycleTests/testForeignOriginalUsesFallback",
+    "skill": [
+      "S1",
+      "S4"
+    ],
+    "skillWhy": "Use the eligible-target case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test eligible-target in a separately authored product and ownership graph, not another variant of tvos-lifecycle-v1."
+  },
+  {
+    "id": "G-d175aa87437cc0",
+    "diagnosis": "First source grade: Reads the explicit description characteristic rather than inferring it from ordinary audio.",
+    "problem": "ambiguous-policy",
+    "disposition": "specify-policy",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. Can this inspector tell an ordinary alternate-language track from one explicitly tagged as described audio? Keep the current player selection.",
+    "oracleChange": "Use known independently identified audible options: ordinary alternate false, explicitly described true. Exercise the production inspector or its real mapping seam, require both fixtures, compare native selected option before/after. Names, language and an empty filtered list cannot establish tagging.",
+    "skill": [
+      "S1",
+      "S7"
+    ],
+    "skillWhy": "Use the audio-description-tag case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test audio-description-tag in a separately authored product and ownership graph, not another variant of tvos-media-v1."
+  },
+  {
+    "id": "G-d314ae4053b207",
+    "diagnosis": "First source grade: Mutates the selected trait while retaining the button trait.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionActionsTests/testSelectedPreservesOtherTraits",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test preserve-traits in a separately authored product and ownership graph, not another variant of tvos-uikit-v1."
+  },
+  {
+    "id": "G-e4ff6e9fdfb106",
+    "diagnosis": "First source grade: Removes only the selected trait and checks preserved button traits.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionResultsTests/testSelectionPreservesUnrelatedTraits",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the preserve-traits case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test preserve-traits in a separately authored product and ownership graph, not another variant of tvos-results-v1."
+  },
+  {
+    "id": "G-e5f494a161721e",
+    "diagnosis": "First source grade: Refreshes the explicit status label and verifies the effective selected name.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. After selecting a search result, what status and label does the control expose?",
+    "oracleChange": "StateContractTests/testSearchThenSelectionDoesNotLeaveStaleLabel",
+    "skill": [
+      "S1"
+    ],
+    "skillWhy": "Use the refresh-name case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test refresh-name in a separately authored product and ownership graph, not another variant of tvos-state-recovery-v1."
+  },
+  {
+    "id": "G-eb72137f254296",
+    "diagnosis": "First source grade: Checks the actual player's item as well as the active ticket. The old completion is exercised after replacement.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "MediaLoadOwnerTests/testExternalReplacementRejectsOldResult",
+    "skill": [
+      "S2"
+    ],
+    "skillWhy": "Use the player-item-owner case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test player-item-owner in a separately authored product and ownership graph, not another variant of tvos-closure-v1."
+  },
+  {
+    "id": "G-ed8bff5491ab72",
+    "diagnosis": "Audit Q21: Both controls still have no visible title. The change and test address automation identifiers.",
+    "problem": "real-model-gap",
+    "disposition": "grade-components",
+    "promptChange": "Keep the request bytes; grade component outcomes separately.",
+    "proposedWording": null,
+    "oracleChange": "TelevisionActionsTests/testVisibleActionNames",
+    "skill": [
+      "S2",
+      "S5"
+    ],
+    "skillWhy": "Use the visible-title case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P0",
+    "confidence": "high",
+    "transfer": "Test visible-title in a separately authored product and ownership graph, not another variant of tvos-uikit-v1."
+  },
+  {
+    "id": "G-edf906eca78e51",
+    "diagnosis": "First source grade: Rejects stale validation before updating errors.",
+    "problem": "symptom-as-fact",
+    "disposition": "rewrite-neutral",
+    "promptChange": "Use the same neutral scenario for both supplied implementations.",
+    "proposedWording": "tvOS 26.0, UIKit. Submit twice and let the first request finish last. Which result appears, and does the current request still update the form?",
+    "oracleChange": "AsyncOwnershipTests/testOutOfOrderReplyCannotReplaceLatestErrors",
+    "skill": [
+      "S1",
+      "S3"
+    ],
+    "skillWhy": "Use the request-generation case to test the linked distinctions; a case association is not a measured rescue.",
+    "priority": "P1",
+    "confidence": "medium",
+    "transfer": "Test request-generation in a separately authored product and ownership graph, not another variant of tvos-closure-v1."
+  },
+  {
+    "id": "G-ffb1a82a74699a",
+    "diagnosis": "First source grade: Short-circuits identical status before applying animation and verifies effects only for transitions.",
+    "problem": "good-as-is",
+    "disposition": "keep-control",
+    "promptChange": "none",
+    "proposedWording": null,
+    "oracleChange": "TelevisionResultsTests/testRepeatedStatusIsQuiet",
+    "skill": [],
+    "skillWhy": "none",
+    "priority": "P3",
+    "confidence": "medium",
+    "transfer": "Test preference-redelivery in a separately authored product and ownership graph, not another variant of tvos-results-v1."
+  }
+]
