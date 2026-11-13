@@ -1,0 +1,874 @@
+[
+  {
+    "id": "Q002",
+    "platform": "iOS",
+    "observable": "Adding selected keeps the header and prior traits.",
+    "method": "testSelectedTraitPreservesOtherTraits",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/pilots/uikit-semantics-v1/Tests/UIKitSemanticsTests.swift",
+    "firstReceipts": {
+      "working": "931078544c92da34b780267cfd7f9939985555e25d7c6017008ef2320ae120f9",
+      "alternative": "cbfb15793fba5d522c495e1ad962cdaf80533d3aedcc6cb83473f3770c0cb576",
+      "defect": "64ae4eec794cafdfeab8a96a824d559f64f2e1a0fc72b9186e49a64a734a5111"
+    },
+    "witness": [
+      [
+        "XCTAssertEqual(button.accessibilityTraits, original.union(.selected))",
+        "15: error: -[Checks.UIKitSemanticsTests testCurrentBehavior] : XCTAssertEqual failed: (\"UIAccessibilityTraits(rawValue: 8)\") is not equal to (\"UIAccessibilityTraits(rawValue: 65544)\")"
+      ]
+    ],
+    "proofSHA256": "ba26232baf4a2385b7ad513f620ac5c2a52d29d47f19d39c97f497257b33979a",
+    "variants": {
+      "working": "3e32ee71d21fccc4c074fff4916c4dfebbe7791c0842bdf8d463757337a238e0",
+      "alternative": "f6e033d50a417d1afc8ee9d934498b53c23409b60b4857fbbc5615f1c84ea423",
+      "defect": "8240c3707ddf216342751adc93d50a5b16a3938032c557c122e3beb6c0cbe87b"
+    }
+  },
+  {
+    "id": "Q006",
+    "platform": "iOS",
+    "observable": "The ordinary first element is the same heading as the reordered model's first entry.",
+    "method": "testReorderPreservesIdentityAndChangesSearchOrder",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/pilots/uikit-dynamic-v1/Tests/DynamicUIKitTests.swift",
+    "firstReceipts": {
+      "working": "1b0dc182d163ae98181d4a1209d784023776f1d845db390b9bb8737dc2aa65e2",
+      "alternative": "357950b97e194cc0d417655b2c1e79d9067c261214f5d5f33e52c7c178ff0bd2",
+      "defect": "f39b393cc3d9a6e148ec6680842568357e23f6a98cc644fcf726dec9d1953506"
+    },
+    "witness": [
+      [
+        "XCTAssertTrue((view.accessibilityElements as? [UIView])?.first === c)",
+        "26: error: -[Checks.DynamicUIKitTests testCurrentBehavior] : XCTAssertTrue failed"
+      ]
+    ],
+    "proofSHA256": "f24d93aadd406ca564708eadf44c393dd35742477e219a43486761e9e76a7094",
+    "variants": {
+      "working": "d2663c145314f29cbd4574efc14fc33cbf0c66a8307e01c2d4b0bde5a54ecc27",
+      "alternative": "097cecb5057f63d33a3be18df3044a641b05a4b046dc57957dda8b7f2cf122ae",
+      "defect": "7c1bd3d9d37a852f487d32a53202172a2518fb2aab9a190dd4016fa1ebcac9e2"
+    }
+  },
+  {
+    "id": "Q010",
+    "platform": "iOS",
+    "observable": "Mid-gray linear luminance is about 0.214, not 0.5.",
+    "method": "testPublishedLuminanceWeightsAndTransferBranches",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/pilots/uikit-contrast-v1/Tests/ContrastUIKitTests.swift",
+    "firstReceipts": {
+      "working": "79a797156773fe4fab261dddd5e3001f7762083ba396546f31cb66e0f63b5435",
+      "alternative": "62ffea1e15984f6da41edbf14e5bb447a40c094273572d82497bb714fab84fc5",
+      "defect": "434f1762e69d9c422737780badbf3a3daf6f8e88e28afaa7ee9bc8cbcd1bcadc"
+    },
+    "witness": [
+      [
+        "XCTAssertEqual(try gray(0.5).luminance, 0.21404114048223255, accuracy: 1e-12)",
+        "25: error: -[Checks.ContrastUIKitTests testCurrentBehavior] : XCTAssertEqualWithAccuracy failed: (\"0.5\") is not equal to (\"0.21404114048223255\") +/- (\"1e-12\")"
+      ]
+    ],
+    "proofSHA256": "dd3490473e13339620983e7cb80796d4727687d4cc53235fca2b71c46eccff9f",
+    "variants": {
+      "working": "33d167795b0e57ea4aeb47d7709797bb102456e7b788e5879a3638a7afeb2308",
+      "alternative": "e6df5f48f4e88e3c78d03658963c199b04dc3ed1c5e6a5799e32b55d8aec4f23",
+      "defect": "39249286e84446624e0aba9e2b8d1ed18cbcff545a8c7584758d188d7f7a89c3"
+    }
+  },
+  {
+    "id": "Q018",
+    "platform": "iOS",
+    "observable": "The retained Remove rejects the rebound row rather than dispatching through it.",
+    "method": "testRetainedActionRejectsReconfiguredIdentity",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/pilots/uikit-reuse-v1/Tests/ReuseUIKitTests.swift",
+    "firstReceipts": {
+      "working": "26f2fd78ee82866dd371027328aea8ba19fba21a7f41a13cb4a382fdffe950f5",
+      "alternative": "a1edb2a1b051958b1f15a895c2739dd3b726b3ba87b632b8da555858aaa9ff07",
+      "defect": "3ce86bbca8aa0d579b68a9a8ebda2d9e638686bc7633e47730bcbbad25513a11"
+    },
+    "witness": [
+      [
+        "XCTAssertFalse(old.actionHandler!(old))",
+        "18: error: -[Checks.ReuseUIKitTests testCurrentBehavior] : XCTAssertFalse failed"
+      ]
+    ],
+    "proofSHA256": "5818453cbdaca3c3aaf0b064cb5dd883b71175b2d842168b2c497aaefe633fac",
+    "variants": {
+      "working": "4dfd9e59adafda3abca189c95aa885ce1cd31704e4a25cad61be455539fd1bbb",
+      "alternative": "92892306b80ba656da6b598326141bec0496e71eadd43698f50fef28dcf22fc9",
+      "defect": "f4f6332b00a9562d258c414490c51f19409f29aa69f6f69881ba73cd7daa4efe"
+    }
+  },
+  {
+    "id": "Q024",
+    "platform": "iOS",
+    "observable": "A native field edit before a reply prevents acceptance of the obsolete snapshot.",
+    "method": "testNativeFieldMutationCannotApplyOldSnapshot",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/platforms/ios-closure-v1/Tests/AsyncOwnershipTests.swift",
+    "firstReceipts": {
+      "working": "500f15692c820951d45634c62c2456c71fa6fd9b9a545dde44fa9a4c9c8cef86",
+      "alternative": "7eab5126b0d1a913b9127ac2358396a368e367cb6f195c8485d802eb04da20b2",
+      "defect": "1e615a89d0fdbb02e59302491b5e6806dea99a80cf91a6c0adaedf1cc9752395"
+    },
+    "witness": [
+      [
+        "XCTAssertEqual(accepted, 0); XCTAssertFalse(o.busy)",
+        "21: error: -[Checks.AsyncOwnershipTests testCurrentBehavior] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\")"
+      ]
+    ],
+    "proofSHA256": "6402167e2e8f63c04e007a69323123af0110d4b387c414bfcb2be1ed02fdbe13",
+    "variants": {
+      "working": "40c47374c2a65b75c54b4bdfa72741126b2c8ab2d0306c8d60c2294235297d76",
+      "alternative": "e27709d951c9a317e9fe3982ef728053d5a33eb534b1fc87b711b55e2be1c64b",
+      "defect": "328f0af7e4f15237acd29995367798084d38e6c3d53fe4427f0f0a6a56823a7b"
+    }
+  },
+  {
+    "id": "Q027",
+    "platform": "iOS",
+    "observable": "A non-start column inside the populated span resolves to that cell.",
+    "method": "testSpanningCellResolvesEveryCoveredCoordinate",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/pilots/uikit-containers-v1/Tests/ContainerUIKitTests.swift",
+    "firstReceipts": {
+      "working": "59d3e61c84d7508f749e0732bfe6469bed13f34b2646968ab550a031de53466d",
+      "alternative": "aabb4111fbe3b8675a26de3a7a9df3f9e79d261864063d155e99ba9d6c2a19b1",
+      "defect": "e234d35d926af16aa0df12e2813fdbf6c91010c6e2b23888c63066b64fa27165"
+    },
+    "witness": [
+      [
+        "XCTAssertTrue((grid.accessibilityDataTableCellElement(forRow: row, column: column) as? DataCell) === cell)",
+        "19: error: -[Checks.ContainerUIKitTests testCurrentBehavior] : XCTAssertTrue failed"
+      ],
+      [
+        "XCTAssertTrue((grid.accessibilityDataTableCellElement(forRow: row, column: column) as? DataCell) === cell)",
+        "19: error: -[Checks.ContainerUIKitTests testCurrentBehavior] : XCTAssertTrue failed"
+      ]
+    ],
+    "proofSHA256": "9cd551b8743e86f789ae3a13cbb7e36111bda14682e3c19b1b5446adcdc94e3a",
+    "variants": {
+      "working": "32bd5f85a6fefc0fcd35d6f873394bdc9100789caca3ed906a46207a803d71a3",
+      "alternative": "281974b56157aacaf2d1c8ac83098312bfd0b581f03fc15589ffb5b7e4f53337",
+      "defect": "2ca58c5510c80b6d4198e62734f7f46395835bd4e12a7b484aede0d7de58c75d"
+    }
+  },
+  {
+    "id": "Q031",
+    "platform": "iOS",
+    "observable": "No restoration request is posted between dismissal request and completion.",
+    "method": "testNotificationWaitsForCompletionAndUsesCurrentTarget",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/pilots/uikit-modal-v1/Tests/ModalUIKitTests.swift",
+    "firstReceipts": {
+      "working": "963fa4cf5adcf9b40551535a46bb8835de847363e8cd5489d126ce52b9cc43af",
+      "alternative": "25a714329c1259eebe41e952fb26e2045a13b79eed8a6f75c2ec2434e974562c",
+      "defect": "56215d484e76fd04b451a5bec150714639d8f535c8258208bfbeb794922bd1da"
+    },
+    "witness": [
+      [
+        "XCTAssertEqual(posts, 0)",
+        "30: error: -[Checks.ModalUIKitTests testCurrentBehavior] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\")"
+      ]
+    ],
+    "proofSHA256": "de21841b7c6f5519b193ebc053cf2e4237768b91203e7a105d0451150b423f29",
+    "variants": {
+      "working": "0a1b2fa1fa420044467fd4024b030831e6d8fee4d0074d0de5f2c921402a29b3",
+      "alternative": "97f2a4011a01da108ea08bc95d058235ad5161f40e6ad7822903ff767267cc5e",
+      "defect": "54cdd1ec3ddfffa78d21927501bbec734a577ab85eea7478328a347587d727cd"
+    }
+  },
+  {
+    "id": "Q041",
+    "platform": "iOS",
+    "observable": "Posting the motion preference change refreshes the previously false value.",
+    "method": "testInitialMotionReadAndNotificationRefresh",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/pilots/uikit-lifecycle-v1/Tests/LifecycleUIKitTests.swift",
+    "firstReceipts": {
+      "working": "d9303da6928737abd685b29b007069020e3eb2d26344da79b74119b72125542d",
+      "alternative": "980aaaa9bf3dfe30c67cdd3bf9ab8e6f7948d54a3bf7ab027d4558eff9005ffc",
+      "defect": "fd0750202efecac283cb326a9d6fdbb63d1714df7107511a4840820cb7ba8933"
+    },
+    "witness": [
+      [
+        "XCTAssertTrue(model.reduceMotion)",
+        "18: error: -[Checks.LifecycleUIKitTests testCurrentBehavior] : XCTAssertTrue failed"
+      ]
+    ],
+    "proofSHA256": "739d395d5bfdd73e3a93421cbce997ce1da4b45d1e8045d1fe193aec7d8690e3",
+    "variants": {
+      "working": "d16974dcb156633565bf7a9e60a3c2e99e42a1a3212bfbb7143b69811320b272",
+      "alternative": "744175af78b9bce0a355342bc3df4db83e974a48b18e47ef17e9cc44c8f5a3f8",
+      "defect": "0282284468bd070020ca0839a30412334e8d7ea8415fa6ce9c0d30305bed7c69"
+    }
+  },
+  {
+    "id": "Q054",
+    "platform": "iOS",
+    "observable": "Configuration removes exposure of the previously accessible decoration.",
+    "method": "testDecorationIsExplicitlyExcluded",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/pilots/uikit-naming-v1/Tests/NamingUIKitTests.swift",
+    "firstReceipts": {
+      "working": "7de05444c78f33963087eb05f5a3b5770772f1166ff3463c2a3b6e3d4659b797",
+      "alternative": "43965f6af46dd97a43a206c6317813d6b907c0c6cc748dc33d122881a9b28dc3",
+      "defect": "22be196f05d66289a3b0f4e4ee4f1981fa09ed686357af53fad663063889c769"
+    },
+    "witness": [
+      [
+        "XCTAssertFalse(card.decoration.isAccessibilityElement)",
+        "21: error: -[Checks.NamingUIKitTests testCurrentBehavior] : XCTAssertFalse failed"
+      ]
+    ],
+    "proofSHA256": "74ca565ffb75adee0dd3c3e9fce13a7c92283ae8f4742139ba2f48850f4ca6d1",
+    "variants": {
+      "working": "4d54ea0311467b0c2994029076c3b86eb2b6c0e1ef09cff1c3b1d7fb3d6639ef",
+      "alternative": "16a0b35dab13fe66d2c9eef341d87c9e933c0adbce543666ec65adb1d928f8d7",
+      "defect": "237e835c21bd1457bd9e7ee5ba4e4f998556ec617d676404d714f59a2b96a636"
+    }
+  },
+  {
+    "id": "Q057",
+    "platform": "iOS",
+    "observable": "Repeating the selected speed does not emit an extra playback change.",
+    "method": "testRepeatedSelectionDoesNotEmitDuplicateChange",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/pilots/uikit-speed-v1/Tests/PlaybackSpeedTests.swift",
+    "firstReceipts": {
+      "working": "4d70ceae82e451534d69f32b07625f239dc032164ec0fac668c8631d3ccd1c56",
+      "alternative": "bc8afa33e50e7c6a82a57763afd23f9b759e83a9e70b5cad8647316a56f0551b",
+      "defect": "ed0ec1aea1a962df4eaec39ca8e56ba6ca8f1638aa589887ec4f4f35ebefa3d0"
+    },
+    "witness": [
+      [
+        "XCTAssertEqual(calls, [1.5])",
+        "18: error: -[Checks.PlaybackSpeedTests testCurrentBehavior] : XCTAssertEqual failed: (\"[1.0, 1.5, 1.5]\") is not equal to (\"[1.5]\")"
+      ]
+    ],
+    "proofSHA256": "cc908c9ba9bbaf8f74e128ceefef88e3176915ea3d5498f27006be6bd40c4705",
+    "variants": {
+      "working": "0fa8804d21ade1d75ac70d2046ee4a786c2c8bc7e0b101b7fa556e5642bf7989",
+      "alternative": "550e2cd73b9dbba36ef5b3d435bbbf4a15c0dfdb1be14761f910d62508fabb66",
+      "defect": "af170a05d9e35952b82045a70d8aa65f1d69c5c995d6a58977c10a81434df8ad"
+    }
+  },
+  {
+    "id": "Q059",
+    "platform": "iOS",
+    "observable": "The unrelated trait survives choosing the row.",
+    "method": "testSelectionUpdatesPreserveUnrelatedTraits",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/pilots/uikit-choice-v1/Tests/ChoiceUIKitTests.swift",
+    "firstReceipts": {
+      "working": "b55666f3a93cc08ed6ea09373ec528779fc8302403860c2a01add7b03e5d51a7",
+      "alternative": "5c8273238ebd26c4233fcc12022e006849d4d465a2ed23fab87ec9bb5452a01b",
+      "defect": "72362e6732ab06ab658bff48b6eadaf6c25bbb36dd8665b733cb33f57871dd01"
+    },
+    "witness": [
+      [
+        "XCTAssertTrue(row.accessibilityTraits.contains(.updatesFrequently))",
+        "31: error: -[Checks.ChoiceUIKitTests testCurrentBehavior] : XCTAssertTrue failed"
+      ],
+      [
+        "XCTAssertTrue(row.accessibilityTraits.contains(.updatesFrequently))",
+        "31: error: -[Checks.ChoiceUIKitTests testCurrentBehavior] : XCTAssertTrue failed"
+      ],
+      [
+        "XCTAssertTrue(row.accessibilityTraits.contains(.updatesFrequently))",
+        "31: error: -[Checks.ChoiceUIKitTests testCurrentBehavior] : XCTAssertTrue failed"
+      ]
+    ],
+    "proofSHA256": "14c6dcbb599777cd21e438a7a4c094ab696e7a182b0cd649bb58d23b148226d7",
+    "variants": {
+      "working": "376acadcfba854b9dd04e5e9245bb9ead1144e1ffb4f714ac00ee83f859d1ec2",
+      "alternative": "df81a72024d021e1ce8bb14029b9d7474f28766b8cdfcca13d4c783741c02c6e",
+      "defect": "dcb17908f2b8d348432ac8e61986755fbb76550284b995460e5ec03a60f739d4"
+    }
+  },
+  {
+    "id": "Q066",
+    "platform": "macOS",
+    "observable": "Pressing the ordinary Save control reaches Save once, not Open.",
+    "method": "testOrdinarySaveOnly",
+    "anchor": {
+      "runtime": "27.0",
+      "runtimeBuild": "26A428",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "26A425",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/platforms/macos-appkit-v1/Tests/DesktopActionsTests.swift",
+    "firstReceipts": {
+      "working": "754f4877f5bee2d768a365b4b5576d55ea388deb71803d70b9ded27b2794fa9e",
+      "alternative": "8852c64f3786b95acf0136c1f3a3052faa80e7e67bfe727e5ee7b9f5e6e436a7",
+      "defect": "cb7bce9e4bb18ecc5a5ec41fce4843d20f20c83d8c14a3066fe6961f731054e4"
+    },
+    "witness": [
+      [
+        "do { var o = 0, s = 0; let r = row(open: {o += 1}, save: {s += 1}); press(r.save); XCTAssertEqual(o, 0); XCTAssertEqual(s, 1)",
+        "21: error: -[Checks.DesktopActionsTests testCurrentBehavior] : XCTAssertEqual failed: (\"0\") is not equal to (\"1\")"
+      ]
+    ],
+    "proofSHA256": "a1b3aed34c53c6d0ede4f24bc8d050009f40121ddbd88be4f656034e5ec833f8",
+    "variants": {
+      "working": "1cd99e299d978005951ffce544e3644ca471e0d413ffa67d6febccaf3080c39e",
+      "alternative": "f1530a6f47c73d69b97ff17b46973ce767b47c629e8c35a8e14ac16636e69f6f",
+      "defect": "0fc6a0bff26c844a2717281e434c68a604b8381203c53826b0b35bb6a64fa525"
+    }
+  },
+  {
+    "id": "Q067",
+    "platform": "macOS",
+    "observable": "Selection remains on B after two identically titled results trade positions.",
+    "method": "testReorderPreservesIdentity",
+    "anchor": {
+      "runtime": "27.0",
+      "runtimeBuild": "26A428",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "26A425",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/platforms/macos-navigation-v1/Tests/DesktopNavigationTests.swift",
+    "firstReceipts": {
+      "working": "1f1920c90148a96955c6bea49d75ddc669ae7be3d46e026d17c3c44479fd1931",
+      "alternative": "14963099642f459b88a86ec5315dd5a1b7d4c3fa3c7c33fea37b39ee1b8042ea",
+      "defect": "beb93efeb84147f110be5b241c342f7250a4e3866d187bb51bff8c942062f563"
+    },
+    "witness": [
+      [
+        "do { let r = results(); r.select(\"b\"); r.apply([b,a]); XCTAssertEqual(r.table.selectedRow, 0); XCTAssertEqual(r.selectedID, \"b\")",
+        "15: error: -[Checks.DesktopNavigationTests testCurrentBehavior] : XCTAssertEqual failed: (\"nil\") is not equal to (\"Optional(\"b\")\")"
+      ]
+    ],
+    "proofSHA256": "1b29b19f0589c47a7cdcd35eaa3f7a84a709ca1bc2857100f56dac8c0ae373c5",
+    "variants": {
+      "working": "d0f34eafa1f1b9c4fc5dc866c478985530575fd2233577d4d0777a036e42b684",
+      "alternative": "bdea202be8aa60ff402926428025a434355b1c9fe4d34c805b4a748307506f6b",
+      "defect": "19c737432fff3e9c9e5847a000f5b9a7f3b8bcbd47e6d6ee8e852fb99afecf55"
+    }
+  },
+  {
+    "id": "Q072",
+    "platform": "macOS",
+    "observable": "An attached original that refuses first responder yields the fallback request.",
+    "method": "testRefusingOriginalUsesFallback",
+    "anchor": {
+      "runtime": "27.0",
+      "runtimeBuild": "26A428",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "26A425",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/platforms/macos-lifecycle-v1/Tests/DesktopLifecycleTests.swift",
+    "firstReceipts": {
+      "working": "55ebfbd3a3bd27078c2dd7cd2d0a9ff7e48942e0988e9454268be8c8c92e1a7f",
+      "alternative": "f6e614537a024f26ff6244b94446e2d73901a737a48113011619f9269b3c2ab1",
+      "defect": "6eca7eddc8b442f10289fc7b894a5317574e1484f7d1a1105707bb650a956d8c"
+    },
+    "witness": [
+      [
+        "do { let h = ModalHarness(); (h.primary as! TestButton).acceptsFocus = false; XCTAssertTrue(h.restore.finish(h.begin())); XCTAssertTrue(h.seen.first === h.fallback)",
+        "44: error: -[Checks.DesktopLifecycleTests testCurrentBehavior] : XCTAssertTrue failed"
+      ]
+    ],
+    "proofSHA256": "f268135b7387675f53d6e81fd675d050c07822151d1d5897c8d63acad8c9c575",
+    "variants": {
+      "working": "1d79aece2dae160d39b3c7fa274d19bccbaf72213de8f45cc2c07b3d7a5e4193",
+      "alternative": "8f9dbbf686ff731f2ee019d8501001538fe21cffad29936b4ac2e5ea63d1bdd8",
+      "defect": "4515909a59b871842d0950155afee17f4824d248650f861a7cb37de0c40c835c"
+    }
+  },
+  {
+    "id": "Q080",
+    "platform": "macOS",
+    "observable": "The selected child survives reloading its expanded group in a different order.",
+    "method": "testSelectedChildSurvivesSiblingReorder",
+    "anchor": {
+      "runtime": "27.0",
+      "runtimeBuild": "26A428",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "26A425",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/platforms/macos-structure-v1/Tests/DesktopOutlineTests.swift",
+    "firstReceipts": {
+      "working": "e7686b25872ca72458f5f58c3ae948d79be617385021f6b12ba64487c96ae1b2",
+      "alternative": "76c93f356c2ea7fcf0e27a5a65970ccc9e98aaf6d722cb3c708391f0f4d25457",
+      "defect": "86666c59059d3b1f981316b7d63908b732b82db09e7d0cf3ac6bb84d45b81cab"
+    },
+    "witness": [
+      [
+        "XCTAssertEqual(d.selectedID, \"b\")",
+        "18: error: -[Checks.DesktopOutlineTests testCurrentBehavior] : XCTAssertEqual failed: (\"nil\") is not equal to (\"Optional(\"b\")\")"
+      ]
+    ],
+    "proofSHA256": "b6feca6ecb4a0e702c20c470492babdfffee6f570bf946b0e4dfef13ffbda835",
+    "variants": {
+      "working": "904da0ffc643617d7f2c5678a7e801a6d0e6a713d6808f95ea274150f9992a50",
+      "alternative": "45d183a3849caec901137860184a87d66dd602d063d212155831433e24ecab7f",
+      "defect": "3f08edbb873e99426ec92ba67de7093b576c69b2ebe6d0d8dfdc6ba7ecd7295d"
+    }
+  },
+  {
+    "id": "Q081",
+    "platform": "macOS",
+    "observable": "The configured row exposes its true selection state.",
+    "method": "testExplicitRowRoleAndChildSemantics",
+    "anchor": {
+      "runtime": "27.0",
+      "runtimeBuild": "26A428",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "26A425",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/platforms/macos-closure-details-v1/Tests/DesktopContractTests.swift",
+    "firstReceipts": {
+      "working": "4fba5cee890df5461ca406a26f2c1caa7af749db01382cfff10b95e657aad463",
+      "alternative": "3ea1bfe97508828b9668ece081dfb2d6d94b68d51e56dac46b5dc35928d24b49",
+      "defect": "920a80f3fdde65c5f787ec36648fab610030ebee69d9d4579b2391ea38f4e777"
+    },
+    "witness": [
+      [
+        "XCTAssertTrue(r.isAccessibilitySelected()); XCTAssertTrue(r.isAccessibilityExpanded())",
+        "14: error: -[Checks.DesktopContractTests testCurrentBehavior] : XCTAssertTrue failed"
+      ]
+    ],
+    "proofSHA256": "e34edd236b66a91ffd4cb2ce3db13a1160111cd1fb956b7fca41e1d820411570",
+    "variants": {
+      "working": "89620264fcdb259eb0875d208b1f568768d68df0ba3732d1b9c1aa66de146f5c",
+      "alternative": "060972db8c3e6a9f87787740b91a2f52c4c4c1e8ffda9b8229b22e98fe8ae8e6",
+      "defect": "fdc7376abbf50713bfa5f8bb016c922844d604d52ddc58cbefd1512d4314a52f"
+    }
+  },
+  {
+    "id": "Q083",
+    "platform": "tvOS",
+    "observable": "With motion reduced, the visible status changes even without an animation.",
+    "method": "testReducedMotionStillUpdatesContent",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.tvOS-26-5",
+      "runtimeBuild": "23L470",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24J360",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/platforms/tvos-results-v1/Tests/TelevisionResultsTests.swift",
+    "firstReceipts": {
+      "working": "2694233b71d369acb515273158c5b62805e7b92ee0a6fdaf55abc46f6b9820f4",
+      "alternative": "2f3e75e5ce9e8d24a0a20bf6e2c6e91c67149f55830c12590fb1f5fbb56c60ad",
+      "defect": "657e5113bd08e4e5c11447e5b5fc434c9c7adc79599e46b3c69c9758f6f0f6b0"
+    },
+    "witness": [
+      [
+        "do { var animations = 0; let s = TelevisionStatus(reduceMotion: {true}, animate: {animations += 1}); s.update(\"Ready\"); XCTAssertEqual(s.label.text, \"Ready\"); XCTAssertEqual(s.label.accessibilityLabel, \"Ready\"); XCTAssertEqual(animations, 0)",
+        "14: error: -[Checks.TelevisionResultsTests testCurrentBehavior] : XCTAssertEqual failed: (\"nil\") is not equal to (\"Optional(\"Ready\")\")"
+      ]
+    ],
+    "proofSHA256": "f3d15f082073b953315e50fc1509d8d48a6f74657ce315d56af7e9005de151dc",
+    "variants": {
+      "working": "609186885aad0f09ee9585c0c280b60ec7d9875022579e6d1b1e281e095f983d",
+      "alternative": "309c80ffc3801249b58f61cf452ba53bb11e9d105cfdfe5d5d68139ea251115e",
+      "defect": "cd3931ab2db1bd0d10c0e78910de415578ffe496ad547ec1dd7911e8b29293df"
+    }
+  },
+  {
+    "id": "Q089",
+    "platform": "tvOS",
+    "observable": "The ordinary Details action invokes its installed callback.",
+    "method": "testOrdinaryDetails",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.tvOS-26-5",
+      "runtimeBuild": "23L470",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24J360",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/platforms/tvos-uikit-v1/Tests/TelevisionActionsTests.swift",
+    "firstReceipts": {
+      "working": "afac5945586c905e349920f1252b26aac34f028b74265a8911f0407e8a3b2840",
+      "alternative": "b2a6eb89e662df8ab67f8d01d192e9b4d8de72d3772178205a2b72a7e7ac5533",
+      "defect": "35c3f85df5c1fa80d449a9957cc616aea8d44a9499765ae387da02b940031130"
+    },
+    "witness": [
+      [
+        "do { var d = 0; let r = row(details: {d += 1}); r.details.sendActions(for: .primaryActionTriggered); XCTAssertEqual(d, 1)",
+        "17: error: -[Checks.TelevisionActionsTests testCurrentBehavior] : XCTAssertEqual failed: (\"0\") is not equal to (\"1\")"
+      ]
+    ],
+    "proofSHA256": "084544e6cb7b32918b40ed56a1288007839a35ccd5ccbf4fea5a6b041126b74a",
+    "variants": {
+      "working": "9a3b5c68173a5493ab1dcc16914491cc66c66536ae1500643f1b91b99f14cc67",
+      "alternative": "4f1bdea266fd057a8c9c9068841939c8e7754b0b9b374bcea646f49b2b55d752",
+      "defect": "eef59a5c25f821765933fef812d9ca0d7c886cd51c61f789a2c99de332c69872"
+    }
+  },
+  {
+    "id": "Q092",
+    "platform": "iOS",
+    "observable": "The transition requests zero duration under the reduced-motion policy.",
+    "method": "testReducedMotionUsesImmediateTransition",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/pilots/uikit-preferences-v1/Tests/PreferenceUIKitTests.swift",
+    "firstReceipts": {
+      "working": "733dd8d136e78e0368dd86422b1ffa5d9663788f71330bb32a337996116dbb9c",
+      "alternative": "823db1ace3beb76f851525ac6a2db029d45bc3e267a7992e21996710d2d4a45c",
+      "defect": "0e7cd06358765465ad245fe51d5a5c78bb8ab1a19439850a317fceece3e7bf3f"
+    },
+    "witness": [
+      [
+        "XCTAssertEqual(MotionPolicy.duration(reduceMotion: true), 0)",
+        "11: error: -[Checks.PreferenceUIKitTests testCurrentBehavior] : XCTAssertEqual failed: (\"0.25\") is not equal to (\"0.0\")"
+      ]
+    ],
+    "proofSHA256": "1a7d4f9e4dce5d88aa48e6d40455ce36319231e75473121b5ced3ec30248e954",
+    "variants": {
+      "working": "24974dbbfb848289218cf3cbe74cba0a9f62c0625864a5d4608c000436d8cf02",
+      "alternative": "dabde534030ee95d0826d4bb32e91f4cc18c27767e622d55ecf0dd179f4599a4",
+      "defect": "491b945c8807cca6e8601fcf50f8c7b7a9e4812daf321840b1e5f3d61834c031"
+    }
+  },
+  {
+    "id": "Q099",
+    "platform": "tvOS",
+    "observable": "The shelf itself is not a single accessible element replacing its heading and buttons.",
+    "method": "testShelvesPreserveIndependentHeadingAndButtons",
+    "anchor": {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.tvOS-26-5",
+      "runtimeBuild": "23L470",
+      "deployment": "26.0",
+      "sdk": "27.0",
+      "sdkBuild": "24J360",
+      "xcode": "Xcode 27.0\nBuild version 27A266a"
+    },
+    "outcomes": {
+      "working": [
+        "passed"
+      ],
+      "alternative": [
+        "passed"
+      ],
+      "defect": [
+        "failed"
+      ]
+    },
+    "source": "code-examples/platforms/tvos-structure-v1/Tests/TelevisionShelvesTests.swift",
+    "firstReceipts": {
+      "working": "8fb8795ec50eb4277e21e410d6433652ec8c46e1a81577cd863e17fdd1544642",
+      "alternative": "ffe84cd1ad4d7e0b2162bb4683aced8207bacd2ee6077795589cd8a5199c8c46",
+      "defect": "b559c1c760e814e600b64b6dfce3ec2311a4b804c4b36ecf9baeddd4feb204b4"
+    },
+    "witness": [
+      [
+        "XCTAssertFalse(v.isAccessibilityElement); XCTAssertFalse(shelf.isAccessibilityElement)",
+        "17: error: -[Checks.TelevisionShelvesTests testCurrentBehavior] : XCTAssertFalse failed"
+      ]
+    ],
+    "proofSHA256": "eeadd5f8c9ad3aba549d0f9efb9486cce0cf54b39b067588498815148c4febff",
+    "variants": {
+      "working": "a643af2e801d742dc2e0dc5a9c39bdb923e67d3ef38630672bdff5ab4cd9ebc8",
+      "alternative": "53a37dd62bc4ec530b86063f932fb7ab1d1297bd388e09f7c398507f387fe820",
+      "defect": "9913fbcc709c8baa9fc17b5bbf84ec5759accd1f9250f5d53177106186f4cdb8"
+    }
+  }
+]

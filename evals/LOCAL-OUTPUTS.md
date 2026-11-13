@@ -4,6 +4,23 @@ All new working files belong inside this project. Private generated artifacts us
 `evals/results/`, which is ignored by Git and visible in the project file tree.
 Do not use an operating-system temporary directory or another external directory.
 
+## What to commit
+
+| Commit to Git | Keep local under `evals/results/<run-id>/` |
+| --- | --- |
+| Questions, fixture definitions, rubrics, runner source and offline checks | Original answers, worker deliveries, request/receipt files and private join maps |
+| Reviewed summaries, case IDs, artifact hashes and bounded assertion excerpts | Materialized replay projects, full diagnostics, result bundles and compiler caches |
+| Reviewed public starter or candidate archives required by an existing seal | Subject ZIPs regenerated from private inputs and scratch archives |
+
+For example, the [proof-repair replay board](proof-repair-20/replay/RESULTS.md)
+can be read from a clean checkout. Re-executing that historical replay requires
+the original private returns; their hashes are evidence pointers, not downloads.
+Keep new reusable code beside its campaign and every run under the single
+private root. A campaign's own `results/README.md` can be public; do not
+globally ignore `results/`, ZIP files, or JSON. Before publishing, run
+`sh scripts/check-publication-boundary.sh` from the repository root and review
+the staged contents. Ignore rules screen paths, not secrets inside allowed files.
+
 | Location | Contents |
 | --- | --- |
 | `evals/results/local-dev5-20261107-r1/` | Local dev.5 three-arm diagnostic: frozen inputs, exact requests/responses, model identities, events and separate controller review |
