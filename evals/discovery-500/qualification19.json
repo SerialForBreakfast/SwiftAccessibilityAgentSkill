@@ -1,0 +1,326 @@
+[
+  {
+    "id": "Q-a5e8dbe7b453acee",
+    "origin": "G-1079cff7faaab5",
+    "family": "card-rebind",
+    "decision": "Reconfigure one live card and trigger both actual buttons; only the latest callbacks fire once and their contextual names change.",
+    "lane": "native",
+    "method": "testC1079",
+    "alternative": "Replace the previous Open UIAction by identifier on each configure.",
+    "defect": "Accumulating Open handlers dispatches obsolete callbacks.",
+    "gap": "Check both buttons, contextual labels and the decorative star separately.",
+    "receipt": {
+      "host": "controls-suo4icf5/iOS",
+      "methodPrefix": "testC1079",
+      "origin": "pilots/uikit-naming-v1/Sources/NamingUIKit.swift",
+      "qualified": true,
+      "verdicts": {
+        "Reference": "passed",
+        "Alternative": "passed",
+        "Mutant": "caught at witness"
+      }
+    }
+  },
+  {
+    "id": "Q-f0398cdb1dfe2fb0",
+    "origin": "G-8b4c2893964bfe",
+    "family": "checkout-layout",
+    "decision": "Change the live amount and its layout, not payment control identity or payment policy.",
+    "lane": "native",
+    "method": "checkout-integrated/test.swift",
+    "alternative": "Working vertical checkout layout.",
+    "defect": "Rewired Pay, fixed height and shrinking text fail the contract; out-of-scope local stack fails compilation, not an assertion.",
+    "gap": "Layout and callback contract, not delivered interaction.",
+    "receipt": "72ce488360835db3a3dab0b0445b801250706f2e21080912fd516e880b202db7",
+    "variants": {
+      "reference": "pass",
+      "starter": "contract-failure",
+      "alternative-vertical": "pass",
+      "mutant-local-stack-scope": "compile-failure",
+      "mutant-shrink-to-fit": "contract-failure",
+      "mutant-fixed-height": "contract-failure",
+      "mutant-pay-rewired": "contract-failure"
+    }
+  },
+  {
+    "id": "Q-b42a0513f88987a1",
+    "origin": "G-35ee522327907b",
+    "family": "native-adjustment",
+    "decision": "Preserve the native adjustable control and working two-way binding; require evidence for a claimed defect.",
+    "lane": "source-only",
+    "method": "source-calibration.tsv#35ee",
+    "alternative": "Leave implementation unchanged; document how the parent receives a one-point adjustment before recommending any alternate presentation. Do not invent a spoken result.",
+    "defect": "Initialize local State once from the supplied volume so accessibility adjustments always have local storage.",
+    "gap": "The edited control no longer writes the supplied parent binding.",
+    "reference": "Keep the labelled Slider using the supplied two-way binding, 0 through 100, step 1. No defect is established."
+  },
+  {
+    "id": "Q-cf77c3943d5501e2",
+    "origin": "G-96a828dd7e79b7",
+    "family": "native-toggle",
+    "decision": "Preserve native toggle activation, label and persisted value.",
+    "lane": "source-only",
+    "method": "Local written contrast against supplied Toggle",
+    "alternative": "Leave the labeled Toggle forwarding the existing Binding; equivalent factoring must still write to the same owner.",
+    "defect": "Replace the binding with private initial State; subsequent edits never reach the preference store.",
+    "gap": "Source grading only, no runtime AX claim or invocation evidence."
+  },
+  {
+    "id": "Q-f0c4b1e1b997edbc",
+    "origin": "G-a32f106f0aa1cc",
+    "family": "motion-preference",
+    "decision": "Evaluate the transaction in effect at the next change without resetting page state.",
+    "lane": "source-only",
+    "method": "source-calibration.tsv#a32f",
+    "alternative": "Trace a toggle while on Playback: stay there, then advance to Downloads under the new preference. No additional transaction or modifier is justified.",
+    "defect": "Recreate the entire PageView with a new identity on each Reduce Motion change.",
+    "gap": "A preference change resets selected page.",
+    "reference": "Leave the view unchanged: the environment feeds the animation policy; the page state and wraparound button do not depend on it."
+  },
+  {
+    "id": "Q-588d607e968a521e",
+    "origin": "G-34541ce79ee3d5",
+    "family": "panel-background",
+    "decision": "Restore the prior accessibility setting only for the owning panel completion and resolve an eligible target or fallback then.",
+    "lane": "native",
+    "method": "testPanelReopen",
+    "alternative": "Restore the prior background value via a captured restoration closure.",
+    "defect": "On ordinary finish force the background visible rather than restore its original state.",
+    "gap": "Does not prove every stale-callback, fallback or teardown path.",
+    "receipt": {
+      "platform": "iOS",
+      "method": "testPanelReopen",
+      "diagnostic": "final background snapshot",
+      "receiptHashes": {
+        "positive": "aad4cdb469396c301cb79a664887d95c5648b6bcb95acfa8aec88c44cdc07861",
+        "mutant": "2c7e5a7083b5cc6ecdd3d5254da0f99d6a9ba1e79d70dfcfa3f5eff4ef7ed334",
+        "alternative": "7db8052dd7462a24bb7299586f64f8bd18a966b8c90e8da57c2c62dfe7ec627e"
+      }
+    }
+  },
+  {
+    "id": "Q-789c99a93a75f021",
+    "origin": "G-3f811eea610d0c",
+    "family": "appkit-save-shortcut",
+    "decision": "The installed shortcut on Open reaches current Save and declines when disabled; ordinary controls retain their own targets.",
+    "lane": "native",
+    "method": "testC777d",
+    "alternative": "Use a UUID revision for the action registration.",
+    "defect": "Press ordinary Save and verify it does not dispatch Open. This is narrower than the optional shortcut contract.",
+    "gap": "Use AppKit getter/setter and installed handler APIs. Add a starter-compatible shortcut test; the ordinary Save check alone is insufficient.",
+    "receipt": {
+      "host": "controls-5pylp6o2/macOS",
+      "methodPrefix": "testC777d",
+      "origin": "platforms/macos-appkit-v1/Sources/DesktopActions.swift",
+      "qualified": true,
+      "verdicts": {
+        "Reference": "passed",
+        "Alternative": "passed",
+        "Mutant": "caught at witness"
+      }
+    }
+  },
+  {
+    "id": "Q-208761a6531ffc74",
+    "origin": "G-6bfef2bcad970d",
+    "family": "window-membership",
+    "decision": "At completion resolve membership and eligibility in the originating window rather than using a process-wide most recent responder.",
+    "lane": "source-only",
+    "method": "source-calibration.tsv#6bfe",
+    "alternative": "Use a per-document coordinator and resolve a stable field ID in that document at the current completion; ignore a stale inspector or an ineligible or reparented field.",
+    "defect": "Use the last eligible text field seen anywhere in the application when any inspector closes.",
+    "gap": "Closing A can redirect keyboard input to B.",
+    "reference": "Store a weak origin per inspector presentation; on completion check current generation, field eligibility and membership in the same window before requesting focus."
+  },
+  {
+    "id": "Q-e1fb61bde08014a2",
+    "origin": "G-e56a902ef372a2",
+    "family": "tv-layout",
+    "decision": "Both actions remain reachable with long text on the deployment target; tie any new API or system preference to verified availability.",
+    "lane": "source-only",
+    "method": "source-calibration.tsv#e56a",
+    "alternative": "Use an adaptive layout that places actions below long localized titles when horizontal space is insufficient. Preserve existing actions; isolate any later API behind its documented tvOS introduction.",
+    "defect": "Keep the header on one line and replace the Details button with a hidden shortcut when German text grows.",
+    "gap": "The ordinary Details path disappears.",
+    "reference": "Move the title above a separate action row; let it wrap. Keep both Play and Details on the 26 target. Do not depend on newer facilities without a verified availability boundary."
+  },
+  {
+    "id": "Q-2d74aff35813c50c",
+    "origin": "G-c55650380597ef",
+    "family": "evidence-limits",
+    "decision": "Distinguish executed state and action assertions from assistive speech or delivered focus; record SDK, target and runtime.",
+    "lane": "source-only",
+    "method": "source-calibration.tsv#c556",
+    "alternative": "Keep separate build and unit receipts with the three version fields. Replay an unchanged failed input against the same assertion; report spoken output and rotor behavior as unmeasured.",
+    "defect": "Reflect over the View tree after the units pass and certify the rotor order and spoken text from its internal labels.",
+    "gap": "Reflection is not an observation of delivered accessibility behavior.",
+    "reference": "Compile the modifier composition; unit-test state transitions and handler effects including defects. Preserve original source and diagnostics and record SDK, runtime and deployment target. Neither asserts speech or rotor behavior."
+  },
+  {
+    "id": "Q-34ef635b0284c9fd",
+    "origin": "G-5f3c8c25e44c4b",
+    "family": "card-request-owner",
+    "decision": "Reject both cross-item and same-item superseded results while clearing optional state on rebind.",
+    "lane": "open",
+    "method": null,
+    "alternative": "Request identity plus item identity or a per-configuration lifetime.",
+    "defect": "Only checks file ID, allowing the earlier request for B to win.",
+    "gap": "Need an integrated tvOS card with stale callbacks on two successive loads of the SAME file, optional help/status clearing, and surviving ordinary Open. Single-row status or item-only checks do not qualify it."
+  },
+  {
+    "id": "Q-7406c79af56ec664",
+    "origin": "G-debf8047cd9f4e",
+    "family": "terminal-announcement",
+    "decision": "Keep display clamping, terminal deduplication and stale-ID rejection independent.",
+    "lane": "native",
+    "method": "testCdebf",
+    "alternative": "Consume the active download ID at terminal delivery.",
+    "defect": "Allow a second terminal event; expected one terminal announcement.",
+    "gap": "Notification requests only, not spoken delivery.",
+    "receipt": {
+      "host": "controls-tvpq1fsi/iOS",
+      "methodPrefix": "testCdebf",
+      "origin": "download notification recording seam",
+      "qualified": true,
+      "verdicts": {
+        "Reference": "passed",
+        "Alternative": "passed",
+        "Mutant": "caught at witness"
+      }
+    }
+  },
+  {
+    "id": "Q-23f26ed0c1dd9302",
+    "origin": "G-ddf8bad3cbd8d0",
+    "family": "supplementary-delete",
+    "decision": "Place the shortcut on a reachable owner, validate current permission and preserve the independent ordinary actions.",
+    "lane": "source-only",
+    "method": "source-calibration.tsv#ddf8",
+    "alternative": "Route both Delete entry points through the current command target with an expiring per-binding token and live permission check. Preserve Open; assert the actual deleted IDs after reuse.",
+    "defect": "Install a closure once that deletes whichever file is currently in the row. Keep both buttons.",
+    "gap": "A retained shortcut for A can delete B.",
+    "reference": "Keep Open and Delete; bind a shortcut to this file and configuration. Recheck identity and enabled state on invocation. Test retained A after rebind, disabled B, current B and the ordinary paths."
+  },
+  {
+    "id": "Q-dc9a7278462d64d9",
+    "origin": "G-b12c69f62639d3",
+    "family": "read-only-inspection",
+    "decision": "Read native characteristic and publish only for the live request; inspection performs no selection writes.",
+    "lane": "source-only",
+    "method": "source-calibration.tsv#b12c",
+    "alternative": "Cancel superseded work and validate an owner token at commit. Render pending/ready/error with ready carrying a possibly empty set. Compare selection before and after inspection; no inference of delivered narration.",
+    "defect": "Temporarily select the descriptive audio to check it, then restore the prior option. Report nil when loading fails.",
+    "gap": "Inspection writes selection and conflates a failure with absence.",
+    "reference": "Model loading, available, absent and error separately. Inspect tagged options without selecting; accept completion only for the same item and current load. Test late success and failure and unchanged audio and captions."
+  },
+  {
+    "id": "Q-dc9be18606923ff6",
+    "origin": "G-dd7ee77a4e81a0",
+    "family": "outline-identity",
+    "decision": "Reject duplicate IDs before mutation and retire removed child data; preserve surviving nodes and visible selection.",
+    "lane": "native",
+    "method": "testCdd7e",
+    "alternative": "Use registry membership by object identity.",
+    "defect": "Accept a detached node and serve its obsolete children.",
+    "gap": "Not a full proof of preserved expansion/selection on a rendered outline.",
+    "receipt": {
+      "host": "controls-5pylp6o2/macOS",
+      "methodPrefix": "testCdd7e",
+      "origin": "platforms/macos-structure-v1/Sources/DesktopOutline.swift",
+      "qualified": true,
+      "verdicts": {
+        "Reference": "passed",
+        "Alternative": "passed",
+        "Mutant": "caught at witness"
+      }
+    }
+  },
+  {
+    "id": "Q-3d29d90ad8248620",
+    "origin": "G-5f436c17e0c488",
+    "family": "mac-retained-picker",
+    "decision": "Retain an installed choice before reload; stale action cannot modify selection and current action still works.",
+    "lane": "partial-native",
+    "method": "Cf483",
+    "alternative": "One item write after resolving choice or Off.",
+    "defect": "Fire old picker ownership against a replacement item and inspect the actual selection, not a menu ID.",
+    "receipt": {
+      "host": "controls-9f4li0u0/macOS",
+      "methodPrefix": "testCf483",
+      "origin": "media-stale",
+      "qualified": true,
+      "verdicts": {
+        "Reference": "passed",
+        "Alternative": "passed",
+        "Mutant": "caught at witness"
+      }
+    },
+    "gap": "Related macOS request, not this full starter. Qualify lifetime across leaving/returning and retry before scoring the full workflow natively."
+  },
+  {
+    "id": "Q-64a9f08145d9a3ef",
+    "origin": "G-4ec92962591872",
+    "family": "media-load-states",
+    "decision": "Distinct missing item and empty group, reachable retry, mounted load and native selection read/write.",
+    "lane": "native",
+    "method": "testC4ec9",
+    "alternative": "Resolve the optional native option first, then write selection once. This alternative varies selection wiring, not state classification.",
+    "defect": "Missing item must differ from an inspected item without options. Mapping a nil item to absent fails.",
+    "gap": "Require evidence for the playing item as well as distinct load states. Supply a working media fixture and separate state and selection scores; an absent fixture must not silently pass.",
+    "receipt": {
+      "host": "controls-suo4icf5/iOS",
+      "methodPrefix": "testC4ec9",
+      "origin": "media-phase",
+      "qualified": true,
+      "verdicts": {
+        "Reference": "passed",
+        "Alternative": "passed",
+        "Mutant": "caught at witness"
+      }
+    }
+  },
+  {
+    "id": "Q-a130926b8d627c03",
+    "origin": "G-5d121776613655",
+    "family": "unlisted-selection",
+    "decision": "Show active outside-list choice as distinct from Off; do not change selection for an unknown ID.",
+    "lane": "native",
+    "method": "testC5d12",
+    "alternative": "Resolve the optional choice before a single item.select call.",
+    "defect": "Select a known caption and inspect native legible selection. A local-only update cannot pass.",
+    "gap": "Trace a real legible selection, preserve audio and distinguish unlisted from Off. Make the native group/option fixture available under the supplied starter interface.",
+    "receipt": {
+      "host": "controls-azf3w8q2/tvOS",
+      "methodPrefix": "testC5d12",
+      "origin": "media-write",
+      "qualified": true,
+      "verdicts": {
+        "Reference": "passed",
+        "Alternative": "passed",
+        "Mutant": "caught at witness"
+      }
+    }
+  },
+  {
+    "id": "Q-ccaa658786263847",
+    "origin": "G-c6b25ad753e6a2",
+    "family": "same-item-reload",
+    "decision": "Former same-item binding cannot alter the native legible group, but the current binding can.",
+    "lane": "native",
+    "method": "testCc6b2",
+    "alternative": "Resolve choice and Off before the common native write.",
+    "defect": "Reload on the same item; a superseded picker request must not apply its choice.",
+    "gap": "Probe both item identity and request generation. Fire the old Off after replacement or same-item reload, then a current choice. Assert the native selection on both paths.",
+    "receipt": {
+      "host": "controls-azf3w8q2/tvOS",
+      "methodPrefix": "testCc6b2",
+      "origin": "media-stale",
+      "qualified": true,
+      "verdicts": {
+        "Reference": "passed",
+        "Alternative": "passed",
+        "Mutant": "caught at witness"
+      }
+    }
+  }
+]

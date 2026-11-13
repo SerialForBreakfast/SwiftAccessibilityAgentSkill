@@ -1,0 +1,51 @@
+platform	framework	first	second	brief
+iOS	UIKit	container-children	rebound-action	An order card stays onscreen when a refresh swaps its handlers. The title groups the card, but people need both Open and Refund independently.
+iOS	UIKit	range-coordinate	edited-matches	The Find rotor in a notes editor has a hit after a family emoji. The user edits an earlier paragraph before following that hit.
+iOS	UIKit	design-font	multiline	A coupon row has a custom typeface, a long translated description and a working Redeem button. It is configured twice at accessibility sizes.
+iOS	UIKit	disabled-action	shortcut-dispatch	A file is locked while an older Delete shortcut is still held. Open must remain available and unlocking should restore Delete.
+iOS	UIKit	modal-state	dismiss-reentry	A second payment sheet opens synchronously when the first restores focus. The background was already hidden by another overlay.
+iOS	UIKit	edit-category	edit-action-stale	The editor switches to read-only while the grouped editing commands are visible. Ordinary Copy remains available.
+iOS	UIKit	grapheme-boundary	rotor-direction	Search highlights part of an accented character; the reader asks for the previous complete match rather than the next one.
+iOS	UIKit	input-snapshot	reentrant-submit	An address form's old response arrives after an edit. Announcing validation completion can synchronously submit the updated address.
+iOS	UIKit	inspection-preserves-selection	forced-vs-full	The Now Playing inspector opens while someone switches from forced translations to full captions in the system menu.
+iOS	SwiftUI	motion-policy	stable-selection	A reader switches Reduce Motion while the selected article moves to another section. The app should still show the same article.
+iOS	SwiftUI	player-item-owner	stale-off	Two lectures both have a track named English. A menu from the first stays alive as the second starts playing.
+iOS	SwiftUI	duplicate-binding	preference-redelivery	A preference is edited in Settings and echoed back by the local store. A later change by the user must still save once.
+iOS	SwiftUI	interop-rebind	disabled-action	A wrapped native button is configured with a new target while disabled. It becomes enabled again before an old callback arrives.
+iOS	SwiftUI	unlisted-selection	missing-choice	A filtered subtitle menu does not contain the current track. A restored preference then requests a deleted option.
+iOS	SwiftUI	motion-content	ordinary-action	An animated episode card becomes static under Reduce Motion. Play and the supplementary play-from-start command must still do different things.
+iOS	SwiftUI	text-size-change	design-font	A font preview lets someone choose a size without changing their device. Other labels still follow the live size setting.
+iOS	SwiftUI	presentation-owner	dismissal-completion	A filter sheet starts closing and a different filter opens. The first sheet's close request and its eventual completion arrive separately.
+macOS	AppKit	eligible-target	presentation-owner	Two documents share an inspector class. A previously focused editor moves between windows and the fallback may refuse first responder.
+macOS	AppKit	stale-tree-node	duplicate-id	A sidebar refresh removes one folder and contains the same ID in two new branches. A client still holds the old folder object.
+macOS	AppKit	row-role	container-children	A library outline row exposes selection and expansion and contains a separate Open button. Some rows also have Reveal in Finder.
+macOS	AppKit	external-key-link	key-link-teardown	A detachable inspector adds a keyboard loop. A plug-in updates the neighboring link before the inspector closes.
+macOS	AppKit	table-span	removed-child	A timetable merges several slots into one appointment. Removing the appointment should clear all covered coordinates.
+macOS	AppKit	shortcut-dispatch	optional-help	A reused toolbar group changes Save's keyboard help and callback. The next group has no help string.
+macOS	AppKit	audio-description-tag	language-match	A library inspector finds several Spanish audio choices, only one described. The listener already chose another language.
+macOS	AppKit	selected-state	preserve-traits	A results filter moves selection while a warning indicator still applies to the previous row. It must lose selection but keep the warning semantics.
+macOS	SwiftUI	interop-rebind	container-children	A SwiftUI wrapper hosts an editable native search field and a Clear button. Rebuilding the surrounding view updates Clear's target.
+macOS	SwiftUI	validation-help	input-snapshot	A text field changes through dictation while validation runs. Its inline instructions must belong to the current text.
+macOS	SwiftUI	cancel-owner	request-generation	A caption options panel starts a retry. Its previous task reports cancellation after the retry succeeds.
+macOS	SwiftUI	stale-off	unlisted-selection	A Mac player reloads track choices without changing movies. The external choice is still active but no longer on the list.
+macOS	SwiftUI	presentation-owner	eligible-target	A detail sheet closes after its originating row is filtered out. Another document has a row with the same title.
+macOS	SwiftUI	container-order	stable-selection	A sidebar is reordered by date while a keyboard user is on a pinned item. The same view then removes the pinned item.
+macOS	SwiftUI	edited-matches	obsolete-rotor	An editor's query changes and a later document edit moves the results. Earlier search shortcuts can still be invoked.
+macOS	SwiftUI	contrast-appearance	contrast-space	A design inspector switches between two appearances and imports swatches in different color spaces. Equivalent swatches should grade consistently.
+macOS	SwiftUI	inspection-preserves-selection	unavailable-media	The inspector stays open when a document temporarily has no video. Its old results must not imply the new clip has no audio.
+tvOS	UIKit	observer-restart	preference-redelivery	A TV detail screen stops observing during navigation. The user changes a preference after it restarts but before an old queued closure runs.
+tvOS	UIKit	visible-title	custom-action-name	A sports shelf reuses two buttons for a different match. The visible captions and the shortcut names must agree with the actions actually dispatched.
+tvOS	UIKit	detached-action	stable-selection	The selected show remains on the shelf after reordering. A removed button is reparented in a temporary stack and receives a late press.
+tvOS	UIKit	optional-help	refresh-name	A remote-focused download changes from a priority transfer with help to a regular transfer with no help; the file ID stays the same.
+tvOS	UIKit	conflicting-state-text	redundant-notification	Pinning a channel updates a visible word and a selected trait. The server sometimes repeats the same pin value.
+tvOS	UIKit	player-controls	description-selection	The native playback overlay is already working. A request for described audio has no eligible match on the current item.
+tvOS	UIKit	contrast-alpha	contrast-linear	A show-card theme accepts only opaque palettes. A designer submits a translucent mid-gray highlight.
+tvOS	SwiftUI	binding-disconnect	off-permission	The TV picker offers subtitle choices; one asset permits Off and another does not. A user changes between them without leaving the player.
+tvOS	SwiftUI	request-generation	cancel-owner	A retry reloads the caption list for the same movie. The older request then completes and its old menu is dismissed.
+tvOS	SwiftUI	multiline	ordinary-action	A German title wraps over the Play and Details controls. Both remote actions should stay reachable and retain different destinations.
+tvOS	SwiftUI	speed-metadata	player-item-owner	An on-screen playback-speed list belongs to a previous episode. The next episode offers a different set of rates.
+tvOS	SwiftUI	inspection-preserves-selection	unavailable-media	A details card displays track availability. The player switches clips while metadata is still loading and preserves the audience's audio choice.
+tvOS	SwiftUI	rotor-direction	overlap-policy	A transcript search has overlapping matches. A user who does not use the rotor still needs ordinary previous and next controls.
+tvOS	SwiftUI	interop-rebind	key-eligibility	A wrapped UIKit button on the TV sidebar is disabled after focus moves. A replacement button has a new enabled handler.
+tvOS	SwiftUI	duplicate-completion	presentation-owner	A purchase confirmation closes and immediately reopens for the next episode. A delayed completion and then a duplicate completion arrive.
+tvOS	SwiftUI	forced-vs-full	unlisted-selection	A service offers only full captions in its picker, but the player initially has a forced-only track selected.
