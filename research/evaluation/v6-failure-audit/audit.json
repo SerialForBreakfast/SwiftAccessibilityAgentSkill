@@ -1,0 +1,1615 @@
+{
+  "inputs": {
+    "evals/results/1507-grade/final-review/matched-board.json": "95df52b225b144d708e24757ab3f60a3f2197f7630aa1a9219e605fd7ce44d06",
+    "evals/qualification-56/board.json": "3a5ac77541c2cf9ce4ad03d3e06bc97804763a21dacc1333e28f0f4932afe47b",
+    "evals/qualification-56/source-calibration.tsv": "89eae88ceb06fa66b41d9519a90e7e51de49bf0ccfa5be1028a86da5ee85ce38",
+    "evals/results/mutation-grade-calibration/trial1/verdicts.json": "148fe9d92c13f39b0477870f6f02591c63717c62204fd207b2b09c3e7c046a75"
+  },
+  "rows": [
+    {
+      "id": "P-0a2cd6519778f4c7",
+      "family": "stale-observer-witness",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "transition": "persistent failure",
+      "method": "C0a2c",
+      "scope": "native",
+      "witness": "Drain obsolete observer work after restart with a changed preference; a mere active-observer check refreshes the screen.",
+      "alternative": "Replace the integer observation generation with a UUID.",
+      "control": {
+        "host": "controls-azf3w8q2/tvOS",
+        "methodPrefix": "testC0a2c",
+        "origin": "platforms/tvos-lifecycle-v1/Sources/TelevisionLifecycle.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-azf3w8q2/tvOS",
+          "methodPrefix": "testC0a2c",
+          "origin": "platforms/tvos-lifecycle-v1/Sources/TelevisionLifecycle.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "unaided": {
+          "verdict": "discriminating",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": "unit-pass",
+            "mut": "unit-failure"
+          },
+          "reason": "ref pass, alt pass, mutant fail"
+        },
+        "release-0.2.2": {
+          "verdict": "vacuous",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": null,
+            "mut": "unit-pass"
+          },
+          "reason": "passes on mutant"
+        },
+        "signal-v6": {
+          "verdict": "vacuous",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": null,
+            "mut": "unit-pass"
+          },
+          "reason": "passes on mutant"
+        }
+      },
+      "owner": "Skill",
+      "nextAction": "Require the queued stale event to produce a different visible result if the guard is removed; otherwise deduplication masks it."
+    },
+    {
+      "id": "P-3f811eea610d0c32",
+      "family": "native-custom-action-api",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "transition": "persistent failure",
+      "method": "C777d",
+      "scope": "native",
+      "witness": "Press ordinary Save and verify it does not dispatch Open. This is narrower than the optional shortcut contract.",
+      "alternative": "Use a UUID revision for the action registration.",
+      "control": {
+        "host": "controls-5pylp6o2/macOS",
+        "methodPrefix": "testC777d",
+        "origin": "platforms/macos-appkit-v1/Sources/DesktopActions.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-5pylp6o2/macOS",
+          "methodPrefix": "testC777d",
+          "origin": "platforms/macos-appkit-v1/Sources/DesktopActions.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": null,
+            "alt": null,
+            "mut": null
+          },
+          "reason": "no-submitted-test"
+        },
+        "release-0.2.2": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": null,
+            "alt": null,
+            "mut": null
+          },
+          "reason": "no-submitted-test"
+        },
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": null,
+            "alt": null,
+            "mut": null
+          },
+          "reason": "no-submitted-test"
+        }
+      },
+      "owner": "Both",
+      "nextAction": "Use AppKit getter/setter and installed handler APIs. Add a starter-compatible shortcut test; the ordinary Save check alone is insufficient."
+    },
+    {
+      "id": "P-4099aaf89ec377cf",
+      "family": "input-snapshot-after-edit",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "transition": "persistent failure",
+      "method": "testLiveEdit",
+      "scope": "prior native",
+      "witness": "Edit the native field directly before the old validation reply; omission of the snapshot guard admits the obsolete reply.",
+      "alternative": "Compare each captured field with its live native text instead of rebuilding the snapshot.",
+      "control": {
+        "platform": "tvOS",
+        "method": "testLiveEdit",
+        "diagnostic": "obsolete field reply accepted",
+        "receiptHashes": {
+          "positive": "2ac52c80fa471f10f2ebbf5ff095ec4d85db07b1c600e3645aac237553de7695",
+          "alternative": "45c7bc68c00f036c5c85aafa3aa56cd7295c93fccb33888384aaa080c6bba7f8",
+          "mutant": "5cad3e98f0a069bc6bc58efeb183dd2a8d030df859d2fbe3445e41f1302237e6"
+        }
+      },
+      "earlierControls": [],
+      "trial1": {},
+      "owner": "Both",
+      "nextAction": "Drive a field edit without the cancel helper; distinguish ignoring stale output from clearing busy and permitting the next submit. Bind the original live-edit fixture in the submitted-proof grader."
+    },
+    {
+      "id": "P-48400f490808a2cf",
+      "family": "restore-only-owned-sheet",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "C4840",
+      "scope": "native",
+      "witness": "Deliver the retained dismissal after replacement and duplicate the current completion. Looking up the latest owner consumes the wrong presentation.",
+      "alternative": "Invalidate a captured lifetime object instead of comparing UUIDs.",
+      "control": {
+        "host": "controls-tvpq1fsi/macOS",
+        "methodPrefix": "testC4840",
+        "origin": "Presentation.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-tvpq1fsi/macOS",
+          "methodPrefix": "testC4840",
+          "origin": "Presentation.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": null,
+            "alt": null,
+            "mut": null
+          },
+          "reason": "no-submitted-test"
+        },
+        "release-0.2.2": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": null,
+            "alt": null,
+            "mut": null
+          },
+          "reason": "no-submitted-test"
+        },
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        }
+      },
+      "owner": "Both",
+      "nextAction": "Bind dismissal to the installed presentation. Retain A, open B, deliver A late and B twice; distinguish request, completion and reentrant restoration. Do not credit a helper passed the correct ticket by the test."
+    },
+    {
+      "id": "P-4ec92962591872fa",
+      "family": "missing-item-vs-no-options",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "C4ec9",
+      "scope": "native",
+      "witness": "Missing item must differ from an inspected item without options. Mapping a nil item to absent fails.",
+      "alternative": "Resolve the optional native option first, then write selection once. This alternative varies selection wiring, not state classification.",
+      "control": {
+        "host": "controls-suo4icf5/iOS",
+        "methodPrefix": "testC4ec9",
+        "origin": "media-phase",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-0evqjoqq/iOS",
+          "methodPrefix": "testC4ec9",
+          "origin": "media-phase",
+          "qualified": false,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        },
+        {
+          "host": "controls-suo4icf5/iOS",
+          "methodPrefix": "testC4ec9",
+          "origin": "media-phase",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "release-0.2.2": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        },
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        },
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        }
+      },
+      "owner": "Both",
+      "nextAction": "Require evidence for the playing item as well as distinct load states. Supply a working media fixture and separate state and selection scores; an absent fixture must not silently pass."
+    },
+    {
+      "id": "P-5d121776613655db",
+      "family": "selection-before-validation",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "C5d12",
+      "scope": "native",
+      "witness": "Select a known caption and inspect native legible selection. A local-only update cannot pass.",
+      "alternative": "Resolve the optional choice before a single item.select call.",
+      "control": {
+        "host": "controls-azf3w8q2/tvOS",
+        "methodPrefix": "testC5d12",
+        "origin": "media-write",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-azf3w8q2/tvOS",
+          "methodPrefix": "testC5d12",
+          "origin": "media-write",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        },
+        "release-0.2.2": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        },
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        }
+      },
+      "owner": "Both",
+      "nextAction": "Trace a real legible selection, preserve audio and distinguish unlisted from Off. Make the native group/option fixture available under the supplied starter interface."
+    },
+    {
+      "id": "P-6bfef2bcad970d58",
+      "family": "origin-window-membership",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "transition": "persistent failure",
+      "method": "source contrast",
+      "scope": "source only",
+      "witness": "Use the last eligible text field seen anywhere in the application when any inspector closes. Rejected: Closing A can redirect keyboard input to B.",
+      "alternative": "Use a per-document coordinator and resolve a stable field ID in that document at the current completion; ignore a stale inspector or an ineligible or reparented field.",
+      "control": {
+        "prefix": "6bfe",
+        "decision": "Presentation and window own the return destination",
+        "reference": "Store a weak origin per inspector presentation; on completion check current generation, field eligibility and membership in the same window before requesting focus.",
+        "alternative": "Use a per-document coordinator and resolve a stable field ID in that document at the current completion; ignore a stale inspector or an ineligible or reparented field.",
+        "mutant": "Use the last eligible text field seen anywhere in the application when any inspector closes.",
+        "rejection": "Closing A can redirect keyboard input to B."
+      },
+      "earlierControls": [],
+      "trial1": {},
+      "owner": "Skill",
+      "nextAction": "Check current window membership as well as eligibility before restoring; a weak responder can still belong to another window. Accept a design answer here."
+    },
+    {
+      "id": "P-6d2dd61c5ac4abfc",
+      "family": "media-off-write",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "C2865",
+      "scope": "native",
+      "witness": "Exercise selection on the playing item; omit the native write and the legible option does not change.",
+      "alternative": "Use one native write after resolving the optional option.",
+      "control": {
+        "host": "controls-suo4icf5/iOS",
+        "methodPrefix": "testC2865",
+        "origin": "media-write",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-0evqjoqq/iOS",
+          "methodPrefix": "testC2865",
+          "origin": "media-write",
+          "qualified": false,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        },
+        {
+          "host": "controls-suo4icf5/iOS",
+          "methodPrefix": "testC2865",
+          "origin": "media-write",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        },
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        },
+        "release-0.2.2": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        }
+      },
+      "owner": "Both",
+      "nextAction": "Trace a real legible selection, preserve audio and distinguish unlisted from Off. Make the native group/option fixture available under the supplied starter interface."
+    },
+    {
+      "id": "P-7622f1aa06d7a35b",
+      "family": "retained-native-target",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "C7d8c",
+      "scope": "native",
+      "witness": "Rebind A to another native button B, press both, then stop. Without the registration check the old control reaches the new handler.",
+      "alternative": "Use a UUID for binding ownership.",
+      "control": {
+        "host": "controls-p_zegtlv/iOS",
+        "methodPrefix": "testC7d8c",
+        "origin": "swiftui/ios-v1/Sources/Interop.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-p_zegtlv/iOS",
+          "methodPrefix": "testC7d8c",
+          "origin": "swiftui/ios-v1/Sources/Interop.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        },
+        {
+          "host": "controls-z1pjq7f4/iOS",
+          "methodPrefix": "testC7d8c",
+          "origin": "swiftui/ios-v1/Sources/Interop.swift",
+          "qualified": false,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": null,
+            "alt": null,
+            "mut": null
+          },
+          "reason": "no-submitted-test"
+        },
+        "release-0.2.2": {
+          "verdict": "vacuous",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": null,
+            "mut": "unit-pass"
+          },
+          "reason": "passes on mutant"
+        },
+        "signal-v6": {
+          "verdict": "vacuous",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": null,
+            "mut": "unit-pass"
+          },
+          "reason": "passes on mutant"
+        }
+      },
+      "owner": "Skill",
+      "nextAction": "Retain an installed old control or callback, rebind, then deliver old and current actions before and after teardown. Re-pressing the same updated button can mask the defect."
+    },
+    {
+      "id": "P-7766a23217bfa0c3",
+      "family": "retained-native-target",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "C7766",
+      "scope": "native",
+      "witness": "Press retired and current native buttons across rebind and teardown. Removing the registration check admits stale dispatch.",
+      "alternative": "Use a UUID rather than an integer binding revision.",
+      "control": {
+        "host": "controls-s096r244/tvOS",
+        "methodPrefix": "testC7766",
+        "origin": "swiftui/tvos-v1/Sources/Interop.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-s096r244/tvOS",
+          "methodPrefix": "testC7766",
+          "origin": "swiftui/tvos-v1/Sources/Interop.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "signal-v6": {
+          "verdict": "vacuous",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": null,
+            "mut": "unit-pass"
+          },
+          "reason": "passes on mutant"
+        },
+        "unaided": {
+          "verdict": "vacuous",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": null,
+            "mut": "unit-pass"
+          },
+          "reason": "passes on mutant"
+        },
+        "release-0.2.2": {
+          "verdict": "vacuous",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": null,
+            "mut": "unit-pass"
+          },
+          "reason": "passes on mutant"
+        }
+      },
+      "owner": "Skill",
+      "nextAction": "Retain an installed old control or callback, rebind, then deliver old and current actions before and after teardown. Re-pressing the same updated button can mask the defect."
+    },
+    {
+      "id": "P-7cc5d89371a12a35",
+      "family": "positive-media-choice",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "transition": "persistent failure",
+      "method": "C7cc5",
+      "scope": "native",
+      "witness": "Seed a selected track, request description for a language with only ordinary audio; ignoring the description flag changes selection.",
+      "alternative": "Filter by the entire eligibility predicate, then take first.",
+      "control": {
+        "host": "controls-azf3w8q2/tvOS",
+        "methodPrefix": "testC7cc5",
+        "origin": "platforms/tvos-media-v1/Sources/MediaChoice.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-azf3w8q2/tvOS",
+          "methodPrefix": "testC7cc5",
+          "origin": "platforms/tvos-media-v1/Sources/MediaChoice.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "reference:test-compile-failure"
+        },
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "reference:test-compile-failure"
+        },
+        "release-0.2.2": {
+          "verdict": "discriminating",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": "unit-pass",
+            "mut": "unit-failure"
+          },
+          "reason": "ref pass, alt pass, mutant fail"
+        }
+      },
+      "owner": "Both",
+      "nextAction": "Require an actually selected option and a language that matches an ordinary track. Reject language-mismatch and nil-to-nil proofs; accept any independently identified equivalent fixture."
+    },
+    {
+      "id": "P-7d8c12fe30bd49a4",
+      "family": "retained-native-target",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "C7d8c",
+      "scope": "native",
+      "witness": "Rebind A to another native button B, press both, then stop. Without the registration check the old control reaches the new handler.",
+      "alternative": "Use a UUID for binding ownership.",
+      "control": {
+        "host": "controls-p_zegtlv/iOS",
+        "methodPrefix": "testC7d8c",
+        "origin": "swiftui/ios-v1/Sources/Interop.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-p_zegtlv/iOS",
+          "methodPrefix": "testC7d8c",
+          "origin": "swiftui/ios-v1/Sources/Interop.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        },
+        {
+          "host": "controls-z1pjq7f4/iOS",
+          "methodPrefix": "testC7d8c",
+          "origin": "swiftui/ios-v1/Sources/Interop.swift",
+          "qualified": false,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "release-0.2.2": {
+          "verdict": "vacuous",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": null,
+            "mut": "unit-pass"
+          },
+          "reason": "passes on mutant"
+        },
+        "signal-v6": {
+          "verdict": "vacuous",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": null,
+            "mut": "unit-pass"
+          },
+          "reason": "passes on mutant"
+        },
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": null,
+            "alt": null,
+            "mut": null
+          },
+          "reason": "no-submitted-test"
+        }
+      },
+      "owner": "Skill",
+      "nextAction": "Retain an installed old control or callback, rebind, then deliver old and current actions before and after teardown. Re-pressing the same updated button can mask the defect."
+    },
+    {
+      "id": "P-852a6aafb1bd0b6f",
+      "family": "stale-action-capture",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "transition": "persistent failure",
+      "method": "C852a",
+      "scope": "native",
+      "witness": "Refresh with the same records, select B, then fire the old A button. Removing the generation check changes B.",
+      "alternative": "Use UUID generations instead of an incrementing counter.",
+      "control": {
+        "host": "controls-s096r244/tvOS",
+        "methodPrefix": "testC852a",
+        "origin": "platforms/tvos-results-v1/Sources/TelevisionResults.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-s096r244/tvOS",
+          "methodPrefix": "testC852a",
+          "origin": "platforms/tvos-results-v1/Sources/TelevisionResults.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "signal-v6": {
+          "verdict": "discriminating",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": "unit-pass",
+            "mut": "unit-failure"
+          },
+          "reason": "ref pass, alt pass, mutant fail"
+        },
+        "unaided": {
+          "verdict": "discriminating",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": "unit-pass",
+            "mut": "unit-failure"
+          },
+          "reason": "ref pass, alt pass, mutant fail"
+        },
+        "release-0.2.2": {
+          "verdict": "discriminating",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": "unit-pass",
+            "mut": "unit-failure"
+          },
+          "reason": "ref pass, alt pass, mutant fail"
+        }
+      },
+      "owner": "Grader",
+      "nextAction": "Keep record IDs across refresh and seed a nonempty current selection. Reconcile the exact trial proof before changing guidance: sibling questions use one shared contract."
+    },
+    {
+      "id": "P-90629dd9d60ff906",
+      "family": "restore-only-owned-sheet",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "testSurvivingOrigin",
+      "scope": "prior native",
+      "witness": "After closing clears visible state, resolve a still-eligible origin. Using the cleared visible item wrongly chooses fallback. Not a test of SwiftUI modifier attachment.",
+      "alternative": "Capture the origin in a consumable resolver closure.",
+      "control": {
+        "platform": "iOS",
+        "method": "testSurvivingOrigin",
+        "diagnostic": "eligible origin survives close",
+        "receiptHashes": {
+          "positive": "1cbc0b7b7816b742bb717cc32433938b24a69d8a04651615eacae1fe8cafeb2d",
+          "alternative": "0a90d721ad1ad425d06354f51a4f61d681e318c266a36ebb178f38163bef1987",
+          "mutant": "cd89dcceee1853e7bdcde59faa2138c85e1b16fbe80bd75b47b82f9106173468"
+        }
+      },
+      "earlierControls": [],
+      "trial1": {},
+      "owner": "Both",
+      "nextAction": "Bind dismissal to the installed presentation. Retain A, open B, deliver A late and B twice; distinguish request, completion and reentrant restoration. Do not credit a helper passed the correct ticket by the test."
+    },
+    {
+      "id": "P-9c455b0bd4be71db",
+      "family": "unavailable-result-check",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "transition": "regression",
+      "method": "C9c45",
+      "scope": "native",
+      "witness": "Inspect no item and then a loaded item without a group. Returning absent in both cases fails.",
+      "alternative": "Switch on the optional item; inspect returned enum cases without requiring payload equality.",
+      "control": {
+        "host": "controls-suo4icf5/iOS",
+        "methodPrefix": "testC9c45",
+        "origin": "pilots/uikit-media-metadata-v1/Sources/MediaMetadata.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-0evqjoqq/iOS",
+          "methodPrefix": "testC9c45",
+          "origin": "pilots/uikit-media-metadata-v1/Sources/MediaMetadata.swift",
+          "qualified": false,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        },
+        {
+          "host": "controls-suo4icf5/iOS",
+          "methodPrefix": "testC9c45",
+          "origin": "pilots/uikit-media-metadata-v1/Sources/MediaMetadata.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "reference:test-compile-failure"
+        },
+        "release-0.2.2": {
+          "verdict": "discriminating",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": "unit-pass",
+            "mut": "unit-failure"
+          },
+          "reason": "ref pass, alt pass, mutant fail"
+        },
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "reference:test-compile-failure"
+        }
+      },
+      "owner": "Both",
+      "nextAction": "Keep rc.2 case-matching guidance; test compile validity separately from behavior. Equality is valid if all payloads genuinely support it."
+    },
+    {
+      "id": "P-a00ec36c978640fc",
+      "family": "retained-native-target",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "C7766",
+      "scope": "native",
+      "witness": "Press retired and current native buttons across rebind and teardown. Removing the registration check admits stale dispatch.",
+      "alternative": "Use a UUID rather than an integer binding revision.",
+      "control": {
+        "host": "controls-s096r244/tvOS",
+        "methodPrefix": "testC7766",
+        "origin": "swiftui/tvos-v1/Sources/Interop.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-s096r244/tvOS",
+          "methodPrefix": "testC7766",
+          "origin": "swiftui/tvos-v1/Sources/Interop.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "release-0.2.2": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": null,
+            "alt": null,
+            "mut": null
+          },
+          "reason": "no-submitted-test"
+        },
+        "signal-v6": {
+          "verdict": "vacuous",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": null,
+            "mut": "unit-pass"
+          },
+          "reason": "passes on mutant"
+        },
+        "unaided": {
+          "verdict": "vacuous",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": null,
+            "mut": "unit-pass"
+          },
+          "reason": "passes on mutant"
+        }
+      },
+      "owner": "Skill",
+      "nextAction": "Retain an installed old control or callback, rebind, then deliver old and current actions before and after teardown. Re-pressing the same updated button can mask the defect."
+    },
+    {
+      "id": "P-a12bcd8ed20f1256",
+      "family": "stale-action-capture",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "transition": "persistent failure",
+      "method": "C852a",
+      "scope": "native",
+      "witness": "Refresh with the same records, select B, then fire the old A button. Removing the generation check changes B.",
+      "alternative": "Use UUID generations instead of an incrementing counter.",
+      "control": {
+        "host": "controls-s096r244/tvOS",
+        "methodPrefix": "testC852a",
+        "origin": "platforms/tvos-results-v1/Sources/TelevisionResults.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-s096r244/tvOS",
+          "methodPrefix": "testC852a",
+          "origin": "platforms/tvos-results-v1/Sources/TelevisionResults.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "reference:test-compile-failure"
+        },
+        "unaided": {
+          "verdict": "vacuous",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": null,
+            "mut": "unit-pass"
+          },
+          "reason": "passes on mutant"
+        },
+        "release-0.2.2": {
+          "verdict": "vacuous",
+          "statuses": {
+            "ref": "unit-pass",
+            "alt": null,
+            "mut": "unit-pass"
+          },
+          "reason": "passes on mutant"
+        }
+      },
+      "owner": "Grader",
+      "nextAction": "Keep record IDs across refresh and seed a nonempty current selection. Reconcile the exact trial proof before changing guidance: sibling questions use one shared contract."
+    },
+    {
+      "id": "P-be25d510c5ffe50f",
+      "family": "refusing-focus-target",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "transition": "persistent failure",
+      "method": "testAttachedRefusal",
+      "scope": "prior native",
+      "witness": "Keep the original attached but ineligible; ignoring acceptsFirstResponder misses the fallback.",
+      "alternative": "Search ordered primary/fallback candidates with the eligibility predicate.",
+      "control": {
+        "platform": "macOS",
+        "method": "testAttachedRefusal",
+        "diagnostic": "attached ineligible origin must yield to fallback",
+        "receiptHashes": {
+          "positive": "8046d1314371b97e7dba8ab6ae1cdb88f7a502c64ee3c9005c30b00b8a756cca",
+          "alternative": "79f3406b24ca93865436646750d1f8659daf760535c593b58cb2fd5f3f2ab044",
+          "mutant": "cfe923bcbcf91f09fe534d175dd7f25cf43feac8710269ed2d55bc377ca06e76"
+        }
+      },
+      "earlierControls": [],
+      "trial1": {},
+      "owner": "Grader",
+      "nextAction": "Accept either an eligibility predicate or an attached responder that refuses the request. Removing the responder is not the same contrast."
+    },
+    {
+      "id": "P-c04cc5d4aa6f82d2",
+      "family": "stale-off-capture",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "Cc04c",
+      "scope": "native",
+      "witness": "Invoke the older media selection after ownership changes; a missing ownership check permits stale selection.",
+      "alternative": "Resolve the choice and Off into an optional, then make one native write.",
+      "control": {
+        "host": "controls-suo4icf5/iOS",
+        "methodPrefix": "testCc04c",
+        "origin": "media-stale",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-0evqjoqq/iOS",
+          "methodPrefix": "testCc04c",
+          "origin": "media-stale",
+          "qualified": false,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        },
+        {
+          "host": "controls-suo4icf5/iOS",
+          "methodPrefix": "testCc04c",
+          "origin": "media-stale",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        },
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        },
+        "release-0.2.2": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        }
+      },
+      "owner": "Both",
+      "nextAction": "Probe both item identity and request generation. Fire the old Off after replacement or same-item reload, then a current choice. Assert the native selection on both paths."
+    },
+    {
+      "id": "P-c6b25ad753e6a2d2",
+      "family": "same-item-new-request",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "Cc6b2",
+      "scope": "native",
+      "witness": "Reload on the same item; a superseded picker request must not apply its choice.",
+      "alternative": "Resolve choice and Off before the common native write.",
+      "control": {
+        "host": "controls-azf3w8q2/tvOS",
+        "methodPrefix": "testCc6b2",
+        "origin": "media-stale",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-azf3w8q2/tvOS",
+          "methodPrefix": "testCc6b2",
+          "origin": "media-stale",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "release-0.2.2": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        },
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        },
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        }
+      },
+      "owner": "Both",
+      "nextAction": "Probe both item identity and request generation. Fire the old Off after replacement or same-item reload, then a current choice. Assert the native selection on both paths."
+    },
+    {
+      "id": "P-d4bd274c3a345669",
+      "family": "write-actual-player-selection",
+      "platform": "iOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "testPickerWritesPlayerItem",
+      "scope": "prior native",
+      "witness": "Choose a track and read the actual player-item selection. Removing the native write fails.",
+      "alternative": "Use a single native write for both the option and Off. Not proof of every load-state transition.",
+      "control": {
+        "platform": "iOS",
+        "method": "testPickerWritesPlayerItem",
+        "diagnostic": "native caption write",
+        "receiptHashes": {
+          "positive": "aad4cdb469396c301cb79a664887d95c5648b6bcb95acfa8aec88c44cdc07861",
+          "mutant": "2c7e5a7083b5cc6ecdd3d5254da0f99d6a9ba1e79d70dfcfa3f5eff4ef7ed334",
+          "alternative": "7db8052dd7462a24bb7299586f64f8bd18a966b8c90e8da57c2c62dfe7ec627e"
+        }
+      },
+      "earlierControls": [],
+      "trial1": {},
+      "owner": "Both",
+      "nextAction": "Require evidence for the playing item as well as distinct load states. Supply a working media fixture and separate state and selection scores; an absent fixture must not silently pass."
+    },
+    {
+      "id": "P-d76c1ea3d7c9a580",
+      "family": "tagged-audio-positive-fixture",
+      "platform": "tvOS",
+      "framework": "UIKit",
+      "transition": "persistent failure",
+      "method": "Cd76c",
+      "scope": "native",
+      "witness": "Identify ordinary and tagged fixtures independently using native metadata and compare inspector output. Locale alone misclassifies audio.",
+      "alternative": "Build the tagged native option set first, then map membership.",
+      "control": {
+        "host": "controls-azf3w8q2/tvOS",
+        "methodPrefix": "testCd76c",
+        "origin": "platforms/tvos-media-v1/Sources/MediaMetadata.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-azf3w8q2/tvOS",
+          "methodPrefix": "testCd76c",
+          "origin": "platforms/tvos-media-v1/Sources/MediaMetadata.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "release-0.2.2": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "reference:test-compile-failure"
+        },
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "reference:test-compile-failure"
+        },
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": null,
+            "alt": null,
+            "mut": null
+          },
+          "reason": "no-submitted-test"
+        }
+      },
+      "owner": "Grader",
+      "nextAction": "Require an independent native tag or known track identity. Splitting inspector output by its own Boolean can pass even when the labels are swapped."
+    },
+    {
+      "id": "P-d82c5ccce8e33f3e",
+      "family": "native-editable-child",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "transition": "regression",
+      "method": "source contrast",
+      "scope": "source only",
+      "witness": "Hide the search field and publish a single static wrapper named Search. Rejected: Only one stop remains but editing is lost.",
+      "alternative": "Pass accessibility through a non-actionable representable container to the native editor. Verify ownership and forwarding separately from any claim about announced stops.",
+      "control": {
+        "prefix": "d82c",
+        "decision": "Preserve one native editable owner",
+        "reference": "Keep the NSSearchField as the editable element, remove the wrapper's duplicate element role, and preserve text selection, insertion, value and ordinary input.",
+        "alternative": "Pass accessibility through a non-actionable representable container to the native editor. Verify ownership and forwarding separately from any claim about announced stops.",
+        "mutant": "Hide the search field and publish a single static wrapper named Search.",
+        "rejection": "Only one stop remains but editing is lost."
+      },
+      "earlierControls": [],
+      "trial1": {},
+      "owner": "Skill",
+      "nextAction": "Keep the hosted editable field reachable; remove only duplicate wrapper semantics. rc.2 already corrects the advice. Do not infer VoiceOver reachability from a property or compile check."
+    },
+    {
+      "id": "P-da7833399aac7f87",
+      "family": "restore-only-owned-sheet",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "C4840",
+      "scope": "native",
+      "witness": "Deliver the retained dismissal after replacement and duplicate the current completion. Looking up the latest owner consumes the wrong presentation.",
+      "alternative": "Invalidate a captured lifetime object instead of comparing UUIDs.",
+      "control": {
+        "host": "controls-tvpq1fsi/macOS",
+        "methodPrefix": "testC4840",
+        "origin": "Presentation.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-tvpq1fsi/macOS",
+          "methodPrefix": "testC4840",
+          "origin": "Presentation.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        },
+        "release-0.2.2": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": null,
+            "alt": null,
+            "mut": null
+          },
+          "reason": "no-submitted-test"
+        },
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        }
+      },
+      "owner": "Both",
+      "nextAction": "Bind dismissal to the installed presentation. Retain A, open B, deliver A late and B twice; distinguish request, completion and reentrant restoration. Do not credit a helper passed the correct ticket by the test."
+    },
+    {
+      "id": "P-db6ab4c551e67aca",
+      "family": "validation-busy-recovery",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "transition": "persistent failure",
+      "method": "testLiveEdit",
+      "scope": "prior native",
+      "witness": "Edit the native field directly before the old validation reply; omission of the snapshot guard admits the obsolete reply.",
+      "alternative": "Compare each captured field with its live native text instead of rebuilding the snapshot.",
+      "control": {
+        "platform": "iOS",
+        "method": "testLiveEdit",
+        "diagnostic": "obsolete field reply accepted",
+        "receiptHashes": {
+          "positive": "1cbc0b7b7816b742bb717cc32433938b24a69d8a04651615eacae1fe8cafeb2d",
+          "alternative": "0a90d721ad1ad425d06354f51a4f61d681e318c266a36ebb178f38163bef1987",
+          "mutant": "cd89dcceee1853e7bdcde59faa2138c85e1b16fbe80bd75b47b82f9106173468"
+        }
+      },
+      "earlierControls": [],
+      "trial1": {},
+      "owner": "Both",
+      "nextAction": "Drive a field edit without the cancel helper; distinguish ignoring stale output from clearing busy and permitting the next submit. Bind the original live-edit fixture in the submitted-proof grader."
+    },
+    {
+      "id": "P-dc1e54ce99c97729",
+      "family": "write-actual-player-selection",
+      "platform": "tvOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "testPickerWritesPlayerItem",
+      "scope": "prior native",
+      "witness": "Choose a track and read the actual player-item selection. Removing the native write fails.",
+      "alternative": "Use a single native write for both the option and Off. Not proof of every load-state transition.",
+      "control": {
+        "platform": "tvOS",
+        "method": "testPickerWritesPlayerItem",
+        "diagnostic": "native caption write",
+        "receiptHashes": {
+          "positive": "465897d303a025938a269d0c71e3434ffad74550a15ff9e458c4546acbdcbcf2",
+          "mutant": "8fc82418173b3dba7c802b05d68e5ec29af0ef227b4f6e4f201093c05a843c73",
+          "alternative": "f51017aa72450d40c783c0e0501cb1713d15e69ad5f4c81a80e51124049a09e2"
+        }
+      },
+      "earlierControls": [],
+      "trial1": {},
+      "owner": "Both",
+      "nextAction": "Require evidence for the playing item as well as distinct load states. Supply a working media fixture and separate state and selection scores; an absent fixture must not silently pass."
+    },
+    {
+      "id": "P-ddf8bad3cbd8d087",
+      "family": "stale-action-capture",
+      "platform": "iOS",
+      "framework": "UIKit",
+      "transition": "persistent failure",
+      "method": "source contrast",
+      "scope": "source only",
+      "witness": "Install a closure once that deletes whichever file is currently in the row. Keep both buttons. Rejected: A retained shortcut for A can delete B.",
+      "alternative": "Route both Delete entry points through the current command target with an expiring per-binding token and live permission check. Preserve Open; assert the actual deleted IDs after reuse.",
+      "control": {
+        "prefix": "ddf8",
+        "decision": "Shortcut is additive and validates live ownership",
+        "reference": "Keep Open and Delete; bind a shortcut to this file and configuration. Recheck identity and enabled state on invocation. Test retained A after rebind, disabled B, current B and the ordinary paths.",
+        "alternative": "Route both Delete entry points through the current command target with an expiring per-binding token and live permission check. Preserve Open; assert the actual deleted IDs after reuse.",
+        "mutant": "Install a closure once that deletes whichever file is currently in the row. Keep both buttons.",
+        "rejection": "A retained shortcut for A can delete B."
+      },
+      "earlierControls": [],
+      "trial1": {},
+      "owner": "Both",
+      "nextAction": "Attach the shortcut to a reachable owner without swallowing the ordinary buttons. A retained Delete must check registration and current permission. Grade ownership separately from assistive navigation."
+    },
+    {
+      "id": "P-f28c1ae4058d31a8",
+      "family": "tagged-audio-positive-fixture",
+      "platform": "macOS",
+      "framework": "AppKit",
+      "transition": "persistent failure",
+      "method": "Cf28c",
+      "scope": "native",
+      "witness": "Compare inspector flags against known native ordinary/tagged options. Using locale as the description flag fails.",
+      "alternative": "Precompute tagged options and check membership during mapping.",
+      "control": {
+        "host": "controls-9f4li0u0/macOS",
+        "methodPrefix": "testCf28c",
+        "origin": "platforms/macos-media-v1/Sources/MediaMetadata.swift",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-9f4li0u0/macOS",
+          "methodPrefix": "testCf28c",
+          "origin": "platforms/macos-media-v1/Sources/MediaMetadata.swift",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": null,
+            "alt": null,
+            "mut": null
+          },
+          "reason": "no-submitted-test"
+        },
+        "release-0.2.2": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": null,
+            "alt": null,
+            "mut": null
+          },
+          "reason": "no-submitted-test"
+        },
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "reference:test-compile-failure"
+        }
+      },
+      "owner": "Grader",
+      "nextAction": "Require an independent native tag or known track identity. Splitting inspector output by its own Boolean can pass even when the labels are swapped."
+    },
+    {
+      "id": "P-f48375292f98ee5c",
+      "family": "stale-off-capture",
+      "platform": "macOS",
+      "framework": "SwiftUI",
+      "transition": "persistent failure",
+      "method": "Cf483",
+      "scope": "native",
+      "witness": "Fire old picker ownership against a replacement item and inspect the actual selection, not a menu ID.",
+      "alternative": "One item write after resolving choice or Off.",
+      "control": {
+        "host": "controls-9f4li0u0/macOS",
+        "methodPrefix": "testCf483",
+        "origin": "media-stale",
+        "qualified": true,
+        "verdicts": {
+          "Reference": "passed",
+          "Alternative": "passed",
+          "Mutant": "caught at witness"
+        }
+      },
+      "earlierControls": [
+        {
+          "host": "controls-9f4li0u0/macOS",
+          "methodPrefix": "testCf483",
+          "origin": "media-stale",
+          "qualified": true,
+          "verdicts": {
+            "Reference": "passed",
+            "Alternative": "passed",
+            "Mutant": "caught at witness"
+          }
+        }
+      ],
+      "trial1": {
+        "release-0.2.2": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        },
+        "signal-v6": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        },
+        "unaided": {
+          "verdict": "not-runnable",
+          "statuses": {
+            "ref": "test-compile-failure",
+            "alt": null,
+            "mut": null
+          },
+          "reason": "control-api-mismatch:test-compile-failure"
+        }
+      },
+      "owner": "Both",
+      "nextAction": "Probe both item identity and request generation. Fire the old Off after replacement or same-item reload, then a current choice. Assert the native selection on both paths."
+    }
+  ]
+}
