@@ -12,3 +12,32 @@ evals/results/
 tools/local-analysis/node_modules/
 tools/local-analysis/.cache/
 tools/local-analysis/results/
+
+# Private coordinator deliveries can arrive outside the usual evals/results tree.
+*-return.zip
+*-return-*.zip
+*-return.json
+*-return-*.json
+BigDogCoordinator/
+
+# Local secrets and credentials. Keep sanitized environment templates available.
+.env
+.env.*
+!.env.example
+!.env.template
+*.p12
+*.pfx
+*.key
+*.mobileprovision
+client.pem
+client.csr
+
+# Disposable developer environments and Apple/Python build output.
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+.build/
+DerivedData/
+*.xcresult/
+xcuserdata/
