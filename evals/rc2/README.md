@@ -1,5 +1,7 @@
 # Swift Accessibility Agent 0.3.0-rc.2
 
+[One-page release scorecard: what was tested, what must be preserved, and what remains unmeasured](RELEASE-SCORECARD.md)
+
 [Download the candidate](swift-accessibility-agent-0.3.0-rc.2.zip) · [Project-local installation](../../INSTALLATION.md#try-the-release-candidate)
 
 This is the opt-in successor to rc.1. The standard repository install remains **0.2.2**. The archive is self-contained: one skill with the stable name, three on-demand example cards and no grader or research files. It preserves the measured [signal-v6 archive](../../research/evaluation/signal-panel-v6/candidate.zip) rather than replacing it. The frozen comparison found 20/56 whole-question passes for v6 versus 16/56 for 0.2.2. Those scores belong to **v6, not rc.2**.

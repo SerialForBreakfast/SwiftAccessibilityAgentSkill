@@ -1,0 +1,928 @@
+[
+  {
+    "alternative": "Remove redundant wrapper semantics or keep the native view transparent to the wrapper.",
+    "criterion": "Leave the editable field exposed; only decoration should be hidden. Source does not establish an exact spoken stop count.",
+    "family": "Search",
+    "framework": "SwiftUI/AppKit",
+    "id": "Q-4a26062d68e15bbb",
+    "lane": "rc2-direct",
+    "members": {
+      "Package.swift": "e93703db810ef94f31ff55f75a5753ffe8be77d4f2661473082a9d07adaa7206",
+      "QUESTION.md": "5b0db5e265e691da6a1390539cc75253e62d2979f6527b752b7abad5c00cfad0",
+      "Sources/Feature/Feature.swift": "d5fb9c3dec430189effc94509b5fafe6c8cdb9a656dc3fd1571018fdd27e0c2f",
+      "Tests/Checks/Checks.swift": "ebfa64122e26cd136e59e5647b9a0eb395af9f643e414e9fe1c57543bab53796"
+    },
+    "mode": "repair",
+    "negative": "Hiding the field or its parent removes the editing target.",
+    "origin": "d82c",
+    "platform": "macOS",
+    "questionSHA256": "5b0db5e265e691da6a1390539cc75253e62d2979f6527b752b7abad5c00cfad0",
+    "sha256": "4a26062d68e15bbbb8a0a2f0e24450db926873cc84cc2010067a775055522e48"
+  },
+  {
+    "alternative": "Remove redundant wrapper semantics or keep the native view transparent to the wrapper.",
+    "criterion": "Leave the editable field exposed; only decoration should be hidden. Source does not establish an exact spoken stop count.",
+    "family": "Search",
+    "framework": "SwiftUI/AppKit",
+    "id": "Q-ea747b96697c42dc",
+    "lane": "rc2-direct",
+    "members": {
+      "Package.swift": "e93703db810ef94f31ff55f75a5753ffe8be77d4f2661473082a9d07adaa7206",
+      "QUESTION.md": "5b0db5e265e691da6a1390539cc75253e62d2979f6527b752b7abad5c00cfad0",
+      "Sources/Feature/Feature.swift": "65bea736b23dabe3a6dbc0c8477f27bf3f44ec7e0b935d03905529b937808f31",
+      "Tests/Checks/Checks.swift": "ebfa64122e26cd136e59e5647b9a0eb395af9f643e414e9fe1c57543bab53796"
+    },
+    "mode": "preserve",
+    "negative": "Hiding the field or its parent removes the editing target.",
+    "origin": "d82c",
+    "platform": "macOS",
+    "questionSHA256": "5b0db5e265e691da6a1390539cc75253e62d2979f6527b752b7abad5c00cfad0",
+    "sha256": "ea747b96697c42dc5004fd750922436a8b76b6002ab51302f36d55fad34e1d20"
+  },
+  {
+    "alternative": "A TapGesture or onTapGesture on the same surface may coexist with the existing drag and adjustable action.",
+    "criterion": "Check the actual single-tap registration separately from adjustment and drag. An accessibility action alone is not a touch handler.",
+    "family": "Tap",
+    "framework": "SwiftUI",
+    "id": "Q-9c092fb937404323",
+    "lane": "rc2-direct",
+    "members": {
+      "Package.swift": "e93703db810ef94f31ff55f75a5753ffe8be77d4f2661473082a9d07adaa7206",
+      "QUESTION.md": "2601afb3c4654433484570a3e865f4fc20b0a663545db159a7ce62174b6a2d24",
+      "Sources/Feature/Feature.swift": "6d931419359828d0774fe0498102fcbf91222f214b3f5b75851d7ed514ee03b4",
+      "Tests/Checks/Checks.swift": "868ef1291202509e003d67c4944542fe95672958d302ce7ac8c526824aab6c0d"
+    },
+    "mode": "repair",
+    "negative": "Testing Transport.activate alone cannot show the view installs a tap handler.",
+    "origin": "f93b",
+    "platform": "iOS",
+    "questionSHA256": "2601afb3c4654433484570a3e865f4fc20b0a663545db159a7ce62174b6a2d24",
+    "sha256": "9c092fb937404323c8929f897eda347bc20117452342e05806dde8c6f9b699c9"
+  },
+  {
+    "alternative": "A TapGesture or onTapGesture on the same surface may coexist with the existing drag and adjustable action.",
+    "criterion": "Check the actual single-tap registration separately from adjustment and drag. An accessibility action alone is not a touch handler.",
+    "family": "Tap",
+    "framework": "SwiftUI",
+    "id": "Q-5795ed27462ed84b",
+    "lane": "rc2-direct",
+    "members": {
+      "Package.swift": "e93703db810ef94f31ff55f75a5753ffe8be77d4f2661473082a9d07adaa7206",
+      "QUESTION.md": "2601afb3c4654433484570a3e865f4fc20b0a663545db159a7ce62174b6a2d24",
+      "Sources/Feature/Feature.swift": "8e75954ae917f82dbc38e258f25fe61e9d9b7dcbb362b55e7075e3aacc1427e8",
+      "Tests/Checks/Checks.swift": "868ef1291202509e003d67c4944542fe95672958d302ce7ac8c526824aab6c0d"
+    },
+    "mode": "preserve",
+    "negative": "Testing Transport.activate alone cannot show the view installs a tap handler.",
+    "origin": "f93b",
+    "platform": "iOS",
+    "questionSHA256": "2601afb3c4654433484570a3e865f4fc20b0a663545db159a7ce62174b6a2d24",
+    "sha256": "5795ed27462ed84b0d7475fa13e571db5795463e168f28c701561aee2496fc72"
+  },
+  {
+    "alternative": "A switch, pattern match, or meaningful equality that really compiles and preserves the payload.",
+    "criterion": "Distinguish missing item from inspected empty group; compare cases or relevant fields without a spurious payload equality requirement.",
+    "family": "Inspector",
+    "framework": "UIKit/AVFoundation",
+    "id": "Q-a827a6ded5ca68bb",
+    "lane": "rc2-direct",
+    "members": {
+      "Package.swift": "e93703db810ef94f31ff55f75a5753ffe8be77d4f2661473082a9d07adaa7206",
+      "QUESTION.md": "72a0f80844222712ef98f31f9a3560a55e5d533d83b879df58c1342cedfb3e47",
+      "Sources/Feature/Feature.swift": "447d58a788218bdf9d3fa01f602eda4f1d97a91e038c623f155e8ae655fde1d6",
+      "Tests/Checks/Checks.swift": "96182e9115410ae2708c6823518883448e5eb9d757b6c81fd782ce680b0614fc"
+    },
+    "mode": "repair",
+    "negative": "A test using XCTAssertEqual on an enum without Equatable cannot build.",
+    "origin": "9c45",
+    "platform": "iOS",
+    "questionSHA256": "72a0f80844222712ef98f31f9a3560a55e5d533d83b879df58c1342cedfb3e47",
+    "sha256": "a827a6ded5ca68bb32d26f1a8d3c93299fa3ffe387e46345413721035df4db84"
+  },
+  {
+    "alternative": "A switch, pattern match, or meaningful equality that really compiles and preserves the payload.",
+    "criterion": "Distinguish missing item from inspected empty group; compare cases or relevant fields without a spurious payload equality requirement.",
+    "family": "Inspector",
+    "framework": "UIKit/AVFoundation",
+    "id": "Q-9ae54c41f25f419b",
+    "lane": "rc2-direct",
+    "members": {
+      "Package.swift": "e93703db810ef94f31ff55f75a5753ffe8be77d4f2661473082a9d07adaa7206",
+      "QUESTION.md": "72a0f80844222712ef98f31f9a3560a55e5d533d83b879df58c1342cedfb3e47",
+      "Sources/Feature/Feature.swift": "447d58a788218bdf9d3fa01f602eda4f1d97a91e038c623f155e8ae655fde1d6",
+      "Tests/Checks/Checks.swift": "94fd2ec3967f1ed6121f76bf0d03f736d056b00f9aad56f26a97f67e723591de"
+    },
+    "mode": "preserve",
+    "negative": "A test using XCTAssertEqual on an enum without Equatable cannot build.",
+    "origin": "9c45",
+    "platform": "iOS",
+    "questionSHA256": "72a0f80844222712ef98f31f9a3560a55e5d533d83b879df58c1342cedfb3e47",
+    "sha256": "9ae54c41f25f419b8c05dfd9c3e37ca88854bbc451d805fb83024f78908464ab"
+  },
+  {
+    "alternative": "Replace actions on configure or install stable forwarding targets once.",
+    "assertions": [],
+    "criterion": "Reconfigure one live card and trigger both actual buttons; only the latest callbacks fire once and their contextual names change.",
+    "family": "card-rebind",
+    "framework": "UIKit",
+    "id": "Q-a5e8dbe7b453acee",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "d81004a581ac023aad5af04c69ca6515dbac01d38bc218d6fdea97a19697996a"
+    },
+    "negative": "Tests recreate the card or count calls without distinguishing recipients.",
+    "origin": "G-1079cff7faaab5",
+    "originalAnswerSHA256": "99702a868eea1ea639581096c34e0408f3c67792ef4b7ab0445b09dc3bc5f598",
+    "originalSHA256": "1079cff7faaab5b2dc316d777b7fe4f2c96b809c495a90eaaec10e0e3f7a163e",
+    "platform": "iOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "Pass: explicitly excludes the star and keeps title text and separate named buttons. Pass: visible strings and names update on configure; limited localization: fixes English operation-title ordering instead of accepting a complete localized name. Fail: new UIActions on each configure have no stable IDs or removal. A single tap after rebinding can call the previous invoice handler as well as the current one. Fail: stale-action test expects the previous count to be zero despite the accumulation. Source assertions establish neither speech nor memory safety.",
+    "priorWhole": "fail",
+    "questionSHA256": "d81004a581ac023aad5af04c69ca6515dbac01d38bc218d6fdea97a19697996a",
+    "sha256": "a5e8dbe7b453acee48ecf98865e5511f48bd76e7277960a72d1c4e3f7075130d",
+    "source": "code-examples/pilots/uikit-naming-v1/evaluation/prompt.json"
+  },
+  {
+    "alternative": "Wrap or rearrange the existing row at large sizes.",
+    "assertions": [],
+    "criterion": "Change the live amount and its layout, not payment control identity or payment policy.",
+    "family": "checkout-layout",
+    "framework": "UIKit",
+    "id": "Q-f0398cdb1dfe2fb0",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "6f74df03139231d82b03655b5c02c7990bb2c30b9df13df80a1abc50a73eebd0"
+    },
+    "negative": "Creates a different Pay button or changes its font instead of the amount layout.",
+    "origin": "G-8b4c2893964bfe",
+    "originalAnswerSHA256": "73381f8b377f168d302715bd6c354fb19c510edcd043a88acb8955db124f310e",
+    "originalSHA256": "8b4c2893964bfe2cefa32ffca0946ecc917ec517094d88bcddf428d81d623aef",
+    "platform": "iOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "Changes the Pay title font and enables Dynamic Type on it despite the explicit requirement to preserve Pay appearance.",
+    "priorWhole": "fail",
+    "questionSHA256": "6f74df03139231d82b03655b5c02c7990bb2c30b9df13df80a1abc50a73eebd0",
+    "sha256": "f0398cdb1dfe2fb0cfc3fa920fcd6b9dc1174f87642ebfe3ff3fdd6cc62a9012",
+    "source": "evals/pool/ios-uikit/checkout-integrated/task.json"
+  },
+  {
+    "alternative": "No change, or equivalent value formatting justified by an actual requirement.",
+    "assertions": [],
+    "criterion": "Preserve the native adjustable control and working two-way binding; require evidence for a claimed defect.",
+    "family": "native-adjustment",
+    "framework": "SwiftUI",
+    "id": "Q-b42a0513f88987a1",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "9c8c6e990f9c3168f7eb9fa2f5b3c488dca0c911013237c5021f16f949c04d65"
+    },
+    "negative": "Adds custom stepping because it assumes the native step is ignored.",
+    "origin": "G-35ee522327907b",
+    "originalAnswerSHA256": "825fe09e9a9d6ad14cb5a00636cc9d47c4ae50fba1b2a63bec3abe5d3f3666ad",
+    "originalSHA256": "35ee522327907bd8e3a9a47b53e62250ea362353b8b7231ef3598badb7c67398",
+    "platform": "iOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "Changes a functioning labeled native slider by asserting its percentage value needs an override without a supplied defect.",
+    "priorWhole": "fail",
+    "questionSHA256": "9c8c6e990f9c3168f7eb9fa2f5b3c488dca0c911013237c5021f16f949c04d65",
+    "sha256": "b42a0513f88987a1a41a1f017e9c8ebbc53903a27131a7dfe560d1d1ff194e12",
+    "source": "research/evaluation/zero-base-v1/subjects/GP26-11.txt"
+  },
+  {
+    "alternative": "Keep the existing implementation with an explanation.",
+    "assertions": [],
+    "criterion": "Preserve native toggle activation, label and persisted value.",
+    "family": "native-toggle",
+    "framework": "SwiftUI",
+    "id": "Q-cf77c3943d5501e2",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "c0856d1cfd8efc52c71c76318d7a4ee50d9a53ba62df1117b8bbe05538ffee86"
+    },
+    "negative": "Replaces the binding with local state or invents a missing name.",
+    "origin": "G-96a828dd7e79b7",
+    "originalAnswerSHA256": "d8dba95e0716ff657ef2a6a6decd57b7412dbf5df73ad180aa46f4dae0da5382",
+    "originalSHA256": "96a828dd7e79b7f76af9d9a47428ff4c6a5662880af3f3ad751cdfb7eec38567",
+    "platform": "iOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "Adds a replacement label and a generic hint to an already labeled bound Notifications toggle.",
+    "priorWhole": "fail",
+    "questionSHA256": "c0856d1cfd8efc52c71c76318d7a4ee50d9a53ba62df1117b8bbe05538ffee86",
+    "sha256": "cf77c3943d5501e25a698d8f8dc0d4557da5fb125e6a6c52c852863ec410f299",
+    "source": "research/evaluation/zero-base-v1/subjects/GP26-06.txt"
+  },
+  {
+    "alternative": "Retain an already correct nil animation path.",
+    "assertions": [],
+    "criterion": "Evaluate the transaction in effect at the next change without resetting page state.",
+    "family": "motion-preference",
+    "framework": "SwiftUI",
+    "id": "Q-f0c4b1e1b997edbc",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "3a0b566970a8a7d5900733c6c807073506213efeb8cb15f68601133ba4bdfbb2"
+    },
+    "negative": "Infers sliding solely from a transition declaration regardless of the surrounding transaction.",
+    "origin": "G-a32f106f0aa1cc",
+    "originalAnswerSHA256": "a96ee903ce10dabfedbf85b12d2f0bd258e007b7140d11dddb70ff8663b94268",
+    "originalSHA256": "a32f106f0aa1cc85949dca086f8843230af2b71f0bcdc2b319daa0c511fa4246",
+    "platform": "iOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "Prescribes changing an existing transition despite the prompt excluding any other animation transaction and already disabling animation under Reduce Motion.",
+    "priorWhole": "fail",
+    "questionSHA256": "3a0b566970a8a7d5900733c6c807073506213efeb8cb15f68601133ba4bdfbb2",
+    "sha256": "f0c4b1e1b997edbce37f422338e3f8a1cbd4fb891a25d8611eabe10f097eef39",
+    "source": "research/evaluation/zero-base-v1/subjects/GP26-12.txt"
+  },
+  {
+    "alternative": "Per-presentation state or invalidatable session object.",
+    "assertions": [],
+    "criterion": "Restore the prior accessibility setting only for the owning panel completion and resolve an eligible target or fallback then.",
+    "family": "panel-background",
+    "framework": "UIKit",
+    "id": "Q-588d607e968a521e",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "009ed49fea1f807a19417bdbc39582a0b4f2c50f6c36036451980659a099e681"
+    },
+    "negative": "Changes visual visibility instead of accessibility visibility or lets A restore over B.",
+    "origin": "G-34541ce79ee3d5",
+    "originalAnswerSHA256": "0cbfe55fd127151b007f1d1697ba501be835f134ecd715ea7d5bfb28eaf8dc8e",
+    "originalSHA256": "34541ce79ee3d519bf3e7c3d8fe2b60d4cd74885936e13753bab779fb6533c8e",
+    "platform": "iOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "Saves and restores backgroundDimmingView.isHidden, which changes visual hiding and does not restore the background accessibilityElementsHidden contract.",
+    "priorWhole": "fail",
+    "questionSHA256": "009ed49fea1f807a19417bdbc39582a0b4f2c50f6c36036451980659a099e681",
+    "sha256": "588d607e968a521ee4ff9d03437ebc974f42752bc47d5215a4f956f10c7312c9",
+    "source": "code-examples/pilots/uikit-modal-v1/evaluation/prompt.json"
+  },
+  {
+    "alternative": "Block-backed AppKit action or supported target and selector.",
+    "assertions": [],
+    "criterion": "The installed shortcut on Open reaches current Save and declines when disabled; ordinary controls retain their own targets.",
+    "family": "appkit-save-shortcut",
+    "framework": "AppKit",
+    "id": "Q-789c99a93a75f021",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "01ece4c131febfd264cf4c6e6d4a06de0f2783d3b67fd185e67da07b923acd2b"
+    },
+    "negative": "Uses UIKit action APIs or makes ordinary Save run Open.",
+    "origin": "G-3f811eea610d0c",
+    "originalAnswerSHA256": "26e16dd1633568ddc79e487f43551435638b105f7222c82c87fa838de7515171",
+    "originalSHA256": "3f811eea610d0c323c31211d12f76fe7ff45b4d0e6812d634a90ac83af12a645",
+    "platform": "macOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "Proposes a custom AppKit action-description/perform-action spelling instead of wiring a named NSAccessibilityCustomAction to Open.",
+    "priorWhole": "fail",
+    "questionSHA256": "01ece4c131febfd264cf4c6e6d4a06de0f2783d3b67fd185e67da07b923acd2b",
+    "sha256": "789c99a93a75f0218a5b5ef8d8fa1a3a2a8bd518bedef7989023f21190d970cc",
+    "source": "code-examples/platforms/macos-appkit-v1/evaluation/desktop-actions.prompt.md"
+  },
+  {
+    "alternative": "Per-window coordinator or presentation-bound descriptor with fallback.",
+    "assertions": [],
+    "criterion": "At completion resolve membership and eligibility in the originating window rather than using a process-wide most recent responder.",
+    "family": "window-membership",
+    "framework": "AppKit",
+    "id": "Q-208761a6531ffc74",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "be7bf41720e6e713321a76da15e779f294165d9eebed5dec6158dfb0e47cb9cb"
+    },
+    "negative": "A weak reference is alive but now belongs to another window.",
+    "origin": "G-6bfef2bcad970d",
+    "originalAnswerSHA256": "8f988215f58599c83fc81eb940d112acb2b350cbf02aaca8c68ce571283c846d",
+    "originalSHA256": "6bfef2bcad970d58d0a3874990b106d738df175d07832f1d915ea76b5010b6c6",
+    "platform": "macOS",
+    "priorBlindAudit": {
+      "blindPrimary": "fail",
+      "blindWhole": "fail",
+      "finding": "Pairs each inspector with its host, but acceptsFirstResponder does not establish that the saved responder still belongs to that window or is eligible. The unconditional close action can also steal focus and there is no stale-presentation check.",
+      "lane": "workflow \u00b7 window-focus-isolation",
+      "mask": "Q37",
+      "originalPrimary": "fail",
+      "originalWhole": "fail"
+    },
+    "priorPrimary": "fail",
+    "priorRationale": "Associates the inspector with its host but checks only acceptsFirstResponder on the saved responder, without verifying current membership in that window.",
+    "priorWhole": "fail",
+    "questionSHA256": "be7bf41720e6e713321a76da15e779f294165d9eebed5dec6158dfb0e47cb9cb",
+    "sha256": "208761a6531ffc7421ce124cc4a17c676ac87fe54acdd6789fd88f5a82771901",
+    "source": "references/macos/guidelines/m-007-modal-window-focus-containment.md"
+  },
+  {
+    "alternative": "Separate title and action rows or use an adaptive layout.",
+    "assertions": [],
+    "criterion": "Both actions remain reachable with long text on the deployment target; tie any new API or system preference to verified availability.",
+    "family": "tv-layout",
+    "framework": "SwiftUI",
+    "id": "Q-e1fb61bde08014a2",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "453d2c765e383e04f272a4c1fa8e171992de48b6b0407abc2a671f55f6402de1"
+    },
+    "negative": "Gates on an OS older than the deployment target or truncates away a required action.",
+    "origin": "G-e56a902ef372a2",
+    "originalAnswerSHA256": "c54011cf99fb9e4679f3fa38b84f7da5eb0a45f7fe80064e89db7252af87d064",
+    "originalSHA256": "e56a902ef372a2909407bd94a8bd370176c7feb33ed84809448c41f7dbf8b921",
+    "platform": "tvOS",
+    "priorBlindAudit": {
+      "blindPrimary": "fail",
+      "blindWhole": "fail",
+      "finding": "The vertical layout protects the actions. The newer-SDK section gates at tvOS 18 on a 26.0 deployment, mistakes scrollTargetLayout for marquee behavior, and gives no valid later availability boundary for text scaling.",
+      "lane": "workflow \u00b7 tv-text-reflow",
+      "mask": "Q32",
+      "originalPrimary": "fail",
+      "originalWhole": "fail"
+    },
+    "priorPrimary": "fail",
+    "priorRationale": "Recommends older 18.0 availability branches on a 26.0 deployment and presents scrollTargetLayout as marquee support. The requested newer-platform distinction is missing.",
+    "priorWhole": "fail",
+    "questionSHA256": "453d2c765e383e04f272a4c1fa8e171992de48b6b0407abc2a671f55f6402de1",
+    "sha256": "e1fb61bde08014a2da5548043dd92a251d165a6db7be5fa29d0b8688df2a170a",
+    "source": "references/tvos/guidelines/t-011-larger-text.md"
+  },
+  {
+    "alternative": "Compile the real modifier and assert public state changes separately.",
+    "assertions": [],
+    "criterion": "Distinguish executed state and action assertions from assistive speech or delivered focus; record SDK, target and runtime.",
+    "family": "evidence-limits",
+    "framework": "SwiftUI",
+    "id": "Q-2d74aff35813c50c",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "88ad770750eafa44d5fb45c64030a1e83d9ac86352f2d5591c7f7a4c3cefcc04"
+    },
+    "negative": "Claims a reflected SwiftUI tree proves runtime rotor navigation.",
+    "origin": "G-c55650380597ef",
+    "originalAnswerSHA256": "559464fccf94167a15a4c8a55db233660e240785500d2889f12bec4a49ccc5bd",
+    "originalSHA256": "c55650380597efd475d434d7743609c86267733e39c4dfbc564e7851d6139461",
+    "platform": "tvOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "Proposes reflection as evidence of attached accessibility modifiers; model chapter counts do not establish generated rotor behavior.",
+    "priorWhole": "fail",
+    "questionSHA256": "88ad770750eafa44d5fb45c64030a1e83d9ac86352f2d5591c7f7a4c3cefcc04",
+    "sha256": "2d74aff35813c50c5dcadc6fbae7f002c06e4c2595c5cc220f2e6b6dfae942c6",
+    "source": "research/evaluation/zero-base-v1/subjects/tvos-swiftui-testing.txt"
+  },
+  {
+    "alternative": "Request identity plus item identity or a per-configuration lifetime.",
+    "assertions": [],
+    "criterion": "Reject both cross-item and same-item superseded results while clearing optional state on rebind.",
+    "family": "card-request-owner",
+    "framework": "UIKit",
+    "id": "Q-34ef635b0284c9fd",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "c8b4a57d5ce6d065f73548946dc8b83f4dfbf1220c8396b11f90b63c879a60b9"
+    },
+    "negative": "Only checks file ID, allowing the earlier request for B to win.",
+    "origin": "G-5f3c8c25e44c4b",
+    "originalAnswerSHA256": "1eb512dca23e0dd84ccc222b465e190a09e2878a93aff9b25e67c4692c4f523b",
+    "originalSHA256": "5f3c8c25e44c4bf4221a9955a44edc50da7fbdf0bad70e933cb752e5440e488d",
+    "platform": "tvOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "Uses file identity alone for late replies; an earlier load for the same file can still replace newer metadata.",
+    "priorWhole": "fail",
+    "questionSHA256": "c8b4a57d5ce6d065f73548946dc8b83f4dfbf1220c8396b11f90b63c879a60b9",
+    "sha256": "34ef635b0284c9fd7f66cbf7dcaa72acd0a2b408ce1346ed2dd6029d13bc0549",
+    "source": "research/evaluation/zero-base-v1/subjects/tvos-uikit-state.txt"
+  },
+  {
+    "alternative": "Map each input to localized wording; exact English wording is not required.",
+    "assertions": [
+      "StateContractTests/testSelectedStateHasNonColorTextAndValue"
+    ],
+    "criterion": "All three observations match the supplied state and retain unrelated traits.",
+    "family": "tv-selection-status",
+    "framework": "UIKit",
+    "id": "Q-93aae0b90f5d5229",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "91f74fc086cd59860cd7a1be792634a303991b703fa7ecb591ace8dffc1517d3"
+    },
+    "negative": "Clears visible and accessible values instead of representing the unselected state.",
+    "origin": "G-3eecace7f0b93c",
+    "originalAnswerSHA256": "3a0d22041f85937b1d940b2f16084e0520e537f7061d581958547e58df8d393a",
+    "originalSHA256": "3eecace7f0b93c2f59fc488824c77ab833e3518818b210859ee6b90bda9a6a7a",
+    "platform": "tvOS",
+    "priorBlindAudit": {
+      "blindPrimary": "fail",
+      "blindWhole": "fail",
+      "finding": "Selected and unselected configurations still display identical empty state text. Search result counts are also assigned as the control\u2019s value, even though they do not describe its selection.",
+      "lane": "repair \u00b7 conflicting-state-text",
+      "mask": "Q49",
+      "originalPrimary": "fail",
+      "originalWhole": "fail"
+    },
+    "priorPrimary": "fail",
+    "priorRationale": "Clears the selected-state text and accessible value instead of publishing selected or unselected without relying on color; its tests encode empty strings.",
+    "priorWhole": "fail",
+    "questionSHA256": "91f74fc086cd59860cd7a1be792634a303991b703fa7ecb591ace8dffc1517d3",
+    "sha256": "93aae0b90f5d52297eb41f062f0f5a6d645c0a27a953da3f2d1b0860378a1d92",
+    "source": "code-examples/platforms/tvos-closure-v1/manifest.json"
+  },
+  {
+    "alternative": "Epoch token or explicit invalidated subscription object.",
+    "assertions": [
+      "TelevisionLifecycleTests/testPreferenceOldGenerationIgnoredAfterRestart"
+    ],
+    "criterion": "Old queued work cannot refresh the restarted screen while new work still applies.",
+    "family": "observer-restart",
+    "framework": "UIKit",
+    "id": "Q-2601b5f5586fe563",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "6d4ef46b31e2d6dc7d55a9f3553582d91b444ec5a9fed297570314f5d3688bb3"
+    },
+    "negative": "Reapplies identical preferences so deduplication hides the defect.",
+    "origin": "G-0a2cd6519778f4",
+    "originalAnswerSHA256": "dea68c337b7f4446f6e8141997690494e4db2d5f67226a3751db748dcb5e5ef9",
+    "originalSHA256": "0a2cd6519778f4c7666df6f9b5dfd56bc1253ad26fc0416298c56732320d235a",
+    "platform": "tvOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "pass",
+    "priorRationale": "Pass: compares the captured generation to the active one inside the queued callback, preserving newly installed observers. Fail: the proposed test restores reduceMotion to false before restart and does not change it before draining stale work. The original refresh equality guard can suppress apply even in the mutant. The counter therefore cannot distinguish rejection from a deduplicated refresh; the Sendable enqueue also captures a mutable local array.",
+    "priorWhole": "fail",
+    "questionSHA256": "6d4ef46b31e2d6dc7d55a9f3553582d91b444ec5a9fed297570314f5d3688bb3",
+    "sha256": "2601b5f5586fe563e9b2e2266f40eac67e39f8ee29a4ecf0cc47b29e40c6123e",
+    "source": "code-examples/platforms/tvos-lifecycle-v1/manifest.json"
+  },
+  {
+    "alternative": "Precompute tagged options or inspect each option directly.",
+    "assertions": [
+      "MediaMetadataTests/testUntaggedAlternateAudioIsNotDescription"
+    ],
+    "criterion": "Classify by the native description characteristic and independently identify the ordinary and described fixtures.",
+    "family": "audio-description-tag",
+    "framework": "AppKit",
+    "id": "Q-83782d49e6c88982",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "cc74f761b801c12506a1211010774aa5b3a6ac2f443a2f89e87a79617cc197f6"
+    },
+    "negative": "Identifies expected tracks using the output flag being tested.",
+    "origin": "G-0efc69b6139819",
+    "originalAnswerSHA256": "124f553dbaaa179ae80aa76f13c2736d5f095de85562b16630212e3ab53a5a61",
+    "originalSHA256": "0efc69b6139819c0a5a724a38655a2bbfe668f6fa27d2f5518ff0c72daddf39b",
+    "platform": "macOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "pass",
+    "priorRationale": "Pass: replaces unconditional true with the AVFoundation characteristic, preserving forced and selected fields. Fail: the test wraps every substantive assertion in if case .loaded then loops over options; absent or empty groups satisfy it vacuously. Creating a composition audio track does not establish an untagged selectable option.",
+    "priorWhole": "fail",
+    "questionSHA256": "cc74f761b801c12506a1211010774aa5b3a6ac2f443a2f89e87a79617cc197f6",
+    "sha256": "83782d49e6c8898285db8283740309495c1c49d53636805007b87d4f5e72001c",
+    "source": "code-examples/platforms/macos-media-v1/manifest.json"
+  },
+  {
+    "alternative": "Compare captured fields individually or compare complete snapshots.",
+    "assertions": [
+      "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot"
+    ],
+    "criterion": "Reject obsolete errors and release the matching busy ticket so current input can be submitted.",
+    "family": "validation-recovery",
+    "framework": "UIKit",
+    "id": "Q-1dad9e61b6e019ab",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "6331238c8eb9b107f1f82228420c4159c005be46a053fb55d78997fd421f44c2"
+    },
+    "negative": "Returns early on stale input but leaves Submit busy.",
+    "origin": "G-2ae6e6631d0d54",
+    "originalAnswerSHA256": "c1a3d7e2985510c1d210263e90fa302f970b5558c7376fc002a057d193aa277c",
+    "originalSHA256": "2ae6e6631d0d54711f3d7454e0425d02fc8db5f94712291d2505135da2c91626",
+    "platform": "iOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "pass",
+    "priorRationale": "Rejects the outdated field snapshot but returns without ending the active busy state; the test checks the edit, not the stranded request.",
+    "priorWhole": "fail",
+    "questionSHA256": "6331238c8eb9b107f1f82228420c4159c005be46a053fb55d78997fd421f44c2",
+    "sha256": "1dad9e61b6e019abf00878d40da18c095f3ddfe65f4d224f117c180ef6f76ba5",
+    "source": "code-examples/platforms/ios-closure-v1/manifest.json"
+  },
+  {
+    "alternative": "Per-request snapshots or revision tracking attached to actual edits.",
+    "assertions": [
+      "AsyncOwnershipTests/testNativeFieldMutationCannotApplyOldSnapshot"
+    ],
+    "criterion": "Check the live field snapshot on completion and retire only the owner whose validation finished.",
+    "family": "mac-edit-ownership",
+    "framework": "AppKit",
+    "id": "Q-629b739c855d658c",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "291327241a07eebd7157425347c44ea098270b157c98e1e8092c05a697859a25"
+    },
+    "negative": "Helper cancellation tests do not exercise direct edits to the field.",
+    "origin": "G-84ceaa1fed1f5a",
+    "originalAnswerSHA256": "87104196ae240d4e52ec7a736fdbbb427ce9044bc3707fed5ab9503670d69a62",
+    "originalSHA256": "84ceaa1fed1f5a4f3ff56a50b3063a7077c135d0e0cfc1ef50b865c7b4de8e72",
+    "platform": "macOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "pass",
+    "priorRationale": "The snapshot guard rejects the reply, but its bare return leaves the active validation busy after a native-field edit.",
+    "priorWhole": "fail",
+    "questionSHA256": "291327241a07eebd7157425347c44ea098270b157c98e1e8092c05a697859a25",
+    "sha256": "629b739c855d658cde78f15b5bda70a048a9bf0b28492ea5686d6614d1057c63",
+    "source": "code-examples/platforms/macos-closure-v1/manifest.json"
+  },
+  {
+    "alternative": "Store a terminal flag per active ID or model active and completed states explicitly.",
+    "assertions": [],
+    "criterion": "Keep display clamping, terminal deduplication and stale-ID rejection independent.",
+    "family": "terminal-announcement",
+    "framework": "UIKit",
+    "id": "Q-7406c79af56ec664",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "ac8747e0523d8964ac7f6ebb8c4e5927f4118fe6a08489ec3f89756f7aa01afd"
+    },
+    "negative": "Completion repeats or late progress overwrites a terminal value.",
+    "origin": "G-debf8047cd9f4e",
+    "originalAnswerSHA256": "0f03a559a5f0f020412ac81891b4b474a364c3b443f05ce26010cf76aa033d76",
+    "originalSHA256": "debf8047cd9f4e4a6ffaae8337102d7e80198cfde4f6292f7c5821f32b1e7005",
+    "platform": "iOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "The finished-state guard allows progress through while rejecting terminal repeats. Late progress can replace the terminal accessibility value.",
+    "priorWhole": "fail",
+    "questionSHA256": "ac8747e0523d8964ac7f6ebb8c4e5927f4118fe6a08489ec3f89756f7aa01afd",
+    "sha256": "7406c79af56ec66438267166c0ade496062407f1241d9a73489f3c00fa198a98",
+    "source": "research/evaluation/zero-base-v1/subjects/GP26-10.txt"
+  },
+  {
+    "alternative": "Bind an invalidatable registration or compare captured owner and revision.",
+    "assertions": [],
+    "criterion": "Place the shortcut on a reachable owner, validate current permission and preserve the independent ordinary actions.",
+    "family": "supplementary-delete",
+    "framework": "UIKit",
+    "id": "Q-23f26ed0c1dd9302",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "654c1f1fe0813e385f04618b80c0156db1ebc5c166606f3bea80bf17a42956ca"
+    },
+    "negative": "Retained Delete acts on the replacement file or disabled record.",
+    "origin": "G-ddf8bad3cbd8d0",
+    "originalAnswerSHA256": "c7c388866721be5a8ee9b565321f1d430c33bdea78f5b91fa758dd95a82dc8e4",
+    "originalSHA256": "ddf8bad3cbd8d08785f91dfcdb1ed4f6d44a36a2a09d793554ddfe9fb820c882",
+    "platform": "iOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "A retained shortcut calls the stored delete closure without checking the current button's enabled state on invocation.",
+    "priorWhole": "fail",
+    "questionSHA256": "654c1f1fe0813e385f04618b80c0156db1ebc5c166606f3bea80bf17a42956ca",
+    "sha256": "23f26ed0c1dd93026775d1a27d28933a1a6607df02bd5e3a503eed8f2390418d",
+    "source": "research/evaluation/zero-base-v1/subjects/ios-uikit-actions.txt"
+  },
+  {
+    "alternative": "Tagged-option set or direct per-option lookup with request ownership.",
+    "assertions": [],
+    "criterion": "Read native characteristic and publish only for the live request; inspection performs no selection writes.",
+    "family": "read-only-inspection",
+    "framework": "SwiftUI",
+    "id": "Q-dc9a7278462d64d9",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "fbdea2eaf4576b885336db803aa605a3223864c6f544bbd410bb5dffcaaa0732"
+    },
+    "negative": "Restores a saved selection after inspection, overwriting a newer user choice.",
+    "origin": "G-b12c69f62639d3",
+    "originalAnswerSHA256": "73cbf9b3a14a3e7a5656a8387e076ff8249e2a42b52b86f3b52cb00d3f2938ac",
+    "originalSHA256": "b12c69f62639d32d35bf72db851861a484dd1aa2436623787a47968be965c948",
+    "platform": "iOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "Applies stored audio and subtitle preferences with select during metadata inspection, changing actual player selection.",
+    "priorWhole": "fail",
+    "questionSHA256": "fbdea2eaf4576b885336db803aa605a3223864c6f544bbd410bb5dffcaaa0732",
+    "sha256": "dc9a7278462d64d9f17b9c047b44dc7f5e611d408a6f06bef8ffe6c234a1545c",
+    "source": "research/evaluation/zero-base-v1/subjects/ios-swiftui-media.txt"
+  },
+  {
+    "alternative": "Invalidate handles or clear old children and check registry ownership.",
+    "assertions": [],
+    "criterion": "Reject duplicate IDs before mutation and retire removed child data; preserve surviving nodes and visible selection.",
+    "family": "outline-identity",
+    "framework": "AppKit",
+    "id": "Q-dc9be18606923ff6",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "4e4d9463cfaecc41f256bd8b0d46863ae6caefe5f5cb388d0a773ecea2fd8676"
+    },
+    "negative": "A removed handle still reports stale children or a duplicate leaves a partial tree.",
+    "origin": "G-dd7ee77a4e81a0",
+    "originalAnswerSHA256": "1206dde9011303131f92df49ce898a9ec860bbeb928022202c2e1cf8438114be",
+    "originalSHA256": "dd7ee77a4e81a08eafcfde90c16e27860592baffa3d934777f5615ee0a9ada3e",
+    "platform": "macOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "Datasource accepts any LibraryItemNode and returns its children even after removal; the orphan test explicitly expects the stale node to remain queryable.",
+    "priorWhole": "fail",
+    "questionSHA256": "4e4d9463cfaecc41f256bd8b0d46863ae6caefe5f5cb388d0a773ecea2fd8676",
+    "sha256": "dc9be18606923ff6cad3d092704ba39d28a325c3aaa536d2c2c438c9c4ecab03",
+    "source": "code-examples/platforms/macos-structure-v1/evaluation/outline-structure.prompt.md"
+  },
+  {
+    "alternative": "Filter all eligible options then select first, or first matching complete predicate.",
+    "assertions": [
+      "MediaChoiceTests/testDescriptionUnavailablePreservesChoice"
+    ],
+    "criterion": "Fail the unmatched request without changing a known nonempty native selection.",
+    "family": "described-selection",
+    "framework": "UIKit",
+    "id": "Q-3fda5cb3fcc0b21c",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "42afa70d9f85744dfb2f908d2b6e649a2641a19447879780c868523f7ad47918"
+    },
+    "negative": "The test starts with no selection or uses a language with no ordinary match.",
+    "origin": "G-7cc5d89371a12a",
+    "originalAnswerSHA256": "b6bcaf6f706333581bef88260a444861052585d4215449e6caa3b99beb05ceb0",
+    "originalSHA256": "7cc5d89371a12a35fa28d381f411f6dab4c11090485984995a2eac96540fcda8",
+    "platform": "tvOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "pass",
+    "priorRationale": "Checks the description characteristic but permits the check to return without exercising selection when no media group exists.",
+    "priorWhole": "fail",
+    "questionSHA256": "42afa70d9f85744dfb2f908d2b6e649a2641a19447879780c868523f7ad47918",
+    "sha256": "3fda5cb3fcc0b21c32d3fe7c4fdfdd7c716251b19a14c98653ffbea560e55998",
+    "source": "code-examples/platforms/tvos-media-v1/manifest.json"
+  },
+  {
+    "alternative": "Branch or conditional expression using the SDK constant.",
+    "assertions": [
+      "TextUIKitTests/testEditCategoryConfigurationAndDefault"
+    ],
+    "criterion": "Assign the documented optional category and remove it when grouping is off.",
+    "family": "edit-category",
+    "framework": "UIKit",
+    "id": "Q-a379421a199d1b24",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "15e9708dbe3db9ccdfaac5a707b7a4bf97c5f81dab88218fcac5c83d9e9190db"
+    },
+    "negative": "Invents an enum member or replaces the existing handler.",
+    "origin": "G-d95da35e90afc0",
+    "originalAnswerSHA256": "c4ed6389910966c567e05017fe95a490b21b643ac6a7fb397e22ab6f13fcc307",
+    "originalSHA256": "d95da35e90afc045e5607d1b392784e50d29683020dfbf2e1e8c10561fb6bd3f",
+    "platform": "iOS",
+    "priorBlindAudit": {
+      "blindPrimary": "fail",
+      "blindWhole": "fail",
+      "finding": "The answer identifies the absent category but the provided .edit spelling does not match UIKit\u2019s UIAccessibilityCustomAction.editCategory constant. The proposed XCTest repeats the same API error and omits an ordinary action\u2019s nil default.",
+      "lane": "repair \u00b7 edit-category",
+      "mask": "Q58",
+      "originalPrimary": "fail",
+      "originalWhole": "fail"
+    },
+    "priorPrimary": "fail",
+    "priorRationale": "Uses .edit for the custom action category rather than the supplied UIAccessibilityCustomAction.editCategory API.",
+    "priorWhole": "fail",
+    "questionSHA256": "15e9708dbe3db9ccdfaac5a707b7a4bf97c5f81dab88218fcac5c83d9e9190db",
+    "sha256": "a379421a199d1b2474af494fde4ea80c8950b7bd35e556fd142910aa52404fc5",
+    "source": "code-examples/pilots/uikit-text-v1/manifest.json"
+  },
+  {
+    "alternative": "Use native text positions or convert an independently known Swift range in the same string.",
+    "assertions": [
+      "TextUIKitTests/testUnicodePrefixProducesExactSelectedText"
+    ],
+    "criterion": "Compare selected substring and native coordinates against the same live document, preserving Unicode boundaries.",
+    "family": "text-coordinate",
+    "framework": "UIKit",
+    "id": "Q-306e02b3d25ca705",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "dff29bb9c3fb45053c183f0d82b753e89733c895d384c2e45bdb07ea00651fef"
+    },
+    "negative": "Counts graphemes as though they were the native offsets. Reassess if neutral wording removes the historical failure.",
+    "origin": "G-840924fec7426a",
+    "originalAnswerSHA256": "4429786550f8bd17bcb5f79e34b231a6bd7e3303dcc4afdb77e31cf75f78703b",
+    "originalSHA256": "840924fec7426aa61e2b93da492fb45d436bca288199d0a033bbc5c26fb79d0b",
+    "platform": "iOS",
+    "priorBlindAudit": {
+      "blindPrimary": "fail",
+      "blindWhole": "fail",
+      "finding": "Recognizes the +1 error but replaces UITextView UTF-16 offsets with Swift Character distances. After emoji the new range still misses the phrase. The test compares the same wrong offsets without reading the selected text.",
+      "lane": "repair \u00b7 range-coordinate",
+      "mask": "Q38",
+      "originalPrimary": "fail",
+      "originalWhole": "fail"
+    },
+    "priorPrimary": "fail",
+    "priorRationale": "Converts UTF-16 document offsets to Swift grapheme counts before creating UITextPositions. A preceding emoji shifts the result.",
+    "priorWhole": "fail",
+    "questionSHA256": "dff29bb9c3fb45053c183f0d82b753e89733c895d384c2e45bdb07ea00651fef",
+    "sha256": "306e02b3d25ca70513aa538dcbfc3c80ac8a4ca6d46632d44ffc8dada8072253",
+    "source": "code-examples/pilots/uikit-text-v1/manifest.json"
+  },
+  {
+    "alternative": "Retain a completion handle or use a consumable session token.",
+    "assertions": [
+      "ModalUIKitTests/testNotificationWaitsForCompletionAndUsesCurrentTarget"
+    ],
+    "criterion": "Post only for successful owning completion, not for a close request or cancelled generation.",
+    "family": "dismiss-completion",
+    "framework": "UIKit",
+    "id": "Q-4043b761d5a2a93f",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "d0518029e77b1d028ef906f289de14d2cf58b06bc41a42af0257aa6ae9a8544d"
+    },
+    "negative": "Posts at Close even if the animation never completes.",
+    "origin": "G-da89005c6d3613",
+    "originalAnswerSHA256": "92c5810e3bd5dcf15dfdaa97b07cd899ac6508f7f0d86d4c895143b1160c869c",
+    "originalSHA256": "da89005c6d36134df5b111b9a5a6ff92a89fe196dcd13717a2ad5d79cf06dcbc",
+    "platform": "iOS",
+    "priorBlindAudit": {
+      "blindPrimary": "fail",
+      "blindWhole": "fail",
+      "finding": "Keeps posting while the background is hidden and suppresses the completion post. A changed return target cannot receive the requested restoration.",
+      "lane": "repair \u00b7 dismissal-completion",
+      "mask": "Q14",
+      "originalPrimary": "fail",
+      "originalWhole": "fail"
+    },
+    "priorPrimary": "fail",
+    "priorRationale": "Keeps the early return-focus post and suppresses the completion post. A stale-operation check cannot make that delivery occur after dismissal.",
+    "priorWhole": "fail",
+    "questionSHA256": "d0518029e77b1d028ef906f289de14d2cf58b06bc41a42af0257aa6ae9a8544d",
+    "sha256": "4043b761d5a2a93f7b7c37e6ab6539e0a20896bb14ff9da79a3b0ca09ff845ba",
+    "source": "code-examples/pilots/uikit-modal-v1/manifest.json"
+  },
+  {
+    "alternative": "Check eligibility or react to the request's refusal.",
+    "assertions": [
+      "DesktopLifecycleTests/testRefusingOriginalUsesFallback"
+    ],
+    "criterion": "Choose or try an eligible fallback when the attached original cannot accept focus.",
+    "family": "responder-refusal",
+    "framework": "AppKit",
+    "id": "Q-106dcc3ae25bab18",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "0004f5030f72e11a9b68c5422eeea6c76fe9065ee0ddb89e0a0b12abc56c69d0"
+    },
+    "negative": "Only tests an original that has already been removed.",
+    "origin": "G-be25d510c5ffe5",
+    "originalAnswerSHA256": "8eeeaab95daef7059417a6cd19f3a49e5b172c9a9c3af4ab6bfbb8ebf4e8e8e2",
+    "originalSHA256": "be25d510c5ffe50faf6b810a80d067ff0354cffb4c0e6eb6a37a9ae6badd4b9d",
+    "platform": "macOS",
+    "priorBlindAudit": {
+      "blindPrimary": "fail",
+      "blindWhole": "fail",
+      "finding": "An enabled visible descendant can refuse first responder. Choosing it exhausts the token and misses the eligible fallback. Tests cover a removed primary instead.",
+      "lane": "repair \u00b7 eligible-target",
+      "mask": "Q07",
+      "originalPrimary": "fail",
+      "originalWhole": "fail"
+    },
+    "priorPrimary": "fail",
+    "priorRationale": "Claims the original target is already eligible and tests a fallback without addressing refusal to accept first responder.",
+    "priorWhole": "fail",
+    "questionSHA256": "0004f5030f72e11a9b68c5422eeea6c76fe9065ee0ddb89e0a0b12abc56c69d0",
+    "sha256": "106dcc3ae25bab18786c5b47edc645e75eeed4bf8e4ae46fe53b7f6f6cc574ac",
+    "source": "code-examples/platforms/macos-lifecycle-v1/manifest.json"
+  },
+  {
+    "alternative": "Use UIButton.Configuration or setTitle for the active state.",
+    "assertions": [
+      "TelevisionActionsTests/testVisibleActionNames"
+    ],
+    "criterion": "Configure actual button titles and verify both after configuration.",
+    "family": "visible-button-title",
+    "framework": "UIKit",
+    "id": "Q-8ada9d34d4687007",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "6f01f0733df7dbf3b461f615983d585cac43f768deff67cef249af0cafd22a14"
+    },
+    "negative": "Changes an identifier or accessibility label without supplying visible text.",
+    "origin": "G-ed8bff5491ab72",
+    "originalAnswerSHA256": "9fa431e725e7e0ccba4f27e1dc8a699f9f4869088dc1361aba73cb2c8e2616c0",
+    "originalSHA256": "ed8bff5491ab72c5f82fc0cccb3e883740299861fd70d85fc9b2521535603d05",
+    "platform": "tvOS",
+    "priorBlindAudit": {
+      "blindPrimary": "fail",
+      "blindWhole": "fail",
+      "finding": "Both controls still have no visible title. The change and test address automation identifiers.",
+      "lane": "repair \u00b7 visible-title",
+      "mask": "Q21",
+      "originalPrimary": "fail",
+      "originalWhole": "fail"
+    },
+    "priorPrimary": "fail",
+    "priorRationale": "Accessibility identifiers cannot give buttons visible titles. The proposed tests assert the identifier instead of the rendered control title.",
+    "priorWhole": "fail",
+    "questionSHA256": "6f01f0733df7dbf3b461f615983d585cac43f768deff67cef249af0cafd22a14",
+    "sha256": "8ada9d34d468700781278e6d062213f80c9c9970807342211764fb96fa44537a",
+    "source": "code-examples/platforms/tvos-uikit-v1/manifest.json"
+  },
+  {
+    "alternative": "Capture a request token or invalidate an owner object at reload.",
+    "assertions": [],
+    "criterion": "Retain an installed choice before reload; stale action cannot modify selection and current action still works.",
+    "family": "mac-retained-picker",
+    "framework": "SwiftUI",
+    "id": "Q-3d29d90ad8248620",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "91cec379539b9b7d87b9f0afc2e3ebc14854c02a0f8ed954ec50991a5768238e"
+    },
+    "negative": "Cancels only the loader and leaves the old picker setter active.",
+    "origin": "G-5f436c17e0c488",
+    "originalAnswerSHA256": "48e3fc19a98083d9e95916dd9e7a7f7b59f7b64ae10514cbcb2eaaeb89c011ae",
+    "originalSHA256": "5f436c17e0c4887d4dfe03c0dca9cd88a55cd7add27058f56c331674264c8077",
+    "platform": "macOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "chooseTrack accepts a nullable ID against the current list without capturing the originating request, so an old Off remains valid.",
+    "priorWhole": "fail",
+    "questionSHA256": "91cec379539b9b7d87b9f0afc2e3ebc14854c02a0f8ed954ec50991a5768238e",
+    "sha256": "3d29d90ad8248620f29860b4c2db37fef754b3576ee44085884110cada4a9e74",
+    "source": "code-examples/swiftui/media-macos-v1/evaluation/ownership.prompt.md"
+  },
+  {
+    "alternative": "Enum or equivalent observable states integrated into the screen.",
+    "assertions": [],
+    "criterion": "Distinct missing item and empty group, reachable retry, mounted load and native selection read/write.",
+    "family": "media-load-states",
+    "framework": "SwiftUI",
+    "id": "Q-64a9f08145d9a3ef",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "bc9f58efc881b14ffc220815f456efc5050c2db562bef94c64fa8bc7ab8b2f61"
+    },
+    "negative": "Only tests a loader invoked by the test, with no load path from the screen.",
+    "origin": "G-4ec92962591872",
+    "originalAnswerSHA256": "e281c407a53df2be1e8557c857cd83cd775c9234a23d635ba848ad8f6a762a92",
+    "originalSHA256": "4ec92962591872fabca8bb0ab6faacf07ad76da6968ceadb8a178257cd8aed3c",
+    "platform": "iOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "The missing-item test expects empty, conflating absence of a player item and a successful empty options load.",
+    "priorWhole": "fail",
+    "questionSHA256": "bc9f58efc881b14ffc220815f456efc5050c2db562bef94c64fa8bc7ab8b2f61",
+    "sha256": "64a9f08145d9a3ef59c29f3aa521b91de02fcbb536984afa50930d176290eb80",
+    "source": "code-examples/swiftui/media-ios-v2/evaluation/wiring.prompt.md"
+  },
+  {
+    "alternative": "Keep a separate display-only current option or distinguish listed/unlisted selection in state.",
+    "assertions": [],
+    "criterion": "Show active outside-list choice as distinct from Off; do not change selection for an unknown ID.",
+    "family": "unlisted-selection",
+    "framework": "SwiftUI",
+    "id": "Q-a130926b8d627c03",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "5953a46ff3b6ca8154acde95aa4c354f1167e93b4d32dbd9758e8e1e0dccc46d"
+    },
+    "negative": "Updates the displayed choice before validating the requested option.",
+    "origin": "G-5d121776613655",
+    "originalAnswerSHA256": "1a715ea0e43f44422a74dd14d1497926efabcdcff2401d941dc76a70b456234b",
+    "originalSHA256": "5d121776613655db44b2e7aa2249c90a70d8fa995b2d0e42b167bf3c968299bb",
+    "platform": "tvOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "Assigns selected to the requested ID before checking options, so an unknown ID changes displayed state even though the native choice remains unchanged.",
+    "priorWhole": "fail",
+    "questionSHA256": "5953a46ff3b6ca8154acde95aa4c354f1167e93b4d32dbd9758e8e1e0dccc46d",
+    "sha256": "a130926b8d627c03acf0d071c0f723b44ecfa87c60ad8463cedb26fbff54273a",
+    "source": "code-examples/swiftui/media-tvos-v2/evaluation/selection.prompt.md"
+  },
+  {
+    "alternative": "Per-load token or invalidatable binding object.",
+    "assertions": [],
+    "criterion": "Former same-item binding cannot alter the native legible group, but the current binding can.",
+    "family": "same-item-reload",
+    "framework": "SwiftUI",
+    "id": "Q-ccaa658786263847",
+    "lane": "development",
+    "members": {
+      "QUESTION.md": "c441df15d5b2e7177959195a85c8151c07c12defd26c43e713bd277f9d9fcb33"
+    },
+    "negative": "Checking only player-item identity accepts a stale same-item binding.",
+    "origin": "G-c6b25ad753e6a2",
+    "originalAnswerSHA256": "0175aaaad2bbcb9f2441fb31a377dc396ab4a8ad32456e3fd2bb527dd535cfcc",
+    "originalSHA256": "c6b25ad753e6a2d2dc4451dbfdb211a58676df4895119ecd568242e3dc9e1676",
+    "platform": "tvOS",
+    "priorBlindAudit": null,
+    "priorPrimary": "inconclusive",
+    "priorRationale": "The option setter receives item identity but no request revision. Reloading the same item leaves an old Off callback authorized.",
+    "priorWhole": "fail",
+    "questionSHA256": "c441df15d5b2e7177959195a85c8151c07c12defd26c43e713bd277f9d9fcb33",
+    "sha256": "ccaa658786263847784cbabb4725e4abd8784d1f32e83fb758110f6dc91d80b7",
+    "source": "code-examples/swiftui/media-tvos-v2/evaluation/ownership.prompt.md"
+  }
+]
