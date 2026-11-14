@@ -1,0 +1,20 @@
+{
+  "edit-action-stale": {
+    "file":"edit.md","platform":"iOS","framework":"UIKit",
+    "accept":["Keep the retained handler: it consults the live editor on every use, so Rename still records a name when allowed, refuses while read-only and works again when permission returns.","A different implementation that checks the current authority at invocation is equivalent; replacing the command on menu open is unnecessary."],
+    "reject":"Capture editable at installation or disable Rename permanently: one allows edits after revocation, the other loses the ordinary action after permission returns.",
+    "limit":"Unit: retained app closure and its recorded names, not UIKit menu delivery."
+  },
+  "native-slider": {
+    "file":"slider.md","platform":"iOS","framework":"SwiftUI",
+    "accept":["Ship the native labeled slider; its binding, bounds and step already express the requested behavior.","Retain the slider and binding. Discuss a localized value description as optional only if a distinct product requirement calls for it."],
+    "reject":"Replace it with a static spoken value, add a separately focusable duplicate title, or require a custom modifier to repair an unobserved announcement.",
+    "limit":"Source-grade the accessibility decision; native typechecking does not measure speech, stops or user experience."
+  },
+  "automatic-vs-off": {
+    "file":"audio.md","platform":"tvOS","framework":"SwiftUI",
+    "accept":["With automatic criteria enabled and a previous manual override on this group, keep the call: Follow System delegates choice to the player for this group; it does not promise silence or a particular track.","An equivalent button that invokes the automatic selection API directly is valid. Do not guess which option the system will select."],
+    "reject":"Clear the group with select(nil,in:) or promise automatic selection always produces a specific current option.",
+    "limit":"SDK typecheck and source review of the installed button path. An injected closure alone would not establish AVPlayerItem selection."
+  }
+}

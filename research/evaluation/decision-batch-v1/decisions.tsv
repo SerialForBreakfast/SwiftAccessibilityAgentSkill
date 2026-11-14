@@ -1,0 +1,52 @@
+route	family	proof	guidance
+actions	rebound-action	Q018	A registration belongs to a particular binding, not just a model ID. A new binding may reuse the same key. Exercise a retained action across rebinding and compare its recipient with the newly installed action's.
+actions	detached-action	-	A moved button can still have a parent. Decide whether the component still owns that button before delivering its command; attachment by itself answers a different question.
+actions	disabled-action	-	An action retained while enabled can outlive permission to perform it. Read eligibility at dispatch; restoring permission should restore ordinary operation.
+actions	ordinary-action	Q066,Q089	Try the actual buttons independently. A passing keyboard or accessibility shortcut tells you nothing about whether the ordinary button dispatched Open, Save, Details or Play.
+actions	interop-rebind	-	For a representable, distinguish make, update and dismantle. Refresh registrations on the object that owns them; tearing down an obsolete coordinator must not unplug its replacement.
+actions	custom-action-name	-	A plausible action title does not establish its destination. Follow the named installed action through to its return value and recipient.
+lifecycle	dismissal-completion	Q031	Separate asking to close from completing the transition. A refusal leaves the presentation active; an accepted but unfinished dismissal has not yet earned a restoration request.
+lifecycle	presentation-owner	-	Capture the presentation at callback installation. Reading a shared current ticket inside a late callback gives the retired presentation the replacement's authority.
+lifecycle	dismiss-reentry	-	Consume the outgoing presentation before the external restoration call. That call can synchronously open another presentation; cleanup afterward can erase it.
+lifecycle	eligible-target	Q072	Choose the destination when restoration is due. On Mac, distinguish being visible from accepting first responder; try the eligible fallback if the original refuses.
+lifecycle	modal-state	-	Restore the owner's saved background configuration. Unconditionally setting a flag to false can expose content that was hidden even before the panel opened.
+validation	input-snapshot	Q024	Compare the submitted values with the editable control at delivery. Editing through a helper that cancels the request cannot demonstrate what happens when a native field changes directly.
+validation	cancel-owner	-	A superseded completion must not release the replacement's busy state. A cancellation for the still-current operation, by contrast, must leave the user able to try again.
+validation	reentrant-submit	-	Mark a submission consumed before calling client code. If client code immediately submits again, the old completion must leave that request intact.
+validation	validation-help	-	Apply errors to the live field they describe. On recovery remove the obsolete message from that field while retaining unrelated errors and input.
+validation	observer-restart	Q041	Unregistering stops future registration deliveries, not necessarily work already queued. After restart, deliver an old notification and a new one and distinguish their effects.
+text	range-coordinate	-	Carry the producing API's coordinate system and document identity to the consuming API. Recover the actual substring; comparing two integers can agree even when they point at the wrong text.
+text	edited-matches	-	An edit can leave a cached match in bounds but no longer matching. Resolve against the current document before moving the cursor.
+text	rotor-direction	Q006	Use the current target and navigation direction rather than selecting the first match on every request. Keep ordinary heading traversal usable after a reorder.
+text	overlap-policy	-	For intersecting matches, ask whether the product advances from the start or end of the last match. Both policies can be correct; a repeated-pattern input distinguishes them.
+text	text-size-change	-	Follow the actual source of text size: a caller-supplied preview setting and the live environment are different inputs. Exercise a second size on the same view and retain its action.
+text	design-font	-	Recompute a scaled font from its design size, not the previous scaled output. A round trip between two sizes exposes compounding.
+structure	container-children	Q099	Identify the interactive owner before grouping. A shelf or wrapper may organize navigation while each episode still owns its own activation.
+structure	row-role	Q081	For an AppKit row, inspect role, selection and independently usable children separately. A correctly titled row does not prove any of those three properties.
+structure	stable-selection	Q067,Q080	Preserve surviving selection across sibling moves by identity. Duplicate display titles distinguish identity from accidental reselection by name or position.
+structure	table-span	Q027	Resolve interior coordinates of a spanning cell as well as its origin. Treat coordinates outside the grid separately from valid covered positions.
+structure	preserve-traits	Q002,Q059	Change only the trait bits owned by this state transition. Start with unrelated traits present and toggle both ways; replacing the entire set can pass an initially empty fixture.
+structure	visible-title	-	Decide which audience is missing a name: sighted users, assistive clients or test automation. Inspect the displayed title if the complaint concerns what people see.
+structure	decorative-element	Q054	Reset decoration on reconfiguration without hiding the whole row. Begin with the decoration exposed so an omitted reset is observable.
+media	binding-disconnect	-	Follow a picker write past the menu state into the selected option on the same player item. Changing an app-side ID alone can leave playback untouched.
+media	off-permission	-	Before offering a clear operation check whether the group permits an empty choice. A rejected clear leaves both the player and its displayed choice unchanged.
+media	unlisted-selection	-	Filtering the menu can hide the currently selected option. Preserve that state distinctly from no selected option; rebuilding the menu is not a user command.
+media	stale-off	-	A clear callback is still a write. Retain the setter, replace the player item, then invoke it: the replacement keeps its choice while its own current setter remains usable.
+media	request-generation	-	Two loads can race on the very same item. Item identity filters replacement items but cannot order requests for one item; accept only the current request's result.
+media	unavailable-media	-	Separate not loaded, load failed and successfully inspected with zero options. Report the observed state rather than inventing an empty menu; allow recovery from a failed load.
+media	forced-vs-full	-	If the menu promises full captions, distinguish forced-only tracks from full tracks. Filtering what is offered does not authorize changing playback's existing selection.
+media	audio-description-tag	-	Identify described audio from its characteristic on the option itself. Commentary or a language match alone is not evidence of description.
+media	buffer-readiness	-	Keep buffer observations and player readiness as separate facts. They may disagree; do not convert either into a guarantee that playing now will succeed.
+appearance	motion-content	Q083	Reduce Motion changes how an update is presented, not whether it happens. Inspect the new content and selected value as well as the motion policy.
+appearance	motion-policy	Q092	Distinguish an immediate update from a shortened animation when the product requires no transition. If the existing effective preference already selects the right branch, preserve it.
+appearance	contrast-linear	Q010	For sRGB luminance, a midtone distinguishes linearized light from encoded channel values; black and white alone cannot detect a missing transfer step.
+appearance	contrast-alpha	-	For translucent content, establish the actual background before calculating a rendered ratio. If the calculator accepts only opaque samples, report that boundary.
+appearance	contrast-appearance	-	Resolve semantic colors in the requested appearance before comparing them. One light-mode pair cannot verify the dark-mode decision.
+structure	optional-help	-	An empty help string and an absent value are not interchangeable when the configuration contract distinguishes them. Rebind the same control without help; its ordinary action must survive.
+structure	conflicting-state-text	-	Two empty strings can agree while conveying no state. Compare visible and accessibility status against the intended meaning in each selection state.
+structure	edit-category	-	Select an editing category only for actions that represent editing. Leave the default alone for ordinary commands and verify the declared SDK member rather than guessing its spelling.
+actions	edit-action-stale	-	While the command remains retained, change the editor to read-only and invoke it. Opening a menu is not the event that revokes editability.
+structure	editable-wrapper	-	In SwiftUI hosting AppKit, hide redundant chrome only if the native search field and its Clear path remain independently usable. Hiding the entire wrapper is not evidence that the editor survives.
+structure	native-slider	-	A labeled native slider with a working binding is a preservation case unless the input identifies a concrete unmet requirement. The absence of a custom value modifier is not a defect or a prediction of speech.
+media	automatic-vs-off	-	Returning control to automatic selection can choose another track. If the request is Off, distinguish an explicitly empty selection from system choice and inspect the item's resulting option.
+media	duplicate-binding	Q057	Repeated selection of the active speed is not a new transition. Drive the actual selection binding twice, count effects, then change speed and confirm one real update still passes through.

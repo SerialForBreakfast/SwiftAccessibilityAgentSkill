@@ -1,0 +1,583 @@
+{
+  "macOS-working": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Sheet.swift": "a00221d10bf74fad63faa70298ac23eb9a7fafdc6fd046562def03d1cb85aeb5",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Sources/Presentation.swift": "c57489da503005061c7fc636802e509b107ed05ea6402c559865ca15f86aade4",
+      "Sources/Documents.swift": "81954f9eeefb3f0035deb4304cacb6bda53e7e93f653662c07e250e9b9f49abf"
+    },
+    "environment": {
+      "platform": "macOS",
+      "runtime": "27.0",
+      "runtimeBuild": "26A428",
+      "sdk": "27.0",
+      "sdkBuild": "26A425",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 0,
+    "events": [
+      [
+        "Checks.CallbackTests testLateAThenBTwice",
+        "passed"
+      ],
+      [
+        "Checks.ContractTests testDocument",
+        "passed"
+      ]
+    ],
+    "errors": [],
+    "logSHA256": "86de74ec7068a0560468d9f203d3cde772091229e749d25f613e92869cde6400"
+  },
+  "macOS-alternative": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Sheet.swift": "a00221d10bf74fad63faa70298ac23eb9a7fafdc6fd046562def03d1cb85aeb5",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Sources/Presentation.swift": "833016817e9a722d53e06fe428da82a2c9aa5a0d0c8337c112d934b056c4add5",
+      "Sources/Documents.swift": "3489332e888f5a4a9c927e330008ff7d16206959845a10da16a68f84e924d872"
+    },
+    "environment": {
+      "platform": "macOS",
+      "runtime": "27.0",
+      "runtimeBuild": "26A428",
+      "sdk": "27.0",
+      "sdkBuild": "26A425",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 0,
+    "events": [
+      [
+        "Checks.CallbackTests testLateAThenBTwice",
+        "passed"
+      ],
+      [
+        "Checks.ContractTests testDocument",
+        "passed"
+      ]
+    ],
+    "errors": [],
+    "logSHA256": "eb56d23a1b4dfa2a09b720f8fb3d06b0fe8a5d37b2a1e6c73a59b58fdb918212"
+  },
+  "macOS-defect": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Sheet.swift": "a00221d10bf74fad63faa70298ac23eb9a7fafdc6fd046562def03d1cb85aeb5",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Sources/Presentation.swift": "53c98a2ed2f61f9a637eefc271000e031b204226ce08ebd55ffac390a989913b",
+      "Sources/Documents.swift": "fb73e07bd643979a7ba9bf36c030f33e3595d6a09e0e23cdf14f91aee2c9f3eb"
+    },
+    "environment": {
+      "platform": "macOS",
+      "runtime": "27.0",
+      "runtimeBuild": "26A428",
+      "sdk": "27.0",
+      "sdkBuild": "26A425",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 65,
+    "events": [
+      [
+        "Checks.CallbackTests testLateAThenBTwice",
+        "failed"
+      ],
+      [
+        "Checks.ContractTests testDocument",
+        "failed"
+      ]
+    ],
+    "errors": [
+      "Tests/Sheet.swift:15: error: -[Checks.CallbackTests testLateAThenBTwice] : XCTAssertEqual failed: (\"[\"late-A:row-B\"]\") is not equal to (\"[]\") - late A must not consume B",
+      "Tests/Sheet.swift:18: error: -[Checks.CallbackTests testLateAThenBTwice] : XCTAssertEqual failed: (\"[\"late-A:row-B\"]\") is not equal to (\"[\"first-B:row-B\"]\") - B must restore its own origin",
+      "Tests/Sheet.swift:21: error: -[Checks.CallbackTests testLateAThenBTwice] : XCTAssertEqual failed: (\"[\"late-A:row-B\"]\") is not equal to (\"[\"first-B:row-B\"]\") - B may restore only once",
+      "Tests/Contract.swift:19: error: -[Checks.ContractTests testDocument] : XCTAssertEqual failed: (\"[]\") is not equal to (\"[\"B\"]\") - retired delete removed B",
+      "Tests/Contract.swift:22: error: -[Checks.ContractTests testDocument] : XCTAssertEqual failed: (\"[]\") is not equal to (\"[\"x\"]\")"
+    ],
+    "logSHA256": "abf12b4722bd19a4a181e50ded9d839b355d7c397889626494877ecdf53b8980"
+  },
+  "macOS-answer": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Sheet.swift": "9e535225e5347a359c5683f20722a4c50881c01a9ca9b0c703e229d60cd247c2",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Sources/Presentation.swift": "cc824d5f5ba305560b0e772f1bd949b4f1dc50774f74d496c1520b4bf02ffba4",
+      "Sources/Documents.swift": "44e55faae0d3f4072ce15b07459b9884914657c97176a84c7c7a47e84c9db2c0"
+    },
+    "environment": {
+      "platform": "macOS",
+      "runtime": "27.0",
+      "runtimeBuild": "26A428",
+      "sdk": "27.0",
+      "sdkBuild": "26A425",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 65,
+    "events": [
+      [
+        "Checks.ContractTests testDocument",
+        "failed"
+      ],
+      [
+        "Checks.Hosted testRetainedRegistrations",
+        "failed"
+      ]
+    ],
+    "errors": [
+      "Tests/Contract.swift:19: error: -[Checks.ContractTests testDocument] : XCTAssertEqual failed: (\"[]\") is not equal to (\"[\"B\"]\") - retired delete removed B",
+      "Tests/Contract.swift:22: error: -[Checks.ContractTests testDocument] : XCTAssertEqual failed: (\"[]\") is not equal to (\"[\"x\"]\")",
+      "2026-11-14 10:16:40.877619-0800 xctest[22058:15865052] [Connection] Unable to get synchronousRemoteObjectProxy, error: Error Domain=NSCocoaErrorDomain Code=4097 \"connection to service named com.apple.linkd.autoShortcut\" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}",
+      "2026-11-14 10:16:40.880470-0800 xctest[22058:15864519] [Connection] Unable to get synchronousRemoteObjectProxy, error: Error Domain=NSCocoaErrorDomain Code=4097 \"connection to service named com.apple.linkd.autoShortcut\" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}",
+      "2026-11-14 10:16:40.880554-0800 xctest[22058:15864519] [Connection] Unable to re-register with Process Instance Registry, error: Error Domain=NSCocoaErrorDomain Code=4097 \"connection to service named com.apple.linkd.autoShortcut\" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}",
+      "2026-11-14 10:16:40.891140-0800 xctest[22058:15865047] [Connection] Unable to get synchronousRemoteObjectProxy, error: Error Domain=NSCocoaErrorDomain Code=4097 \"connection to service named com.apple.linkd.autoShortcut\" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}",
+      "2026-11-14 10:16:40.891223-0800 xctest[22058:15865047] [Connection] Unable to re-register with Process Instance Registry, error: Error Domain=NSCocoaErrorDomain Code=4097 \"connection to service named com.apple.linkd.autoShortcut\" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}",
+      "2026-11-14 10:16:40.907284-0800 xctest[22058:15864519] [Connection] Unable to get synchronousRemoteObjectProxy, error: Error Domain=NSCocoaErrorDomain Code=4097 \"connection to service named com.apple.linkd.autoShortcut\" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}",
+      "2026-11-14 10:16:40.909229-0800 xctest[22058:15864519] [Connection] Unable to re-register with Process Instance Registry, error: Error Domain=NSCocoaErrorDomain Code=4097 \"connection to service named com.apple.linkd.autoShortcut\" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}",
+      "Tests/Sheet.swift:38: error: -[Checks.Hosted testRetainedRegistrations] : XCTAssertEqual failed: (\"[\"late-A:open\"]\") is not equal to (\"[]\") - late A must not restore",
+      "Tests/Sheet.swift:40: error: -[Checks.Hosted testRetainedRegistrations] : XCTAssertEqual failed: (\"[\"late-A:open\"]\") is not equal to (\"[\"first-B:open\"]\") - first B owns restoration",
+      "Tests/Sheet.swift:42: error: -[Checks.Hosted testRetainedRegistrations] : XCTAssertEqual failed: (\"[\"late-A:open\"]\") is not equal to (\"[\"first-B:open\"]\") - repeat B must be quiet"
+    ],
+    "logSHA256": "92da28215c018b9d51321f0cc13ef3ca94dd8f48784eb66c9e8044f24d8f4d19"
+  },
+  "tvOS-working": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Sources/Shelf.swift": "609186885aad0f09ee9585c0c280b60ec7d9875022579e6d1b1e281e095f983d",
+      "Sources/Validation.swift": "40c47374c2a65b75c54b4bdfa72741126b2c8ab2d0306c8d60c2294235297d76"
+    },
+    "environment": {
+      "platform": "tvOS",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.tvOS-26-5",
+      "runtimeBuild": "23L470",
+      "sdk": "27.0",
+      "sdkBuild": "24J360",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 0,
+    "events": [
+      [
+        "Checks.ContractTests testLiveEdit",
+        "passed"
+      ],
+      [
+        "Checks.ContractTests testShelf",
+        "passed"
+      ]
+    ],
+    "errors": [],
+    "logSHA256": "5d9063ca9dfd2f0cc4dcbdc489b1a80343da099166a60e9a7884246854456067"
+  },
+  "tvOS-alternative": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Sources/Shelf.swift": "f24001b32018388c03e2be93e6ac7a9dc7cbb62731ed666d24dcc9de336bc62c",
+      "Sources/Validation.swift": "68181b60b2b27e8997ebc4167f6055bcb0f484d30e3d95605214ac6ba098b361"
+    },
+    "environment": {
+      "platform": "tvOS",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.tvOS-26-5",
+      "runtimeBuild": "23L470",
+      "sdk": "27.0",
+      "sdkBuild": "24J360",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 0,
+    "events": [
+      [
+        "Checks.ContractTests testLiveEdit",
+        "passed"
+      ],
+      [
+        "Checks.ContractTests testShelf",
+        "passed"
+      ]
+    ],
+    "errors": [],
+    "logSHA256": "fec5e2db3763640fa757e6578a4f699bed3dc60f37c510c102cb1666f040cd29"
+  },
+  "tvOS-defect": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Sources/Shelf.swift": "8318327f49a71abf401c1ac54cacfc7a667ed11708c46f668372fec6a16bc5bd",
+      "Sources/Validation.swift": "328f0af7e4f15237acd29995367798084d38e6c3d53fe4427f0f0a6a56823a7b"
+    },
+    "environment": {
+      "platform": "tvOS",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.tvOS-26-5",
+      "runtimeBuild": "23L470",
+      "sdk": "27.0",
+      "sdkBuild": "24J360",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 65,
+    "events": [
+      [
+        "Checks.ContractTests testLiveEdit",
+        "failed"
+      ],
+      [
+        "Checks.ContractTests testShelf",
+        "failed"
+      ]
+    ],
+    "errors": [
+      "Tests/Contract.swift:34: error: -[Checks.ContractTests testLiveEdit] : XCTAssertEqual failed: (\"[\"name\": \"bad A\"]\") is not equal to (\"[:]\") - obsolete error reached current field",
+      "Tests/Contract.swift:35: error: -[Checks.ContractTests testLiveEdit] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\")",
+      "Tests/Contract.swift:51: error: -[Checks.ContractTests testShelf] : XCTAssertNil failed: \"x\" - retired control selected replacement"
+    ],
+    "logSHA256": "f437daa5d9842df779a8f93d21ed38490b6e7caaeab38f53924c2b92f1e0b71f"
+  },
+  "tvOS-answer": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Sources/Shelf.swift": "f0df28965620eb05397a768880e0f88899ab8c44e8c893a34059b4dab8383cae",
+      "Sources/Validation.swift": "8b3c7b39182340a7d0b0ac286fa4c6cec964752e0083aa76759db92071933cde"
+    },
+    "environment": {
+      "platform": "tvOS",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.tvOS-26-5",
+      "runtimeBuild": "23L470",
+      "sdk": "27.0",
+      "sdkBuild": "24J360",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 65,
+    "events": [
+      [
+        "Checks.ContractTests testLiveEdit",
+        "failed"
+      ],
+      [
+        "Checks.ContractTests testShelf",
+        "failed"
+      ]
+    ],
+    "errors": [
+      "Tests/Contract.swift:34: error: -[Checks.ContractTests testLiveEdit] : XCTAssertEqual failed: (\"[\"name\": \"bad A\"]\") is not equal to (\"[:]\") - obsolete error reached current field",
+      "Tests/Contract.swift:35: error: -[Checks.ContractTests testLiveEdit] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\")",
+      "Tests/Contract.swift:51: error: -[Checks.ContractTests testShelf] : XCTAssertNil failed: \"x\" - retired control selected replacement"
+    ],
+    "logSHA256": "ad538625afa35bbf7bf86ce5ab08de3e565263cf5bf7630ad1ca9f79a629799a"
+  },
+  "iOS-working": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Submittedc13f93.swift": "bc77ba24d5a5316d2d5e3a834d15237fe8c54d09137b230ce112557cf4af61f4",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Tests/Submitted015170.swift": "424835a253d2deb18b9faaa017d7277a95d9fe6bcfb9ab091653de8911290baf",
+      "Sources/Panel.swift": "0a1b2fa1fa420044467fd4024b030831e6d8fee4d0074d0de5f2c921402a29b3",
+      "Sources/Validation.swift": "40c47374c2a65b75c54b4bdfa72741126b2c8ab2d0306c8d60c2294235297d76"
+    },
+    "environment": {
+      "platform": "iOS",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 65,
+    "events": [
+      [
+        "Checks.ContractTests testLiveEdit",
+        "passed"
+      ],
+      [
+        "Checks.ContractTests testPanel",
+        "passed"
+      ],
+      [
+        "Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity",
+        "failed"
+      ],
+      [
+        "Checks.Submittedc13f93 test_dismissalCancellation_doesNotExecuteStaleCompletion",
+        "failed"
+      ]
+    ],
+    "errors": [
+      "Tests/Submitted015170.swift:38: error: -[Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity] : XCTAssertFalse failed - Background must be visible to accessibility when focus is requested",
+      "Tests/Submitted015170.swift:40: error: -[Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity] : XCTAssertFalse failed - Modal lock must be relinquished for returnTarget to receive focus",
+      "Tests/Submitted015170.swift:42: error: -[Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity] : XCTAssertEqual failed: (\"0\") is not equal to (\"1\")",
+      "Tests/Submitted015170.swift:43: error: -[Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity] : XCTAssertIdentical failed: (\"nil\") is not identical to (\"<UIButton: 0x1062dc000; frame = (0 0; 0 0); opaque = NO; gestureRecognizers = <NSArray: 0x102a0e2e0>; layer = <CALayer: 0x106290a50>>\")",
+      "Tests/Submittedc13f93.swift:24: error: -[Checks.Submittedc13f93 test_dismissalCancellation_doesNotExecuteStaleCompletion] : XCTAssertEqual failed: (\"0\") is not equal to (\"1\") - Immediate focus request when close begins",
+      "Tests/Submittedc13f93.swift:35: error: -[Checks.Submittedc13f93 test_dismissalCancellation_doesNotExecuteStaleCompletion] : XCTAssertEqual failed: (\"0\") is not equal to (\"1\") - Stale completion must not post second notification"
+    ],
+    "logSHA256": "03572456891f1452a76c597e98c938210a09c7dfe97aca03a2a130fb9c452f33"
+  },
+  "iOS-alternative": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Submittedc13f93.swift": "bc77ba24d5a5316d2d5e3a834d15237fe8c54d09137b230ce112557cf4af61f4",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Tests/Submitted015170.swift": "424835a253d2deb18b9faaa017d7277a95d9fe6bcfb9ab091653de8911290baf",
+      "Sources/Panel.swift": "5e9639572fcd26563b54491431419c4e5433236296710895fdbba39932508de3",
+      "Sources/Validation.swift": "68181b60b2b27e8997ebc4167f6055bcb0f484d30e3d95605214ac6ba098b361"
+    },
+    "environment": {
+      "platform": "iOS",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 65,
+    "events": [
+      [
+        "Checks.ContractTests testLiveEdit",
+        "passed"
+      ],
+      [
+        "Checks.ContractTests testPanel",
+        "passed"
+      ],
+      [
+        "Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity",
+        "failed"
+      ],
+      [
+        "Checks.Submittedc13f93 test_dismissalCancellation_doesNotExecuteStaleCompletion",
+        "failed"
+      ]
+    ],
+    "errors": [
+      "Tests/Submitted015170.swift:38: error: -[Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity] : XCTAssertFalse failed - Background must be visible to accessibility when focus is requested",
+      "Tests/Submitted015170.swift:40: error: -[Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity] : XCTAssertFalse failed - Modal lock must be relinquished for returnTarget to receive focus",
+      "Tests/Submitted015170.swift:42: error: -[Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity] : XCTAssertEqual failed: (\"0\") is not equal to (\"1\")",
+      "Tests/Submitted015170.swift:43: error: -[Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity] : XCTAssertIdentical failed: (\"nil\") is not identical to (\"<UIButton: 0x108ed4000; frame = (0 0; 0 0); opaque = NO; gestureRecognizers = <NSArray: 0x10560e280>; layer = <CALayer: 0x108e84cf0>>\")",
+      "Tests/Submittedc13f93.swift:24: error: -[Checks.Submittedc13f93 test_dismissalCancellation_doesNotExecuteStaleCompletion] : XCTAssertEqual failed: (\"0\") is not equal to (\"1\") - Immediate focus request when close begins",
+      "Tests/Submittedc13f93.swift:35: error: -[Checks.Submittedc13f93 test_dismissalCancellation_doesNotExecuteStaleCompletion] : XCTAssertEqual failed: (\"0\") is not equal to (\"1\") - Stale completion must not post second notification"
+    ],
+    "logSHA256": "d97fe638bfc87750fdf3ac7bbd391cda3e3913b7bff51e11fb82d1ef32cdeea8"
+  },
+  "iOS-defect": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Submittedc13f93.swift": "bc77ba24d5a5316d2d5e3a834d15237fe8c54d09137b230ce112557cf4af61f4",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Tests/Submitted015170.swift": "424835a253d2deb18b9faaa017d7277a95d9fe6bcfb9ab091653de8911290baf",
+      "Sources/Panel.swift": "54cdd1ec3ddfffa78d21927501bbec734a577ab85eea7478328a347587d727cd",
+      "Sources/Validation.swift": "328f0af7e4f15237acd29995367798084d38e6c3d53fe4427f0f0a6a56823a7b"
+    },
+    "environment": {
+      "platform": "iOS",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 65,
+    "events": [
+      [
+        "Checks.ContractTests testLiveEdit",
+        "failed"
+      ],
+      [
+        "Checks.ContractTests testPanel",
+        "failed"
+      ],
+      [
+        "Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity",
+        "failed"
+      ],
+      [
+        "Checks.Submittedc13f93 test_dismissalCancellation_doesNotExecuteStaleCompletion",
+        "passed"
+      ]
+    ],
+    "errors": [
+      "Tests/Contract.swift:34: error: -[Checks.ContractTests testLiveEdit] : XCTAssertEqual failed: (\"[\"name\": \"bad A\"]\") is not equal to (\"[:]\") - obsolete error reached current field",
+      "Tests/Contract.swift:35: error: -[Checks.ContractTests testLiveEdit] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\")",
+      "Tests/Contract.swift:72: error: -[Checks.ContractTests testPanel] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\") - restored before completion",
+      "Tests/Contract.swift:75: error: -[Checks.ContractTests testPanel] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\")",
+      "Tests/Contract.swift:78: error: -[Checks.ContractTests testPanel] : XCTAssertEqual failed: (\"3\") is not equal to (\"1\")",
+      "Tests/Submitted015170.swift:38: error: -[Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity] : XCTAssertFalse failed - Background must be visible to accessibility when focus is requested",
+      "Tests/Submitted015170.swift:40: error: -[Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity] : XCTAssertFalse failed - Modal lock must be relinquished for returnTarget to receive focus",
+      "Tests/Submitted015170.swift:53: error: -[Checks.Submitted015170 test_earlyFocusDismissal_andCancellationIntegrity] : XCTAssertEqual failed: (\"2\") is not equal to (\"1\") - Should not post .screenChanged again upon animation completion"
+    ],
+    "logSHA256": "1992e96bbe8349f990f499d6592553fc68093d6552cfe2d0535fcd7c792ce5f3"
+  },
+  "iOS-answer": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Sources/Panel.swift": "ae06d54734184bd98f42b540b5d361e06d49e3f9839be0be2ff38f197451c135",
+      "Sources/Validation.swift": "8b3c7b39182340a7d0b0ac286fa4c6cec964752e0083aa76759db92071933cde"
+    },
+    "environment": {
+      "platform": "iOS",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 65,
+    "events": [],
+    "errors": [
+      "Tests/Contract.swift:61:28: error: failed to produce diagnostic for expression; please submit a bug report (https://swift.org/contributing/#reporting-bugs)",
+      "   |                            `- error: failed to produce diagnostic for expression; please submit a bug report (https://swift.org/contributing/#reporting-bugs)"
+    ],
+    "logSHA256": "582a92cd02f8cdd21a8604238a0657f7172c7b60ec9cb1f2cc75af7e4b20ddfd"
+  },
+  "iOS-answer-hook-repair": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Contract.swift": "e27cdd8a4c373a86cc91c95f0ec7aaaeb9dc6c9ddf0b7bd32ab26ec628c72b93",
+      "Sources/Panel.swift": "ae06d54734184bd98f42b540b5d361e06d49e3f9839be0be2ff38f197451c135",
+      "Sources/Validation.swift": "8b3c7b39182340a7d0b0ac286fa4c6cec964752e0083aa76759db92071933cde"
+    },
+    "environment": {
+      "platform": "iOS",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 65,
+    "events": [
+      [
+        "Checks.ContractTests testLiveEdit",
+        "failed"
+      ],
+      [
+        "Checks.ContractTests testPanel",
+        "failed"
+      ]
+    ],
+    "errors": [
+      "Tests/Contract.swift:34: error: -[Checks.ContractTests testLiveEdit] : XCTAssertEqual failed: (\"[\"name\": \"bad A\"]\") is not equal to (\"[:]\") - obsolete error reached current field",
+      "Tests/Contract.swift:35: error: -[Checks.ContractTests testLiveEdit] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\")",
+      "Tests/Contract.swift:72: error: -[Checks.ContractTests testPanel] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\") - restored before completion",
+      "Tests/Contract.swift:73: error: -[Checks.ContractTests testPanel] : XCTAssertTrue failed",
+      "Tests/Contract.swift:64: error: -[Checks.ContractTests testPanel] : XCTAssertTrue failed",
+      "Tests/Contract.swift:75: error: -[Checks.ContractTests testPanel] : XCTAssertEqual failed: (\"2\") is not equal to (\"0\")",
+      "Tests/Contract.swift:78: error: -[Checks.ContractTests testPanel] : XCTAssertEqual failed: (\"3\") is not equal to (\"1\")",
+      "Tests/Contract.swift:78: error: -[Checks.ContractTests testPanel] : XCTAssertEqual failed: (\"closed\") is not equal to (\"open\")",
+      "Tests/Contract.swift:79: error: -[Checks.ContractTests testPanel] : XCTAssertTrue failed"
+    ],
+    "logSHA256": "14edb1d1e61aa17469e93c19eed1f1dc67d6435af6e301150478b1689f8c086d"
+  },
+  "macOS-patch": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Sheet.swift": "a00221d10bf74fad63faa70298ac23eb9a7fafdc6fd046562def03d1cb85aeb5",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Sources/Presentation.swift": "c57489da503005061c7fc636802e509b107ed05ea6402c559865ca15f86aade4",
+      "Sources/Documents.swift": "c888bb78112add91f62a88e69a24f76854cd17a58f45df730cef3293b242e21e"
+    },
+    "environment": {
+      "platform": "macOS",
+      "runtime": "27.0",
+      "runtimeBuild": "26A428",
+      "sdk": "27.0",
+      "sdkBuild": "26A425",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 65,
+    "events": [
+      [
+        "Checks.CallbackTests testLateAThenBTwice",
+        "passed"
+      ],
+      [
+        "Checks.ContractTests testDocument",
+        "failed"
+      ]
+    ],
+    "errors": [
+      "Tests/Contract.swift:19: error: -[Checks.ContractTests testDocument] : XCTAssertEqual failed: (\"[]\") is not equal to (\"[\"B\"]\") - retired delete removed B",
+      "Tests/Contract.swift:22: error: -[Checks.ContractTests testDocument] : XCTAssertEqual failed: (\"[]\") is not equal to (\"[\"x\"]\")"
+    ],
+    "logSHA256": "889fdfeaf885641a2a354f552f2d6261aaefe0bd7cefdb742444c91b7bb1529b"
+  },
+  "tvOS-patch": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Sources/Shelf.swift": "01203c2687a36696ae5ca3ca6637f2f5de627dab7658eebcf798c238a16d6927",
+      "Sources/Validation.swift": "40c47374c2a65b75c54b4bdfa72741126b2c8ab2d0306c8d60c2294235297d76"
+    },
+    "environment": {
+      "platform": "tvOS",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.tvOS-26-5",
+      "runtimeBuild": "23L470",
+      "sdk": "27.0",
+      "sdkBuild": "24J360",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 65,
+    "events": [
+      [
+        "Checks.ContractTests testLiveEdit",
+        "passed"
+      ],
+      [
+        "Checks.ContractTests testShelf",
+        "failed"
+      ]
+    ],
+    "errors": [
+      "Tests/Contract.swift:51: error: -[Checks.ContractTests testShelf] : XCTAssertNil failed: \"x\" - retired control selected replacement"
+    ],
+    "logSHA256": "d12c97e8b040e0cbcc124676593e7523adb74e37efeb26128fb5b749a7fccb0d"
+  },
+  "iOS-patch": {
+    "inputs": {
+      "Package.swift": "217e95575fa6d5d6b27d0db9a50f6306aff7603bc1ca4f477e93f6d873ec7df0",
+      "Tests/Contract.swift": "9e9dd93e6101dde8f790cb7a0096a7219f0dc123fc62504e168364d7f8cb0cba",
+      "Sources/Panel.swift": "384e3fd9ca9da7f0486aa8468db0fcf92111abee7c884c26177063efd1051927",
+      "Sources/Validation.swift": "40c47374c2a65b75c54b4bdfa72741126b2c8ab2d0306c8d60c2294235297d76"
+    },
+    "environment": {
+      "platform": "iOS",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "runtimeBuild": "23F77",
+      "sdk": "27.0",
+      "sdkBuild": "24A430",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "deployment": "26.0"
+    },
+    "rc": 65,
+    "events": [
+      [
+        "Checks.ContractTests testLiveEdit",
+        "passed"
+      ],
+      [
+        "Checks.ContractTests testPanel",
+        "failed"
+      ]
+    ],
+    "errors": [
+      "Tests/Contract.swift:72: error: -[Checks.ContractTests testPanel] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\") - restored before completion",
+      "Tests/Contract.swift:73: error: -[Checks.ContractTests testPanel] : XCTAssertTrue failed",
+      "Tests/Contract.swift:75: error: -[Checks.ContractTests testPanel] : XCTAssertEqual failed: (\"1\") is not equal to (\"0\")",
+      "Tests/Contract.swift:78: error: -[Checks.ContractTests testPanel] : XCTAssertEqual failed: (\"2\") is not equal to (\"1\")",
+      "Tests/Contract.swift:78: error: -[Checks.ContractTests testPanel] : XCTAssertEqual failed: (\"closed\") is not equal to (\"open\")",
+      "Tests/Contract.swift:79: error: -[Checks.ContractTests testPanel] : XCTAssertTrue failed"
+    ],
+    "logSHA256": "6e371e2c5fa69cbb511374459828daed81bd6b0ba60b40349443accf4815c292"
+  }
+}
