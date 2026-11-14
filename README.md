@@ -4,6 +4,8 @@
 
 ## Baselines and Current Best at a Glance
 
+**Request 1574, independently graded.** On 62 matched Gemini Flash Low prompts, decision-batch-v1 passed 27 whole tasks against 17 for released 0.2.2. It gained 18, regressed on 8, and used 35.9% fewer reported tokens. The strongest gains were on native sliders, live validation, visible button titles and dismissal completion. [Decision-level scorecard and regressions](evals/reports/decision-batch-62-r1/README.md)
+
 **Gemini Flash Low head-to-head.** On 56 matched questions, installed signal-v2 passed 14/56 and installed signal-v4 passed 14/56. Signal-v4 gained 5 whole-task passes, lost 5, and had 0 inconclusive pairs. [Source review, usage and paired outcomes](evals/reports/signal-v4-head-to-head/README.md)
 
 ![Signal-v2 and signal-v4 whole-task passes and tokens](evals/reports/signal-v4-head-to-head/scorecard.png)
