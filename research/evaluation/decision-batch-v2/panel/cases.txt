@@ -1,0 +1,120 @@
+# Format: topic | decision | platform | framework; question; two input variants each followed by its primary rubric; shared ordinary path; acceptable alternative; disqualifying shortcut.
+@retained-actions|permission|tvOS|UIKit
+Review our Watch Later tile. Can the queued command run in each state below? Would you ship the handler as written? Keep normal remote activation working.
+=Each configuration installs a new action capturing its lease. The handler checks that lease is current and reads canAdd from the controller at invocation. Queue it while allowed, revoke canAdd without reconfiguring, invoke it, then allow again and press the tile.
++Keep it: the queued call during revocation does nothing; the later permitted press succeeds. No reinstall needed.
+=Each configuration installs a new action capturing its lease and the current Boolean canAdd. The handler checks the lease and that captured Boolean. Queue it while allowed, revoke canAdd without reconfiguring, invoke it, then allow again and press the tile.
++The lease still matches, so the queued call wrongly adds during revocation. Consult current authority without weakening registration ownership.
+!On re-enable the current primary press must add exactly once; a disabled or revoked path must not add.
+~A current authorization service or live state check can satisfy the same policy.
+-Rebuilding only when the item ID changes cannot observe permission changes.
+
+@retained-actions|lifetime|macOS|SwiftUI
+A collection offers Archive from both a row menu and a toolbar. A plugin sometimes retains yesterday's menu command. Trace which document it can archive after sync, and whether the toolbar needs changing.
+=Sync creates a new document lifetime, even when key and contents match. The row closure captures an object token; the handler requires token identity with the current entry. The toolbar obtains the current entry at click time.
++Old menu command is inert; current toolbar is intentionally live. Keep both policies.
+=Sync creates a new document lifetime, even when key and contents match. The row closure captures a document value; the handler permits it if the current entry is equal by key and contents. The toolbar obtains the current entry at click time.
++Equal replacements can be archived by an obsolete menu. Bind the row command to a unique lifetime; leave the toolbar's live selection policy alone.
+!Old menu must not archive the replacement; a fresh menu and ordinary toolbar must still archive the intended current document.
+~Unique tokens, generations, or a revocable per-registration closure are equivalent.
+-Disabling Archive everywhere would hide the bug and break current use.
+
+@editable-wrapper|attribution|macOS|SwiftUI
+Our sidebar has two stops called Filter. What does the isolation result tell us, and what would you change? The native editor also supports insertion, selection and Clear.
+=In a reduced composition the editor is unchanged. Removing only its decorative magnifier removes the extra stop. Removing only the outer group's added label does not.
++The observed difference implicates the sibling. Exclude only that decorative content; there is no evidence to remove the group.
+=In a reduced composition the editor is unchanged. Removing only its decorative magnifier has no effect. Removing the outer group's separate labeled element removes the extra stop and leaves the editor reachable.
++The result implicates the outer element, not the magnifier; remove the redundant group semantics while leaving descendants exposed.
+!Preserve the real editable search field and its selection and Clear path in both compositions.
+~Removing redundant semantics at their source is as valid as a scoped exclusion.
+-Typing in the editor alone cannot distinguish these causes.
+
+@editable-wrapper|scope|macOS|SwiftUI
+Would you accept this change to our library filter? The small overlay is decorative; the embedded NSSearchField owns the text, insertion point and clear button.
+=The overlay and editor are siblings in a ZStack. The change applies accessibilityHidden(true) only to the overlay.
++Accept the scope given the stated composition. Do not prescribe moving the editor to a new accessibility element.
+=The overlay and editor are siblings in a ZStack. The change applies accessibilityHidden(true) to the ZStack after adding both children.
++Reject: the modifier can hide the editor with the overlay. Narrow the exclusion to the overlay.
+!Searching, editing the query and clearing it must remain available through the native control.
+~Remove the overlay from accessibility at creation instead.
+-A separately labeled, noneditable replacement is not a search field.
+
+@text-units|range-origin|iOS|UIKit
+The transcript displays “🧭 north”; a rotor should select north without changing the text. Review this range handoff. What would you inspect on the returned result?
+=The search returns an NSRange from NSString on the exact displayed text. Both UITextPositions are obtained from beginningOfDocument, at range.location and NSMaxRange(range).
++Keep these UTF-16 distances; ask the live text view for text in the target range, which must be north.
+=The search returns an NSRange from NSString on the exact displayed text. Start is obtained from beginningOfDocument at range.location. End is obtained from start at NSMaxRange(range).
++The end offset is absolute but its origin is already advanced; use length relative to start, or the exclusive end relative to the document. A failed optional conversion also fails navigation.
+!Keep displayed text and ordinary selection intact; the rotor target must contain exactly north.
+~Convert through checked native ranges on the same document.
+-Counting visible characters does not repair an origin mismatch.
+
+@appkit-row|row-and-open|macOS|AppKit
+Our outline exposes the selected transfer and a separate Reveal button. Does this configuration support both jobs? Describe a focused check without predicting spoken output.
+=The row is an accessibility element with role .row, selected state true and children [reveal]. The child targets revealTransfer(currentID).
++Keep the exposed row and actual child; check the role/state and invoke Reveal to inspect its recipient.
+=The row stores role .row, selected state true and children [reveal], but its configuration explicitly marks the row as not an accessibility element. The child still targets revealTransfer(currentID).
++Role getter and button dispatch alone miss the ignored row. Restore exposure for the requested row while retaining its independent button.
+!The ordinary Reveal button must dispatch to the selected transfer, not merely return a title or activate the row.
+~A native outline configuration is acceptable if the supplied row state and actionable child survive.
+-Hiding the button to force one stop loses an independent action.
+
+@caption-selection|caption-policy|macOS|AppKit
+Two English options exist in the item's legible group, F (forced only) then C (full). Audio is already set to commentary. What should selecting English do for this menu, and how would a unit test distinguish a wrong selection?
+=The menu promises full captions. Its click handler takes the first matching language and calls item.select(option, in: group).
++First by language chooses F incorrectly; choose C and read the selected option on the actual item in the legible group.
+=The menu promises forced translations only. Its click handler takes the first matching language whose option has .containsOnlyForcedSubtitles and calls item.select(option, in: group).
++F is correct under this policy. Do not generalize a full-caption filter to a forced-only menu.
+!User selection must reach the current item's legible group and leave the preselected audio commentary untouched.
+~Use an authored local asset and compare the selected native option by identity or distinguishing characteristic.
+-A highlighted menu label or setter spy alone does not prove player selection.
+
+@description-tag|audio-inspection|tvOS|UIKit
+Our track inspector lists Spanish narration and Spanish commentary. Which badges would you expect, and would you patch the inspector? The current audio track is commentary.
+=The narration option carries the describes-video accessibility characteristic; commentary does not. The mapper calls option.hasMediaCharacteristic(.describesVideoForAccessibility) per audible option.
++Badge only the tagged narration. Existing logic is sufficient; do not switch tracks to inspect them.
+=The narration option carries the describes-video accessibility characteristic; commentary does not. The mapper badges both options whenever either Spanish option carries that characteristic.
++Language aggregation incorrectly marks commentary. Evaluate the description characteristic on the individual option.
+!Opening or refreshing the inspector must leave commentary selected and ordinary track selection available.
+~Compare tagged and untagged fixture rows at the mapper output, without asserting audio quality.
+-An alternate-language or transcription tag is not a description tag.
+
+@native-slider|bounded-control|iOS|SwiftUI
+The parent owns podcast speed. It should be adjustable from 1 to 2 in quarter steps, with a meaningful accessibility name. Review this row; recommend only changes the snippet justifies.
+=In a View with @Binding var speed: Double, body is Slider(value: $speed, in: 1...2, step: 0.25) { Text("Playback speed") }. The parent persists binding writes.
++Keep the named native slider and binding; no extra value modifier is required by this request.
+=In a View with @Binding var speed: Double, body is Slider(value: .constant(speed), in: 1...2, step: 0.25) { Text("Playback speed") }. The parent persists binding writes.
++The constant binding drops writes; connect the native slider to the writable parent binding without changing steps.
+!Ordinary adjustment must write the parent speed with its bounds and increments preserved.
+~A forwarding Binding with a correct setter also satisfies the contract.
+-Neither custom spoken text nor replacing the slider fixes a disconnected write.
+
+@live-field|late-error|tvOS|UIKit
+An invitation form validates a display name. Submit Ana, then edit the field to Jo through dictation, then deliver Ana's error. What should the form show and can the user submit Jo?
+=The completion compares the actual field text to the submitted value, discards a mismatched error, and releases only its own pending submission. The edit helper is not involved in dictation.
++Jo remains; Ana's error is not presented. Current cleanup permits a new submission without disturbing a newer request.
+=The completion compares the cached model to the submitted value. Only the edit helper updates that cache; dictation updates the field directly. The completion otherwise releases only its own submission.
++The cache still says Ana, so obsolete feedback may be applied. Validate live input or guarantee every edit updates the observed input; retain ownership-aware cleanup.
+!Keep Jo editable and submittable. Never clear the busy state of a newer pending submission.
+~A generation advanced on every real edit is valid if direct field changes are covered.
+-Testing via the cancelling edit helper avoids the requested trigger.
+
+@visible-title|button-audience|tvOS|SwiftUI
+Sighted viewers cannot tell which adjacent command downloads an episode and which removes it. The two callbacks are already distinct. Does this patch resolve their report?
+=The two Buttons now show Text("Download") and Text("Remove") as their labels. Their existing handlers and automation identifiers are unchanged.
++Accept the visible distinction. Do not require new test identifiers or different command wiring.
+=The two Buttons still show identical unlabeled circles. The patch assigns accessibilityIdentifier("Download") and accessibilityIdentifier("Remove") respectively.
++Test identifiers cannot resolve the visible complaint. Give each button a meaningful visible label without breaking its existing action.
+!Download must still download; Remove must still remove. Neither becomes a shared default action.
+~Unambiguous visible localized labels or appropriate visible icon-plus-text are acceptable.
+-Checking just an accessibility property cannot establish the visible change.
+
+@dismissal|completion|iOS|UIKit
+An attachment inspector can refuse Close while saving. On success it animates away; posting the restore request may synchronously open another inspector. Trace the safe ordering for Close and for a refused Close.
+=The close handler checks refusal, then requests animated dismissal. Its successful owning completion clears its pending state before requesting focus on the eligible origin.
++Keep the sequence: refusal makes no restoration request; accepted completion consumes state before the callout. Do not require immediate posting.
+=The close handler checks refusal, then requests animated dismissal and immediately requests focus on the origin. Its owning completion later clears the shared pending state.
++Move restoration to owning successful completion; consume old state before the external request so a reopened inspector is not cleared.
+!Close remains usable after saving; respect refusal, preserve the new inspector, and request restoration only once for a successful close.
+~An owning session object or lifecycle callback reporting committed dismissal is equivalent.
+-Requesting focus is not evidence the system delivered it.
