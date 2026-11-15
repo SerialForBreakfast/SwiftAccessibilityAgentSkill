@@ -36,3 +36,5 @@ python3 -B evals/native-calibration/test_grade.py
 For another independently verified native ledger with the same effective-lane schema, use `grade.py --ledger PATH`. This writes the overlay to stdout. Apply it to matched criteria only; the tool does not infer whether a newly authored oracle is valid. Unknown statuses fail closed. Keep historical source scores, gaps and raw receipts alongside this overlay. All fixtures here are inspected development evidence, not new holdouts.
 
 The [submitted-proof comparison](proof-sensitivity/README.md) tests the other direction: can the original submitted tests, rather than the controller probes, distinguish the correct fixtures from the known defects? These receipts assess proof sensitivity separately from the original implementations.
+
+For the next macOS whole-task packet, use the [receipt 1594 grading correction](1594-v2/README.md) for Q070 and the two distinct Q082 request scenarios. Earlier results keep their original grading contract.
