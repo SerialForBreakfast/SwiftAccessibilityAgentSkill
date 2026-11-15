@@ -1,0 +1,71 @@
+{
+  "status": "authorized_once",
+  "authorizedAttempts": 6,
+  "plannedFirstAnswers": 6,
+  "dispatch": true,
+  "cases": [
+    "Q070",
+    "Q082-A",
+    "Q082-B"
+  ],
+  "packet": {
+    "controller.zip": "7fc8785e3780c107f1acbe3441a0000b4814251955eff7f63d760af7cc743df5",
+    "subjects.zip": "14f6c34034e3be6757928311aa7e30e962708c5af054603fec7679c900acd84b"
+  },
+  "arms": {
+    "unaided": null,
+    "installed": {
+      "version": "0.2.2",
+      "source": "evals/rc2-starter-comparison/held.zip",
+      "sourceSHA256": "11a37ea6d39c218665ded1ce1f978e55e6da4ab39319628407e99d1298b86174",
+      "member": "arms/0.2.2.zip",
+      "sha256": "286beabd5bca40b7a4ff3fb0b67f8cb819ed50e184a03e811c3bbdc1d65d1655",
+      "bytes": 160987
+    }
+  },
+  "transport": {
+    "requestedModel": "gemini-3.8-flash-low",
+    "expectedResponseModel": "gemini-3.8-flash-n",
+    "label": "Gemini 3.8 Flash (Low)",
+    "clientVersion": "1.5.5",
+    "clientSHA256": "89f16bdb87f62e6d07484c52e6bafe76a81b0fd13d740110c77dc3c3c8d8d8b6",
+    "immutableServingRevision": null,
+    "provenance": {
+      "archive": "decision-batch-v2-counterexamples-1-return.zip",
+      "sha256": "2bb4f3e75aecbcd20820a158fe50d0607ebb7633e83c267287666f883194e795",
+      "receiptMembers": 48,
+      "evidenceRecords": 146
+    }
+  },
+  "stop": "Errors consume first attempts. No retries, extra inference, paid fallback, substitutions or restart. Stop on quota exhaustion, model/transport mismatch, isolation or integrity failure. One graded complete/partial/blocked return.",
+  "evidenceLevel": "Owner accepts requested and returned alias evidence; immutable backend revision is not claimed.",
+  "schedule": [
+    {
+      "case": "Q070",
+      "arm": "unaided"
+    },
+    {
+      "case": "Q070",
+      "arm": "installed"
+    },
+    {
+      "case": "Q082-A",
+      "arm": "installed"
+    },
+    {
+      "case": "Q082-A",
+      "arm": "unaided"
+    },
+    {
+      "case": "Q082-B",
+      "arm": "unaided"
+    },
+    {
+      "case": "Q082-B",
+      "arm": "installed"
+    }
+  ],
+  "invocation": "Explicit skill invocation in installed arm; identical task bytes and permissions; fresh workspace and session per cell.",
+  "billing": "Gemini Flash Low AGY subscription only; zero incremental spend.",
+  "authorizationScope": "Overrides the earlier sealed preparation hold only for this six-cell job."
+}
