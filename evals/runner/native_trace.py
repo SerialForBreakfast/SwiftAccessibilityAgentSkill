@@ -3,7 +3,7 @@
 No provider calls. Preserve the client's num_turns as opaque telemetry, not a
 hard count of model round trips. Permissions and actual retrieval stay separate.
 """
-import pathlib, hashlib
+import pathlib, hashlib, re
 MODEL = 'claude-haiku-5-5'
 sha = lambda data: hashlib.sha256(data).hexdigest()
 
@@ -15,6 +15,10 @@ def text_of(x):
     if isinstance(x, dict):
         return text_of(x.get('content', '')) if x.get('type') == 'tool_result' else str(x.get('text', ''))
     return ''
+
+class UnavailableToolRequest(AssertionError):
+    """The subject requested a tool absent from its verified read-only catalog."""
+
 
 class Trace:
 
@@ -67,7 +71,12 @@ class Trace:
             for block in content:
                 if block.get('type') == 'tool_use':
                     name = block.get('name')
-                    assert name in ('Read', 'Skill', 'EndConversation'), 'Unsupported tool call'
+                    pending_write = (name == 'Write' and self.job.get('observe_denied_write') is True
+                                     and self.init is not None and 'Write' not in self.init['tools'])
+                    if not pending_write and name not in ('Read', 'Skill', 'EndConversation'):
+                        if self.init is not None and isinstance(name, str) and name not in self.init['tools']:
+                            raise UnavailableToolRequest(f'Unavailable tool requested: {name}')
+                        raise AssertionError('Unsupported tool call')
                     assert block['id'] not in self.calls, 'Duplicate tool call ID'
                     self.calls[block['id']] = {'name': name, 'input': block.get('input', {}), 'returned': False}
                     if name == 'Skill':
@@ -83,7 +92,17 @@ class Trace:
                 call['returned'] = True
                 failed = bool(block.get('is_error'))
                 txt = text_of(block.get('content', ''))
-                if call['name'] == 'Read':
+                if call['name'] == 'Write':
+                    assert 'denial' not in call, 'Duplicate Write result'
+                    assert block.get('is_error') is True, 'Write succeeded or returned an ambiguous result'
+                    denial = re.fullmatch(
+                        r'(?:Error:\s*)?(?:No such tool available:\s*Write|Unknown tool:\s*Write|'
+                        r'Tool Write is not available|Permission denied(?: for (?:tool )?Write)?)\.?',
+                        txt.strip(), flags=re.IGNORECASE)
+                    if not denial:
+                        raise UnavailableToolRequest('Write result did not confirm a client denial')
+                    call['denial'] = txt.strip()
+                elif call['name'] == 'Read':
                     args = call['input']
                     path = pathlib.Path(args.get('file_path', args.get('path', '')))
                     if not path.is_absolute():
@@ -100,6 +119,8 @@ class Trace:
             self.result = obj
 
     def finish(self):
+        if any(call['name'] == 'Write' and 'denial' not in call for call in self.calls.values()):
+            raise UnavailableToolRequest('Write request without confirmed client denial')
         assert self.result is not None, 'Missing finish receipt'
         o = self.result
         u = o.get('usage')

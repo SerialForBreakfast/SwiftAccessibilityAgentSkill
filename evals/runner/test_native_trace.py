@@ -2,7 +2,7 @@
 import pathlib
 import tempfile
 import unittest
-from native_trace import Trace, QuotaBudget, MODEL
+from native_trace import Trace, QuotaBudget, MODEL, UnavailableToolRequest
 
 class NativeTraceTests(unittest.TestCase):
     def trace(self):
@@ -83,6 +83,47 @@ class NativeTraceTests(unittest.TestCase):
         ]:
             with self.assertRaises(AssertionError):
                 self.trace().feed(obj)
+
+    def test_unavailable_write_is_a_subject_request_after_verified_catalog(self):
+        trace = self.trace()
+        trace.feed({'type': 'system', 'subtype': 'init', 'tools': ['Read', 'Skill']})
+        with self.assertRaises(UnavailableToolRequest):
+            self.assistant(trace, 'a', [{'type': 'tool_use', 'id': 'write', 'name': 'Write'}])
+
+    def test_advertised_write_is_still_an_isolation_failure(self):
+        with self.assertRaisesRegex(AssertionError, 'Unexpected tool catalog'):
+            self.trace().feed({'type': 'system', 'subtype': 'init', 'tools': ['Write']})
+
+    def test_denied_write_can_finish_with_chat_answer(self):
+        for response, valid in [(None, False), ('disk error', False),
+                                ('No such tool available: Write', True)]:
+            trace = self.trace()
+            trace.job['observe_denied_write'] = True
+            trace.feed({'type': 'system', 'subtype': 'init', 'tools': ['Read', 'Skill']})
+            self.assistant(trace, 'a', [{'type': 'tool_use', 'id': 'w', 'name': 'Write'}])
+            if response is None:
+                with self.assertRaises(UnavailableToolRequest):
+                    trace.finish()
+                continue
+            event = {'type': 'user', 'message': {'content': [
+                {'type': 'tool_result', 'tool_use_id': 'w', 'is_error': True, 'content': response}]}}
+            if not valid:
+                with self.assertRaises(UnavailableToolRequest):
+                    trace.feed(event)
+                continue
+            trace.feed(event)
+            trace.feed(self.result())
+            self.assertEqual(trace.finish()['answer'], 'done')
+            self.assertEqual(trace.calls['w']['denial'], response)
+
+    def test_successful_write_still_rejects_the_read_only_transport(self):
+        trace = self.trace()
+        trace.job['observe_denied_write'] = True
+        trace.feed({'type': 'system', 'subtype': 'init', 'tools': ['Read', 'Skill']})
+        self.assistant(trace, 'a', [{'type': 'tool_use', 'id': 'w', 'name': 'Write'}])
+        with self.assertRaisesRegex(AssertionError, 'Write succeeded'):
+            trace.feed({'type': 'user', 'message': {'content': [
+                {'type': 'tool_result', 'tool_use_id': 'w', 'content': 'File created'}]}})
 
     def test_outside_read_needs_real_error_result(self):
         trace = self.trace()

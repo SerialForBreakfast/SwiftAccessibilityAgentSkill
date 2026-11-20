@@ -16,7 +16,7 @@ test('bounded matrix retains exact sealed payloads and matched reference context
     assert.equal(get('R').messages[1].content, get('D5').messages[1].content);
     assert.equal(JSON.parse(get('C0').messages[1].content).request, JSON.parse(get('D5').messages[1].content).request);
     for (const [arm, file] of [['C0', 'generic-C0'], ['D5', 'candidate-controlled']]) {
-      const sealed = JSON.parse(fs.readFileSync(`research/evaluation/milestone-package-v2/payloads/${caseId}/${file}.json`));
+      const sealed = JSON.parse(fs.readFileSync(path.join(projectRoot, 'research/evaluation/milestone-package-v2/payloads', caseId, file + '.json')));
       assert.deepEqual(get(arm).messages, sealed.messages);
       assert.equal(get(arm).payloadHash, hash(JSON.stringify(sealed.messages)));
     }
@@ -28,7 +28,7 @@ test('bounded matrix retains exact sealed payloads and matched reference context
 });
 
 test('outside-project output rejected before model contact', () => {
-  const r = spawnSync('node', ['evals/runner/local-milestone-comparison.mjs', '--execute', '../forbidden-local-test'], {encoding: 'utf8'});
+  const r = spawnSync('node', ['evals/runner/local-milestone-comparison.mjs', '--execute', '../forbidden-local-test'], {cwd: projectRoot, encoding: 'utf8'});
   assert.notEqual(r.status, 0);
   assert.match(r.stderr, /inside the project directory/);
 });
