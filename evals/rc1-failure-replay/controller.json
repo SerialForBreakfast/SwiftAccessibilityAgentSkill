@@ -1,0 +1,471 @@
+{
+  "model": "claude-haiku-5-5",
+  "effort": "low",
+  "runtime": "evals/rc1/swift-accessibility-agent-0.3.0-rc.1.zip",
+  "runtimeSHA256": "d691b3c29c933ac9305c2a84a73c952d44e7ebd66e4742578314a2f132de1b93",
+  "explicitPrefix": "Use the installed swift-accessibility-agent skill for this task.\n\n",
+  "cases": {
+    "EV02": {
+      "input": "inputs/EV02.txt",
+      "originalSHA256": "233931e5d90edbc8625de64edb3a632ee9fd313418b20dad3b5c2e4b43e0af33",
+      "subjectSHA256": "8c5ad0349bc1d3c4d61392481e320831316d74df9933e43d5745b199947a27cf",
+      "rubric": {
+        "id": "EV02",
+        "prompt": "Our audit report says: checked 12 elements for missing labels and low contrast; zero findings. It did not test focus order, custom actions, text resizing, or keyboard operation. Can we label the screen fully accessible? Give a short release-note statement that accurately reflects this report.",
+        "reference": "core/viewlens-evaluation-integration.md",
+        "criteria": [
+          "Rejects full accessibility conclusion",
+          "Preserves12elements/two checks/zero findings",
+          "Names untested behaviors",
+          "Supplies bounded release-note wording without invented tests"
+        ]
+      },
+      "controls": [
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "EV02-C0-r1",
+          "answerSHA256": "99aa0fc98f45091a0e30f6e95705a3860a4334015b8b20f3044e8dca7ff30765",
+          "grade": "material-gap"
+        },
+        {
+          "run": "compact-a-development144-20261105-r1",
+          "job": "EV02-N-haiku-r1",
+          "answerSHA256": "821fcc4188eb58c499acd1bdf05e10c046a047b1c187dead9b54263d4239b499",
+          "grade": "meets"
+        }
+      ]
+    },
+    "EV06": {
+      "input": "inputs/EV06.txt",
+      "originalSHA256": "7686ce615f047a058f181298db059501ac651a4a4cc9df938e88257ef745f071",
+      "subjectSHA256": "fbf8366e2e400471739faeda0aad58cd58f2489a951350bd706ec28ffd75ed65",
+      "rubric": {
+        "id": "EV06",
+        "prompt": "A patch compiled and a unit test directly called its delete handler with message B. The callback fired once for B. No UI tests or VoiceOver/keyboard interaction were run. Can we conclude that keyboard and VoiceOver users can discover and activate deletion without swiping? Separate what passed from what still needs evidence.",
+        "reference": "core/viewlens-evaluation-integration.md",
+        "criteria": [
+          "Recognizes compile/direct handler evidence",
+          "Does not infer UI wiring/discoverability/input delivery",
+          "Requires source linkage and runtime interaction evidence for that broader claim",
+          "Does not discard useful scoped result or claim an actual interaction test occurred"
+        ]
+      },
+      "controls": [
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "EV06-C0-r1",
+          "answerSHA256": "94751baecd03171dd85dc7aed19ed0e97d764caf86fd2a4cda80fc69fdde3cb8",
+          "grade": "material-gap"
+        },
+        {
+          "run": "compact-a-development144-20261105-r1",
+          "job": "EV06-N-haiku-r1",
+          "answerSHA256": "9413c86caacf40d815329d37ab75d97f22ead390f272ba20b3acb828a52b5442",
+          "grade": "meets"
+        }
+      ]
+    },
+    "GP26-02": {
+      "input": "inputs/GP26-02.txt",
+      "originalSHA256": "fa1c61a474d10ab6bda719a78de73903fe2521efcaf953d8ae1738ee7dce7625",
+      "subjectSHA256": "60d5963ccf085751a4f16c5f3252b61b4c83f8e6cec7d02511127cf97bf71b5c",
+      "rubric": {
+        "id": "GP26-02",
+        "sourceCandidates": [
+          "https://developer.apple.com/documentation/uikit/uitableviewcell/prepareforreuse()"
+        ],
+        "sourceReviewStatus": "pending",
+        "alternatives": "Accept any implementation meeting the stated behavior; no exact code, guideline-name or redundant-title-stop preference required.",
+        "gates": [
+          {
+            "id": "source-review",
+            "kind": "review",
+            "expected": "pass",
+            "assertion": "Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer."
+          },
+          {
+            "id": "compile-host",
+            "kind": "compile",
+            "expected": "pass",
+            "assertion": "Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required."
+          },
+          {
+            "id": "known-good",
+            "kind": "oracle",
+            "expected": "pass",
+            "assertion": "Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied.",
+            "evidenceMethod": "unit"
+          },
+          {
+            "id": "mutation-1",
+            "kind": "oracle",
+            "expected": "fail",
+            "assertion": "The oracle rejects this single-error mutation: Skip normal-order label reset Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+            "evidenceMethod": "unit"
+          },
+          {
+            "id": "mutation-2",
+            "kind": "oracle",
+            "expected": "fail",
+            "assertion": "The oracle rejects this single-error mutation: Leave status from previous order Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+            "evidenceMethod": "unit"
+          },
+          {
+            "id": "reconfiguration",
+            "kind": "unit",
+            "expected": "pass",
+            "assertion": "Configure priority Alice/shipped, then nonpriority Bob/processing on the SAME instance without prepareForReuse: label names Bob without stale priority and value reports processing; reverse ordering also works."
+          }
+        ]
+      },
+      "controls": [
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "GP26-02-C0-r1",
+          "answerSHA256": "a25f5d9be2a0217c2c33e62386358726ebe8b4f262cbf0176f2102f30e473a15",
+          "grade": "meets"
+        },
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "GP26-02-C0-r2",
+          "answerSHA256": "aa17aee285b967ae5b17c35147a8029a3afe4a2b43ec7020a4111d270b090635",
+          "grade": "material-gap"
+        },
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "GP26-02-C0-r3",
+          "answerSHA256": "658a1680b83a712bdeafee48387a4e7bf0cbbbece9aeadffddaa1a4f9b441ff5",
+          "grade": "meets"
+        },
+        {
+          "run": "compact-a-development144-20261105-r1",
+          "job": "GP26-02-N-haiku-r1",
+          "answerSHA256": "b65a62936dff8a7fc57bb9a911f072e7df2ca60243a9483f3799643f94d7a287",
+          "grade": "meets"
+        }
+      ]
+    },
+    "GP26-03": {
+      "input": "inputs/GP26-03.txt",
+      "originalSHA256": "28fd19317b73c6000e07286c7d909146efd39cd262323765573e0a223aa2487a",
+      "subjectSHA256": "b6eb49ef1c16452bde52cd7b56c6ac00b5e922b5dffe9ce8350e35c5f785a445",
+      "rubric": {
+        "id": "GP26-03",
+        "sourceCandidates": [
+          "https://developer.apple.com/videos/play/wwdc2024/10074/"
+        ],
+        "sourceReviewStatus": "pending",
+        "alternatives": "Accept any implementation meeting the stated behavior; no exact code, guideline-name or redundant-title-stop preference required.",
+        "gates": [
+          {
+            "id": "source-review",
+            "kind": "review",
+            "expected": "pass",
+            "assertion": "Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer."
+          },
+          {
+            "id": "compile-host",
+            "kind": "compile",
+            "expected": "pass",
+            "assertion": "Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required."
+          },
+          {
+            "id": "known-good",
+            "kind": "oracle",
+            "expected": "pass",
+            "assertion": "Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied.",
+            "evidenceMethod": "unit"
+          },
+          {
+            "id": "mutation-1",
+            "kind": "oracle",
+            "expected": "fail",
+            "assertion": "The oracle rejects this single-error mutation: Keep fixed container height Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+            "evidenceMethod": "unit"
+          },
+          {
+            "id": "mutation-2",
+            "kind": "oracle",
+            "expected": "fail",
+            "assertion": "The oracle rejects this single-error mutation: Disable live text scaling Require an executed focused unit assertion against this exact variant; source inspection alone is not a mutation kill.",
+            "evidenceMethod": "unit"
+          },
+          {
+            "id": "live-resize",
+            "kind": "unit",
+            "expected": "pass",
+            "assertion": "Assert text-scaling configuration and layout-policy prerequisites for long localized totals, including multiline text and absence of a fixed enclosing height. This does not assert rendered layout or readability."
+          },
+          {
+            "id": "payment-action",
+            "kind": "unit",
+            "expected": "pass",
+            "assertion": "Directly dispatch payment activation and assert one existing callback and the Pay now title. Independent source review checks that the fixture patch leaves the existing system button configuration and callback wiring unchanged; no before/after runtime configuration or visual comparison is claimed."
+          }
+        ]
+      },
+      "controls": [
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "GP26-03-C0-r1",
+          "answerSHA256": "459ac883571098fc4bb3f6e87839dba7860fb25e34d34e9dfdafc2e0fab562b8",
+          "grade": "material-gap"
+        },
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "GP26-03-C0-r2",
+          "answerSHA256": "dff7486a37bc81218203584d3c4df269587c3571d63fac16e9963f5553b1b1c1",
+          "grade": "material-gap"
+        },
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "GP26-03-C0-r3",
+          "answerSHA256": "1739f5a01b4f807e351269f1f9038e6f22382885dd4b253dabffb0920002e7f9",
+          "grade": "material-gap"
+        },
+        {
+          "run": "compact-a-development144-20261105-r1",
+          "job": "GP26-03-N-haiku-r1",
+          "answerSHA256": "161cbe9335da58a0dea7922d21541982bb578dd5fecebc2a5eb22d71760c387a",
+          "grade": "material-gap"
+        }
+      ]
+    },
+    "GP26-04": {
+      "input": "inputs/GP26-04.txt",
+      "originalSHA256": "c21c3b80552ba0a76a033497ade66ca5ef2796542e0c1ccebc210541ff898e79",
+      "subjectSHA256": "0b1af9f9301bfb0aa9909a1245e7586fea0130d5a0fd134cc428f4ca8461078c",
+      "rubric": {
+        "id": "GP26-04",
+        "sourceCandidates": [
+          "https://developer.apple.com/documentation/swiftui/accessible-controls"
+        ],
+        "sourceReviewStatus": "pending",
+        "alternatives": "Accept any implementation meeting the stated behavior; no exact code, guideline-name or redundant-title-stop preference required.",
+        "gates": [
+          {
+            "id": "source-review",
+            "kind": "review",
+            "expected": "pass",
+            "assertion": "Independent reviewer confirms primary-source sections, API availability and accepted alternatives for the stated26target; fixture author is not sole reviewer."
+          },
+          {
+            "id": "compile-host",
+            "kind": "compile",
+            "expected": "pass",
+            "assertion": "Fixture and required unit-test host build with pinned Apple SDK/build and deployment target; no UI-test target is required."
+          },
+          {
+            "id": "known-good",
+            "kind": "oracle",
+            "expected": "pass",
+            "assertion": "Reviewed known-good implementation passes the scoped compile/unit assertions. No interaction outcome is implied.",
+            "evidenceMethod": "unit"
+          },
+          {
+            "id": "mutation-1",
+            "kind": "oracle",
+            "expected": "fail",
+            "assertion": "An executed unit assertion rejects the dropped-delete variant; same test selection as known-good. Source inspection is not a mutation kill.",
+            "evidenceMethod": "unit"
+          },
+          {
+            "id": "mutation-2",
+            "kind": "oracle",
+            "expected": "fail",
+            "assertion": "An executed unit assertion rejects the duplicate-delete variant; same test selection as known-good. Source inspection is not a mutation kill.",
+            "evidenceMethod": "unit"
+          },
+          {
+            "id": "explicit-delete",
+            "kind": "unit",
+            "expected": "pass",
+            "assertion": "Directly exercise production explicit-delete and swipe-handler paths for two message IDs; each invocation dispatches the chosen ID exactly once. Construction and nonactivation state transitions dispatch nothing. This does not prove input delivery."
+          },
+          {
+            "id": "voiceover-delete",
+            "kind": "review",
+            "expected": "pass",
+            "assertion": "Review supplied source against Apple native-control documentation: visible named deletion control and subject content remain present. Do not claim observed VoiceOver interaction."
+          },
+          {
+            "id": "keyboard-delete",
+            "kind": "review",
+            "expected": "pass",
+            "assertion": "Review native-control and handler wiring for keyboard-compatible activation without deletion on focus. Actual Full Keyboard Access navigation is outside this endpoint."
+          }
+        ]
+      },
+      "controls": [
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "GP26-04-C0-r1",
+          "answerSHA256": "b74e208896e8f655e8e3c00b09386c7137de1175142e4ddd9929c7195568f3cf",
+          "grade": "meets"
+        },
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "GP26-04-C0-r2",
+          "answerSHA256": "5dee2e1a5591d59e364f80fc29da97788f17de073399f36728168a9be65a711c",
+          "grade": "material-gap"
+        },
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "GP26-04-C0-r3",
+          "answerSHA256": "5a28aa9eff598cfe1269eb2415ccc9965ba1ef01dd02411b0e82767bc8c56d04",
+          "grade": "meets"
+        },
+        {
+          "run": "compact-a-development144-20261105-r1",
+          "job": "GP26-04-N-haiku-r1",
+          "answerSHA256": "0ba1dda4e91a73dbb2338d436fa4b7beb20a41bd027a6908f3de84c12c1f69e3",
+          "grade": "material-gap"
+        }
+      ]
+    },
+    "GP26-11": {
+      "input": "inputs/GP26-11.txt",
+      "originalSHA256": "34e145bae1d8a7b745eedc6c78e493c6192657a6cdf99496c5abbd251601946a",
+      "subjectSHA256": "328116078d233c1facea765a52389ac5849a806a7725bb477c1f725fe04c87bf",
+      "rubric": {
+        "id": "GP26-11",
+        "control": true,
+        "sourceCandidates": [
+          "https://developer.apple.com/documentation/swiftui/slider",
+          "https://developer.apple.com/documentation/swiftui/binding"
+        ],
+        "sourceReviewStatus": "pending-independent-review",
+        "alternatives": "An unchanged implementation with a justified explanation earns full credit. Lack of a code block is not a compile failure. Optional extra context must not invent a product defect or claim unsupported OS behavior.",
+        "gates": [
+          {
+            "id": "source-review",
+            "kind": "review",
+            "expected": "pass",
+            "assertion": "Independent reviewer checks exact Apple API sections, target availability, valid alternatives and production wiring; no sole-author approval."
+          },
+          {
+            "id": "compile-host",
+            "kind": "compile",
+            "expected": "pass",
+            "assertion": "Build minimal host and focused test target with pinned SDK/build, runtime/build and deployment26.0; preserve supplied surrounding context."
+          },
+          {
+            "id": "known-good",
+            "kind": "oracle",
+            "expected": "pass",
+            "evidenceMethod": "unit",
+            "assertion": "Reviewed correct implementation passes the focused suite, including all per-case unit gates. Existing-correct controls may retain original code unchanged."
+          },
+          {
+            "id": "mutation-1",
+            "kind": "oracle",
+            "expected": "fail",
+            "evidenceMethod": "unit",
+            "assertion": "Replace the actual Slider binding with a constant. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+          },
+          {
+            "id": "mutation-2",
+            "kind": "oracle",
+            "expected": "fail",
+            "evidenceMethod": "unit",
+            "assertion": "Change the actual Slider range to0\u20261 while parent volume remains0\u2026100. Execute the identical good/mutant test selection and reject this exact single-defect variant by the intended assertion, not by a build error."
+          },
+          {
+            "id": "native-configuration",
+            "kind": "unit",
+            "expected": "pass",
+            "assertion": "Build actual native Slider with label Volume, range0\u2026100 and step1. Review that no replacement hides native action/value semantics; equivalent meaningful wording allowed. Do not claim runtime speech."
+          },
+          {
+            "id": "binding-roundtrip",
+            "kind": "unit",
+            "expected": "pass",
+            "assertion": "Exercise the actual binding supplied to the Slider, backed by a captured parent value: multiple valid writes and external parent changes propagate both ways with no substitute detached binding or newly invented constant."
+          },
+          {
+            "id": "range-and-state",
+            "kind": "unit",
+            "expected": "pass",
+            "assertion": "Use a source-linked host configuration seam to assert the same range/step used in the real Slider construction. Preserve state on redraw/reconfiguration. Native SwiftUI behavior itself is not established by an invented surrogate slider."
+          }
+        ]
+      },
+      "controls": [
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "GP26-11-C0-r1",
+          "answerSHA256": "12f8ef1d3eb54b2281cbb0cd16f8291f7fd09c6b60c20f506b47cc9e6f831222",
+          "grade": "material-gap"
+        },
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "GP26-11-C0-r2",
+          "answerSHA256": "ed1fcc7d9355aec2fb0e208f48eb6b95f9d156fbe02c8741027faff869c73b0f",
+          "grade": "material-gap"
+        },
+        {
+          "run": "claude-haiku-baseline-20261105-r1",
+          "job": "GP26-11-C0-r3",
+          "answerSHA256": "f92cbb33bd13765aea08f0458c21c3b87995db0063e1838b190456d5ed62e3a7",
+          "grade": "material-gap"
+        },
+        {
+          "run": "compact-a-development144-20261105-r1",
+          "job": "GP26-11-N-haiku-r1",
+          "answerSHA256": "bd5eb6a05388f9c24685a78a3e3f54110b5b400475f60dfcff05a255b62b32f1",
+          "grade": "material-gap"
+        }
+      ]
+    },
+    "IOS-MEDIA-OWNERSHIP-R1": {
+      "input": "inputs/IOS-MEDIA-OWNERSHIP-R1.txt",
+      "originalSHA256": "47068403d980644e9838598453bacaefca727870514faf09f3a62ecd5b7538a0",
+      "subjectSHA256": "14664282b05c6834d79575ce08ee149208d37c6b09198d04eae11144219ed267",
+      "rubric": {
+        "id": "IOS-MEDIA-OWNERSHIP-R1",
+        "eligibility": "provisional with controller constraints below",
+        "activation": "yes, contextual: stale metadata must not feed existing accessible status/description; most assessed logic is ordinary async ownership, so activation is relevant but not evidence of accessibility-specific benefit",
+        "neutrality": "Opening states an already-working accessible UI binding and required preservation; it does not identify a reference or reveal generation/currentItem solution. Explicit external replacement and same-item repetition are legitimate product requirements.",
+        "essential": [
+          "Inspect externally managed AVPlayer current item through injected async callback; expose loading/success/error/cancel/no-item state and description for existing binding.",
+          "Only active request may accept completion, including same-item repeat; verify actual current item still matches captured item before applying result.",
+          "Consume request once so duplicate/conflicting callbacks cannot replace first outcome; cancellation/no-item/new inspection invalidate previous work.",
+          "Distinguish loader error from no-item, clear stale description as appropriate, avoid retaining owner through callback.",
+          "Preserve player playback preferences and ordinary playback ownership; do not replace externally current item as incidental metadata inspection.",
+          "Deterministic synthetic-item tests for external replacement, same-item repeat, cancellation, duplicate, failure, no item and owner lifetime; no network/UI automation."
+        ],
+        "source_links": {
+          "claim": "manifest media: AVPlayer.currentItem API plus explicitly application request-ownership policy",
+          "evidence": "MediaLoadOwner source and nine MediaLoadOwnerTests methods; media-identity/media-duplicate negative receipts"
+        },
+        "optional": [
+          "Exact state enum/string names; superseded versus ignored result representation; weak item capture versus safe retained item; item-change observation when correctness at callback application is already guaranteed.",
+          "Immediate state refresh at every external replacement, asset-level media metadata/audio description extraction, playback control, actual speech/focus and exact accessible binding implementation are not requested."
+        ],
+        "alternatives": [
+          "Inject existing player and inspect()/loadCurrentItem(); token/UUID/request generation plus identity check, with no replace method.",
+          "Equivalent observation-driven invalidation plus identity and per-request guard, provided same-item refresh and externally replaced items are covered.",
+          "Return state via observable properties or explicit client callback; both can preserve existing binding contract."
+        ],
+        "missing_fixture_inputs": [
+          "Existing UI binding/status property signature, loader signature and owner entry method unspecified; answer may define them explicitly. Do not require sample owns-player or replace(_:load:) API.",
+          "Task does not specify detecting replace-away-and-back without observing transition; do not add invisible historical replacement or automatic live invalidation requirement beyond active request/current-item validity."
+        ],
+        "calibration": {
+          "correct": "Owner injects external player, inspect captures current item and fresh token, sets loading before invoking loader; reply weakly captures owner, checks active token and player.currentItem identity, consumes token before setting success/error; nil/cancel invalidate and clear value; tests retain old item during external replacement callback.",
+          "defective": "Checks token only: external code replaces current item without new inspection, old callback writes old description. Or checks identity only: two inspections of same item allow old reply to overwrite newer. Or duplicate failure overwrites consumed success.",
+          "alternative": "Request object invalidated by new inspection/cancel plus actual identity guard; no owner-controlled replacement API, no integer generation, synthetic AVMutableComposition items and callback array suffice.",
+          "ungradable": "Current-item guard or callback consumption hidden in missing helper; absent player injection/identity relationship prevents determining if actual external current item is checked. Inability to execute on current review host is not a subject failure."
+        }
+      },
+      "controls": [
+        {
+          "run": "native-activation-lift-20261106-r5",
+          "job": "IOS-MEDIA-OWNERSHIP-R1-generic",
+          "answerSHA256": "67075bb30a58240b4a7c8c1ef566fc877c2b0dd2797b209bfb453f19cc0515c9",
+          "grade": "material-gap"
+        }
+      ]
+    }
+  }
+}

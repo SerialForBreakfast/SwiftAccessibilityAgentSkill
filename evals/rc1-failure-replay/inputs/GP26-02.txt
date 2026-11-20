@@ -1,0 +1,23 @@
+Use the installed swift-accessibility-agent skill for this task.
+
+SYSTEM:
+You are a helpful Swift assistant. Answer accurately and state meaningful uncertainty.
+
+USER:
+iOS 26.0, UIKit.
+
+After scrolling and refreshing orders, a cell sometimes announces the previous customer or status. Here is its configuration code; the model has customer/status strings and an isPriority flag, and titleLabel is already laid out. What should change?
+
+```swift
+final class OrderCell: UITableViewCell {
+    let titleLabel = UILabel()
+    func configure(_ order: Order) {
+        titleLabel.text = order.customer
+        isAccessibilityElement = true
+        if order.isPriority {
+            accessibilityLabel = "Priority order for \(order.customer)"
+            accessibilityValue = order.status
+        }
+    }
+}
+```
