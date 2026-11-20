@@ -6,6 +6,17 @@
 
 **Request 1574, independently graded.** On 62 matched Gemini Flash Low prompts, decision-batch-v1 passed 27 whole tasks against 17 for released 0.2.2. It gained 18, regressed on 8, and used 35.9% fewer reported tokens. The strongest gains were on native sliders, live validation, visible button titles and dismissal completion. [Decision-level scorecard and regressions](evals/reports/decision-batch-62-r1/README.md)
 
+**Keep 0.3.0-rc.3 as the evaluation baseline.** The clearest replicated gain is in patch review. Asking Flash Low to trace the changed branch and the user action that remains improved whole answers on both the original cases and fresh patches. These are paired source reviews with one answer per condition. The broad installed-skill comparison against unaided Flash Low is pending.
+
+| Gemini Flash Low comparison | Baseline | With change | Paired gains / losses |
+| --- | ---: | ---: | ---: |
+| Patch-review instruction alone, selected cases, whole answer | 5/10 | 9/10 | 4 / 0 |
+| Same instruction alone, fresh non-media patches, whole answer | 6/8 | 8/8 | 2 / 0 |
+| Installed rc.3 vs rc.4, regression test passes | 8/20 | 8/20 | 1 / 1 |
+| Installed rc.3 vs rc.5, fresh stale-validation cases, primary test criterion | 6/6 | 5/6 | 0 / 1 |
+
+On the fresh validation cases both candidates met the complete test criteria on 3/6. Neither later candidate earned promotion. [Patch-review evidence](evals/rc3/README.md) · [Regression-test comparison](evals/rc4/README.md) · [Stale-validation comparison](evals/rc5/README.md)
+
 **Gemini Flash Low head-to-head.** On 56 matched questions, installed signal-v2 passed 14/56 and installed signal-v4 passed 14/56. Signal-v4 gained 5 whole-task passes, lost 5, and had 0 inconclusive pairs. [Source review, usage and paired outcomes](evals/reports/signal-v4-head-to-head/README.md)
 
 ![Signal-v2 and signal-v4 whole-task passes and tokens](evals/reports/signal-v4-head-to-head/scorecard.png)
@@ -18,7 +29,7 @@
 
 **On 17 revised questions, one review sentence earned the only additional whole-task pass.** Gemini passed 1/17 unaided, 2/17 with the sentence, 1/17 with the UIKit text note and 2/17 with both. Reviewers flagged unnecessary rework in 10 unaided answers and three with the sentence. Only 8 of the 68 answers supplied an adequate focused check. [Matched results and token use](evals/gemini-discovery/audit-revision-1/RESULTS.md)
 
-**Current Flash checkpoint: `0.3.0-dev.5`.** On 24 matched questions, dev.7 saved **8,471 tokens (7.8%)**, gained one answer and regressed on three. Skill lift on the new 384-question baseline is **unmeasured**. [Paired results](research/evaluation/dev7-flash-haiku-results-20261107/README.md) · [Blind audit](evals/gemini-discovery/BLIND-AUDIT-V1.md) · [Revised evaluation cases](evals/gemini-discovery/audit-revision-1/README.md)
+**Earlier Flash checkpoint: `0.3.0-dev.5`.** On 24 matched questions, dev.7 saved **8,471 tokens (7.8%)**, gained one answer and regressed on three. Skill lift on the new 384-question baseline is **unmeasured**. [Paired results](research/evaluation/dev7-flash-haiku-results-20261107/README.md) · [Blind audit](evals/gemini-discovery/BLIND-AUDIT-V1.md) · [Revised evaluation cases](evals/gemini-discovery/audit-revision-1/README.md)
 
 **Explicit rc.1 replay — 5/7 passed source review.** Claude Haiku 5.5 loaded `0.3.0-rc.1` on all seven prompts selected for earlier unaided failures. Two cases still failed after Haiku read the relevant references. [Seven-case results](evals/rc1-failure-replay/RESULTS.md)
 
