@@ -2,6 +2,8 @@
 
 **Stable: 0.2.2. Opt-in candidate: [0.3.0-rc.2](../rc2/README.md).** The candidate is based on signal-v6, with focused corrections for editable Mac search fields, ordinary tap-to-play, and media-inspector results. [Try it in a separate project](../../INSTALLATION.md#try-the-release-candidate). The normal install still selects the stable skill.
 
+**Signal-v7 and signal-v7.1 on Gemini Flash Low.** In a blind source-only regrade of the 56 signal-panel questions, signal-v7 passed 37/56 whole answers and signal-v7.1 passed 36/56, against 16/56 for signal-v6 trial 1. On matched questions signal-v7 gained 21 and lost 0, and signal-v7.1 gained 22 and lost 2. The two new versions tied each other (6 gains, 7 losses) and used fewer tokens. No native build. [Source regrade and paired outcomes](signal-v7-source-regrade/README.md)
+
 **Gemini Flash Low head-to-head.** On 56 matched questions, installed signal-v2 passed 14/56 and installed signal-v4 passed 14/56. Signal-v4 gained 5 whole-task passes, lost 5, and had 0 inconclusive pairs. [Source review, usage and paired outcomes](signal-v4-head-to-head/README.md)
 
 ![Signal-v2 and signal-v4 whole-task passes and tokens](signal-v4-head-to-head/scorecard.png)
