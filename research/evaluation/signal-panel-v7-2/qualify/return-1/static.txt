@@ -1,0 +1,30 @@
+#if os(macOS)
+import AppKit
+import XCTest
+
+@MainActor final class ApiProbe: XCTestCase {
+    func testAppKitRowGetters() {
+        let row = NSTableRowView()
+        _ = row.isAccessibilityElement()
+        _ = row.accessibilityRole()
+        _ = row.isAccessibilitySelected()
+        _ = row.isAccessibilityExpanded()
+        _ = row.accessibilityChildren()
+        let _: Bool = row.isAccessibilityElement()
+        let _: NSAccessibility.Role? = row.accessibilityRole()
+        let _: Bool = row.isAccessibilitySelected()
+        let _: Bool = row.isAccessibilityExpanded()
+        let _: [Any]? = row.accessibilityChildren()   // the card's stated type
+    }
+}
+#endif
+
+testOldCallbackIgnoredAfterReconfigure identical to v7.1
+testChoosingCaptionsWritesThePlayingItem identical to v7.1
+testLateFirstDismissalDoesNotRestoreSecond identical to v7.1
+testReplyForOldTextIsIgnoredAndSubmitRecovers identical to v7.1
+testQueuedUpdateFromStoppedSubscriptionIsIgnored identical to v7.1
+ReturnCoordinator identical to v7.1
+makeMediaItem identical to v7.1
+Subjects.swift identical to v7.1
+WrongTests.swift identical to v7.1

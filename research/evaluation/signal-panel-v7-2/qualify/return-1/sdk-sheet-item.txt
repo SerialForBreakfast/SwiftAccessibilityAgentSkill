@@ -1,0 +1,293 @@
+Xcode 27.0 build 27A266a
+Method: xcrun swift-symbolgraph-extract -module-name SwiftUI -target arm64-apple-<os>26.0 -sdk <sdk>.
+The SwiftUI .swiftinterface files contain 0 '///' lines, so the comments come from the .swiftdoc files through the symbol graph.
+Xcode offline documentation: not found (no DocumentationCache in ~/Library/Developer/Xcode).
+
+===== macos SDK macosx27.0
+swiftdoc: Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/SwiftUI.framework/Versions/A/Modules/SwiftUI.swiftmodule/arm64e-apple-macos.swiftdoc
+precise: s:7SwiftUI4ViewPAAE5sheet4item9onDismiss7contentQrAA7BindingVyqd__SgG_yycSgqd_0_qd__cts12IdentifiableRd__AaBRd_0_r0_lF
+declaration: nonisolated func sheet<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)? = nil, @ContentBuilder content: @escaping (Item) -> Content) -> some View where Item : Identifiable, Content : View
+
+docComment sha256: 76be8b259748d99c13d8ebbf4a2b7d4f4f0271cf8f0d7c7239d5ae1c930f336a
+----- verbatim -----
+Presents a sheet using the given item as a data source
+for the sheet's content.
+
+Use this method when you need to present a modal view with content
+from a custom data source. The example below shows a custom data source
+`InventoryItem` that the `content` closure uses to populate the display
+the action sheet shows to the user:
+
+    struct ShowPartDetail: View {
+        @State private var sheetDetail: InventoryItem?
+
+        var body: some View {
+            Button("Show Part Details") {
+                sheetDetail = InventoryItem(
+                    id: "0123456789",
+                    partNumber: "Z-1234A",
+                    quantity: 100,
+                    name: "Widget")
+            }
+            .sheet(item: $sheetDetail,
+                   onDismiss: didDismiss) { detail in
+                VStack(alignment: .leading, spacing: 20) {
+                    Text("Part Number: \(detail.partNumber)")
+                    Text("Name: \(detail.name)")
+                    Text("Quantity On-Hand: \(detail.quantity)")
+                }
+                .onTapGesture {
+                    sheetDetail = nil
+                }
+            }
+        }
+
+        func didDismiss() {
+            // Handle the dismissing action.
+        }
+    }
+
+    struct InventoryItem: Identifiable {
+        var id: String
+        let partNumber: String
+        let quantity: Int
+        let name: String
+    }
+
+![A view showing a custom structure acting as a data source, providing
+data to a modal sheet.](SwiftUI-View-SheetItemContent.png)
+
+In vertically compact environments, such as iPhone in landscape
+orientation, a sheet presentation automatically adapts to appear as a
+full-screen cover. Use the ``View/presentationCompactAdaptation(_:)`` or
+``View/presentationCompactAdaptation(horizontal:vertical:)`` modifier to
+override this behavior.
+
+### Breakthrough effect
+
+In visionOS, most system presentations appear with a breakthrough effect by
+default. To change how the enclosing presentation breaks through
+content occluding it, use ``presentationBreakthroughEffect(_:)``,
+like in the following example:
+```swift
+.sheet(item: $sheetDetail,
+       onDismiss: didDismiss) { detail in
+    VStack(alignment: .leading, spacing: 20) {
+        Text("Part Number: \(detail.partNumber)")
+        Text("Name: \(detail.name)")
+        Text("Quantity On-Hand: \(detail.quantity)")
+    }
+    .presentationBreakthroughEffect(.prominent)
+    .onTapGesture {
+        sheetDetail = nil
+    }
+}
+```
+
+>  Passing a `.none` value for a sheet has no effect.
+
+- Parameters:
+  - item: A binding to an optional source of truth for the sheet.
+    When `item` is non-`nil`, the system passes the item's content to
+    the modifier's closure. You display this content in a sheet that you
+    create that the system displays to the user. If `item` changes,
+    the system dismisses the sheet and replaces it with a new one
+    using the same process.
+  - onDismiss: The closure to execute when dismissing the sheet.
+  - content: A closure returning the content of the sheet.
+----- end -----
+
+===== ios SDK iphoneos27.0
+swiftdoc: Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SwiftUI.framework/Modules/SwiftUI.swiftmodule/arm64e-apple-ios.swiftdoc
+precise: s:7SwiftUI4ViewPAAE5sheet4item9onDismiss7contentQrAA7BindingVyqd__SgG_yycSgqd_0_qd__cts12IdentifiableRd__AaBRd_0_r0_lF
+declaration: nonisolated func sheet<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)? = nil, @ContentBuilder content: @escaping (Item) -> Content) -> some View where Item : Identifiable, Content : View
+
+docComment sha256: 76be8b259748d99c13d8ebbf4a2b7d4f4f0271cf8f0d7c7239d5ae1c930f336a
+----- verbatim -----
+Presents a sheet using the given item as a data source
+for the sheet's content.
+
+Use this method when you need to present a modal view with content
+from a custom data source. The example below shows a custom data source
+`InventoryItem` that the `content` closure uses to populate the display
+the action sheet shows to the user:
+
+    struct ShowPartDetail: View {
+        @State private var sheetDetail: InventoryItem?
+
+        var body: some View {
+            Button("Show Part Details") {
+                sheetDetail = InventoryItem(
+                    id: "0123456789",
+                    partNumber: "Z-1234A",
+                    quantity: 100,
+                    name: "Widget")
+            }
+            .sheet(item: $sheetDetail,
+                   onDismiss: didDismiss) { detail in
+                VStack(alignment: .leading, spacing: 20) {
+                    Text("Part Number: \(detail.partNumber)")
+                    Text("Name: \(detail.name)")
+                    Text("Quantity On-Hand: \(detail.quantity)")
+                }
+                .onTapGesture {
+                    sheetDetail = nil
+                }
+            }
+        }
+
+        func didDismiss() {
+            // Handle the dismissing action.
+        }
+    }
+
+    struct InventoryItem: Identifiable {
+        var id: String
+        let partNumber: String
+        let quantity: Int
+        let name: String
+    }
+
+![A view showing a custom structure acting as a data source, providing
+data to a modal sheet.](SwiftUI-View-SheetItemContent.png)
+
+In vertically compact environments, such as iPhone in landscape
+orientation, a sheet presentation automatically adapts to appear as a
+full-screen cover. Use the ``View/presentationCompactAdaptation(_:)`` or
+``View/presentationCompactAdaptation(horizontal:vertical:)`` modifier to
+override this behavior.
+
+### Breakthrough effect
+
+In visionOS, most system presentations appear with a breakthrough effect by
+default. To change how the enclosing presentation breaks through
+content occluding it, use ``presentationBreakthroughEffect(_:)``,
+like in the following example:
+```swift
+.sheet(item: $sheetDetail,
+       onDismiss: didDismiss) { detail in
+    VStack(alignment: .leading, spacing: 20) {
+        Text("Part Number: \(detail.partNumber)")
+        Text("Name: \(detail.name)")
+        Text("Quantity On-Hand: \(detail.quantity)")
+    }
+    .presentationBreakthroughEffect(.prominent)
+    .onTapGesture {
+        sheetDetail = nil
+    }
+}
+```
+
+>  Passing a `.none` value for a sheet has no effect.
+
+- Parameters:
+  - item: A binding to an optional source of truth for the sheet.
+    When `item` is non-`nil`, the system passes the item's content to
+    the modifier's closure. You display this content in a sheet that you
+    create that the system displays to the user. If `item` changes,
+    the system dismisses the sheet and replaces it with a new one
+    using the same process.
+  - onDismiss: The closure to execute when dismissing the sheet.
+  - content: A closure returning the content of the sheet.
+----- end -----
+
+===== tvos SDK appletvos27.0
+swiftdoc: Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/SwiftUI.framework/Modules/SwiftUI.swiftmodule/arm64e-apple-tvos.swiftdoc
+precise: s:7SwiftUI4ViewPAAE5sheet4item9onDismiss7contentQrAA7BindingVyqd__SgG_yycSgqd_0_qd__cts12IdentifiableRd__AaBRd_0_r0_lF
+declaration: nonisolated func sheet<Item, Content>(item: Binding<Item?>, onDismiss: (() -> Void)? = nil, @ContentBuilder content: @escaping (Item) -> Content) -> some View where Item : Identifiable, Content : View
+
+docComment sha256: 76be8b259748d99c13d8ebbf4a2b7d4f4f0271cf8f0d7c7239d5ae1c930f336a
+----- verbatim -----
+Presents a sheet using the given item as a data source
+for the sheet's content.
+
+Use this method when you need to present a modal view with content
+from a custom data source. The example below shows a custom data source
+`InventoryItem` that the `content` closure uses to populate the display
+the action sheet shows to the user:
+
+    struct ShowPartDetail: View {
+        @State private var sheetDetail: InventoryItem?
+
+        var body: some View {
+            Button("Show Part Details") {
+                sheetDetail = InventoryItem(
+                    id: "0123456789",
+                    partNumber: "Z-1234A",
+                    quantity: 100,
+                    name: "Widget")
+            }
+            .sheet(item: $sheetDetail,
+                   onDismiss: didDismiss) { detail in
+                VStack(alignment: .leading, spacing: 20) {
+                    Text("Part Number: \(detail.partNumber)")
+                    Text("Name: \(detail.name)")
+                    Text("Quantity On-Hand: \(detail.quantity)")
+                }
+                .onTapGesture {
+                    sheetDetail = nil
+                }
+            }
+        }
+
+        func didDismiss() {
+            // Handle the dismissing action.
+        }
+    }
+
+    struct InventoryItem: Identifiable {
+        var id: String
+        let partNumber: String
+        let quantity: Int
+        let name: String
+    }
+
+![A view showing a custom structure acting as a data source, providing
+data to a modal sheet.](SwiftUI-View-SheetItemContent.png)
+
+In vertically compact environments, such as iPhone in landscape
+orientation, a sheet presentation automatically adapts to appear as a
+full-screen cover. Use the ``View/presentationCompactAdaptation(_:)`` or
+``View/presentationCompactAdaptation(horizontal:vertical:)`` modifier to
+override this behavior.
+
+### Breakthrough effect
+
+In visionOS, most system presentations appear with a breakthrough effect by
+default. To change how the enclosing presentation breaks through
+content occluding it, use ``presentationBreakthroughEffect(_:)``,
+like in the following example:
+```swift
+.sheet(item: $sheetDetail,
+       onDismiss: didDismiss) { detail in
+    VStack(alignment: .leading, spacing: 20) {
+        Text("Part Number: \(detail.partNumber)")
+        Text("Name: \(detail.name)")
+        Text("Quantity On-Hand: \(detail.quantity)")
+    }
+    .presentationBreakthroughEffect(.prominent)
+    .onTapGesture {
+        sheetDetail = nil
+    }
+}
+```
+
+>  Passing a `.none` value for a sheet has no effect.
+
+- Parameters:
+  - item: A binding to an optional source of truth for the sheet.
+    When `item` is non-`nil`, the system passes the item's content to
+    the modifier's closure. You display this content in a sheet that you
+    create that the system displays to the user. If `item` changes,
+    the system dismisses the sheet and replaces it with a new one
+    using the same process.
+  - onDismiss: The closure to execute when dismissing the sheet.
+  - content: A closure returning the content of the sheet.
+----- end -----
+
+===== Classification of the dismissal card claim
+Claim: "With `sheet(item:)`, the item is already `nil` when `onDismiss` runs."
+- macOS SDK 27.0: SILENT. The comment says onDismiss is "The closure to execute when dismissing the sheet." It does not state the value of `item` when onDismiss runs.
+- iOS SDK 27.0: SILENT. Same comment (same sha256).
+- tvOS SDK 27.0: SILENT. Same comment (same sha256).
+- Xcode offline documentation: not found, not searched further.
