@@ -1,0 +1,1 @@
+Determine who owns text size. A preview supplied with a trait collection needs the requested size even if its label's environment differs; automatic later adjustment can undo the preview. A live label may instead follow its environment. Inspect the existing label after the relevant update; separate typeface, size, wrapping and layout from the Pay action and its unrelated styling.
