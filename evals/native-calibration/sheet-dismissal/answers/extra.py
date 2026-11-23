@@ -1,7 +1,7 @@
 import json,tempfile
 from pathlib import Path
 from zipfile import ZipFile
-from prepare import D,BASE,ROOT,FENCES,H
+from prepare import D,BASE,ROOT,FENCES,H,STARTER
 
 batch=Path(tempfile.mkdtemp(prefix='sheet-extra-',dir=BASE/'persistent-replay'))
 def add(name,platform,src,tests,ans):
@@ -20,7 +20,7 @@ with ZipFile(next(BASE.glob('gemini-discovery*/bundles/*375*'))) as z:
     old='guard showing else { return }';new='guard showing, ticket == generation else { return }'
     assert '-        '+old in ans.decode() and '+        '+new in ans.decode() and code.count(old)==1
     add('G-16de77ef3240aa','macOS',code.replace(old,new),'Hosted.swift',ans)
-code=(ROOT/'code-examples/swiftui/macos-v1/Sources/Lifecycle.swift').read_text()
+code=STARTER
 assert code.count('onDismiss: {')==1
 add('control-captured','macOS',code.replace('onDismiss: {','onDismiss: { [ticket] in'),'Hosted.swift',b'Controller positive, not a model answer.')
 print(batch.name)

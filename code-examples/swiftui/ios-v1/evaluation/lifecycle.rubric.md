@@ -18,4 +18,6 @@ Exact assertions:
 - `LifecycleTests/testReentrantRequestPreservesNewPresentation`
 - `LifecycleTests/testEligibleListIsEvaluatedAtCompletion`
 
+Installed callback: the units above pass the ticket to the model by hand, so they cannot show what the view's `onDismiss` reads. Revision 4 of the example captures its presentation's ticket (`onDismiss: { [ticket] in`), byte-identical to the macOS example. That macOS view passed the hosted installed-callback check (`evals/native-calibration/sheet-dismissal/answers/Hosted.swift`, batch `sheet-extra-0suc98ey`) and revision 3 failed it. No iOS hosted check has run, so this view is source-equivalent, not natively proven, on iOS.
+
 Sources and negative controls remain controller-only; inject only the subject and approved condition material. No independent subject answer exists yet. Native model-policy units are not tests of generated SwiftUI semantics.

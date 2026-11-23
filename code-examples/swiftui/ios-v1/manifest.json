@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "id": "swiftui-ios-v1",
-  "revision": "3",
+  "revision": "4",
   "platform": "iOS",
   "deploymentTarget": "26.0",
   "runtimeMajor": 26,
@@ -35,7 +35,7 @@
       "id": "lifecycle",
       "url": "https://developer.apple.com/documentation/swiftui/accessibilityfocusstate",
       "section": "Public SwiftUI API composition; exact installed SDK declarations and narrow application contract",
-      "statement": "Focus binding and sheet callback composition. State units prove requested target ownership, not delivered focus.",
+      "statement": "Focus binding and sheet callback composition. The installed onDismiss captures its own presentation's ticket. State units prove requested target ownership, not delivered focus; no iOS installed-callback check has run (the hosted check is macOS-only).",
       "availability": "Compile target26 against SDK27; exact runtime recorded separately. Platform-specific unavailable members must be excluded or explicitly unresolved, not guessed.",
       "reviewedOn": "2026-11-06"
     },
@@ -79,7 +79,7 @@
     },
     {
       "path": "Sources/Lifecycle.swift",
-      "sha256": "f28c995e8afd31392c31604b425d876f30de38f80258eb0f0fff50b91b98986e"
+      "sha256": "b9d93de6aafbe6bd8c9aee257232b841be6ab71d199ee337842dc18b1ebccfad"
     },
     {
       "path": "Sources/Preferences.swift",

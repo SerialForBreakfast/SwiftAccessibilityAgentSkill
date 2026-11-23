@@ -1,4 +1,4 @@
-import json,re,tempfile
+import json,re,subprocess,tempfile
 from pathlib import Path
 from zipfile import ZipFile
 from hashlib import sha256
@@ -7,6 +7,8 @@ ROOT=D.parents[3]
 BASE=ROOT/'evals/results'
 H=lambda b:sha256(b).hexdigest()
 FENCES=re.compile(r'^```swift[^\n]*\n(.*?)^```',re.M|re.S)
+# Revision 3 of the reference view, which the recorded batches staged; revision 4 captures the ticket.
+STARTER=subprocess.run(['git','-C',str(ROOT),'show','0177195:code-examples/swiftui/macos-v1/Sources/Lifecycle.swift'],check=True,capture_output=True,text=True).stdout
 def main():
     batch=Path(tempfile.mkdtemp(prefix='sheet-answers-',dir=BASE/'persistent-replay'))
     catalog=[]
@@ -28,7 +30,7 @@ def main():
                         code=(BASE/'persistent-replay/tmp6xijam9k'/key/'Subject.swift').read_text()
                         reason='historical primary assembly; separate optional patch not applied'
                     else:
-                        code=(ROOT/'code-examples/swiftui/macos-v1/Sources/Lifecycle.swift').read_text()
+                        code=STARTER
                         reason='no-change recommendation: unchanged starter'
                 else:
                     row['selection']='different ownership or view interface; not exercised by hosted SheetExample contract'

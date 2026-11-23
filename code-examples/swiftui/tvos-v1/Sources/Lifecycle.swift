@@ -33,7 +33,7 @@ struct SheetExample: View {
             ticket = state.begin(from: "open"); sheet = true
         }
         .accessibilityFocused($focused, equals: "open")
-        .sheet(isPresented: $sheet, onDismiss: {
+        .sheet(isPresented: $sheet, onDismiss: { [ticket] in
             if let ticket { state.dismissed(ticket); focused = state.focus }
         }) {
             VStack {
